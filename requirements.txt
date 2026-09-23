@@ -3,3 +3,5 @@ cairosvg>=2.7
 Pillow>=10.0
 requests>=2.31
 openai>=3.19
+google-api-python-client>=2.100
+google-auth>=2.20

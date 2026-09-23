@@ -1,0 +1,92 @@
+name: publish-episodes
+
+# Codziennie: utrzymuje BUFFER odcinków zaplanowanych na YouTube (publishAt).
+# Publikacja co 3 dni o 10:00 Europe/Warsaw robi sam YouTube — opóźnienia crona nie mają znaczenia.
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+    inputs:
+      first_day:
+        description: "Data pierwszej publikacji YYYY-MM-DD (tylko przy pierwszym uruchomieniu)"
+        required: false
+      no_upload:
+        description: "Test: bez uploadu na YouTube"
+        type: boolean
+        default: false
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: System deps
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core libcairo2 stockfish
+
+      - name: Python deps
+        run: pip install -r requirements.txt
+
+      - name: TTS cache
+        uses: actions/cache@v4
+        with:
+          path: .tts_cache
+          key: tts-${{ github.run_id }}
+          restore-keys: tts-
+
+      - name: Plan
+        run: python src/scheduler.py --plan
+
+      - name: Produce and schedule
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          INWORLD_API_KEY: ${{ secrets.INWORLD_API_KEY }}
+          INWORLD_VOICE_ID: ${{ secrets.INWORLD_VOICE_ID }}
+          INWORLD_MODEL: inworld-tts-2
+          INWORLD_LANGUAGE: pl-PL
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          STOCKFISH_PATH: /usr/games/stockfish
+          PUBLISH_TZ: Europe/Warsaw
+          PUBLISH_HOUR: "10"
+          INTERVAL_DAYS: "3"
+          FIRST_DAY: ${{ inputs.first_day }}
+          NO_UPLOAD: ${{ inputs.no_upload }}
+        run: |
+          ARGS=()
+          if [ -n "$FIRST_DAY" ]; then ARGS+=(--first-day "$FIRST_DAY"); fi
+          if [ "$NO_UPLOAD" = "true" ]; then ARGS+=(--no-upload); fi
+          python src/scheduler.py "${ARGS[@]}"
+
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "episode-bot"
+          git config user.email "episode-bot@users.noreply.github.com"
+          git add state/ scripts/ || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "bot: schedule update"
+          for i in 1 2 3 4; do git pull --rebase && git push && exit 0; sleep $((2**i)); done
+          exit 1
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: episodes-${{ github.run_id }}
+          path: out/*.mp4
+          if-no-files-found: ignore
+          retention-days: 14

@@ -19,3 +19,18 @@ Stockfish (PATH, STOCKFISH_PATH lub --stockfish) dodaje oceny; bez niego LLM nie
 - Ruchy w lektorze pochodzą tylko z PGN (markery), LLM nie może ich przekręcić.
 - Surowa notacja w tekście scenariusza = błąd walidacji.
 - PGN każdej partii zweryfikuj w dwóch niezależnych bazach przed nagraniem.
+
+## Autopublikacja (co 3 dni, 10:00 Europe/Warsaw)
+    python src/scheduler.py --plan                 # co i kiedy wyjdzie
+    python src/scheduler.py --dry-tts              # test bez Inworld i bez uploadu
+GitHub Actions `publish-episodes` uruchamia się codziennie i trzyma 2 odcinki zaplanowane naprzód
+(upload jako prywatny z `publishAt`). Pierwsze uruchomienie: Actions -> publish-episodes -> Run workflow, `first_day`.
+
+Konfiguracja YouTube (jednorazowo):
+1. Google Cloud: projekt, włączone YouTube Data API v3, ekran zgody OAuth, OAuth client typu Desktop.
+2. `python src/youtube_auth.py client_secret.json` -> sekrety YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN.
+3. Audyt API (formularz YouTube API Services) — bez niego filmy zostaną zablokowane jako prywatne.
+
+## Katalog partii
+`catalog/games.json` (100 partii, pole `n` = kolejność), `catalog/LISTA.md` — podgląd.
+PGN: `python src/pgn_collect.py --source nazwa=ścieżka ...` (≥2 zgodne kolekcje -> games/<id>.pgn).
