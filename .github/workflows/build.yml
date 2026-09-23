@@ -1,0 +1,59 @@
+name: build-episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      game:
+        description: "Nazwa partii (plik games/<name>.pgn i scripts/<name>.json)"
+        required: true
+        default: "opera_1858"
+      dry_run:
+        description: "Bez Inworld (cisza, szacowane czasy)"
+        type: boolean
+        default: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: System deps
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core libcairo2
+
+      - name: Python deps
+        run: pip install -r requirements.txt
+
+      - name: TTS cache
+        uses: actions/cache@v4
+        with:
+          path: .tts_cache
+          key: tts-${{ inputs.game }}-${{ hashFiles(format('scripts/{0}.json', inputs.game)) }}
+          restore-keys: tts-${{ inputs.game }}-
+
+      - name: Validate
+        run: python src/main.py --pgn games/${{ inputs.game }}.pgn --script scripts/${{ inputs.game }}.json --out out/x.mp4 --check-only
+
+      - name: Build
+        env:
+          INWORLD_API_KEY: ${{ secrets.INWORLD_API_KEY }}
+          INWORLD_VOICE_ID: ${{ secrets.INWORLD_VOICE_ID }}
+          INWORLD_MODEL: inworld-tts-2
+          INWORLD_LANGUAGE: pl-PL
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="--dry-run"; fi
+          python src/main.py --pgn games/${{ inputs.game }}.pgn \
+            --script scripts/${{ inputs.game }}.json \
+            --out out/${{ inputs.game }}.mp4 $ARGS
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.game }}
+          path: out/${{ inputs.game }}.mp4

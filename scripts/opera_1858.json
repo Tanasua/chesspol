@@ -1,0 +1,45 @@
+{
+  "title": "Partia w operze",
+  "segments": [
+    {
+      "id": "s01",
+      "text": "Paryż, rok tysiąc osiemset pięćdziesiąty ósmy. W loży opery zamiast słuchać muzyki, młody Amerykanin Paul Morphy gra w szachy. Jego przeciwnicy to książę Brunszwiku i hrabia Isouard, którzy naradzają się nad każdym ruchem. Dwóch arystokratów przeciwko jednemu młodemu człowiekowi. Zobaczmy, jak to się skończyło.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s02",
+      "text": "Morphy zaczyna klasycznie: {{m:1}}. Czarni odpowiadają {{m:2}}. Dalej {{m:3}}, a arystokraci wybierają obronę Philidora: {{m:4}}. To solidny, ale pasywny wybór.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "text": "Morphy od razu uderza w centrum: {{m:5}}. Czarni wyprowadzają gońca i wiążą skoczka: {{m:6}}. Następnie {{m:7}}, i przychodzi decyzja, której czarni będą żałować: {{m:8}}. Oddają gońca za skoczka, a biały hetman wchodzi do gry: {{m:9}}. {{s:10}} Czarni odbijają piona, ale rozwój białych jest już wyraźnie szybszy.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s04",
+      "text": "Teraz {{m:11}}, goniec celuje w słaby punkt ef siedem. {{m:12}}. I hetman przechodzi na drugą stronę: {{m:13}}. Podwójne zagrożenie, na be siedem i na ef siedem. Czarni bronią się: {{m:14}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s05",
+      "text": "Morphy spokojnie rozwija kolejną figurę: {{m:15}}. {{m:16}}. Potem {{m:17}}, i skoczek czarnych zostaje związany. Czarni próbują przegonić gońca: {{m:18}}. I tu zaczyna się prawdziwy spektakl.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s06",
+      "text": "Morphy nie cofa się. {{m:19}}. Oddaje skoczka! {{m:20}}. {{m:21}}. Czarni zasłaniają się: {{m:22}}. A biali robią coś, co wygląda niemal niedbale: {{m:23}}. Wieża staje na otwartej linii de.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s07",
+      "text": "{{m:24}}. I kolejna ofiara: {{m:25}}. {{m:26}}. Druga wieża wchodzi natychmiast: {{m:27}}. {{m:28}}. Teraz goniec usuwa obrońcę: {{m:29}}. {{m:30}}.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s08",
+      "text": "I ruch, dla którego ta partia przeszła do historii. Morphy oddaje hetmana: {{m:31}}. Czarni muszą bić: {{m:32}}. A ostatnia wieża kończy spektakl: {{m:33}}. Siedemnaście ruchów, trzy ofiary i jedna z najpiękniejszych partii w historii szachów.",
+      "pause_after": 0.5
+    }
+  ]
+}
