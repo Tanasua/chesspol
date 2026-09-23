@@ -98,11 +98,11 @@
 | 92 | Wei Yi – Lazaro Bruzon Batista | 2015 | Hainan Danzhou 2015 (Danzhou) | 1-0 | ✅ |  |
 | 93 | Magnus Carlsen – Sergey Karjakin | 2016 | World Championship 2016 (dogrywka) (Nowy Jork) | 1-0 | ✅ |  |
 | 94 | AlphaZero – Stockfish 8 | 2017 | AlphaZero vs Stockfish (Londyn) | 1-0 | brak PGN | Immortal Zugzwang Game; Metadane średnio pewne; wybrać konkretną partię z 10 opublikowanych. |
-| 95 | Jan-Krzysztof Duda – Magnus Carlsen | 2020 | Altibox Norway Chess 2020 (Stavanger) | 1-0 | 1 źródło |  |
-| 96 | Magnus Carlsen – Jan-Krzysztof Duda | 2021 | FIDE World Cup 2021, półfinał (dogrywka) (Soczi) | 0-1 | 1 źródło |  |
-| 97 | Magnus Carlsen – Ian Nepomniachtchi | 2021 | World Championship 2021 (Dubaj) | 1-0 | 1 źródło |  |
-| 98 | Magnus Carlsen – Rameshbabu Praggnanandhaa | 2022 | Airthings Masters 2022 (online) (online) | 0-1 | 1 źródło |  |
-| 99 | Ian Nepomniachtchi – Ding Liren | 2023 | World Championship 2023 (dogrywka) (Astana) | 0-1 | brak PGN |  |
-| 100 | Ding Liren – Gukesh Dommaraju | 2024 | World Championship 2024 (Singapur) | 0-1 | brak PGN |  |
+| 95 | Jan-Krzysztof Duda – Magnus Carlsen | 2020 | Altibox Norway Chess 2020 (Stavanger) | 1-0 | ✅ |  |
+| 96 | Magnus Carlsen – Jan-Krzysztof Duda | 2021 | FIDE World Cup 2021, półfinał (dogrywka) (Soczi) | 0-1 | ✅ |  |
+| 97 | Magnus Carlsen – Ian Nepomniachtchi | 2021 | World Championship 2021 (Dubaj) | 1-0 | ✅ |  |
+| 98 | Magnus Carlsen – Rameshbabu Praggnanandhaa | 2022 | Airthings Masters 2022 (online) (online) | 0-1 | ✅ |  |
+| 99 | Ian Nepomniachtchi – Ding Liren | 2023 | World Championship 2023 (dogrywka) (Astana) | 0-1 | 1 źródło |  |
+| 100 | Ding Liren – Gukesh Dommaraju | 2024 | World Championship 2024 (Singapur) | 0-1 | 1 źródło |  |
 
-Gotowe do publikacji (PGN z ≥2 niezależnych baz): **75/100**.
+Gotowe do publikacji (PGN z ≥2 niezależnych baz): **79/100**.

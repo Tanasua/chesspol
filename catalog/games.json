@@ -2212,14 +2212,15 @@
       "nickname": null,
       "chessgames_url": "https://www.chessgames.com/perl/chessgame?gid=2010697",
       "disputed": false,
-      "pgn_verified": false,
+      "pgn_verified": true,
       "white_keys": [
         "duda"
       ],
       "site_pl": "Stavanger",
-      "pgn_status": "single_source",
+      "pgn_status": "verified",
       "pgn_sources": [
-        "pgnmentor"
+        "pgnmentor",
+        "twic"
       ]
     },
     {
@@ -2236,14 +2237,15 @@
       "nickname": null,
       "chessgames_url": null,
       "disputed": false,
-      "pgn_verified": false,
+      "pgn_verified": true,
       "black_keys": [
         "duda"
       ],
       "site_pl": "Soczi",
-      "pgn_status": "single_source",
+      "pgn_status": "verified",
       "pgn_sources": [
-        "pgnmentor"
+        "pgnmentor",
+        "twic"
       ]
     },
     {
@@ -2260,11 +2262,12 @@
       "nickname": null,
       "chessgames_url": null,
       "disputed": false,
-      "pgn_verified": false,
+      "pgn_verified": true,
       "site_pl": "Dubaj",
-      "pgn_status": "single_source",
+      "pgn_status": "verified",
       "pgn_sources": [
-        "pgnmentor"
+        "pgnmentor",
+        "twic"
       ]
     },
     {
@@ -2281,11 +2284,12 @@
       "nickname": null,
       "chessgames_url": "https://www.chessgames.com/perl/chessgame?gid=2252714",
       "disputed": false,
-      "pgn_verified": false,
+      "pgn_verified": true,
       "site_pl": "online",
-      "pgn_status": "single_source",
+      "pgn_status": "verified",
       "pgn_sources": [
-        "pgnmentor"
+        "pgnmentor",
+        "twic"
       ]
     },
     {
@@ -2307,8 +2311,10 @@
         "ding"
       ],
       "site_pl": "Astana",
-      "pgn_status": "not_found",
-      "pgn_sources": []
+      "pgn_status": "single_source",
+      "pgn_sources": [
+        "twic"
+      ]
     },
     {
       "n": 100,
@@ -2332,8 +2338,10 @@
         "gukesh"
       ],
       "site_pl": "Singapur",
-      "pgn_status": "not_found",
-      "pgn_sources": []
+      "pgn_status": "single_source",
+      "pgn_sources": [
+        "twic"
+      ]
     }
   ]
 }
