@@ -14,6 +14,7 @@ Pliki:
 - src/tts_inworld.py — POST https://api.inworld.ai/tts/v1/voice, timestampType WORD, cache na dysku, dopasowanie słów przez difflib
 - src/render.py — klatki 1920x1080, animacja ruchu (roszada, bicie w przelocie, promocja), panel ruchów, schedule() bez nachodzenia animacji
 - src/main.py — CLI: --check-only, --dry-run
+- src/script_gen.py — PGN -> tabela półruchów (N, SAN, FEN, ocena Stockfisha) -> Claude (claude-opus-5, SCRIPT_MODEL) z prompts/script_system_pl.md -> build_segments -> do 3 poprawek -> scripts/<nazwa>.json
 - prompts/script_system_pl.md — system prompt do generowania scenariuszy
 - .github/workflows/build.yml — workflow_dispatch, sekrety INWORLD_API_KEY, INWORLD_VOICE_ID
 
@@ -29,13 +30,13 @@ Pliki:
 - Zweryfikowane: dry-run renderu na games/opera_1858.pgn (pozycja matowa poprawna, animacja roszady OK).
 - NIE zweryfikowane: realne wywołanie Inworld (format odpowiedzi sprawdzić przy pierwszym prowadzeniu),
   polska gramatyka scenariusza (do korekty przez native speakera).
+- scripts/opera_1858.json przepisany (s07 -> s07–s10: kolory figur przy biciach, wyjaśnienie związania wieży d7 i idei 14...He6;
+  s01 bez faktów spoza PGN; s03 bez oceny "będą żałować"). Twierdzenia szachowe sprawdzone python-chess. Gramatyka — do native speakera.
+- script_gen.py: pętla poprawek przetestowana na atrapie LLM; realne wywołanie API NIE zweryfikowane (brak klucza).
 - Inworld: polski to Tier 1 dla inworld-tts-2; ukraiński tylko Tier 2 w tts-2, brak w tts-1.5.
 
 ## Backlog
-1. Przepisać scripts/opera_1858.json: segment s07 niezrozumiały na słuch (dwa razy "wieża bije de siedem"
-   bez wskazania koloru), dodać wyjaśnienie idei ofiar, rytm na słuch.
-2. src/script_gen.py: PGN -> tabela półruchów (N, SAN, FEN, ocena) -> LLM z prompts/script_system_pl.md
-   -> walidacja build_segments -> do 3 poprawek z komunikatem błędu -> scripts/<nazwa>.json.
-3. Stockfish: pasek oceny na ekranie + automatyczne wykrywanie punktów zwrotnych.
-4. facts/<nazwa>.md dla każdej partii (zweryfikowane fakty historyczne).
-5. Kolejne partie: Rotlewi – Rubinstein, Łódź 1907. "Polska nieśmiertelna" Najdorfa — autentyczność sporna, zweryfikować.
+1. Stockfish: pasek oceny na ekranie + automatyczne wykrywanie punktów zwrotnych (oceny są już w tabeli script_gen).
+2. Oceny w scenariuszu opera_1858 (s02 "pasywny wybór", s06 "niemal niedbale") — potwierdzić silnikiem albo usunąć.
+3. facts/<nazwa>.md dla każdej partii (zweryfikowane fakty historyczne).
+4. Kolejne partie: Rotlewi – Rubinstein, Łódź 1907. "Polska nieśmiertelna" Najdorfa — autentyczność sporna, zweryfikować.

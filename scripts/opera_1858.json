@@ -3,7 +3,7 @@
   "segments": [
     {
       "id": "s01",
-      "text": "Paryż, rok tysiąc osiemset pięćdziesiąty ósmy. W loży opery zamiast słuchać muzyki, młody Amerykanin Paul Morphy gra w szachy. Jego przeciwnicy to książę Brunszwiku i hrabia Isouard, którzy naradzają się nad każdym ruchem. Dwóch arystokratów przeciwko jednemu młodemu człowiekowi. Zobaczmy, jak to się skończyło.",
+      "text": "Paryż, rok tysiąc osiemset pięćdziesiąty ósmy. Loża w operze. Zamiast słuchać muzyki, Paul Morphy siada do szachownicy. Po drugiej stronie nie jeden przeciwnik, lecz dwóch naraz: książę Brunszwiku i hrabia Isouard. Zobaczmy, jak to się skończyło.",
       "pause_after": 0.8
     },
     {
@@ -13,7 +13,7 @@
     },
     {
       "id": "s03",
-      "text": "Morphy od razu uderza w centrum: {{m:5}}. Czarni wyprowadzają gońca i wiążą skoczka: {{m:6}}. Następnie {{m:7}}, i przychodzi decyzja, której czarni będą żałować: {{m:8}}. Oddają gońca za skoczka, a biały hetman wchodzi do gry: {{m:9}}. {{s:10}} Czarni odbijają piona, ale rozwój białych jest już wyraźnie szybszy.",
+      "text": "Morphy od razu uderza w centrum: {{m:5}}. Czarni wyprowadzają gońca i wiążą skoczka: {{m:6}}. Następnie {{m:7}}, i czarni podejmują ważną decyzję: {{m:8}}. Oddają gońca za skoczka, a biały hetman wchodzi do gry: {{m:9}}. {{s:10}} Czarni odbijają piona.",
       "pause_after": 0.8
     },
     {
@@ -33,11 +33,26 @@
     },
     {
       "id": "s07",
-      "text": "{{m:24}}. I kolejna ofiara: {{m:25}}. {{m:26}}. Druga wieża wchodzi natychmiast: {{m:27}}. {{m:28}}. Teraz goniec usuwa obrońcę: {{m:29}}. {{m:30}}.",
-      "pause_after": 1.0
+      "text": "Czarni stawiają wieżę naprzeciw białej: {{m:24}}. Kolumna de staje się polem bitwy. I druga ofiara Morphy'ego. Biała wieża oddaje się za skoczka: {{m:25}}. Czarna wieża odbija: {{m:26}}.",
+      "pause_after": 1.2
     },
     {
       "id": "s08",
+      "text": "Spójrzcie na czarną wieżę na de siedem. Za nią, na e osiem, stoi czarny król, a biały goniec z be pięć celuje prosto w niego. Wieża jest związana i nie może się ruszyć. Morphy dokłada kolejną figurę na ten sam cel: {{m:27}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s09",
+      "text": "Czarni odpowiadają hetmanem: {{m:28}}. Teraz hetman broni wieży, a skoczek z ef sześć, który był związany przez gońca z gie pięć, znów może się ruszać.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s10",
+      "text": "Biały goniec bije czarną wieżę: {{m:29}}. Czarny skoczek odbija: {{m:30}}. Na linii de, między białą wieżą a polem de osiem, stoi teraz tylko jedna figura: czarny skoczek.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s11",
       "text": "I ruch, dla którego ta partia przeszła do historii. Morphy oddaje hetmana: {{m:31}}. Czarni muszą bić: {{m:32}}. A ostatnia wieża kończy spektakl: {{m:33}}. Siedemnaście ruchów, trzy ofiary i jedna z najpiękniejszych partii w historii szachów.",
       "pause_after": 0.5
     }

@@ -10,6 +10,11 @@ PGN -> walidacja (python-chess) -> scenariusz z markerami {{m:N}} -> Inworld TTS
     python main.py ... --dry-run
     INWORLD_API_KEY=... INWORLD_VOICE_ID=... python main.py ...
 
+## Generowanie scenariusza
+    ANTHROPIC_API_KEY=... python script_gen.py --pgn ../games/<nazwa>.pgn --out ../scripts/<nazwa>.json
+    python script_gen.py --pgn ... --out ... --table-only   # podgląd wejścia dla LLM
+Stockfish (PATH, STOCKFISH_PATH lub --stockfish) dodaje oceny; bez niego LLM nie może oceniać ruchów.
+
 ## Zasady
 - Ruchy w lektorze pochodzą tylko z PGN (markery), LLM nie może ich przekręcić.
 - Surowa notacja w tekście scenariusza = błąd walidacji.
