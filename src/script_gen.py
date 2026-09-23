@@ -5,7 +5,7 @@ Użycie:
   python src/script_gen.py ... --stockfish /usr/games/stockfish   # oceny silnika w tabeli
   python src/script_gen.py ... --table-only                       # tylko wydruk wejścia dla LLM
 
-LLM dostaje prompts/script_system_pl.md jako system prompt. Wynik przechodzi przez
+LLM (OpenAI Responses API, OPENAI_API_KEY) dostaje prompts/script_system_pl.md jako instructions. Wynik przechodzi przez
 build_segments (ta sama walidacja co w main.py); przy błędzie model dostaje komunikat
 i ma do MAX_FIXES poprawek. Fakty historyczne: tylko nagłówki PGN + facts/<nazwa>.md.
 """
@@ -27,7 +27,8 @@ from script_check import ScriptError, build_segments
 ROOT = Path(__file__).resolve().parent.parent
 PROMPT_PATH = ROOT / "prompts" / "script_system_pl.md"
 FACTS_DIR = ROOT / "facts"
-DEFAULT_MODEL = os.environ.get("SCRIPT_MODEL", "claude-opus-5")
+DEFAULT_MODEL = os.environ.get("SCRIPT_MODEL", "gpt-5.5")
+REASONING_EFFORT = os.environ.get("SCRIPT_REASONING", "high")
 MAX_FIXES = 3
 ENGINE_DEPTH = 18
 
@@ -110,32 +111,56 @@ def _validate(text: str, game) -> tuple[dict | None, str | None, list]:
     return script, None, warnings
 
 
+SCRIPT_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["title", "segments"],
+    "properties": {
+        "title": {"type": "string"},
+        "segments": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["id", "text", "pause_after"],
+                "properties": {
+                    "id": {"type": "string"},
+                    "text": {"type": "string"},
+                    "pause_after": {"type": "number"},
+                },
+            },
+        },
+    },
+}
+
+
 def _ask(client, model: str, system: str, messages: list) -> str:
-    resp = client.beta.messages.create(
+    resp = client.responses.create(
         model=model,
-        max_tokens=16000,
-        system=system,
-        messages=messages,
-        thinking={"type": "adaptive"},
-        output_config={"effort": "high"},
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
+        instructions=system,
+        input=messages,
+        reasoning={"effort": REASONING_EFFORT},
+        text={"format": {"type": "json_schema", "name": "scenariusz", "strict": True, "schema": SCRIPT_SCHEMA}},
+        max_output_tokens=32000,
+        store=False,
     )
-    if resp.stop_reason == "refusal":
-        cat = resp.stop_details.category if resp.stop_details else None
-        raise RuntimeError(f"Model odmówił odpowiedzi (kategoria: {cat})")
-    if resp.stop_reason == "max_tokens":
-        raise RuntimeError("Odpowiedź ucięta (max_tokens)")
-    text = "".join(b.text for b in resp.content if b.type == "text")
+    if resp.status == "incomplete":
+        reason = resp.incomplete_details.reason if resp.incomplete_details else None
+        raise RuntimeError(f"Odpowiedź niepełna ({reason})")
+    for item in resp.output:
+        for part in getattr(item, "content", None) or []:
+            if part.type == "refusal":
+                raise RuntimeError(f"Model odmówił odpowiedzi: {part.refusal}")
+    text = resp.output_text
     if not text.strip():
         raise RuntimeError("Pusta odpowiedź modelu")
     return text
 
 
 def generate(game, name: str, model: str, evals: list | None) -> tuple[dict, list]:
-    import anthropic
+    from openai import OpenAI
 
-    client = anthropic.Anthropic()
+    client = OpenAI()  # OPENAI_API_KEY ze środowiska
     system = PROMPT_PATH.read_text(encoding="utf-8")
     messages = [{"role": "user", "content": build_user_message(game, name, evals)}]
 

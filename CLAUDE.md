@@ -14,7 +14,7 @@ Pliki:
 - src/tts_inworld.py — POST https://api.inworld.ai/tts/v1/voice, timestampType WORD, cache na dysku, dopasowanie słów przez difflib
 - src/render.py — klatki 1920x1080, animacja ruchu (roszada, bicie w przelocie, promocja), panel ruchów, schedule() bez nachodzenia animacji
 - src/main.py — CLI: --check-only, --dry-run
-- src/script_gen.py — PGN -> tabela półruchów (N, SAN, FEN, ocena Stockfisha) -> Claude (claude-opus-5, SCRIPT_MODEL) z prompts/script_system_pl.md -> build_segments -> do 3 poprawek -> scripts/<nazwa>.json
+- src/script_gen.py — PGN -> tabela półruchów (N, SAN, FEN, ocena Stockfisha) -> OpenAI Responses API (gpt-5.5, SCRIPT_MODEL; OPENAI_API_KEY) z prompts/script_system_pl.md -> build_segments -> do 3 poprawek -> scripts/<nazwa>.json
 - prompts/script_system_pl.md — system prompt do generowania scenariuszy
 - .github/workflows/build.yml — workflow_dispatch, sekrety INWORLD_API_KEY, INWORLD_VOICE_ID
 
