@@ -83,27 +83,76 @@ def run(cmd: list) -> None:
     subprocess.run(cmd, check=True, cwd=ROOT)
 
 
-def describe(game: dict, script: dict) -> tuple[str, str, list]:
+def _moves_word(n: int) -> str:
+    if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14):
+        return "ruchy"
+    return "ruch" if n == 1 else "ruchów"
+
+
+def _ts(sec: float) -> str:
+    sec = int(sec)
+    return f"{sec // 3600}:{sec % 3600 // 60:02d}:{sec % 60:02d}" if sec >= 3600 else f"{sec // 60}:{sec % 60:02d}"
+
+
+def _chapters(timing: dict) -> list:
+    """Rozdziały YouTube: pierwszy 0:00, każdy ≥ 10 s, co najmniej 3 — inaczej brak."""
+    out = []
+    for ch in timing.get("chapters", []):
+        if out and ch["t"] - out[-1]["t"] < 10:
+            continue
+        out.append(ch)
+    if out and timing.get("duration") and timing["duration"] - out[-1]["t"] < 10:
+        out.pop()
+    return out if len(out) >= 3 and out[0]["t"] == 0 else []
+
+
+def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | None = None) -> tuple[str, str, list]:
+    from players import side
     white, black = game.get("white_pl") or game["white"], game.get("black_pl") or game["black"]
     who = f"{white} – {black}"
-    place = ", ".join(str(x) for x in (game.get("site_pl") or game.get("site"), game.get("year")) if x)
+    place = game.get("site_pl") or game.get("site") or ""
+    label = (game.get("label_pl") or game.get("event") or "").replace(" · ", ", ")
     title = f"{script.get('title', who)} | {who} ({game['year']})"
-    lines = [who, place, (game.get("label_pl") or game.get("event") or "").replace(" · ", ", "), ""]
+
+    lines = []
+    if script.get("description"):
+        lines += [script["description"].strip(), ""]
+    lines += [f"Białe: {white}", f"Czarne: {black}",
+              f"Rok: {game['year']}" + (f" · {place}" if place else ""), label]
+    moves_text, n_moves = "", 0
+    if pgn and pgn.exists():
+        import chess.pgn
+        with open(pgn, encoding="utf-8") as fh:
+            g = chess.pgn.read_game(fh)
+        n_moves = (sum(1 for _ in g.mainline_moves()) + 1) // 2
+        moves_text = g.accept(chess.pgn.StringExporter(headers=False, variations=False, comments=False)).strip()
     if game.get("result"):
-        lines.append(f"Wynik: {game['result']}")
-    from players import side
+        lines.append(f"Wynik: {game['result']}" + (f" ({n_moves} {_moves_word(n_moves)})" if n_moves else ""))
+
+    chapters = _chapters(timing or {})
+    if chapters:
+        lines += ["", "Rozdziały:"] + [f"{_ts(c['t'])} {c['title']}" for c in chapters]
+    if moves_text:
+        lines += ["", "Zapis partii (PGN):", moves_text]
+
     credits = []
     for color in ("white", "black"):
-        c = side(game, color, game[color])["credit"]
+        p = side(game, color, game[color])
+        c = p["credit"]
         if c:
-            credits.append(f"{side(game, color, game[color])['name']}: {c.get('author') or 'autor nieznany'}, "
-                           f"{c.get('license')}, {c.get('source_url')}")
+            credits.append(f"{p['name']}: {c.get('author') or 'autor nieznany'}, {c.get('license')}, {c.get('source_url')}")
     if credits:
         lines += ["", "Zdjęcia (Wikimedia Commons):", *credits]
-    lines += ["", "#szachy #chess #historiaszachów"]
-    tags = ["szachy", "chess", "partia szachowa", "historia szachów",
-            white.split()[-1], black.split()[-1]]
-    return title, "\n".join(lines).strip(), tags
+    verified = "Zapis partii sprawdzony w co najmniej dwóch bazach partii. " if game.get("pgn_verified") else ""
+    lines += ["", verified + "Oceny pozycji: Stockfish. Lektor: syntezator mowy. "
+                  "Scenariusz przygotowany z pomocą AI na podstawie zapisu partii.",
+              "", f"#szachy #chess #historiaszachów #{game['white'].split()[-1]} #{game['black'].split()[-1]}"]
+    description = "\n".join(lines).strip()
+    if len(description) > 4900:  # limit YouTube: 5000 znaków — najpierw skracamy zapis partii
+        description = description.replace(moves_text, moves_text[:max(0, len(moves_text) - (len(description) - 4900))] + " …")
+    tags = ["szachy", "chess", "partia szachowa", "historia szachów", "słynne partie szachowe",
+            white.split()[-1], black.split()[-1], f"szachy {game['year']}"]
+    return title, description, tags
 
 
 def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = False, number: int = 1) -> dict:
@@ -119,7 +168,7 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
         + (["--dry-run"] if dry_tts else []))
 
     script = load_json(script_path, {})
-    title, description, tags = describe(game, script)
+    title, description, tags = describe(game, script, pgn, load_json(video.with_suffix(".timing.json"), {}))
     when = f"{publish_at.astimezone(TZ):%Y-%m-%d %H:%M} ({TZ.key})"
     episode = {"id": gid, "publish_at": publish_at.isoformat(), "title": title, "mode": MODE}
     if MODE == "manual":

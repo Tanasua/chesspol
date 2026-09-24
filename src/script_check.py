@@ -52,6 +52,7 @@ class Segment:
     tokens: list
     anchors: list = field(default_factory=list)
     pause_after: float = 0.5
+    chapter: str = ""
 
 
 def _tidy(tokens: list, anchors: list) -> tuple[list, list]:
@@ -128,10 +129,26 @@ def build_segments(script: dict, game) -> tuple[list, list]:
         segments.append(Segment(
             id=sid, tts_text=" ".join(tokens), tokens=tokens, anchors=anchors,
             pause_after=float(raw.get("pause_after", 0.5)),
+            chapter=(raw.get("chapter") or "").strip(),
         ))
 
     if not segments:
         raise ScriptError("Scenariusz nie ma segmentów")
+    desc = (script.get("description") or "").strip()
+    if desc:
+        for m in RAW_MOVE_RE.finditer(desc):
+            raise ScriptError(f"[description] surowy zapis ruchu '{m.group(0)}' — w opisie nie podawaj ruchów")
+        if len(desc) > 1500:
+            raise ScriptError(f"[description] za długi opis ({len(desc)} znaków, maks. 1500)")
+    chapters = [s.chapter for s in segments if s.chapter]
+    if chapters:
+        if not segments[0].chapter:
+            raise ScriptError("Pierwszy segment musi mieć rozdział (chapter), np. 'Wstęp'")
+        if len(chapters) < 3:
+            raise ScriptError(f"Rozdziałów musi być co najmniej 3 (jest {len(chapters)}) albo żadnego")
+        for c in chapters:
+            if len(c) > 60:
+                raise ScriptError(f"Tytuł rozdziału za długi: '{c}' (maks. 60 znaków)")
     if last_ply != n_plies:
         raise ScriptError(f"Scenariusz kończy się na półruchu {last_ply}, a partia ma {n_plies}")
     return segments, warnings

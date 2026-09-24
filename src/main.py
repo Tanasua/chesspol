@@ -8,6 +8,7 @@ Użycie:
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import subprocess
 import sys
@@ -74,7 +75,10 @@ def main() -> int:
     parts = [("silence", LEAD_IN)]
     anchor_times = []
     cursor = LEAD_IN
+    chapters = []
     for seg in segments:
+        if seg.chapter:
+            chapters.append({"t": 0.0 if not chapters else round(cursor, 2), "title": seg.chapter})
         res = dry_run(seg.tts_text, cache) if args.dry_run else synthesize(seg.tts_text, cache, voice_id)
         times = map_tokens_to_times(seg.tokens, res)
         for a in seg.anchors:
@@ -106,6 +110,9 @@ def main() -> int:
             caption=(entry or {}).get("label_pl", ""),
         )
         render_video(renderer, events, duration, wav, out, fps=args.fps)
+    timing = out.with_suffix(".timing.json")
+    timing.write_text(json.dumps({"duration": round(duration, 2), "chapters": chapters},
+                                 ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Gotowe: {out} ({duration:.1f}s)")
     return 0
 

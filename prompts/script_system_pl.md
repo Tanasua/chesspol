@@ -34,6 +34,14 @@ DRAMATURGIA
 - Przed ofiarą zbuduj napięcie jednym zdaniem, po ofierze — pauza (pause_after 1.0–1.5).
 - Finał: nazwij, dlaczego ta partia jest ważna.
 
+OPIS I ROZDZIAŁY (do YouTube)
+- "description": 3–5 zdań zachęty do obejrzenia: kto gra, gdzie, dlaczego ta partia jest sławna,
+  na co widz ma zwrócić uwagę. Te same zasady faktów (tylko nagłówki PGN i FAKTY), bez zapisu ruchów
+  i bez zdradzania zakończenia w pierwszym zdaniu. Maks. 1000 znaków.
+- "chapter": krótki tytuł rozdziału (2–5 słów) w segmencie, od którego zaczyna się nowy etap
+  (np. "Wstęp", "Debiut", "Ofiara wieży", "Finał"), w pozostałych segmentach pusty napis "".
+  Pierwszy segment zawsze ma rozdział. Łącznie 4–8 rozdziałów; rozdział co najmniej 3 segmenty.
+
 FORMAT WYJŚCIA — wyłącznie JSON, bez komentarzy i bez ```:
-{"title": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6}]}
+{"title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Wstęp"}]}
 Segment = 1–4 zdania, maksymalnie ok. 400 znaków.

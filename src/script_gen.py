@@ -132,17 +132,19 @@ def _validate(text: str, game) -> tuple[dict | None, str | None, list]:
 SCRIPT_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["title", "segments"],
+    "required": ["title", "description", "segments"],
     "properties": {
         "title": {"type": "string"},
+        "description": {"type": "string"},
         "segments": {
             "type": "array",
             "items": {
                 "type": "object",
                 "additionalProperties": False,
-                "required": ["id", "text", "pause_after"],
+                "required": ["id", "text", "pause_after", "chapter"],
                 "properties": {
                     "id": {"type": "string"},
+                    "chapter": {"type": "string"},
                     "text": {"type": "string"},
                     "pause_after": {"type": "number"},
                 },

@@ -21,7 +21,7 @@ Pliki:
 - catalog/games.json — 100 partii (kolejność n, metadane zweryfikowane wyszukiwaniem, status PGN); catalog/LISTA.md generuje src/catalog_list.py
 - src/pgn_collect.py — PGN z ≥2 niezależnych kolekcji (mirror rozim/ChessData: PgnMentor, ChessNostalgia, Chessopolis, RebelSite, WorldChampionships, Kingbase, Twic, Old…; + famous_games, ChessPGN); zgodność ruchów, wyniku, rundy i liczby ruchów
 - src/scheduler.py — co 3 dni 10:00 Europe/Kyiv; bufor 2 odcinków; PUBLISH_MODE=manual (domyślnie): paczka do ręcznego uploadu; PUBLISH_MODE=youtube: upload private + publishAt; stan w state/schedule.json
-- src/deliver.py, src/cover.py — paczka out/packages/epNNN-<id>/ (video.mp4, cover.jpg 1280x720, opis.txt: data, tytuł, opis, tagi) -> GitHub Release + opcjonalnie Telegram (sekrety TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; wideo ≤50 MB)
+- src/deliver.py, src/cover.py — paczka out/packages/epNNN-<id>/ (video.mp4, cover.jpg 1280x720, opis.txt: data, tytuł, opis [zachęta z LLM, karta partii, rozdziały z czasami z out/<id>.timing.json, PGN, atrybucja zdjęć, informacja o AI], tagi) -> GitHub Release + opcjonalnie Telegram (sekrety TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; wideo ≤50 MB)
 - src/youtube_upload.py, src/youtube_auth.py — YouTube Data API (OAuth refresh token)
 - .github/workflows/publish.yml — cron codziennie 03:17 UTC, commit stanu do repo
 - .github/workflows/build.yml — workflow_dispatch, sekrety INWORLD_API_KEY, INWORLD_VOICE_ID
