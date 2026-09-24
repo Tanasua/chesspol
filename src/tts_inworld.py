@@ -22,6 +22,24 @@ DEFAULT_MODEL = os.environ.get("INWORLD_MODEL", "inworld-tts-2")
 DEFAULT_LANGUAGE = os.environ.get("INWORLD_LANGUAGE", "pl-PL")
 
 
+class TTSRequestError(RuntimeError):
+    pass
+
+
+def _voice_hint(headers: dict, voice_id: str, model: str) -> str:
+    """Przy błędzie 4xx: lista głosów dla polskiego, żeby łatwo poprawić INWORLD_VOICE_ID."""
+    try:
+        r = requests.get(API_URL.replace("/voice", "/voices"), params={"filter": "language=pl"},
+                         headers=headers, timeout=30)
+        voices = r.json().get("voices", []) if r.ok else []
+    except Exception:  # noqa: BLE001
+        return f"(voiceId={voice_id!r}, modelId={model!r}; listy głosów nie udało się pobrać)"
+    ids = [v.get("voiceId") for v in voices]
+    known = "TAK" if voice_id in ids else "NIE"
+    return (f"voiceId={voice_id!r} (długość {len(voice_id)}) na liście głosów pl: {known}; modelId={model!r}\n"
+            f"Dostępne głosy pl: {', '.join(str(i) for i in ids[:40]) or 'brak odpowiedzi'}")
+
+
 @dataclass
 class TTSResult:
     audio_path: Path
@@ -71,9 +89,12 @@ def synthesize(text: str, cache_dir: Path, voice_id: str, model: str = DEFAULT_M
                 r = requests.post(API_URL, json=body, headers=headers, timeout=120)
                 if r.status_code == 429 or r.status_code >= 500:
                     raise RuntimeError(f"HTTP {r.status_code}: {r.text[:300]}")
-                r.raise_for_status()
+                if r.status_code >= 400:  # błąd zapytania — ponawianie nic nie da
+                    raise TTSRequestError(f"HTTP {r.status_code}: {r.text[:500]}\n{_voice_hint(headers, voice_id, model)}")
                 data = r.json()
                 break
+            except TTSRequestError:
+                raise
             except Exception as e:  # noqa: BLE001
                 last_err = e
                 time.sleep(2 ** attempt)
