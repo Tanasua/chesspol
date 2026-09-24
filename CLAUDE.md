@@ -20,11 +20,12 @@ Pliki:
 - prompts/script_system_pl.md — system prompt do generowania scenariuszy
 - catalog/games.json — 100 partii (kolejność n, metadane zweryfikowane wyszukiwaniem, status PGN); catalog/LISTA.md generuje src/catalog_list.py
 - src/pgn_collect.py — PGN z ≥2 niezależnych kolekcji (mirror rozim/ChessData: PgnMentor, ChessNostalgia, Chessopolis, RebelSite, WorldChampionships, Kingbase, Twic, Old…; + famous_games, ChessPGN); zgodność ruchów, wyniku, rundy i liczby ruchów
-- src/scheduler.py — co 3 dni 10:00 Europe/Kyiv; bufor 2 odcinków; upload jako private + publishAt (YouTube publikuje sam); stan w state/schedule.json
+- src/scheduler.py — co 3 dni 10:00 Europe/Kyiv; bufor 2 odcinków; PUBLISH_MODE=manual (domyślnie): paczka do ręcznego uploadu; PUBLISH_MODE=youtube: upload private + publishAt; stan w state/schedule.json
+- src/deliver.py, src/cover.py — paczka out/packages/epNNN-<id>/ (video.mp4, cover.jpg 1280x720, opis.txt: data, tytuł, opis, tagi) -> GitHub Release + opcjonalnie Telegram (sekrety TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; wideo ≤50 MB)
 - src/youtube_upload.py, src/youtube_auth.py — YouTube Data API (OAuth refresh token)
 - .github/workflows/publish.yml — cron codziennie 03:17 UTC, commit stanu do repo
 - .github/workflows/build.yml — workflow_dispatch, sekrety INWORLD_API_KEY, INWORLD_VOICE_ID
-- sekrety publish.yml: OPENAI_API_KEY, INWORLD_API_KEY, INWORLD_VOICE_ID, YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN
+- sekrety publish.yml: OPENAI_API_KEY, INWORLD_API_KEY, INWORLD_VOICE_ID; opcjonalnie TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; tylko w trybie youtube: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN
 
 ## Zasady nienaruszalne
 1. Ruchy w lektorze pochodzą WYŁĄCZNIE z PGN przez markery. LLM nigdy nie zapisuje ruchów sam.

@@ -3,8 +3,9 @@
 Uruchamiany codziennie (GitHub Actions). Utrzymuje BUFFER zaplanowanych odcinków
 w przyszłości: bierze następną gotową partię z catalog/games.json, w razie potrzeby
 generuje scenariusz (script_gen.py), renderuje (main.py) i wgrywa na YouTube jako
-prywatny z publishAt — YouTube sam publikuje o zadanej godzinie. Do tego czasu film
-można obejrzeć i poprawić/usunąć w YouTube Studio.
+prywatny z publishAt (PUBLISH_MODE=youtube) albo — domyślnie (PUBLISH_MODE=manual) — robi paczkę
+do ręcznego uploadu: wideo, okładka, tytuł, opis, tagi i planowana data (src/deliver.py:
+out/packages/, GitHub Release, opcjonalnie Telegram).
 
 Partia jest gotowa, gdy: games/<id>.pgn istnieje, pgn_verified == true, disputed != true.
 
@@ -36,6 +37,7 @@ BUFFER = int(os.environ.get("BUFFER", "2"))            # ile odcinków trzymać 
 MAX_PER_RUN = int(os.environ.get("MAX_PER_RUN", "1"))
 MIN_LEAD = timedelta(hours=int(os.environ.get("MIN_LEAD_HOURS", "6")))  # zapas na przetworzenie przez YouTube
 LOW_QUEUE_WARN = 3
+MODE = os.environ.get("PUBLISH_MODE", "manual")  # manual: paczka do ręcznego uploadu; youtube: upload z publishAt
 
 
 def load_json(path: Path, default):
@@ -104,7 +106,7 @@ def describe(game: dict, script: dict) -> tuple[str, str, list]:
     return title, "\n".join(lines).strip(), tags
 
 
-def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = False) -> dict:
+def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = False, number: int = 1) -> dict:
     gid = game["id"]
     pgn = ROOT / "games" / f"{gid}.pgn"
     script_path = ROOT / "scripts" / f"{gid}.json"
@@ -118,15 +120,51 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
 
     script = load_json(script_path, {})
     title, description, tags = describe(game, script)
-    episode = {"id": gid, "publish_at": publish_at.isoformat(), "title": title, "video_id": None}
+    when = f"{publish_at.astimezone(TZ):%Y-%m-%d %H:%M} ({TZ.key})"
+    episode = {"id": gid, "publish_at": publish_at.isoformat(), "title": title, "mode": MODE}
+    if MODE == "manual":
+        episode.update(deliver_package(game, pgn, video, title, description, tags, when, number,
+                                       remote=not dry_tts))
+        print(f"Paczka gotowa: {title} -> {when}")
+        return episode
     if no_upload:
-        print(f"[no-upload] {title} -> {publish_at.astimezone(TZ):%Y-%m-%d %H:%M %Z}")
+        print(f"[no-upload] {title} -> {when}")
         return episode
 
     from youtube_upload import upload, video_body
     episode["video_id"] = upload(video, video_body(title, description, tags, publish_at))
-    print(f"Wgrano {episode['video_id']}: {title} -> {publish_at.astimezone(TZ):%Y-%m-%d %H:%M %Z}")
+    print(f"Wgrano {episode['video_id']}: {title} -> {when}")
     return episode
+
+
+def deliver_package(game: dict, pgn: Path, video: Path, title: str, description: str, tags: list,
+                    when: str, number: int, remote: bool = True) -> dict:
+    from cover import make_cover
+    from deliver import github_release, telegram, write_package
+    from pgn_loader import load_game
+    from players import side
+
+    g = load_game(pgn)
+    tag = f"ep{number:03d}-{game['id']}"
+    cover = make_cover(g, title.split(" | ")[0], side(game, "white", game["white"]),
+                       side(game, "black", game["black"]), str(game["year"]), ROOT / "out" / f"{game['id']}_cover.jpg")
+    pkg = write_package(ROOT / "out" / "packages" / tag, video, cover, title, description, tags, when)
+    info = {"package": str((ROOT / "out" / "packages" / tag).relative_to(ROOT))}
+    if not remote:
+        return info
+    try:
+        url = github_release(tag, f"#{number} {title.split(' | ')[0]} — {when}", pkg, ROOT)
+        if url:
+            info["release_url"] = url
+            print(f"GitHub Release: {url}")
+    except subprocess.CalledProcessError as e:
+        print(f"::warning::GitHub Release nie powstał: {e.stderr.strip()[:300]}")
+    try:
+        info["telegram"] = telegram(pkg, title, when, info.get("release_url"))
+    except Exception as e:  # noqa: BLE001 — Telegram to wygoda, nie blokuje odcinka
+        print(f"::warning::Telegram: {e.__class__.__name__}: {str(e)[:200]}")
+        info["telegram"] = False
+    return info
 
 
 def main() -> int:
@@ -169,9 +207,9 @@ def main() -> int:
             return 1
         game = q.pop(0)
         slot = next_slot(episodes, now, first_day)
-        episode = produce(game, slot, args.no_upload, args.dry_tts)
-        if args.no_upload:
-            break
+        episode = produce(game, slot, args.no_upload, args.dry_tts, number=len(episodes) + 1)
+        if args.dry_tts or (args.no_upload and MODE != "manual"):
+            break  # test — bez zapisu stanu
         episodes.append(episode)
         if args.first_day and not state.get("first_day"):
             state["first_day"] = args.first_day

@@ -1,6 +1,7 @@
 name: publish-episodes
 
-# Codziennie: utrzymuje BUFFER odcinków zaplanowanych na YouTube (publishAt).
+# Codziennie: utrzymuje BUFFER odcinków przygotowanych naprzód. Tryb manual (domyślny): paczka
+# (wideo, okładka, tytuł, opis, tagi, data) w GitHub Releases + opcjonalnie Telegram; tryb youtube: publishAt.
 # Publikacja co 3 dni o 10:00 Europe/Kyiv robi sam YouTube — opóźnienia crona nie mają znaczenia.
 on:
   schedule:
@@ -65,6 +66,10 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           STOCKFISH_PATH: /usr/games/stockfish
+          PUBLISH_MODE: manual          # manual = paczki do ręcznego uploadu; youtube = automatyczny upload
+          GH_TOKEN: ${{ github.token }}  # GitHub Release z paczką
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PUBLISH_TZ: Europe/Kyiv
           PUBLISH_HOUR: "10"
           INTERVAL_DAYS: "3"
@@ -91,6 +96,6 @@ jobs:
         if: always()
         with:
           name: episodes-${{ github.run_id }}
-          path: out/*.mp4
+          path: out/packages/
           if-no-files-found: ignore
           retention-days: 14
