@@ -20,7 +20,7 @@ Pliki:
 - prompts/script_system_pl.md — system prompt do generowania scenariuszy
 - catalog/games.json — 100 partii (kolejność n, metadane zweryfikowane wyszukiwaniem, status PGN); catalog/LISTA.md generuje src/catalog_list.py
 - src/pgn_collect.py — PGN z ≥2 niezależnych kolekcji (mirror rozim/ChessData: PgnMentor, ChessNostalgia, Chessopolis, RebelSite, WorldChampionships, Kingbase, Twic, Old…; + famous_games, ChessPGN); zgodność ruchów, wyniku, rundy i liczby ruchów
-- src/scheduler.py — co 3 dni 10:00 Europe/Warsaw; bufor 2 odcinków; upload jako private + publishAt (YouTube publikuje sam); stan w state/schedule.json
+- src/scheduler.py — co 3 dni 10:00 Europe/Kyiv; bufor 2 odcinków; upload jako private + publishAt (YouTube publikuje sam); stan w state/schedule.json
 - src/youtube_upload.py, src/youtube_auth.py — YouTube Data API (OAuth refresh token)
 - .github/workflows/publish.yml — cron codziennie 03:17 UTC, commit stanu do repo
 - .github/workflows/build.yml — workflow_dispatch, sekrety INWORLD_API_KEY, INWORLD_VOICE_ID

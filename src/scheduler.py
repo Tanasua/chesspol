@@ -29,7 +29,7 @@ SRC = ROOT / "src"
 CATALOG = ROOT / "catalog" / "games.json"
 STATE = ROOT / "state" / "schedule.json"
 
-TZ = ZoneInfo(os.environ.get("PUBLISH_TZ", "Europe/Warsaw"))
+TZ = ZoneInfo(os.environ.get("PUBLISH_TZ", "Europe/Kyiv"))
 PUBLISH_HOUR = int(os.environ.get("PUBLISH_HOUR", "10"))
 INTERVAL_DAYS = int(os.environ.get("INTERVAL_DAYS", "3"))
 BUFFER = int(os.environ.get("BUFFER", "2"))            # ile odcinków trzymać zaplanowanych naprzód
