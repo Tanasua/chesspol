@@ -18,12 +18,15 @@ from pathlib import Path
 from pgn_loader import load_game
 from players import catalog_entry, side
 from render import Renderer, render_video, schedule
-from script_check import build_segments, load_script
+from script_check import Segment, build_segments, load_script
 from tts_inworld import dry_run, map_tokens_to_times, synthesize
 
 LEAD_IN = 1.0     # sekundy ciszy na początku (pozycja startowa na ekranie)
 TAIL = 3.0        # końcowa pauza z pozycją matową / końcową
-DRIFT_WARN = 0.3  # ostrzeżenie, gdy animacja spóźnia się względem lektora
+DRIFT_WARN = 0.3
+# Stałe zakończenie każdego odcinka (czytane przez lektora po scenariuszu)
+OUTRO = ("Dziękujemy za obejrzenie. Jeśli interesujecie się szachami, "
+         "polubcie ten film i zasubskrybujcie kanał.")  # ostrzeżenie, gdy animacja spóźnia się względem lektora
 
 
 def build_audio(parts: list, out_wav: Path, workdir: Path) -> None:
@@ -58,6 +61,8 @@ def main() -> int:
     game = load_game(args.pgn)
     script = load_script(args.script)
     segments, warnings = build_segments(script, game)
+    if OUTRO:
+        segments.append(Segment(id="outro", tts_text=OUTRO, tokens=OUTRO.split(), pause_after=0.3))
     for w in warnings:
         print("UWAGA:", w, file=sys.stderr)
     print(f"OK: {len(game.plies)} półruchów, {len(segments)} segmentów")
