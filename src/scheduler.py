@@ -86,9 +86,18 @@ def describe(game: dict, script: dict) -> tuple[str, str, list]:
     who = f"{white} – {black}"
     place = ", ".join(str(x) for x in (game.get("site_pl") or game.get("site"), game.get("year")) if x)
     title = f"{script.get('title', who)} | {who} ({game['year']})"
-    lines = [who, place, game.get("event") or "", ""]
+    lines = [who, place, (game.get("label_pl") or game.get("event") or "").replace(" · ", ", "), ""]
     if game.get("result"):
         lines.append(f"Wynik: {game['result']}")
+    from players import side
+    credits = []
+    for color in ("white", "black"):
+        c = side(game, color, game[color])["credit"]
+        if c:
+            credits.append(f"{side(game, color, game[color])['name']}: {c.get('author') or 'autor nieznany'}, "
+                           f"{c.get('license')}, {c.get('source_url')}")
+    if credits:
+        lines += ["", "Zdjęcia (Wikimedia Commons):", *credits]
     lines += ["", "#szachy #chess #historiaszachów"]
     tags = ["szachy", "chess", "partia szachowa", "historia szachów",
             white.split()[-1], black.split()[-1]]

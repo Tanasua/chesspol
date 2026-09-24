@@ -12,7 +12,9 @@ Pliki:
 - src/pl_notation.py — polska notacja (K H W G S) i zapis słowny ruchów dla TTS
 - src/script_check.py — markery {{m:N}} (ruch czytany, tekst ruchu wstawia system) i {{s:N}} (ruch cichy); twarda walidacja
 - src/tts_inworld.py — POST https://api.inworld.ai/tts/v1/voice, timestampType WORD, cache na dysku, dopasowanie słów przez difflib
-- src/render.py — klatki 1920x1080, animacja ruchu (roszada, bicie w przelocie, promocja), panel ruchów, schedule() bez nachodzenia animacji
+- src/render.py — klatki 1920x1080: szachownica 1000x1000 na środku (białe na dole); lewa kolumna: czarne u góry, białe u dołu (zdjęcie, imię, NAZWISKO, pasek przy stronie na ruchu), pośrodku rok + catalog.label_pl; prawa kolumna: bieżący ruch + lista ruchów (tylko rozegrane); animacja ruchu, schedule() bez nachodzenia animacji
+- src/players.py — nazwy do kadru (nadpisania *_first/*_last w katalogu), zdjęcia assets/players/<slug>.jpg + .json
+- src/fetch_portraits.py — zdjęcia: Wikidata P18 -> Commons, tylko PD/CC0/CC BY/CC BY-SA, pełna zgodność nazwy + zawód szachista + rok urodzenia; raport assets/players/REPORT.md; atrybucja w kadrze i w opisie YouTube
 - src/main.py — CLI: --check-only, --dry-run
 - src/script_gen.py — PGN -> tabela półruchów (N, SAN, FEN, ocena Stockfisha) -> OpenAI Responses API (gpt-5.5, SCRIPT_MODEL; OPENAI_API_KEY) z prompts/script_system_pl.md -> build_segments -> do 3 poprawek -> scripts/<nazwa>.json
 - prompts/script_system_pl.md — system prompt do generowania scenariuszy
@@ -41,6 +43,7 @@ Pliki:
 - script_gen.py: pętla poprawek przetestowana na atrapie LLM; realne wywołanie API NIE zweryfikowane (brak klucza).
 - Katalog: 78/100 partii z PGN potwierdzonym w ≥2 kolekcjach (wrzesień 2026). Uwaga: kolekcje mogą mieć wspólne pochodzenie
   (to mirrory stron, nie niezależne redakcje). Reszta: 1 źródło / brak / konflikt (Fischer–Petrosian 1971: 33...Nxb4 vs Nxf4).
+- Zdjęcia: fetch_portraits.py przetestowany tylko na atrapie API (Wikimedia zablokowane w środowisku deweloperskim); pierwsze prawdziwe pobranie w GitHub Actions — przejrzeć REPORT.md.
 - YouTube: projekt Google Cloud bez audytu API => filmy z videos.insert blokowane jako prywatne (publishAt nie zadziała). Wymagany audyt.
 - Inworld: polski to Tier 1 dla inworld-tts-2; ukraiński tylko Tier 2 w tts-2, brak w tts-1.5.
 

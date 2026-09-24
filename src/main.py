@@ -15,6 +15,7 @@ import tempfile
 from pathlib import Path
 
 from pgn_loader import load_game
+from players import catalog_entry, side
 from render import Renderer, render_video, schedule
 from script_check import build_segments, load_script
 from tts_inworld import dry_run, map_tokens_to_times, synthesize
@@ -96,7 +97,14 @@ def main() -> int:
     with tempfile.TemporaryDirectory() as tmp:
         wav = Path(tmp) / "voice.wav"
         build_audio(parts, wav, Path(tmp))
-        renderer = Renderer(game, script.get("title", game.headers.get("Event", "")))
+        entry = catalog_entry(Path(args.pgn).stem)
+        renderer = Renderer(
+            game, script.get("title", game.headers.get("Event", "")),
+            white=side(entry, "white", game.headers.get("White", "?")),
+            black=side(entry, "black", game.headers.get("Black", "?")),
+            year=str(entry["year"]) if entry else "",
+            caption=(entry or {}).get("label_pl", ""),
+        )
         render_video(renderer, events, duration, wav, out, fps=args.fps)
     print(f"Gotowe: {out} ({duration:.1f}s)")
     return 0
