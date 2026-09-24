@@ -121,7 +121,7 @@ def commons_file(filename: str) -> dict | None:
         if not info:
             return None
         meta = info.get("extmetadata", {})
-        get = lambda k: html.unescape(re.sub(r"<[^>]+>", "", meta.get(k, {}).get("value", ""))).strip()
+        get = lambda k: " ".join(html.unescape(re.sub(r"<[^>]+>", "", meta.get(k, {}).get("value", ""))).split())
         return {"file": filename, "thumb": info.get("thumburl") or info.get("url"),
                 "source_url": info.get("descriptionurl"), "author": get("Artist") or None,
                 "license": get("LicenseShortName"), "license_url": get("LicenseUrl") or None}

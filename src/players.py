@@ -52,6 +52,8 @@ def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     photo_key = slug(e.get(color) or pgn_name)  # zdjęcia po nazwie z bazy, nie po wersji polskiej
     jpg, meta = PHOTOS / f"{photo_key}.jpg", PHOTOS / f"{photo_key}.json"
     credit = json.loads(meta.read_text(encoding="utf-8")) if meta.exists() else None
+    if credit and credit.get("author"):
+        credit["author"] = " ".join(credit["author"].split())  # autor z Commons bywa wielowierszowy
     return {"name": name, "first": first, "last": last,
             "photo": jpg if jpg.exists() else None, "credit": credit}
 

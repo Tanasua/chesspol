@@ -28,6 +28,10 @@ MARKER_RE = re.compile(r"\{\{([ms]):(\d+)\}\}")
 # Surowe ruchy w tekście (angielska i polska notacja) — zakazane poza markerami.
 RAW_MOVE_RE = re.compile(r"(?<![\w-])(?:[KQRBNHWGS]x?[a-h]?[1-8]?x?[a-h][1-8]|O-O(?:-O)?|[a-h]x[a-h][1-8])(?![\w])")
 MAX_AUTO_GAP = 6
+# Zapis ruchu jest wstawiany w mianowniku ("goniec na ce cztery") — nie może stać po przyimku
+# wymagającym innego przypadku ("po gońcu…"). Taki tekst brzmi niegramatycznie.
+PREPOSITIONS = {"po", "przed", "przez", "od", "do", "za", "o", "z", "ze", "na", "w", "we", "nad", "pod",
+                "dla", "bez", "wobec", "dzięki", "mimo", "wśród", "podczas", "zamiast"}
 
 
 class ScriptError(ValueError):
@@ -84,6 +88,18 @@ def build_segments(script: dict, game) -> tuple[list, list]:
 
         for m in RAW_MOVE_RE.finditer(MARKER_RE.sub(" ", text)):
             raise ScriptError(f"[{sid}] surowy zapis ruchu '{m.group(0)}' w tekście — użyj markera {{{{m:N}}}}")
+
+        for m in MARKER_RE.finditer(text):
+            before = text[:m.start()].rstrip()
+            prev_word = before.split()[-1].lower() if before.split() else ""
+            if prev_word.strip(",;") in PREPOSITIONS and not before.endswith((",", ";")):
+                raise ScriptError(
+                    f"[{sid}] marker {m.group(0)} stoi po przyimku '{prev_word}' — zapis ruchu jest w mianowniku, "
+                    f"więc zdanie będzie niegramatyczne. Wstaw ruch po dwukropku, np. 'Białe grają: {m.group(0)}.'")
+            if m.group(1) == "s" and before and before[-1] not in ".!?:—–" and not MARKER_RE.search(before[-12:]):
+                raise ScriptError(
+                    f"[{sid}] cichy marker {m.group(0)} stoi w środku zdania — nie jest czytany, więc zdanie się "
+                    f"rozpada. Stawiaj {{{{s:N}}}} tylko na początku zdania (po kropce) i nie opieraj na nim treści zdania.")
 
         tokens, anchors = [], []
         pos = 0
