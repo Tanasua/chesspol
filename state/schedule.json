@@ -1,0 +1,14 @@
+{
+  "episodes": [
+    {
+      "id": "anderssen_kieseritzky_1851",
+      "publish_at": "2026-09-27T07:00:00+00:00",
+      "title": "Nieśmiertelna partia: Anderssen kontra Kieseritzky | Adolf Anderssen – Lionel Kieseritzky (1851)",
+      "mode": "manual",
+      "package": "out/packages/ep001-anderssen_kieseritzky_1851",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep001-anderssen_kieseritzky_1851",
+      "telegram": true
+    }
+  ],
+  "first_day": "2026-09-27"
+}

@@ -1,0 +1,105 @@
+{
+  "title": "Nieśmiertelna partia: Anderssen kontra Kieseritzky",
+  "segments": [
+    {
+      "id": "s01",
+      "text": "Londyn, tysiąc osiemset pięćdziesiąty pierwszy rok. Adolf Anderssen gra z Lionelem Kieseritzkym partię towarzyską, która dostanie nazwę: Nieśmiertelna partia. Białe ruszają: {{m:1}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "text": "{{s:2}} Czarne nie unikają walki. Anderssen od razu podkręca temperaturę: {{m:3}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "text": "{{s:4}} Gambit zostaje przyjęty, a białe celują w króla: {{m:5}}. Czarne nie czekają i robią szacha: {{m:6}}. Król musi zejść z bezpiecznej ścieżki: {{m:7}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s04",
+      "text": "{{s:8}} Zamiast spokojnego rozwoju mamy zaczepkę na skrzydle. Anderssen bierze materiał: {{m:9}}. {{s:10}} Czarne nie odpuszczają nacisku.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "text": "Białe spokojnie kończą pierwszy etap: {{m:11}}. Ich król nadal stoi nietypowo, więc każdy kontakt figur ma znaczenie. Czarne przestawiają hetmana: {{m:12}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "text": "{{s:13}} Środek planszy dostaje podpórkę. I nagle: {{m:14}}. Według ocen białe mogą tu poczuć lekki wiatr w żagle.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "text": "Anderssen nie wybiera spokoju: {{m:15}}. Czarne natychmiast ustawiają presję na skrzydle: {{m:16}}. Białe odpowiadają aktywnie: {{m:17}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "text": "{{s:18}} Czarne pytają, czy białe naprawdę zostają w ataku. Anderssen przesuwa piony przed własnym królem: {{m:19}}. {{s:20}} Napięcie nie znika; pozycja aż prosi się o iskry.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "text": "Teraz pojawia się wieża: {{m:21}}. I wtedy czarne zdejmują ważną figurę: {{m:22}}. Silnik widzi już wyraźną przewagę białych, choć na planszy wygląda to jak chaos.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s10",
+      "text": "Białe nie bronią się biernie. Zamiast tego pchają atak: {{m:23}}. Czarne trzymają hetmana przy królu: {{m:24}}. Białe dokładają kolejne tempo: {{m:25}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "text": "Hetman czarnych musi nadal szukać miejsca: {{m:26}}. Anderssen sprowadza własnego hetmana do gry: {{m:27}}. {{s:28}} Czarne robią miejsce figurom, ale ich król zostaje w centrum.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "text": "Białe odzyskują część porządku: {{m:29}}. Czarne odpowiadają: {{m:30}}. Teraz do ataku dochodzi kolejna figura: {{m:31}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "text": "Tu następuje ważny zgrzyt dla czarnych: {{m:32}}. Po tej decyzji przewaga białych według silnika staje się bardzo duża. Anderssen natychmiast wchodzi głębiej: {{m:33}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "text": "Kieseritzky bierze, co może: {{m:34}}. I teraz, zamiast ratować materiał, Anderssen podkręca napięcie: {{m:35}}. To jest moment ryzyka; ocena nagle odwraca się na korzyść czarnych.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s15",
+      "text": "Czarne wchodzą hetmanem jeszcze głębiej: {{m:36}}. Król białych nie chowa się — wychodzi do gry: {{m:37}}. To wygląda jak zaproszenie do katastrofy.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "text": "Kieseritzky zabiera kolejną wieżę: {{m:38}}. Białe oddały ogrom materiału, ale ich figury stoją jak sprężyna. Anderssen uruchamia centrum: {{m:39}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "text": "Czarne wykonują spokojnie wyglądający ruch: {{m:40}}. I tu partia nagle przestaje być o materiale — na planszy pojawia się forsowny mat. Pierwszy cios: {{m:41}}.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s18",
+      "text": "Król czarnych ma ucieczkę: {{m:42}}. Teraz najważniejsze: hetman białych wchodzi na pole, z którego nie planuje wrócić. Anderssen gra: {{m:43}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s19",
+      "text": "Czarne przyjmują prezent: {{m:44}}. Hetman znika, ale właśnie dlatego ostatnia linia się otwiera. I finał jest natychmiastowy: {{m:45}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s20",
+      "text": "To dlatego ta partia przeszła do historii jako Nieśmiertelna partia: nie przez wynik jeden do zera, tylko przez serię poświęceń, w której materiał przestaje mieć znaczenie. Anderssen pokazuje atak do samego końca, a Kieseritzky zostaje w matowej sieci.",
+      "pause_after": 0.8
+    }
+  ]
+}
