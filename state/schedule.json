@@ -8,6 +8,15 @@
       "package": "out/packages/ep001-anderssen_kieseritzky_1851",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep001-anderssen_kieseritzky_1851",
       "telegram": true
+    },
+    {
+      "id": "shirov_polgar_1994",
+      "publish_at": "2026-09-30T07:00:00+00:00",
+      "title": "Shirov kontra Polgar: Buenos Aires tysiąc dziewięćset dziewięćdziesiąty czwarty | Alexei Shirov – Judit Polgar (1994)",
+      "mode": "manual",
+      "package": "out/packages/ep002-shirov_polgar_1994",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep002-shirov_polgar_1994",
+      "telegram": true
     }
   ],
   "first_day": "2026-09-27"
