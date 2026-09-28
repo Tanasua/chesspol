@@ -11,6 +11,9 @@ on:
       first_day:
         description: "Data pierwszej publikacji YYYY-MM-DD (tylko przy pierwszym uruchomieniu)"
         required: false
+      ahead:
+        description: "Ile odcinków mieć gotowych naprzód (domyślnie 2; np. 6 = zrób zapas)"
+        required: false
       no_upload:
         description: "Test: bez uploadu na YouTube"
         type: boolean
@@ -26,7 +29,7 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
 
@@ -74,6 +77,8 @@ jobs:
           PUBLISH_TZ: Europe/Kyiv
           PUBLISH_HOUR: "10"
           INTERVAL_DAYS: "3"
+          BUFFER: ${{ inputs.ahead || '2' }}
+          MAX_PER_RUN: ${{ inputs.ahead || '1' }}
           FIRST_DAY: ${{ inputs.first_day }}
           NO_UPLOAD: ${{ inputs.no_upload }}
         run: |
