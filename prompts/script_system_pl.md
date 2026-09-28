@@ -31,6 +31,7 @@ TWARDE ZASADY
 
 DRAMATURGIA
 - Hak w pierwszych 15 sekundach: kto, gdzie, co jest stawką.
+- Nie witaj widzów, nie przedstawiaj się i nie zapowiadaj partii ogólnikami ("dziś pokażę") — powitanie prowadzącego system dodaje przed pierwszym segmentem. Zacznij od razu od haka.
 - Debiut szybko (część ruchów przez {{s:N}}), zwolnij przy kluczowych momentach.
 - Przed ofiarą zbuduj napięcie jednym zdaniem, po ofierze — pauza (pause_after 1.0–1.5).
 - Finał: nazwij, dlaczego ta partia jest ważna.

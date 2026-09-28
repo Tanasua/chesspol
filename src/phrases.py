@@ -1,22 +1,36 @@
-"""Stałe zwroty kanału: zapowiedź na początku odcinka i dopisek do tytułu YouTube.
+"""Stałe zwroty kanału: powitanie prowadzącego na początku odcinka i dopisek do tytułu YouTube.
 
 Wybór zależy od numeru partii w katalogu (n): stabilny przy ponownym renderze,
 a kolejne odcinki dostają kolejne warianty, więc zwroty się nie powtarzają pod rząd.
+
+Imię prowadzącego: HOST_NAME, a gdy brak — nazwa głosu Inworld (INWORLD_VOICE_ID, np. "Wojciech"),
+żeby imię zgadzało się z głosem. Bez imienia powitanie jest bez przedstawiania się.
 """
 from __future__ import annotations
 
 import hashlib
+import os
+import re
+
+GREETING = [
+    "Cześć, nazywam się {name}.",
+    "Cześć, tu {name}.",
+    "Witajcie, z tej strony {name}.",
+    "Dzień dobry, nazywam się {name}.",
+]
+GREETING_NO_NAME = ["Cześć.", "Witajcie.", "Dzień dobry."]
 
 INTRO = [
+    "Dziś poznamy legendarną partię.",
     "Dziś pokażę Wam niezwykle ciekawą partię.",
-    "Dziś pokażę Wam partię, która na stałe weszła do historii szachów.",
-    "Oto partia, którą powinien znać każdy, kto poważnie interesuje się szachami.",
+    "Dziś poznamy partię, która na stałe weszła do historii szachów.",
+    "Dziś pokażę Wam partię, którą powinien znać każdy, kto poważnie interesuje się szachami.",
     "Dziś przed nami partia, która przeszła do historii światowych szachów.",
-    "Pokażę Wam partię, którą każdy miłośnik szachów powinien zobaczyć przynajmniej raz.",
+    "Dziś pokażę Wam partię, którą każdy miłośnik szachów powinien zobaczyć przynajmniej raz.",
     "Dziś zapraszam Was na jedną z najciekawszych partii w dziejach szachów.",
-    "To partia, o której szachiści mówią od lat. Zaraz zobaczycie dlaczego.",
+    "Dziś poznamy partię, o której szachiści mówią od lat. Zaraz zobaczycie dlaczego.",
     "Dziś pokażę Wam partię, którą warto znać, nawet jeśli dopiero zaczynacie przygodę z szachami.",
-    "Przed nami partia, bez której trudno opowiedzieć historię szachów.",
+    "Dziś poznamy partię, bez której trudno opowiedzieć historię szachów.",
     "Dziś pokażę Wam partię, która do dziś zachwyca szachistów na całym świecie.",
 ]
 
@@ -39,8 +53,21 @@ def _index(game: dict | None, pool: list, offset: int, salt: str) -> int:
     return int(hashlib.sha256(f"{salt}:{key}".encode()).hexdigest(), 16) % len(pool)
 
 
-def intro_for(game: dict | None) -> str:
-    return INTRO[_index(game, INTRO, 0, "intro")]
+def host_name() -> str:
+    name = os.environ.get("HOST_NAME", "").strip()
+    if name:
+        return name
+    voice = os.environ.get("INWORLD_VOICE_ID", "").strip()
+    return voice if re.fullmatch(r"[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]+", voice) else ""
+
+
+def intro_for(game: dict | None, name: str | None = None) -> str:
+    name = host_name() if name is None else name
+    if name:
+        greet = GREETING[_index(game, GREETING, 1, "greet")].format(name=name)
+    else:
+        greet = GREETING_NO_NAME[_index(game, GREETING_NO_NAME, 1, "greet")]
+    return f"{greet} {INTRO[_index(game, INTRO, 0, 'intro')]}"
 
 
 def title_hook_for(game: dict | None) -> str:

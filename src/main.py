@@ -85,8 +85,8 @@ def main() -> int:
     segments, warnings = build_segments(script, game)
     entry = catalog_entry(Path(args.pgn).stem)
     intro = intro_for(entry)
-    if intro:  # zapowiedź kanału zaraz po pierwszym segmencie (haku) scenariusza
-        segments.insert(1, Segment(id="intro", tts_text=intro, tokens=intro.split(), pause_after=0.6))
+    if intro:  # powitanie prowadzącego na samym początku, przed hakiem scenariusza
+        segments.insert(0, Segment(id="intro", tts_text=intro, tokens=intro.split(), pause_after=0.6))
     if OUTRO:
         segments.append(Segment(id="outro", tts_text=OUTRO, tokens=OUTRO.split(), pause_after=0.3))
     for w in warnings:
