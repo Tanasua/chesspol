@@ -128,6 +128,22 @@ def commons_file(filename: str) -> dict | None:
     return None
 
 
+def clean_author(raw: str | None) -> str | None:
+    """Pole Artist z Commons bywa opisem, a nie nazwiskiem — wyciągamy czytelny podpis."""
+    if not raw:
+        return None
+    a = " ".join(raw.split())
+    m = re.search(r"taken by (.+?)(?:Autorem|Wykorzystuj|$)", a)
+    if m:
+        return m.group(1).strip(" .")
+    if re.search(r"original uploader was|unbekannt|unknown author|anonymous", a, re.I):
+        return "autor nieznany"
+    m = re.match(r"[^:]+\.(?:jpe?g|png|tif+)\s*:\s*(.+?)\s*derivative work:\s*(.+?)(?:\s*\(talk\))?$", a, re.I)
+    if m:
+        return f"{m.group(1)}; oprac. {m.group(2)}"
+    return a[:80]
+
+
 def license_ok(lic: str) -> bool:
     return bool(lic) and bool(LICENSE_OK.match(lic)) and not LICENSE_BAD.search(lic)
 
@@ -171,7 +187,8 @@ def main() -> int:
             r = session.get(info["thumb"], timeout=60)
             r.raise_for_status()
             Image.open(io.BytesIO(r.content)).convert("RGB").save(jpg, "JPEG", quality=88)
-            info.update(qid=person["id"], name=name, matched=how)
+            info.update(qid=person["id"], name=name, matched=how, author_raw=info.get("author"),
+                        author=clean_author(info.get("author")))
             info.pop("thumb", None)
             meta_path.write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             report.append(f"| {name} | ✅ {how} | {person['id']} | {info['license']} | {info['author'] or ''} |")

@@ -16,7 +16,8 @@ TWARDE ZASADY
    albo z sekcji FAKTY, jeśli ją dostaniesz. Niczego nie dopowiadaj z pamięci.
    Jeśli czegoś nie wiesz — pomiń.
 5. Oceny typu "błąd", "najlepszy ruch" tylko wtedy, gdy potwierdza je ocena silnika.
-6. Liczby i daty pisz słownie ("tysiąc osiemset pięćdziesiąty ósmy").
+6. W polu "text" (lektor) liczby i daty pisz słownie ("tysiąc osiemset pięćdziesiąty ósmy").
+   W "title" i "description" (tekst na YouTube) — cyframi ("1858").
 7. Nie wstawiaj markerów dwóch ruchów bezpośrednio obok siebie bez słowa przerwy.
 8. Zapis ruchu jest wstawiany w mianowniku ("goniec na ce cztery"). Marker {{m:N}} stawiaj więc
    jako osobną frazę — po dwukropku albo na początku zdania: "Czarne odpowiadają: {{m:12}}."
@@ -33,6 +34,10 @@ DRAMATURGIA
 - Debiut szybko (część ruchów przez {{s:N}}), zwolnij przy kluczowych momentach.
 - Przed ofiarą zbuduj napięcie jednym zdaniem, po ofierze — pauza (pause_after 1.0–1.5).
 - Finał: nazwij, dlaczego ta partia jest ważna.
+
+TYTUŁ
+- "title": krótki, maks. 60 znaków, bez nazwisk graczy i bez roku (system sam dopisze
+  "| Białe – Czarne (rok)"). Np. "Nieśmiertelna partia", "Ofiara hetmana w Paryżu".
 
 OPIS I ROZDZIAŁY (do YouTube)
 - "description": 3–5 zdań zachęty do obejrzenia: kto gra, gdzie, dlaczego ta partia jest sławna,

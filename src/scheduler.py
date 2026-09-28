@@ -106,13 +106,26 @@ def _chapters(timing: dict) -> list:
     return out if len(out) >= 3 and out[0]["t"] == 0 else []
 
 
+def _yt_title(main: str, white: dict | str, black: str, game: dict) -> str:
+    """Tytuł YouTube (maks. 100 znaków): '<tytuł> | Białe – Czarne (rok)', w razie potrzeby nazwiska."""
+    year = game["year"]
+    full = f"{white} – {black}"
+    short = f"{str(white).split()[-1]} – {str(black).split()[-1]}"
+    for who in (full, short):
+        t = f"{main} | {who} ({year})" if main else f"{who} ({year})"
+        if len(t) <= 100:
+            return t
+    suffix = f" | {short} ({year})"
+    return f"{short} ({year})" if not main else f"{main[:100 - len(suffix) - 1].rstrip()}…{suffix}"
+
+
 def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | None = None) -> tuple[str, str, list]:
     from players import side
     white, black = game.get("white_pl") or game["white"], game.get("black_pl") or game["black"]
     who = f"{white} – {black}"
     place = game.get("site_pl") or game.get("site") or ""
     label = (game.get("label_pl") or game.get("event") or "").replace(" · ", ", ")
-    title = f"{script.get('title', who)} | {who} ({game['year']})"
+    title = _yt_title(script.get("title") or "", white, black, game)
 
     lines = []
     if script.get("description"):

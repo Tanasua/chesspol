@@ -134,6 +134,9 @@ def build_segments(script: dict, game) -> tuple[list, list]:
 
     if not segments:
         raise ScriptError("Scenariusz nie ma segmentów")
+    title = (script.get("title") or "").strip()
+    if len(title) > 70:
+        raise ScriptError(f"[title] za długi tytuł ({len(title)} znaków, maks. 70) — bez nazwisk i roku")
     desc = (script.get("description") or "").strip()
     if desc:
         for m in RAW_MOVE_RE.finditer(desc):
