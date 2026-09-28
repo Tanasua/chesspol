@@ -17,6 +17,15 @@
       "package": "out/packages/ep002-shirov_polgar_1994",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep002-shirov_polgar_1994",
       "telegram": true
+    },
+    {
+      "id": "rubinstein_lasker_1909",
+      "publish_at": "2026-10-03T07:00:00+00:00",
+      "title": "Partia na zawsze w historii szachów: Precyzja w Petersburgu | Rubinstein – Lasker (1909)",
+      "mode": "manual",
+      "package": "out/packages/ep003-rubinstein_lasker_1909",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep003-rubinstein_lasker_1909",
+      "telegram": true
     }
   ],
   "first_day": "2026-09-27"

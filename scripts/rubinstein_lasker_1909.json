@@ -1,0 +1,138 @@
+{
+  "title": "Precyzja w Petersburgu",
+  "description": "Akiba Rubinstein gra białymi z Emanuelem Laskerem w rundzie 3 turnieju St. Petersburg 1909 w Petersburgu. Z pozoru spokojne ustawienie szybko zamienia się w walkę o inicjatywę i wejście do końcówki. Siła tej partii tkwi w tym, jak białe powoli powiększają przewagę, a potem zamieniają ją w marsz króla i pionów. Wynik zapisany w PGN to 1-0.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Petersburg, tysiąc dziewięćset dziewiąty rok, trzecia runda turnieju. Akiba Rubinstein siada naprzeciw Emanuela Laskera — i z pozycji, która wygląda spokojnie, ma wycisnąć końcówkę, w której każdy krok króla boli. Rubinstein zaczyna: {{m:1}}. Lasker nie unika centrum: {{m:2}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Białe szybko stawiają drugi filar: {{m:3}}. Czarne rozwijają figurę: {{m:4}}. Po chwili nacisk na centrum rośnie: {{m:5}}, a Lasker odpowiada: {{m:6}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Goniec białych wychodzi aktywnie: {{m:7}}. Lasker uderza w centrum: {{m:8}}. Rubinstein bierze napięcie na siebie: {{m:9}}. Czarne odbijają: {{m:10}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut",
+      "text": "Teraz figury zaczynają krążyć wokół centrum. Białe rozwijają skoczka: {{m:11}}. Czarne od razu wyjaśniają sytuację: {{m:12}}. Rubinstein odbija: {{m:13}}, a Lasker wzmacnia nacisk: {{m:14}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Białe domykają pozycję: {{m:15}}. Lasker kończy rozwój kolejnej figury: {{m:16}}. Rubinstein zwiększa presję: {{m:17}}. Czarne odpowiadają spokojnie: {{m:18}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Rubinstein usuwa ważnego obrońcę: {{m:19}}. Czarne odbijają: {{m:20}}. Potem biały skoczek wchodzi w sam środek: {{m:21}}. Lasker bierze go: {{m:22}}, a białe porządkują strukturę: {{m:23}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Nagle hetman czarnych wyskakuje: {{m:24}}. To wygląda groźnie, bo białe figury muszą liczyć się z królem. Rubinstein nie cofa się: {{m:25}}, a czarne odbijają: {{m:26}}. Białe przestawiają skoczka: {{m:27}}, a Lasker chowa króla na przeciwne skrzydło: {{m:28}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "Iskra w centrum",
+      "text": "Rubinstein robi najspokojniejszą rzecz: {{m:29}}. Czarne ustawiają wieżę: {{m:30}}. Na pierwszy rzut oka pozycja nadal trzyma się w całości, ale ocena już wyraźnie przechyla się w stronę białych. Pada: {{m:31}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "I teraz Lasker bierze decyzję aktywną, ryzykowną, w samym sercu pozycji. Czarne grają: {{m:32}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Rubinstein nie łapie się za głowę. Kontratakuje z szachem: {{m:33}}. Czarne biją wieżę: {{m:34}}. Biały hetman wraca do gry: {{m:35}}, a czarne dobierają się do piona: {{m:36}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Najważniejsze: białe kończą rachunek materiału: {{m:37}}. Lasker próbuje ustawić ostatnią wieżę aktywnie: {{m:38}}. Po tym ruchu przewaga białych mocno rośnie; silnik pokazuje już dużą przewagę. Natychmiast przychodzi szach: {{m:39}}, a król czarnych idzie na bok: {{m:40}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s12",
+      "chapter": "Hetmany znikają",
+      "text": "Rubinstein aktywizuje wieżę: {{m:41}}. Lasker próbuje zamknąć linię: {{m:42}}. Białe przestawiają hetmana z tempem: {{m:43}}. Czarne proponują wymianę: {{m:44}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Rubinstein przyjmuje: {{m:45}}. Król czarnych musi odbić: {{m:46}}. I od razu biała wieża zabiera kolejny ważny punkt: {{m:47}}. Czarna wieża odpowiada szachem: {{m:48}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Król białych nie ucieka daleko, tylko podchodzi do gry: {{m:49}}. Szach jeszcze raz: {{m:50}}. Rubinstein wybiera aktywność: {{m:51}}. Lasker zgarnia pionka: {{m:52}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Końcówka jest już na planszy, ale to nie jest techniczna formalność. Biała wieża wchodzi na bok: {{m:53}}. Czarne próbują ją odciąć: {{m:54}}. Rubinstein ustawia ją znowu aktywnie: {{m:55}}, a czarny król szuka obrony: {{m:56}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "Marsz króla",
+      "text": "Teraz widać plan białych: nie pośpiech, tylko poprawianie każdego pionka. Pada: {{m:57}}. Czarne przestawiają wieżę: {{m:58}}. Białe ruszają skrzydłem: {{m:59}}, a czarny król wraca do walki: {{m:60}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Rubinstein zdobywa przestrzeń: {{m:61}}. Lasker cofa króla: {{m:62}}. Biały król wychodzi z roli obserwatora: {{m:63}}. Czarne odpowiadają centralizacją: {{m:64}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Białe pchają pionka na skrzydle: {{m:65}}. Czarne próbują zatrzymać marsz: {{m:66}}. Król Rubinsteina idzie jeszcze bliżej: {{m:67}}. Lasker odpowiada: {{m:68}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "I wtedy białe uruchamiają centrum: {{m:69}}. Czarne szukają kontrgry wieżą: {{m:70}}. Rubinstein odcina drogę: {{m:71}}. Król czarnych musi reagować: {{m:72}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "Finał",
+      "text": "Ostatnie ruchy są jak dociskanie śruby. Biała wieża wraca na aktywną linię: {{m:73}}. Czarne trzymają się królem: {{m:74}}. Rubinstein powtarza nacisk: {{m:75}}, a Lasker schodzi: {{m:76}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Jeszcze jedno przestawienie wieży: {{m:77}}. Czarny król wraca: {{m:78}}. I białe wykonują spokojny ruch piona: {{m:79}}. Tu zapis kończy się wynikiem jeden do zera.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Ta partia jest ważna nie przez fajerwerki, tylko przez precyzję. Rubinstein przeciwko Laskerowi pokazuje, jak z niewielkiej przewagi zrobić presję, z presji końcówkę, a z końcówki pozycję, w której przeciwnik nie ma już dobrego czekania.",
+      "pause_after": 0.6
+    }
+  ]
+}

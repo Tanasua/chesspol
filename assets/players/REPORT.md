@@ -6,8 +6,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 |---|---|---|---|---|
 | Adolf Anderssen | ✅ (już jest) | Q57155 | Public domain |  |
 | Akiba Rubinstein | ✅ (już jest) | Q318597 | Public domain | Unknown authorUnknown author |
-| Alexander Alekhine | ✅ (już jest) | Q131374 | Public domain | Alexandre_Alekhine_01.jpg: George Grantham Bain Collection (Library of Congress)
-derivative work: JesusAngelRey (talk) |
+| Alexander Alekhine | ✅ (już jest) | Q131374 | Public domain | George Grantham Bain Collection (Library of Congress); oprac. JesusAngelRey |
 | Alexander Beliavsky | ✅ (już jest) | Q352413 | CC BY-SA 3.0 | Stefan64 |
 | Alexander Kotov | ✅ (już jest) | Q364896 | CC0 | Jack de Nijs for Anefo |
 | Alexander McDonnell | brak zdjęcia w Wikidata | Q555043 | | |
@@ -40,24 +39,21 @@ derivative work: JesusAngelRey (talk) |
 | Ian Nepomniachtchi | ✅ (już jest) | Q521817 | CC BY-SA 2.0 | Frans Peeters |
 | Jan Timman | ✅ (już jest) | Q139438 | Public domain | Winicjusz Drozdowski, Poland |
 | Jan-Krzysztof Duda | ✅ (już jest) | Q10860652 | CC BY 3.0 pl | Danuta Matloch / Ministerstwo Kultury, Dziedzictwa Narodowego i Sportu |
-| Jean Dufresne | ✅ (już jest) | Q62040 | Public domain | The original uploader was Samson1964 at German Wikipedia.
-
-(Original text: unbekannt) |
+| Jean Dufresne | ✅ (już jest) | Q62040 | Public domain | autor nieznany |
 | Johann Hermann Bauer | brak zdjęcia w Wikidata | Q700107 | | |
 | Johannes Zukertort | ✅ (już jest) | Q60182 | Public domain |  |
-| John Nunn | ✅ (już jest) | Q450419 | CC BY-SA 3.0 | JohnNunn10.jpg: Stefan64
-derivative work: Brittle heaven (talk) |
+| John Nunn | ✅ (już jest) | Q450419 | CC BY-SA 3.0 | Stefan64; oprac. Brittle heaven |
 | Joseph Henry Blackburne | ✅ (już jest) | Q352459 | Public domain |  |
-| José Raúl Capablanca | ✅ (już jest) | Q160702 | Public domain | AnonymousUnknown author (Keystone-France) |
+| José Raúl Capablanca | ✅ (już jest) | Q160702 | Public domain | autor nieznany (Keystone-France) |
 | José Sanz Aguado | ✅ (już jest) | Q9014806 | CC BY-SA 3.0 | Lear88 |
-| Judit Polgar | ✅ (już jest) | Q183250 | CC BY-SA 3.0 | This photo was taken by Przemysław JahrAutorem zdjęcia jest Przemysław JahrWykorzystując zdjęcie proszę podać jako autora:Przemysław Jahr / Wikimedia Commons |
+| Judit Polgar | ✅ (już jest) | Q183250 | CC BY-SA 3.0 | Przemysław Jahr / Wikimedia Commons |
 | Lajos Portisch | ✅ (już jest) | Q390430 | CC BY-SA 4.0 | MBIHund |
 | Lazaro Bruzon Batista | ✅ (już jest) | Q932307 | CC BY-SA 3.0 | Stefan64 |
 | Lev Polugaevsky | ✅ (już jest) | Q434000 | CC0 | Croes, Rob / Anefo |
 | Levon Aronian | ✅ (już jest) | Q154586 | CC BY-SA 3.0 | Stefan64 |
 | Lionel Kieseritzky | ✅ (już jest) | Q313177 | Public domain |  |
-| Louis Paulsen | ✅ (już jest) | Q60377 | Public domain | The original uploader was Miastko at German Wikipedia. |
-| Louis-Charles Mahé de La Bourdonnais | ✅ (już jest) | Q312020 | Public domain | The original uploader was Jaapvanderkooij at Dutch Wikipedia. |
+| Louis Paulsen | ✅ (już jest) | Q60377 | Public domain | autor nieznany |
+| Louis-Charles Mahé de La Bourdonnais | ✅ (już jest) | Q312020 | Public domain | autor nieznany |
 | Luděk Pachman | ✅ (już jest) | Q61673 | CC BY-SA 3.0 | Unknown authorUnknown author |
 | Magnus Carlsen | ✅ (już jest) | Q106807 | CC BY-SA 2.0 | Andreas Kontokanis from Piraeus, Greece |
 | Martín Ortueta Esteban | brak: brak wyników w Wikidata | | | |
@@ -67,7 +63,7 @@ derivative work: Brittle heaven (talk) |
 | Mikhail Chigorin | ✅ (już jest) | Q298286 | Public domain |  |
 | Mikhail Tal | ✅ (już jest) | Q102664 | CC BY-SA 3.0 nl | Croes, Rob C. for Anefo |
 | Mir Sultan Khan | ✅ (już jest) | Q1351701 | CC BY-SA 4.0 | Unknown Cameraman of 1932 |
-| Nigel Short | ✅ (już jest) | Q313778 | CC BY-SA 3.0 | This photo was taken by Przemysław JahrAutorem zdjęcia jest Przemysław JahrWykorzystując zdjęcie proszę podać jako autora:Przemysław Jahr / Wikimedia Commons |
+| Nigel Short | ✅ (już jest) | Q313778 | CC BY-SA 3.0 | Przemysław Jahr / Wikimedia Commons |
 | Oleg Chernikov | brak zdjęcia w Wikidata | Q4513619 | | |
 | Ossip Bernstein | ✅ (już jest) | Q470169 | Public domain | PDFSimpli; instructions by User:Friend |
 | Pal Benko | ✅ (już jest) | Q465247 | CC0 | Broers, F.N. / Anefo |
@@ -79,15 +75,13 @@ derivative work: Brittle heaven (talk) |
 | Rashid Nezhmetdinov | brak zdjęcia w Wikidata | Q203477 | | |
 | Richard Réti | ✅ (już jest) | Q312985 | Public domain |  |
 | Robert Eugene Byrne | ✅ (już jest) | Q961003 | CC0 | Evers, Joost / Anefo |
-| Robert James Fischer | ✅ (już jest) | Q41314 | CC BY-SA 3.0 | Bundesarchiv_Bild_183-76052-0335,_Schacholympiade,_Tal_(UdSSR)_gegen_Fischer_(USA).jpg: Kohls, Ulrich
-
-derivative work: Karpouzi |
+| Robert James Fischer | ✅ (już jest) | Q41314 | CC BY-SA 3.0 | Ulrich Kohls (Bundesarchiv); oprac. Karpouzi |
 | Savielly Tartakower | ✅ (już jest) | Q161135 | Public domain |  |
 | Sergey Karjakin | ✅ (już jest) | Q217198 | CC BY-SA 3.0 | Vladimir Barskij |
 | Siegbert Tarrasch | ✅ (już jest) | Q76558 | Public domain |  |
 | Sipke Ernst | ✅ (już jest) | Q738658 | CC BY-SA 3.0 | Stefan64 |
 | Stepan Levitsky | ✅ (już jest) | Q166086 | Public domain | Unknown authorUnknown author |
-| Tigran Petrosian | ✅ (już jest) | Q180636 | CC0 | Harry Pot for Anefo ), 1945-1989 - negatiefstroken zwart/wit, nummer toegang 2.24.01.05, bestanddeelnummer 910-9356 |
+| Tigran Petrosian | ✅ (już jest) | Q180636 | CC0 | Harry Pot / Anefo |
 | Vasily Smyslov | ✅ (już jest) | Q104148 | CC0 | Koen Suyk / Anefo |
 | Vassily Ivanchuk | ✅ (już jest) | Q208229 | CC BY 3.0 | GibChess |
 | Veselin Topalov | ✅ (już jest) | Q172798 | CC BY-SA 3.0 | Stefan64 |

@@ -1,0 +1,216 @@
+{
+  "title": "Taktyczny pożar w Bledzie",
+  "description": "W szóstej rundzie Candidates 1959 w Bledzie Mikhail Tal gra białymi przeciw Robertowi Jamesowi Fischerowi. Partia zaczyna się od spokojnej walki o centrum, ale szybko przechodzi w nacisk na obu skrzydłach i coraz ostrzejsze motywy wokół króla. Warto śledzić, jak Tal najpierw buduje przestrzeń, potem oddaje materiał, a na końcu zamienia aktywność figur w decydujący atak. Wynik z nagłówka to 1-0, ale droga do niego jest pełna zwrotów.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "W Bledzie, w szóstej rundzie turnieju kandydatów tysiąc dziewięćset pięćdziesiątego dziewiątego roku, Mikhail Tal gra białymi z Robertem Jamesem Fischerem. Stawką nie jest efektowny trik, tylko punkt w walce kandydatów.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:1}} Tal od razu bierze centrum, a Fischer odpowiada spokojnie: {{m:2}}. Nie ma fajerwerków; jest budowa pozycji, w której każdy pionek za chwilę będzie miał znaczenie.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:3}} Białe dokładają drugi pion centralny, czarne przygotowują gońca na długiej przekątnej: {{m:4}}. Tal nie zwalnia i ustawia skoczka w centrum walki: {{m:5}}. Czarne kończą plan: {{m:6}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut",
+      "text": "Białe zajmują jeszcze więcej przestrzeni: {{m:7}}. Fischer odpowiada twardo: {{m:8}}, a po rozwoju białych król czarnych szybko znika z centrum: {{m:10}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:11}} Czarne uderzają w centrum: {{m:12}}. Tal zamyka strukturę ruchem: {{m:13}}, i od tej chwili plansza dzieli się na dwa fronty.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Fischer przegrupowuje figurę: {{m:14}}. Tal przypina ważnego obrońcę: {{m:15}}, a czarne pytają go pionem: {{m:16}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Biały goniec cofa się bez paniki: {{m:17}}. Fischer rusza pionem na skrzydle hetmańskim: {{m:18}}, ale silnik już sugeruje, że białe mogą szukać inicjatywy.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "Pierwszy nacisk",
+      "text": "Tal ustawia skoczka bliżej centrum: {{m:19}}. Fischer przenosi hetmana na bardziej aktywną linię: {{m:20}}, a białe chowają króla: {{m:21}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Czarne wybierają manewr skoczkiem: {{m:22}}. I tu Tal natychmiast korzysta z przestrzeni: {{m:23}}. Pion na skrzydle hetmańskim nie jest dekoracją; on zaczyna wypychać czarne figury.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Fischer odpowiada skoczkiem: {{m:24}}. Tal wzmacnia centrum ruchem: {{m:25}}, a czarne szykują kontrgrę: {{m:26}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Biały goniec schodzi z tempa: {{m:27}}. Hetman Fischera wraca do obrony i ataku jednocześnie: {{m:28}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Tal ustawia wieżę za pionem ce: {{m:29}}. Czarny skoczek wraca: {{m:30}}, ale zaraz białe przepchną sprawy dalej.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "Skrzydło płonie",
+      "text": "Nadchodzi przełom przestrzenny: {{m:31}}. Fischer rozwija gońca: {{m:32}}, a Tal dokłada hetmana do nacisku: {{m:33}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Czarny skoczek wskakuje agresywnie: {{m:34}}. Tal odpowiada ruchem pionem: {{m:35}}, jakby mówił: jeśli walczymy na skrzydle, to do końca.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Fischer otwiera centrum: {{m:36}}. Białe odbijają figurą: {{m:37}}, a czarne natychmiast wymieniają: {{m:38}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Tal odbija pionem: {{m:39}}. Fischer ustawia skoczka na aktywnym polu: {{m:40}} i przez chwilę wygląda, że czarne dostały dokładnie taką grę, jakiej chciały.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Ale biały pion wchodzi głęboko: {{m:41}}. Fischer przenosi hetmana w pobliże króla: {{m:42}}, więc napięcie rośnie po obu stronach.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Tal nie odchodzi od planu i broni się aktywnie: {{m:43}}. Czarne wreszcie biją pionem: {{m:44}}, ale białe mają kolejny ruch do przodu.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s19",
+      "chapter": "Środek szachownicy",
+      "text": "Tal odbija w centrum: {{m:45}}. Według silnika przewaga niemal znika; to nie jest spacer białych, tylko cienka lina.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Fischer odpowiada aktywnym gońcem: {{m:46}}. Tal wymienia: {{m:47}}, a czarne hetmanem zdejmują ostatnią zasłonę: {{m:48}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Białe cofają gońca w obronę: {{m:49}}. Fischer zabiera piona na skrzydle: {{m:50}}, i materiał zaczyna się mieszać z inicjatywą.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Tal usuwa groźną figurę: {{m:51}}. Czarne odbijają: {{m:52}}, a biały skoczek zjada kolejnego piona: {{m:53}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Fischer broni się wieżą: {{m:54}}. Tal centralizuje hetmana: {{m:55}}, po czym czarne stawiają wieżę na linii ce: {{m:56}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Białe podciągają wieżę: {{m:57}}. Czarny goniec wchodzi na przekątną: {{m:58}}. Druga biała wieża dołącza do obrony i ataku: {{m:59}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s25",
+      "chapter": "Cisza przed burzą",
+      "text": "Fischer poprawia króla: {{m:60}}. Tal dokłada pionka na skrzydle: {{m:61}}, a czarna wieża szuka presji z boku: {{m:62}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "Król białych wychodzi z diagonalnych motywów: {{m:63}}. Czarny hetman wraca do ataku: {{m:64}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s27",
+      "chapter": "",
+      "text": "Tal odpowiada spokojnym ruchem pionem: {{m:65}}. Fischer podwaja siły na linii: {{m:66}}, i teraz każdy ruch przy królu może ważyć całą partię.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s28",
+      "chapter": "",
+      "text": "Białe biją pionem: {{m:67}}. Fischer odpowiada gońcem: {{m:68}}. W tym momencie silnik pokazuje wyraźny skok: białe mają już wielką szansę.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s29",
+      "chapter": "",
+      "text": "Tal nie spieszy się z biciem. Najpierw stawia skoczka w centrum: {{m:69}}. Czarny hetman szuka kontrszans: {{m:70}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s30",
+      "chapter": "Finał taktyczny",
+      "text": "Teraz wszystko zależy od jednej decyzji: czy białe mogą oddać jakość, żeby skoczek wszedł z tempem? Tal wybiera ogień: {{m:71}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s31",
+      "chapter": "",
+      "text": "Fischer przyjmuje wyzwanie: {{m:72}}. I wtedy pojawia się skoczek z szachem: {{m:73}}.",
+      "pause_after": 1
+    },
+    {
+      "id": "s32",
+      "chapter": "",
+      "text": "Czarny król odchodzi w róg: {{m:74}}. Hetman Tala natychmiast włącza się do ataku: {{m:75}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s33",
+      "chapter": "",
+      "text": "Fischer zasłania się wieżą: {{m:76}}. Ale ta obrona kosztuje, bo biały skoczek zabiera materiał: {{m:77}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s34",
+      "chapter": "",
+      "text": "Król czarnych robi jeszcze jeden krok: {{m:78}}. Tal otwiera drogę pionem: {{m:79}}, nie pozwalając czarnym złapać oddechu.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s35",
+      "chapter": "",
+      "text": "Fischer wybiera bicie: {{m:80}}. Ostatni akord należy do hetmana: {{m:81}}. Ta partia jest ważna, bo pokazuje Tala nie jako samego łowcę ofiar, lecz gracza, który z małej przewagi robi taktyczny finał przeciw Fischerowi.",
+      "pause_after": 1
+    }
+  ]
+}
