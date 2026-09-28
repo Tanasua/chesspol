@@ -4,6 +4,7 @@ Użycie:
   python src/main.py --pgn games/opera_1858.pgn --script scripts/opera_1858.json --out out/opera.mp4
   python src/main.py ... --dry-run      # bez Inworld: cisza + szacowane czasy
   python src/main.py ... --check-only   # tylko walidacja PGN i scenariusza
+  python src/main.py ... --no-music     # bez muzyki w tle
 """
 from __future__ import annotations
 
@@ -27,7 +28,13 @@ TAIL = 3.0        # końcowa pauza z pozycją matową / końcową
 DRIFT_WARN = 0.3
 # Stałe zakończenie każdego odcinka (czytane przez lektora po scenariuszu)
 OUTRO = ("Dziękujemy za obejrzenie. Jeśli interesujecie się szachami, "
-         "polubcie ten film i zasubskrybujcie kanał.")  # ostrzeżenie, gdy animacja spóźnia się względem lektora
+         "polubcie ten film i zasubskrybujcie kanał.")
+# Muzyka w tle: zapętlona, cicho pod lektorem, wyciszana na końcu. MUSIC="" wyłącza.
+ROOT = Path(__file__).resolve().parent.parent
+MUSIC = os.environ.get("MUSIC", str(ROOT / "assets" / "music" / "the_daily_ostinato.mp3"))
+MUSIC_GAIN_DB = float(os.environ.get("MUSIC_GAIN_DB", "-20"))  # utwór ma ok. -16 LUFS -> ok. -36 LUFS w tle
+MUSIC_FADE_IN = 2.0
+MUSIC_FADE_OUT = 6.0
 
 
 def build_audio(parts: list, out_wav: Path, workdir: Path) -> None:
@@ -48,6 +55,19 @@ def build_audio(parts: list, out_wav: Path, workdir: Path) -> None:
                     "-c", "pcm_s16le", str(out_wav)], check=True)
 
 
+def mix_music(voice_wav: Path, music: Path, duration: float, out_wav: Path) -> None:
+    """Lektor + muzyka (pętla) -> 48k stereo PCM; muzyka narasta na starcie i płynnie cichnie na końcu."""
+    fade_out = min(MUSIC_FADE_OUT, duration / 2)
+    flt = (f"[1:a]aformat=sample_rates=48000:channel_layouts=stereo,atrim=0:{duration:.3f},"
+           f"volume={MUSIC_GAIN_DB}dB,afade=t=in:d={MUSIC_FADE_IN},"
+           f"afade=t=out:st={duration - fade_out:.3f}:d={fade_out:.3f}[m];"
+           "[0:a]aformat=sample_rates=48000:channel_layouts=stereo[v];"
+           "[v][m]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[out]")
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(voice_wav), "-stream_loop", "-1", "-i", str(music),
+                    "-filter_complex", flt, "-map", "[out]", "-t", f"{duration:.3f}", "-c:a", "pcm_s16le",
+                    str(out_wav)], check=True)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pgn", required=True)
@@ -57,6 +77,7 @@ def main() -> int:
     ap.add_argument("--check-only", action="store_true")
     ap.add_argument("--cache", default=".tts_cache")
     ap.add_argument("--fps", type=int, default=25)
+    ap.add_argument("--no-music", action="store_true")
     args = ap.parse_args()
 
     game = load_game(args.pgn)
@@ -111,6 +132,13 @@ def main() -> int:
     with tempfile.TemporaryDirectory() as tmp:
         wav = Path(tmp) / "voice.wav"
         build_audio(parts, wav, Path(tmp))
+        if MUSIC and not args.no_music:
+            if Path(MUSIC).exists():
+                mixed = Path(tmp) / "mix.wav"
+                mix_music(wav, Path(MUSIC), duration, mixed)
+                wav = mixed
+            else:
+                print(f"UWAGA: brak pliku muzyki {MUSIC} — odcinek bez muzyki", file=sys.stderr)
         renderer = Renderer(
             game, script.get("title", game.headers.get("Event", "")),
             white=side(entry, "white", game.headers.get("White", "?")),
