@@ -26,6 +26,15 @@
       "package": "out/packages/ep003-rubinstein_lasker_1909",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep003-rubinstein_lasker_1909",
       "telegram": true
+    },
+    {
+      "id": "tal_fischer_1959",
+      "publish_at": "2026-10-06T07:00:00+00:00",
+      "title": "Partia, którą musisz znać: Taktyczny pożar w Bledzie | Mikhail Tal – Robert James Fischer (1959)",
+      "mode": "manual",
+      "package": "out/packages/ep004-tal_fischer_1959",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep004-tal_fischer_1959",
+      "telegram": true
     }
   ],
   "first_day": "2026-09-27"
