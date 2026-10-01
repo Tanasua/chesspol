@@ -1,0 +1,13 @@
+{
+  "episodes": [
+    {
+      "id": "botvinnik_portisch_1968",
+      "publish_at": "2026-10-02T07:00:00+00:00",
+      "title": "Eine der berühmtesten Partien: Die siebte Reihe entscheidet | Botvinnik – Portisch (1968)",
+      "mode": "manual",
+      "package": "out/packages/de-ep001-botvinnik_portisch_1968",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep001-botvinnik_portisch_1968",
+      "telegram": true
+    }
+  ]
+}
