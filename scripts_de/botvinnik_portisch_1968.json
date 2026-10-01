@@ -1,0 +1,150 @@
+{
+  "title": "Die siebte Reihe entscheidet",
+  "description": "Mikhail Botvinnik spielt in Monte Carlo 1968 mit Weiß gegen Lajos Portisch in Runde 7. Die Partie beginnt ruhig, doch aus der Struktur entsteht ein präziser Einbruch über die offenen Linien. Achtet darauf, wie Botvinnik erst Druck sammelt und dann Material investiert, um den schwarzen König freizulegen. Das Ergebnis ist 1-0 für Weiß.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Monte Carlo, neunzehnhundertachtundsechzig, Runde sieben. Botwinnik hat Weiß, Portisch hat Schwarz. Aus einer scheinbar ruhigen Struktur entsteht eine Partie, in der eine offene Linie und die siebte Reihe plötzlich alles entscheiden.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Weiß beginnt ruhig: {{m:1}}. Schwarz nimmt sofort Raum im Zentrum: {{m:2}}. Noch wirkt das wie normales Entwickeln, aber die Bauernstruktur legt schon die Richtung fest.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:3}} Die Figuren kommen heraus, und Schwarz entwickelt sich ebenfalls. Weiß bereitet den Fianchetto-Aufbau vor: {{m:5}}. Botwinnik spielt nicht auf Eile, sondern auf Felder.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "Schwarz kontert im Zentrum: {{m:6}}. Weiß tauscht sofort: {{m:7}}. Schwarz nimmt zurück: {{m:8}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Jetzt kommt die typische Ruhe vor dem Streit: {{m:9}}. Schwarz entwickelt den Läufer nach vorn: {{m:10}}. Die Stellung bleibt solide, aber Weiß hat schon ein kleines Plus.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Weiß holt eine weitere Figur ins Spiel: {{m:11}}. Schwarz beantwortet das gesund: {{m:12}}. Kurz danach bringt Weiß den König in Sicherheit: {{m:13}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Druck am Damenflügel",
+      "text": "Schwarz zieht den Springer zurück in die Struktur: {{m:14}}. Botwinnik entscheidet sich nicht für direkten Druck, sondern festigt erst: {{m:15}}. Das ist vorsichtig, aber nicht passiv.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "{{s:16}} Schwarz entwickelt sich weiter. Weiß macht dem schwarzen Damenflügel eine Frage: {{m:17}}. Portisch antwortet mit Raumgewinn: {{m:18}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Botwinnik stellt den Läufer aktiv: {{m:19}}. Schwarz rochiert: {{m:20}}. Noch ist alles geordnet, aber beide Seiten haben ihre Hebel.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Jetzt tauscht Weiß einen Springer gegen ein klares Ziel: {{m:21}}. Schwarz nimmt: {{m:22}}. Die weiße Dame übernimmt die offene Spur: {{m:23}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "Die Linien öffnen sich",
+      "text": "Schwarz stellt den Läufer dazwischen: {{m:24}}. Botwinnik sammelt Kräfte auf der ce-Linie: {{m:25}}. Der Angriff beginnt nicht mit Schach, sondern mit Koordination.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Schwarz stellt einen Turm gegenüber: {{m:26}}. Weiß bringt den zweiten Turm näher: {{m:27}}. Das ist kein Angriff auf den König, es ist ein Angriff auf die schwarze Ordnung.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Portisch zieht seinen Läufer zurück: {{m:28}}. Botwinnik komplettiert die Batterie: {{m:29}}. Jetzt hängt sehr viel an der schwarzen Antwort.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Und hier kippt die Partie. Schwarz zieht: {{m:30}}. Die Bewertung springt deutlich, Weiß steht jetzt klar besser.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s15",
+      "chapter": "Der Einbruch",
+      "text": "Botwinnik muss nicht lange suchen. Die siebte Reihe ist offen, und der Turm kann hinein. Weiß schlägt zu: {{m:31}}.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Schwarz versucht, den Eindringling zu blockieren: {{m:32}}. Jetzt kommt der Punkt, an dem Botwinnik Kontrolle in Material umtauscht. Weiß opfert weiter: {{m:33}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Schwarz nimmt den Turm: {{m:34}}. Aber der zweite weiße Turm steht schon bereit. Die schwarze Grundstellung wirkt plötzlich dünn.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Weiß dringt weiter ein: {{m:35}}. Schwarz gibt dem König ein Feld: {{m:36}}. Botwinnik bleibt auf der siebten Reihe: {{m:37}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s19",
+      "chapter": "König im Netz",
+      "text": "Portisch sucht Gegenspiel mit der Dame: {{m:38}}. Botwinnik setzt den König unter Schach: {{m:39}}. Schwarz weicht aus: {{m:40}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Weiß bringt den Springer an den Rand, aber mit konkreter Idee: {{m:41}}. Schwarz nimmt den Turm: {{m:42}}. Das sieht nach Entlastung aus, doch die Bewertung bleibt klar auf weißer Seite.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Jetzt springt die Falle zu: {{m:43}}. Der schwarze König muss weiter: {{m:44}}. Weiß zieht den Läufer ins Zentrum: {{m:45}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s22",
+      "chapter": "Finale",
+      "text": "Portisch stellt sich dazwischen: {{m:46}}. Botwinnik öffnet mit Schach die nächste Linie: {{m:47}}. Schwarz versucht, die Lage mit einem Bauernzug zu verändern: {{m:48}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Jetzt ist der König fast ohne Schutz, und Weiß kann noch eine Figur investieren. Das nächste Opfer kommt mit Schach: {{m:49}}.",
+      "pause_after": 1.4
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Schwarz geht auf ein anderes Feld: {{m:50}}. Botwinnik setzt den letzten Schlag dieser Aufzeichnung: {{m:51}}. Hier endet die Partie mit dem Ergebnis eins zu null. Wichtig ist sie, weil sie zeigt, wie ruhiger Druck in einen konkreten Angriff umschlägt.",
+      "pause_after": 1.0
+    }
+  ]
+}
