@@ -2,7 +2,8 @@
 
 Użycie:
   python src/main.py --pgn games/opera_1858.pgn --script scripts/opera_1858.json --out out/opera.mp4
-  python src/main.py ... --dry-run      # bez Inworld: cisza + szacowane czasy
+  python src/main.py ... --dry-run      # bez TTS: cisza + szacowane czasy
+  CHANNEL=de python src/main.py ...     # kanał niemiecki (src/lang.py): zapis ruchów, zwroty, ElevenLabs
   python src/main.py ... --check-only   # tylko walidacja PGN i scenariusza
   python src/main.py ... --no-music     # bez muzyki w tle
 """
@@ -17,18 +18,22 @@ import tempfile
 from pathlib import Path
 
 from pgn_loader import load_game
-from phrases import intro_for
+from lang import L, field_
+from phrases import OUTRO, intro_for
 from players import catalog_entry, side
 from render import Renderer, render_video, schedule
 from script_check import Segment, build_segments, load_script
-from tts_inworld import dry_run, map_tokens_to_times, synthesize
+from tts_inworld import dry_run, map_tokens_to_times
+
+if L.tts == "elevenlabs":
+    from tts_elevenlabs import synthesize
+else:
+    from tts_inworld import synthesize
 
 LEAD_IN = 1.0     # sekundy ciszy na początku (pozycja startowa na ekranie)
 TAIL = 3.0        # końcowa pauza z pozycją matową / końcową
 DRIFT_WARN = 0.3
-# Stałe zakończenie każdego odcinka (czytane przez lektora po scenariuszu)
-OUTRO = ("Dziękujemy za obejrzenie. Jeśli interesujecie się szachami, "
-         "polubcie ten film i zasubskrybujcie kanał.")
+# Stałe zakończenie każdego odcinka (OUTRO, czytane po scenariuszu) — w src/phrases.py, w języku kanału
 # Muzyka w tle: zapętlona, cicho pod lektorem, wyciszana na końcu. MUSIC="" wyłącza.
 ROOT = Path(__file__).resolve().parent.parent
 MUSIC = os.environ.get("MUSIC", str(ROOT / "assets" / "music" / "the_daily_ostinato.mp3"))
@@ -97,9 +102,9 @@ def main() -> int:
             print(f"--- {s.id}\n{s.tts_text}")
         return 0
 
-    voice_id = os.environ.get("INWORLD_VOICE_ID", "")
+    voice_id = os.environ.get(L.voice_env, "")
     if not args.dry_run and not voice_id:
-        print("Brak INWORLD_VOICE_ID", file=sys.stderr)
+        print(f"Brak {L.voice_env}", file=sys.stderr)
         return 2
 
     cache = Path(args.cache)
@@ -144,7 +149,7 @@ def main() -> int:
             white=side(entry, "white", game.headers.get("White", "?")),
             black=side(entry, "black", game.headers.get("Black", "?")),
             year=str(entry["year"]) if entry else "",
-            caption=(entry or {}).get("label_pl", ""),
+            caption=field_(entry, "label") or "",
         )
         render_video(renderer, events, duration, wav, out, fps=args.fps)
     timing = out.with_suffix(".timing.json")

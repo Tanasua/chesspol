@@ -5,7 +5,7 @@ Użycie:
   python src/script_gen.py ... --stockfish /usr/games/stockfish   # oceny silnika w tabeli
   python src/script_gen.py ... --table-only                       # tylko wydruk wejścia dla LLM
 
-LLM (OpenAI Responses API, OPENAI_API_KEY) dostaje prompts/script_system_pl.md jako instructions. Wynik przechodzi przez
+LLM (OpenAI Responses API, OPENAI_API_KEY) dostaje prompt kanału (prompts/script_system_<język>.md, CHANNEL) jako instructions. Wynik przechodzi przez
 build_segments (ta sama walidacja co w main.py); przy błędzie model dostaje komunikat
 i ma do MAX_FIXES poprawek. Fakty historyczne: tylko nagłówki PGN + facts/<nazwa>.md.
 """
@@ -21,11 +21,12 @@ from pathlib import Path
 import chess
 import chess.engine
 
+from lang import L, field_
 from pgn_loader import load_game
 from script_check import ScriptError, build_segments
 
 ROOT = Path(__file__).resolve().parent.parent
-PROMPT_PATH = ROOT / "prompts" / "script_system_pl.md"
+PROMPT_PATH = L.prompt
 FACTS_DIR = ROOT / "facts"
 CATALOG = ROOT / "catalog" / "games.json"
 DEFAULT_MODEL = os.environ.get("SCRIPT_MODEL", "gpt-5.5")
@@ -49,24 +50,24 @@ def engine_evals(game, engine_path: str, depth: int = ENGINE_DEPTH) -> list:
         for p in game.plies:
             board = chess.Board(p.fen_after)
             if board.is_checkmate():
-                out.append("mat")
+                out.append(L.t["mate"])
                 continue
             if board.is_game_over():
-                out.append("koniec")
+                out.append(L.t["over"])
                 continue
             info = eng.analyse(board, chess.engine.Limit(depth=depth))
             best = info.get("pv", [None])[0]
             best_san = board.san(best) if best else "?"
-            out.append(f"{_score_str(info['score'])} (najlepsza odpowiedź wg silnika: {best_san})")
+            out.append(f"{_score_str(info['score'])} ({L.t['engine_best']}: {best_san})")
     return out
 
 
 def ply_table(game, evals: list | None = None) -> str:
     """N | numer ruchu | kolor | SAN | FEN przed ruchem | ocena po ruchu."""
-    rows = ["N | ruch | kolor | SAN | FEN przed ruchem | ocena po ruchu (+ = lepiej dla białych)"]
+    rows = [L.t["table_head"]]
     for p in game.plies:
-        color = "białe" if p.color == chess.WHITE else "czarne"
-        ev = evals[p.index - 1] if evals else "brak"
+        color = L.t["white_side"] if p.color == chess.WHITE else L.t["black_side"]
+        ev = evals[p.index - 1] if evals else L.t["none"]
         rows.append(f"{p.index} | {p.move_number} | {color} | {p.san} | {p.fen_before} | {ev}")
     return "\n".join(rows)
 
@@ -78,27 +79,29 @@ def catalog_facts(name: str) -> str:
     g = next((x for x in games if x["id"] == name), None)
     if not g:
         return ""
-    rows = [("Białe", g.get("white_pl") or g["white"]), ("Czarne", g.get("black_pl") or g["black"]),
-            ("Rok", g.get("year")), ("Wydarzenie", g.get("event")), ("Miejsce", g.get("site_pl") or g.get("site")),
-            ("Runda/partia", g.get("round")), ("Wynik", g.get("result")),
-            ("Znana nazwa partii", g.get("nickname")), ("Uwagi", g.get("note"))]
+    t = L.t
+    rows = [(t["white"], field_(g, "white")), (t["black"], field_(g, "black")),
+            (t["year"], g.get("year")), (t["event"], field_(g, "event")),
+            (t["place"], field_(g, "site")), (t["round"], g.get("round")), (t["result"], g.get("result")),
+            (t["nickname"], g.get("nickname")), (t["notes"], g.get("note"))]
     return "\n".join(f"{k}: {v}" for k, v in rows if v)
 
 
 def build_user_message(game, name: str, evals: list | None) -> str:
     headers = "\n".join(f"[{k} \"{v}\"]" for k, v in game.headers.items())
-    parts = [f"NAGŁÓWKI PGN\n{headers}", f"PÓŁRUCHY (łącznie {len(game.plies)})\n{ply_table(game, evals)}"]
+    t = L.t
+    parts = [f"{t['pgn_headers']}\n{headers}", f"{t['plies'].format(n=len(game.plies))}\n{ply_table(game, evals)}"]
     facts = FACTS_DIR / f"{name}.md"
     cat = catalog_facts(name)
     if facts.exists():
-        parts.append(f"FAKTY (zweryfikowane)\n{facts.read_text(encoding='utf-8').strip()}")
+        parts.append(f"{t['facts']}\n{facts.read_text(encoding='utf-8').strip()}")
     if cat:
-        parts.append(f"FAKTY Z KATALOGU (zweryfikowane)\n{cat}")
+        parts.append(f"{t['catalog_facts']}\n{cat}")
     if not facts.exists() and not cat:
-        parts.append("FAKTY: brak — używaj wyłącznie nagłówków PGN.")
+        parts.append(t["no_facts"])
     if not evals:
-        parts.append("OCENY SILNIKA: brak — nie używaj ocen typu \"błąd\", \"najlepszy ruch\".")
-    parts.append("Napisz scenariusz odcinka zgodnie z zasadami. Zwróć wyłącznie JSON.")
+        parts.append(t["no_engine"])
+    parts.append(t["write"])
     return "\n\n".join(parts)
 
 
@@ -193,9 +196,7 @@ def generate(game, name: str, model: str, evals: list | None) -> tuple[dict, lis
         last_err = err
         print(f"Próba {attempt + 1}: {err}", file=sys.stderr)
         messages.append({"role": "assistant", "content": text})
-        messages.append({"role": "user", "content":
-                         f"Walidacja odrzuciła scenariusz:\n{err}\n\n"
-                         "Popraw i zwróć cały scenariusz ponownie, wyłącznie JSON."})
+        messages.append({"role": "user", "content": L.t["fix"].format(err=err)})
     raise ScriptError(f"Brak poprawnego scenariusza po {MAX_FIXES} poprawkach: {last_err}")
 
 

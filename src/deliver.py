@@ -57,7 +57,10 @@ def telegram(pkg: dict, title: str, when_local: str, release_url: str | None) ->
     if not (os.environ.get("TELEGRAM_BOT_TOKEN") and chat):
         return False
     f = pkg["files"]
-    caption = f"🎬 {title}\n🗓 {when_local}"[:1024]
+    from lang import CHANNELS, L
+
+    flag = f"{L.flag} " if len(CHANNELS) > 1 else ""
+    caption = f"{flag}🎬 {title}\n🗓 {when_local}"[:1024]
     with open(f["cover"], "rb") as fh:
         _tg("sendPhoto", data={"chat_id": chat, "caption": caption}, files={"photo": fh})
     if f["video"].stat().st_size <= TG_LIMIT:

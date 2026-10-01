@@ -25,6 +25,15 @@ Pliki:
 - src/deliver.py, src/cover.py — paczka out/packages/epNNN-<id>/ (video.mp4, cover.jpg 1280x720, opis.txt: data, tytuł, opis [zachęta z LLM, karta partii, rozdziały z czasami z out/<id>.timing.json, PGN, atrybucja zdjęć, informacja o AI], tagi) -> GitHub Release + opcjonalnie Telegram (sekrety TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; wideo ≤50 MB)
 - src/youtube_upload.py, src/youtube_auth.py — YouTube Data API (OAuth refresh token)
 - .github/workflows/publish.yml — cron codziennie 03:17 UTC, commit stanu do repo
+- KANAŁY: src/lang.py (CHANNEL=pl domyślnie | de). Wspólne: katalog, PGN, zdjęcia, render, muzyka, Telegram (ten sam czat, flaga 🇵🇱/🇩🇪).
+  Osobne: kolejność (n / n_de, seed 20261001), stan (state/schedule.json / schedule_de.json), scenariusze (scripts/ / scripts_de/),
+  wideo (out/ / out/de/), tagi Release (ep001-… / de-ep001-…), prompt (prompts/script_system_<kod>.md), zapis ruchów
+  (pl_notation.py / de_notation.py: K D T L S, "Springer nach eff drei"), zwroty (phrases.TEXTS), teksty opisu (lang.L.t).
+  Pola katalogu *_de: label_de, event_de, site_de, black_de/black_last_de (Die Welt, Herzog von Braunschweig…); nazwiska — pisownia bazowa.
+- src/tts_elevenlabs.py — ElevenLabs /v1/text-to-speech/{voice}/with-timestamps (alignment znaków -> słowa), ELEVENLABS_MODEL
+  (domyślnie eleven_multilingual_v2); NIE zweryfikowane na prawdziwym kluczu
+- .github/workflows/publish_de.yml — kanał niemiecki, cron 04:47 UTC, ta sama grupa concurrency co publish.yml; bez klucza ElevenLabs pomija.
+  Sekrety: ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID_DE (+ wspólne OPENAI_API_KEY, TELEGRAM_*); zmienne: HOST_NAME_DE, opcjonalnie ELEVENLABS_MODEL
 - .github/workflows/build.yml — workflow_dispatch, sekrety INWORLD_API_KEY, INWORLD_VOICE_ID
 - sekrety publish.yml: OPENAI_API_KEY, INWORLD_API_KEY, INWORLD_VOICE_ID; opcjonalnie TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; tylko w trybie youtube: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN
 

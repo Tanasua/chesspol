@@ -19,7 +19,10 @@ import chess
 import chess.svg
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-from pl_notation import label, san_pl
+from lang import L, credit_author, notation
+
+_N = notation()
+label, san_local = _N.label, _N.san_local
 
 W, H = 1920, 1080
 SQ = 125
@@ -146,7 +149,7 @@ class Renderer:
                 d = ImageDraw.Draw(strip)
                 f = _font(12)
                 lic = f" · {cr.get('license', '')}"
-                author = f"fot. {cr.get('author') or 'autor nieznany'}"
+                author = f"{L.t['photo_by']} {credit_author(cr.get('author'))}"
                 while len(author) > 6 and d.textlength(author + lic, font=f) > PHOTO_W - 10:
                     author = author[:-2] + "…"  # skracamy autora, licencja zostaje w całości
                 d.text((5, 5), author + lic, font=f, fill=(225, 225, 225))
@@ -224,7 +227,7 @@ class Renderer:
         img = Image.new("RGBA", (W - x0, H), (0, 0, 0, 0))
         d = ImageDraw.Draw(img)
         lx = RIGHT_X - x0
-        d.text((lx, BOARD_Y), "RUCHY", font=self.f_small, fill=DIM)
+        d.text((lx, BOARD_Y), L.t["moves_header"], font=self.f_small, fill=DIM)
         cur = label(self.game.plies[k - 1]) if k else "—"
         d.text((lx, BOARD_Y + 30), cur, font=_fit(d, cur, 58, RIGHT_W, True), fill=ACCENT)
         d.line([lx, BOARD_Y + 115, lx + RIGHT_W, BOARD_Y + 115], fill=(60, 58, 55), width=2)
@@ -250,7 +253,7 @@ class Renderer:
                 p = by_move.get(mv, {}).get(color)
                 if p is None or p.index > k:
                     continue
-                txt = san_pl(p.san)
+                txt = san_local(p.san)
                 if p.index == k:
                     tw = d.textlength(txt, font=self.f_move)
                     d.rounded_rectangle([cx - 8, y - 2, cx + tw + 8, y + row_h - 6], radius=6, fill=(60, 52, 20))

@@ -86,3 +86,11 @@ def label(ply) -> str:
     """'12. O-O-O' albo '12... Wd8' — etykieta ruchu na ekranie."""
     dots = "." if ply.color == chess.WHITE else "..."
     return f"{ply.move_number}{dots} {san_pl(ply.san)}"
+
+
+san_local = san_pl
+
+# Zapis ruchu jest wstawiany w mianowniku ("goniec na ce cztery") — nie może stać po przyimku
+# wymagającym innego przypadku ("po gońcu…"). Taki tekst brzmi niegramatycznie.
+PREPOSITIONS = {"po", "przed", "przez", "od", "do", "za", "o", "z", "ze", "na", "w", "we", "nad", "pod",
+                "dla", "bez", "wobec", "dzięki", "mimo", "wśród", "podczas", "zamiast"}

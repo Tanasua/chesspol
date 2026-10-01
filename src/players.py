@@ -44,12 +44,14 @@ def catalog_entry(game_id: str) -> dict | None:
 
 def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     """color: 'white'/'black'. Zwraca {name, first, last, photo, credit}."""
+    from lang import field_
+
     e = entry or {}
-    name = e.get(f"{color}_pl") or e.get(color) or pgn_name
+    name = field_(e, color) or pgn_name  # white_pl / white_de, w razie braku — nazwa bazowa
     first, last = split_name(name)
-    if e.get(f"{color}_first") is not None or e.get(f"{color}_last") is not None:
-        first, last = e.get(f"{color}_first") or "", e.get(f"{color}_last") or name
-    photo_key = slug(e.get(color) or pgn_name)  # zdjęcia po nazwie z bazy, nie po wersji polskiej
+    if field_(e, f"{color}_first") is not None or field_(e, f"{color}_last") is not None:
+        first, last = field_(e, f"{color}_first") or "", field_(e, f"{color}_last") or name
+    photo_key = slug(e.get(color) or pgn_name)  # zdjęcia po nazwie z bazy, nie po wersji językowej
     jpg, meta = PHOTOS / f"{photo_key}.jpg", PHOTOS / f"{photo_key}.json"
     credit = json.loads(meta.read_text(encoding="utf-8")) if meta.exists() else None
     if credit and credit.get("author"):

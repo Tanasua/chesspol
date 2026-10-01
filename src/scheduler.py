@@ -12,7 +12,10 @@ Partia jest gotowa, gdy: games/<id>.pgn istnieje, pgn_verified == true, disputed
   python src/scheduler.py --plan        # co i kiedy zostanie opublikowane, bez zmian
   python src/scheduler.py               # jeden krok (max MAX_PER_RUN odcinków)
   python src/scheduler.py --no-upload   # wszystko poza uploadem (test)
-  python src/scheduler.py --dry-tts     # jak --no-upload, ale bez Inworld (cisza)
+  python src/scheduler.py --dry-tts     # jak --no-upload, ale bez TTS (cisza)
+  CHANNEL=de python src/scheduler.py    # kanał niemiecki: kolejność n_de, state/schedule_de.json, scripts_de/
+
+Kanały (src/lang.py) mają wspólny katalog, ale każdy własną kolejność, stan i scenariusze.
 """
 from __future__ import annotations
 
@@ -26,12 +29,13 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lang import L, credit_author, field_, moves_word  # noqa: E402
 from phrases import title_hook_for  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 CATALOG = ROOT / "catalog" / "games.json"
-STATE = ROOT / "state" / "schedule.json"
+STATE = L.state
 
 TZ = ZoneInfo(os.environ.get("PUBLISH_TZ", "Europe/Kyiv"))
 PUBLISH_HOUR = int(os.environ.get("PUBLISH_HOUR", "10"))
@@ -78,18 +82,13 @@ def ready(game: dict) -> bool:
 
 def queue(catalog: dict, episodes: list) -> list:
     done = {e["id"] for e in episodes}
-    return [g for g in sorted(catalog["games"], key=lambda g: g["n"]) if g["id"] not in done and ready(g)]
+    games = [g for g in catalog["games"] if isinstance(g.get(L.order_key), int)]
+    return [g for g in sorted(games, key=lambda g: g[L.order_key]) if g["id"] not in done and ready(g)]
 
 
 def run(cmd: list) -> None:
     print("$", " ".join(cmd), flush=True)
     subprocess.run(cmd, check=True, cwd=ROOT)
-
-
-def _moves_word(n: int) -> str:
-    if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14):
-        return "ruchy"
-    return "ruch" if n == 1 else "ruchów"
 
 
 def _ts(sec: float) -> str:
@@ -129,17 +128,17 @@ def _yt_title(main: str, white: str, black: str, game: dict, hook: str = "") -> 
 
 def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | None = None) -> tuple[str, str, list]:
     from players import side
-    white, black = game.get("white_pl") or game["white"], game.get("black_pl") or game["black"]
-    who = f"{white} – {black}"
-    place = game.get("site_pl") or game.get("site") or ""
-    label = (game.get("label_pl") or game.get("event") or "").replace(" · ", ", ")
+    t = L.t
+    white, black = field_(game, "white"), field_(game, "black")
+    place = field_(game, "site") or ""
+    label = (field_(game, "label") or field_(game, "event") or "").replace(" · ", ", ")
     title = _yt_title(script.get("title") or "", white, black, game, title_hook_for(game))
 
     lines = []
     if script.get("description"):
         lines += [script["description"].strip(), ""]
-    lines += [f"Białe: {white}", f"Czarne: {black}",
-              f"Rok: {game['year']}" + (f" · {place}" if place else ""), label]
+    lines += [f"{t['white']}: {white}", f"{t['black']}: {black}",
+              f"{t['year']}: {game['year']}" + (f" · {place}" if place else ""), label]
     moves_text, n_moves = "", 0
     if pgn and pgn.exists():
         import chess.pgn
@@ -148,39 +147,37 @@ def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | N
         n_moves = (sum(1 for _ in g.mainline_moves()) + 1) // 2
         moves_text = g.accept(chess.pgn.StringExporter(headers=False, variations=False, comments=False)).strip()
     if game.get("result"):
-        lines.append(f"Wynik: {game['result']}" + (f" ({n_moves} {_moves_word(n_moves)})" if n_moves else ""))
+        lines.append(f"{t['result']}: {game['result']}" + (f" ({n_moves} {moves_word(n_moves)})" if n_moves else ""))
 
     chapters = _chapters(timing or {})
     if chapters:
-        lines += ["", "Rozdziały:"] + [f"{_ts(c['t'])} {c['title']}" for c in chapters]
+        lines += ["", t["chapters"]] + [f"{_ts(c['t'])} {c['title']}" for c in chapters]
     if moves_text:
-        lines += ["", "Zapis partii (PGN):", moves_text]
+        lines += ["", t["pgn"], moves_text]
 
     credits = []
     for color in ("white", "black"):
         p = side(game, color, game[color])
         c = p["credit"]
         if c:
-            credits.append(f"{p['name']}: {c.get('author') or 'autor nieznany'}, {c.get('license')}, {c.get('source_url')}")
+            credits.append(f"{p['name']}: {credit_author(c.get('author'))}, {c.get('license')}, {c.get('source_url')}")
     if credits:
-        lines += ["", "Zdjęcia (Wikimedia Commons):", *credits]
-    verified = "Zapis partii sprawdzony w co najmniej dwóch bazach partii. " if game.get("pgn_verified") else ""
-    lines += ["", verified + "Oceny pozycji: Stockfish. Lektor: syntezator mowy. "
-                  "Scenariusz przygotowany z pomocą AI na podstawie zapisu partii.",
-              "", f"#szachy #chess #historiaszachów #{game['white'].split()[-1]} #{game['black'].split()[-1]}"]
+        lines += ["", t["photos"], *credits]
+    verified = t["verified"] if game.get("pgn_verified") else ""
+    lines += ["", verified + t["ai"],
+              "", f"{t['hashtags']} #{game['white'].split()[-1]} #{game['black'].split()[-1]}"]
     description = "\n".join(lines).strip()
     if len(description) > 4900:  # limit YouTube: 5000 znaków — najpierw skracamy zapis partii
         description = description.replace(moves_text, moves_text[:max(0, len(moves_text) - (len(description) - 4900))] + " …")
-    tags = ["szachy", "chess", "partia szachowa", "historia szachów", "słynne partie szachowe",
-            white.split()[-1], black.split()[-1], f"szachy {game['year']}"]
+    tags = [*t["tags"], white.split()[-1], black.split()[-1], t["year_tag"].format(year=game["year"])]
     return title, description, tags
 
 
 def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = False, number: int = 1) -> dict:
     gid = game["id"]
     pgn = ROOT / "games" / f"{gid}.pgn"
-    script_path = ROOT / "scripts" / f"{gid}.json"
-    video = ROOT / "out" / f"{gid}.mp4"
+    script_path = L.scripts / f"{gid}.json"
+    video = L.out / f"{gid}.mp4"
     py = sys.executable
 
     if not script_path.exists():
@@ -215,15 +212,15 @@ def deliver_package(game: dict, pgn: Path, video: Path, title: str, description:
     from players import side
 
     g = load_game(pgn)
-    tag = f"ep{number:03d}-{game['id']}"
+    tag = f"{L.tag_prefix}ep{number:03d}-{game['id']}"
     cover = make_cover(g, title.split(" | ")[0], side(game, "white", game["white"]),
-                       side(game, "black", game["black"]), str(game["year"]), ROOT / "out" / f"{game['id']}_cover.jpg")
+                       side(game, "black", game["black"]), str(game["year"]), L.out / f"{game['id']}_cover.jpg")
     pkg = write_package(ROOT / "out" / "packages" / tag, video, cover, title, description, tags, when)
     info = {"package": str((ROOT / "out" / "packages" / tag).relative_to(ROOT))}
     if not remote:
         return info
     try:
-        url = github_release(tag, f"#{number} {title.split(' | ')[0]} — {when}", pkg, ROOT)
+        url = github_release(tag, f"{L.flag} #{number} {title.split(' | ')[0]} — {when}", pkg, ROOT)
         if url:
             info["release_url"] = url
             print(f"GitHub Release: {url}")
@@ -262,7 +259,7 @@ def main() -> int:
         eps = list(episodes)
         for g in q[:10]:
             slot = next_slot(eps, now, first_day)
-            print(f"{slot.astimezone(TZ):%Y-%m-%d %H:%M %Z}  #{g['n']:>3}  {g['id']}")
+            print(f"{slot.astimezone(TZ):%Y-%m-%d %H:%M %Z}  [{L.code}] #{g[L.order_key]:>3}  {g['id']}")
             eps.append({"id": g["id"], "publish_at": slot.isoformat()})
         return 0
 

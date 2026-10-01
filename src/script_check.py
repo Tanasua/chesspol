@@ -9,7 +9,7 @@ Format scenariusza (JSON):
 }
 
 Markery:
-  {{m:N}}  - półruch N: system WSTAWIA jego polski zapis do lektora
+  {{m:N}}  - półruch N: system WSTAWIA jego zapis słowny (w języku kanału) do lektora
              i animuje ruch na pierwszym słowie tego zapisu.
   {{s:N}}  - półruch N animowany "po cichu" na następnym słowie tekstu.
 Półruchy pominięte między markerami są odgrywane automatycznie tuż przed
@@ -22,16 +22,16 @@ import json
 import re
 from dataclasses import dataclass, field
 
-from pl_notation import spoken
+from lang import notation
+
+_N = notation()
+spoken = _N.spoken
+PREPOSITIONS = _N.PREPOSITIONS
 
 MARKER_RE = re.compile(r"\{\{([ms]):(\d+)\}\}")
-# Surowe ruchy w tekście (angielska i polska notacja) — zakazane poza markerami.
-RAW_MOVE_RE = re.compile(r"(?<![\w-])(?:[KQRBNHWGS]x?[a-h]?[1-8]?x?[a-h][1-8]|O-O(?:-O)?|[a-h]x[a-h][1-8])(?![\w])")
+# Surowe ruchy w tekście (notacja angielska, polska i niemiecka) — zakazane poza markerami.
+RAW_MOVE_RE = re.compile(r"(?<![\w-])(?:[KQRBNHWGSDTL]x?[a-h]?[1-8]?x?[a-h][1-8]|O-O(?:-O)?|[a-h]x[a-h][1-8])(?![\w])")
 MAX_AUTO_GAP = 6
-# Zapis ruchu jest wstawiany w mianowniku ("goniec na ce cztery") — nie może stać po przyimku
-# wymagającym innego przypadku ("po gońcu…"). Taki tekst brzmi niegramatycznie.
-PREPOSITIONS = {"po", "przed", "przez", "od", "do", "za", "o", "z", "ze", "na", "w", "we", "nad", "pod",
-                "dla", "bez", "wobec", "dzięki", "mimo", "wśród", "podczas", "zamiast"}
 
 
 class ScriptError(ValueError):
