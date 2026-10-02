@@ -1,0 +1,145 @@
+{
+  "kicker": "ÜBERLISTET!",
+  "title": "Sizilianischer Sturm in Buenos Aires",
+  "description": "In Buenos Aires 1994 treffen Alexei Shirov und Judit Polgar in Runde 8 eines Thematurniers zur Sizilianischen Verteidigung aufeinander. Die Partie beginnt mit maximalem Raumgewinn am Königsflügel und wird dann zu einem Kampf um jedes Tempo. Achtet darauf, wie Polgar den Angriff abfedert, die Damen tauscht und danach die aktiveren Figuren behält. Ein starkes Beispiel dafür, wie Gegenspiel in der Sizilianischen Verteidigung aussehen kann.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Buenos Aires, neunzehnhundertvierundneunzig, achte Runde im Thematurnier zur Sizilianischen Verteidigung. Alexei Shirov hat Weiß, Judit Polgar Schwarz. Weiß beginnt: {{m:1}}. Schwarz nimmt die Einladung an: {{m:2}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:3}} Die Partie wird sofort offen, aber noch ist alles kontrolliert. Schwarz hält dagegen: {{m:4}}. {{s:5}} Im Zentrum fällt die erste Entscheidung, Schwarz spielt: {{m:6}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Weiß stellt die Balance im Zentrum wieder her: {{m:7}}. Schwarz entwickelt weiter: {{m:8}}. {{s:9}} Die Stellung bleibt gespannt, Schwarz wählt: {{m:10}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "Jetzt ändert Weiß den Ton. Der Angriff am Königsflügel beginnt: {{m:11}}. Schwarz lässt sich nicht hetzen und spielt erst am anderen Flügel: {{m:12}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Weiß baut die Mitte aus: {{m:13}}. Schwarz bleibt flexibel: {{m:14}}. {{s:15}} Danach schiebt Schwarz Raum vor: {{m:16}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Weiß legt noch mehr Gewicht auf den Angriff: {{m:17}}. Schwarz stellt die lange Diagonale dagegen: {{m:18}}. Die Bewertung sieht Weiß noch etwas vorne, aber die Stellung ist schon voller Reibung.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Weiß bringt die Dame in die Nähe des Geschehens: {{m:19}}. Jetzt schlägt Polgar im selben Bereich zurück: {{m:20}}. Das ist der Moment, in dem aus Vorbereitung ein Nahkampf wird.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s08",
+      "chapter": "Der Umschwung",
+      "text": "Weiß nimmt an: {{m:21}}. Schwarz antwortet aktiv: {{m:22}}. {{s:23}} Die Damen blicken auf dieselben Schwächen, dann drückt Schwarz weiter: {{m:24}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Weiß ordnet um: {{m:25}}. Schwarz stellt eine neue Frage am Rand: {{m:26}}. Und jetzt hängt alles daran, ob Weiß zugreift oder abbremst.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Die Verlockung ist groß. Weiß greift zu: {{m:27}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Polgar bekommt sofort Spiel: {{m:28}}. Weiß zieht sich zurück: {{m:29}}. Danach nutzt Schwarz die offene Linie: {{m:30}}. Die Engine sieht Schwarz jetzt klar besser.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s12",
+      "chapter": "Der Springerzug",
+      "text": "Weiß sucht Gegenspiel: {{m:31}}. Aber Polgar hat den Punkt gesehen, an dem die weiße Stellung nicht mehr zusammenhält. Schwarz spielt: {{m:32}}.",
+      "pause_after": 1
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Die Drohung ist so konkret, dass Weiß die Dame anbietet: {{m:33}}. Polgar tauscht sofort: {{m:34}}. Weiß muss zurücknehmen: {{m:35}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Jetzt zeigt sich, warum dieser Abtausch Schwarz nicht beruhigt, sondern hilft. Das Schach kommt: {{m:36}}. Der weiße König muss ausweichen: {{m:37}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Und nach dem nächsten schwarzen Zug ist der materielle Schaden sichtbar: {{m:38}}. Der Turm ist verschwunden. Weiß sucht Gegenspiel am anderen Flügel: {{m:39}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Schwarz lässt auch dort keine Ruhe: {{m:40}}. {{s:41}} Der freie Bauer fällt, aber Schwarz bleibt aktiv. Der Springer kommt zurück ins Spiel: {{m:42}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "chapter": "Die Jagd",
+      "text": "Der weiße König geht weiter auf Wanderschaft: {{m:43}}. Schwarz stellt den Springer neu auf: {{m:44}}. Weiß tauscht eine aktive Figur ab: {{m:45}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Schwarz nimmt zurück: {{m:46}}. Das Brett ist nun damenlos, aber nicht ruhig. Weiß deckt sich: {{m:47}}. Polgar setzt den nächsten Springer in die Stellung: {{m:48}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Weiß sucht Halt: {{m:49}}. Dann kommt wieder Schach: {{m:50}}. Der weiße König findet kein bequemes Feld.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Der König läuft weiter: {{m:51}}. Schwarz bringt den Läufer ins Spiel: {{m:52}}. {{s:53}} Weiß entwickelt noch Verteidigung, doch Schwarz zentralisiert: {{m:54}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "Finale",
+      "text": "Jetzt wandert der weiße König bis in die Mitte: {{m:55}}. Polgar stellt ihren König ebenfalls aktiver: {{m:56}}. Es ist kein wilder Angriff mehr, es ist Kontrolle.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Weiß versucht, den letzten Turm zu aktivieren: {{m:57}}. Aber Schwarz hat noch einen genauen Zug, der alles zusammenhält.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Der letzte Zug der Partie ist: {{m:58}}. Hier endet der Widerstand, und das Ergebnis gehört Schwarz. Wichtig ist diese Partie, weil Polgar den weißen Sturm nicht nur überlebt, sondern in eine technisch gewonnene Stellung verwandelt.",
+      "pause_after": 1
+    }
+  ]
+}

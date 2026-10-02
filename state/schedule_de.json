@@ -17,6 +17,15 @@
       "package": "out/packages/de-ep002-alekhine_capablanca_1927",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep002-alekhine_capablanca_1927",
       "telegram": true
+    },
+    {
+      "id": "shirov_polgar_1994",
+      "publish_at": "2026-10-08T07:00:00+00:00",
+      "title": "ÜBERLISTET! Sizilianischer Sturm in Buenos Aires | Alexei Shirov – Judit Polgar (1994)",
+      "mode": "manual",
+      "package": "out/packages/de-ep003-shirov_polgar_1994",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep003-shirov_polgar_1994",
+      "telegram": true
     }
   ]
 }
