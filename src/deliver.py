@@ -46,6 +46,10 @@ def github_release(tag: str, name: str, pkg: dict, cwd: Path) -> str | None:
     notes = cwd / "out" / f"{tag}-notes.md"
     notes.write_text("```\n" + pkg["text"] + "```\n", encoding="utf-8")
     f = pkg["files"]
+    # ponowny render tego samego odcinka (np. nowy głos): stary Release z tym tagiem zastępujemy
+    if subprocess.run(["gh", "release", "view", tag], cwd=cwd, capture_output=True).returncode == 0:
+        subprocess.run(["gh", "release", "delete", tag, "--yes", "--cleanup-tag"], cwd=cwd,
+                       capture_output=True, text=True, check=True)
     r = subprocess.run(["gh", "release", "create", tag, str(f["video"]), str(f["cover"]), str(f["text"]),
                         "--title", name, "--notes-file", str(notes)],
                        cwd=cwd, capture_output=True, text=True, check=True)

@@ -8,15 +8,6 @@
       "package": "out/packages/de-ep001-botvinnik_portisch_1968",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep001-botvinnik_portisch_1968",
       "telegram": true
-    },
-    {
-      "id": "alekhine_capablanca_1927",
-      "publish_at": "2026-10-05T07:00:00+00:00",
-      "title": "ENDSPIELKUNST! Der Marathon von Buenos Aires | Alexander Alekhine – José Raúl Capablanca (1927)",
-      "mode": "manual",
-      "package": "out/packages/de-ep002-alekhine_capablanca_1927",
-      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep002-alekhine_capablanca_1927",
-      "telegram": true
     }
   ]
 }
