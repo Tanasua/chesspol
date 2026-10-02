@@ -1,0 +1,187 @@
+{
+  "kicker": "ENDSPIELKUNST!",
+  "title": "Der Marathon von Buenos Aires",
+  "description": "Alexander Alekhine und José Raúl Capablanca treffen im WM-Kampf 1927 in Buenos Aires in Partie 34 aufeinander. Aus einer ruhigen Eröffnung entsteht ein langes Damen- und Turmendspiel. Achtet darauf, wie Weiß erst Druck sammelt, dann die Damen tauscht und das Turmendspiel Schritt für Schritt verstärkt. Am Ende setzt sich Alekhine durch.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Buenos Aires, WM-Kampf neunzehnhundertsiebenundzwanzig, Partie vierunddreißig. Alekhine gegen Capablanca, und aus ruhigen Zügen wird ein Kampf bis tief ins Endspiel. Alekhine beginnt: {{m:1}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:7}} Die Figuren kommen schnell heraus, doch nichts ist voreilig. Capablanca wählt eine feste Aufstellung: {{m:8}}. Schon jetzt geht es um Kontrolle, nicht um Angriffslärm.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:14}} Beide Könige sind zunächst sicher, und die Spannung im Zentrum bleibt. Schwarz nimmt im Zentrum heraus: {{m:16}}. Alekhine stellt das Gleichgewicht wieder her: {{m:17}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "Capablanca setzt eine Figur ins Zentrum: {{m:18}}. {{s:23}} Die Stellung wirkt symmetrisch, aber der Damenflügel beginnt zu knistern. Schwarz stößt dort an: {{m:24}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Alekhine bringt den König aus der Mitte: {{m:25}}. {{s:30}} Schwarz hat Raum gewonnen, doch Weiß bekommt offene Linien. Der Turm kommt ins Spiel: {{m:31}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "{{s:35}} Im Zentrum prallen die Bauern aufeinander, ohne dass sofort etwas explodiert. Capablanca hält dagegen: {{m:36}}. Die Partie bleibt ein Positionskampf.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "{{s:41}} Alekhine ordnet Dame und Figuren neu. Danach verschwinden die Läufer: {{m:43}}. Schwarz nimmt zurück: {{m:44}}, und die Damen bleiben als Hauptfiguren auf dem Brett.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "Damenflügel",
+      "text": "Alekhine schickt die Dame tief in die schwarze Stellung: {{m:45}}. {{s:48}} Beide Seiten nehmen Material, aber keine Seite bekommt sofort Ruhe. Der Damenflügel ist jetzt der Schauplatz.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Die Türme werden getauscht. Weiß beginnt: {{m:49}}. Schwarz nimmt zurück: {{m:50}}. Alekhine greift den nächsten Bauern: {{m:51}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Capablanca sucht Gegenspiel mit dem Springer: {{m:52}}. {{s:57}} Alekhines Dame bleibt aktiv, und der Randbauer läuft nach vorn. Weiß hat jetzt die angenehmere Aufgabe.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Jetzt schlägt Schwarz im Zentrum zu: {{m:58}}. Alekhine nimmt selbst im Zentrum: {{m:59}}. Capablanca hält mit der Dame dagegen: {{m:60}}. Die Richtung ist klar, es geht in ein Endspiel mit Damen.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "Damenendspiel",
+      "text": "Weiß beseitigt den aktiven Springer: {{m:61}}. Schwarz nimmt den weißen Springer: {{m:62}}. {{s:68}} Die Leichtfiguren verschwinden, und Alekhines Turm wird wichtig. Weiß nimmt zurück: {{m:69}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Capablanca sucht Gegenspiel am Rand: {{m:70}}. {{s:75}} Die Schwerfiguren manövrieren, die Damen lauern auf Schachs und Bauern. Schwarz stellt die Dame aktiv: {{m:76}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Alekhine gibt Schach: {{m:77}}. {{s:82}} Schwarz findet Gegenschach, und der weiße König muss zeigen, dass er sicher steht. Alekhine geht heraus: {{m:83}}. Schwarz setzt nach: {{m:84}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Weiß schafft Luft: {{m:85}}. Capablancas Turm wird aktiv: {{m:86}}. Alekhine zentralisiert die Dame: {{m:87}}. Dann kommt die kritische Verteidigung: {{m:88}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Alekhine nutzt den Moment sofort: {{m:89}}. Jetzt steht Weiß deutlich besser. Capablanca sucht Gegenspiel mit dem Turm: {{m:90}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s17",
+      "chapter": "Damentausch",
+      "text": "Alekhine entscheidet sich nicht für Hektik. Er schiebt den Bauern: {{m:91}}. Schwarz stellt die Dame an den Rand: {{m:92}}. {{s:97}} Weiß bereitet den Tausch der Damen vor.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Capablanca nimmt die Einladung an: {{m:98}}. Alekhine nimmt zurück: {{m:99}}. Jetzt ist die Partie auf ihr eigentliches Thema reduziert, Turmendspiel, König, Bauern, Technik.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Schwarz bringt den König heran: {{m:100}}. Alekhine setzt den Randbauern in Bewegung: {{m:101}}. {{s:106}} Die Türme pendeln, aber Weiß behält Druck. Dann stellt er den Turm aktiv vor: {{m:107}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "{{s:112}} Capablanca sucht Gegenspiel am Königsflügel. Alekhines König rückt ins Zentrum: {{m:113}}. Schwarz hält dagegen: {{m:114}}. Weiß weicht aus: {{m:115}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s21",
+      "chapter": "Turmendspiel",
+      "text": "Capablanca stellt sich dem Freibauern in den Weg: {{m:116}}. Weiß gibt dem Turm Raum: {{m:117}}. {{s:120}} Die Könige pendeln, doch die weiße Stellung bleibt gefährlicher. Alekhine kehrt zurück: {{m:121}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Jetzt übernimmt der weiße König mehr Raum: {{m:123}}. Capablanca gibt Schach: {{m:124}}. Alekhine geht nach vorn: {{m:125}}. Schwarz zwingt ihn weiter: {{m:126}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Weiß entkommt: {{m:127}}. {{s:132}} Der König ist plötzlich auf der anderen Brettseite aktiv, und Schwarz muss nur noch halten. Alekhine öffnet mit dem Bauern: {{m:133}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "{{s:138}} Die Türme kämpfen um die siebte Reihe. Alekhine schafft einen neuen Freibauern: {{m:139}}. Schwarz nimmt: {{m:140}}. Weiß kehrt mit dem König zurück: {{m:141}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s25",
+      "chapter": "",
+      "text": "Capablanca stößt noch einmal vor: {{m:142}}. Alekhine nimmt zurück: {{m:143}}. Schwarz hält den Turm aktiv: {{m:144}}. {{s:150}} Weiß hat alles unter Kontrolle und nähert sich der Umwandlung.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s26",
+      "chapter": "Finale",
+      "text": "Alekhine hält den König ganz nah: {{m:151}}. Schwarz nimmt den Bauern: {{m:152}}. Weiß aktiviert den Turm: {{m:153}}. Capablanca sucht Gegenspiel von hinten: {{m:154}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s27",
+      "chapter": "",
+      "text": "Jetzt fällt ein weiterer schwarzer Bauer: {{m:155}}. Schwarz greift von hinten an: {{m:156}}. Alekhine stellt den Turm dazwischen: {{m:157}}. Capablanca bleibt hinter dem Bauern: {{m:158}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s28",
+      "chapter": "",
+      "text": "Weiß schneidet ab: {{m:159}}. Schwarz bringt den König näher: {{m:160}}. Alekhine nimmt auch den Bauern auf der siebten Reihe: {{m:161}}. Capablanca läuft heran: {{m:162}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s29",
+      "chapter": "",
+      "text": "Der letzte Zug der Partie: {{m:163}}. Der Turm bleibt aktiv, der weiße König stützt die Bauern, und Capablanca hat keinen ausreichenden Halt mehr. Das Ergebnis ist eins zu null für Alekhine.",
+      "pause_after": 1
+    },
+    {
+      "id": "s30",
+      "chapter": "",
+      "text": "Diese Partie ist wichtig, weil sie zeigt, wie eine Partie im WM-Kampf auch entschieden werden kann, ohne Mattbild und ohne spektakuläres Opfer. Alekhine sammelt kleine Vorteile, tauscht im richtigen Moment die Damen und gewinnt ein langes Turmendspiel gegen Capablanca.",
+      "pause_after": 0.8
+    }
+  ]
+}
