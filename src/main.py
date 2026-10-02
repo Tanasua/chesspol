@@ -21,7 +21,7 @@ from pgn_loader import load_game
 from lang import L, field_
 from phrases import OUTRO, intro_for
 from players import catalog_entry, side
-from render import Renderer, render_video, schedule
+from render import AUTO_STEP, Renderer, render_video, schedule
 from script_check import Segment, build_segments, load_script
 from tts_inworld import dry_run, map_tokens_to_times
 
@@ -33,6 +33,7 @@ else:
 LEAD_IN = 1.0     # sekundy ciszy na początku (pozycja startowa na ekranie)
 TAIL = 3.0        # końcowa pauza z pozycją matową / końcową
 DRIFT_WARN = 0.3
+CUT_LEAD = 0.04   # rozcięcie nagrania tyle sekund przed początkiem słowa markera
 # Stałe zakończenie każdego odcinka (OUTRO, czytane po scenariuszu) — w src/phrases.py, w języku kanału
 # Muzyka w tle: zapętlona, cicho pod lektorem, wyciszana na końcu. MUSIC="" wyłącza.
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,12 +44,16 @@ MUSIC_FADE_OUT = 6.0
 
 
 def build_audio(parts: list, out_wav: Path, workdir: Path) -> None:
-    """parts: lista ('file', path) albo ('silence', sekundy). Wszystko do 48k mono PCM."""
+    """parts: ('file', path), ('slice', (path, od, do|None)) albo ('silence', sekundy). Wszystko do 48k mono PCM."""
     listing = []
     for i, (kind, val) in enumerate(parts):
         wav = workdir / f"part_{i:04d}.wav"
         if kind == "file":
             cmd = ["ffmpeg", "-y", "-v", "error", "-i", str(val), "-ar", "48000", "-ac", "1", str(wav)]
+        elif kind == "slice":  # fragment nagrania (path, od, do|None) — rozcięcie pod przewijanie ruchów
+            path, t0, t1 = val
+            cmd = ["ffmpeg", "-y", "-v", "error", "-i", str(path), "-ss", f"{t0:.3f}"] \
+                + (["-to", f"{t1:.3f}"] if t1 is not None else []) + ["-ar", "48000", "-ac", "1", str(wav)]
         else:
             cmd = ["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono",
                    "-t", f"{val:.3f}", str(wav)]
@@ -117,11 +122,25 @@ def main() -> int:
             chapters.append({"t": 0.0 if not chapters else round(cursor, 2), "title": seg.chapter})
         res = dry_run(seg.tts_text, cache) if args.dry_run else synthesize(seg.tts_text, cache, voice_id)
         times = map_tokens_to_times(seg.tokens, res)
+        # Pominięte półruchy przed markerem przewijamy w tempie AUTO_STEP. Gdy lektor nie daje na to
+        # dość czasu, rozcinamy nagranie tuż przed słowem markera i wstawiamy ciszę (muzyka gra dalej).
+        clip_pos, shift = 0.0, 0.0
         for a in seg.anchors:
-            anchor_times.append((cursor + times[a.token_index], a.ply_index))
-        parts.append(("file", res.audio_path))
+            t_word = times[a.token_index]
+            gap = a.ply_index - (anchor_times[-1][1] if anchor_times else 0) - 1
+            if gap > 0:
+                prev_t = anchor_times[-1][0] if anchor_times else 0.0
+                deficit = (gap + 1) * AUTO_STEP - (cursor + shift + t_word - prev_t)
+                if deficit > 0.05:
+                    cut = max(clip_pos, t_word - CUT_LEAD)
+                    if cut > clip_pos:
+                        parts.append(("slice", (res.audio_path, clip_pos, cut)))
+                    parts.append(("silence", deficit))
+                    clip_pos, shift = cut, shift + deficit
+            anchor_times.append((cursor + shift + t_word, a.ply_index))
+        parts.append(("slice", (res.audio_path, clip_pos, None)) if clip_pos else ("file", res.audio_path))
         parts.append(("silence", seg.pause_after))
-        cursor += res.duration + seg.pause_after
+        cursor += res.duration + shift + seg.pause_after
     parts.append(("silence", TAIL))
     duration = cursor + TAIL
 
@@ -153,7 +172,9 @@ def main() -> int:
         )
         render_video(renderer, events, duration, wav, out, fps=args.fps)
     timing = out.with_suffix(".timing.json")
-    timing.write_text(json.dumps({"duration": round(duration, 2), "chapters": chapters},
+    timing.write_text(json.dumps({"duration": round(duration, 2), "chapters": chapters,
+                                  "moves": [[e.ply_index, round(e.time, 2)] for e in events],
+                                  "spoken": sorted(p for _, p in anchor_times)},
                                  ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Gotowe: {out} ({duration:.1f}s)")
     return 0

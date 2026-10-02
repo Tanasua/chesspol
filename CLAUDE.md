@@ -16,6 +16,8 @@ Pliki:
 - src/players.py — nazwy do kadru (nadpisania *_first/*_last w katalogu), zdjęcia assets/players/<slug>.jpg + .json
 - src/fetch_portraits.py — zdjęcia: Wikidata P18 -> Commons, tylko PD/CC0/CC BY/CC BY-SA, pełna zgodność nazwy + zawód szachista + rok urodzenia; raport assets/players/REPORT.md; atrybucja w kadrze i w opisie YouTube
 - src/main.py — CLI: --check-only, --dry-run; na końcu każdego odcinka stały segment OUTRO (podziękowanie, prośba o like i subskrypcję); na samym początku powitanie prowadzącego (segment intro, imię z HOST_NAME albo INWORLD_VOICE_ID); muzyka w tle assets/music/the_daily_ostinato.mp3 (Suno; pętla, MUSIC_GAIN_DB=-20, fade-in 2 s, fade-out 6 s na końcu; MUSIC="" albo --no-music wyłącza)
+- Przewijanie pominiętych półruchów: AUTO_STEP 1.25 s/ruch (render.py, maks. 1.5); gdy lektor nie daje czasu, main.py rozcina
+  nagranie tuż przed słowem markera i wstawia ciszę (muzyka gra). timing.json zawiera też czasy ruchów (moves, spoken).
 - src/phrases.py — powitania (GREETING z imieniem), warianty zapowiedzi (INTRO, 11) i dopisków do tytułu YouTube (TITLE_HOOKS, 8); wybór wg n z katalogu, kolejne odcinki dostają kolejne warianty
 - src/script_gen.py — PGN -> tabela półruchów (N, SAN, FEN, ocena Stockfisha) -> OpenAI Responses API (gpt-5.5, SCRIPT_MODEL; OPENAI_API_KEY) z prompts/script_system_pl.md -> build_segments -> do 3 poprawek -> scripts/<nazwa>.json
 - prompts/script_system_pl.md — system prompt do generowania scenariuszy

@@ -39,6 +39,8 @@ BG, FG, DIM, ACCENT = (12, 12, 12), (240, 236, 228), (135, 130, 122), (246, 214,
 CARD = (34, 33, 31)
 ANIM_SEC = 0.45
 MIN_GAP = ANIM_SEC + 0.05  # animacje nigdy na siebie nie nachodzą
+AUTO_STEP = 1.25  # tempo przewijania pominiętych półruchów (s/ruch); main.py robi na nie miejsce
+AUTO_STEP_MAX = 1.5
 
 FONT_PATHS = [
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
@@ -341,13 +343,14 @@ class Renderer:
 
 def schedule(anchor_times: list, n_plies: int) -> list:
     """anchor_times: [(czas, ply_index)] dla półruchów z markerów.
-    Półruchy pomiędzy markerami rozkładamy równo tuż przed kolejnym markerem."""
+    Półruchy pomiędzy markerami rozkładamy równo tuż przed kolejnym markerem
+    (do AUTO_STEP_MAX s na ruch; gdy lektor mówi krótko — szybciej, ale nie szybciej niż MIN_GAP)."""
     events, prev_t, prev_ply = [], 0.0, 0
     for t, ply in sorted(anchor_times, key=lambda x: x[1]):
         gap = ply - prev_ply - 1
         if gap > 0:
             room = max(0.0, t - (prev_t + ANIM_SEC))
-            step = max(MIN_GAP, min(0.7, room / (gap + 1)))
+            step = max(MIN_GAP, min(AUTO_STEP_MAX, room / (gap + 1)))
             for j in range(gap):
                 start = t - (gap - j) * step
                 floor = events[-1].time + MIN_GAP if events else 0.0
