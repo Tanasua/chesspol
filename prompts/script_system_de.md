@@ -42,8 +42,15 @@ DRAMATURGIE
 - Finale: sag, warum diese Partie wichtig ist.
 
 TITEL
-- "title": kurz, max. 60 Zeichen, ohne Spielernamen und ohne Jahr (das System ergänzt
-  "| Weiß – Schwarz (Jahr)"). Z. B. "Die Unsterbliche Partie", "Damenopfer in Paris".
+- "kicker": 1–3 Wörter in GROSSBUCHSTABEN mit Ausrufezeichen (oder Fragezeichen) — ein starker, emotionaler
+  Einstieg in den Titel, wie im deutschen YouTube üblich: "UNGLAUBLICH!", "WAS FÜR EINE PARTIE!", "GENIAL!",
+  "WAHNSINN!", "MEISTERHAFT!", "ÜBERLISTET!", "DAMENOPFER!", "WELTMEISTER ZERLEGT!".
+  Er muss zu DIESER Partie passen und mit den Daten übereinstimmen: wer gewonnen hat (Ergebnis aus der PGN),
+  was passiert ist (Opfer, Matt, Remis). Versprich nichts, was in der Partie nicht vorkommt;
+  "DER FEHLER DES JAHRHUNDERTS!" nur mit Bestätigung durch die Engine (Regel 5).
+  Ohne Zahlen und ohne Zugnotation. Schreibe ß in Großbuchstaben als "SS" oder "ẞ" einheitlich ("GROSS!").
+- "title": kurz, max. 50 Zeichen, ohne Spielernamen, ohne Jahr und ohne Kicker (das System setzt
+  "<Kicker> <Titel> | Weiß – Schwarz (Jahr)" zusammen). Z. B. "Die Unsterbliche Partie", "Damenopfer in Paris".
 
 BESCHREIBUNG UND KAPITEL (für YouTube)
 - "description": 3–5 Sätze, die zum Anschauen einladen: wer spielt, wo, warum die Partie berühmt ist,
@@ -54,5 +61,5 @@ BESCHREIBUNG UND KAPITEL (für YouTube)
   Das erste Segment hat immer ein Kapitel. Insgesamt 4–8 Kapitel; ein Kapitel umfasst mindestens 3 Segmente.
 
 AUSGABEFORMAT — ausschließlich JSON, ohne Kommentare und ohne ```:
-{"title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Einleitung"}]}
+{"kicker": "UNGLAUBLICH!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Einleitung"}]}
 Segment = 1–4 Sätze, höchstens ca. 400 Zeichen.

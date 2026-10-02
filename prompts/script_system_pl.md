@@ -37,8 +37,15 @@ DRAMATURGIA
 - Finał: nazwij, dlaczego ta partia jest ważna.
 
 TYTUŁ
-- "title": krótki, maks. 60 znaków, bez nazwisk graczy i bez roku (system sam dopisze
-  "| Białe – Czarne (rok)"). Np. "Nieśmiertelna partia", "Ofiara hetmana w Paryżu".
+- "kicker": 1–3 słowa WERSALIKAMI z wykrzyknikiem (albo pytajnikiem) — mocny, emocjonalny początek tytułu,
+  jak w polskim YouTube: "NIESAMOWITE!", "CO ZA PARTIA!", "GENIALNE!", "SZOK!", "MISTRZOWSKO!",
+  "PRZECHYTRZYŁ MISTRZA!", "ROZGROMIŁA FAWORYTA!", "OFIARA HETMANA!".
+  Musi pasować do TEJ partii i być zgodny z danymi: kto wygrał (wynik z PGN), co się wydarzyło (ofiara, mat, remis).
+  Nie obiecuj czegoś, czego w partii nie ma; "BŁĄD STULECIA!" tylko z potwierdzeniem silnika (zasada 5).
+  Forma czasownika musi zgadzać się z płcią gracza (przechytrzył / przechytrzyła); gdy nie masz pewności —
+  wybierz zwrot bez czasownika ("NIESAMOWITE!", "CO ZA PARTIA!"). Bez liczb i bez zapisu ruchów.
+- "title": krótki, maks. 50 znaków, bez nazwisk graczy, bez roku i bez kickera (system złoży
+  "<kicker> <title> | Białe – Czarne (rok)"). Np. "Nieśmiertelna partia", "Ofiara hetmana w Paryżu".
 
 OPIS I ROZDZIAŁY (do YouTube)
 - "description": 3–5 zdań zachęty do obejrzenia: kto gra, gdzie, dlaczego ta partia jest sławna,
@@ -49,5 +56,5 @@ OPIS I ROZDZIAŁY (do YouTube)
   Pierwszy segment zawsze ma rozdział. Łącznie 4–8 rozdziałów; rozdział co najmniej 3 segmenty.
 
 FORMAT WYJŚCIA — wyłącznie JSON, bez komentarzy i bez ```:
-{"title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Wstęp"}]}
+{"kicker": "NIESAMOWITE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Wstęp"}]}
 Segment = 1–4 zdania, maksymalnie ok. 400 znaków.

@@ -86,6 +86,16 @@ def queue(catalog: dict, episodes: list) -> list:
     return [g for g in sorted(games, key=lambda g: g[L.order_key]) if g["id"] not in done and ready(g)]
 
 
+WEEKDAYS_UK = ["пн", "вт", "ср", "чт", "пт", "сб", "нд"]
+
+
+def when_uk(dt: datetime) -> str:
+    """Data publikacji dla właściciela, po ukraińsku: 'пт, 02.10.2026 о 10:00 (за Києвом)'."""
+    loc = dt.astimezone(TZ)
+    zone = "за Києвом" if TZ.key == "Europe/Kyiv" else TZ.key
+    return f"{WEEKDAYS_UK[loc.weekday()]}, {loc:%d.%m.%Y} о {loc:%H:%M} ({zone})"
+
+
 def run(cmd: list) -> None:
     print("$", " ".join(cmd), flush=True)
     subprocess.run(cmd, check=True, cwd=ROOT)
@@ -132,7 +142,11 @@ def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | N
     white, black = field_(game, "white"), field_(game, "black")
     place = field_(game, "site") or ""
     label = (field_(game, "label") or field_(game, "event") or "").replace(" · ", ", ")
-    title = _yt_title(script.get("title") or "", white, black, game, title_hook_for(game))
+    kicker = (script.get("kicker") or "").strip()
+    if kicker:  # nowe scenariusze: "NIESAMOWITE! <tytuł>" zamiast stałego dopisku
+        title = _yt_title(f"{kicker} {script.get('title') or ''}".strip(), white, black, game)
+    else:
+        title = _yt_title(script.get("title") or "", white, black, game, title_hook_for(game))
 
     lines = []
     if script.get("description"):
@@ -187,7 +201,7 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
 
     script = load_json(script_path, {})
     title, description, tags = describe(game, script, pgn, load_json(video.with_suffix(".timing.json"), {}))
-    when = f"{publish_at.astimezone(TZ):%Y-%m-%d %H:%M} ({TZ.key})"
+    when = when_uk(publish_at)
     episode = {"id": gid, "publish_at": publish_at.isoformat(), "title": title, "mode": MODE}
     if MODE == "manual":
         episode.update(deliver_package(game, pgn, video, title, description, tags, when, number,
@@ -227,7 +241,7 @@ def deliver_package(game: dict, pgn: Path, video: Path, title: str, description:
     except subprocess.CalledProcessError as e:
         print(f"::warning::GitHub Release nie powstał: {e.stderr.strip()[:300]}")
     try:
-        info["telegram"] = telegram(pkg, title, when, info.get("release_url"))
+        info["telegram"] = telegram(pkg, title, when, info.get("release_url"), number)
     except Exception as e:  # noqa: BLE001 — Telegram to wygoda, nie blokuje odcinka
         print(f"::warning::Telegram: {e.__class__.__name__}: {str(e)[:200]}")
         info["telegram"] = False

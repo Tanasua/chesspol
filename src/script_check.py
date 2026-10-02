@@ -137,6 +137,17 @@ def build_segments(script: dict, game) -> tuple[list, list]:
     title = (script.get("title") or "").strip()
     if len(title) > 70:
         raise ScriptError(f"[title] za długi tytuł ({len(title)} znaków, maks. 70) — bez nazwisk i roku")
+    kicker = (script.get("kicker") or "").strip()
+    if kicker:  # krzykliwy początek tytułu YouTube, np. "NIESAMOWITE!" / "WAS FÜR EINE PARTIE!"
+        words = kicker.split()
+        if len(words) > 4 or len(kicker) > 30:
+            raise ScriptError(f"[kicker] za długi: '{kicker}' (maks. 4 słowa, 30 znaków)")
+        if kicker != kicker.upper() or not any(c.isalpha() for c in kicker):
+            raise ScriptError(f"[kicker] musi być WERSALIKAMI: '{kicker}'")
+        if kicker[-1] not in "!?":
+            raise ScriptError(f"[kicker] musi kończyć się wykrzyknikiem lub pytajnikiem: '{kicker}'")
+        if RAW_MOVE_RE.search(kicker) or any(c.isdigit() for c in kicker):
+            raise ScriptError(f"[kicker] bez ruchów i liczb: '{kicker}'")
     desc = (script.get("description") or "").strip()
     if desc:
         for m in RAW_MOVE_RE.finditer(desc):

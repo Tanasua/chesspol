@@ -125,6 +125,8 @@ def _validate(text: str, game) -> tuple[dict | None, str | None, list]:
     for i, seg in enumerate(script["segments"]):
         if not isinstance(seg, dict) or not {"id", "text"} <= seg.keys():
             return None, f"Segment nr {i + 1} musi mieć pola \"id\" i \"text\".", []
+    if not (script.get("kicker") or "").strip():
+        return None, "Pole \"kicker\" jest puste — 1–3 słowa WERSALIKAMI z wykrzyknikiem (np. \"NIESAMOWITE!\").", []
     try:
         _, warnings = build_segments(script, game)
     except ScriptError as e:
@@ -135,8 +137,9 @@ def _validate(text: str, game) -> tuple[dict | None, str | None, list]:
 SCRIPT_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["title", "description", "segments"],
+    "required": ["kicker", "title", "description", "segments"],
     "properties": {
+        "kicker": {"type": "string"},
         "title": {"type": "string"},
         "description": {"type": "string"},
         "segments": {
