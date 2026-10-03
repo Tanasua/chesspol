@@ -1,0 +1,163 @@
+{
+  "kicker": "MISTRZOWSKO!",
+  "title": "Techniczny nokaut w finale",
+  "description": "Fabiano Caruana i Praggnanandhaa spotkali się w Saint Louis w finale 2026 Grand Chess Tour Finals, w pierwszej partii klasycznej meczu. Z pozoru spokojna partia włoska przechodzi tu w długą walkę o aktywność wież, słabe pola i wolne piony. Zwróć uwagę na moment, w którym równa pozycja nagle zmienia się w końcówkę wymagającą perfekcyjnej obrony. To świeża partia z bieżącego turnieju i świetny przykład technicznego dociskania w meczu pucharowym.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Saint Louis, finał Grand Chess Tour, pierwsza partia klasyczna meczu. Fabiano Caruana gra białymi z Praggnanandhaą, a na starcie finału każde tempo i każda słabość mogą ważyć podwójnie. Partia rusza: {{m:1}}. Czarne odpowiadają: {{m:2}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Białe rozwijają skoczka: {{m:3}}. {{s:4}} Czarne nie oddają centrum, a Caruana ustawia gońca na aktywnej przekątnej: {{m:5}}. {{s:6}} Praggnanandhaa wybiera ten sam, spokojny plan: figury wychodzą, ale nikt jeszcze nie odsłania kart.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:7}} Białe dokładają drugiego skoczka. Czarne odpowiadają: {{m:8}}. Caruana wzmacnia centrum: {{m:9}}. {{s:10}} Pozycja wygląda miękko, prawie manewrowo, ale właśnie w takich układach jeden zły kierunek figury potrafi ciążyć przez wiele ruchów.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut",
+      "text": "Caruana natychmiast pyta gońca: {{m:11}}. Czarne cofają się: {{m:12}}. {{s:13}} Białe dają królowi mały oddech na skrzydle. {{s:14}} Czarne robią to samo — bez fajerwerków, ale bardzo konkretnie.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Białe chowają króla: {{m:15}}. Czarne też: {{m:16}}. {{s:17}} Białe zatrzymują skoczka i pola wokół króla. {{s:18}} Czarne ustawiają wieżę na centralnej linii, a po chwili Caruana odpowiada: {{m:19}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Czarne proponują wymianę: {{m:20}}. Caruana bierze: {{m:21}}. Czarne odbijają: {{m:22}}. {{s:23}} Białe ruszają pionami na skrzydle hetmańskim, a czarne przygotowują się do obrony: {{m:24}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Pierwsze napięcie",
+      "text": "Białe dokładają kolejny klin: {{m:25}}. Czarne wchodzą skoczkiem do centrum: {{m:26}}. Caruana odciąga uwagę na skrzydle królewskim: {{m:27}}. {{s:28}} Czarne wracają, ale teraz ważny staje się pion na be sześć.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Caruana likwiduje obrońcę: {{m:29}}. Czarne odbijają: {{m:30}}. {{s:31}} Białe ustawiają gońca na długiej przekątnej. {{s:32}} Czarne podwajają ciężkie figury w centrum i po raz pierwszy przewaga białych robi się trochę wyraźniejsza.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "{{s:33}} Białe przenoszą wieżę do obrony i ataku jednocześnie. {{s:34}} Czarne przegrupowują skoczka. Caruana uderza w centrum: {{m:35}}. Czarne biorą: {{m:36}}, a białe odzyskują materiał aktywną wieżą: {{m:37}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s10",
+      "chapter": "Otwarcie pozycji",
+      "text": "{{s:38}} Czarne szukają kontrgry skoczkiem. Białe decydują się na wymianę: {{m:39}}. Czarne odbijają: {{m:40}}. {{s:41}} Teraz marsz pionów na skrzydle hetmańskim zaczyna przypominać plan, a nie tylko zdobywanie przestrzeni.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Czarne próbują zahamować marsz: {{m:42}}. Caruana przesuwa pion dalej: {{m:43}}. Czarne odpowiadają skoczkiem: {{m:44}}. Białe spokojnie cofają wieżę: {{m:45}}, jakby mówiły: najpierw poukładam figury, potem policzymy.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Czarne zabierają piona: {{m:46}}, a białe odbijają: {{m:47}}. Czarne rozrywają centrum: {{m:48}}. Najpierw biją białe: {{m:49}}, a potem odpowiadają czarne: {{m:50}}. Plansza się oczyszcza, ale napięcie wcale nie spada.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "Przełom taktyczny",
+      "text": "Caruana centralizuje hetmana: {{m:51}}. Czarne przesuwają króla: {{m:52}}. Białe biorą w centrum: {{m:53}}. Czarne odpowiadają aktywnie: {{m:54}} — silnik widzi tu jeszcze niemal równowagę.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Caruana ustawia hetmana tak, że wygląda to bardzo śmiało: {{m:55}}. I teraz czarne grają: {{m:56}}. To jest pęknięcie; od tej chwili przewaga białych staje się wyraźna, choć na planszy nie ma jeszcze żadnego prostego mata.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Zanim spadnie cios, warto spojrzeć na hetmana białych — stoi pod ostrzałem, ale Caruana nie panikuje. Białe wchodzą wieżą: {{m:57}}. Czarne biorą hetmana: {{m:58}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s16",
+      "chapter": "Rachunek materiału",
+      "text": "Pułapka zamyka się natychmiast. Białe zabierają hetmana czarnych: {{m:59}}. Czarne odbijają: {{m:60}}. Caruana kończy sekwencję: {{m:61}}, i z chaosu wychodzi z końcówką, w której jego piony oraz aktywność zaczynają mówić coraz głośniej.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Czarne próbują ożywić skoczka: {{m:62}}. Białe od razu pchają groźnego piona: {{m:63}}. {{s:64}} Czarne blokują, ale Caruana włącza wieżę: {{m:65}}. Czarne cofają skoczka: {{m:66}}, i ocena robi się dla białych bardzo przyjemna.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Białe ustawiają gońca idealnie: {{m:67}}. Czarne przestawiają skoczka: {{m:68}}. Caruana wbija gońca głębiej: {{m:69}}. {{s:70}} Król czarnych schodzi na bok, a białe szykują wieżę do pracy z tyłu: {{m:71}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "Techniczna końcówka",
+      "text": "Czarne próbują utrzymać linię: {{m:72}}. Białe ustawiają wieżę aktywnie: {{m:73}}. Czarne odpowiadają: {{m:74}}. Caruana wchodzi gońcem na mocne pole: {{m:75}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Czarne biorą centralnego piona: {{m:76}}. Białe w zamian zabierają ważnego piona na siódmej linii: {{m:77}}. Czarne szukają kontrgry: {{m:78}}. Materiałowo walka wciąż wymaga dokładności, ale aktywność białych jest coraz bardziej dokuczliwa.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Caruana nie pozwala wieży czarnych odetchnąć: {{m:79}}. Czarne cofają skoczka: {{m:80}}. Biała wieża wraca do centrum: {{m:81}}. Czarne idą królem: {{m:82}}, ale to już coraz bardziej obrona, a nie gra o inicjatywę.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s22",
+      "chapter": "Finał",
+      "text": "Teraz goniec i wieża zaczynają wiązać czarne figury w supeł. Białe grają: {{m:83}}. Czarne manewrują: {{m:84}}. Caruana wchodzi wieżą głębiej: {{m:85}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Czarne próbują wrócić skoczkiem: {{m:86}}. Białe przerzucają wieżę na skraj: {{m:87}}. {{s:88}} Czarne jeszcze blokują, ale pion białych rusza naprzód: {{m:89}}. Czarne idą królem: {{m:90}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Pion jest już o krok od przemiany. Caruana gra: {{m:91}}. Czarne ścigają go królem: {{m:92}}. Biała wieża zmienia stronę ataku: {{m:93}}, a czarne w końcu zdejmują piona: {{m:94}}.",
+      "pause_after": 1
+    },
+    {
+      "id": "s25",
+      "chapter": "",
+      "text": "I wtedy przychodzi ostatnie ustawienie: {{m:95}}. Praggnanandhaa zrozumiał, że jego pozycja jest przegrana, i się poddał. Nie ma mata na planszy, ale są związane figury, słabe piony i końcówka, której czarne nie utrzymają.",
+      "pause_after": 1
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "Ta partia jest ważna nie przez jedną fajerwerkową kombinację, tylko przez zmianę tempa: od spokojnej partii włoskiej do końcówki wygranej techniką. W pierwszej klasycznej partii finału Caruana pokazał, jak mała inicjatywa może zamienić się w pozycję bez ratunku.",
+      "pause_after": 0.6
+    }
+  ]
+}
