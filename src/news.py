@@ -461,7 +461,7 @@ def main() -> int:
              f"Data: {pick.game.headers.get('Date', '?')}", f"Miejsce: {pick.game.headers.get('Site', '?')}",
              f"Tempo gry: {pick.tc}",
              f"Rankingi: {pick.white} {pick.elo[0] or '?'}, {pick.black} {pick.elo[1] or '?'}"]
-    label = tour.get("name", "")
+    label = re.sub(rf"(^\s*{year}\s+|\s+{year}\s*$)", "", tour.get("name", "")).strip()  # rok jest w kadrze osobno
     if matches:
         m = next(x for x in matches if pick in x.games)
         sname = stage_name(m, matches)

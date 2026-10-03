@@ -108,7 +108,7 @@ def draw_bracket(tournament: str, year: int, matches: list, pick, out: Path) -> 
                     px, py, pr = centers.get((prev.a, prev.b), (None, None, None))
                     if px is not None:
                         mid = (pr + x) / 2
-                        d.line([pr, py, mid, py, mid, y + box_h / 2, x, y + box_h / 2], fill=(90, 86, 80), width=3)
+                        d.line([pr, py, mid, py, mid, y + box_h / 2, x, y + box_h / 2], fill=(215, 211, 203), width=4)
         for m in third:
             y = bottom - box_h - 10
             _box(img, d, x, y, box_w, m, pick, matches)

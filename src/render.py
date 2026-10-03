@@ -13,6 +13,7 @@ from __future__ import annotations
 import io
 import subprocess
 from dataclasses import dataclass
+from pathlib import Path
 
 import cairosvg
 import chess
@@ -42,14 +43,19 @@ MIN_GAP = ANIM_SEC + 0.05  # animacje nigdy na siebie nie nachodzą
 AUTO_STEP = 1.25  # tempo przewijania pominiętych półruchów (s/ruch); main.py robi na nie miejsce
 AUTO_STEP_MAX = 1.5
 
-FONT_PATHS = [
-    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-]
+FONTS = Path(__file__).resolve().parent.parent / "assets" / "fonts"  # Montserrat (SIL OFL, assets/fonts/OFL.txt)
+WEIGHTS = {"regular": "Regular", "medium": "Medium", "semibold": "SemiBold", "bold": "Bold",
+           "extrabold": "ExtraBold", "black": "Black"}
+FALLBACK = ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]
 
 
-def _font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
-    return ImageFont.truetype(FONT_PATHS[1 if bold else 0], size)
+def _font(size: int, bold: bool = False, weight: str | None = None) -> ImageFont.FreeTypeFont:
+    """Montserrat: zwykły tekst — Medium, pogrubiony — Bold; weight= wybiera inną grubość (np. 'black')."""
+    name = WEIGHTS.get(weight or ("bold" if bold else "medium"), "Medium")
+    path = FONTS / f"Montserrat-{name}.ttf"
+    if path.exists():
+        return ImageFont.truetype(str(path), size)
+    return ImageFont.truetype(FALLBACK[1 if bold else 0], size)
 
 
 def _sprites() -> dict:

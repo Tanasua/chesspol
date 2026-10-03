@@ -34,18 +34,19 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
     y = 60
     d.line([x, y, x + 80, y], fill=ACCENT, width=5)
     y += 25
-    f_title = _font(64, True)
-    lines = _wrap(d, title.upper(), f_title, w, 3)
-    if len(lines) == 3:
-        f_title = _font(54, True)
+    for size in (64, 56, 50, 44, 40):  # największy krój, przy którym cały tytuł mieści się w 3 wierszach
+        f_title = _font(size, True)
         lines = _wrap(d, title.upper(), f_title, w, 3)
+        if not lines[-1].endswith("…") and all(d.textlength(ln, font=f_title) <= w for ln in lines):
+            break
     lh = f_title.size + 10
     for ln in lines:
         d.text((x, y), ln, font=f_title, fill=FG)
         y += lh
     y += 20
     d.text((x, y), str(year), font=_font(56, True), fill=ACCENT)
-    if badge:  # turniej / etap, np. "GRAND CHESS TOUR FINALS 2026 · FINAŁ"
+    badge = " ".join(x for x in badge.split() if x != str(year))  # rok jest już obok
+    if badge:  # turniej / etap, np. "GRAND CHESS TOUR FINALS · FINAŁ"
         bx = x + d.textlength(str(year), font=_font(56, True)) + 24
         fb = _fit(d, badge.upper(), 30, CW - 50 - bx, True)
         lines = _wrap(d, badge.upper(), fb, CW - 50 - bx, 2)
