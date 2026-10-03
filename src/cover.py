@@ -14,7 +14,8 @@ from render import ACCENT, BG, DIM, FG, _fit, _font, _wrap
 
 CW, CH = 1280, 720
 BOARD_PX = 620
-PHOTO = (130, 162)
+PHOTO = (176, 210)
+GAP = 44  # odstęp między portretami (tu napis 'vs')
 
 
 def _board_png(board: chess.Board, lastmove) -> Image.Image:
@@ -58,25 +59,33 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
     photos = [p for p in (white, black) if p.get("photo")]
     if len(photos) == 2:  # oba zdjęcia — obok siebie, z nazwiskami pod spodem
         for i, p in enumerate((white, black)):
-            px = x + i * (PHOTO[0] + 30)
+            px = x + i * (PHOTO[0] + GAP)
             ph = ImageOps.fit(Image.open(p["photo"]).convert("RGB"), PHOTO, centering=(0.5, 0.3))
             img.paste(ph, (px, y))
-            fl = flag_badge(p.get("country"), 22)
-            tx = px
-            if fl:  # flaga kraju przy nazwisku, pod portretem
-                img.paste(fl, (px, y + PHOTO[1] + 10), fl)
-                tx = px + fl.width + 8
-            d.text((tx, y + PHOTO[1] + 8), p["last"].upper()[:14], font=_fit(d, p["last"].upper()[:14], 22, PHOTO[0] + 26 - (tx - px), True), fill=FG)
-        d.text((x + PHOTO[0] + 4, y + PHOTO[1] // 2 - 16), "vs", font=_font(26, True), fill=DIM)
+            fl = flag_badge(p.get("country"), 24)
+            if fl:  # flaga w dolnym lewym rogu portretu — nazwisko ma pod zdjęciem całą szerokość kolumny
+                img.paste(fl, (px + 6, y + PHOTO[1] - fl.height - 6), fl)
+            last = p["last"].upper()
+            col_w = PHOTO[0] + GAP - 10  # kolumna = zdjęcie + część odstępu do następnej
+            size = 26
+            while size > 10 and d.textlength(last, font=_font(size, True)) > col_w:
+                size -= 1
+            d.text((px, y + PHOTO[1] + 8), last, font=_font(size, True), fill=FG)
+        fvs = _font(26, True)
+        d.text((x + PHOTO[0] + (GAP - d.textlength("vs", font=fvs)) / 2, y + PHOTO[1] // 2 - 16), "vs", font=fvs, fill=DIM)
     else:
         for p in (white, black):
             fl = flag_badge(p.get("country"), 34)
             tx = x + (fl.width + 14 if fl else 0)
             if fl:
                 img.paste(fl, (x, y + 6), fl)
-            for ln in _wrap(d, p["last"].upper(), _font(40, True), w - (tx - x), 2):
-                d.text((tx, y), ln, font=_font(40, True), fill=FG)
-                y += 48
+            for size in (40, 34, 30, 26):  # całe nazwisko w 2 wierszach, bez "…"
+                lines = _wrap(d, p["last"].upper(), _font(size, True), w - (tx - x), 2)
+                if not lines[-1].endswith("…"):
+                    break
+            for ln in lines:
+                d.text((tx, y), ln, font=_font(size, True), fill=FG)
+                y += size + 8
             if p is white:
                 d.text((x, y), "vs", font=_font(26, True), fill=DIM)
                 y += 40
