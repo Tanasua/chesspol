@@ -29,7 +29,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lang import L, field_, moves_word  # noqa: E402
+from lang import NATIONAL, L, field_, moves_word  # noqa: E402
 from phrases import title_hook_for  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -98,6 +98,24 @@ def when_uk(dt: datetime) -> str:
     city = {"America/New_York": "Нью-Йорком", "Europe/Berlin": "Берліном", "Europe/Warsaw": "Варшавою"}.get(TZ.key, TZ.key)
     return (f"{WEEKDAYS_UK[loc.weekday()]}, {loc:%d.%m.%Y} о {loc:%H:%M} (за {city}) = "
             f"{WEEKDAYS_UK[kyiv.weekday()]} {kyiv:%H:%M} за Києвом")
+
+
+def national_queue(national: dict, episodes: list) -> list:
+    """Rubryka krajowa: partie najsłynniejszych szachistów kraju kanału (catalog/national_<kraj>.json, pole n)."""
+    done = {e["id"] for e in episodes}
+    return [g for g in sorted(national.get("games", []), key=lambda g: g.get("n", 999))
+            if g["id"] not in done and ready(g)]
+
+
+def pick(episodes: list, q: list, nq: list) -> tuple[str, dict | None]:
+    """Na przemian: historia -> rubryka krajowa -> historia… Gdy jednej kolejki brak — druga."""
+    last = episodes[-1].get("rubric", "history") if episodes else "national"
+    order = ("national", "history") if last == "history" else ("history", "national")
+    for rubric in order:
+        src = nq if rubric == "national" else q
+        if src:
+            return rubric, src.pop(0)
+    return "", None
 
 
 def run(cmd: list) -> None:
@@ -251,6 +269,7 @@ def main() -> int:
         args.no_upload = True
 
     catalog = load_json(CATALOG, {"games": []})
+    national = load_json(NATIONAL, {"games": []})
     state = load_json(STATE, {"episodes": []})
     episodes = state["episodes"]
     now = datetime.now(timezone.utc)
@@ -258,15 +277,21 @@ def main() -> int:
         if (args.first_day or state.get("first_day")) else None
 
     q = queue(catalog, episodes)
+    nq = national_queue(national, episodes)
+    print(f"Kolejka: historia {len(q)}, rubryka krajowa ({NATIONAL.name}) {len(nq)}")
     if len(q) < LOW_QUEUE_WARN:
         print(f"::warning::W kolejce tylko {len(q)} gotowych partii (PGN zweryfikowane)")
 
     if args.plan:
         eps = list(episodes)
-        for g in q[:10]:
+        q2, nq2 = list(q), list(nq)
+        for _ in range(10):
+            rubric, g = pick(eps, q2, nq2)
+            if not g:
+                break
             slot = next_slot(eps, now, first_day)
-            print(f"{slot.astimezone(TZ):%Y-%m-%d %H:%M %Z}  [{L.code}] #{g[L.order_key]:>3}  {g['id']}")
-            eps.append({"id": g["id"], "publish_at": slot.isoformat()})
+            print(f"{slot.astimezone(TZ):%Y-%m-%d %H:%M %Z}  [{L.code}] {rubric:8} {g['id']}")
+            eps.append({"id": g["id"], "publish_at": slot.isoformat(), "rubric": rubric})
         return 0
 
     made = 0
@@ -275,12 +300,13 @@ def main() -> int:
         if len(future) >= BUFFER:
             print(f"Zaplanowane naprzód: {len(future)} (bufor {BUFFER}) — nic do zrobienia")
             break
-        if not q:
+        rubric, game = pick(episodes, q, nq)
+        if not game:
             print("::error::Brak gotowych partii — dodaj zweryfikowane PGN (src/pgn_collect.py)")
             return 1
-        game = q.pop(0)
         slot = next_slot(episodes, now, first_day)
         episode = produce(game, slot, args.no_upload, args.dry_tts, number=len(episodes) + 1)
+        episode["rubric"] = rubric
         if args.dry_tts or (args.no_upload and MODE != "manual"):
             break  # test — bez zapisu stanu
         episodes.append(episode)

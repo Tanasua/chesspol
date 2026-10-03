@@ -52,6 +52,10 @@ Pliki:
   wideo (out/ / out/de/), tagi Release (ep001-… / de-ep001-…), prompt (prompts/script_system_<kod>.md), zapis ruchów
   (pl_notation.py / de_notation.py: K D T L S, "Springer nach eff drei"), zwroty (phrases.TEXTS), teksty opisu (lang.L.t).
   Pola katalogu *_de: label_de, event_de, site_de, black_de/black_last_de (Die Welt, Herzog von Braunschweig…); nazwiska — pisownia bazowa.
+- RUBRYKA KRAJOWA: catalog/national_<kraj>.json (pl, de, us — wg Channel.country/code; pola jak games.json + n), PGN w games/,
+  weryfikacja: pgn_collect.py --catalog catalog/national_us.json. scheduler: historia i rubryka krajowa na przemian
+  (episode.rubric), gdy jednej brak — druga. players.catalog_entry i fetch_portraits widzą też katalogi krajowe.
+- FAKTY: facts/<id>.md (EN, punkty potwierdzone ≥2 niezależnymi źródłami) + facts/<id>.sources.md (URL-e, nie trafiają do LLM).
 - KANAŁ EN (USA): CHANNEL=en — kolejność n_en (seed 20261003), label_en/event_en, black_en (The World, Duke of Brunswick…),
   en_notation.py ("knight to F three", "E takes D five", "castles kingside"; ekran: zwykły SAN), prompts/script_system_en.md,
   scripts_en/, out/en/, state/schedule_en.json, tag en-…, flaga 🇺🇸, "swój" gracz = us (Channel.country);

@@ -200,6 +200,8 @@ def main() -> int:
     args = ap.parse_args()
 
     catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+    for nat in sorted(CATALOG.parent.glob("national_*.json")):  # rubryki krajowe — ci sami gracze, te same zdjęcia
+        catalog["games"] += json.loads(nat.read_text(encoding="utf-8")).get("games", [])
     PHOTOS.mkdir(parents=True, exist_ok=True)
     ov_path = PHOTOS / "overrides.json"
     overrides = json.loads(ov_path.read_text(encoding="utf-8")) if ov_path.exists() else {}

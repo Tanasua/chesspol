@@ -123,6 +123,9 @@ CHANNELS = {"pl": PL, "de": DE, "en": EN}
 L = CHANNELS[os.environ.get("CHANNEL", "pl").strip().lower() or "pl"]
 
 
+NATIONAL = ROOT / "catalog" / f"national_{L.country or L.code}.json"  # rubryka "swoi" mistrzowie kraju kanału
+
+
 def field_(entry: dict | None, name: str):
     """Pole katalogu w wersji językowej kanału (np. label_de), w razie braku — wersja bazowa."""
     e = entry or {}

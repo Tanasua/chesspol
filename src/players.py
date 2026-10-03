@@ -39,7 +39,7 @@ NEWS = ROOT / "catalog" / "news.json"  # partie z bieżących turniejów (src/ne
 
 
 def catalog_entry(game_id: str) -> dict | None:
-    for path in (CATALOG, NEWS):
+    for path in (CATALOG, NEWS, *sorted((ROOT / "catalog").glob("national_*.json"))):
         if path.exists():
             games = json.loads(path.read_text(encoding="utf-8")).get("games", [])
             hit = next((g for g in games if g["id"] == game_id), None)

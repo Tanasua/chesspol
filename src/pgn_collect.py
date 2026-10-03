@@ -189,7 +189,9 @@ def main() -> int:
     ap.add_argument("--source", action="append", required=True, help="nazwa=ścieżka (plik .pgn lub katalog)")
     ap.add_argument("--only", action="append")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--catalog", default=str(CATALOG), help="plik katalogu (np. catalog/national_us.json)")
     args = ap.parse_args()
+    catalog_path = Path(args.catalog)
 
     sources = {}
     for s in args.source:
@@ -197,7 +199,7 @@ def main() -> int:
         p = Path(p)
         sources[name] = sorted(p.rglob("*.pgn")) if p.is_dir() else [p]
 
-    catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     games = [g for g in catalog["games"] if not args.only or g["id"] in args.only]
     found = candidates(games, sources)
 
@@ -205,7 +207,7 @@ def main() -> int:
     for g in games:
         status, sans, srcs = decide(g, found.get(g["id"], []))
         stats[status] += 1
-        print(f"{status:14} #{g['n']:>3} {g['id']:45} {','.join(srcs)}")
+        print(f"{status:14} #{g.get('n', 0):>3} {g['id']:45} {','.join(srcs)}")
         if args.dry_run:
             continue
         g["pgn_status"] = status
@@ -215,7 +217,7 @@ def main() -> int:
             write_pgn(g, sans)
     print(dict(stats), file=sys.stderr)
     if not args.dry_run:
-        CATALOG.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return 0
 
 
