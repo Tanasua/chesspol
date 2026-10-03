@@ -88,6 +88,7 @@ def main() -> int:
     ap.add_argument("--cache", default=".tts_cache")
     ap.add_argument("--fps", type=int, default=25)
     ap.add_argument("--no-music", action="store_true")
+    ap.add_argument("--preroll", help="PNG na początek (np. drabinka turnieju) — do końca pierwszego segmentu scenariusza")
     args = ap.parse_args()
 
     game = load_game(args.pgn)
@@ -117,7 +118,10 @@ def main() -> int:
     anchor_times = []
     cursor = LEAD_IN
     chapters = []
-    for seg in segments:
+    preroll_until = None
+    for si, seg in enumerate(segments):
+        if si == 2 and args.preroll:  # plansza przez powitanie i hak (intro + s01), potem szachownica
+            preroll_until = cursor
         if seg.chapter:
             chapters.append({"t": 0.0 if not chapters else round(cursor, 2), "title": seg.chapter})
         res = dry_run(seg.tts_text, cache) if args.dry_run else synthesize(seg.tts_text, cache, voice_id)
@@ -170,7 +174,12 @@ def main() -> int:
             year=str(entry["year"]) if entry else "",
             caption=field_(entry, "label") or "",
         )
-        render_video(renderer, events, duration, wav, out, fps=args.fps)
+        if args.preroll and preroll_until is None:
+            preroll_until = cursor
+        if args.preroll and events and preroll_until > events[0].time:  # ruchy przed końcem planszy — skróć planszę
+            preroll_until = max(0.0, events[0].time - 0.3)
+        render_video(renderer, events, duration, wav, out, fps=args.fps,
+                     preroll=(args.preroll, preroll_until) if args.preroll else None)
     timing = out.with_suffix(".timing.json")
     timing.write_text(json.dumps({"duration": round(duration, 2), "chapters": chapters,
                                   "moves": [[e.ply_index, round(e.time, 2)] for e in events],

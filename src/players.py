@@ -35,11 +35,17 @@ def split_name(name: str) -> tuple[str, str]:
     return " ".join(words[:i]), " ".join(words[i:])
 
 
+NEWS = ROOT / "catalog" / "news.json"  # partie z bieżących turniejów (src/news.py)
+
+
 def catalog_entry(game_id: str) -> dict | None:
-    if not CATALOG.exists():
-        return None
-    games = json.loads(CATALOG.read_text(encoding="utf-8")).get("games", [])
-    return next((g for g in games if g["id"] == game_id), None)
+    for path in (CATALOG, NEWS):
+        if path.exists():
+            games = json.loads(path.read_text(encoding="utf-8")).get("games", [])
+            hit = next((g for g in games if g["id"] == game_id), None)
+            if hit:
+                return hit
+    return None
 
 
 def side(entry: dict | None, color: str, pgn_name: str) -> dict:

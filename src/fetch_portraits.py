@@ -148,6 +148,39 @@ def license_ok(lic: str) -> bool:
     return bool(lic) and bool(LICENSE_OK.match(lic)) and not LICENSE_BAD.search(lic)
 
 
+def save_photo(name: str, person: dict, how: str) -> str:
+    """Pobiera zdjęcie P18 osoby z Wikidata do assets/players/<slug>.jpg (+ .json). Zwraca status."""
+    jpg, meta_path = PHOTOS / f"{slug(name)}.jpg", PHOTOS / f"{slug(name)}.json"
+    if jpg.exists() and meta_path.exists():
+        return "już jest"
+    files = _claim_ids(person, "P18")
+    if not files:
+        return "brak zdjęcia w Wikidata"
+    info = commons_file(files[0])
+    if not info or not license_ok(info["license"]):
+        return f"licencja odrzucona ({info and info['license']})"
+    r = session.get(info["thumb"], timeout=60)
+    r.raise_for_status()
+    PHOTOS.mkdir(parents=True, exist_ok=True)
+    Image.open(io.BytesIO(r.content)).convert("RGB").save(jpg, "JPEG", quality=88)
+    info.update(qid=person["id"], name=name, matched=how, author_raw=info.get("author"),
+                author=clean_author(info.get("author")))
+    info.pop("thumb", None)
+    meta_path.write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return "pobrane"
+
+
+def person_by_fide(fide_id: str) -> dict | None:
+    """Szachista w Wikidata po identyfikatorze FIDE (P1440) — pewniejsze niż wyszukiwanie po nazwisku."""
+    hits = api(WD_API, action="query", list="search", srsearch=f"haswbstatement:P1440={fide_id}",
+               srlimit=2).get("query", {}).get("search", [])
+    if len(hits) != 1:
+        return None
+    qid = hits[0]["title"]
+    return api(WD_API, action="wbgetentities", ids=qid, props="claims|labels|aliases",
+               languages="en|pl|de")["entities"].get(qid)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true")

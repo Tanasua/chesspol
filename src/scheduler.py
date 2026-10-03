@@ -219,16 +219,18 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
 
 
 def deliver_package(game: dict, pgn: Path, video: Path, title: str, description: str, tags: list,
-                    when: str, number: int, remote: bool = True) -> dict:
+                    when: str, number: int, remote: bool = True, tag: str | None = None, badge: str = "",
+                    preroll: Path | None = None) -> dict:
     from cover import make_cover
     from deliver import github_release, telegram, write_package
     from pgn_loader import load_game
     from players import side
 
     g = load_game(pgn)
-    tag = f"{L.tag_prefix}ep{number:03d}-{game['id']}"
+    tag = tag or f"{L.tag_prefix}ep{number:03d}-{game['id']}"
     cover = make_cover(g, title.split(" | ")[0], side(game, "white", game["white"]),
-                       side(game, "black", game["black"]), str(game["year"]), L.out / f"{game['id']}_cover.jpg")
+                       side(game, "black", game["black"]), str(game["year"]), L.out / f"{game['id']}_cover.jpg",
+                       badge=badge)
     pkg = write_package(ROOT / "out" / "packages" / tag, video, cover, title, description, tags, when)
     info = {"package": str((ROOT / "out" / "packages" / tag).relative_to(ROOT))}
     if not remote:

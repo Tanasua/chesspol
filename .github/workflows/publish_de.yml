@@ -80,7 +80,7 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PUBLISH_TZ: Europe/Kyiv
           PUBLISH_HOUR: "10"
-          INTERVAL_DAYS: "3"
+          INTERVAL_DAYS: "1"           # 1 odcinek dziennie (+ ewentualnie nowość z turnieju)
           BUFFER: ${{ inputs.ahead || '2' }}
           MAX_PER_RUN: ${{ inputs.ahead || '1' }}
           FIRST_DAY: ${{ inputs.first_day }}

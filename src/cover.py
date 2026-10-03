@@ -9,7 +9,7 @@ import chess
 import chess.svg
 from PIL import Image, ImageDraw, ImageOps
 
-from render import ACCENT, BG, DIM, FG, _font, _wrap
+from render import ACCENT, BG, DIM, FG, _fit, _font, _wrap
 
 CW, CH = 1280, 720
 BOARD_PX = 620
@@ -24,7 +24,7 @@ def _board_png(board: chess.Board, lastmove) -> Image.Image:
     return Image.open(io.BytesIO(png)).convert("RGB")
 
 
-def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path) -> Path:
+def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path, badge: str = "") -> Path:
     img = Image.new("RGB", (CW, CH), BG)
     last = game.plies[-1]
     img.paste(_board_png(chess.Board(last.fen_after), last.move), (50, (CH - BOARD_PX) // 2))
@@ -45,6 +45,12 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path)
         y += lh
     y += 20
     d.text((x, y), str(year), font=_font(56, True), fill=ACCENT)
+    if badge:  # turniej / etap, np. "GRAND CHESS TOUR FINALS 2026 · FINAŁ"
+        bx = x + d.textlength(str(year), font=_font(56, True)) + 24
+        fb = _fit(d, badge.upper(), 30, CW - 50 - bx, True)
+        lines = _wrap(d, badge.upper(), fb, CW - 50 - bx, 2)
+        for i, ln in enumerate(lines):
+            d.text((bx, y + 6 + i * (fb.size + 4)), ln, font=fb, fill=FG)
     y += 80
 
     photos = [p for p in (white, black) if p.get("photo")]

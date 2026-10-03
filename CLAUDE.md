@@ -32,7 +32,13 @@ Pliki:
 - Tytuł YouTube: "<KICKER> <title> | Białe – Czarne (rok)"; kicker = 1–3 słowa WERSALIKAMI z "!" od LLM (pole "kicker",
   walidacja w script_check); stare scenariusze bez kickera -> dopisek z phrases.TITLE_HOOKS
 - src/youtube_upload.py, src/youtube_auth.py — YouTube Data API (OAuth refresh token)
-- .github/workflows/publish.yml — cron codziennie 03:17 UTC, commit stanu do repo
+- .github/workflows/publish.yml — cron codziennie 03:17 UTC, INTERVAL_DAYS=1 (1 odcinek dziennie; maks. 2 z nowością), commit stanu do repo
+- NOWOŚCI: src/news.py (+ .github/workflows/news.yml, workflow_dispatch: kanał, turniej/link Lichess, test). Lichess API
+  (broadcast search / tour / round PGN) -> format nokaut/kołowy -> wybór JEDNEJ partii bez pytania (etap, tempo, wynik,
+  ranking, dramat wg Stockfisha, partia rozstrzygająca mecz, wzmianki r/chess) -> portrety po FIDE ID (Wikidata P1440)
+  -> src/bracket.py: plansza na początek (drabinka z przekreślonymi odpadłymi / tabela; stan PRZED partią) -> catalog/news.json,
+  facts/<id>.md (fakty policzone z PGN) -> script_gen -> main.py --preroll -> paczka (tag news[-test]-…, okładka z plakietką turnieju).
+  Nazwiska z formatu FIDE w PGN ("Ding, Liren" -> DING). lichess.org zablokowany w środowisku deweloperskim — test tylko w Actions.
 - KANAŁY: src/lang.py (CHANNEL=pl domyślnie | de). Wspólne: katalog, PGN, zdjęcia, render, muzyka, Telegram (ten sam czat, flaga 🇵🇱/🇩🇪).
   Osobne: kolejność (n / n_de, seed 20261001), stan (state/schedule.json / schedule_de.json), scenariusze (scripts/ / scripts_de/),
   wideo (out/ / out/de/), tagi Release (ep001-… / de-ep001-…), prompt (prompts/script_system_<kod>.md), zapis ruchów

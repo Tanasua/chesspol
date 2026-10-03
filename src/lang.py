@@ -51,6 +51,10 @@ PL = Channel(
         "hashtags": "#szachy #chess #historiaszachów",
         "tags": ["szachy", "chess", "partia szachowa", "historia szachów", "słynne partie szachowe"],
         "year_tag": "szachy {year}",
+        "stage": {1: "Finał", 2: "Półfinał", 4: "Ćwierćfinał", 8: "1/8 finału", 16: "1/16 finału"},
+        "third": "Mecz o 3. miejsce", "this_game": "TA PARTIA", "standings": "Tabela przed tą partią",
+        "round_n": "Runda {n}", "pts": "pkt", "news_tags": ["szachy na żywo", "turniej szachowy", "wiadomości szachowe"],
+        "news_hashtags": "#szachy #chess #turniejszachowy",
     },
 )
 
@@ -77,6 +81,10 @@ DE = Channel(
         "hashtags": "#schach #chess #schachgeschichte",
         "tags": ["Schach", "chess", "Schachpartie", "Schachgeschichte", "berühmte Schachpartien"],
         "year_tag": "Schach {year}",
+        "stage": {1: "Finale", 2: "Halbfinale", 4: "Viertelfinale", 8: "Achtelfinale", 16: "Sechzehntelfinale"},
+        "third": "Spiel um Platz 3", "this_game": "DIESE PARTIE", "standings": "Tabelle vor dieser Partie",
+        "round_n": "Runde {n}", "pts": "Pkt.", "news_tags": ["Schach live", "Schachturnier", "Schachnachrichten"],
+        "news_hashtags": "#schach #chess #schachturnier",
     },
 )
 

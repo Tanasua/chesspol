@@ -73,10 +73,9 @@ def ply_table(game, evals: list | None = None) -> str:
 
 
 def catalog_facts(name: str) -> str:
-    if not CATALOG.exists():
-        return ""
-    games = json.loads(CATALOG.read_text(encoding="utf-8")).get("games", [])
-    g = next((x for x in games if x["id"] == name), None)
+    from players import catalog_entry
+
+    g = catalog_entry(name)
     if not g:
         return ""
     t = L.t

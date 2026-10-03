@@ -362,7 +362,13 @@ def schedule(anchor_times: list, n_plies: int) -> list:
     return events
 
 
-def render_video(renderer: Renderer, events: list, duration: float, audio_path, out_path, fps: int = 25) -> None:
+def render_video(renderer: Renderer, events: list, duration: float, audio_path, out_path, fps: int = 25,
+                 preroll=None) -> None:
+    """preroll: (ścieżka PNG 1920x1080, do_sekundy) — plansza na początku (np. drabinka turnieju)."""
+    pre_bytes, pre_until = None, 0.0
+    if preroll:
+        pre_bytes = Image.open(preroll[0]).convert("RGB").resize((W, H)).tobytes()
+        pre_until = preroll[1]
     cmd = ["ffmpeg", "-y", "-v", "error",
            "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(fps), "-i", "-",
            "-i", str(audio_path),
@@ -376,6 +382,9 @@ def render_video(renderer: Renderer, events: list, duration: float, audio_path, 
     try:
         for f in range(n_frames):
             t = f / fps
+            if pre_bytes and t < pre_until:
+                proc.stdin.write(pre_bytes)
+                continue
             while ei < len(events) and t >= events[ei].time + ANIM_SEC:
                 k = events[ei].ply_index
                 ei += 1

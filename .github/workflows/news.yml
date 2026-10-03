@@ -1,0 +1,105 @@
+name: news-episode
+
+# Odcinek-nowość: najważniejsza partia z turnieju transmitowanego na Lichess (src/news.py).
+# Ręcznie: kanał + nazwa turnieju albo link do transmisji. Test = paczka "news-test-…" bez wpisu w harmonogramie.
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: "Kanał: pl albo de"
+        default: "pl"
+      tournament:
+        description: "Nazwa turnieju albo link lichess.org/broadcast/…"
+        required: true
+      test:
+        description: "Test (bez wpisu w harmonogramie)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: System deps
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core libcairo2 stockfish
+
+      - name: Python deps
+        run: pip install -r requirements.txt
+
+      - name: TTS cache
+        uses: actions/cache@v4
+        with:
+          path: .tts_cache
+          key: tts-${{ github.run_id }}
+          restore-keys: tts-
+
+      - name: Produce news episode
+        env:
+          CHANNEL: ${{ inputs.channel }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          INWORLD_API_KEY: ${{ secrets.INWORLD_API_KEY }}
+          INWORLD_VOICE_ID: ${{ secrets.INWORLD_VOICE_ID }}
+          INWORLD_MODEL: inworld-tts-2
+          INWORLD_LANGUAGE: pl-PL
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_DE }}
+          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
+          HOST_NAME: ${{ inputs.channel == 'de' && vars.HOST_NAME_DE || vars.HOST_NAME }}
+          STOCKFISH_PATH: /usr/games/stockfish
+          GH_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TOURNAMENT: ${{ inputs.tournament }}
+          TEST: ${{ inputs.test }}
+        run: |
+          ARGS=(--tournament "$TOURNAMENT")
+          if [ "$TEST" = "true" ]; then ARGS+=(--test); fi
+          set -o pipefail
+          python src/news.py "${ARGS[@]}" 2>&1 | tee /tmp/produce.log
+
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "episode-bot"
+          git config user.email "episode-bot@users.noreply.github.com"
+          for p in catalog/news.json games/news facts scripts scripts_de assets/players; do [ -e "$p" ] && git add "$p"; done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "bot: news episode"
+          for i in 1 2 3 4; do git pull --rebase && git push && exit 0; sleep $((2**i)); done
+          exit 1
+
+      - name: Telegram alert on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          [ -n "$TELEGRAM_BOT_TOKEN" ] || exit 0
+          REASON=$(grep -Eo "credit_balance_exhausted|insufficient_quota|quota_exceeded|invalid_api_key|missing_permissions|Nie znaleziono transmisji[^\"]*|Brak zakończonych partii|HTTP [45][0-9]{2}" /tmp/produce.log 2>/dev/null | head -1 || true)
+          curl -sS -o /dev/null "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode chat_id="$TELEGRAM_CHAT_ID" \
+            --data-urlencode text="⚠️ Шаховий бот (новини): запуск упав. ${REASON:+Причина: $REASON. }Лог: $RUN_URL"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: news-${{ github.run_id }}
+          path: out/packages/
+          if-no-files-found: ignore
+          retention-days: 14
