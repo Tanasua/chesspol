@@ -1,0 +1,13 @@
+{
+  "episodes": [
+    {
+      "id": "kasparov_world_1999",
+      "publish_at": "2026-10-04T14:00:00+00:00",
+      "title": "ENDGAME WAR! The Internet Endgame | Garry Kasparov – The World (1999)",
+      "mode": "manual",
+      "package": "out/packages/en-ep001-kasparov_world_1999",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep001-kasparov_world_1999",
+      "telegram": true
+    }
+  ]
+}

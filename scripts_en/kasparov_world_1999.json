@@ -1,0 +1,241 @@
+{
+  "kicker": "ENDGAME WAR!",
+  "title": "The Internet Endgame",
+  "description": "In 1999, Garry Kasparov played White against The World in the online event Kasparov versus the World. This episode follows the game from its tense opening into a long endgame where passed pawns and queen checks take over. It is famous for the unusual matchup itself: one player against an opponent named The World, on the internet. Watch for the moment when a balanced race finally tips.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Internet Hook",
+      "text": "In nineteen ninety-nine, on the internet, Garry Kasparov is playing the opponent named The World, and the board refuses to calm down. This does not become a quick attack, it becomes a nerves test that reaches all the way to move sixty-two: {{m:1}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:2}} Black immediately makes the position uneven. White develops: {{m:3}}. {{s:4}} Black keeps the center solid.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "White gives the first check: {{m:5}}. {{s:6}} Black blocks it without panic. {{s:7}} White trades, and Black's queen is pulled into the recapture: {{m:8}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Opening Setup",
+      "text": "Now Kasparov builds a broad center: {{m:9}}. {{s:10}} Black develops into the fight. White adds one more piece: {{m:11}}. {{s:12}} Black answers in kind.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Kasparov castles: {{m:13}}. {{s:14}} Black prepares the kingside. Then White strikes in the center: {{m:15}}. {{s:16}} The tension opens, but not enough to decide anything.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "White recaptures: {{m:17}}. {{s:18}} Black's bishop joins the long diagonal. White reroutes: {{m:19}}. Black brings the queen forward: {{m:20}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Here the game changes tone. White jumps into Black's camp: {{m:21}}. Black snaps up material: {{m:22}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Kasparov keeps checking: {{m:23}}. The black king steps away: {{m:24}}. White's knight reaches the corner: {{m:25}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "Tactical Detour",
+      "text": "Black counters with the queen: {{m:26}}. White checks again: {{m:27}}. {{s:28}} The wandering knight disappears, and the material story resets.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Kasparov rebuilds from the center: {{m:29}}. Black activates the rook: {{m:30}}. White pushes on the wing: {{m:31}}. Black centralizes a knight: {{m:32}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "White removes that knight: {{m:33}}. Black's queen takes over the square: {{m:34}}. White aims at Black's king: {{m:35}}. Black chooses activity: {{m:36}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "Queen Activity",
+      "text": "Now the queens start setting the pace. Kasparov plays: {{m:37}}. Black challenges from the side: {{m:38}}. White invades: {{m:39}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Black blocks the immediate danger: {{m:40}}. White creates luft: {{m:41}}. Black grabs on the wing: {{m:42}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Kasparov does not let that rook live: {{m:43}}. Black's queen recaptures: {{m:44}}. White takes the kingside pawn: {{m:45}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Black hits back: {{m:46}}. White takes another pawn near the king: {{m:47}}. Black centralizes: {{m:48}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "The position is sharp, but the engine still sees White only a little better, not a knockout. White returns the queen: {{m:49}}. Black posts the bishop aggressively: {{m:50}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Kasparov repeats the queen pressure: {{m:51}}. Black pushes for counterplay: {{m:52}}. White comes back again: {{m:53}}. Black holds the line: {{m:54}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s18",
+      "chapter": "Into The Endgame",
+      "text": "Now the game starts turning from attack into endurance. White pushes the h-pawn: {{m:55}}. Black answers on the other side: {{m:56}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "The h-pawn keeps going: {{m:57}}. Black repositions the queen: {{m:58}}. Kasparov checks: {{m:59}}. Black offers the queen trade: {{m:60}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Kasparov accepts: {{m:61}}. Black recaptures with the king: {{m:62}}. The queens are gone, but the danger has not left the board.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "White starts the kingside pawn break: {{m:63}}. Black captures: {{m:64}}. White recaptures: {{m:65}}. Black sends the queenside pawn forward: {{m:66}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Kasparov improves the bishop: {{m:67}}. Black checks: {{m:68}}. White steps away: {{m:69}}. Black pushes deeper: {{m:70}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s23",
+      "chapter": "Pawn Race",
+      "text": "The race is now unmistakable. White pushes: {{m:71}}. Black centralizes the king: {{m:72}}. White pushes again: {{m:73}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Black answers in the center: {{m:74}}. White's passer reaches the sixth rank: {{m:75}}. Black brings a knight to stop it: {{m:76}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s25",
+      "chapter": "",
+      "text": "Kasparov activates the rook: {{m:77}}. Black hits the center: {{m:78}}. White offers a bishop trade: {{m:79}}. Black's king steps closer: {{m:80}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "The bishops leave the board: {{m:81}}. Black recaptures: {{m:82}}. White's king joins the race: {{m:83}}. Black's pawn keeps running: {{m:84}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s27",
+      "chapter": "",
+      "text": "White centralizes the king: {{m:85}}. Black's king supports the passer: {{m:86}}. Kasparov pushes the h-pawn to the brink: {{m:87}}. Black blocks with the knight: {{m:88}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s28",
+      "chapter": "",
+      "text": "White's king comes forward: {{m:89}}. Black attacks from the side: {{m:90}}. Kasparov's rook goes behind the passer: {{m:91}}. Black pushes the central pawn: {{m:92}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s29",
+      "chapter": "Double Promotion",
+      "text": "Now comes the wild part. White's king takes the knight's squares away: {{m:93}}. Black promotes first: {{m:94}}.",
+      "pause_after": 1
+    },
+    {
+      "id": "s30",
+      "chapter": "",
+      "text": "Kasparov removes the new queen: {{m:95}}. Black's king takes the rook: {{m:96}}. White captures the knight: {{m:97}}. Black's d-pawn keeps moving: {{m:98}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s31",
+      "chapter": "",
+      "text": "White promotes too: {{m:99}}. Black promotes back: {{m:100}}. In a few moves, the board has gone from rook ending to queen ending.",
+      "pause_after": 1
+    },
+    {
+      "id": "s32",
+      "chapter": "",
+      "text": "Kasparov checks and keeps the queen active: {{m:101}}. Black pushes a pawn: {{m:102}}. White checks with the king nearby: {{m:103}}. Black's king chooses another square: {{m:104}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s33",
+      "chapter": "",
+      "text": "White keeps checking: {{m:105}}. Black heads to the corner: {{m:106}}. White re-centers the queen: {{m:107}}. Black pushes again: {{m:108}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s34",
+      "chapter": "Final Queen Duel",
+      "text": "Kasparov removes that pawn: {{m:109}}. Black checks: {{m:110}}. White's king finds shelter by moving forward: {{m:111}}. Black tries to create one more passed pawn: {{m:112}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s35",
+      "chapter": "",
+      "text": "White checks from the center: {{m:113}}. Black's king retreats: {{m:114}}. Kasparov pushes the g-pawn, and now every tempo matters: {{m:115}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s36",
+      "chapter": "",
+      "text": "Black offers a queen trade: {{m:116}}. Kasparov refuses the quiet ending and checks instead: {{m:117}}. Black's king moves: {{m:118}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s37",
+      "chapter": "",
+      "text": "White checks again: {{m:119}}. Black steps to a square that lets White's king get active: {{m:120}}. Now the evaluation is finally close to decisive.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s38",
+      "chapter": "",
+      "text": "Kasparov's king marches in: {{m:121}}. White is now clearly winning, because the passed pawn is too fast and the black queen cannot do everything. Black tries one last push: {{m:122}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s39",
+      "chapter": "",
+      "text": "One more pawn move seals it: {{m:123}}. The World realized the position was lost, and resigned, so Garry Kasparov won. This game matters because an online battle between Kasparov and The World turned into a marathon where technique, promotion races, and queen checks decided everything.",
+      "pause_after": 1
+    }
+  ]
+}
