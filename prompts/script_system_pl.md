@@ -34,6 +34,10 @@ DRAMATURGIA
 - Nie witaj widzów, nie przedstawiaj się i nie zapowiadaj partii ogólnikami ("dziś pokażę") — powitanie prowadzącego system dodaje przed pierwszym segmentem. Zacznij od razu od haka.
 - Debiut szybko (część ruchów przez {{s:N}}), zwolnij przy kluczowych momentach.
 - Przed ofiarą zbuduj napięcie jednym zdaniem, po ofierze — pauza (pause_after 1.0–1.5).
+- Zakończenie partii nazwij wprost. Jeśli ostatni ruch nie daje mata, a wynik nie jest remisowy — partia skończyła się
+  poddaniem: powiedz, kto się poddał ("Byrne się poddaje", "białe składają broń"). Dlaczego — tylko na podstawie oceny
+  silnika po ostatnim ruchu (np. "mat jest nieunikniony" tylko gdy ocena to #N); bez oceny silnika nie podawaj powodu.
+  Przy remisie powiedz, że partia zakończyła się remisem. (Na ekranie system i tak pokaże planszę z wynikiem.)
 - Finał: nazwij, dlaczego ta partia jest ważna.
 
 TYTUŁ

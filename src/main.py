@@ -169,6 +169,7 @@ def main() -> int:
             black=side(entry, "black", game.headers.get("Black", "?")),
             year=str(entry["year"]) if entry else "",
             caption=field_(entry, "label") or "",
+            ending=(entry or {}).get("ending"),
         )
         render_video(renderer, events, duration, wav, out, fps=args.fps)
     timing = out.with_suffix(".timing.json")

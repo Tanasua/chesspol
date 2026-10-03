@@ -35,15 +35,6 @@
       "package": "out/packages/ep004-tal_fischer_1959",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep004-tal_fischer_1959",
       "telegram": true
-    },
-    {
-      "id": "byrne_fischer_1963",
-      "publish_at": "2026-10-09T07:00:00+00:00",
-      "title": "GENIALNE! Nagroda za błyskotliwość | Robert Eugene Byrne – Robert James Fischer (1963)",
-      "mode": "manual",
-      "package": "out/packages/ep005-byrne_fischer_1963",
-      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep005-byrne_fischer_1963",
-      "telegram": true
     }
   ],
   "first_day": "2026-09-27"
