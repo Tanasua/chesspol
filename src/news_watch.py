@@ -60,6 +60,11 @@ def finished_rounds(now: datetime) -> list:
     """[(waga, tour, round)] — rundy zakończone w oknie WINDOW, ważne turnieje, od najważniejszej."""
     data = _get(f"{API}/broadcast/top", params={"page": 1}).json()
     entries = list(data.get("active", [])) + list((data.get("past") or {}).get("currentPageResults", []))
+    print("Lichess top — klucze:", sorted(data.keys()), "| pozycji:", len(entries))
+    for e in entries[:25]:
+        t, r = e.get("tour", {}), e.get("round", {})
+        print(f"    tier={t.get('tier')} {t.get('name')!r} | ostatnia runda: {r.get('name')!r} "
+              f"finished={r.get('finished')} startsAt={r.get('startsAt')} finishedAt={r.get('finishedAt')}")
     out, seen = [], set()
     for e in entries:
         tour = e.get("tour", {})
