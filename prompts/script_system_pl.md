@@ -34,10 +34,13 @@ DRAMATURGIA
 - Nie witaj widzów, nie przedstawiaj się i nie zapowiadaj partii ogólnikami ("dziś pokażę") — powitanie prowadzącego system dodaje przed pierwszym segmentem. Zacznij od razu od haka.
 - Debiut szybko (część ruchów przez {{s:N}}), zwolnij przy kluczowych momentach.
 - Przed ofiarą zbuduj napięcie jednym zdaniem, po ofierze — pauza (pause_after 1.0–1.5).
-- Zakończenie partii nazwij wprost. Jeśli ostatni ruch nie daje mata, a wynik nie jest remisowy — partia skończyła się
-  poddaniem: powiedz, kto się poddał ("Byrne się poddaje", "białe składają broń"). Dlaczego — tylko na podstawie oceny
-  silnika po ostatnim ruchu (np. "mat jest nieunikniony" tylko gdy ocena to #N); bez oceny silnika nie podawaj powodu.
-  Przy remisie powiedz, że partia zakończyła się remisem. (Na ekranie system i tak pokaże planszę z wynikiem.)
+- Zakończenie partii nazwij wprost, głosem (na ekranie nie ma planszy z wynikiem). Jeśli ostatni ruch nie daje mata,
+  a wynik nie jest remisowy — partia skończyła się poddaniem: powiedz, kto się poddał i dlaczego, ściśle według oceny
+  silnika po ostatnim ruchu:
+  * ocena to mat (#N na korzyść wygrywającego): "Byrne zrozumiał, że nie uniknie mata, i się poddał";
+  * ocena co najmniej ok. 3 pionów na korzyść wygrywającego: "Byrne zrozumiał, że jego pozycja jest przegrana, i się poddał";
+  * mniejsza przewaga albo brak oceny: tylko "Byrne się poddał", bez podawania powodu.
+  Przy remisie powiedz, że partia zakończyła się remisem.
 - Finał: nazwij, dlaczego ta partia jest ważna.
 
 TYTUŁ

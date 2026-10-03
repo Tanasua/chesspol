@@ -19,7 +19,7 @@ import chess
 import chess.svg
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-from lang import L, credit_author, notation, result_label
+from lang import L, credit_author, notation
 
 _N = notation()
 label, san_local = _N.label, _N.san_local
@@ -41,7 +41,6 @@ ANIM_SEC = 0.45
 MIN_GAP = ANIM_SEC + 0.05  # animacje nigdy na siebie nie nachodzą
 AUTO_STEP = 1.25  # tempo przewijania pominiętych półruchów (s/ruch); main.py robi na nie miejsce
 AUTO_STEP_MAX = 1.5
-RESULT_DELAY = 1.0  # po ostatnim ruchu: tyle sekund pozycji bez planszy wyniku
 
 FONT_PATHS = [
     "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
@@ -108,9 +107,8 @@ class Event:
 
 class Renderer:
     def __init__(self, game, title: str, white: dict | None = None, black: dict | None = None,
-                 year: str = "", caption: str = "", ending: str | None = None):
+                 year: str = "", caption: str = ""):
         self.game = game
-        self.result = result_label(game, ending)
         self.title = title
         h = game.headers
         self.white = white or {"name": h.get("White", "?"), "first": "", "last": h.get("White", "?")}
@@ -302,22 +300,6 @@ class Renderer:
             self._static_cache[k] = self._frame(img, k, board.turn == chess.WHITE).convert("RGB")
         return self._static_cache[k]
 
-    def final(self) -> Image.Image:
-        """Pozycja końcowa z planszą wyniku na szachownicy: '0–1 · Białe poddały się'."""
-        if "final" not in self._static_cache:
-            img = self.static(len(self.game.plies)).convert("RGBA")
-            score, text = self.result
-            if score:
-                band = Image.new("RGBA", (BOARD, 170), (12, 12, 12, 215))
-                d = ImageDraw.Draw(band)
-                f_score, f_text = _font(72, True), _fit(d, text, 46, BOARD - 80, True)
-                sw, tw = d.textlength(score, font=f_score), d.textlength(text, font=f_text)
-                d.text(((BOARD - sw) / 2, 14), score, font=f_score, fill=ACCENT)
-                d.text(((BOARD - tw) / 2, 104), text, font=f_text, fill=FG)
-                img.alpha_composite(band, (BOARD_X, BOARD_Y + (BOARD - 170) // 2))
-            self._static_cache["final"] = img.convert("RGB")
-        return self._static_cache["final"]
-
     def moving(self, k: int, t: float) -> Image.Image:
         """Klatka w trakcie wykonywania półruchu k (t w 0..1)."""
         ply = self.game.plies[k - 1]
@@ -401,10 +383,8 @@ def render_video(renderer: Renderer, events: list, duration: float, audio_path, 
                 prog = (t - events[ei].time) / ANIM_SEC
                 frame = renderer.moving(events[ei].ply_index, prog).tobytes()
             else:
-                key = "final" if ei == len(events) and events and t >= events[-1].time + ANIM_SEC + RESULT_DELAY else k
-                if last_key != key:
-                    last_key = key
-                    last_bytes = (renderer.final() if key == "final" else renderer.static(k)).tobytes()
+                if last_key != k:
+                    last_key, last_bytes = k, renderer.static(k).tobytes()
                 frame = last_bytes
             proc.stdin.write(frame)
     finally:

@@ -46,9 +46,6 @@ PL = Channel(
         "write": "Napisz scenariusz odcinka zgodnie z zasadami. Zwróć wyłącznie JSON.",
         "fix": "Walidacja odrzuciła scenariusz:\n{err}\n\nPopraw i zwróć cały scenariusz ponownie, wyłącznie JSON.",
         "chapters": "Rozdziały:", "pgn": "Zapis partii (PGN):", "photos": "Zdjęcia (Wikimedia Commons):",
-        "res_mate": "Mat", "res_draw": "Remis",
-        "res_resign": {"white": "Białe poddały się", "black": "Czarne poddały się"},
-        "res_time": {"white": "Białe przegrały na czas", "black": "Czarne przegrały na czas"},
         "unknown_author": "autor nieznany", "photo_by": "fot.", "moves_header": "RUCHY",
         "verified": "Zapis partii sprawdzony w co najmniej dwóch bazach partii. ",
         "hashtags": "#szachy #chess #historiaszachów",
@@ -75,9 +72,6 @@ DE = Channel(
         "fix": "Die Validierung hat das Skript abgelehnt (Meldung auf Polnisch):\n{err}\n\n"
                "Korrigiere es und gib das ganze Skript erneut zurück, ausschließlich JSON.",
         "chapters": "Kapitel:", "pgn": "Partienotation (PGN):", "photos": "Fotos (Wikimedia Commons):",
-        "res_mate": "Matt", "res_draw": "Remis",
-        "res_resign": {"white": "Weiß gibt auf", "black": "Schwarz gibt auf"},
-        "res_time": {"white": "Weiß verliert auf Zeit", "black": "Schwarz verliert auf Zeit"},
         "unknown_author": "Autor unbekannt", "photo_by": "Foto:", "moves_header": "ZÜGE",
         "verified": "Die Partienotation wurde in mindestens zwei Partiedatenbanken überprüft. ",
         "hashtags": "#schach #chess #schachgeschichte",
@@ -103,21 +97,6 @@ def moves_word(n: int) -> str:
     if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14):
         return "ruchy"
     return "ruch" if n == 1 else "ruchów"
-
-
-def result_label(game, ending: str | None = None) -> tuple[str, str]:
-    """('0–1', 'Białe poddały się') — plansza wyniku na końcu odcinka.
-    Partia rozstrzygnięta bez mata na szachownicy = poddanie; wyjątki w katalogu: ending="time"."""
-    result = game.headers.get("Result", "*")
-    score = {"1-0": "1–0", "0-1": "0–1", "1/2-1/2": "½–½"}.get(result, "")
-    if not score:
-        return "", ""
-    if result == "1/2-1/2":
-        return score, L.t["res_draw"]
-    if game.plies and game.plies[-1].is_mate:
-        return score, L.t["res_mate"]
-    loser = "black" if result == "1-0" else "white"
-    return score, L.t["res_time" if ending == "time" else "res_resign"][loser]
 
 
 def credit_author(author: str | None) -> str:

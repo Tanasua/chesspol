@@ -39,11 +39,13 @@ DRAMATURGIE
   die Begrüßung fügt das System vor dem ersten Segment ein. Beginne direkt mit dem Aufhänger.
 - Eröffnung zügig (ein Teil der Züge über {{s:N}}), werde bei den Schlüsselmomenten langsamer.
 - Vor einem Opfer baue mit einem Satz Spannung auf, nach dem Opfer — Pause (pause_after 1.0–1.5).
-- Benenne das Ende der Partie ausdrücklich. Wenn der letzte Zug kein Matt ist und das Ergebnis kein Remis — die Partie
-  endete durch Aufgabe: sag, wer aufgegeben hat ("Byrne gibt auf", "Weiß streckt die Waffen"). Warum — nur auf Grundlage
-  der Engine-Bewertung nach dem letzten Zug (z. B. "das Matt ist nicht mehr abzuwenden" nur bei einer Bewertung #N);
-  ohne Engine-Bewertung keinen Grund nennen. Bei Remis sag, dass die Partie remis endete.
-  (Auf dem Bildschirm zeigt das System ohnehin eine Ergebnistafel.)
+- Benenne das Ende der Partie ausdrücklich, mit der Stimme (auf dem Bildschirm gibt es keine Ergebnistafel). Wenn der
+  letzte Zug kein Matt ist und das Ergebnis kein Remis — die Partie endete durch Aufgabe: sag, wer aufgegeben hat und warum,
+  streng nach der Engine-Bewertung nach dem letzten Zug:
+  * Bewertung ist Matt (#N zugunsten des Gewinners): "Byrne erkannte, dass das Matt nicht mehr abzuwenden war, und gab auf";
+  * mindestens etwa 3 Bauern zugunsten des Gewinners: "Byrne erkannte, dass seine Stellung verloren war, und gab auf";
+  * geringerer Vorteil oder keine Bewertung: nur "Byrne gab auf", ohne Begründung.
+  Bei Remis sag, dass die Partie remis endete.
 - Finale: sag, warum diese Partie wichtig ist.
 
 TITEL
