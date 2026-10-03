@@ -191,6 +191,8 @@ def load_games(data: dict) -> list:
             res = h.get("Result", "*")
             if res not in ("1-0", "0-1", "1/2-1/2") or not list(g.mainline_moves()):
                 continue  # trwające albo puste
+            if rnd.get("startsAt"):  # data rundy z Lichess — nagłówek Date w PGN transmisji bywa błędny
+                g.headers["Date"] = datetime.fromtimestamp(rnd["startsAt"] / 1000, timezone.utc).strftime("%Y.%m.%d")
             games.append(G(seq, ri, rnd.get("name", f"{ri + 1}"), g, norm_name(h.get("White")), norm_name(h.get("Black")),
                            res, _tc(g, rnd.get("name", "")),
                            (int(h.get("WhiteElo") or 0), int(h.get("BlackElo") or 0)),
