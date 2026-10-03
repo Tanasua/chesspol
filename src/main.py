@@ -88,6 +88,7 @@ def main() -> int:
     ap.add_argument("--cache", default=".tts_cache")
     ap.add_argument("--fps", type=int, default=25)
     ap.add_argument("--no-music", action="store_true")
+    ap.add_argument("--no-sfx", action="store_true", help="bez dźwięku stawiania figur")
     ap.add_argument("--preroll", help="PNG na początek (np. drabinka turnieju) — do końca pierwszego segmentu scenariusza")
     args = ap.parse_args()
 
@@ -160,6 +161,16 @@ def main() -> int:
     with tempfile.TemporaryDirectory() as tmp:
         wav = Path(tmp) / "voice.wav"
         build_audio(parts, wav, Path(tmp))
+        if not args.no_sfx and events:  # ciche "tok" w chwili, gdy figura staje na polu
+            from render import ANIM_SEC
+            from sfx import sfx_track
+
+            fx = sfx_track(events, game.plies, duration, Path(tmp) / "sfx.wav", land_delay=ANIM_SEC * 0.85)
+            with_fx = Path(tmp) / "voice_fx.wav"
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(wav), "-i", str(fx), "-filter_complex",
+                            "[0:a][1:a]amix=inputs=2:duration=first:normalize=0[out]", "-map", "[out]",
+                            "-c:a", "pcm_s16le", str(with_fx)], check=True)
+            wav = with_fx
         if MUSIC and not args.no_music:
             if Path(MUSIC).exists():
                 mixed = Path(tmp) / "mix.wav"
