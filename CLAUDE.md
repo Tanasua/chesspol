@@ -17,7 +17,7 @@ Pliki:
   domyślnie Medium / Bold; fallback DejaVu. Okładka: tytuł dopasowywany 64→40 px do 3 wierszy; rok nie dubluje się w plakietce.
 - src/players.py — nazwy do kadru (nadpisania *_first/*_last w katalogu), zdjęcia assets/players/<slug>.jpg + .json
 - src/fetch_portraits.py — zdjęcia: Wikidata P18 -> Commons, tylko PD/CC0/CC BY/CC BY-SA, pełna zgodność nazwy + zawód szachista + rok urodzenia; raport assets/players/REPORT.md; atrybucja w kadrze i w opisie YouTube
-- src/main.py — CLI: --check-only, --dry-run; na końcu każdego odcinka stały segment OUTRO (podziękowanie, prośba o like i subskrypcję); na samym początku powitanie prowadzącego (segment intro, imię z HOST_NAME albo INWORLD_VOICE_ID); muzyka w tle assets/music/the_daily_ostinato.mp3 (Suno; pętla, MUSIC_GAIN_DB=-20, fade-in 2 s, fade-out 6 s na końcu; MUSIC="" albo --no-music wyłącza)
+- src/main.py — CLI: --check-only, --dry-run; na końcu każdego odcinka stały segment OUTRO (podziękowanie, prośba o like i subskrypcję); na samym początku powitanie BEZ przedstawiania się (segment intro; decyzja właściciela); w połowie segment cta (phrases.CTA_TEXTS: łapka + subskrypcja) przed rozdziałem najbliższym środka; muzyka w tle assets/music/the_daily_ostinato.mp3 (Suno; pętla, MUSIC_GAIN_DB=-20, fade-in 2 s, fade-out 6 s na końcu; MUSIC="" albo --no-music wyłącza)
 - Dźwięk figury: src/sfx.py — własna synteza (drewniane 'tok', bicie jaśniejsze z odbiciem), w chwili lądowania figury
   (ANIM_SEC*0.85 po starcie ruchu), SFX_GAIN_DB=-14, --no-sfx wyłącza; miksowany z lektorem przed muzyką.
 - Przewijanie pominiętych półruchów: AUTO_STEP 1.25 s/ruch (render.py, maks. 1.5); gdy lektor nie daje czasu, main.py rozcina
@@ -30,7 +30,7 @@ Pliki:
 - catalog/games.json — 100 partii (kolejność n, metadane zweryfikowane wyszukiwaniem, status PGN); catalog/LISTA.md generuje src/catalog_list.py
 - src/pgn_collect.py — PGN z ≥2 niezależnych kolekcji (mirror rozim/ChessData: PgnMentor, ChessNostalgia, Chessopolis, RebelSite, WorldChampionships, Kingbase, Twic, Old…; + famous_games, ChessPGN); zgodność ruchów, wyniku, rundy i liczby ruchów
 - src/scheduler.py — co 3 dni 10:00 Europe/Kyiv; bufor 2 odcinków; PUBLISH_MODE=manual (domyślnie): paczka do ręcznego uploadu; PUBLISH_MODE=youtube: upload private + publishAt; stan w state/schedule.json
-- src/deliver.py, src/cover.py — paczka out/packages/epNNN-<id>/ (video.mp4, cover.jpg 1280x720, opis.txt: data, tytuł, opis [zachęta z LLM, karta partii, rozdziały z czasami z out/<id>.timing.json, PGN, atrybucja zdjęć, zdanie o weryfikacji PGN; bez akapitu o AI — decyzja właściciela], tagi) -> GitHub Release + opcjonalnie Telegram (sekrety TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; wideo ≤50 MB)
+- src/deliver.py, src/cover.py — paczka out/packages/epNNN-<id>/ (video.mp4, cover.jpg 1280x720, opis.txt: data, tytuł, opis [zachęta z LLM, karta partii, rozdziały z czasami z out/<id>.timing.json, PGN, atrybucja zdjęć, zdanie o weryfikacji PGN; BEZ akapitu o AI, BEZ zapisu ruchów i BEZ listy źródeł zdjęć — decyzje właściciela; autor/licencja zdjęcia tylko w kadrze], tagi) -> GitHub Release + opcjonalnie Telegram (sekrety TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; wideo ≤50 MB)
 - Telegram/paczka: teksty dla właściciela PO UKRAIŃSKU (podpisy, nagłówki, data "пт, 02.10.2026 о 10:00 (за Києвом)"),
   tytuł/opis/tagi w języku kanału, każde w osobnym bloku <pre> (kopiowanie jednym dotknięciem); opis dzielony na części ≤3500 znaków
 - Tytuł YouTube: "<KICKER> <title> | Białe – Czarne (rok)"; kicker = 1–3 słowa WERSALIKAMI z "!" od LLM (pole "kicker",

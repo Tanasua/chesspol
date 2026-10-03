@@ -29,7 +29,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lang import L, credit_author, field_, moves_word  # noqa: E402
+from lang import L, field_, moves_word  # noqa: E402
 from phrases import title_hook_for  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -141,7 +141,6 @@ def _yt_title(main: str, white: str, black: str, game: dict, hook: str = "") -> 
 
 
 def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | None = None) -> tuple[str, str, list]:
-    from players import side
     t = L.t
     white, black = field_(game, "white"), field_(game, "black")
     place = field_(game, "site") or ""
@@ -157,36 +156,23 @@ def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | N
         lines += [script["description"].strip(), ""]
     lines += [f"{t['white']}: {white}", f"{t['black']}: {black}",
               f"{t['year']}: {game['year']}" + (f" · {place}" if place else ""), label]
-    moves_text, n_moves = "", 0
+    n_moves = 0
     if pgn and pgn.exists():
         import chess.pgn
         with open(pgn, encoding="utf-8") as fh:
             g = chess.pgn.read_game(fh)
         n_moves = (sum(1 for _ in g.mainline_moves()) + 1) // 2
-        moves_text = g.accept(chess.pgn.StringExporter(headers=False, variations=False, comments=False)).strip()
     if game.get("result"):
         lines.append(f"{t['result']}: {game['result']}" + (f" ({n_moves} {moves_word(n_moves)})" if n_moves else ""))
 
     chapters = _chapters(timing or {})
     if chapters:
         lines += ["", t["chapters"]] + [f"{_ts(c['t'])} {c['title']}" for c in chapters]
-    if moves_text:
-        lines += ["", t["pgn"], moves_text]
-
-    credits = []
-    for color in ("white", "black"):
-        p = side(game, color, game[color])
-        c = p["credit"]
-        if c:
-            credits.append(f"{p['name']}: {credit_author(c.get('author'))}, {c.get('license')}, {c.get('source_url')}")
-    if credits:
-        lines += ["", t["photos"], *credits]
+    # bez zapisu ruchów i bez listy źródeł zdjęć (decyzja właściciela); autor i licencja zdjęcia są w kadrze
     if game.get("pgn_verified"):
         lines += ["", t["verified"].strip()]
     lines += ["", f"{t['hashtags']} #{game['white'].split()[-1]} #{game['black'].split()[-1]}"]
-    description = "\n".join(lines).strip()
-    if len(description) > 4900:  # limit YouTube: 5000 znaków — najpierw skracamy zapis partii
-        description = description.replace(moves_text, moves_text[:max(0, len(moves_text) - (len(description) - 4900))] + " …")
+    description = "\n".join(lines).strip()[:4900]  # limit YouTube: 5000 znaków
     tags = [*t["tags"], white.split()[-1], black.split()[-1], t["year_tag"].format(year=game["year"])]
     return title, description, tags
 

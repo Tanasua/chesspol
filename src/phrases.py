@@ -120,6 +120,24 @@ TEXTS = {
         ],
     },
 }
+CTA_TEXTS = {
+    "pl": [
+        "Jeśli podoba Wam się ten film, zostawcie łapkę w górę i zasubskrybujcie kanał. To bardzo pomaga.",
+        "Zanim pójdziemy dalej: jeśli ta partia Was wciąga, dajcie łapkę w górę i subskrybujcie kanał. To naprawdę pomaga.",
+        "Jeśli doceniacie takie analizy, polubcie ten film i zasubskrybujcie kanał, to bardzo nam pomaga.",
+    ],
+    "de": [
+        "Wenn euch das Video gefällt, lasst ein Like da und abonniert den Kanal. Das hilft uns sehr.",
+        "Bevor es weitergeht: Wenn euch diese Partie packt, gebt dem Video ein Like und abonniert den Kanal. Das hilft wirklich.",
+        "Wenn ihr solche Analysen mögt, gebt dem Video ein Like und abonniert den Kanal, das hilft uns enorm.",
+    ],
+    "en": [
+        "If you're enjoying this video, give it a like and subscribe. It really helps the channel.",
+        "Before we go on: if this game has you hooked, hit like and subscribe. It really helps.",
+        "If you like breakdowns like this, give the video a like and subscribe, it helps the channel a lot.",
+    ],
+}
+CTA = CTA_TEXTS[L.code]
 T = TEXTS[L.code]
 GREETING, GREETING_NO_NAME, INTRO, TITLE_HOOKS = T["greeting"], T["greeting_no_name"], T["intro"], T["title_hooks"]
 OUTRO = T["outro"]
@@ -141,12 +159,18 @@ def host_name() -> str:
 
 
 def intro_for(game: dict | None, name: str | None = None) -> str:
-    name = host_name() if name is None else name
+    """Powitanie bez przedstawiania się (decyzja właściciela) + zapowiedź partii.
+    Imię (HOST_NAME) używane tylko, gdy przekazane jawnie: intro_for(game, name="…")."""
     if name:
         greet = GREETING[_index(game, GREETING, 1, "greet")].format(name=name)
     else:
         greet = GREETING_NO_NAME[_index(game, GREETING_NO_NAME, 1, "greet")]
     return f"{greet} {INTRO[_index(game, INTRO, 0, 'intro')]}"
+
+
+def cta_for(game: dict | None) -> str:
+    """Prośba o łapkę i subskrypcję w środku odcinka."""
+    return CTA[_index(game, CTA, 2, "cta")]
 
 
 def title_hook_for(game: dict | None) -> str:

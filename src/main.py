@@ -19,7 +19,7 @@ from pathlib import Path
 
 from pgn_loader import load_game
 from lang import L, field_
-from phrases import OUTRO, intro_for
+from phrases import OUTRO, cta_for, intro_for
 from players import catalog_entry, side
 from render import AUTO_STEP, Renderer, render_video, schedule
 from script_check import Segment, build_segments, load_script
@@ -99,6 +99,12 @@ def main() -> int:
     intro = intro_for(entry)
     if intro:  # powitanie prowadzącego na samym początku, przed hakiem scenariusza
         segments.insert(0, Segment(id="intro", tts_text=intro, tokens=intro.split(), pause_after=0.6))
+    if len(segments) >= 6:  # prośba o łapkę w połowie — przed segmentem z rozdziałem najbliższym środka
+        mid = len(segments) // 2
+        starts = [i for i, sg in enumerate(segments) if sg.chapter and 2 <= i <= len(segments) - 2]
+        at = min(starts, key=lambda i: abs(i - mid)) if starts else mid
+        cta = cta_for(entry)
+        segments.insert(at, Segment(id="cta", tts_text=cta, tokens=cta.split(), pause_after=0.8))
     if OUTRO:
         segments.append(Segment(id="outro", tts_text=OUTRO, tokens=OUTRO.split(), pause_after=0.3))
     for w in warnings:
