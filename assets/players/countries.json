@@ -1,0 +1,64 @@
+{
+  "Fabiano Caruana": {
+    "periods": [
+      {
+        "code": "us",
+        "from": 2015,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "it",
+        "from": 2005,
+        "prop": "P1532",
+        "to": 2015
+      },
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": 2005
+      }
+    ],
+    "qid": "Q367277"
+  },
+  "Praggnanandhaa": {
+    "periods": [
+      {
+        "code": "in",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q26703041"
+  },
+  "Vincent Keymer": {
+    "periods": [
+      {
+        "code": "de",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27526478"
+  },
+  "Wesley So": {
+    "periods": [
+      {
+        "code": "us",
+        "from": 2014,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "ph",
+        "from": null,
+        "prop": "P1532",
+        "to": 2014
+      }
+    ],
+    "qid": "Q147495"
+  }
+}

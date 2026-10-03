@@ -16,6 +16,23 @@
       "news": true,
       "lichess_tour": "e5GlrSdz",
       "pgn_verified": false
+    },
+    {
+      "id": "news_2026_grand_chess_tour_finals_r_keymer_2",
+      "white": "Praggnanandhaa",
+      "black": "Vincent Keymer",
+      "year": 2026,
+      "result": "1-0",
+      "white_last": "Praggnanandhaa",
+      "black_last": "Keymer",
+      "white_first": "",
+      "black_first": "Vincent",
+      "site": "Saint Louis, United States",
+      "event": "2026 Grand Chess Tour Finals",
+      "label": "Grand Chess Tour Finals · Halbfinale",
+      "news": true,
+      "lichess_tour": "e5GlrSdz",
+      "pgn_verified": false
     }
   ]
 }

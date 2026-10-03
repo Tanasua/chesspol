@@ -1,0 +1,169 @@
+{
+  "kicker": "GEDREHT!",
+  "title": "Ein Endspiel kippt völlig",
+  "description": "In Saint Louis treffen Praggnanandhaa und Vincent Keymer im Halbfinale der 2026 Grand Chess Tour Finals aufeinander. Die erste klassische Partie des Matches endete remis; dies ist die zweite klassische Partie im Ausscheidungsformat. Aus einer ruhigen Läufereröffnung entsteht ein unübersichtlicher Kampf mit Angriffen auf beiden Flügeln. Achtet auf den taktischen Umschwung im Mittelspiel und darauf, wie Weiß den Vorteil im Damenendspiel Schritt für Schritt vergrößert.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Saint Louis, zweitausendsechsundzwanzig: Im Halbfinale der Grand Chess Tour Finals trifft Praggnanandhaa auf Vincent Keymer. Die erste klassische Partie dieses Matches endete remis, jetzt geht es um die zweite klassische Partie. Im Ausscheidungsformat kann ein einziger Umschwung alles verschieben.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Praggnanandhaa beginnt: {{m:1}}. Keymer antwortet: {{m:2}}. Dann zeigt Weiß sofort, dass es keine gewöhnliche Spanisch-Stellung wird: {{m:3}}. Schwarz entwickelt sich solide: {{m:4}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:5}} Die Eröffnung bleibt zunächst kontrolliert, kleine Entscheidungen, keine großen Wertungssprünge. Weiß setzt früh ein Randzeichen: {{m:7}}. Schwarz antwortet nicht direkt, sondern wählt: {{m:8}}. {{s:11}} Jetzt hat diese Läufereröffnung einen sehr eigenen Charakter.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "Schwarz hält das Zentrum stabil: {{m:12}}. Weiß verbessert eine Figur: {{m:13}}. Keymer setzt am Königsflügel einen Akzent: {{m:14}}. Praggnanandhaa bleibt ruhig: {{m:15}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Der Aufbau geht weiter. Schwarz entscheidet sich für: {{m:16}}. Weiß stützt sein Zentrum: {{m:17}}. Beide Damen nähern sich dem Brennpunkt, Schwarz zuerst: {{m:18}}, dann Weiß: {{m:19}}. Keymer bleibt noch flexibel: {{m:20}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Der erste Abtausch verändert die Struktur. Weiß entscheidet sich für: {{m:21}}. Schwarz nimmt: {{m:22}}. Dann öffnet Praggnanandhaa das Zentrum: {{m:23}}, Keymer akzeptiert: {{m:24}}, und Weiß stellt eine Figur in die Mitte: {{m:25}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Und sofort kommt Druck am Königsflügel: {{m:26}}. Praggnanandhaa sichert den Läufer: {{m:27}}. Keymer bringt eine Figur näher an den Angriff: {{m:28}}. Jetzt wählt Weiß die lange Rochade: {{m:29}}, und Schwarz gewinnt Raum am Damenflügel: {{m:30}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "Königsflügel",
+      "text": "Die Stellung sieht symmetrisch gefährlich aus, beide Könige können später Ziele werden. Weiß stellt die Dame aktiver: {{m:31}}. Schwarz antwortet: {{m:32}}. Danach bringt Praggnanandhaa seinen König in Sicherheit: {{m:33}}, und Keymer zieht nach: {{m:34}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Jetzt fällt der erste Hebel am Rand. Weiß stößt an: {{m:35}}. Keymer nimmt den Bauern: {{m:36}}. Praggnanandhaa holt ihn zurück: {{m:37}}, und Schwarz sucht Gegenspiel: {{m:38}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Weiß zieht den Läufer wieder auf ein sicheres Feld: {{m:39}}. Jetzt rochiert auch Schwarz: {{m:40}}. Die Könige stehen auf entgegengesetzten Flügeln, und jedes Tempo kann zählen. Weiß räumt um: {{m:41}}, Keymer setzt eine Figur tief hinein: {{m:42}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Praggnanandhaa deckt erst einmal ab: {{m:43}}. Schwarz schiebt weiter am Königsflügel: {{m:44}}. Weiß entwickelt eine neue Verteidigungsidee: {{m:45}}. Keymer schlägt im Zentrum zu: {{m:46}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Weiß stellt den Läufer aktiv: {{m:47}}. Schwarz antwortet mit einer Turmidee: {{m:48}}. Praggnanandhaa nimmt einer Figur wichtige Felder: {{m:49}}. Dann kommt der zentrale Vorstoß: {{m:50}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "Mittelspiel kippt",
+      "text": "Jetzt wird es taktischer. Weiß entscheidet sich für: {{m:51}}. Die Engine sieht Keymer danach erstmals spürbar besser. Schwarz wählt: {{m:52}}, und Weiß kontert in der Bauernstruktur: {{m:53}}. Keymer hält dagegen: {{m:54}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Praggnanandhaa drückt weiter nach vorn: {{m:55}}. Keymer zieht eine Verteidigungsfigur zurück: {{m:56}}. Weiß manövriert: {{m:57}}. Schwarz stellt eine Figur aktiv ins Zentrum des Geschehens: {{m:58}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Weiß tauscht einen wichtigen Verteidiger ab: {{m:59}}. Keymer nimmt mit dem Turm: {{m:60}}. Jetzt zielt Praggnanandhaa auf die schwarzen Felder: {{m:61}}. Schwarz verdoppelt die Drohung am Königsflügel: {{m:62}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Der weiße Freibauer wird gefährlich: {{m:63}}. Keymer blockt aktiv: {{m:64}}. Dann kommt ein Schach: {{m:65}}. Schwarz geht aus der Linie: {{m:66}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "chapter": "Der Umschwung",
+      "text": "Praggnanandhaa nimmt Material am Rand: {{m:67}}. Keymer bekommt dafür Gegenspiel: {{m:68}}. Weiß deckt sich: {{m:69}}. Jetzt greift Schwarz zu: {{m:70}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Die Pointe hält aber nicht, die Engine kippt plötzlich auf Weiß. Praggnanandhaa antwortet präzise: {{m:71}}. Keymer nimmt zurück: {{m:72}}, und Weiß stellt den König um: {{m:73}}. Schwarz sucht weiter Angriff: {{m:74}}, aber Weiß räumt auf: {{m:75}}, und Keymer dringt noch einmal ein: {{m:76}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Nun werden die Schwerfiguren weniger. Weiß nimmt die Gefahr heraus: {{m:77}}. Schwarz hält das materielle Gleichgewicht so gut es geht: {{m:78}}. Der Springer springt in die schwarzen Felder: {{m:79}}, und Keymer versucht ihn zu vertreiben: {{m:80}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Praggnanandhaa greift mit Schach zu: {{m:81}}. Schwarz muss ausweichen: {{m:82}}. Weiß hält Aktivität: {{m:83}}. Keymer sucht Gegenspiel mit dem Freibauern: {{m:84}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s21",
+      "chapter": "Damenendspiel",
+      "text": "Weiß stoppt den Bauern: {{m:85}}. Keymer gibt Schach: {{m:86}}. Der weiße König geht ins Endspiel: {{m:87}}. Schwarz schnappt den gefährlichen Bauern: {{m:88}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Praggnanandhaa bringt den Springer zurück ins Spiel: {{m:89}}. Keymer deckt die Einbruchsfelder: {{m:90}}. Weiß zentralisiert die Dame: {{m:91}}. Dann kommt ein Moment, nach dem der Vorteil zum Gewinn anwächst: {{m:92}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Weiß nutzt das sofort: {{m:93}}. Schwarz hält die Dame aktiv: {{m:94}}. Praggnanandhaa schiebt den Freibauern nach vorn: {{m:95}}. Keymer nimmt Material, doch die Engine sieht Weiß jetzt klar gewonnen: {{m:96}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Der Freibauer läuft weiter: {{m:97}}. Schwarz stellt sich davor: {{m:98}}. Weiß öffnet dem König und der Dame neue Wege: {{m:99}}. Dann setzt Keymer auf Aktivität, aber der weiße Vorteil explodiert: {{m:100}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s25",
+      "chapter": "Finale",
+      "text": "Jetzt beginnt die Treppe aus Schachs, und Praggnanandhaa startet: {{m:101}}. Keymer geht zurück: {{m:102}}. Weiß setzt nach: {{m:103}}. Schwarz findet noch ein Feld: {{m:104}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "Die Dame bleibt am König kleben: {{m:105}}. Schwarz wird weiter an den Rand gedrängt: {{m:106}}. Weiß nimmt den nächsten Bauern mit Schach: {{m:107}}. Keymer weicht aus: {{m:108}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s27",
+      "chapter": "",
+      "text": "Und dann folgt der letzte Zug der Partie: {{m:109}}. Das ist kein Matt, aber die Stellung ist nach der Bewertung völlig verloren. Vincent Keymer erkannte, dass seine Stellung verloren war, und gab auf. Wichtig ist diese Partie, weil sie im Halbfinale zeigt, wie ein einziger taktischer Umschwung ein langes Endspiel entscheiden kann.",
+      "pause_after": 1.0
+    }
+  ]
+}
