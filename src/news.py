@@ -66,6 +66,38 @@ def _get(url: str, **kw) -> requests.Response:
 
 
 def find_tour(query: str) -> dict:
+    """Jak _find_tour, ale łączy wszystkie transmisje tej samej grupy (np. półfinały i finał to osobne
+    'turnieje' na Lichess) w jeden turniej z rundami w kolejności rozgrywania."""
+    data = _find_tour(query)
+    print("Lichess — klucze odpowiedzi:", sorted(data.keys()), "| tour:", sorted(data.get("tour", {}).keys()))
+    base = data["tour"].get("name", "").split(" | ")[0].strip()
+    ids = []
+    grp = data.get("group")
+    if isinstance(grp, dict):
+        base = grp.get("name") or base
+        ids = [t.get("id") for t in grp.get("tours", []) if t.get("id")]
+    if not ids:  # brak informacji o grupie — szukamy transmisji o tej samej nazwie bazowej
+        try:
+            res = _get(f"{API}/broadcast/search", params={"q": base}).json()
+            hits = res.get("currentPageResults") or res.get("results") or []
+            ids = [h.get("tour", h)["id"] for h in hits
+                   if h.get("tour", h).get("name", "").split(" | ")[0].strip().lower() == base.lower()]
+        except requests.RequestException:
+            ids = []
+    ids = list(dict.fromkeys([data["tour"]["id"], *ids]))
+    rounds = []
+    for tid in ids:
+        part = data if tid == data["tour"]["id"] else _get(f"{API}/broadcast/{tid}").json()
+        for r in part.get("rounds", []):
+            r = dict(r)
+            r["name"] = f"{part['tour'].get('name', '').split(' | ', 1)[-1]} | {r.get('name', '')}" if len(ids) > 1 else r.get("name", "")
+            rounds.append(r)
+    rounds.sort(key=lambda r: (r.get("startsAt") or r.get("createdAt") or 0))
+    print(f"Grupa '{base}': transmisji {len(ids)}, rund {len(rounds)}")
+    return {"tour": {**data["tour"], "name": base}, "rounds": rounds}
+
+
+def _find_tour(query: str) -> dict:
     """Link, id turnieju/rundy albo nazwa -> {'tour':…, 'rounds':[…]}."""
     q = query.strip()
     m = re.search(r"lichess\.org/broadcast/[^/]+/([^/]+)/([A-Za-z0-9]{8})", q)
@@ -196,9 +228,24 @@ class Match:
     def finished_before(self, seq: int) -> bool:
         return max(g.seq for g in self.games) < seq
 
+    next_players: set = field(default_factory=set)  # gracze meczów kolejnego etapu (bez meczu o 3. miejsce)
+
+    @property
+    def mixed(self) -> bool:
+        """Różne tempa w meczu (klasyczne/rapid/blitz) — punkty organizatora bywają ważone, więc nie sumujemy."""
+        return len({g.tc for g in self.games}) > 1
+
     def winner(self) -> str | None:
+        for p in (self.a, self.b):  # kto gra w następnym etapie — ten wygrał mecz (niezależnie od punktacji)
+            if p in self.next_players and not ({self.a, self.b} <= self.next_players):
+                return p
+        if self.mixed:  # ostatni etap z mieszanym tempem: nie zgadujemy punktacji organizatora
+            return None
         sa, sb = self.score()
         return self.a if sa > sb else self.b if sb > sa else None
+
+
+THIRD_RE = re.compile(r"3rd|third|bronze|place|platz|miejsce", re.I)
 
 
 def knockout(games: list) -> list:
@@ -211,10 +258,23 @@ def knockout(games: list) -> list:
         m.stage = max(played.get(m.a, 0), played.get(m.b, 0)) + 1
         played[m.a] = played[m.b] = m.stage
     last = max(m.stage for m in matches)
-    losers = {(m.a if m.winner() == m.b else m.b) for m in matches if m.stage == last - 1 and m.winner()}
-    for m in matches:
-        if m.stage == last and {m.a, m.b} <= losers and sum(x.stage == last for x in matches) == 2:
-            m.third = True
+    final_stage = [m for m in matches if m.stage == last]
+    if len(final_stage) == 2:  # finał + mecz o 3. miejsce: najpierw po nazwie rundy, potem po wynikach półfinałów
+        named = [m for m in final_stage if any(THIRD_RE.search(g.round_name) for g in m.games)]
+        if len(named) == 1:
+            named[0].third = True
+        else:
+            semis = [m for m in matches if m.stage == last - 1]
+            losers = set()
+            for m in semis:
+                sa, sb = m.score()
+                if sa != sb:
+                    losers.add(m.b if sa > sb else m.a)
+            for m in final_stage:
+                if {m.a, m.b} <= losers:
+                    m.third = True
+    for m in matches:  # zwycięzca = kto gra w głównym meczu następnego etapu
+        m.next_players = {p for x in matches if x.stage == m.stage + 1 and not x.third for p in (x.a, x.b)}
     return matches
 
 
@@ -405,10 +465,17 @@ def main() -> int:
     if matches:
         m = next(x for x in matches if pick in x.games)
         sname = stage_name(m, matches)
-        sa, sb = m.score(pick.seq)
-        facts += [f"Format: turniej pucharowy (mecze)", f"Etap: {sname}",
-                  f"Stan meczu {m.a} – {m.b} przed tą partią: {sa:g}–{sb:g}",
-                  f"Stan meczu po tej partii: {m.score(pick.seq + 1)[0]:g}–{m.score(pick.seq + 1)[1]:g}"]
+        facts += ["Format: turniej pucharowy (mecze)", f"Etap: {sname}"]
+        if m.mixed:  # punktacja organizatora może ważyć partie — podajemy tylko wyniki partii, bez sumy
+            earlier = [g for g in m.games if g.seq < pick.seq]
+            facts.append("Mecz składa się z partii w różnym tempie; organizator może liczyć punkty inaczej — "
+                         "NIE podawaj łącznego wyniku meczu.")
+            facts.append("Wcześniejsze partie tego meczu: " + ("; ".join(
+                f"{g.round_name}: {g.white} – {g.black} {g.result}" for g in earlier) or "brak (to pierwsza partia)"))
+        else:
+            sa, sb = m.score(pick.seq)
+            facts += [f"Stan meczu {m.a} – {m.b} przed tą partią: {sa:g}–{sb:g}",
+                      f"Stan meczu po tej partii: {m.score(pick.seq + 1)[0]:g}–{m.score(pick.seq + 1)[1]:g}"]
         if "rozstrzyga mecz" in pick.why:
             facts.append(f"Ta partia rozstrzygnęła mecz na korzyść: {m.winner()}")
         label = f"{label} · {sname}"

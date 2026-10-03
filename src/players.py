@@ -48,6 +48,21 @@ def catalog_entry(game_id: str) -> dict | None:
     return None
 
 
+def photo_path(name: str) -> Path | None:
+    """Zdjęcie po pełnej nazwie; gdy brak — jedyne zdjęcie z tym samym nazwiskiem (np. 'R Praggnanandhaa'
+    -> rameshbabu_praggnanandhaa.jpg). Przy kilku kandydatach nie zgadujemy."""
+    jpg = PHOTOS / f"{slug(name)}.jpg"
+    if jpg.exists():
+        return jpg
+    last = slug(split_name(name)[1] or name)
+    hits = [p for p in PHOTOS.glob("*.jpg") if p.stem == last or p.stem.endswith("_" + last)]
+    qids = set()
+    for h in hits:  # kilka plików tej samej osoby (ten sam QID w Wikidata) — to wciąż jednoznaczne
+        meta = h.with_suffix(".json")
+        qids.add(json.loads(meta.read_text(encoding="utf-8")).get("qid") if meta.exists() else h.stem)
+    return sorted(hits)[0] if hits and len(qids) == 1 else None
+
+
 def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     """color: 'white'/'black'. Zwraca {name, first, last, photo, credit}."""
     from lang import field_
@@ -57,8 +72,8 @@ def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     first, last = split_name(name)
     if field_(e, f"{color}_first") is not None or field_(e, f"{color}_last") is not None:
         first, last = field_(e, f"{color}_first") or "", field_(e, f"{color}_last") or name
-    photo_key = slug(e.get(color) or pgn_name)  # zdjęcia po nazwie z bazy, nie po wersji językowej
-    jpg, meta = PHOTOS / f"{photo_key}.jpg", PHOTOS / f"{photo_key}.json"
+    jpg = photo_path(e.get(color) or pgn_name) or PHOTOS / "_brak_.jpg"  # po nazwie z bazy, nie po wersji językowej
+    meta = jpg.with_suffix(".json")
     credit = json.loads(meta.read_text(encoding="utf-8")) if meta.exists() else None
     if credit and credit.get("author"):
         credit["author"] = " ".join(credit["author"].split())  # autor z Commons bywa wielowierszowy

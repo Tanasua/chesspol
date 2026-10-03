@@ -5,6 +5,7 @@ Stan PRZED pokazywaną partią: wyniki meczów liczone z partii rozegranych wcze
 """
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageOps
@@ -18,8 +19,10 @@ RED = (215, 70, 60)
 
 
 def _mini(name: str, out: bool) -> Image.Image:
-    jpg = PHOTOS / f"{slug(name)}.jpg"
-    if jpg.exists():
+    from players import photo_path
+
+    jpg = photo_path(name)
+    if jpg:
         img = ImageOps.fit(Image.open(jpg).convert("RGB"), MINI, centering=(0.5, 0.3))
         if out:
             img = ImageOps.grayscale(img).convert("RGB").point(lambda v: int(v * 0.55))
@@ -69,7 +72,8 @@ def _box(img, d, x, y, w, m, pick, matches) -> int:
     yy = y + 44
     for name, sc in ((m.a, sa), (m.b, sb)):
         played = any(g.seq < pick.seq for g in m.games)
-        _player_row(img, d, x + 14, yy, w - 28, name, f"{sc:g}" if played else "–",
+        shown = "" if m.mixed else (f"{sc:g}" if played else "–")  # mieszane tempo: bez sumy punktów
+        _player_row(img, d, x + 14, yy, w - 28, name, shown,
                     out=(name == loser), winner=(name == win))
         yy += MINI[1] + 14
     return h
@@ -77,6 +81,7 @@ def _box(img, d, x, y, w, m, pick, matches) -> int:
 
 def draw_bracket(tournament: str, year: int, matches: list, pick, out: Path) -> Path:
     img = Image.new("RGB", (W, H), BG)
+    tournament = re.sub(rf"(^\s*{year}\s*|\s*{year}\s*$)", "", tournament).strip() or tournament
     d = ImageDraw.Draw(img)
     d.line([80, 70, 180, 70], fill=ACCENT, width=6)
     d.text((80, 90), tournament.upper(), font=_fit(d, tournament.upper(), 64, W - 360, True), fill=FG)
@@ -114,6 +119,7 @@ def draw_bracket(tournament: str, year: int, matches: list, pick, out: Path) -> 
 
 def draw_table(tournament: str, year: int, table: list, pick, out: Path) -> Path:
     img = Image.new("RGB", (W, H), BG)
+    tournament = re.sub(rf"(^\s*{year}\s*|\s*{year}\s*$)", "", tournament).strip() or tournament
     d = ImageDraw.Draw(img)
     d.line([80, 70, 180, 70], fill=ACCENT, width=6)
     d.text((80, 90), tournament.upper(), font=_fit(d, tournament.upper(), 64, W - 360, True), fill=FG)

@@ -1,21 +1,3 @@
 {
-  "games": [
-    {
-      "id": "news_2026_grand_chess_tour_finals_finals_caruana_r_0",
-      "white": "Fabiano Caruana",
-      "black": "Praggnanandhaa",
-      "year": 2026,
-      "result": "1-0",
-      "white_last": "Caruana",
-      "black_last": "Praggnanandhaa",
-      "white_first": "Fabiano",
-      "black_first": "",
-      "site": "Saint Louis, United States",
-      "event": "2026 Grand Chess Tour Finals | Finals",
-      "label": "2026 Grand Chess Tour Finals | Finals · Półfinał",
-      "news": true,
-      "lichess_tour": "e5GlrSdz",
-      "pgn_verified": false
-    }
-  ]
+  "games": []
 }
