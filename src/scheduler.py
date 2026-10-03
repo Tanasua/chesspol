@@ -92,8 +92,12 @@ WEEKDAYS_UK = ["пн", "вт", "ср", "чт", "пт", "сб", "нд"]
 def when_uk(dt: datetime) -> str:
     """Data publikacji dla właściciela, po ukraińsku: 'пт, 02.10.2026 о 10:00 (за Києвом)'."""
     loc = dt.astimezone(TZ)
-    zone = "за Києвом" if TZ.key == "Europe/Kyiv" else TZ.key
-    return f"{WEEKDAYS_UK[loc.weekday()]}, {loc:%d.%m.%Y} о {loc:%H:%M} ({zone})"
+    if TZ.key == "Europe/Kyiv":
+        return f"{WEEKDAYS_UK[loc.weekday()]}, {loc:%d.%m.%Y} о {loc:%H:%M} (за Києвом)"
+    kyiv = dt.astimezone(ZoneInfo("Europe/Kyiv"))  # канал для іншого ринку: місцевий час + київський
+    city = {"America/New_York": "Нью-Йорком", "Europe/Berlin": "Берліном", "Europe/Warsaw": "Варшавою"}.get(TZ.key, TZ.key)
+    return (f"{WEEKDAYS_UK[loc.weekday()]}, {loc:%d.%m.%Y} о {loc:%H:%M} (за {city}) = "
+            f"{WEEKDAYS_UK[kyiv.weekday()]} {kyiv:%H:%M} за Києвом")
 
 
 def run(cmd: list) -> None:

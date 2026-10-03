@@ -448,7 +448,7 @@ def main() -> int:
     import countries
     year_now = datetime.now(timezone.utc).year
     for g in ranked:  # "swój" gracz: Polak na kanale polskim, Niemiec na niemieckim
-        home = [p for p in (g.white, g.black) if countries.country(names.get(p, p), year_now) == L.code]
+        home = [p for p in (g.white, g.black) if countries.country(names.get(p, p), year_now) == (L.country or L.code)]
         if home:
             g.score = round(g.score + HOME_BONUS, 2)
             g.why.append(f"swój gracz: {', '.join(home)}")

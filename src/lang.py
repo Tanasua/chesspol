@@ -1,4 +1,4 @@
-"""Kanał i język odcinka: CHANNEL=pl (domyślnie) albo CHANNEL=de.
+"""Kanał i język odcinka: CHANNEL=pl (domyślnie), de albo en (angielski, odbiorca amerykański).
 
 Wspólne dla kanałów: katalog 100 partii, PGN, zdjęcia, render, muzyka, Telegram.
 Osobne: kolejność publikacji (pole n / n_de w katalogu), scenariusze, stan harmonogramu,
@@ -27,6 +27,7 @@ class Channel:
     flag: str                # znacznik w Telegramie
     prompt: Path
     t: dict = field(default_factory=dict)
+    country: str = ""        # kod ISO kraju kanału ("swój" gracz w nowościach); domyślnie = code
 
 
 PL = Channel(
@@ -88,7 +89,37 @@ DE = Channel(
     },
 )
 
-CHANNELS = {"pl": PL, "de": DE}
+EN = Channel(
+    code="en", tts="elevenlabs", voice_env="ELEVENLABS_VOICE_ID", order_key="n_en", suffix="_en",
+    state=ROOT / "state" / "schedule_en.json", scripts=ROOT / "scripts_en", out=ROOT / "out" / "en",
+    tag_prefix="en-", flag="🇺🇸", prompt=ROOT / "prompts" / "script_system_en.md", country="us",
+    t={
+        "white": "White", "black": "Black", "year": "Year", "event": "Event", "place": "Location",
+        "round": "Round/game", "result": "Result", "nickname": "Known as", "notes": "Notes",
+        "white_side": "White", "black_side": "Black",
+        "table_head": "N | move | color | SAN | FEN before the move | eval after the move (+ = better for White)",
+        "engine_best": "engine's best reply", "none": "none", "mate": "mate", "over": "game over",
+        "pgn_headers": "PGN HEADERS", "plies": "HALF-MOVES ({n} total)", "facts": "FACTS (verified)",
+        "catalog_facts": "FACTS FROM THE CATALOG (verified)",
+        "no_facts": "FACTS: none — use only the PGN headers.",
+        "no_engine": "ENGINE EVALUATIONS: none — no verdicts like \"mistake\" or \"best move\".",
+        "write": "Write the episode script following the rules. Return JSON only.",
+        "fix": "Validation rejected the script (message in Polish):\n{err}\n\n"
+               "Fix it and return the whole script again, JSON only.",
+        "chapters": "Chapters:", "pgn": "Game score (PGN):", "photos": "Photos (Wikimedia Commons):",
+        "unknown_author": "unknown author", "photo_by": "Photo:", "moves_header": "MOVES",
+        "verified": "The game score was checked against at least two game databases. ",
+        "hashtags": "#chess #chesshistory #famouschessgames",
+        "tags": ["chess", "chess game", "chess history", "famous chess games", "classic chess games"],
+        "year_tag": "chess {year}",
+        "stage": {1: "Final", 2: "Semifinal", 4: "Quarterfinal", 8: "Round of 16", 16: "Round of 32"},
+        "third": "Third-place match", "this_game": "THIS GAME", "standings": "Standings before this game",
+        "round_n": "Round {n}", "pts": "pts", "news_tags": ["chess news", "chess tournament", "live chess"],
+        "news_hashtags": "#chess #chessnews #chesstournament",
+    },
+)
+
+CHANNELS = {"pl": PL, "de": DE, "en": EN}
 L = CHANNELS[os.environ.get("CHANNEL", "pl").strip().lower() or "pl"]
 
 
@@ -100,6 +131,8 @@ def field_(entry: dict | None, name: str):
 
 
 def moves_word(n: int) -> str:
+    if L.code == "en":
+        return "move" if n == 1 else "moves"
     if L.code == "de":
         return "Zug" if n == 1 else "Züge"
     if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14):
@@ -111,7 +144,8 @@ def credit_author(author: str | None) -> str:
     """Autor zdjęcia do podpisu; polskie dopiski z fetch_portraits.py tłumaczone na język kanału."""
     a = author or L.t["unknown_author"]
     if L.code != "pl":
-        a = a.replace("autor nieznany", L.t["unknown_author"]).replace("; oprac.", "; bearb.")
+        a = a.replace("autor nieznany", L.t["unknown_author"]).replace(
+            "; oprac.", "; bearb." if L.code == "de" else "; edited by")
     return a
 
 
@@ -119,6 +153,8 @@ def notation():
     """Moduł zapisu ruchów kanału: spoken(ply), san_local(san), label(ply), PREPOSITIONS."""
     if L.code == "de":
         import de_notation as mod
+    elif L.code == "en":
+        import en_notation as mod
     else:
         import pl_notation as mod
     return mod

@@ -52,6 +52,11 @@ Pliki:
   wideo (out/ / out/de/), tagi Release (ep001-… / de-ep001-…), prompt (prompts/script_system_<kod>.md), zapis ruchów
   (pl_notation.py / de_notation.py: K D T L S, "Springer nach eff drei"), zwroty (phrases.TEXTS), teksty opisu (lang.L.t).
   Pola katalogu *_de: label_de, event_de, site_de, black_de/black_last_de (Die Welt, Herzog von Braunschweig…); nazwiska — pisownia bazowa.
+- KANAŁ EN (USA): CHANNEL=en — kolejność n_en (seed 20261003), label_en/event_en, black_en (The World, Duke of Brunswick…),
+  en_notation.py ("knight to F three", "E takes D five", "castles kingside"; ekran: zwykły SAN), prompts/script_system_en.md,
+  scripts_en/, out/en/, state/schedule_en.json, tag en-…, flaga 🇺🇸, "swój" gracz = us (Channel.country);
+  .github/workflows/publish_en.yml — cron 06:17 UTC, publikacja 10:00 America/New_York (w Telegramie także czas kijowski);
+  sekrety ELEVENLABS_VOICE_ID_EN, zmienna HOST_NAME_EN; news.yml obsługuje kanał en.
 - src/tts_elevenlabs.py — ElevenLabs /v1/text-to-speech/{voice}/with-timestamps (alignment znaków -> słowa), ELEVENLABS_MODEL
   (domyślnie eleven_multilingual_v2); NIE zweryfikowane na prawdziwym kluczu
 - .github/workflows/publish_de.yml — kanał niemiecki, cron 04:47 UTC, ta sama grupa concurrency co publish.yml; bez klucza ElevenLabs pomija.

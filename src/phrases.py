@@ -85,6 +85,40 @@ TEXTS = {
             "Für immer in der Schachgeschichte",
         ],
     },
+    "en": {
+        "greeting": [
+            "Hi, I'm {name}.",
+            "Hey everyone, {name} here.",
+            "Hello and welcome, I'm {name}.",
+            "Welcome back, it's {name}.",
+        ],
+        "greeting_no_name": ["Hi everyone.", "Hello and welcome.", "Welcome back."],
+        "intro": [
+            "Today we're looking at a legendary game.",
+            "Today I'm going to show you an incredibly exciting game.",
+            "Today we're diving into a game that made chess history.",
+            "Today I'm showing you a game every serious chess fan should know.",
+            "Today we're going through a game that changed the history of chess.",
+            "Today I'm going to show you a game every chess lover should see at least once.",
+            "Today I'm taking you through one of the most exciting games in chess history.",
+            "Today we're looking at a game chess players have been talking about for decades. You'll see why in a moment.",
+            "Today I'm showing you a game worth knowing, even if you're just getting started with chess.",
+            "Today we're looking at a game you can't leave out of the story of chess.",
+            "Today I'm going to show you a game that still amazes chess players around the world.",
+        ],
+        "outro": ("Thanks for watching. If you're into chess, hit the like button "
+                  "and subscribe to the channel."),
+        "title_hooks": [
+            "A Game You Need to Know",
+            "A Game That Made History",
+            "Legendary Game",
+            "A Classic Worth Knowing",
+            "One of the Most Famous Games Ever",
+            "A Game You Have to See",
+            "A Chess Legend",
+            "Forever in Chess History",
+        ],
+    },
 }
 T = TEXTS[L.code]
 GREETING, GREETING_NO_NAME, INTRO, TITLE_HOOKS = T["greeting"], T["greeting_no_name"], T["intro"], T["title_hooks"]

@@ -26,7 +26,10 @@
       "n_de": 15,
       "label_de": "Freie Partie",
       "event_de": "Freie Partie",
-      "site_de": "London"
+      "site_de": "London",
+      "n_en": 58,
+      "label_en": "Casual game",
+      "event_en": "Casual game"
     },
     {
       "n": 2,
@@ -53,7 +56,10 @@
       "n_de": 4,
       "label_de": "Thematurnier (Sizilianische Verteidigung) · Runde 8",
       "event_de": "Thematurnier (Sizilianische Verteidigung) · Runde 8",
-      "site_de": "Buenos Aires"
+      "site_de": "Buenos Aires",
+      "n_en": 61,
+      "label_en": "Thematic tournament (Sicilian Defense) · Round 8",
+      "event_en": "Thematic tournament (Sicilian Defense) · Round 8"
     },
     {
       "n": 3,
@@ -79,7 +85,10 @@
       "n_de": 88,
       "label_de": "Schaukampf",
       "event_de": "Schaukampf",
-      "site_de": "Moskau"
+      "site_de": "Moskau",
+      "n_en": 42,
+      "label_en": "Exhibition match",
+      "event_en": "Exhibition match"
     },
     {
       "n": 4,
@@ -106,7 +115,10 @@
       "n_de": 66,
       "label_de": "Turnier · Sankt Petersburg · Runde 3",
       "event_de": "Turnier · Sankt Petersburg · Runde 3",
-      "site_de": "Sankt Petersburg"
+      "site_de": "Sankt Petersburg",
+      "n_en": 52,
+      "label_en": "Tournament · St. Petersburg · Round 3",
+      "event_en": "Tournament · St. Petersburg · Round 3"
     },
     {
       "n": 5,
@@ -135,7 +147,10 @@
       "n_de": 95,
       "label_de": "Kandidatenturnier · Runde 6",
       "event_de": "Kandidatenturnier · Runde 6",
-      "site_de": "Bled"
+      "site_de": "Bled",
+      "n_en": 48,
+      "label_en": "Candidates Tournament · Round 6",
+      "event_en": "Candidates Tournament · Round 6"
     },
     {
       "n": 6,
@@ -165,7 +180,10 @@
       "n_de": 86,
       "label_de": "US-Meisterschaft · Runde 3",
       "event_de": "US-Meisterschaft · Runde 3",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 20,
+      "label_en": "U.S. Championship · Round 3",
+      "event_en": "U.S. Championship · Round 3"
     },
     {
       "n": 7,
@@ -195,7 +213,10 @@
       "n_de": 98,
       "label_de": "WM-Kampf · Partie 10",
       "event_de": "WM-Kampf · Partie 10",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 13,
+      "label_en": "World Championship match · Game 10",
+      "event_en": "World Championship match · Game 10"
     },
     {
       "n": 8,
@@ -224,7 +245,10 @@
       "n_de": 37,
       "label_de": "WM-Kampf · Partie 6",
       "event_de": "WM-Kampf · Partie 6",
-      "site_de": "Reykjavík"
+      "site_de": "Reykjavík",
+      "n_en": 94,
+      "label_en": "World Championship match · Game 6",
+      "event_en": "World Championship match · Game 6"
     },
     {
       "n": 9,
@@ -252,7 +276,10 @@
       "n_de": 61,
       "label_de": "Hoogovens-Turnier · Runde 4",
       "event_de": "Hoogovens-Turnier · Runde 4",
-      "site_de": "Wijk aan Zee"
+      "site_de": "Wijk aan Zee",
+      "n_en": 56,
+      "label_en": "Hoogovens tournament · Round 4",
+      "event_en": "Hoogovens tournament · Round 4"
     },
     {
       "n": 10,
@@ -281,7 +308,10 @@
       "n_de": 1,
       "label_de": "Turnier in Monte Carlo · Runde 7",
       "event_de": "Turnier in Monte Carlo · Runde 7",
-      "site_de": "Monte Carlo"
+      "site_de": "Monte Carlo",
+      "n_en": 92,
+      "label_en": "Monte Carlo tournament · Round 7",
+      "event_en": "Monte Carlo tournament · Round 7"
     },
     {
       "n": 11,
@@ -317,7 +347,12 @@
       "event_de": "Partie gegen die Welt im Internet",
       "site_de": "Internet",
       "black_de": "Die Welt",
-      "black_last_de": "Die Welt"
+      "black_last_de": "Die Welt",
+      "n_en": 1,
+      "label_en": "Kasparov vs. the World (online)",
+      "event_en": "Kasparov vs. the World (online)",
+      "black_en": "The World",
+      "black_last_en": "The World"
     },
     {
       "n": 12,
@@ -345,7 +380,10 @@
       "n_de": 8,
       "label_de": "WM-Kampf · Partie 10",
       "event_de": "WM-Kampf · Partie 10",
-      "site_de": "Berlin"
+      "site_de": "Berlin",
+      "n_en": 75,
+      "label_en": "World Championship match · Game 10",
+      "event_en": "World Championship match · Game 10"
     },
     {
       "n": 13,
@@ -371,7 +409,10 @@
       "n_de": 97,
       "label_de": "Tschigorin-Pokal (Mannschaften)",
       "event_de": "Tschigorin-Pokal (Mannschaften)",
-      "site_de": "Rostow am Don"
+      "site_de": "Rostow am Don",
+      "n_en": 93,
+      "label_en": "Chigorin Cup (team)",
+      "event_en": "Chigorin Cup (team)"
     },
     {
       "n": 14,
@@ -398,7 +439,10 @@
       "n_de": 52,
       "label_de": "Tata Steel Chess · Runde 4",
       "event_de": "Tata Steel Chess · Runde 4",
-      "site_de": "Wijk aan Zee"
+      "site_de": "Wijk aan Zee",
+      "n_en": 87,
+      "label_en": "Tata Steel Chess · Round 4",
+      "event_en": "Tata Steel Chess · Round 4"
     },
     {
       "n": 15,
@@ -425,7 +469,10 @@
       "n_de": 89,
       "label_de": "WM-Kampf · Partie 6",
       "event_de": "WM-Kampf · Partie 6",
-      "site_de": "Dubai"
+      "site_de": "Dubai",
+      "n_en": 25,
+      "label_en": "World Championship match · Game 6",
+      "event_en": "World Championship match · Game 6"
     },
     {
       "n": 16,
@@ -451,7 +498,10 @@
       "n_de": 42,
       "label_de": "Meisterturnier, Manhattan Chess Club · Runde 1",
       "event_de": "Meisterturnier, Manhattan Chess Club · Runde 1",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 96,
+      "label_en": "Masters tournament, Manhattan CC · Round 1",
+      "event_en": "Masters tournament, Manhattan CC · Round 1"
     },
     {
       "n": 17,
@@ -480,7 +530,10 @@
       "n_de": 5,
       "label_de": "WM-Turnier · Runde 10",
       "event_de": "WM-Turnier · Runde 10",
-      "site_de": "Den Haag"
+      "site_de": "Den Haag",
+      "n_en": 59,
+      "label_en": "World Championship tournament · Round 10",
+      "event_en": "World Championship tournament · Round 10"
     },
     {
       "n": 18,
@@ -509,7 +562,10 @@
       "n_de": 45,
       "label_de": "WM-Kampf · Partie 16",
       "event_de": "WM-Kampf · Partie 16",
-      "site_de": "Leningrad"
+      "site_de": "Leningrad",
+      "n_en": 28,
+      "label_en": "World Championship match · Game 16",
+      "event_en": "World Championship match · Game 16"
     },
     {
       "n": 19,
@@ -538,7 +594,10 @@
       "n_de": 27,
       "label_de": "Turnier · Sankt Petersburg · Runde 18",
       "event_de": "Turnier · Sankt Petersburg · Runde 18",
-      "site_de": "Sankt Petersburg"
+      "site_de": "Sankt Petersburg",
+      "n_en": 85,
+      "label_en": "Tournament · St. Petersburg · Round 18",
+      "event_en": "Tournament · St. Petersburg · Round 18"
     },
     {
       "n": 20,
@@ -568,7 +627,10 @@
       "n_de": 99,
       "label_de": "Kandidatenviertelfinale · Partie 9",
       "event_de": "Kandidatenviertelfinale · Partie 9",
-      "site_de": "Brüssel"
+      "site_de": "Brüssel",
+      "n_en": 26,
+      "label_en": "Candidates quarterfinal · Game 9",
+      "event_en": "Candidates quarterfinal · Game 9"
     },
     {
       "n": 21,
@@ -597,7 +659,10 @@
       "n_de": 35,
       "label_de": "Kandidatenturnier · Runde 2",
       "event_de": "Kandidatenturnier · Runde 2",
-      "site_de": "Zürich"
+      "site_de": "Zürich",
+      "n_en": 88,
+      "label_en": "Candidates Tournament · Round 2",
+      "event_en": "Candidates Tournament · Round 2"
     },
     {
       "n": 22,
@@ -628,7 +693,10 @@
       "n_de": 39,
       "label_de": "WM-Kampf, Tiebreak · Partie 4",
       "event_de": "WM-Kampf, Tiebreak · Partie 4",
-      "site_de": "Astana"
+      "site_de": "Astana",
+      "n_en": 89,
+      "label_en": "World Championship match, tiebreak · Game 4",
+      "event_en": "World Championship match, tiebreak · Game 4"
     },
     {
       "n": 23,
@@ -655,7 +723,10 @@
       "n_de": 51,
       "label_de": "Turnier · New York · Runde 12",
       "event_de": "Turnier · New York · Runde 12",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 91,
+      "label_en": "Tournament · New York · Round 12",
+      "event_en": "Tournament · New York · Round 12"
     },
     {
       "n": 24,
@@ -683,7 +754,10 @@
       "n_de": 68,
       "label_de": "WM-Kampf · Partie 10",
       "event_de": "WM-Kampf · Partie 10",
-      "site_de": "Havanna"
+      "site_de": "Havanna",
+      "n_en": 30,
+      "label_en": "World Championship match · Game 10",
+      "event_en": "World Championship match · Game 10"
     },
     {
       "n": 25,
@@ -710,7 +784,10 @@
       "n_de": 11,
       "label_de": "WM-Kampf · Partie 6",
       "event_de": "WM-Kampf · Partie 6",
-      "site_de": "Sotschi"
+      "site_de": "Sotschi",
+      "n_en": 55,
+      "label_en": "World Championship match · Game 6",
+      "event_en": "World Championship match · Game 6"
     },
     {
       "n": 26,
@@ -738,7 +815,10 @@
       "n_de": 31,
       "label_de": "Kandidatenfinale · Partie 7",
       "event_de": "Kandidatenfinale · Partie 7",
-      "site_de": "Buenos Aires"
+      "site_de": "Buenos Aires",
+      "n_en": 10,
+      "label_en": "Candidates final · Game 7",
+      "event_en": "Candidates final · Game 7"
     },
     {
       "n": 27,
@@ -764,7 +844,10 @@
       "n_de": 83,
       "label_de": "Turnier · Amsterdam · Runde 1",
       "event_de": "Turnier · Amsterdam · Runde 1",
-      "site_de": "Amsterdam"
+      "site_de": "Amsterdam",
+      "n_en": 14,
+      "label_en": "Tournament · Amsterdam · Round 1",
+      "event_en": "Tournament · Amsterdam · Round 1"
     },
     {
       "n": 28,
@@ -792,7 +875,10 @@
       "n_de": 77,
       "label_de": "US-Meisterschaft · Runde 10",
       "event_de": "US-Meisterschaft · Runde 10",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 22,
+      "label_en": "U.S. Championship · Round 10",
+      "event_en": "U.S. Championship · Round 10"
     },
     {
       "n": 29,
@@ -822,7 +908,10 @@
       "n_de": 18,
       "label_de": "FIDE-Weltpokal, Halbfinale (Tiebreak)",
       "event_de": "FIDE-Weltpokal, Halbfinale (Tiebreak)",
-      "site_de": "Sotschi"
+      "site_de": "Sotschi",
+      "n_en": 21,
+      "label_en": "FIDE World Cup, semifinal (tiebreak)",
+      "event_en": "FIDE World Cup, semifinal (tiebreak)"
     },
     {
       "n": 30,
@@ -850,7 +939,10 @@
       "n_de": 19,
       "label_de": "Turnier · Hastings · Runde 10",
       "event_de": "Turnier · Hastings · Runde 10",
-      "site_de": "Hastings"
+      "site_de": "Hastings",
+      "n_en": 2,
+      "label_en": "Tournament · Hastings · Round 10",
+      "event_en": "Tournament · Hastings · Round 10"
     },
     {
       "n": 31,
@@ -877,7 +969,10 @@
       "n_de": 91,
       "label_de": "Russland – Weltauswahl, Schnellschach",
       "event_de": "Russland – Weltauswahl, Schnellschach",
-      "site_de": "Moskau"
+      "site_de": "Moskau",
+      "n_en": 63,
+      "label_en": "Russia vs. Rest of the World, rapid",
+      "event_en": "Russia vs. Rest of the World, rapid"
     },
     {
       "n": 32,
@@ -908,7 +1003,10 @@
       "n_de": 36,
       "label_de": "Kandidatenturnier · Runde 8",
       "event_de": "Kandidatenturnier · Runde 8",
-      "site_de": "Bled"
+      "site_de": "Bled",
+      "n_en": 38,
+      "label_en": "Candidates Tournament · Round 8",
+      "event_en": "Candidates Tournament · Round 8"
     },
     {
       "n": 33,
@@ -937,7 +1035,10 @@
       "n_de": 69,
       "label_de": "WM-Kampf · Partie 26",
       "event_de": "WM-Kampf · Partie 26",
-      "site_de": "Zandvoort"
+      "site_de": "Zandvoort",
+      "n_en": 46,
+      "label_en": "World Championship match · Game 26",
+      "event_en": "World Championship match · Game 26"
     },
     {
       "n": 34,
@@ -964,7 +1065,10 @@
       "n_de": 28,
       "label_de": "WM-Kampf · Partie 3",
       "event_de": "WM-Kampf · Partie 3",
-      "site_de": "Bonn"
+      "site_de": "Bonn",
+      "n_en": 45,
+      "label_en": "World Championship match · Game 3",
+      "event_en": "World Championship match · Game 3"
     },
     {
       "n": 35,
@@ -991,7 +1095,10 @@
       "n_de": 74,
       "label_de": "WM-Kampf · Partie 23",
       "event_de": "WM-Kampf · Partie 23",
-      "site_de": "Havanna"
+      "site_de": "Havanna",
+      "n_en": 24,
+      "label_en": "World Championship match · Game 23",
+      "event_en": "World Championship match · Game 23"
     },
     {
       "n": 36,
@@ -1028,7 +1135,10 @@
       "n_de": 72,
       "label_de": "Wettkampf zweier Schachprogramme",
       "event_de": "Wettkampf zweier Schachprogramme",
-      "site_de": "London"
+      "site_de": "London",
+      "n_en": 100,
+      "label_en": "Computer chess match",
+      "event_en": "Computer chess match"
     },
     {
       "n": 37,
@@ -1057,7 +1167,10 @@
       "n_de": 64,
       "label_de": "WM-Kampf · Partie 20",
       "event_de": "WM-Kampf · Partie 20",
-      "site_de": "Lyon"
+      "site_de": "Lyon",
+      "n_en": 90,
+      "label_en": "World Championship match · Game 20",
+      "event_en": "World Championship match · Game 20"
     },
     {
       "n": 38,
@@ -1085,7 +1198,10 @@
       "n_de": 59,
       "label_de": "Erster Amerikanischer Schachkongress",
       "event_de": "Erster Amerikanischer Schachkongress",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 76,
+      "label_en": "First American Chess Congress",
+      "event_en": "First American Chess Congress"
     },
     {
       "n": 39,
@@ -1125,7 +1241,12 @@
       "event_de": "Beratungspartie in der Oper",
       "site_de": "Paris",
       "black_de": "Herzog Karl von Braunschweig und Graf Isouard",
-      "black_last_de": "Herzog von Braunschweig und Graf Isouard"
+      "black_last_de": "Herzog von Braunschweig und Graf Isouard",
+      "n_en": 43,
+      "label_en": "Consultation game at the opera",
+      "event_en": "Consultation game at the opera",
+      "black_en": "Duke Karl of Brunswick & Count Isouard",
+      "black_last_en": "Duke of Brunswick & Count Isouard"
     },
     {
       "n": 40,
@@ -1154,7 +1275,10 @@
       "n_de": 53,
       "label_de": "Kandidatenturnier · Runde 14",
       "event_de": "Kandidatenturnier · Runde 14",
-      "site_de": "Zürich"
+      "site_de": "Zürich",
+      "n_en": 78,
+      "label_en": "Candidates Tournament · Round 14",
+      "event_en": "Candidates Tournament · Round 14"
     },
     {
       "n": 41,
@@ -1182,7 +1306,10 @@
       "n_de": 38,
       "label_de": "Turnier · Zürich · Runde 12",
       "event_de": "Turnier · Zürich · Runde 12",
-      "site_de": "Zürich"
+      "site_de": "Zürich",
+      "n_en": 17,
+      "label_en": "Tournament · Zurich · Round 12",
+      "event_en": "Tournament · Zurich · Round 12"
     },
     {
       "n": 42,
@@ -1206,7 +1333,10 @@
       "n_de": 3,
       "label_de": "Schacholympiade · Runde 4",
       "event_de": "Schacholympiade · Runde 4",
-      "site_de": "Nizza"
+      "site_de": "Nizza",
+      "n_en": 40,
+      "label_en": "Chess Olympiad · Round 4",
+      "event_en": "Chess Olympiad · Round 4"
     },
     {
       "n": 43,
@@ -1233,7 +1363,10 @@
       "n_de": 13,
       "label_de": "27. Meisterschaft der UdSSR",
       "event_de": "27. Meisterschaft der UdSSR",
-      "site_de": "Leningrad"
+      "site_de": "Leningrad",
+      "n_en": 72,
+      "label_en": "27th USSR Championship",
+      "event_en": "27th USSR Championship"
     },
     {
       "n": 44,
@@ -1261,7 +1394,10 @@
       "n_de": 60,
       "label_de": "Turnier · Hastings · Runde 5",
       "event_de": "Turnier · Hastings · Runde 5",
-      "site_de": "Hastings"
+      "site_de": "Hastings",
+      "n_en": 3,
+      "label_en": "Tournament · Hastings · Round 5",
+      "event_en": "Tournament · Hastings · Round 5"
     },
     {
       "n": 45,
@@ -1293,7 +1429,10 @@
       "n_de": 71,
       "label_de": "Mensch gegen Computer · Partie 2",
       "event_de": "Mensch gegen Computer · Partie 2",
-      "site_de": "Bonn"
+      "site_de": "Bonn",
+      "n_en": 73,
+      "label_en": "Man vs. machine · Game 2",
+      "event_en": "Man vs. machine · Game 2"
     },
     {
       "n": 46,
@@ -1323,7 +1462,10 @@
       "n_de": 17,
       "label_de": "WM-Kampf · Partie 6",
       "event_de": "WM-Kampf · Partie 6",
-      "site_de": "Moskau"
+      "site_de": "Moskau",
+      "n_en": 12,
+      "label_en": "World Championship match · Game 6",
+      "event_en": "World Championship match · Game 6"
     },
     {
       "n": 47,
@@ -1350,7 +1492,10 @@
       "n_de": 12,
       "label_de": "Turnier · Hastings · Runde 10",
       "event_de": "Turnier · Hastings · Runde 10",
-      "site_de": "Hastings"
+      "site_de": "Hastings",
+      "n_en": 41,
+      "label_en": "Tournament · Hastings · Round 10",
+      "event_en": "Tournament · Hastings · Round 10"
     },
     {
       "n": 48,
@@ -1382,7 +1527,10 @@
       "n_de": 6,
       "label_de": "Turnier · Kopenhagen · Runde 6",
       "event_de": "Turnier · Kopenhagen · Runde 6",
-      "site_de": "Kopenhagen"
+      "site_de": "Kopenhagen",
+      "n_en": 33,
+      "label_en": "Tournament · Copenhagen · Round 6",
+      "event_en": "Tournament · Copenhagen · Round 6"
     },
     {
       "n": 49,
@@ -1412,7 +1560,10 @@
       "n_de": 57,
       "label_de": "Turnier · Baden-Baden · Runde 8",
       "event_de": "Turnier · Baden-Baden · Runde 8",
-      "site_de": "Baden-Baden"
+      "site_de": "Baden-Baden",
+      "n_en": 99,
+      "label_en": "Tournament · Baden-Baden · Round 8",
+      "event_en": "Tournament · Baden-Baden · Round 8"
     },
     {
       "n": 50,
@@ -1440,7 +1591,10 @@
       "n_de": 82,
       "label_de": "WM-Kampf · Partie 24",
       "event_de": "WM-Kampf · Partie 24",
-      "site_de": "Sevilla"
+      "site_de": "Sevilla",
+      "n_en": 84,
+      "label_en": "World Championship match · Game 24",
+      "event_en": "World Championship match · Game 24"
     },
     {
       "n": 51,
@@ -1476,7 +1630,10 @@
       "n_de": 100,
       "label_de": "WM-Kampf · Partie 14",
       "event_de": "WM-Kampf · Partie 14",
-      "site_de": "Singapore"
+      "site_de": "Singapore",
+      "n_en": 4,
+      "label_en": "World Championship match · Game 14",
+      "event_en": "World Championship match · Game 14"
     },
     {
       "n": 52,
@@ -1504,7 +1661,10 @@
       "n_de": 20,
       "label_de": "Turnier der russischen Meister",
       "event_de": "Turnier der russischen Meister",
-      "site_de": "Łódź"
+      "site_de": "Łódź",
+      "n_en": 37,
+      "label_en": "All-Russian Masters Tournament",
+      "event_en": "All-Russian Masters Tournament"
     },
     {
       "n": 53,
@@ -1533,7 +1693,10 @@
       "n_de": 93,
       "label_de": "Turnier · Nikšić · Runde 4",
       "event_de": "Turnier · Nikšić · Runde 4",
-      "site_de": "Nikšić"
+      "site_de": "Nikšić",
+      "n_en": 7,
+      "label_en": "Tournament · Nikšić · Round 4",
+      "event_en": "Tournament · Nikšić · Round 4"
     },
     {
       "n": 54,
@@ -1559,7 +1722,10 @@
       "n_de": 63,
       "label_de": "Turnier · Hastings · Runde 2",
       "event_de": "Turnier · Hastings · Runde 2",
-      "site_de": "Hastings"
+      "site_de": "Hastings",
+      "n_en": 15,
+      "label_en": "Tournament · Hastings · Round 2",
+      "event_en": "Tournament · Hastings · Round 2"
     },
     {
       "n": 55,
@@ -1586,7 +1752,10 @@
       "n_de": 87,
       "label_de": "Turnier · Tilburg · Runde 4",
       "event_de": "Turnier · Tilburg · Runde 4",
-      "site_de": "Tilburg"
+      "site_de": "Tilburg",
+      "n_en": 8,
+      "label_en": "Tournament · Tilburg · Round 4",
+      "event_en": "Tournament · Tilburg · Round 4"
     },
     {
       "n": 56,
@@ -1614,7 +1783,10 @@
       "n_de": 43,
       "label_de": "Turnier · Sankt Petersburg",
       "event_de": "Turnier · Sankt Petersburg",
-      "site_de": "Sankt Petersburg"
+      "site_de": "Sankt Petersburg",
+      "n_en": 65,
+      "label_en": "Tournament · St. Petersburg",
+      "event_en": "Tournament · St. Petersburg"
     },
     {
       "n": 57,
@@ -1641,7 +1813,10 @@
       "n_de": 16,
       "label_de": "WM-Kampf · Partie 12",
       "event_de": "WM-Kampf · Partie 12",
-      "site_de": "Sofia"
+      "site_de": "Sofia",
+      "n_en": 74,
+      "label_en": "World Championship match · Game 12",
+      "event_en": "World Championship match · Game 12"
     },
     {
       "n": 58,
@@ -1667,7 +1842,10 @@
       "n_de": 7,
       "label_de": "Turnier · London · Runde 6",
       "event_de": "Turnier · London · Runde 6",
-      "site_de": "London"
+      "site_de": "London",
+      "n_en": 11,
+      "label_en": "Tournament · London · Round 6",
+      "event_en": "Tournament · London · Round 6"
     },
     {
       "n": 59,
@@ -1691,7 +1869,10 @@
       "n_de": 73,
       "label_de": "Freie Partie",
       "event_de": "Freie Partie",
-      "site_de": "Wien"
+      "site_de": "Wien",
+      "n_en": 64,
+      "label_en": "Casual game",
+      "event_en": "Casual game"
     },
     {
       "n": 60,
@@ -1720,7 +1901,10 @@
       "n_de": 21,
       "label_de": "WM-Kampf · Partie 2",
       "event_de": "WM-Kampf · Partie 2",
-      "site_de": "London"
+      "site_de": "London",
+      "n_en": 60,
+      "label_en": "World Championship match · Game 2",
+      "event_en": "World Championship match · Game 2"
     },
     {
       "n": 61,
@@ -1753,7 +1937,10 @@
       "n_de": 58,
       "label_de": "Revanche Mensch gegen Computer · Partie 6",
       "event_de": "Revanche Mensch gegen Computer · Partie 6",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 77,
+      "label_en": "Man vs. machine rematch · Game 6",
+      "event_en": "Man vs. machine rematch · Game 6"
     },
     {
       "n": 62,
@@ -1782,7 +1969,10 @@
       "n_de": 79,
       "label_de": "WM-Kampf · Partie 19",
       "event_de": "WM-Kampf · Partie 19",
-      "site_de": "Moskau"
+      "site_de": "Moskau",
+      "n_en": 62,
+      "label_en": "World Championship match · Game 19",
+      "event_en": "World Championship match · Game 19"
     },
     {
       "n": 63,
@@ -1810,7 +2000,10 @@
       "n_de": 25,
       "label_de": "Turnier · San Remo · Runde 3",
       "event_de": "Turnier · San Remo · Runde 3",
-      "site_de": "San Remo"
+      "site_de": "San Remo",
+      "n_en": 86,
+      "label_en": "Tournament · San Remo · Round 3",
+      "event_en": "Tournament · San Remo · Round 3"
     },
     {
       "n": 64,
@@ -1837,7 +2030,10 @@
       "n_de": 78,
       "label_de": "Turnier · Bled · Runde 6",
       "event_de": "Turnier · Bled · Runde 6",
-      "site_de": "Bled"
+      "site_de": "Bled",
+      "n_en": 49,
+      "label_en": "Tournament · Bled · Round 6",
+      "event_en": "Tournament · Bled · Round 6"
     },
     {
       "n": 65,
@@ -1866,7 +2062,10 @@
       "n_de": 26,
       "label_de": "WM-Kampf · Partie 10",
       "event_de": "WM-Kampf · Partie 10",
-      "site_de": "Moskau"
+      "site_de": "Moskau",
+      "n_en": 51,
+      "label_en": "World Championship match · Game 10",
+      "event_en": "World Championship match · Game 10"
     },
     {
       "n": 66,
@@ -1893,7 +2092,10 @@
       "n_de": 9,
       "label_de": "Airthings Masters (online) · Runde 8",
       "event_de": "Airthings Masters (online) · Runde 8",
-      "site_de": "Online"
+      "site_de": "Online",
+      "n_en": 44,
+      "label_en": "Airthings Masters (online) · Round 8",
+      "event_en": "Airthings Masters (online) · Round 8"
     },
     {
       "n": 67,
@@ -1920,7 +2122,10 @@
       "n_de": 2,
       "label_de": "WM-Kampf · Partie 34",
       "event_de": "WM-Kampf · Partie 34",
-      "site_de": "Buenos Aires"
+      "site_de": "Buenos Aires",
+      "n_en": 98,
+      "label_en": "World Championship match · Game 34",
+      "event_en": "World Championship match · Game 34"
     },
     {
       "n": 68,
@@ -1948,7 +2153,10 @@
       "n_de": 90,
       "label_de": "Turnier · New York · Runde 6",
       "event_de": "Turnier · New York · Runde 6",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 50,
+      "label_en": "Tournament · New York · Round 6",
+      "event_en": "Tournament · New York · Round 6"
     },
     {
       "n": 69,
@@ -1975,7 +2183,10 @@
       "n_de": 92,
       "label_de": "Interzonenturnier · Runde 7",
       "event_de": "Interzonenturnier · Runde 7",
-      "site_de": "Göteborg"
+      "site_de": "Göteborg",
+      "n_en": 83,
+      "label_en": "Interzonal · Round 7",
+      "event_en": "Interzonal · Round 7"
     },
     {
       "n": 70,
@@ -2003,7 +2214,10 @@
       "n_de": 47,
       "label_de": "Kandidatenhalbfinale · Partie 10",
       "event_de": "Kandidatenhalbfinale · Partie 10",
-      "site_de": "Bled"
+      "site_de": "Bled",
+      "n_en": 18,
+      "label_en": "Candidates semifinal · Game 10",
+      "event_en": "Candidates semifinal · Game 10"
     },
     {
       "n": 71,
@@ -2032,7 +2246,10 @@
       "n_de": 33,
       "label_de": "Turnier · Hastings · Runde 3",
       "event_de": "Turnier · Hastings · Runde 3",
-      "site_de": "Hastings"
+      "site_de": "Hastings",
+      "n_en": 80,
+      "label_en": "Tournament · Hastings · Round 3",
+      "event_en": "Tournament · Hastings · Round 3"
     },
     {
       "n": 72,
@@ -2060,7 +2277,10 @@
       "n_de": 32,
       "label_de": "Hoogovens-Turnier · Runde 2",
       "event_de": "Hoogovens-Turnier · Runde 2",
-      "site_de": "Wijk aan Zee"
+      "site_de": "Wijk aan Zee",
+      "n_en": 47,
+      "label_en": "Hoogovens tournament · Round 2",
+      "event_en": "Hoogovens tournament · Round 2"
     },
     {
       "n": 73,
@@ -2087,7 +2307,10 @@
       "n_de": 94,
       "label_de": "Turnier · New York · Runde 5",
       "event_de": "Turnier · New York · Runde 5",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 31,
+      "label_en": "Tournament · New York · Round 5",
+      "event_en": "Tournament · New York · Round 5"
     },
     {
       "n": 74,
@@ -2113,7 +2336,10 @@
       "n_de": 10,
       "label_de": "Freie Partie",
       "event_de": "Freie Partie",
-      "site_de": "Wien"
+      "site_de": "Wien",
+      "n_en": 82,
+      "label_en": "Casual game",
+      "event_en": "Casual game"
     },
     {
       "n": 75,
@@ -2146,7 +2372,10 @@
       "n_de": 30,
       "label_de": "Wettkampf La Bourdonnais – McDonnell · Partie 16",
       "event_de": "Wettkampf La Bourdonnais – McDonnell · Partie 16",
-      "site_de": "London"
+      "site_de": "London",
+      "n_en": 79,
+      "label_en": "La Bourdonnais – McDonnell match · Game 16",
+      "event_en": "La Bourdonnais – McDonnell match · Game 16"
     },
     {
       "n": 76,
@@ -2173,7 +2402,10 @@
       "n_de": 24,
       "label_de": "Credit Suisse Masters · Runde 9",
       "event_de": "Credit Suisse Masters · Runde 9",
-      "site_de": "Horgen"
+      "site_de": "Horgen",
+      "n_en": 5,
+      "label_en": "Credit Suisse Masters · Round 9",
+      "event_en": "Credit Suisse Masters · Round 9"
     },
     {
       "n": 77,
@@ -2202,7 +2434,10 @@
       "n_de": 41,
       "label_de": "Wettkampf UdSSR – Weltauswahl · Partie 2",
       "event_de": "Wettkampf UdSSR – Weltauswahl · Partie 2",
-      "site_de": "Belgrad"
+      "site_de": "Belgrad",
+      "n_en": 39,
+      "label_en": "USSR vs. Rest of the World · Game 2",
+      "event_en": "USSR vs. Rest of the World · Game 2"
     },
     {
       "n": 78,
@@ -2233,7 +2468,10 @@
       "n_de": 65,
       "label_de": "Turnier · Moskau · Runde 12",
       "event_de": "Turnier · Moskau · Runde 12",
-      "site_de": "Moskau"
+      "site_de": "Moskau",
+      "n_en": 27,
+      "label_en": "Tournament · Moscow · Round 12",
+      "event_en": "Tournament · Moscow · Round 12"
     },
     {
       "n": 79,
@@ -2266,7 +2504,10 @@
       "n_de": 81,
       "label_de": "Mensch gegen Computer · Partie 1",
       "event_de": "Mensch gegen Computer · Partie 1",
-      "site_de": "Philadelphia"
+      "site_de": "Philadelphia",
+      "n_en": 16,
+      "label_en": "Man vs. machine · Game 1",
+      "event_en": "Man vs. machine · Game 1"
     },
     {
       "n": 80,
@@ -2293,7 +2534,10 @@
       "n_de": 84,
       "label_de": "WM-Kampf, Tiebreak · Partie 4",
       "event_de": "WM-Kampf, Tiebreak · Partie 4",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 67,
+      "label_en": "World Championship match, tiebreak · Game 4",
+      "event_en": "World Championship match, tiebreak · Game 4"
     },
     {
       "n": 81,
@@ -2330,7 +2574,10 @@
       "n_de": 55,
       "label_de": "Turnier · Danzhou · Runde 2",
       "event_de": "Turnier · Danzhou · Runde 2",
-      "site_de": "Danzhou"
+      "site_de": "Danzhou",
+      "n_en": 66,
+      "label_en": "Tournament · Danzhou · Round 2",
+      "event_en": "Tournament · Danzhou · Round 2"
     },
     {
       "n": 82,
@@ -2356,7 +2603,10 @@
       "n_de": 44,
       "label_de": "Meisterschaft der RSFSR",
       "event_de": "Meisterschaft der RSFSR",
-      "site_de": "Sotschi"
+      "site_de": "Sotschi",
+      "n_en": 35,
+      "label_en": "RSFSR Championship",
+      "event_en": "RSFSR Championship"
     },
     {
       "n": 83,
@@ -2384,7 +2634,10 @@
       "n_de": 22,
       "label_de": "Corus-Turnier, Gruppe C · Runde 12",
       "event_de": "Corus-Turnier, Gruppe C · Runde 12",
-      "site_de": "Wijk aan Zee"
+      "site_de": "Wijk aan Zee",
+      "n_en": 23,
+      "label_en": "Corus tournament, Group C · Round 12",
+      "event_en": "Corus tournament, Group C · Round 12"
     },
     {
       "n": 84,
@@ -2412,7 +2665,10 @@
       "n_de": 48,
       "label_de": "AVRO-Turnier · Runde 11",
       "event_de": "AVRO-Turnier · Runde 11",
-      "site_de": "Rotterdam"
+      "site_de": "Rotterdam",
+      "n_en": 36,
+      "label_en": "AVRO tournament · Round 11",
+      "event_en": "AVRO tournament · Round 11"
     },
     {
       "n": 85,
@@ -2441,7 +2697,10 @@
       "n_de": 85,
       "label_de": "Freie Partie",
       "event_de": "Freie Partie",
-      "site_de": "Berlin"
+      "site_de": "Berlin",
+      "n_en": 69,
+      "label_en": "Casual game",
+      "event_en": "Casual game"
     },
     {
       "n": 86,
@@ -2472,7 +2731,10 @@
       "n_de": 23,
       "label_de": "Wettkampf Ortueta – Sanz",
       "event_de": "Wettkampf Ortueta – Sanz",
-      "site_de": "Madrid"
+      "site_de": "Madrid",
+      "n_en": 57,
+      "label_en": "Ortueta – Sanz match",
+      "event_en": "Ortueta – Sanz match"
     },
     {
       "n": 87,
@@ -2504,7 +2766,10 @@
       "n_de": 80,
       "label_de": "WM-Kampf · Partie 24",
       "event_de": "WM-Kampf · Partie 24",
-      "site_de": "Moskau"
+      "site_de": "Moskau",
+      "n_en": 97,
+      "label_en": "World Championship match · Game 24",
+      "event_en": "World Championship match · Game 24"
     },
     {
       "n": 88,
@@ -2531,7 +2796,10 @@
       "n_de": 96,
       "label_de": "Turnier · Sankt Petersburg · Runde 10",
       "event_de": "Turnier · Sankt Petersburg · Runde 10",
-      "site_de": "Sankt Petersburg"
+      "site_de": "Sankt Petersburg",
+      "n_en": 9,
+      "label_en": "Tournament · St. Petersburg · Round 10",
+      "event_en": "Tournament · St. Petersburg · Round 10"
     },
     {
       "n": 89,
@@ -2559,7 +2827,10 @@
       "n_de": 75,
       "label_de": "Schacholympiade · Runde 9",
       "event_de": "Schacholympiade · Runde 9",
-      "site_de": "Varna"
+      "site_de": "Varna",
+      "n_en": 19,
+      "label_en": "Chess Olympiad · Round 9",
+      "event_en": "Chess Olympiad · Round 9"
     },
     {
       "n": 90,
@@ -2587,7 +2858,10 @@
       "n_de": 62,
       "label_de": "WM-Kampf · Partie 32",
       "event_de": "WM-Kampf · Partie 32",
-      "site_de": "Baguio City"
+      "site_de": "Baguio City",
+      "n_en": 53,
+      "label_en": "World Championship match · Game 32",
+      "event_en": "World Championship match · Game 32"
     },
     {
       "n": 91,
@@ -2617,7 +2891,10 @@
       "n_de": 70,
       "label_de": "Turnier · Stavanger · Runde 5",
       "event_de": "Turnier · Stavanger · Runde 5",
-      "site_de": "Stavanger"
+      "site_de": "Stavanger",
+      "n_en": 29,
+      "label_en": "Tournament · Stavanger · Round 5",
+      "event_en": "Tournament · Stavanger · Round 5"
     },
     {
       "n": 92,
@@ -2651,7 +2928,10 @@
       "n_de": 29,
       "label_de": "Turnier in Warschau",
       "event_de": "Turnier in Warschau",
-      "site_de": "Warschau"
+      "site_de": "Warschau",
+      "n_en": 34,
+      "label_en": "Warsaw tournament",
+      "event_en": "Warsaw tournament"
     },
     {
       "n": 93,
@@ -2679,7 +2959,10 @@
       "n_de": 46,
       "label_de": "Turnier · Linares · Runde 10",
       "event_de": "Turnier · Linares · Runde 10",
-      "site_de": "Linares"
+      "site_de": "Linares",
+      "n_en": 71,
+      "label_en": "Tournament · Linares · Round 10",
+      "event_en": "Tournament · Linares · Round 10"
     },
     {
       "n": 94,
@@ -2707,7 +2990,10 @@
       "n_de": 49,
       "label_de": "WM-Kampf · Partie 14",
       "event_de": "WM-Kampf · Partie 14",
-      "site_de": "Brissago"
+      "site_de": "Brissago",
+      "n_en": 6,
+      "label_en": "World Championship match · Game 14",
+      "event_en": "World Championship match · Game 14"
     },
     {
       "n": 95,
@@ -2736,7 +3022,10 @@
       "n_de": 56,
       "label_de": "Revanchekampf Fischer – Spasski · Partie 1",
       "event_de": "Revanchekampf Fischer – Spasski · Partie 1",
-      "site_de": "Sveti Stefan"
+      "site_de": "Sveti Stefan",
+      "n_en": 54,
+      "label_en": "Fischer – Spassky rematch · Game 1",
+      "event_en": "Fischer – Spassky rematch · Game 1"
     },
     {
       "n": 96,
@@ -2763,7 +3052,10 @@
       "n_de": 67,
       "label_de": "Zweiter Piatigorsky-Cup · Runde 7",
       "event_de": "Zweiter Piatigorsky-Cup · Runde 7",
-      "site_de": "Santa Monica"
+      "site_de": "Santa Monica",
+      "n_en": 32,
+      "label_en": "Second Piatigorsky Cup · Round 7",
+      "event_en": "Second Piatigorsky Cup · Round 7"
     },
     {
       "n": 97,
@@ -2789,7 +3081,10 @@
       "n_de": 40,
       "label_de": "Kongress des Deutschen Schachbundes",
       "event_de": "Kongress des Deutschen Schachbundes",
-      "site_de": "Breslau"
+      "site_de": "Breslau",
+      "n_en": 95,
+      "label_en": "German Chess Federation Congress",
+      "event_en": "German Chess Federation Congress"
     },
     {
       "n": 98,
@@ -2819,7 +3114,10 @@
       "n_de": 34,
       "label_de": "WM-Kampf · Partie 16",
       "event_de": "WM-Kampf · Partie 16",
-      "site_de": "Moskau"
+      "site_de": "Moskau",
+      "n_en": 70,
+      "label_en": "World Championship match · Game 16",
+      "event_en": "World Championship match · Game 16"
     },
     {
       "n": 99,
@@ -2843,7 +3141,10 @@
       "n_de": 76,
       "label_de": "Freie Partie",
       "event_de": "Freie Partie",
-      "site_de": "London"
+      "site_de": "London",
+      "n_en": 68,
+      "label_en": "Casual game",
+      "event_en": "Casual game"
     },
     {
       "n": 100,
@@ -2871,7 +3172,10 @@
       "n_de": 14,
       "label_de": "Rosenwald-Gedenkturnier",
       "event_de": "Rosenwald-Gedenkturnier",
-      "site_de": "New York"
+      "site_de": "New York",
+      "n_en": 81,
+      "label_en": "Rosenwald Memorial",
+      "event_en": "Rosenwald Memorial"
     }
   ]
 }
