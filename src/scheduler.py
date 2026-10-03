@@ -177,9 +177,9 @@ def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | N
             credits.append(f"{p['name']}: {credit_author(c.get('author'))}, {c.get('license')}, {c.get('source_url')}")
     if credits:
         lines += ["", t["photos"], *credits]
-    verified = t["verified"] if game.get("pgn_verified") else ""
-    lines += ["", verified + t["ai"],
-              "", f"{t['hashtags']} #{game['white'].split()[-1]} #{game['black'].split()[-1]}"]
+    if game.get("pgn_verified"):
+        lines += ["", t["verified"].strip()]
+    lines += ["", f"{t['hashtags']} #{game['white'].split()[-1]} #{game['black'].split()[-1]}"]
     description = "\n".join(lines).strip()
     if len(description) > 4900:  # limit YouTube: 5000 znaków — najpierw skracamy zapis partii
         description = description.replace(moves_text, moves_text[:max(0, len(moves_text) - (len(description) - 4900))] + " …")

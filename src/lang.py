@@ -48,8 +48,6 @@ PL = Channel(
         "chapters": "Rozdziały:", "pgn": "Zapis partii (PGN):", "photos": "Zdjęcia (Wikimedia Commons):",
         "unknown_author": "autor nieznany", "photo_by": "fot.", "moves_header": "RUCHY",
         "verified": "Zapis partii sprawdzony w co najmniej dwóch bazach partii. ",
-        "ai": "Oceny pozycji: Stockfish. Lektor: syntezator mowy. "
-              "Scenariusz przygotowany z pomocą AI na podstawie zapisu partii.",
         "hashtags": "#szachy #chess #historiaszachów",
         "tags": ["szachy", "chess", "partia szachowa", "historia szachów", "słynne partie szachowe"],
         "year_tag": "szachy {year}",
@@ -76,8 +74,6 @@ DE = Channel(
         "chapters": "Kapitel:", "pgn": "Partienotation (PGN):", "photos": "Fotos (Wikimedia Commons):",
         "unknown_author": "Autor unbekannt", "photo_by": "Foto:", "moves_header": "ZÜGE",
         "verified": "Die Partienotation wurde in mindestens zwei Partiedatenbanken überprüft. ",
-        "ai": "Stellungsbewertungen: Stockfish. Sprecher: Sprachsynthese. "
-              "Skript mit Hilfe von KI auf Grundlage der Partienotation erstellt.",
         "hashtags": "#schach #chess #schachgeschichte",
         "tags": ["Schach", "chess", "Schachpartie", "Schachgeschichte", "berühmte Schachpartien"],
         "year_tag": "Schach {year}",
