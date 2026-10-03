@@ -58,6 +58,10 @@ Pliki:
 - RUBRYKA KRAJOWA: catalog/national_<kraj>.json (pl, de, us — wg Channel.country/code; pola jak games.json + n), PGN w games/,
   weryfikacja: pgn_collect.py --catalog catalog/national_us.json. scheduler: historia i rubryka krajowa na przemian
   (episode.rubric), gdy jednej brak — druga. players.catalog_entry i fetch_portraits widzą też katalogi krajowe.
+  national_us.json: 24 zwycięstwa Amerykanów nad mistrzami/pretendentami (bez duplikatów głównego katalogu); 22 z PGN
+  w ≥2 kolekcjach, Morphy–Anderssen 1858 i Christiansen–Karpov 1993 — 1 źródło (scheduler pomija). national_pl/de — do zrobienia.
+  Fakty (facts/): 22 partie głównego katalogu; wątpliwe rundy w .sources.md (Portisch r4, Shirov r9, Botvinnik–Portisch r7,
+  Lilienthal r5, Sämisch r6 — niepotwierdzone).
 - FAKTY: facts/<id>.md (EN, punkty potwierdzone ≥2 niezależnymi źródłami) + facts/<id>.sources.md (URL-e, nie trafiają do LLM).
 - KANAŁ EN (USA): CHANNEL=en — kolejność n_en (seed 20261003), label_en/event_en, black_en (The World, Duke of Brunswick…),
   en_notation.py ("knight to F three", "E takes D five", "castles kingside"; ekran: zwykły SAN), prompts/script_system_en.md,
