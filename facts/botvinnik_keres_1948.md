@@ -1,0 +1,7 @@
+- The game was played in the 1948 World Championship Tournament, organised by FIDE to decide the world title, which had been vacant since Alexander Alekhine's death in 1946.
+- Five players took part: Mikhail Botvinnik, Vasily Smyslov, Paul Keres, Samuel Reshevsky and Max Euwe, each meeting every other player five times.
+- The first ten rounds were played in The Hague and the remaining fifteen in Moscow, so this round 10 game was the last round of the Hague stage.
+- Botvinnik won his first four games against Keres in the tournament, and lost only their last game, when his title was already secured.
+- Botvinnik won the tournament with 14 points out of 20, ahead of Smyslov with 11, Keres and Reshevsky with 10.5 each, and Euwe with 4.
+- With this victory Botvinnik became the sixth world chess champion.
+- Keres's losses to Botvinnik later gave rise to suspicions that Soviet officials had pressured him, but historians who examined the evidence concluded that he probably did not lose any game on purpose.

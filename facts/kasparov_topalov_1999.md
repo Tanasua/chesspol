@@ -1,0 +1,7 @@
+- The game was played on 20 January 1999 in the fourth round of the 61st Hoogovens tournament in Wijk aan Zee, the Netherlands.
+- Garry Kasparov had White and Veselin Topalov had Black.
+- The game is widely known as "Kasparov's Immortal".
+- In the game the black king was driven across the board, all the way to the d1 square on White's side.
+- After the game ended the audience gave a standing ovation, and journalists and grandmasters in the press centre applauded when Kasparov entered.
+- Kasparov won the tournament with 10 points out of 13, half a point ahead of the previous year's winner Viswanathan Anand.
+- Later in 1999 Kasparov reached a rating of 2851, a record that stood until Magnus Carlsen surpassed it in 2013.

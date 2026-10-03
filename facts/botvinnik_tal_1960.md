@@ -1,0 +1,7 @@
+- The game was the sixth game of the 1960 World Championship match, played in Moscow from 15 March to 7 May 1960.
+- Mikhail Botvinnik was the reigning world champion, and Mikhail Tal had qualified as challenger by winning the 1959 Candidates Tournament in Yugoslavia.
+- The sixth game was played on 26 March 1960.
+- Tal won this game and then also won the seventh game.
+- Tal won the match by 12.5 to 8.5 after 21 games.
+- At the age of 23, Tal became the youngest world champion up to that time.
+- In the return match in 1961, Botvinnik won back the title, defeating Tal 13 to 8.

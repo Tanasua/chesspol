@@ -1,0 +1,5 @@
+- The game was played at the 1991 Interpolis tournament in Tilburg, the Netherlands, an eight-player double round-robin held from 17 October to 4 November 1991.
+- The field included Garry Kasparov, Anatoly Karpov, Viswanathan Anand, Gata Kamsky, Viktor Korchnoi and Evgeny Bareev, as well as Nigel Short and Jan Timman.
+- Garry Kasparov won the tournament with 10 points out of 14, and Nigel Short finished second with 8½ points.
+- The game is famous for the march of the white king from g1 all the way to h6 while the queens and rooks were still on the board.
+- In January 1993 Short defeated Timman 7½–5½ in the Candidates final at El Escorial and became Kasparov's challenger for the world title.

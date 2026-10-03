@@ -1,0 +1,8 @@
+- The game was the sixth game of the 2014 World Championship match, held under FIDE auspices in Sochi, Russia, from 7 to 25 November 2014.
+- Magnus Carlsen was the defending champion, having taken the title from Viswanathan Anand in their 2013 match in Chennai, India.
+- Anand had held the world title from 2007 until 2013.
+- Anand earned this rematch by winning the 2014 Candidates Tournament in Khanty-Mansiysk without losing a game.
+- The sixth game was played on 15 November 2014.
+- The match was level at 2.5 points each before this game, and Carlsen's win gave him a 3.5 to 2.5 lead.
+- After the game Carlsen said that usually you feel happy when you win, but when you get such a massive gift you just feel relief.
+- Carlsen retained his title by winning game 11, taking the match 6.5 to 4.5.

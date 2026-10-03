@@ -1,0 +1,7 @@
+- The game was played at the 1983 international tournament in Nikšić, Yugoslavia, held in celebration of Svetozar Gligorić's 60th birthday.
+- The field included former world champions Boris Spassky, Mikhail Tal and Tigran Petrosian, as well as Bent Larsen, Anthony Miles, Yasser Seirawan and Lajos Portisch.
+- Lajos Portisch was a Hungarian grandmaster; Garry Kasparov was at that time a participant in the Candidates cycle for the world championship.
+- Earlier in 1983 Kasparov had won his Candidates quarter-final match against Alexander Beliavsky.
+- In this game Kasparov improved on previously known opening analysis with a new move.
+- Kasparov won the tournament with 11 points out of 14, two points ahead of Bent Larsen.
+- Portisch and Spassky shared third and fourth places with 8 points each.

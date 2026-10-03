@@ -1,0 +1,7 @@
+- The game was played on 17 October 1956 in the Rosenwald Memorial tournament at the Marshall Chess Club in New York City.
+- It was a game of the eighth round of the tournament.
+- Bobby Fischer, who had the black pieces, was 13 years old at the time.
+- Donald Byrne had won the U.S. Open Championship in 1953.
+- Hans Kmoch named it "The Game of the Century" in his annotations in the December 1956 issue of Chess Review.
+- Kmoch wrote that this masterpiece of combination play by a boy of 13 against a formidable opponent matched the finest on record in the history of chess prodigies.
+- Samuel Reshevsky won the tournament with 9 points out of 11, while Fischer finished eighth with 4.5 points.

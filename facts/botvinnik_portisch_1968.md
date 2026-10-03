@@ -1,0 +1,6 @@
+- The game was played at the international tournament in Monte Carlo, held from 3 to 17 April 1968.
+- Mikhail Botvinnik was a former world champion, having held the title in 1948–1957, 1958–1960 and 1961–1963.
+- Botvinnik was born on 17 August 1911, so he was 56 years old at the time of this tournament.
+- Bent Larsen of Denmark won the tournament with 9.5 points out of 13, and Botvinnik finished second with 9 points.
+- Vlastimil Hort and Vasily Smyslov shared third and fourth place with 8.5 points each.
+- For Larsen this was a fifth consecutive first place in major tournaments.

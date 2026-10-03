@@ -1,0 +1,8 @@
+- The game was played in round 8 of the Airthings Masters 2022, a 16-player online rapid tournament of the Meltwater Champions Chess Tour, in February 2022.
+- Praggnanandhaa, then 16 years old, had the black pieces against world champion and world number one Magnus Carlsen.
+- Praggnanandhaa became a grandmaster in June 2018 at the age of 12 years, 10 months and 13 days, which made him the second-youngest grandmaster in history at that time.
+- Before this game Praggnanandhaa had a modest start to the tournament, with one win (against Levon Aronian), two draws and four losses.
+- The win ended Carlsen's run of three consecutive victories in the tournament.
+- Praggnanandhaa became the third Indian player to beat Carlsen, after Viswanathan Anand and Pentala Harikrishna.
+- He was reported to be the youngest player to defeat Carlsen during his reign as world champion, which began in 2013.
+- Carlsen went on to win the Airthings Masters 2022, beating Ian Nepomniachtchi in the final.

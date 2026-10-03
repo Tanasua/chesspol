@@ -1,0 +1,6 @@
+- The game was played on 17 August 1895 in the tenth round of the Hastings 1895 international tournament in England.
+- The tournament brought together almost all leading players of the time, including the reigning world champion Emanuel Lasker and his predecessor Wilhelm Steinitz.
+- Curt von Bardeleben did not resign: he left the playing hall without a word and did not return, so his time ran out.
+- After the game Steinitz showed the spectators the mate in ten moves that would have followed.
+- The game was awarded the first brilliancy prize of the tournament.
+- Harry Nelson Pillsbury won the tournament with 16½ points out of 21, ahead of Mikhail Chigorin, Emanuel Lasker, Siegbert Tarrasch and Steinitz, who finished fifth.

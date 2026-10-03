@@ -1,0 +1,8 @@
+- The game was the tenth game of the 1995 PCA World Chess Championship match between the defending champion Garry Kasparov and the challenger Viswanathan Anand.
+- The PCA (Professional Chess Association) was formed in 1993 by Kasparov and Nigel Short after they broke away from FIDE, so in 1995 there were two rival world championship titles.
+- Anand earned the right to challenge Kasparov by winning PCA candidates matches against Michael Adams and Gata Kamsky.
+- The match was played on the observation deck on the 107th floor of the World Trade Center in New York City.
+- The match opened with eight consecutive draws, after which Anand won game nine and led 5–4.
+- With this win in game ten Kasparov levelled the match at 5–5.
+- Kasparov told spectators after the game that he had spent about 48 hours preparing it.
+- Kasparov won the match 10½–7½ after 18 games, with four wins, one loss and thirteen draws, and retained his PCA title.

@@ -1,0 +1,8 @@
+- The Classical World Chess Championship 2004 was a 14-game match between defending champion Vladimir Kramnik (Russia) and challenger Peter Leko (Hungary), played from 25 September to 18 October 2004 in Brissago, Switzerland.
+- The match was held at the Centro Dannemann and was sponsored by the cigar manufacturer Dannemann.
+- Kramnik was defending the title he had won from Garry Kasparov in London in 2000.
+- Leko earned the right to challenge Kramnik by winning the Dortmund 2002 candidates tournament.
+- Under the match rules, the defending champion Kramnik would keep his title if the match ended in a tie.
+- Before the 14th and final game Leko led by one point, so a draw would have made him world champion and Kramnik needed to win.
+- Kramnik won the 14th game, and Leko resigned after 41 moves.
+- The match ended 7–7, with two wins for each player, and Kramnik retained his title.

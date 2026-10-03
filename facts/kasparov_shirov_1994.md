@@ -1,0 +1,5 @@
+- The game was played at the Credit Suisse Masters tournament in Horgen, near Zurich, Switzerland, held from 3 to 16 September 1994.
+- At that time Garry Kasparov held the world title of the Professional Chess Association, which he had founded with Nigel Short in 1993 after breaking away from FIDE.
+- Alexei Shirov was then ranked third in the world.
+- Kasparov won the tournament with 8½ points, and Shirov finished second with 7 points.
+- The game, a Sicilian Defence in the Sveshnikov Variation, is known for Kasparov's exchange sacrifice and the domination of his centralised knight.

@@ -1,0 +1,7 @@
+- The game was played in March 1923 at an international tournament in Copenhagen.
+- The Copenhagen 1923 tournament was a double round-robin with six players.
+- Aron Nimzowitsch won the tournament with 8 points out of 10, without losing a game and two points ahead of the rest of the field.
+- The game is known as the "Immortal Zugzwang Game", because the final position is regarded as a rare case of zugzwang in the middlegame.
+- According to Nimzowitsch, writing in the Wiener Schachzeitung in 1925, the name originated in Danish chess circles.
+- Nimzowitsch also presented the game in his book "Mein System" (My System), first published in 1925.
+- Copenhagen 1923 is counted among the main tournament victories of Nimzowitsch's career, together with Marienbad 1925 and Carlsbad 1929.

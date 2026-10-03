@@ -1,0 +1,8 @@
+- The game was played at the Hastings masters tournament of September 1922, a double round-robin for six players: Alexander Alekhine, Efim Bogoljubov, Akiba Rubinstein, Siegbert Tarrasch, George Alan Thomas and Frederick Yates.
+- The tournament was held from 9 to 21 September 1922.
+- This was a game of the final round, and with this win Alekhine finished first with 7.5 points out of 10, half a point ahead of Akiba Rubinstein, who only drew his last game against Thomas.
+- Bogoljubov and Thomas shared third place with 4.5 points, Tarrasch scored 4 and Yates 2.5.
+- Alekhine later wrote that he regarded this game and his win over Richard Réti at Baden-Baden 1925 as the most brilliant tournament games of his career.
+- The chess writer Irving Chernev ranked this game as the finest game of chess ever played.
+- Alekhine became world champion in 1927 by defeating José Raúl Capablanca in a match in Buenos Aires.
+- Bogoljubov later challenged Alekhine for the world title twice, in 1929 and in 1934, and lost both matches.

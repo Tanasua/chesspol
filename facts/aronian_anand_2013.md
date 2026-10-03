@@ -1,0 +1,8 @@
+- The game was played in round 4 of the Tata Steel Masters (Group A) 2013, held in Wijk aan Zee, the Netherlands, from 12 to 27 January 2013.
+- Viswanathan Anand, who had the black pieces, was the reigning world champion at the time.
+- With this win Anand joined Magnus Carlsen and Sergey Karjakin in the shared lead after four rounds, each with 3 points out of 4.
+- After the game Anand said it could easily be one of the best games he had ever played.
+- Magnus Carlsen described the game as "mind blowing".
+- Anand's move 12 novelty in this game won the New in Chess Yearbook "Novelty of the Year" award for 2013, with 48% of the votes.
+- The game has become known as "Anand's Immortal".
+- Magnus Carlsen won the tournament with 10 points out of 13, Levon Aronian was second with 8.5, and Anand and Karjakin followed with 8 points each.

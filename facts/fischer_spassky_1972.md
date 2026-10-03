@@ -1,0 +1,8 @@
+- The game was the sixth game of the 1972 World Chess Championship match in Reykjavik, Iceland, between the American challenger Bobby Fischer and the Soviet world champion Boris Spassky.
+- Spassky had been world champion since 1969, when he defeated Tigran Petrosian.
+- Spassky led 2–0 early in the match; the second game was awarded to him by forfeit when Fischer did not appear, in a dispute over cameras in the playing hall.
+- Fischer, who was known almost exclusively as a king's pawn player, chose a queen's gambit opening in this game, something he had not done in serious play before.
+- With this win Fischer took the lead in the match, 3½–2½, for the first time.
+- At the end of the game Spassky joined the audience in applauding Fischer.
+- Fischer won the match 12½–8½ when Spassky resigned the adjourned 21st game on 1 September 1972.
+- Fischer thereby became the eleventh world chess champion and the first American to win the official world title.

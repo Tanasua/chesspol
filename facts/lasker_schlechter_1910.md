@@ -1,0 +1,7 @@
+- The 1910 World Championship was a ten-game match between the defending champion Emanuel Lasker and the challenger Carl Schlechter, played in Vienna and Berlin.
+- The first five games were played in Vienna and the remaining five in Berlin.
+- The first four games were drawn, and Schlechter won the fifth game.
+- Schlechter went into the tenth and final game leading by one point.
+- The tenth game was played in Berlin over three days, on 8, 9 and 10 February 1910.
+- Lasker won the tenth game, the match ended 5–5, and Lasker kept the world title.
+- Historians still debate whether Schlechter needed to win by two points to take the title, because the complete match regulations have never been found.

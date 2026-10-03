@@ -1,0 +1,8 @@
+- The game was played on 1 January 1935 at the Hastings Christmas tournament of 1934/35 in England.
+- José Raúl Capablanca had been world champion from 1921 until 1927, when he lost the title to Alexander Alekhine.
+- Andor Lilienthal was born on 5 May 1911 in Moscow and moved to Hungary as a small child, so he was 23 years old when this game was played.
+- Lilienthal won the game in 26 moves with a queen sacrifice.
+- This win over Capablanca is described as the most celebrated victory of Lilienthal's career.
+- The tournament was won jointly by Max Euwe, Salo Flohr and Sir George Thomas with 6½ points each.
+- Capablanca finished fourth with 5½ points, and Lilienthal scored 5 points, sharing fifth and sixth place with Mikhail Botvinnik.
+- In 1950 Lilienthal was among the first players to receive the grandmaster title from FIDE.

@@ -1,0 +1,6 @@
+- The game was played in the 16th round of the 27th USSR Championship, held in Leningrad in January and February 1960.
+- Mikhail Tal did not take part, because he was preparing for his world championship match against Mikhail Botvinnik.
+- Viktor Korchnoi won the championship with 14 points out of 19, half a point ahead of Tigran Petrosian and Efim Geller, which was his first Soviet title.
+- Spassky won the game with the King's Gambit, an opening that Bronstein himself was known for playing.
+- The final position of the game was used, with small changes, in the chess scene of the 1963 James Bond film "From Russia with Love".
+- In the film the position is played by the fictional grandmasters Kronsteen and MacAdams.

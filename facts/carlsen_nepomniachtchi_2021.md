@@ -1,0 +1,9 @@
+- The game was played in the FIDE World Chess Championship 2021 match in Dubai, United Arab Emirates, between the reigning world champion Magnus Carlsen (Norway) and the challenger Ian Nepomniachtchi (Russia).
+- Nepomniachtchi earned the right to challenge Carlsen by winning the 2020–21 FIDE Candidates Tournament in Yekaterinburg, Russia.
+- Carlsen had held the world title since 2013, when he won it from Viswanathan Anand.
+- Game 6 was played on 3 December 2021 and finished shortly after midnight, so it ended on 4 December.
+- At 136 moves it became the longest game in World Chess Championship history, surpassing the 124-move game 5 of the 1978 Karpov–Korchnoi match.
+- The players spent about seven hours and 47 minutes at the board.
+- It was the first decisive classical game in a World Championship match in more than five years, after a run of drawn classical games.
+- With this win Carlsen took a 3½–2½ lead in the match.
+- Carlsen won the match 7½–3½ by winning game 11, securing his fifth World Chess Championship title.

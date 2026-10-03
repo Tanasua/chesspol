@@ -1,0 +1,10 @@
+- Kasparov versus the World was a chess game played over the Internet in 1999, with Garry Kasparov playing White alone against a World Team playing Black.
+- The World Team chose each of its moves by plurality vote.
+- The game was hosted and promoted by the MSN Gaming Zone, with sponsorship from First USA bank.
+- Kasparov made his first move on 21 June 1999.
+- The World Team was advised by four young players: Etienne Bacrot, Florin Felecan, Irina Krush and Elisabeth Pähtz.
+- Grandmaster Daniel King acted as moderator and commentator throughout the game.
+- More than 50,000 people from over 75 countries took part in the game.
+- Kasparov won after 62 moves played over about four months, when a majority of the World Team voted to resign.
+- Kasparov later wrote that he had never expended as much effort on any other game in his life.
+- Kasparov later called it the greatest game in the history of chess.
