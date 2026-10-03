@@ -1,0 +1,79 @@
+{
+  "kicker": "GENIALNE!",
+  "title": "Nagroda za błyskotliwość",
+  "description": "Robert Eugene Byrne i Robert James Fischer spotykają się w Nowym Jorku podczas mistrzostw Stanów Zjednoczonych 1963/64. Partia znana jako Nagroda za błyskotliwość zaczyna się spokojnie, lecz szybko zmienia się w lekcję inicjatywy. Warto śledzić, jak czarne powoli ustawiają figury, a potem jednym skoczkiem rozrywają osłonę króla. W zapisie wynik należy do czarnych: 0-1.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Nowy Jork, rok tysiąc dziewięćset sześćdziesiąty trzeci. W trzeciej rundzie mistrzostw Stanów Zjednoczonych Robert Eugene Byrne gra białymi z Robertem Jamesem Fischerem; stawką jest zwycięstwo w partii, która później dostanie nazwę Nagroda za błyskotliwość. Byrne zaczyna: {{m:1}}. Fischer odpowiada: {{m:2}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:3}} Białe zaznaczają centrum, bez pośpiechu. {{s:4}} Czarne nie walczą od razu o fajerwerki, tylko budują elastyczną pozycję. Byrne wybiera spokojny rozwój: {{m:5}}. {{s:6}} Fischer wzmacnia centrum i czeka.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Plan białych ma pracować po długiej przekątnej. Byrne gra: {{m:7}}. Fischer natychmiast odpowiada w centrum: {{m:8}}. {{s:9}} Białe wymieniają napięcie. {{s:10}} Czarne odbijają i pozycja wygląda jeszcze zupełnie normalnie.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut",
+      "text": "Rozwój trwa, ale pod spokojną powierzchnią zaczyna się przeciąganie linii. Białe grają: {{m:11}}. {{s:12}} Czarny goniec dołącza do gry. Byrne robi miejsce w centrum: {{m:13}}, a Fischer chowa króla: {{m:14}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Byrne kończy ustawienie figur: {{m:15}}. Fischer odpowiada rozwojem: {{m:16}}. {{s:17}} Biały król jest już bezpieczniejszy. Czarne jednak nie wybierają symetrii: {{m:18}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Byrne przygotowuje własną sieć pionów: {{m:19}}. Fischer pokazuje pierwszy konkretny zamiar: {{m:20}}. Białe też ustawiają gońca aktywnie: {{m:21}}. Czarne dokładają wieżę do nacisku: {{m:22}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Punkt zwrotny",
+      "text": "Teraz centrum pęka. Byrne ustawia hetmana: {{m:23}}. Fischer uderza: {{m:24}}. Białe przyjmują wyzwanie: {{m:25}}, a czarne odbijają: {{m:26}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "I tu pojawia się pierwszy moment, w którym silnik widzi już wyraźny przechył w stronę czarnych. Byrne gra: {{m:27}}. Fischer nie cofa się ani o krok; wchodzi w serce pozycji: {{m:28}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Byrne próbuje uporządkować obronę: {{m:29}}. Ale właśnie wtedy Fischer znajduje uderzenie wskazywane przez silnik jako najlepsze — nie spokojne, tylko ostre i natychmiastowe. Czarne grają: {{m:30}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s10",
+      "chapter": "Finał",
+      "text": "Byrne musi zdecydować, czy bierze zatrutą przynętę. Białe odpowiadają: {{m:31}}. Fischer natychmiast odzyskuje tempo z szachem: {{m:32}}. Król ucieka: {{m:33}}, a następny cios spada na kolejną podporę: {{m:34}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Obrona białych staje się coraz bardziej wymuszona. Byrne próbuje trzymać pozycję: {{m:35}}. Fischer zabiera następny element osłony: {{m:36}}. Biały król odbija: {{m:37}}, ale czarne natychmiast otwierają centrum: {{m:38}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Byrne jeszcze usuwa przeszkodę: {{m:39}}, ale Fischer odpowiada szachem po długiej przekątnej: {{m:40}}. Król schodzi z linii: {{m:41}}, a czarne kończą chłodnym wzmocnieniem: {{m:42}}. To dlatego ta partia jest znana jako Nagroda za błyskotliwość: seria konkretnych uderzeń prowadzi do wygranej czarnych, zero do jednego.",
+      "pause_after": 1
+    }
+  ]
+}
