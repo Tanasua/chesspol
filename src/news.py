@@ -47,6 +47,7 @@ NEWS = ROOT / "catalog" / "news.json"
 API = "https://lichess.org/api"
 UA = {"User-Agent": "chesspol-news/1.0 (https://github.com/tanasua/chesspol)"}
 TC_WEIGHT = {"classical": 1.0, "rapid": 0.6, "blitz": 0.35}
+HOME_BONUS = 2.5  # partia z graczem z kraju kanału
 
 
 # ---------------------------------------------------------------- Lichess
@@ -410,6 +411,9 @@ def photos_for(games: list) -> dict:
                 continue
             label = (person.get("labels", {}).get("en") or {}).get("value") or name
             names[name] = label
+            import countries
+            from fetch_portraits import WD_API, api
+            countries.remember(label, person, api, WD_API)
             print(f"Portret {label}: {save_photo(label, person, f'FIDE {fid}')}")
         except requests.RequestException as e:
             print(f"Portret {name}: błąd sieci {e.__class__.__name__}")
@@ -437,13 +441,22 @@ def main() -> int:
         for m in matches:
             print(f"  etap {m.stage}{' (3. miejsce)' if m.third else ''}: {m.a} – {m.b} {m.score()} -> {m.winner()}")
     ranked = score_games(games, matches, os.environ.get("STOCKFISH_PATH") or "/usr/games/stockfish")
+    names = photos_for(games if (matches or len({p for g in games for p in (g.white, g.black)}) <= 12)
+                       else [g for g in ranked[:20]])
+    import countries
+    year_now = datetime.now(timezone.utc).year
+    for g in ranked:  # "swój" gracz: Polak na kanale polskim, Niemiec na niemieckim
+        home = [p for p in (g.white, g.black) if countries.country(names.get(p, p), year_now) == L.code]
+        if home:
+            g.score = round(g.score + HOME_BONUS, 2)
+            g.why.append(f"swój gracz: {', '.join(home)}")
+    ranked.sort(key=lambda x: -x.score)
     for g in ranked[:8]:
         print(f"  {g.score:5.2f}  {g.round_name}: {g.white} – {g.black} {g.result}  {g.why}")
     if args.select_only:
         return 0
 
     pick = ranked[0]
-    names = photos_for(games if (matches or len({p for g in games for p in (g.white, g.black)}) <= 12) else [pick])
     year = int((pick.game.headers.get("Date") or "")[:4] or datetime.now(timezone.utc).year)
     gid = f"news_{slug(tour.get('name', 'turniej'))[:40]}_{slug(pick.white.split()[-1])}_{slug(pick.black.split()[-1])}_{pick.seq}"
     pgn_path = ROOT / "games" / "news" / f"{gid}.pgn"

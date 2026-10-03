@@ -41,6 +41,10 @@ Pliki:
   -> src/bracket.py: plansza na początek (drabinka z przekreślonymi odpadłymi / tabela; stan PRZED partią) -> catalog/news.json,
   facts/<id>.md (fakty policzone z PGN) -> script_gen -> main.py --preroll -> paczka (tag news[-test]-…, okładka z plakietką turnieju).
   Nazwiska z formatu FIDE w PGN ("Ding, Liren" -> DING). lichess.org zablokowany w środowisku deweloperskim — test tylko w Actions.
+- FLAGI: src/countries.py — kraj gracza z Wikidata P1532 (z datami od/do; fallback P27), pamięć assets/players/countries.json
+  (uzupełnia fetch_portraits.py dla katalogu i news.py dla turniejów). assets/flags/<iso>.svg (flag-icons, MIT; ru.svg i by.svg
+  usunięte). Zamiast flag tekst: RU (Rosja, Imperium Ros., RFSRR), BY, SU (ZSRR), DE (III Rzesza 1933–45) — decyzja właściciela.
+  Flagi na okładce (pod portretami) i w drabince; nowości: +2.5 pkt za partię z graczem z kraju kanału (Polak / Niemiec).
 - KANAŁY: src/lang.py (CHANNEL=pl domyślnie | de). Wspólne: katalog, PGN, zdjęcia, render, muzyka, Telegram (ten sam czat, flaga 🇵🇱/🇩🇪).
   Osobne: kolejność (n / n_de, seed 20261001), stan (state/schedule.json / schedule_de.json), scenariusze (scripts/ / scripts_de/),
   wideo (out/ / out/de/), tagi Release (ep001-… / de-ep001-…), prompt (prompts/script_system_<kod>.md), zapis ruchów

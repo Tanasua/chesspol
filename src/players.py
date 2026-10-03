@@ -77,6 +77,10 @@ def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     credit = json.loads(meta.read_text(encoding="utf-8")) if meta.exists() else None
     if credit and credit.get("author"):
         credit["author"] = " ".join(credit["author"].split())  # autor z Commons bywa wielowierszowy
+    from countries import country
+
+    year = e.get("year") if isinstance(e.get("year"), int) else None
     return {"name": name, "first": first, "last": last,
-            "photo": jpg if jpg.exists() else None, "credit": credit}
+            "photo": jpg if jpg.exists() else None, "credit": credit,
+            "country": country(e.get(color) or pgn_name, year)}
 

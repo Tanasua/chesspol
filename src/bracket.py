@@ -41,9 +41,17 @@ def _player_row(img: Image.Image, d: ImageDraw.ImageDraw, x: int, y: int, w: int
     img.paste(_mini(name, out), (x, y))
     from news import surname
 
+    from countries import badge, country
+
     last = surname(name).upper()
     tx = x + MINI[0] + 18
-    f = _fit(d, last, 38, w - MINI[0] - 110, True)
+    fl = badge(country(name), 30)
+    if fl:  # flaga przed nazwiskiem
+        if out:  # odpadły — przygaszona flaga
+            fl = Image.blend(Image.new("RGBA", fl.size, (34, 33, 31, 255)), fl, 0.45)
+        img.paste(fl, (tx, int(y + MINI[1] / 2 - 15)), fl)
+        tx += fl.width + 14
+    f = _fit(d, last, 38, x + w - 110 - tx, True)
     col = DIM if out else FG
     d.text((tx, y + MINI[1] / 2 - f.size / 2 - 4), last, font=f, fill=col)
     if out:  # przekreślenie odpadłego: nazwisko i portret

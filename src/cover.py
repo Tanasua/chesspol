@@ -9,6 +9,7 @@ import chess
 import chess.svg
 from PIL import Image, ImageDraw, ImageOps
 
+from countries import badge as flag_badge
 from render import ACCENT, BG, DIM, FG, _fit, _font, _wrap
 
 CW, CH = 1280, 720
@@ -60,12 +61,21 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
             px = x + i * (PHOTO[0] + 30)
             ph = ImageOps.fit(Image.open(p["photo"]).convert("RGB"), PHOTO, centering=(0.5, 0.3))
             img.paste(ph, (px, y))
-            d.text((px, y + PHOTO[1] + 8), p["last"].upper()[:14], font=_font(22, True), fill=FG)
+            fl = flag_badge(p.get("country"), 22)
+            tx = px
+            if fl:  # flaga kraju przy nazwisku, pod portretem
+                img.paste(fl, (px, y + PHOTO[1] + 10), fl)
+                tx = px + fl.width + 8
+            d.text((tx, y + PHOTO[1] + 8), p["last"].upper()[:14], font=_fit(d, p["last"].upper()[:14], 22, PHOTO[0] + 26 - (tx - px), True), fill=FG)
         d.text((x + PHOTO[0] + 4, y + PHOTO[1] // 2 - 16), "vs", font=_font(26, True), fill=DIM)
     else:
         for p in (white, black):
-            for ln in _wrap(d, p["last"].upper(), _font(40, True), w, 2):
-                d.text((x, y), ln, font=_font(40, True), fill=FG)
+            fl = flag_badge(p.get("country"), 34)
+            tx = x + (fl.width + 14 if fl else 0)
+            if fl:
+                img.paste(fl, (x, y + 6), fl)
+            for ln in _wrap(d, p["last"].upper(), _font(40, True), w - (tx - x), 2):
+                d.text((tx, y), ln, font=_font(40, True), fill=FG)
                 y += 48
             if p is white:
                 d.text((x, y), "vs", font=_font(26, True), fill=DIM)

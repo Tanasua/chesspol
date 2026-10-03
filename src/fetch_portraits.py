@@ -181,6 +181,19 @@ def person_by_fide(fide_id: str) -> dict | None:
                languages="en|pl|de")["entities"].get(qid)
 
 
+def ensure_country(name: str, years: list, override: str | None) -> None:
+    """Kraj reprezentowany przez gracza (src/countries.py) — raz, potem z pamięci podręcznej."""
+    import countries
+
+    if name in countries._load():
+        return
+    meta = PHOTOS / f"{slug(name)}.json"
+    qid = override or (json.loads(meta.read_text(encoding="utf-8")).get("qid") if meta.exists() else None)
+    person, _ = find_person(name, years, qid)
+    if person:
+        countries.remember(name, person, api, WD_API)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true")
@@ -196,6 +209,11 @@ def main() -> int:
     for name, years in sorted(players_with_years(catalog).items()):
         key = slug(name)
         jpg, meta_path = PHOTOS / f"{key}.jpg", PHOTOS / f"{key}.json"
+        if overrides.get(name, "") is not None:
+            try:
+                ensure_country(name, years, overrides.get(name))
+            except requests.RequestException as e:
+                print(f"Kraj {name}: błąd sieci {e.__class__.__name__}")
         if jpg.exists() and meta_path.exists() and not args.force:
             m = json.loads(meta_path.read_text(encoding="utf-8"))
             report.append(f"| {name} | ✅ (już jest) | {m.get('qid','')} | {m.get('license','')} | {m.get('author') or ''} |")
