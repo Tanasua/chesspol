@@ -132,6 +132,7 @@ class G:
     fide: tuple
     score: float = 0.0
     why: list = field(default_factory=list)
+    round_id: str = ""
 
     @property
     def pair(self) -> frozenset:
@@ -196,7 +197,7 @@ def load_games(data: dict) -> list:
             games.append(G(seq, ri, rnd.get("name", f"{ri + 1}"), g, norm_name(h.get("White")), norm_name(h.get("Black")),
                            res, _tc(g, rnd.get("name", "")),
                            (int(h.get("WhiteElo") or 0), int(h.get("BlackElo") or 0)),
-                           (h.get("WhiteFideId", ""), h.get("BlackFideId", ""))))
+                           (h.get("WhiteFideId", ""), h.get("BlackFideId", "")), round_id=rnd.get("id", "")))
             seq += 1
     return games
 
@@ -428,6 +429,7 @@ def main() -> int:
     ap.add_argument("--test", action="store_true", help="paczka testowa (tag news-test-…), bez wpisu w harmonogramie")
     ap.add_argument("--select-only", action="store_true")
     ap.add_argument("--dry-tts", action="store_true")
+    ap.add_argument("--round-id", help="wybieraj tylko spośród partii tej rundy (autośledzenie: ostatnia zakończona runda)")
     args = ap.parse_args()
 
     data = find_tour(args.tournament)
@@ -458,6 +460,12 @@ def main() -> int:
     if args.select_only:
         return 0
 
+    if args.round_id:  # nowość z konkretnej rundy; kontekst (drabinka/tabela) liczony z całego turnieju
+        ranked = [g for g in ranked if g.round_id == args.round_id]
+        if not ranked:
+            print(f"Brak zakończonych partii w rundzie {args.round_id} — nic do zrobienia")
+            return 0
+        print(f"Runda {args.round_id}: wybrano {ranked[0].white} – {ranked[0].black} ({ranked[0].score})")
     pick = ranked[0]
     year = int((pick.game.headers.get("Date") or "")[:4] or datetime.now(timezone.utc).year)
     gid = f"news_{slug(tour.get('name', 'turniej'))[:40]}_{slug(pick.white.split()[-1])}_{slug(pick.black.split()[-1])}_{pick.seq}"
