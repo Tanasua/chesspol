@@ -1,0 +1,204 @@
+{
+  "hook": {
+    "text": "For nearly forty moves, the balance refuses to break. Then the ending tilts, and every rook move starts to matter.",
+    "ply": 80
+  },
+  "kicker": "ENDGAME MAGIC!",
+  "title": "The Reykjavik Squeeze",
+  "description": "Robert James Fischer and Boris Spassky meet in Game 10 of the 1972 World Championship match in Reykjavik. A quiet opening turns into central exchanges, then a rook endgame where activity means everything. Watch for the moment the balance finally tips, and for the technique that follows. This game is famous because a small edge becomes a full endgame squeeze.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Introduction",
+      "text": "Reykjavik, nineteen seventy-two: Robert James Fischer has White against Boris Spassky in game ten of the World Championship match. Fischer opens: {{m:1}}. Spassky answers in kind: {{m:2}}. Nothing is loose yet, but every tempo carries match pressure.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "White develops toward the center: {{m:3}}. Black matches the pace: {{m:4}}. Fischer pins and asks a question: {{m:5}}. Spassky pushes back: {{m:6}}.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "The bishop retreats: {{m:7}}. Black adds a defender: {{m:8}}. White secures the king: {{m:9}}. The opening is calm, but Fischer is already preparing a central grip.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Building the Center",
+      "text": "{{s:10}} Spassky keeps a solid shell. Fischer brings a rook to the central file: {{m:11}}. {{s:12}} Black gains queenside space. White preserves the bishop: {{m:13}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:14}} Black supports the middle. White builds the pawn base: {{m:15}}. {{s:16}} Spassky's king is safe. Fischer gives his king a quiet escape square: {{m:17}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Black reroutes a knight: {{m:18}}. Fischer takes the center: {{m:19}}. {{s:20}} Black keeps pieces headed toward the middle. White completes development: {{m:21}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Spassky finishes the long diagonal: {{m:22}}. Fischer's bishop settles back: {{m:23}}. Black centralizes a rook: {{m:24}}. The first phase has been all restraint, and neither side has blinked.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "Queenside Grip",
+      "text": "Now the queenside starts to expand. Fischer begins: {{m:25}}. {{s:26}} Black pulls the bishop back. White keeps taking space: {{m:27}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Black posts a knight to fight the edge: {{m:28}}. Fischer fixes more space: {{m:29}}. {{s:30}} Spassky returns another knight toward the center. The structure is tense, and every pawn could become a hook.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Fischer develops the last bishop: {{m:31}}. Spassky's queen slides into contact: {{m:32}}. White piles up on the queenside: {{m:33}}. Black challenges the whole setup: {{m:34}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "The first pawn capture opens lines: {{m:35}}. Black recaptures: {{m:36}}. White clears the center: {{m:37}}. Spassky takes back: {{m:38}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "Central Exchanges",
+      "text": "Fischer trades again: {{m:39}}. Black's queen enters the center: {{m:40}}. White plants a new pawn lever: {{m:41}}. Spassky aims for activity: {{m:42}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "White removes a defender: {{m:43}}. Black takes it: {{m:44}}. Fischer wins more queenside space: {{m:45}}. Spassky brings a rook to the open file: {{m:46}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "White chooses queen activity: {{m:47}}. Black invades: {{m:48}}. Fischer brings the knight back: {{m:49}}. Spassky grabs a pawn: {{m:50}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Fischer chooses a quiet retreat: {{m:51}}. The engine's optimism cools, and the fight is nearly level again. Black takes on the queenside: {{m:52}}. White centralizes the queen: {{m:53}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Spassky steadies the rook: {{m:54}}. Fischer jumps into the center: {{m:55}}. Black moves the queen away: {{m:56}}. White brings another rook into the pressure: {{m:57}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s17",
+      "chapter": "Trading into Rooks",
+      "text": "Black reinforces: {{m:58}}. Now Fischer starts a forcing sequence, and every capture drags another piece into the fire. First: {{m:59}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Spassky accepts: {{m:60}}. Fischer keeps the checks going: {{m:61}}. Black trades queens: {{m:62}}. White's knight emerges from the smoke: {{m:63}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Black strikes at the central rook: {{m:64}}. Fischer takes back: {{m:65}}. Spassky removes the knight: {{m:66}}. The queens are gone, and the game becomes pure technique.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "White checks from the seventh rank: {{m:67}}. The king steps away: {{m:68}}. Fischer swings another rook into activity: {{m:69}}. Spassky creates counterplay: {{m:70}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "White's king sidesteps: {{m:71}}. Black checks: {{m:72}}. Fischer gives the king room: {{m:73}}. Spassky pushes his passed pawn: {{m:74}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s22",
+      "chapter": "Endgame Pressure",
+      "text": "Fischer brings the king toward the center: {{m:75}}. Black looks for counterplay on the edge: {{m:76}}. White activates the rook: {{m:77}}. The balance is still delicate, but the danger signs are appearing.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Spassky invades with the rook: {{m:78}}. Fischer's king comes forward: {{m:79}}. Then Black makes the step that changes the endgame: {{m:80}}. Now White is clearly better.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Fischer does not rush. He improves the king: {{m:81}}. Spassky holds the rook line: {{m:82}}. White adds the pawn push that makes defense harder: {{m:83}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s25",
+      "chapter": "Passed Pawns",
+      "text": "Black prepares a blockade: {{m:84}}. Fischer answers on the kingside: {{m:85}}. Black captures: {{m:86}}. White recaptures: {{m:87}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "Spassky tries to lock the structure: {{m:88}}. White creates the dangerous passer: {{m:89}}. Black puts the bishop in front of the storm: {{m:90}}. The board is no longer about material alone, it is about targets.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s27",
+      "chapter": "",
+      "text": "Fischer lifts a rook into the fifth rank: {{m:91}}. Black's king tries to hold it: {{m:92}}. White takes the queenside pawn: {{m:93}}. Spassky's bishop returns to blockade: {{m:94}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s28",
+      "chapter": "Final Conversion",
+      "text": "White checks: {{m:95}}. Black centralizes the king: {{m:96}}. Fischer brings his own king closer: {{m:97}}. Spassky retreats the rook: {{m:98}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s29",
+      "chapter": "",
+      "text": "Now the rooks start tying Black down. White invades: {{m:99}}. Black defends: {{m:100}}. Fischer doubles the pressure: {{m:101}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s30",
+      "chapter": "",
+      "text": "Spassky hangs on: {{m:102}}. White keeps the rook net tight: {{m:103}}. Black returns to defense: {{m:104}}. Fischer switches sides: {{m:105}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s31",
+      "chapter": "",
+      "text": "Black's king lunges toward the pawns: {{m:106}}. Fischer takes the kingside pawn: {{m:107}}. Black blocks again: {{m:108}}. White pushes the passer: {{m:109}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s32",
+      "chapter": "",
+      "text": "Spassky's king advances, but it cannot solve the position: {{m:110}}. Fischer makes the final rook move of the game: {{m:111}}. With White ahead by far in the endgame, Spassky realized his position was lost, and resigned. This game matters because it turns a balanced middlegame into a model endgame squeeze, one small gain at a time.",
+      "pause_after": 1.2
+    }
+  ],
+  "key_moments": []
+}

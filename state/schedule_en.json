@@ -18,6 +18,16 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep002-us_fischer_larsen_1971",
       "telegram": true,
       "rubric": "national"
+    },
+    {
+      "id": "us_fischer_spassky_1972_g10",
+      "publish_at": "2026-10-06T14:00:00+00:00",
+      "title": "ENDGAME MAGIC! The Reykjavik Squeeze | Fischer – Spassky (1972)",
+      "mode": "manual",
+      "package": "out/packages/en-ep003-us_fischer_spassky_1972_g10",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep003-us_fischer_spassky_1972_g10",
+      "telegram": true,
+      "rubric": "national"
     }
   ]
 }
