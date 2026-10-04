@@ -1,0 +1,145 @@
+{
+  "kicker": "OUTPLAYED!",
+  "title": "The Denver Endgame Squeeze",
+  "description": "Robert James Fischer faces Bent Larsen in Game 5 of the 1971 Candidates semifinal match in Denver. The game opens with Sicilian tension, but the real story is how activity slowly becomes a lasting endgame edge. Watch the rook invasion, the bishop trades, and the final pawn race where one tempo decides everything. This game stands out as a practical lesson in turning pressure into a win.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Introduction",
+      "text": "In nineteen seventy-one, in Denver, Game five of the Candidates semifinal match puts Robert James Fischer against Bent Larsen. Fischer has White, and the fight starts immediately: {{m:1}}. Larsen answers: {{m:2}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:3}} White develops without drama, and Black keeps the center under pressure. {{s:4}} Fischer opens the middle: {{m:5}}. {{s:6}} The first exchange pulls a white knight forward: {{m:7}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:8}} The Sicilian tension is set. White adds another piece: {{m:9}}. Black develops: {{m:10}}. Fischer chooses active pressure: {{m:11}}, and Larsen answers solidly: {{m:12}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Kingside Tension",
+      "text": "Both kings still need shelter. White retreats the bishop: {{m:13}}. Black continues: {{m:14}}. {{s:15}} Larsen castles first: {{m:16}}, and Fischer follows: {{m:17}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:18}} The position looks calm, but Fischer is ready to push on the kingside. White plays: {{m:19}}. Black chooses: {{m:20}}. Fischer gains more space: {{m:21}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Larsen simplifies at the right moment: {{m:22}}. Fischer takes back: {{m:23}}. Black changes the pawn structure: {{m:24}}. The game is balanced, but the pieces are starting to aim at kings.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "Tactical Crossroads",
+      "text": "Fischer centralizes the queen: {{m:25}}. Black hits back: {{m:26}}. White restores the position: {{m:27}}. Larsen now makes the key choice: {{m:28}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "The engine shows that White had a major tactical chance here, but Fischer chooses the calmer road: {{m:29}}. Black stabilizes: {{m:30}}. Fischer brings a rook into play: {{m:31}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "{{s:32}} White lines up on the open file: {{m:33}}. Black forces the queen trade: {{m:34}}, and Fischer accepts: {{m:35}}. Larsen challenges the center: {{m:36}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "Rook Invasion",
+      "text": "Now the queens are gone, but the danger is not. Fischer repositions: {{m:37}}. Black creates kingside air: {{m:38}}. White removes a central blocker: {{m:39}}, and Larsen replies: {{m:40}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "The rook can enter now, but it has to be exact: {{m:41}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Black strikes elsewhere: {{m:42}}. Fischer does not retreat, he goes deeper: {{m:43}}. Larsen blocks the seventh rank: {{m:44}}. Fischer takes on the queenside: {{m:45}}, and Black brings a rook over: {{m:46}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Now activity becomes lasting pressure. White supports the invading rook: {{m:47}}. Black pushes on the queenside: {{m:48}}. Fischer slides behind the pawns: {{m:49}}. Black covers key squares: {{m:50}}. {{s:51}} Larsen counters on the open file: {{m:52}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "Endgame Conversion",
+      "text": "Fischer steps the king toward safety: {{m:53}}. Black returns a rook: {{m:54}}. White plants the bishop actively: {{m:55}}. Larsen enters with his rook: {{m:56}}. White answers: {{m:57}}, and Black creates kingside counterplay: {{m:58}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "The rook is still bothering Black from the side. Fischer plays: {{m:59}}. Black's next choice lets White increase the pull: {{m:60}}. Fischer calmly improves: {{m:61}}. Larsen checks the king's path: {{m:62}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "White steps up: {{m:63}}, and Black replies: {{m:64}}. Now come trades, but they favor Fischer. White re-centers the bishop: {{m:65}}. Black chooses an exchange: {{m:66}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "The evaluation has swung hard toward White, and Fischer takes: {{m:67}}. Larsen answers: {{m:68}}. White king comes forward: {{m:69}}. Black keeps the rook active: {{m:70}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "Pawn Race",
+      "text": "Fischer cuts off the queenside pawn: {{m:71}}. Larsen trades rooks: {{m:72}}. White recaptures: {{m:73}}. Black grabs a pawn: {{m:74}}. The board is thinning out, and the outside passer is becoming the main story.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Fischer starts it rolling: {{m:75}}. Black heads closer: {{m:76}}. White improves the bishop: {{m:77}}. Black trades it off: {{m:78}}. Fischer accepts: {{m:79}}, and Black's king moves in: {{m:80}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "The race is brutal now. Fischer centralizes: {{m:81}}. Larsen mirrors him: {{m:82}}. White's outside pawn advances: {{m:83}}. Black tries counterplay: {{m:84}}. Fischer pushes again: {{m:85}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Larsen hurries his king: {{m:86}}. White reaches the seventh rank: {{m:87}}. Black steps in front: {{m:88}}. Fischer brings the king closer: {{m:89}}. Larsen tries to race on the kingside: {{m:90}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "But Black's king is tied to the queening square, and White has the opposition. Fischer finds the final king move: {{m:91}}. Larsen realized his position was lost, and resigned. The result is one to zero for Robert James Fischer.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "This game matters because Fischer turns a balanced Sicilian into a lesson in rook activity, king activity, and timing. No final attack is needed, just pressure that keeps improving until the pawn race is hopeless for Black.",
+      "pause_after": 0.6
+    }
+  ]
+}

@@ -392,6 +392,17 @@
     ],
     "qid": "Q367277"
   },
+  "Frank James Marshall": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q312814"
+  },
   "Frank Marshall": {
     "periods": [
       {
@@ -436,6 +447,29 @@
       }
     ],
     "qid": "Q28614"
+  },
+  "Gata Kamsky": {
+    "periods": [
+      {
+        "code": "su",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": 2025
+      },
+      {
+        "code": "fr",
+        "from": 2025,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q315155"
   },
   "Georg Rotlewi": {
     "periods": [
@@ -634,6 +668,17 @@
       }
     ],
     "qid": "Q390430"
+  },
+  "Larry Christiansen": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q534057"
   },
   "Lazaro Bruzon Batista": {
     "periods": [
@@ -1000,6 +1045,17 @@
     ],
     "qid": "Q203477"
   },
+  "Reuben Fine": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q352418"
+  },
   "Richard Réti": {
     "periods": [
       {
@@ -1038,6 +1094,17 @@
       }
     ],
     "qid": "Q41314"
+  },
+  "Samuel Reshevsky": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q311737"
   },
   "Savielly Tartakower": {
     "periods": [
@@ -1279,6 +1346,17 @@
       }
     ],
     "qid": "Q61823"
+  },
+  "Yasser Seirawan": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q319208"
   },
   "Yuri Averbakh": {
     "periods": [

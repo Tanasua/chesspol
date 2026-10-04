@@ -28,9 +28,11 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Efim Bogoljubov | ✅ (już jest) | Q57310 | Public domain | Unknown authorUnknown author |
 | Efim Geller | ✅ (już jest) | Q352495 | CC0 | Hugo van Gelderen / Anefo |
 | Emanuel Lasker | ✅ (już jest) | Q57095 | CC BY-SA 3.0 de | Unknown authorUnknown author |
+| Frank James Marshall | ✅ auto (Q312814) | Q312814 | Public domain | Oxford and Dilhoff |
 | Frank Marshall | ✅ (już jest) | Q312814 | Public domain | Oxford and Dilhoff |
 | Friedrich Sämisch | ✅ (już jest) | Q60860 | Public domain | Unknown authorUnknown author |
 | Garry Kasparov | ✅ (już jest) | Q28614 | CC BY 4.0 | Lukasz Kobus |
+| Gata Kamsky | ✅ auto (Q315155) | Q315155 | CC BY-SA 3.0 | Stefan64 |
 | Georg Rotlewi | ✅ (już jest) | Q2470049 | Public domain | Unknown authorUnknown author |
 | George Alan Thomas | ✅ (już jest) | Q1387704 | Public domain | Unknown authorUnknown author |
 | Gukesh Dommaraju | ✅ (już jest) | Q56026072 | CC BY-SA 2.0 | Frans Peeters |
@@ -48,6 +50,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | José Sanz Aguado | ✅ (już jest) | Q9014806 | CC BY-SA 3.0 | Lear88 |
 | Judit Polgar | ✅ (już jest) | Q183250 | CC BY-SA 3.0 | Przemysław Jahr / Wikimedia Commons |
 | Lajos Portisch | ✅ (już jest) | Q390430 | CC BY-SA 4.0 | MBIHund |
+| Larry Christiansen | ✅ auto (Q534057) | Q534057 | CC BY-SA 3.0 | © James F. Perry |
 | Lazaro Bruzon Batista | ✅ (już jest) | Q932307 | CC BY-SA 3.0 | Stefan64 |
 | Lev Polugaevsky | ✅ (już jest) | Q434000 | CC0 | Croes, Rob / Anefo |
 | Levon Aronian | ✅ (już jest) | Q154586 | CC BY-SA 3.0 | Stefan64 |
@@ -73,9 +76,11 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Philipp Meitner | brak zdjęcia w Wikidata | Q264630 | | |
 | Rameshbabu Praggnanandhaa | ✅ (już jest) | Q26703041 | CC BY-SA 2.0 | Frans Peeters |
 | Rashid Nezhmetdinov | brak zdjęcia w Wikidata | Q203477 | | |
+| Reuben Fine | ✅ auto (Q352418) | Q352418 | CC BY-SA 3.0 nl | Harry Pot for Anefo ]] |
 | Richard Réti | ✅ (już jest) | Q312985 | Public domain |  |
 | Robert Eugene Byrne | ✅ (już jest) | Q961003 | CC0 | Evers, Joost / Anefo |
 | Robert James Fischer | ✅ (już jest) | Q41314 | CC BY-SA 3.0 | Ulrich Kohls (Bundesarchiv); oprac. Karpouzi |
+| Samuel Reshevsky | ✅ auto (Q311737) | Q311737 | CC0 | Jack de Nijs for Anefo |
 | Savielly Tartakower | ✅ (już jest) | Q161135 | Public domain |  |
 | Sergey Karjakin | ✅ (już jest) | Q217198 | CC BY-SA 3.0 | Vladimir Barskij |
 | Siegbert Tarrasch | ✅ (już jest) | Q76558 | Public domain |  |
@@ -91,6 +96,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Wei Yi | ✅ (już jest) | Q13646741 | CC BY-SA 2.0 | Frans Peeters |
 | Wilhelm Steinitz | ✅ (już jest) | Q102648 | Public domain | Schumann, Fritz |
 | Wolfgang Unzicker | ✅ (już jest) | Q61823 | CC BY-SA 3.0 de | Roger Rössing / Renate Rössing |
+| Yasser Seirawan | ✅ auto (Q319208) | Q319208 | CC BY-SA 3.0 | © James F. Perry |
 | Yuri Averbakh | ✅ (już jest) | Q434808 | CC0 | Eric Koch for Anefo |
 
-Zdjęcia: **80/88** graczy.
+Zdjęcia: **86/94** graczy.

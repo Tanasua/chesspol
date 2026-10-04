@@ -8,6 +8,16 @@
       "package": "out/packages/en-ep001-kasparov_world_1999",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep001-kasparov_world_1999",
       "telegram": true
+    },
+    {
+      "id": "us_fischer_larsen_1971",
+      "publish_at": "2026-10-05T14:00:00+00:00",
+      "title": "OUTPLAYED! The Denver Endgame Squeeze | Robert James Fischer – Bent Larsen (1971)",
+      "mode": "manual",
+      "package": "out/packages/en-ep002-us_fischer_larsen_1971",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep002-us_fischer_larsen_1971",
+      "telegram": true,
+      "rubric": "national"
     }
   ]
 }
