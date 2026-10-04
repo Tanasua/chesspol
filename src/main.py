@@ -44,6 +44,8 @@ MUSIC = os.environ.get("MUSIC", str(ROOT / "assets" / "music" / "the_daily_ostin
 MUSIC_GAIN_DB = float(os.environ.get("MUSIC_GAIN_DB", "-20"))  # utwór ma ok. -16 LUFS -> ok. -36 LUFS w tle
 MUSIC_FADE_IN = 2.0
 MUSIC_FADE_OUT = 6.0
+MUSIC_INTRO_FADE = 4.0   # s — muzyka powoli cichnie po haku i powitaniu
+MUSIC_OUTRO_FADE = 6.0   # s — muzyka powoli wraca przed zakończeniem
 
 
 VAR_HERO = (46, 184, 74, 215)    # ruchy strony, która zagrała kluczowy ruch
@@ -72,11 +74,22 @@ def build_audio(parts: list, out_wav: Path, workdir: Path) -> None:
                     "-c", "pcm_s16le", str(out_wav)], check=True)
 
 
-def mix_music(voice_wav: Path, music: Path, duration: float, out_wav: Path) -> None:
-    """Lektor + muzyka (pętla) -> 48k stereo PCM; muzyka narasta na starcie i płynnie cichnie na końcu."""
+def mix_music(voice_wav: Path, music: Path, duration: float, out_wav: Path,
+              intro_end: float | None = None, outro_start: float | None = None) -> None:
+    """Lektor + muzyka (pętla) -> 48k stereo PCM. Muzyka tylko na początku (hak + powitanie; po intro_end
+    cichnie przez MUSIC_INTRO_FADE s) i na końcu (narasta przez MUSIC_OUTRO_FADE s tak, by być pełną w outro_start),
+    na samym końcu płynnie cichnie. W środku — tylko lektor (decyzja właściciela: muzyka przeszkadza w analizie)."""
     fade_out = min(MUSIC_FADE_OUT, duration / 2)
-    flt = (f"[1:a]aformat=sample_rates=48000:channel_layouts=stereo,atrim=0:{duration:.3f},"
-           f"volume={MUSIC_GAIN_DB}dB,afade=t=in:d={MUSIC_FADE_IN},"
+    lin = 10 ** (MUSIC_GAIN_DB / 20)
+    if intro_end is None:  # stary tryb: muzyka przez cały odcinek
+        env = "1"
+    else:
+        a = f"clip(t/{MUSIC_FADE_IN},0,1)*clip(({intro_end:.3f}+{MUSIC_INTRO_FADE}-t)/{MUSIC_INTRO_FADE},0,1)"
+        back = (outro_start if outro_start is not None else duration) - MUSIC_OUTRO_FADE
+        b = f"clip((t-{back:.3f})/{MUSIC_OUTRO_FADE},0,1)"
+        env = f"max({a},{b})"
+    flt = (f"[1:a]aformat=sample_rates=48000:channel_layouts=stereo,atrim=0:{duration:.3f},asetpts=PTS-STARTPTS,"
+           f"volume='{lin:.5f}*{env}':eval=frame,"
            f"afade=t=out:st={duration - fade_out:.3f}:d={fade_out:.3f}[m];"
            "[0:a]aformat=sample_rates=48000:channel_layouts=stereo[v];"
            "[v][m]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[out]")
@@ -138,10 +151,15 @@ def main() -> int:
     chapters = []
     preroll_until = None
     flash_until = None
+    music_intro_end = music_outro = None  # muzyka: tylko hak + powitanie i zakończenie
     var_marks, barriers = {}, {}  # kluczowe momenty: {N: [(nr ruchu wariantu, czas)]}, {N: koniec pauzy}
     for si, seg in enumerate(segments):
         if si == head and hook:  # koniec haka
             flash_until = cursor
+        if si == head + 1 and music_intro_end is None:  # koniec powitania — początek scenariusza
+            music_intro_end = cursor
+        if seg.id == "outro":
+            music_outro = cursor
         if si == head + 2 and args.preroll:  # plansza przez powitanie i s01, potem szachownica
             preroll_until = cursor
         if seg.chapter:
@@ -213,7 +231,8 @@ def main() -> int:
         if MUSIC and not args.no_music:
             if Path(MUSIC).exists():
                 mixed = Path(tmp) / "mix.wav"
-                mix_music(wav, Path(MUSIC), duration, mixed)
+                mix_music(wav, Path(MUSIC), duration, mixed, intro_end=music_intro_end or 0.0,
+                          outro_start=music_outro)
                 wav = mixed
             else:
                 print(f"UWAGA: brak pliku muzyki {MUSIC} — odcinek bez muzyki", file=sys.stderr)
