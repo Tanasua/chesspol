@@ -10,15 +10,15 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Alexander Beliavsky | ✅ (już jest) | Q352413 | CC BY-SA 3.0 | Stefan64 |
 | Alexander Kotov | ✅ (już jest) | Q364896 | CC0 | Jack de Nijs for Anefo |
 | Alexander McDonnell | brak zdjęcia w Wikidata | Q555043 | | |
-| Alexander Morozevich | ✅ auto (Q312918) | Q312918 | CC BY-SA 3.0 | Przemysław Jahr |
+| Alexander Morozevich | ✅ (już jest) | Q312918 | CC BY-SA 3.0 | Przemysław Jahr |
 | Alexei Shirov | ✅ (już jest) | Q214713 | CC BY-SA 3.0 | Stefan64 |
-| Alireza Firouzja | ✅ auto (Q22338182) | Q22338182 | CC BY-SA 2.0 | Frans Peeters |
+| Alireza Firouzja | ✅ (już jest) | Q22338182 | CC BY-SA 2.0 | Frans Peeters |
 | Anatoly Karpov | ✅ (już jest) | Q131674 | CC BY-SA 4.0 | Veni Markovski | Вени Марковски |
 | Andor Lilienthal | ✅ (już jest) | Q113167 | Public domain | Unknown authorUnknown author |
 | Aron Nimzowitsch | ✅ (już jest) | Q295114 | Public domain | Not mentioned |
 | Artur Yusupov | ✅ (już jest) | Q60598 | CC BY-SA 3.0 | Stefan64 |
 | Bent Larsen | ✅ (już jest) | Q108807 | CC0 | Hans Peters for Anefo |
-| Boris Gelfand | ✅ auto (Q486778) | Q486778 | CC0 | TheBoburshokh |
+| Boris Gelfand | ✅ (już jest) | Q486778 | CC0 | TheBoburshokh |
 | Boris Spassky | ✅ (już jest) | Q177310 | CC0 | Rob Bogaerts for Anefo |
 | Carl Hamppe | brak zdjęcia w Wikidata | Q690803 | | |
 | Carl Schlechter | ✅ (już jest) | Q320017 | Public domain | Schumann, Fritz |
@@ -65,7 +65,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Magnus Carlsen | ✅ (już jest) | Q106807 | CC BY-SA 2.0 | Andreas Kontokanis from Piraeus, Greece |
 | Martín Ortueta Esteban | brak: brak wyników w Wikidata | | | |
 | Max Euwe | ✅ (już jest) | Q173714 | CC BY-SA 3.0 nl | Anefo / Mieremet, R. |
-| Michael Adams | ✅ auto (Q299636) | Q299636 | CC BY-SA 4.0 | Paul Meyer-Dunker |
+| Michael Adams | ✅ (już jest) | Q299636 | CC BY-SA 4.0 | Paul Meyer-Dunker |
 | Miguel Najdorf | ✅ (już jest) | Q310532 | CC BY-SA 3.0 | Bert Verhoeff for Anefo |
 | Mikhail Botvinnik | ✅ (już jest) | Q178865 | CC BY-SA 3.0 nl | Harry Pot for Anefo ]] |
 | Mikhail Chigorin | ✅ (już jest) | Q298286 | Public domain |  |
@@ -77,9 +77,9 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Pal Benko | ✅ (już jest) | Q465247 | CC0 | Broers, F.N. / Anefo |
 | Paul Keres | ✅ (już jest) | Q207727 | Public domain | Photographer unknown, own scan |
 | Paul Morphy | ✅ (już jest) | Q105589 | Public domain |  |
-| Pentala Harikrishna | ✅ auto (Q555232) | Q555232 | CC BY-SA 4.0 | Krzysztof Szeląg |
+| Pentala Harikrishna | ✅ (już jest) | Q555232 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Peter Leko | ✅ (już jest) | Q210922 | CC BY-SA 4.0 | Stefan64 |
-| Peter Svidler | ✅ auto (Q278777) | Q278777 | CC BY-SA 4.0 | Stefan64 |
+| Peter Svidler | ✅ (już jest) | Q278777 | CC BY-SA 4.0 | Stefan64 |
 | Philipp Meitner | brak zdjęcia w Wikidata | Q264630 | | |
 | Rameshbabu Praggnanandhaa | ✅ (już jest) | Q26703041 | CC BY-SA 2.0 | Frans Peeters |
 | Rashid Nezhmetdinov | brak zdjęcia w Wikidata | Q203477 | | |
@@ -87,7 +87,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Richard Réti | ✅ (już jest) | Q312985 | Public domain |  |
 | Robert Eugene Byrne | ✅ (już jest) | Q961003 | CC0 | Evers, Joost / Anefo |
 | Robert James Fischer | ✅ (już jest) | Q41314 | CC BY-SA 3.0 | Ulrich Kohls (Bundesarchiv); oprac. Karpouzi |
-| Salo Flohr | ✅ auto (Q317890) | Q317890 | CC0 | Harry Pot for Anefo |
+| Salo Flohr | ✅ (już jest) | Q317890 | CC0 | Harry Pot for Anefo |
 | Samuel Reshevsky | ✅ (już jest) | Q311737 | CC0 | Jack de Nijs for Anefo |
 | Savielly Tartakower | ✅ (już jest) | Q161135 | Public domain |  |
 | Sergey Karjakin | ✅ (już jest) | Q217198 | CC BY-SA 3.0 | Vladimir Barskij |
