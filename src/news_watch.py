@@ -30,6 +30,9 @@ WINDOW = timedelta(hours=int(os.environ.get("NEWS_WINDOW_HOURS", "30")))
 WATCH = re.compile(r"world championship|candidates|tata steel|norway chess|grand chess tour|sinquefield|superbet|"
                    r"olympiad|world cup|grand swiss|london chess classic|gibraltar|dortmund|shamkir|chessable masters",
                    re.I)
+# kanał hindi: turnieje indyjskie (także niższy tier) i pierwszeństwo przed resztą (decyzja właściciela: skupić się na Indiach)
+INDIA = re.compile(r"india|indian|chennai|kolkata|mumbai|delhi|bengaluru|bangalore|global chess league|tata steel india|"
+                   r"national chess championship", re.I)
 SKIP = re.compile(r"blitz|bullet|freestyle|chess960|titled|armageddon|junior|youth|women'?s rapid|u\d\d", re.I)
 CHANNELS = {  # kanał -> zmienne z kluczem i głosem TTS (bez nich kanał pomijamy)
     "pl": ("INWORLD_API_KEY", "INWORLD_VOICE_ID", None),
@@ -74,7 +77,8 @@ def finished_rounds(now: datetime) -> list:
             continue
         tier = int(tour.get("tier") or 0)
         watched = bool(WATCH.search(name))
-        if not watched and tier < 5:
+        india = bool(INDIA.search(name))
+        if not watched and tier < 5 and not india:
             continue
         seen.add(tour.get("id"))
         try:
@@ -86,6 +90,7 @@ def finished_rounds(now: datetime) -> list:
             when = _ts(rnd.get("finishedAt")) or (_ts(rnd.get("startsAt")) + timedelta(hours=6) if rnd.get("startsAt") else None)
             if done and when and now - WINDOW <= when <= now:
                 weight = tier * 10 + (5 if watched else 0) + (3 if re.search(r"final|world championship", name, re.I) else 0)
+                tour = dict(tour, _india=india, _main=watched or tier >= 5)
                 out.append((weight, tour, rnd))
     out.sort(key=lambda x: -x[0])
     for w, t, r in out:
@@ -114,7 +119,9 @@ def main() -> int:
         if st["last_day"] == today:
             print(f"[{ch}] dziś już była nowość")
             continue
-        todo = [(t, r) for _, t, r in rounds if r.get("id") not in st["rounds"]]
+        todo = [(w + (40 if ch == "hi" and t.get("_india") else 0), t, r) for w, t, r in rounds
+                if r.get("id") not in st["rounds"] and (t.get("_main") or ch == "hi")]
+        todo = [(t, r) for _, t, r in sorted(todo, key=lambda x: -x[0])]
         if not todo:
             print(f"[{ch}] wszystkie rundy już omówione")
             continue

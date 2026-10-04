@@ -92,6 +92,11 @@ Pliki:
   (episode.rubric), gdy jednej brak — druga. players.catalog_entry i fetch_portraits widzą też katalogi krajowe.
   national_us.json: 24 zwycięstwa Amerykanów nad mistrzami/pretendentami (bez duplikatów głównego katalogu); 22 z PGN
   w ≥2 kolekcjach, Morphy–Anderssen 1858 i Christiansen–Karpov 1993 — 1 źródło (scheduler pomija). national_pl/de — do zrobienia.
+  national_in.json (kanał hi): 19 zwycięstw Indusów (Anand: MŚ 2000/2007/2008/2010/2012/2014, PCA 1995, pretendenci; Sultan Khan
+  1932; Harikrishna 2016; Gukesh/Praggnanandhaa 2023–24) — 14 zweryfikowanych; Gukesh–Caruana i Gukesh–Firouzja 2024,
+  Praggnanandhaa–Carlsen 2024, Praggnanandhaa–Caruana 2023 i Anand–Kasparov 1991 tylko w 1 kolekcji (TWIC) — czekają na drugie
+  źródło. Świeże partie 2025–26 (Gukesh, Pragg, Arjun, Divya, Vaishali) — przez NOWOŚCI (Lichess). Hindi: HOME_BONUS=8 w news.py,
+  news_watch dopuszcza turnieje indyjskie (INDIA regex, także niższy tier) tylko dla hi i daje im pierwszeństwo (+40).
   Fakty (facts/): 22 partie głównego katalogu; wątpliwe rundy w .sources.md (Portisch r4, Shirov r9, Botvinnik–Portisch r7,
   Lilienthal r5, Sämisch r6 — niepotwierdzone).
 - FAKTY: facts/<id>.md (EN, punkty potwierdzone ≥2 niezależnymi źródłami) + facts/<id>.sources.md (URL-e, nie trafiają do LLM).

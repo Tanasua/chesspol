@@ -47,7 +47,7 @@ NEWS = ROOT / "catalog" / "news.json"
 API = "https://lichess.org/api"
 UA = {"User-Agent": "chesspol-news/1.0 (https://github.com/tanasua/chesspol)"}
 TC_WEIGHT = {"classical": 1.0, "rapid": 0.6, "blitz": 0.35}
-HOME_BONUS = 2.5  # partia z graczem z kraju kanału
+HOME_BONUS = 8.0 if L.code == "hi" else 2.5  # partia z graczem z kraju kanału (hindi: niemal zawsze Indie)
 
 
 # ---------------------------------------------------------------- Lichess
