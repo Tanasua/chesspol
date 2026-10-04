@@ -75,6 +75,17 @@
     "periods": [],
     "qid": "Q555043"
   },
+  "Alexander Morozevich": {
+    "periods": [
+      {
+        "code": "ru",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q312918"
+  },
   "Alexei Shirov": {
     "periods": [
       {
@@ -109,6 +120,23 @@
       }
     ],
     "qid": "Q214713"
+  },
+  "Alireza Firouzja": {
+    "periods": [
+      {
+        "code": "ir",
+        "from": null,
+        "prop": "P1532",
+        "to": 2019
+      },
+      {
+        "code": "fr",
+        "from": 2021,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q22338182"
   },
   "Anatoly Karpov": {
     "periods": [
@@ -194,6 +222,29 @@
       }
     ],
     "qid": "Q108807"
+  },
+  "Boris Gelfand": {
+    "periods": [
+      {
+        "code": "by",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "by",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "il",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q486778"
   },
   "Boris Spassky": {
     "periods": [
@@ -827,6 +878,17 @@
     ],
     "qid": "Q173714"
   },
+  "Michael Adams": {
+    "periods": [
+      {
+        "code": "gb",
+        "from": null,
+        "prop": "P27",
+        "to": null
+      }
+    ],
+    "qid": "Q299636"
+  },
   "Miguel Najdorf": {
     "periods": [
       {
@@ -990,6 +1052,17 @@
     ],
     "qid": "Q105589"
   },
+  "Pentala Harikrishna": {
+    "periods": [
+      {
+        "code": "in",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q555232"
+  },
   "Peter Leko": {
     "periods": [
       {
@@ -1000,6 +1073,23 @@
       }
     ],
     "qid": "Q210922"
+  },
+  "Peter Svidler": {
+    "periods": [
+      {
+        "code": "su",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "ru",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q278777"
   },
   "Philipp Meitner": {
     "periods": [
@@ -1094,6 +1184,23 @@
       }
     ],
     "qid": "Q41314"
+  },
+  "Salo Flohr": {
+    "periods": [
+      {
+        "code": "cz",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "su",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q317890"
   },
   "Samuel Reshevsky": {
     "periods": [

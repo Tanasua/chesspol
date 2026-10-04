@@ -1,0 +1,14 @@
+{
+  "episodes": [
+    {
+      "id": "topalov_anand_2010",
+      "publish_at": "2026-10-05T12:30:00+00:00",
+      "title": "एक चेक से सब बदला! | Topalov – Anand (World Championship match, 2010) — आनंद ने खुले राजा को घेरा",
+      "mode": "manual",
+      "package": "out/packages/hi-ep001-topalov_anand_2010",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep001-topalov_anand_2010",
+      "telegram": true,
+      "rubric": "history"
+    }
+  ]
+}
