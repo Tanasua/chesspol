@@ -28,6 +28,10 @@ label, san_local = _N.label, _N.san_local
 W, H = 1920, 1080
 SQ = 125
 ARROW_GROW = 0.45  # s — czas "wyrastania" strzałki wariantu
+ARROW_OLD_ALPHA = 0.38  # krycie starszych strzałek wariantu (najnowsza — pełna)
+FADE = 0.5         # s — przejście kolor <-> szarość przy wejściu / wyjściu z wariantu
+REWIND_STEP = 0.25  # s — cofanie każdego ruchu wariantu
+VAR_HOLD = 1.6     # s — pozycja końcowa wariantu stoi tyle przed cofaniem
 BOARD = 8 * SQ
 BOARD_X, BOARD_Y = (W - BOARD) // 2, (H - BOARD) // 2
 LEFT_X, LEFT_W = 40, BOARD_X - 80          # treść lewej kolumny
@@ -314,45 +318,151 @@ class Renderer:
             self._static_cache[k] = self._compose(k)
         return self._static_cache[k]
 
-    def with_arrows(self, k: int, arrows: list, t: float) -> Image.Image:
-        """Pozycja po k półruchach + narastające strzałki wariantu silnika.
-        arrows: [(z_pola, na_pole, czas_pojawienia, kolor RGBA, numer)] — strzałka rośnie przez ARROW_GROW s."""
+    # ---------- alternatywna rzeczywistość (wariant silnika) ----------
+    @staticmethod
+    def _arrow_offsets(moves: list) -> list:
+        """Przesunięcie w bok dla strzałek na tej samej linii (np. "tam i z powrotem"): biegną równolegle obok siebie."""
+        groups = {}
+        for i, mv in enumerate(moves):
+            groups.setdefault(frozenset((mv.from_square, mv.to_square)), []).append(i)
+        out = [0.0] * len(moves)
+        for idx in groups.values():
+            m = len(idx)
+            for pos, i in enumerate(idx):
+                out[i] = (pos - (m - 1) / 2) * SQ * 0.26
+        return out
+
+    def _arrows_layers(self, arrows: list, t: float) -> tuple:
+        """arrows: [(ruch, czas_pojawienia, kolor RGBA, numer, przesunięcie, krycie)] -> (warstwa pod figurami, numery nad)."""
         layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        d = ImageDraw.Draw(layer)
-        badges = []
-        for a, b, t0, color, num in arrows:
+        top = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d, dt = ImageDraw.Draw(layer), ImageDraw.Draw(top)
+        for mv, t0, color, num, off, alpha in arrows:
             if t < t0:
                 continue
             prog = min(1.0, (t - t0) / ARROW_GROW)
-            x0, y0 = _sq_xy(a)
-            x1, y1 = _sq_xy(b)
+            (x0, y0), (x1, y1) = _sq_xy(mv.from_square), _sq_xy(mv.to_square)
             x0, y0, x1, y1 = x0 + SQ / 2, y0 + SQ / 2, x1 + SQ / 2, y1 + SQ / 2
             dx, dy = x1 - x0, y1 - y0
             dist = (dx * dx + dy * dy) ** 0.5
             ux, uy = dx / dist, dy / dist
-            tip_full = (x1 - ux * SQ * 0.28, y1 - uy * SQ * 0.28)   # grot na skraju pola docelowego
-            sx, sy = x0 + ux * SQ * 0.2, y0 + uy * SQ * 0.2
-            tip = (sx + (tip_full[0] - sx) * _ease(prog), sy + (tip_full[1] - sy) * _ease(prog))
+            # stała strona przesunięcia dla pary pól (niezależnie od kierunku), żeby ruchy powrotne szły obok
+            a, b = sorted((mv.from_square, mv.to_square))
+            cx, cy = _sq_xy(b)[0] - _sq_xy(a)[0], _sq_xy(b)[1] - _sq_xy(a)[1]
+            cl = (cx * cx + cy * cy) ** 0.5
+            nx, ny = -cy / cl * off, cx / cl * off
+            sx, sy = x0 + ux * SQ * 0.2 + nx, y0 + uy * SQ * 0.2 + ny
+            tfx, tfy = x1 - ux * SQ * 0.28 + nx, y1 - uy * SQ * 0.28 + ny   # grot na skraju pola docelowego
+            e = _ease(prog)
+            tip = (sx + (tfx - sx) * e, sy + (tfy - sy) * e)
             head_len, head_w = SQ * 0.30, SQ * 0.17
             seg = ((tip[0] - sx) ** 2 + (tip[1] - sy) ** 2) ** 0.5
             hl = min(head_len, seg)
             base = (tip[0] - ux * hl, tip[1] - uy * hl)
-            d.line([(sx, sy), base], fill=color, width=int(SQ * 0.11))
+            col = color[:3] + (int(color[3] * alpha),)
+            d.line([(sx, sy), base], fill=col, width=int(SQ * 0.10))
             px, py = -uy * head_w * hl / head_len, ux * head_w * hl / head_len
-            d.polygon([tip, (base[0] + px, base[1] + py), (base[0] - px, base[1] - py)], fill=color)
-            if prog >= 1.0:  # numer kolejności na gotowej strzałce; gdy miejsce zajęte (ruch "tam i z powrotem") — przesuwamy
-                for frac in (0.5, 0.72, 0.28, 0.85):
-                    bx, by = sx + (tip[0] - sx) * frac, sy + (tip[1] - sy) * frac
-                    if all((bx - ox) ** 2 + (by - oy) ** 2 > (SQ * 0.32) ** 2 for ox, oy, _, _ in badges):
-                        break
-                badges.append((bx, by, num, color))
-        top = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        dt = ImageDraw.Draw(top)
-        for bx, by, num, color in badges:
-            r = SQ * 0.14
-            dt.ellipse([bx - r, by - r, bx + r, by + r], fill=color[:3] + (255,), outline=(255, 255, 255, 255), width=2)
-            dt.text((bx, by + 1), str(num), font=_font(int(r * 1.3), True), fill=(255, 255, 255, 255), anchor="mm")
-        return self._compose(k, layer, top)
+            d.polygon([tip, (base[0] + px, base[1] + py), (base[0] - px, base[1] - py)], fill=col)
+            if prog >= 1.0:  # numer kolejności w połowie strzałki
+                bx, by, r = (sx + tip[0]) / 2, (sy + tip[1]) / 2, SQ * 0.14
+                bcol = color[:3] + (int(255 * max(alpha, 0.5)),)
+                dt.ellipse([bx - r, by - r, bx + r, by + r], fill=bcol, outline=(255, 255, 255, bcol[3]), width=2)
+                dt.text((bx, by + 1), str(num), font=_font(int(r * 1.3), True), fill=(255, 255, 255, bcol[3]), anchor="mm")
+        return layer, top
+
+    def _pieces(self, img: Image.Image, before: chess.Board, mv: chess.Move | None, t: float) -> None:
+        """Figury pozycji 'before'; gdy mv — w trakcie ruchu (t 0..1; t malejące = ruch cofany)."""
+        if mv is None:
+            for sq, piece in before.piece_map().items():
+                img.alpha_composite(self.sprites[(piece.piece_type, piece.color)], _sq_xy(sq))
+            return
+        e = _ease(t)
+        movers = {mv.from_square: mv.to_square}
+        if before.is_castling(mv):
+            rank = chess.square_rank(mv.from_square)
+            if chess.square_file(mv.to_square) == 6:
+                movers[chess.square(7, rank)] = chess.square(5, rank)
+            else:
+                movers[chess.square(0, rank)] = chess.square(3, rank)
+        captured_sq = None
+        if before.is_en_passant(mv):
+            captured_sq = chess.square(chess.square_file(mv.to_square), chess.square_rank(mv.from_square))
+        elif before.is_capture(mv):
+            captured_sq = mv.to_square
+        for sq, piece in before.piece_map().items():
+            if sq in movers:
+                continue
+            spr = self.sprites[(piece.piece_type, piece.color)]
+            if sq == captured_sq:
+                spr = spr.copy()
+                spr.putalpha(spr.getchannel("A").point(lambda a: int(a * (1 - _ease((t - 0.5) * 2)))))
+            img.alpha_composite(spr, _sq_xy(sq))
+        for src, dst in movers.items():
+            piece = before.piece_at(src)
+            (x0, y0), (x1, y1) = _sq_xy(src), _sq_xy(dst)
+            pt = mv.promotion if (src == mv.from_square and mv.promotion and t >= 1) else piece.piece_type
+            img.alpha_composite(self.sprites[(pt, piece.color)], (int(x0 + (x1 - x0) * e), int(y0 + (y1 - y0) * e)))
+
+    def alternate(self, var: dict, t: float) -> Image.Image:
+        """Klatka "alternatywnej rzeczywistości": wariant silnika na szarej szachownicy, figury naprawdę się ruszają,
+        potem szybko wracają (REWIND_STEP s/ruch) i kolor wraca. var — z variation_timeline() + moves/colors."""
+        k, moves, steps = var["ply"], var["moves"], var["steps"]
+        boards = var.setdefault("_boards", None) or self._alt_boards(var)
+        n = len(moves)
+        # stan figur
+        if t < var["rewind_start"]:
+            cur = next((i for i, st in enumerate(steps) if st["move_start"] <= t < st["move_end"]), None)
+            if cur is not None:
+                before, mv, prog = boards[cur], moves[cur], (t - steps[cur]["move_start"]) / ANIM_SEC
+            else:
+                done = sum(1 for st in steps if st["move_end"] <= t)
+                before, mv, prog = boards[done], None, 0.0
+            undone = 0
+        else:
+            i = min(n, int((t - var["rewind_start"]) / REWIND_STEP))
+            if i < n:
+                j = n - 1 - i
+                before, mv = boards[j], moves[j]
+                prog = 1.0 - (t - var["rewind_start"] - i * REWIND_STEP) / REWIND_STEP
+            else:
+                before, mv, prog = boards[0], None, 0.0
+            undone = i
+        # strzałki: najnowsza nasycona, starsze półprzezroczyste; cofnięte ruchy tracą strzałkę
+        visible = [j for j in range(n - undone) if steps[j]["arrow"] <= t]
+        newest = visible[-1] if visible else None
+        offs = var.setdefault("_offs", None) or self._arrow_offsets(moves)
+        var["_offs"] = offs
+        arrows = [(moves[j], steps[j]["arrow"], var["colors"][j], j + 1, offs[j], 1.0 if j == newest else ARROW_OLD_ALPHA)
+                  for j in visible]
+        under, over = self._arrows_layers(arrows, t)
+        # szarość (tylko szachownica i figury; strzałki zostają kolorowe): wejście / wyjście płynne (FADE s)
+        if t < var["start"] + FADE:
+            g = (t - var["start"]) / FADE
+        elif t > var["rewind_end"]:
+            g = 1 - (t - var["rewind_end"]) / FADE
+        else:
+            g = 1.0
+        g = max(0.0, min(1.0, g))
+        img = self._squares.copy()
+        if mv is None and undone == 0 and before is boards[0]:
+            gm = self.game.plies[k - 1].move
+            self._overlay(img, (gm.from_square, gm.to_square))
+        img = _desaturate(img, g)
+        img.alpha_composite(under)
+        pieces = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        self._pieces(pieces, before, mv, max(0.0, min(1.0, prog)))
+        img.alpha_composite(_desaturate(pieces, g))
+        img.alpha_composite(over)
+        return self._frame(img, k, self.boards[k].turn == chess.WHITE).convert("RGB")
+
+    def _alt_boards(self, var: dict) -> list:
+        b = self.boards[var["ply"]].copy()
+        out = [b.copy()]
+        for mv in var["moves"]:
+            b.push(mv)
+            out.append(b.copy())
+        var["_boards"] = out
+        return out
 
     def moving(self, k: int, t: float) -> Image.Image:
         """Klatka w trakcie wykonywania półruchu k (t w 0..1)."""
@@ -393,6 +503,34 @@ class Renderer:
             img.alpha_composite(self.sprites[(pt, piece.color)],
                                 (int(x0 + (x1 - x0) * e), int(y0 + (y1 - y0) * e)))
         return self._frame(img, k - 1, before.turn == chess.WHITE).convert("RGB")
+
+
+def _desaturate(img: Image.Image, g: float) -> Image.Image:
+    """Szarość obszaru szachownicy w stopniu g (0 = kolor, 1 = odcienie szarości); kanał alfa bez zmian."""
+    if g <= 0:
+        return img
+    box = (BOARD_X, BOARD_Y, BOARD_X + BOARD, BOARD_Y + BOARD)
+    region = img.crop(box)
+    lum = ImageOps.grayscale(region.convert("RGB"))
+    gray = Image.merge("RGBA", (lum, lum, lum, region.getchannel("A")))
+    out = img.copy()
+    out.paste(Image.blend(region, gray, g), box)
+    return out
+
+
+def variation_timeline(word_times: list) -> dict:
+    """Czasy wariantu: strzałka na słowie ruchu, ruch figury tuż po wyrośnięciu strzałki (bez nakładania),
+    pauza VAR_HOLD, cofanie REWIND_STEP s/ruch, powrót koloru FADE. 'end' = kiedy partia może ruszyć dalej."""
+    steps, prev_end = [], 0.0
+    start = word_times[0] - FADE
+    for t in word_times:
+        ms = max(t + ARROW_GROW, prev_end + 0.05, start + FADE)
+        steps.append({"arrow": t, "move_start": ms, "move_end": ms + ANIM_SEC})
+        prev_end = ms + ANIM_SEC
+    rewind_start = prev_end + VAR_HOLD
+    rewind_end = rewind_start + len(word_times) * REWIND_STEP
+    return {"start": start, "steps": steps, "rewind_start": rewind_start, "rewind_end": rewind_end,
+            "end": rewind_end + FADE}
 
 
 def schedule(anchor_times: list, n_plies: int, barriers: dict | None = None) -> list:
@@ -464,7 +602,7 @@ def render_video(renderer: Renderer, events: list, duration: float, audio_path, 
                 prog = (t - events[ei].time) / ANIM_SEC
                 frame = renderer.moving(events[ei].ply_index, prog).tobytes()
             elif var:
-                frame = renderer.with_arrows(k, var["arrows"], t).tobytes()
+                frame = renderer.alternate(var, t).tobytes()
             else:
                 if last_key != k:
                     last_key, last_bytes = k, renderer.static(k).tobytes()

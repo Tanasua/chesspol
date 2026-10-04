@@ -51,8 +51,8 @@ STORYTELLING
 KEY MOMENTS (when the data has a KEY MOMENTS section)
 - For each key moment N, insert the marker {{v:N}} EXACTLY ONCE, right after the marker of half-move N ({{m:N}} or
   {{s:N}}), before the next game marker — in the same or the next segment. The system then pauses the game, reads the
-  engine line itself and draws it with growing arrows (green — moves of the side that played the key move,
-  red — the opponent's replies).
+  engine line itself and shows it as an "alternate reality": the board turns gray and the pieces actually play the line, with arrows (green — moves of the side that played the key move,
+  red — the opponent's replies); then the pieces snap back and the color returns. After the line, talk about the game again.
 - Place {{v:N}} like {{m:N}}: after a colon or at the start of a sentence, never after a preposition. E.g.:
   "The engine shows why it works: {{v:31}}."
 - Before the line, one sentence of setup — make it clear it's the engine's line, NOT moves from the game. After it,

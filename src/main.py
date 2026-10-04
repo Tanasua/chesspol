@@ -24,7 +24,7 @@ from lang import L, field_
 from key_moments import line_plies
 from phrases import OUTRO, cta_for, intro_for
 from players import catalog_entry, side
-from render import AUTO_STEP, Renderer, render_video, schedule
+from render import AUTO_STEP, Renderer, render_video, schedule, variation_timeline
 from script_check import Segment, build_hook, build_segments, load_script
 from tts_inworld import dry_run, map_tokens_to_times
 
@@ -46,8 +46,6 @@ MUSIC_FADE_IN = 2.0
 MUSIC_FADE_OUT = 6.0
 
 
-VAR_HOLD = 2.0     # s — strzałki wariantu stoją jeszcze tyle po ostatnim ruchu wariantu, zanim partia ruszy dalej
-VAR_MAX = 12.0     # s — najdłużej po ostatnim ruchu wariantu (potem zwykła szachownica)
 VAR_HERO = (46, 184, 74, 215)    # ruchy strony, która zagrała kluczowy ruch
 VAR_OPP = (224, 52, 48, 215)     # odpowiedzi przeciwnika
 
@@ -173,9 +171,9 @@ def main() -> int:
         for vm in seg.variations:  # wariant silnika: strzałka na pierwszym słowie zapisu ruchu
             sh = max((x for i, x in shifts if i <= vm.token_index), default=0.0)
             by_ply.setdefault(vm.ply_index, []).append((vm.line_index, cursor + sh + times[vm.token_index]))
-        for n, marks in by_ply.items():
-            var_marks[n] = sorted(marks)
-            barriers[n] = marks[-1][1] + VAR_HOLD
+        for n, marks in by_ply.items():  # alternatywna rzeczywistość: czasy ruchów, cofania i powrotu koloru
+            var_marks[n] = variation_timeline([t for _, t in sorted(marks)])
+            barriers[n] = var_marks[n]["end"]
         parts.append(("slice", (res.audio_path, clip_pos, None)) if clip_pos else ("file", res.audio_path))
         parts.append(("silence", seg.pause_after))
         cursor += res.duration + shift + seg.pause_after
@@ -185,14 +183,12 @@ def main() -> int:
     events = schedule(anchor_times, len(game.plies), barriers)
     variations = []
     moments = {km["ply"]: km for km in script.get("key_moments") or []}
-    for n, marks in var_marks.items():
+    for n, tl in var_marks.items():
         lp = line_plies(game.plies[n - 1].fen_after, [chess.Move.from_uci(u) for u in moments[n]["line"]])
+        lp = lp[:len(tl["steps"])]
         hero = game.plies[n - 1].color  # kto zagrał kluczowy ruch — jego ruchy w wariancie na zielono
-        arrows = [(lp[j].move.from_square, lp[j].move.to_square, t,
-                   VAR_HERO if lp[j].color == hero else VAR_OPP, j + 1) for j, t in marks]
-        start = marks[0][1] - 0.15
-        nxt = next((e.time for e in events if e.ply_index > n), duration)
-        variations.append({"ply": n, "start": start, "end": min(nxt, marks[-1][1] + VAR_MAX), "arrows": arrows})
+        variations.append(dict(tl, ply=n, moves=[p.move for p in lp],
+                               colors=[VAR_HERO if p.color == hero else VAR_OPP for p in lp]))
     wanted = {p: t for t, p in anchor_times}
     for e in events:
         if e.ply_index in wanted and e.time - wanted[e.ply_index] > DRIFT_WARN:

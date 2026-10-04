@@ -46,8 +46,8 @@ DRAMATURGIA
 KLUCZOWE MOMENTY (gdy w danych jest sekcja KLUCZOWE MOMENTY)
 - Dla każdego kluczowego momentu N wstaw RAZ marker {{v:N}} zaraz po markerze półruchu N ({{m:N}} albo {{s:N}}),
   przed kolejnym markerem partii — w tym samym albo w następnym segmencie. System zatrzyma wtedy partię, sam przeczyta
-  wariant silnika i narysuje go narastającymi strzałkami (zielone — ruchy strony, która zagrała kluczowy ruch,
-  czerwone — odpowiedzi przeciwnika).
+  wariant silnika pokaże go jako „alternatywną rzeczywistość”: szachownica szarzeje, figury naprawdę wykonują ruchy wariantu ze strzałkami (zielone — ruchy strony, która zagrała kluczowy ruch,
+  czerwone — odpowiedzi przeciwnika), potem figury szybko wracają i kolor wraca. Po wariancie mów już o partii.
 - {{v:N}} stawiaj jak {{m:N}}: po dwukropku albo na początku zdania, nigdy po przyimku. Np.: "Silnik pokazuje,
   dlaczego to działa: {{v:31}}."
 - Przed wariantem jedno zdanie zapowiedzi — jasno, że to wariant silnika, a NIE ruchy z partii. Po nim 1–2 zdania

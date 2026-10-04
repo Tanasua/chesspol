@@ -51,8 +51,8 @@ DRAMATURGIE
 SCHLÜSSELMOMENTE (wenn die Daten einen Abschnitt SCHLÜSSELMOMENTE enthalten)
 - Setze für jeden Schlüsselmoment N GENAU EINMAL den Marker {{v:N}} direkt nach dem Marker von Halbzug N ({{m:N}} oder
   {{s:N}}), vor dem nächsten Partiemarker — im selben oder im nächsten Segment. Das System hält die Partie dann an, liest
-  die Engine-Variante selbst vor und zeichnet sie mit wachsenden Pfeilen (grün — Züge der Seite, die den Schlüsselzug
-  gespielt hat, rot — Antworten des Gegners).
+  die Engine-Variante selbst vor und zeigt sie als „alternative Realität“: das Brett wird grau, die Figuren ziehen die Variante wirklich, mit Pfeilen (grün — Züge der Seite, die den Schlüsselzug
+  gespielt hat, rot — Antworten des Gegners); danach springen die Figuren zurück und die Farbe kehrt zurück. Nach der Variante sprich wieder über die Partie.
 - {{v:N}} steht wie {{m:N}}: nach einem Doppelpunkt oder am Satzanfang, nie nach einer Präposition. Z. B.:
   "Die Engine zeigt, warum das funktioniert: {{v:31}}."
 - Vor der Variante ein Satz Ankündigung — klar, dass es eine Engine-Variante ist und NICHT Züge aus der Partie. Danach

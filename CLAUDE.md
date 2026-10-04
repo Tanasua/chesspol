@@ -26,9 +26,12 @@ Pliki:
   ocena grającego nie spada, przewaga przed ≤4 piony) albo zwrot oceny ≥2 piony (partia nierozstrzygnięta); maks. 2 na partię,
   odstęp ≥8, bez 2 ostatnich półruchów; wariant silnika po ruchu (≤4 półruchy, ucięty przy "tam i z powrotem"; pomijamy, gdy
   = dalszy ciąg partii). script_gen dodaje je do danych dla LLM i do scenariusza (script["key_moments"]); LLM MUSI wstawić
-  {{v:N}} raz zaraz po markerze N (script_check). System czyta wariant w notacji kanału i rysuje narastające strzałki
-  (Renderer.with_arrows: pod figurami, zielone = strona kluczowego ruchu, czerwone = przeciwnik, numer na strzałce);
-  partia stoi (schedule(barriers): kolejne ruchy dopiero VAR_HOLD=2 s po ostatnim ruchu wariantu).
+  {{v:N}} raz zaraz po markerze N (script_check). System czyta wariant w notacji kanału i pokazuje "alternatywną
+  rzeczywistość" (Renderer.alternate, render.variation_timeline): szachownica szarzeje (FADE 0.5 s), na słowie ruchu wyrasta
+  strzałka (pod figurami; zielone = strona kluczowego ruchu, czerwone = przeciwnik, numer), po niej figura naprawdę się rusza;
+  najnowsza strzałka nasycona, starsze półprzezroczyste; strzałki na tej samej parze pól biegną równolegle obok siebie;
+  po VAR_HOLD=1.6 s figury cofają się w odwrotnej kolejności (REWIND_STEP=0.25 s/ruch), potem wraca kolor.
+  Partia stoi do końca (schedule(barriers)).
 - Dźwięk figury: src/sfx.py — własna synteza (drewniane 'tok', bicie jaśniejsze z odbiciem), w chwili lądowania figury
   (ANIM_SEC*0.85 po starcie ruchu), SFX_GAIN_DB=-14, --no-sfx wyłącza; miksowany z lektorem przed muzyką.
 - Przewijanie pominiętych półruchów: AUTO_STEP 1.25 s/ruch (render.py, maks. 1.5); gdy lektor nie daje czasu, main.py rozcina
