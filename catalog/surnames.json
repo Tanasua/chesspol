@@ -1,0 +1,18 @@
+{
+  "_about": "Pisownia nazwisk w języku kanału (tytuły YouTube i kadr). Tylko formy potwierdzone tytułami / użyciem w pl.wikipedia i de.wikipedia (październik 2026). Brak wpisu = pisownia bazowa.",
+  "pl": {
+    "Alekhine": "Alechin", "Beliavsky": "Bielawski", "Kotov": "Kotow", "Shirov": "Szyrow", "Karpov": "Karpow",
+    "Yusupov": "Jusupow", "Spassky": "Spasski", "Bogoljubov": "Bogolubow", "Kasparov": "Kasparow", "Kamsky": "Kamski",
+    "Nepomniachtchi": "Niepomniaszczi", "Botvinnik": "Botwinnik", "Chigorin": "Czigorin", "Chernikov": "Czernikow",
+    "Polugaevsky": "Poługajewski", "Nezhmetdinov": "Nieżmietdinow", "Karjakin": "Kariakin", "Petrosian": "Petrosjan",
+    "Smyslov": "Smysłow", "Ivanchuk": "Iwanczuk", "Korchnoi": "Korcznoj", "Averbakh": "Awerbach", "Topalov": "Topałow"
+  },
+  "de": {
+    "Alekhine": "Aljechin", "Beliavsky": "Beljawski", "Kotov": "Kotow", "Shirov": "Schirow", "Karpov": "Karpow",
+    "Yusupov": "Jussupow", "Spassky": "Spasski", "Bogoljubov": "Bogoljubow", "Kasparov": "Kasparow",
+    "Nepomniachtchi": "Nepomnjaschtschi", "Botvinnik": "Botwinnik", "Chigorin": "Tschigorin", "Chernikov": "Tschernikow",
+    "Polugaevsky": "Polugajewski", "Nezhmetdinov": "Neschmetdinow", "Levitsky": "Lewitski", "Petrosian": "Petrosjan",
+    "Smyslov": "Smyslow", "Ivanchuk": "Iwantschuk", "Korchnoi": "Kortschnoi", "Averbakh": "Awerbach", "Topalov": "Topalow",
+    "Aronian": "Aronjan"
+  }
+}
