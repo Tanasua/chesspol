@@ -19,9 +19,10 @@ PIECE_WORD = ({
     chess.KING: "राजा", chess.QUEEN: "रानी", chess.ROOK: "हाथी",
     chess.BISHOP: "ऊँट", chess.KNIGHT: "घोड़ा", chess.PAWN: "प्यादा",
 })
+OBLIQUE = {"घोड़ा": "घोड़े", "प्यादा": "प्यादे"}  # forma przed "से" (घोड़े से, प्यादे से)
 FILE_WORD = {"a": "ए", "b": "बी", "c": "सी", "d": "डी", "e": "ई", "f": "एफ़", "g": "जी", "h": "एच"}
 RANK_WORD = {"1": "एक", "2": "दो", "3": "तीन", "4": "चार", "5": "पाँच", "6": "छह", "7": "सात", "8": "आठ"}
-CAPTURES = "पर काटता है"      # "bije na …"
+CAPTURES = "पर कब्ज़ा"        # "bicie na …" — fraza bez czasownika "…ता है" (powtarzał się co kilka słów)
 CHECK, MATE = "शह", "शह और मात"
 CASTLE_K, CASTLE_Q = "कैसलिंग, राजा की तरफ़", "कैसलिंग, रानी की तरफ़"
 
@@ -42,11 +43,11 @@ def _disambiguation(san: str) -> str:
     dis = san[1:].replace("x", "").split("=")[0][:-2]
     if not dis:
         return ""
-    return " ".join(FILE_WORD[c] if c.isalpha() else RANK_WORD[c] for c in dis) + " वाला"
+    return " ".join(FILE_WORD[c] if c.isalpha() else RANK_WORD[c] for c in dis) + " वाला"  # przed "से": वाले
 
 
 def spoken(ply) -> str:
-    """Tekst do TTS, np. 'बी वाला घोड़ा डी सात पर काटता है, शह'."""
+    """Tekst do TTS, np. 'बी वाले घोड़े से डी सात पर कब्ज़ा, शह'."""
     board = chess.Board(ply.fen_before)
     move = ply.move
     if ply.is_castling:
@@ -57,17 +58,20 @@ def spoken(ply) -> str:
         if piece.piece_type == chess.PAWN:
             if ply.is_capture:
                 src = FILE_WORD[chess.square_name(move.from_square)[0]]
-                text = f"{src} {PIECE_WORD[chess.PAWN]} {target} {CAPTURES}"
+                text = f"{src} {OBLIQUE.get(PIECE_WORD[chess.PAWN], PIECE_WORD[chess.PAWN])} से {target} {CAPTURES}"
                 if ply.is_en_passant:
                     text += " (आं पासां)"
             else:
                 text = target
             if move.promotion:
-                text += f", और {PIECE_WORD[move.promotion]} बनता है"
+                text += f", {PIECE_WORD[move.promotion]} में प्रमोशन"
         else:
             dis = _disambiguation(ply.san)
-            head = f"{dis} {PIECE_WORD[piece.piece_type]}" if dis else PIECE_WORD[piece.piece_type]
-            text = f"{head} {target} {CAPTURES}" if ply.is_capture else f"{head} {target}"
+            word = PIECE_WORD[piece.piece_type]
+            if ply.is_capture:
+                word = OBLIQUE.get(word, word)
+            head = (f"{dis.removesuffix(' वाला')} वाले {word}" if ply.is_capture else f"{dis} {word}") if dis else word
+            text = f"{head} से {target} {CAPTURES}" if ply.is_capture else f"{head} {target}"
     if ply.is_mate:
         text += f", {MATE}"
     elif ply.gives_check:
