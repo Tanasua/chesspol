@@ -35,6 +35,8 @@ Pliki:
   końcowej (ruch zerowy przegrywającego, ≥2 piony/mat, bez strzałek na sąsiednie pole); znak w kółku: seed % 3 -> '!' / '?' / brak
   ('!' = ruch zwycięzcy = 1. wybór silnika lub ≤0.5 piona gorszy i pozycja wygrana; '?' = ostatni ruch przegrywającego traci ≥1.5 piona,
   z pomarańczową strzałką); bez silnika tylko żółta strzałka. Okładka z tymi znakami idzie też do OpenAI.
+  Rysunek: warstwy pola -> cienkie strzałki (grot na skraju pola) -> figury; mały znak na rogu pola — figury nigdy nie zasłonięte
+  (decyzja właściciela: OpenAI nie może zgadywać, jaka figura stoi pod strzałką).
 - Kraje: okresy bez dat dla ZSRR / III Rzeszy dostają lata istnienia państwa (countries.STATE_YEARS) — Spasski 1972 = SU, nie FR.
 - OKŁADKA AI: src/cover_ai.py — nasza okładka -> OpenAI Images API edit (COVER_AI_MODEL, domyślnie gpt-image-2.5-sunburst,
   fallback gpt-image-2; 1536x864 -> 1280x720) z promptem właściciela (PROMPT, po ukraińsku, dosłownie) -> cover_ai.jpg w paczce

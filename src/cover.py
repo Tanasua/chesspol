@@ -15,28 +15,70 @@ from render import ACCENT, BG, DIM, FG, _fit, _font, _wrap
 CW, CH = 1280, 720
 BOARD_PX = 620
 PHOTO = (176, 210)
-GAP = 44
-GLYPH_COLORS = {"!": (38, 166, 65), "?": (214, 40, 40)}  # odstęp między portretami (tu napis 'vs')
+GAP = 44  # odstęp między portretami (tu napis 'vs')
+GLYPH_COLORS = {"!": (38, 166, 65), "?": (214, 40, 40)}
+
+
+SQ_COLORS = {"square light": "#eed8b5", "square dark": "#b58863",
+             "square light lastmove": "#f6d65a", "square dark lastmove": "#d9b440"}
+CLEAR = {k: "#00000000" for k in SQ_COLORS}
+SS = 4  # nadpróbkowanie strzałek (gładkie krawędzie)
+
+
+def _svg_png(svg: str) -> Image.Image:
+    png = cairosvg.svg2png(bytestring=svg.encode(), output_width=BOARD_PX, output_height=BOARD_PX)
+    return Image.open(io.BytesIO(png)).convert("RGBA")
+
+
+def _rgba(hex_color: str) -> tuple:
+    h = hex_color.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4)) + ((int(h[6:8], 16),) if len(h) == 8 else (255,))
+
+
+def _arrows_layer(arrows) -> Image.Image:
+    """Cienkie strzałki POD figurami: grot kończy się na skraju pola docelowego, więc figura zostaje odkryta."""
+    sq = BOARD_PX / 8 * SS
+    layer = Image.new("RGBA", (BOARD_PX * SS, BOARD_PX * SS), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+
+    def center(s):
+        return ((chess.square_file(s) + 0.5) * sq, (7.5 - chess.square_rank(s)) * sq)
+
+    for a, b, color in arrows:
+        (x0, y0), (x1, y1) = center(a), center(b)
+        dx, dy = x1 - x0, y1 - y0
+        dist = (dx * dx + dy * dy) ** 0.5
+        ux, uy = dx / dist, dy / dist
+        tip = (x1 - ux * sq * 0.30, y1 - uy * sq * 0.30)          # grot przy krawędzi pola
+        head_len, head_w, width = sq * 0.30, sq * 0.15, sq * 0.075
+        base = (tip[0] - ux * head_len, tip[1] - uy * head_len)
+        start = (x0 + ux * sq * 0.18, y0 + uy * sq * 0.18)
+        col = _rgba(color)
+        d.line([start, base], fill=col, width=int(width))
+        px, py = -uy * head_w, ux * head_w
+        d.polygon([tip, (base[0] + px, base[1] + py), (base[0] - px, base[1] - py)], fill=col)
+    return layer.resize((BOARD_PX, BOARD_PX), Image.LANCZOS)
 
 
 def _board_png(board: chess.Board, lastmove, arrows=()) -> Image.Image:
-    arrows = [chess.svg.Arrow(a, b, color=c) for a, b, c in arrows]
-    svg = chess.svg.board(board, size=BOARD_PX, coordinates=False, lastmove=lastmove, arrows=arrows,
-                          colors={"square light": "#eed8b5", "square dark": "#b58863",
-                                  "square light lastmove": "#f6d65a", "square dark lastmove": "#d9b440"})
-    png = cairosvg.svg2png(bytestring=svg.encode(), output_width=BOARD_PX, output_height=BOARD_PX)
-    return Image.open(io.BytesIO(png)).convert("RGB")
+    """Warstwy: pola -> strzałki -> figury (figury zawsze w pełni widoczne, także dla modelu OpenAI)."""
+    squares = _svg_png(chess.svg.board(chess.Board(None), size=BOARD_PX, coordinates=False,
+                                       lastmove=lastmove, colors=SQ_COLORS))
+    pieces = _svg_png(chess.svg.board(board, size=BOARD_PX, coordinates=False, colors=CLEAR))
+    if arrows:
+        squares = Image.alpha_composite(squares, _arrows_layer(arrows))
+    return Image.alpha_composite(squares, pieces).convert("RGB")
 
 
 def _glyph(img: Image.Image, origin: tuple, square: int, glyph: str) -> None:
-    """Znak '!' (zielony) / '?' (czerwony) w kółku w prawym górnym rogu pola — jak w serwisach szachowych."""
+    """Mały znak '!' (zielony) / '?' (czerwony) w kółku na prawym górnym rogu pola — poza obrysem figury."""
     sq = BOARD_PX / 8
-    cx = origin[0] + (chess.square_file(square) + 1) * sq - sq * 0.12
-    cy = origin[1] + (7 - chess.square_rank(square)) * sq + sq * 0.12
-    r = int(sq * 0.30)
+    cx = origin[0] + (chess.square_file(square) + 1) * sq - sq * 0.08
+    cy = origin[1] + (7 - chess.square_rank(square)) * sq + sq * 0.08
+    r = int(sq * 0.19)
     d = ImageDraw.Draw(img)
-    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=GLYPH_COLORS[glyph], outline=(255, 255, 255), width=3)
-    f = _font(int(r * 1.5), True, weight="black")
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=GLYPH_COLORS[glyph], outline=(255, 255, 255), width=2)
+    f = _font(int(r * 1.45), True, weight="black")
     d.text((cx, cy + 1), glyph, font=f, fill=(255, 255, 255), anchor="mm")
 
 
