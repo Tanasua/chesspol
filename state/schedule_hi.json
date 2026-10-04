@@ -9,6 +9,16 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep001-topalov_anand_2010",
       "telegram": true,
       "rubric": "history"
+    },
+    {
+      "id": "in_anand_kasparov_1995",
+      "publish_at": "2026-10-06T12:30:00+00:00",
+      "title": "धीरे-धीरे किला टूटा! | Anand – Kasparov (1995) — आनंद ने कास्पारोव को तकनीक से झुकाया",
+      "mode": "manual",
+      "package": "out/packages/hi-ep002-in_anand_kasparov_1995",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep002-in_anand_kasparov_1995",
+      "telegram": true,
+      "rubric": "national"
     }
   ]
 }
