@@ -12,6 +12,7 @@ Markery:
   {{m:N}}  - półruch N: system WSTAWIA jego zapis słowny (w języku kanału) do lektora
              i animuje ruch na pierwszym słowie tego zapisu.
   {{s:N}}  - półruch N animowany "po cichu" na następnym słowie tekstu.
+  {{p}}    - pauza "pomyśl sam" (THINK s ciszy, szachownica stoi) tuż przed ważnym ruchem {{m:N}}; maks. 3.
   {{v:N}}  - wariant silnika z pozycji po kluczowym półruchu N (script["key_moments"], src/key_moments.py):
              system czyta jego ruchy i rysuje je narastającymi strzałkami; partia stoi w miejscu.
 Półruchy pominięte między markerami są odgrywane automatycznie tuż przed
@@ -37,6 +38,9 @@ MARKER_RE = re.compile(r"\{\{([msv]):(\d+)\}\}")
 # Surowe ruchy w tekście (notacja angielska, polska i niemiecka) — zakazane poza markerami.
 RAW_MOVE_RE = re.compile(r"(?<![\w-])(?:[KQRBNHWGSDTL]x?[a-h]?[1-8]?x?[a-h][1-8]|O-O(?:-O)?|[a-h]x[a-h][1-8])(?![\w])")
 MAX_AUTO_GAP = 6
+THINK_RE = re.compile(r"\{\{p\}\}")   # pauza "pomyśl sam" przed ważnym ruchem
+THINK_TOKEN = "\u23f8"                  # znacznik roboczy w tokenach (usuwany przed TTS)
+MAX_THINK = 3
 
 
 class ScriptError(ValueError):
@@ -67,6 +71,7 @@ class Segment:
     pause_after: float = 0.5
     chapter: str = ""
     variations: list = field(default_factory=list)   # [VarMark]
+    pauses: list = field(default_factory=list)       # indeksy słów, PRZED którymi lektor milknie na THINK s
 
 
 def _tidy(tokens: list, anchors: list) -> tuple[list, list]:
@@ -123,9 +128,18 @@ def build_segments(script: dict, game) -> tuple[list, list]:
     moments = {km["ply"]: km for km in script.get("key_moments") or []}
     used_v = set()
 
+    n_think = 0
     for raw in script.get("segments", []):
         sid = raw["id"]
         text = raw["text"]
+        for m in THINK_RE.finditer(text):  # po {{p}} w tym segmencie musi przyjść ruch czytany {{m:N}}
+            nxt = MARKER_RE.search(text, m.end())
+            if not nxt or nxt.group(1) != "m":
+                raise ScriptError(f"[{sid}] {{{{p}}}} musi stać przed markerem {{{{m:N}}}} ważnego ruchu w tym samym segmencie")
+            n_think += 1
+        if n_think > MAX_THINK:
+            raise ScriptError(f"Za dużo pauz {{{{p}}}} (maks. {MAX_THINK} na odcinek)")
+        text = THINK_RE.sub(f" {THINK_TOKEN} ", text)
 
         for m in RAW_MOVE_RE.finditer(MARKER_RE.sub(" ", text)):
             raise ScriptError(f"[{sid}] surowy zapis ruchu '{m.group(0)}' w tekście — użyj markera {{{{m:N}}}}")
@@ -180,7 +194,21 @@ def build_segments(script: dict, game) -> tuple[list, list]:
             pos = m.end()
         tokens.extend(text[pos:].split())
 
-        tokens, _ = _tidy(tokens, anchors + vmarks)
+        pauses = []
+        if THINK_TOKEN in tokens:  # usuwamy znaczniki pauz, przesuwając indeksy kotwic i strzałek
+            keep, remap = [], {}
+            for i, tok in enumerate(tokens):
+                if tok == THINK_TOKEN:
+                    pauses.append(len(keep))
+                    continue
+                remap[i] = len(keep)
+                keep.append(tok)
+            for a in anchors + vmarks:
+                a.token_index = remap.get(a.token_index, len(keep) - 1)
+            tokens = keep
+        pause_marks = [Anchor(0, i, False) for i in pauses]
+        tokens, _ = _tidy(tokens, anchors + vmarks + pause_marks)
+        pauses = [pm.token_index for pm in pause_marks]
         if not tokens:
             raise ScriptError(f"[{sid}] pusty segment")
         for a in anchors:  # cichy marker na samym końcu segmentu -> ostatnie słowo
@@ -188,7 +216,7 @@ def build_segments(script: dict, game) -> tuple[list, list]:
         segments.append(Segment(
             id=sid, tts_text=" ".join(tokens), tokens=tokens, anchors=anchors,
             pause_after=float(raw.get("pause_after", 0.5)),
-            chapter=(raw.get("chapter") or "").strip(), variations=vmarks,
+            chapter=(raw.get("chapter") or "").strip(), variations=vmarks, pauses=pauses,
         ))
 
     if not segments:

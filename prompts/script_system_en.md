@@ -48,6 +48,13 @@ STORYTELLING
   For a draw, say the game ended in a draw.
 - Finale: say why this game matters.
 
+THINKING PAUSE — marker {{p}}
+- 1–3 times per episode, before the most important moves of the game (a sacrifice, a turning point, the decisive move),
+  stop: ask the viewer a question, insert {{p}} (the system adds 4 s of silence, the board stands still), then reveal the
+  move with {{m:N}}. E.g.: "White has a powerful blow here. Can you find it? {{p}} Here it is: {{m:41}}."
+- {{p}} always in the same segment before {{m:N}} (not before {{s:N}}). Don't call the move "the best" unless the
+  engine confirms it (rule 5: compare with "engine's best reply" in row N−1).
+
 KEY MOMENTS (when the data has a KEY MOMENTS section)
 - For each key moment N, insert the marker {{v:N}} EXACTLY ONCE, right after the marker of half-move N ({{m:N}} or
   {{s:N}}), before the next game marker — in the same or the next segment. The system then pauses the game, reads the

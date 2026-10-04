@@ -36,6 +36,7 @@ else:
 LEAD_IN = 1.0     # sekundy ciszy na początku (pozycja startowa na ekranie)
 TAIL = 3.0        # końcowa pauza z pozycją matową / końcową
 DRIFT_WARN = 0.3
+THINK_SEC = float(os.environ.get("THINK_SEC", "4.0"))  # pauza {{p}}: widz sam szuka ruchu (decyzja właściciela: 3–5 s)
 CUT_LEAD = 0.04   # rozcięcie nagrania tyle sekund przed początkiem słowa markera
 # Stałe zakończenie każdego odcinka (OUTRO, czytane po scenariuszu) — w src/phrases.py, w języku kanału
 # Muzyka w tle: zapętlona, cicho pod lektorem, wyciszana na końcu. MUSIC="" wyłącza.
@@ -170,7 +171,23 @@ def main() -> int:
         # dość czasu, rozcinamy nagranie tuż przed słowem markera i wstawiamy ciszę (muzyka gra dalej).
         clip_pos, shift = 0.0, 0.0
         shifts = []  # (indeks słowa, przesunięcie od tego słowa) — do czasów strzałek wariantu
-        for a in seg.anchors:
+
+        def insert_silence(token_index: int, sec: float) -> None:
+            nonlocal clip_pos, shift
+            cut = max(clip_pos, times[token_index] - CUT_LEAD)
+            if cut > clip_pos:
+                parts.append(("slice", (res.audio_path, clip_pos, cut)))
+            parts.append(("silence", sec))
+            clip_pos, shift = cut, shift + sec
+            shifts.append((token_index, shift))
+
+        # pauzy "pomyśl sam" ({{p}}) i kotwice ruchów w kolejności słów (pauza przed słowem — najpierw)
+        items = sorted([(i, 0, None) for i in seg.pauses] + [(a.token_index, 1, a) for a in seg.anchors],
+                       key=lambda x: (x[0], x[1]))
+        for token_index, kind, a in items:
+            if kind == 0:
+                insert_silence(token_index, THINK_SEC)
+                continue
             t_word = times[a.token_index]
             gap = a.ply_index - (anchor_times[-1][1] if anchor_times else 0) - 1
             if gap > 0:
@@ -178,12 +195,7 @@ def main() -> int:
                 prev_t = max(prev_t, barriers.get(anchor_times[-1][1], 0.0) if anchor_times else 0.0)
                 deficit = (gap + 1) * AUTO_STEP - (cursor + shift + t_word - prev_t)
                 if deficit > 0.05:
-                    cut = max(clip_pos, t_word - CUT_LEAD)
-                    if cut > clip_pos:
-                        parts.append(("slice", (res.audio_path, clip_pos, cut)))
-                    parts.append(("silence", deficit))
-                    clip_pos, shift = cut, shift + deficit
-                    shifts.append((a.token_index, shift))
+                    insert_silence(a.token_index, deficit)
             anchor_times.append((cursor + shift + t_word, a.ply_index))
         by_ply = {}
         for vm in seg.variations:  # wariant silnika: strzałka na pierwszym słowie zapisu ruchu

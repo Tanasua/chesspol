@@ -48,6 +48,13 @@ DRAMATURGIE
   Bei Remis sag, dass die Partie remis endete.
 - Finale: sag, warum diese Partie wichtig ist.
 
+DENKPAUSE — Marker {{p}}
+- 1–3 Mal pro Folge, vor den wichtigsten Zügen der Partie (Opfer, Wende, entscheidender Zug), halte an: stelle den
+  Zuschauern eine Frage, setze {{p}} (das System macht 4 s Stille, das Brett steht), dann zeige den Zug mit {{m:N}}.
+  Z. B.: "Weiß hat hier einen starken Schlag. Findet ihr ihn? {{p}} Hier ist er: {{m:41}}."
+- {{p}} immer im selben Segment vor {{m:N}} (nicht vor {{s:N}}). Nenne den Zug nicht "den besten", wenn die Engine
+  es nicht bestätigt (Regel 5: vergleiche mit "beste Antwort laut Engine" in Zeile N−1).
+
 SCHLÜSSELMOMENTE (wenn die Daten einen Abschnitt SCHLÜSSELMOMENTE enthalten)
 - Setze für jeden Schlüsselmoment N GENAU EINMAL den Marker {{v:N}} direkt nach dem Marker von Halbzug N ({{m:N}} oder
   {{s:N}}), vor dem nächsten Partiemarker — im selben oder im nächsten Segment. Das System hält die Partie dann an, liest

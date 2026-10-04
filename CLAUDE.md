@@ -22,6 +22,8 @@ Pliki:
   paradoks, pytanie, odliczanie; fakty/oceny jak w scenariuszu; bez ruchów, markerów i cyfr; 40–300 znaków — script_check.build_hook).
   W tym czasie szachownica pokazuje pozycję po półruchu "ply" (render_video(flash=...)), potem powitanie i partia od startu;
   plansza nowości (preroll) przesunięta za hak. script_gen wymaga haka; stare scenariusze bez haka działają jak dawniej.
+- PAUZA DO NAMYSŁU: marker {{p}} w tekście (maks. 3 na odcinek, zawsze przed {{m:N}} w tym samym segmencie) — lektor
+  zadaje pytanie, potem THINK_SEC=4 s ciszy (main.insert_silence, szachownica stoi), potem ruch (decyzja właściciela: 3–5 s).
 - KLUCZOWE MOMENTY: src/key_moments.py (Stockfish, zasady 1 i 3) — ofiara (≥3 pkt materiału, nie wraca po 1/3/5 półruchach,
   ocena grającego nie spada, przewaga przed ≤4 piony) albo zwrot oceny ≥2 piony (partia nierozstrzygnięta); maks. 2 na partię,
   odstęp ≥8, bez 2 ostatnich półruchów; wariant silnika po ruchu (≤4 półruchy, ucięty przy "tam i z powrotem"; pomijamy, gdy

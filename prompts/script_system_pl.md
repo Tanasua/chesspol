@@ -43,6 +43,13 @@ DRAMATURGIA
   Przy remisie powiedz, że partia zakończyła się remisem.
 - Finał: nazwij, dlaczego ta partia jest ważna.
 
+PAUZA DO NAMYSŁU — marker {{p}}
+- 1–3 razy na odcinek, przed najważniejszymi ruchami partii (ofiara, zwrot, ruch rozstrzygający), zatrzymaj się:
+  zadaj widzowi pytanie, wstaw {{p}} (system zrobi 4 s ciszy, szachownica stoi), potem pokaż ruch markerem {{m:N}}.
+  Np.: "Białe mają tu mocne uderzenie. Znajdziecie je? {{p}} Oto ono: {{m:41}}."
+- {{p}} zawsze w tym samym segmencie przed {{m:N}} (nie przed {{s:N}}). Nie nazywaj ruchu "najlepszym", jeśli silnik
+  tego nie potwierdza (zasada 5: porównaj z "najlepsza odpowiedź wg silnika" w wierszu N−1).
+
 KLUCZOWE MOMENTY (gdy w danych jest sekcja KLUCZOWE MOMENTY)
 - Dla każdego kluczowego momentu N wstaw RAZ marker {{v:N}} zaraz po markerze półruchu N ({{m:N}} albo {{s:N}}),
   przed kolejnym markerem partii — w tym samym albo w następnym segmencie. System zatrzyma wtedy partię, sam przeczyta
