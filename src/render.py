@@ -199,7 +199,23 @@ class Renderer:
             f, lh = _fit(d, last, 40, width, True), 48
         for i, ln in enumerate(lines):
             d.text((tx, y + hgt + i * lh), ln, font=f, fill=FG)
-        return hgt + lh * len(lines)
+        hgt += lh * len(lines)
+        code = player.get("country")
+        if code:  # kraj, który gracz reprezentował: flaga (albo skrót RU/BY/SU/DE) + nazwa w języku kanału
+            from countries import badge
+            from country_names import country_name
+
+            fl = badge(code, 22)
+            name = country_name(code, L.code)
+            cx = tx
+            if fl:
+                d._image.alpha_composite(fl, (int(cx), int(y + hgt + 4)))
+                cx += fl.width + 10
+            if name:
+                d.text((cx, y + hgt + 2), name, font=_fit(d, name, 22, width - (cx - tx), False), fill=DIM)
+            if fl or name:
+                hgt += 34
+        return hgt
 
     def left_panel(self, white_to_move: bool) -> Image.Image:
         if white_to_move in self._left:
@@ -225,8 +241,10 @@ class Renderer:
         # środek: rok + opis
         mid_top, mid_bot = top_name_y + top_h + 20, bot_name_y - 20
         main_cap, _, sub_cap = self.caption.partition(" · ")
-        cap_lines = [(ln, FG) for ln in _wrap(d, main_cap, self.f_label, LEFT_W, 3)]
-        cap_lines += [(ln, DIM) for ln in _wrap(d, sub_cap, self.f_label, LEFT_W, 1)] if sub_cap else []
+        room = max(1, (mid_bot - mid_top - 74) // 34)  # ile wierszy podpisu mieści się między graczami
+        cap_lines = [(ln, FG) for ln in _wrap(d, main_cap, self.f_label, LEFT_W, max(1, min(3, room - (1 if sub_cap else 0))))]
+        if sub_cap and len(cap_lines) < room:
+            cap_lines += [(ln, DIM) for ln in _wrap(d, sub_cap, self.f_label, LEFT_W, 1)]
         block = 64 + 10 + 34 * len(cap_lines)
         y = mid_top + max(0, (mid_bot - mid_top - block) // 2)
         d.line([LEFT_X, y - 12, LEFT_X + 60, y - 12], fill=ACCENT, width=3)

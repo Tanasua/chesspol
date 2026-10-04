@@ -53,6 +53,8 @@ Pliki:
   z pomarańczową strzałką); bez silnika tylko niebieska strzałka. Okładka z tymi znakami idzie też do OpenAI.
   Rysunek: warstwy pola -> cienkie strzałki (grot na skraju pola) -> figury; mały znak na rogu pola — figury nigdy nie zasłonięte
   (decyzja właściciela: OpenAI nie może zgadywać, jaka figura stoi pod strzałką).
+- KRAJ W KADRZE: pod nazwiskiem flaga (albo skrót RU/BY/SU/DE) + nazwa kraju w języku kanału (src/country_names.py,
+  Renderer._name); podpis turnieju w środku skraca się do miejsca między graczami.
 - Kraje: okresy bez dat dla ZSRR / III Rzeszy dostają lata istnienia państwa (countries.STATE_YEARS) — Spasski 1972 = SU, nie FR.
 - OKŁADKA AI: src/cover_ai.py — nasza okładka -> OpenAI Images API edit (COVER_AI_MODEL, domyślnie gpt-image-2.5-sunburst,
   fallback gpt-image-2; 1536x864 -> 1280x720) z promptem właściciela (PROMPT, po ukraińsku, dosłownie) -> cover_ai.jpg w paczce
