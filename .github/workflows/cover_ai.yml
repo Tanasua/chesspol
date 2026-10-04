@@ -1,0 +1,35 @@
+name: cover-ai
+
+# Jednorazowo: okładka z repozytorium (np. covers_in/<plik>.jpg) -> OpenAI (src/cover_ai.py, prompt właściciela)
+# -> Telegram (oryginał + wersja AI) i artefakt.
+on:
+  workflow_dispatch:
+    inputs:
+      image:
+        description: "Ścieżka okładki w repo, np. covers_in/caruana_praggnanandhaa_gct2026.jpg"
+        required: true
+
+jobs:
+  cover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: OpenAI
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          IMAGE: ${{ inputs.image }}
+        run: python src/cover_ai.py "$IMAGE" "out/cover_ai.jpg"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cover-ai-${{ github.run_id }}
+          path: out/cover_ai.jpg
+          if-no-files-found: ignore

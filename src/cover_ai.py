@@ -48,3 +48,35 @@ def make_ai_cover(src: Path, out: Path) -> tuple[Path | None, str]:
         img.save(out, "JPEG", quality=92)
         return out, model
     return None, " | ".join(errors)
+
+
+def main() -> int:
+    """Jednorazowo: python src/cover_ai.py <okładka.jpg> [wyjście.jpg] — wynik do Telegrama (jeśli są sekrety)."""
+    import sys
+
+    src = Path(sys.argv[1])
+    out = Path(sys.argv[2]) if len(sys.argv) > 2 else src.with_name(src.stem + "_ai.jpg")
+    path, note = make_ai_cover(src, out)
+    print(f"Okładka OpenAI: {path} ({note})" if path else f"Błąd: {note}")
+    if os.environ.get("TELEGRAM_BOT_TOKEN") and os.environ.get("TELEGRAM_CHAT_ID"):
+        import json
+
+        from deliver import _tg
+
+        chat = os.environ["TELEGRAM_CHAT_ID"]
+        if path:
+            media = [{"type": "photo", "media": "attach://ours", "caption": "🖼 Разова обкладинка: оригінал"},
+                     {"type": "photo", "media": "attach://ai", "caption": f"🤖 Версія OpenAI ({note})"}]
+            with open(src, "rb") as a, open(path, "rb") as b:
+                _tg("sendMediaGroup", data={"chat_id": chat, "media": json.dumps(media, ensure_ascii=False)},
+                    files={"ours": a, "ai": b})
+            with open(path, "rb") as fh:
+                _tg("sendDocument", data={"chat_id": chat, "caption": "🖼 Обкладинка OpenAI у повній якості"},
+                    files={"document": (path.name, fh, "image/jpeg")})
+        else:
+            _tg("sendMessage", data={"chat_id": chat, "text": f"⚠️ Обкладинку OpenAI не згенеровано: {note[:600]}"})
+    return 0 if path else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
