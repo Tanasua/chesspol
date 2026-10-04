@@ -31,10 +31,10 @@ Pliki:
 - src/pgn_collect.py — PGN z ≥2 niezależnych kolekcji (mirror rozim/ChessData: PgnMentor, ChessNostalgia, Chessopolis, RebelSite, WorldChampionships, Kingbase, Twic, Old…; + famous_games, ChessPGN); zgodność ruchów, wyniku, rundy i liczby ruchów
 - src/scheduler.py — co 3 dni 10:00 Europe/Kyiv; bufor 2 odcinków; PUBLISH_MODE=manual (domyślnie): paczka do ręcznego uploadu; PUBLISH_MODE=youtube: upload private + publishAt; stan w state/schedule.json
 - src/deliver.py, src/cover.py — paczka out/packages/epNNN-<id>/ (video.mp4, cover.jpg 1280x720, opis.txt: data, tytuł, opis [zachęta z LLM, karta partii, rozdziały z czasami z out/<id>.timing.json, PGN, atrybucja zdjęć, zdanie o weryfikacji PGN; BEZ akapitu o AI, BEZ zapisu ruchów i BEZ listy źródeł zdjęć — decyzje właściciela; autor/licencja zdjęcia tylko w kadrze], tagi) -> GitHub Release + opcjonalnie Telegram (sekrety TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; wideo ≤50 MB)
-- STRZAŁKI NA OKŁADCE: src/cover_marks.py (Stockfish, zasada nr 3): żółta = ostatni ruch; czerwona = groźba zwycięzcy w pozycji
+- STRZAŁKI NA OKŁADCE: src/cover_marks.py (Stockfish, zasada nr 3): niebieska = ostatni ruch (żółta zlewała się z podświetleniem); czerwona = groźba zwycięzcy w pozycji
   końcowej (ruch zerowy przegrywającego, ≥2 piony/mat, bez strzałek na sąsiednie pole); znak w kółku: seed % 3 -> '!' / '?' / brak
   ('!' = ruch zwycięzcy = 1. wybór silnika lub ≤0.5 piona gorszy i pozycja wygrana; '?' = ostatni ruch przegrywającego traci ≥1.5 piona,
-  z pomarańczową strzałką); bez silnika tylko żółta strzałka. Okładka z tymi znakami idzie też do OpenAI.
+  z pomarańczową strzałką); bez silnika tylko niebieska strzałka. Okładka z tymi znakami idzie też do OpenAI.
   Rysunek: warstwy pola -> cienkie strzałki (grot na skraju pola) -> figury; mały znak na rogu pola — figury nigdy nie zasłonięte
   (decyzja właściciela: OpenAI nie może zgadywać, jaka figura stoi pod strzałką).
 - Kraje: okresy bez dat dla ZSRR / III Rzeszy dostają lata istnienia państwa (countries.STATE_YEARS) — Spasski 1972 = SU, nie FR.

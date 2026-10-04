@@ -1,7 +1,7 @@
 """Strzałki i znaki "!" / "?" na okładkę — tylko z sensem i z potwierdzeniem silnika (zasada nr 3).
 
 Okładka pokazuje pozycję końcową. Na niej:
-  - żółta strzałka: ostatni ruch partii (skąd -> dokąd) — zawsze, bez silnika;
+  - niebieska strzałka: ostatni ruch partii (skąd -> dokąd) — zawsze, bez silnika (żółta zlewała się z podświetleniem pól);
   - czerwona strzałka: groźba zwycięzcy w pozycji końcowej (Stockfish po "ruchu zerowym" przegrywającego) —
     to, przed czym przegrywający się poddał; tylko gdy partia nie skończyła się matem / remisem i nie ma szacha;
   - znak (co trzeci odcinek bez znaku, reszta na zmianę "!" / "?" wg seed, gdy dany znak jest potwierdzony):
@@ -26,7 +26,7 @@ MISTAKE_DROP = 150    # centypiony: "?" dopiero przy stracie ≥ 1.5 piona
 WINNING = 200         # "!" tylko gdy po ruchu pozycja wygrana (≥ 2 piony albo mat)
 MATE = 100_000
 
-YELLOW = "#f5c400cc"
+BLUE = "#1e6fe0e6"
 RED = "#e0262bcc"
 ORANGE = "#ff8a00cc"
 GREEN = "#2fb84acc"
@@ -63,7 +63,7 @@ def compute(game, seed=0) -> Marks:
     m = Marks()
     plies = game.plies
     last = plies[-1]
-    m.arrows.append((last.move.from_square, last.move.to_square, YELLOW))
+    m.arrows.append((last.move.from_square, last.move.to_square, BLUE))
     path = _engine_path()
     if not path:
         m.notes.append("brak Stockfisha — tylko strzałka ostatniego ruchu")
