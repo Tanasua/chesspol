@@ -18,7 +18,7 @@ from pathlib import Path
 import cairosvg
 import chess
 import chess.svg
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from lang import L, credit_author, notation
 
@@ -38,11 +38,17 @@ LEFT_X, LEFT_W = 40, BOARD_X - 80          # treść lewej kolumny
 RIGHT_X, RIGHT_W = BOARD_X + BOARD + 40, W - (BOARD_X + BOARD) - 80
 PHOTO_W, PHOTO_H = 220, 275
 
-LIGHT, DARK = (238, 216, 181), (181, 136, 99)
-HL = (246, 214, 90, 110)
-CHECK = (220, 40, 40, 150)
-BG, FG, DIM, ACCENT = (12, 12, 12), (240, 236, 228), (135, 130, 122), (246, 214, 90)
-CARD = (34, 33, 31)
+# Stylistyka "ciemny lux": grafitowe tło z ciepłym gradientem i winietą, złote akcenty, plansza jak stary pergamin
+# w złotej ramie z poświatą, karty z cienką złotą obwódką, nagłówki szeryfowe (Playfair Display, SIL OFL).
+LIGHT, DARK = (230, 216, 190), (128, 102, 72)
+HL = (214, 168, 64, 150)
+CHECK = (200, 40, 36, 150)
+BG, FG, DIM, ACCENT = (12, 11, 10), (240, 232, 214), (150, 140, 122), (214, 176, 96)
+GOLD_DIM = (140, 112, 60)
+CARD = (27, 25, 22)
+BG_CENTER, BG_EDGE = (44, 39, 32), (9, 8, 7)
+FRAME_PAD = 16  # złota rama wokół planszy
+LNUM = ["lnum"]  # Playfair ma domyślnie cyfry nautyczne — w roku i numerze ruchu chcemy równe
 ANIM_SEC = 0.45
 MIN_GAP = ANIM_SEC + 0.05  # animacje nigdy na siebie nie nachodzą
 AUTO_STEP = 1.25  # tempo przewijania pominiętych półruchów (s/ruch); main.py robi na nie miejsce
@@ -65,6 +71,61 @@ def _font(size: int, bold: bool = False, weight: str | None = None) -> ImageFont
     if path.exists():
         return ImageFont.truetype(str(path), size)
     return ImageFont.truetype(FALLBACK[1 if bold else 0], size)
+
+
+def _serif(size: int, weight: str = "semibold") -> ImageFont.FreeTypeFont:
+    """Nagłówki (rok, bieżący ruch, nazwisko): Playfair Display; kanał hindi — Hind (brak szeryfowego dewanagari)."""
+    path = FONTS / "playfair" / f"PlayfairDisplay-{WEIGHTS.get(weight, 'SemiBold')}.ttf"
+    if L.font == "Hind" or not path.exists():
+        return _font(size, True)
+    return ImageFont.truetype(str(path), size)
+
+
+def _gradient_bg() -> Image.Image:
+    """Tło: radialny gradient (ciepły środek -> prawie czarne brzegi) + delikatny ukośny połysk z lewego górnego rogu."""
+    mask = Image.radial_gradient("L").resize((W * 2, W * 2)).crop((W - W // 2 - 80, W - H // 2 - 20,
+                                                                    W + W // 2 - 80, W + H // 2 - 20))
+    mask = mask.point(lambda v: min(255, int((v / 255) ** 0.8 * 300)))  # szybciej ciemnieje ku brzegom
+    img = Image.composite(Image.new("RGB", (W, H), BG_EDGE), Image.new("RGB", (W, H), BG_CENTER), mask)
+    sheen = Image.linear_gradient("L").rotate(-35, expand=True).resize((W, H)).point(lambda v: max(0, 70 - v) // 3)
+    img.paste(Image.new("RGB", (W, H), (90, 78, 58)), (0, 0), sheen)
+    grain = Image.effect_noise((W, H), 18).convert("RGB")
+    return Image.blend(img, grain, 0.025).convert("RGBA")
+
+
+def _card(img: Image.Image, box: tuple, active: bool = False, radius: int = 18) -> None:
+    """Karta: półprzezroczyste grafitowe tło, cienka złota obwódka; aktywna (strona na ruchu) — jaśniejsza z poświatą."""
+    x0, y0, x1, y1 = box
+    if active:
+        glow = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        ImageDraw.Draw(glow).rounded_rectangle(box, radius=radius, outline=ACCENT + (230,), width=10)
+        img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(12)))
+    layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    d.rounded_rectangle(box, radius=radius, fill=CARD + (225,),
+                        outline=ACCENT + ((255,) if active else (55,)), width=3 if active else 2)
+    img.alpha_composite(layer)
+
+
+def _ornament(d: ImageDraw.ImageDraw, cx: float, y: float, half: int, crown: bool = True,
+              sides: tuple = (-1, 1), gap: int | None = None) -> None:
+    """Złoty ozdobnik: linie zanikające ku brzegom i mała korona pośrodku (jak w nagłówku makiety)."""
+    gap = gap if gap is not None else (26 if crown else 6)
+    for side in sides:
+        steps = 24
+        for i in range(steps):
+            a = int(200 * (1 - i / steps))
+            xa = cx + side * (gap + half * i / steps)
+            xb = cx + side * (gap + half * (i + 1) / steps)
+            d.line([(xa, y), (xb, y)], fill=ACCENT + (a,), width=2)
+    if crown:
+        w, h = 30, 20
+        pts = [(cx - w / 2, y + h / 2), (cx - w / 2, y - h / 2 + 4), (cx - w / 4, y + 1), (cx, y - h / 2),
+               (cx + w / 4, y + 1), (cx + w / 2, y - h / 2 + 4), (cx + w / 2, y + h / 2)]
+        d.polygon(pts, fill=ACCENT)
+        for px in (cx - w / 2, cx, cx + w / 2):
+            py = y - h / 2 + (0 if px == cx else 4)
+            d.ellipse([px - 3, py - 3, px + 3, py + 3], fill=ACCENT)
 
 
 def _sprites() -> dict:
@@ -141,18 +202,37 @@ class Renderer:
 
     # ---------- warstwy ----------
     def _draw_squares(self) -> Image.Image:
-        img = Image.new("RGBA", (W, H), BG + (255,))
+        img = _gradient_bg()
+        fx0, fy0 = BOARD_X - FRAME_PAD, BOARD_Y - FRAME_PAD
+        fx1, fy1 = BOARD_X + BOARD + FRAME_PAD, BOARD_Y + BOARD + FRAME_PAD
+        # cień i złota poświata pod ramą
+        fx = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ImageDraw.Draw(fx).rounded_rectangle([fx0 + 6, fy0 + 14, fx1 + 6, fy1 + 14], radius=14, fill=(0, 0, 0, 200))
+        img.alpha_composite(fx.filter(ImageFilter.GaussianBlur(18)))
+        fx = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ImageDraw.Draw(fx).rounded_rectangle([fx0, fy0, fx1, fy1], radius=14, outline=ACCENT + (120,), width=10)
+        img.alpha_composite(fx.filter(ImageFilter.GaussianBlur(14)))
         d = ImageDraw.Draw(img)
+        d.rounded_rectangle([fx0, fy0, fx1, fy1], radius=14, fill=(30, 27, 22), outline=ACCENT, width=2)
+        d.rectangle([BOARD_X - 3, BOARD_Y - 3, BOARD_X + BOARD + 2, BOARD_Y + BOARD + 2], outline=GOLD_DIM, width=1)
+        # pola jak stary pergamin: delikatne ziarno + jaśniejszy środek, ciemniejsze rogi
+        board = Image.new("RGB", (BOARD, BOARD))
+        bd = ImageDraw.Draw(board)
         for sq in chess.SQUARES:
             x, y = _sq_xy(sq)
             light = (chess.square_file(sq) + chess.square_rank(sq)) % 2 == 1
-            d.rectangle([x, y, x + SQ - 1, y + SQ - 1], fill=LIGHT if light else DARK)
-        f = _font(20, True)
+            bd.rectangle([x - BOARD_X, y - BOARD_Y, x - BOARD_X + SQ - 1, y - BOARD_Y + SQ - 1], fill=LIGHT if light else DARK)
+        board = Image.blend(board, Image.effect_noise((BOARD, BOARD), 30).convert("RGB"), 0.05)
+        vign = Image.radial_gradient("L").resize((BOARD, BOARD)).point(lambda v: int(v * 0.30))
+        board.paste(Image.new("RGB", (BOARD, BOARD), (40, 26, 12)), (0, 0), vign)
+        img.paste(board, (BOARD_X, BOARD_Y))
+        f = _serif(21, "bold")
+        on_light, on_dark = (110, 86, 58), (224, 206, 172)
         for i in range(8):
-            d.text((BOARD_X + i * SQ + SQ - 18, BOARD_Y + BOARD - 28), "abcdefgh"[i], font=f,
-                   fill=LIGHT if i % 2 == 0 else DARK)
-            d.text((BOARD_X + 6, BOARD_Y + i * SQ + 4), str(8 - i), font=f,
-                   fill=DARK if i % 2 == 0 else LIGHT)
+            d.text((BOARD_X + i * SQ + SQ - 18, BOARD_Y + BOARD - 32), "abcdefgh"[i], font=f,
+                   fill=on_dark if i % 2 == 0 else on_light)
+            d.text((BOARD_X + 7, BOARD_Y + i * SQ + 2), str(8 - i), font=f,
+                   fill=on_light if i % 2 == 0 else on_dark, features=LNUM)
         return img
 
     def _photo(self, player: dict) -> Image.Image:
@@ -174,16 +254,20 @@ class Renderer:
         else:
             d = ImageDraw.Draw(box)
             initials = "".join(w[0] for w in (player["first"] + " " + player["last"]).split()[:3] if w[0].isalpha())
-            f = _font(84, True)
+            f = _serif(84, "bold")
             tw = d.textlength(initials.upper(), font=f)
-            d.text(((PHOTO_W - tw) / 2, PHOTO_H / 2 - 52), initials.upper(), font=f, fill=DIM)
+            d.text(((PHOTO_W - tw) / 2, PHOTO_H / 2 - 56), initials.upper(), font=f, fill=GOLD_DIM)
+        mask = Image.new("L", (PHOTO_W, PHOTO_H), 0)
+        ImageDraw.Draw(mask).rounded_rectangle([0, 0, PHOTO_W - 1, PHOTO_H - 1], radius=14, fill=255)
+        box.putalpha(mask)
+        ImageDraw.Draw(box).rounded_rectangle([0, 0, PHOTO_W - 1, PHOTO_H - 1], radius=14, outline=ACCENT + (150,), width=2)
         return box
 
     def _name(self, d: ImageDraw.ImageDraw, player: dict, x: int, y: int, piece_white: bool) -> int:
         """Imię (mniejsze) i nazwisko (duże, wersalikami). Zwraca wysokość bloku."""
         r = 9
         d.ellipse([x, y + 8, x + 2 * r, y + 8 + 2 * r],
-                  fill=(245, 245, 245) if piece_white else (20, 20, 20), outline=(150, 150, 150), width=2)
+                  fill=(245, 240, 228) if piece_white else (16, 15, 13), outline=ACCENT, width=2)
         tx = x + 2 * r + 12
         width = LEFT_W - (tx - LEFT_X)
         hgt = 0
@@ -191,12 +275,15 @@ class Renderer:
             d.text((tx, y + 2), player["first"], font=_fit(d, player["first"], 26, width, False), fill=DIM)
             hgt += 36
         last = player["last"].upper()
-        lines = _wrap(d, last, _font(40, True), width, 2)
+        lines = _wrap(d, last, _serif(40, "bold"), width, 2)
         if len(lines) > 1:  # długie (np. konsultacja) — mniejszy krój
-            lines = _wrap(d, last, _font(30, True), width, 3)
-            f, lh = _font(30, True), 36
+            lines = _wrap(d, last, _serif(30, "bold"), width, 3)
+            f, lh = _serif(30, "bold"), 36
         else:
-            f, lh = _fit(d, last, 40, width, True), 48
+            size = 40
+            while size > 18 and d.textlength(last, font=_serif(size, "bold")) > width:
+                size -= 2
+            f, lh = _serif(size, "bold"), 48
         for i, ln in enumerate(lines):
             d.text((tx, y + hgt + i * lh), ln, font=f, fill=FG)
         hgt += lh * len(lines)
@@ -221,60 +308,70 @@ class Renderer:
         if white_to_move in self._left:
             return self._left[white_to_move]
         img = Image.new("RGBA", (BOARD_X, H), (0, 0, 0, 0))
-        d = ImageDraw.Draw(img)
-        # czarne u góry (tak jak na szachownicy)
-        img.alpha_composite(self._photo(self.black), (LEFT_X, BOARD_Y))
-        top_name_y = BOARD_Y + PHOTO_H + 18
-        top_h = self._name(d, self.black, LEFT_X, top_name_y, piece_white=False)
-        # białe u dołu
-        photo_y = BOARD_Y + BOARD - PHOTO_H
-        img.alpha_composite(self._photo(self.white), (LEFT_X, photo_y))
         probe = Image.new("RGBA", (BOARD_X, 400))
+        # karty graczy: czarne u góry (tak jak na szachownicy), białe u dołu; aktywna = strona na ruchu
+        top_name_y = BOARD_Y + PHOTO_H + 18
+        top_h = self._name(ImageDraw.Draw(probe), self.black, LEFT_X, 0, piece_white=False)
+        photo_y = BOARD_Y + BOARD - PHOTO_H
         bot_h = self._name(ImageDraw.Draw(probe), self.white, LEFT_X, 0, piece_white=True)
         bot_name_y = photo_y - 18 - bot_h
+        cx0, cx1 = LEFT_X - 22, LEFT_X + LEFT_W + 8
+        top_card_bot, bot_card_top = top_name_y + top_h + 10, bot_name_y - 14
+        _card(img, (cx0, BOARD_Y - FRAME_PAD, cx1, top_card_bot), active=not white_to_move)
+        _card(img, (cx0, bot_card_top, cx1, BOARD_Y + BOARD + FRAME_PAD), active=white_to_move)
+        d = ImageDraw.Draw(img)
+        img.alpha_composite(self._photo(self.black), (LEFT_X, BOARD_Y))
+        self._name(d, self.black, LEFT_X, top_name_y, piece_white=False)
+        img.alpha_composite(self._photo(self.white), (LEFT_X, photo_y))
         self._name(d, self.white, LEFT_X, bot_name_y, piece_white=True)
-        # pasek przy stronie, która ma ruch
-        if white_to_move:
-            d.rectangle([LEFT_X - 18, bot_name_y, LEFT_X - 12, photo_y + PHOTO_H], fill=ACCENT)
-        else:
-            d.rectangle([LEFT_X - 18, BOARD_Y, LEFT_X - 12, top_name_y + top_h], fill=ACCENT)
-        # środek: rok + opis
-        mid_top, mid_bot = top_name_y + top_h + 20, bot_name_y - 20
+        # środek: ozdobnik, rok (szeryfowy, złoty) + opis
+        mid_top, mid_bot = top_card_bot + 14, bot_card_top - 12
         main_cap, _, sub_cap = self.caption.partition(" · ")
-        room = max(1, (mid_bot - mid_top - 74) // 34)  # ile wierszy podpisu mieści się między graczami
+        room = max(1, (mid_bot - mid_top - 112) // 34)  # ile wierszy podpisu mieści się między graczami
         cap_lines = [(ln, FG) for ln in _wrap(d, main_cap, self.f_label, LEFT_W, max(1, min(3, room - (1 if sub_cap else 0))))]
         if sub_cap and len(cap_lines) < room:
             cap_lines += [(ln, DIM) for ln in _wrap(d, sub_cap, self.f_label, LEFT_W, 1)]
-        block = 64 + 10 + 34 * len(cap_lines)
+        block = 26 + 74 + 34 * len(cap_lines)
         y = mid_top + max(0, (mid_bot - mid_top - block) // 2)
-        d.line([LEFT_X, y - 12, LEFT_X + 60, y - 12], fill=ACCENT, width=3)
-        d.text((LEFT_X, y), str(self.year), font=_font(56, True), fill=ACCENT)
+        cx = LEFT_X + LEFT_W / 2 - 7
+        _ornament(d, cx, y + 8, 120)
+        f_year = _serif(60, "bold")
+        d.text((cx, y + 26), str(self.year), font=f_year, fill=ACCENT, anchor="ma", features=LNUM)
         for i, (ln, col) in enumerate(cap_lines):
-            d.text((LEFT_X, y + 74 + i * 34), ln, font=self.f_label, fill=col)
+            d.text((cx, y + 26 + 74 + i * 34), ln, font=self.f_label, fill=col, anchor="ma")
         self._left[white_to_move] = img
         return img
 
     def right_panel(self, k: int) -> Image.Image:
-        """Panel ruchów po k półruchach."""
+        """Panel ruchów po k półruchach: karta z nagłówkiem, bieżący ruch (szeryfowy, złoty) i lista ruchów w "pigułkach"."""
         if k in self._right:
             return self._right[k]
         x0 = BOARD_X + BOARD
         img = Image.new("RGBA", (W - x0, H), (0, 0, 0, 0))
-        d = ImageDraw.Draw(img)
         lx = RIGHT_X - x0
-        d.text((lx, BOARD_Y), L.t["moves_header"], font=self.f_small, fill=DIM)
+        _card(img, (lx - 22, BOARD_Y - FRAME_PAD, lx + RIGHT_W + 8, BOARD_Y + BOARD + FRAME_PAD))
+        d = ImageDraw.Draw(img)
+        mid = lx + RIGHT_W / 2 - 7
+        head = L.t["moves_header"].upper()
+        f_head = _font(18, True)
+        d.text((mid, BOARD_Y + 8), head, font=f_head, fill=ACCENT, anchor="ma")
+        hw = d.textlength(head, font=f_head) / 2
+        _ornament(d, mid, BOARD_Y + 17, 80, crown=False, gap=int(hw) + 14)
         cur = label(self.game.plies[k - 1]) if k else "—"
-        d.text((lx, BOARD_Y + 30), cur, font=_fit(d, cur, 58, RIGHT_W, True), fill=ACCENT)
-        d.line([lx, BOARD_Y + 115, lx + RIGHT_W, BOARD_Y + 115], fill=(60, 58, 55), width=2)
+        size = 60
+        while size > 24 and d.textlength(cur, font=_serif(size, "bold")) > RIGHT_W - 20:
+            size -= 2
+        d.text((mid, BOARD_Y + 44), cur, font=_serif(size, "bold"), fill=ACCENT, anchor="ma", features=LNUM)
+        _ornament(d, mid, BOARD_Y + 132, 150)
 
-        row_h, top = 40, BOARD_Y + 140
+        row_h, top = 44, BOARD_Y + 160
         rows = (BOARD_Y + BOARD - top) // row_h
         plies = self.game.plies
         last_move = plies[-1].move_number
         first_move_no = plies[0].move_number
         cur_move = plies[k - 1].move_number if k else first_move_no
         start = max(first_move_no, cur_move - rows + 1)  # tylko rozegrane ruchy, bieżący na dole
-        col_num, col_w, col_b = lx, lx + 70, lx + 70 + (RIGHT_W - 70) // 2
+        col_num, col_w, col_b = lx, lx + 64, lx + 64 + (RIGHT_W - 64) // 2
         by_move = {}
         for p in plies:
             by_move.setdefault(p.move_number, {})[p.color] = p
@@ -283,17 +380,19 @@ class Renderer:
             if mv > min(last_move, cur_move):
                 break
             y = top + i * row_h
-            d.text((col_num, y + 3), f"{mv}.", font=self.f_num, fill=DIM)
+            d.text((col_num, y + 4), f"{mv}.", font=self.f_num, fill=DIM)
             for color, cx in ((chess.WHITE, col_w), (chess.BLACK, col_b)):
                 p = by_move.get(mv, {}).get(color)
                 if p is None or p.index > k:
                     continue
                 txt = san_local(p.san)
+                tw = d.textlength(txt, font=self.f_move)
+                pill = [cx - 10, y - 2, cx + tw + 10, y + row_h - 8]
                 if p.index == k:
-                    tw = d.textlength(txt, font=self.f_move)
-                    d.rounded_rectangle([cx - 8, y - 2, cx + tw + 8, y + row_h - 6], radius=6, fill=(60, 52, 20))
-                    d.text((cx, y), txt, font=self.f_move, fill=ACCENT)
+                    d.rounded_rectangle(pill, radius=10, fill=(78, 60, 24), outline=ACCENT, width=2)
+                    d.text((cx, y), txt, font=self.f_move, fill=(255, 226, 150))
                 else:
+                    d.rounded_rectangle(pill, radius=10, fill=(42, 38, 33), outline=(74, 66, 54), width=1)
                     d.text((cx, y), txt, font=self.f_move, fill=FG)
         self._right[k] = img
         return img

@@ -13,6 +13,12 @@ Pliki:
 - src/script_check.py — markery {{m:N}} (ruch czytany, tekst ruchu wstawia system) i {{s:N}} (ruch cichy); twarda walidacja
 - src/tts_inworld.py — POST https://api.inworld.ai/tts/v1/voice, timestampType WORD, cache na dysku, dopasowanie słów przez difflib
 - src/render.py — klatki 1920x1080: szachownica 1000x1000 na środku (białe na dole); lewa kolumna: czarne u góry, białe u dołu (zdjęcie, imię, NAZWISKO, pasek przy stronie na ruchu), pośrodku rok + catalog.label_pl; prawa kolumna: bieżący ruch + lista ruchów (tylko rozegrane); animacja ruchu, schedule() bez nachodzenia animacji
+- STYLISTYKA KADRU (decyzja właściciela, makieta "Вгадай хід гросмейстера"): "ciemny lux" — tło z radialnym gradientem
+  (ciepły środek, czarne brzegi) + połysk + ziarno (render._gradient_bg), plansza jak pergamin (LIGHT/DARK, ziarno, winieta)
+  w złotej ramie z poświatą i cieniem, złote podświetlenie ruchu (HL), karty z cienką złotą obwódką (render._card; strona na
+  ruchu — jasna obwódka z poświatą zamiast paska), złote ozdobniki z koroną (_ornament), ruchy w "pigułkach", bieżący — złota.
+  Nagłówki (nazwisko, rok, bieżący ruch, współrzędne): Playfair Display (assets/fonts/playfair, SIL OFL; statyczne wagi
+  wycięte z wersji zmiennej), render._serif(), cyfry równe (features lnum, wymaga raqm); kanał hi — Hind.
 - Krój: Montserrat (assets/fonts, SIL OFL — OFL.txt), render._font(size, bold, weight=regular|medium|semibold|bold|extrabold|black);
   domyślnie Medium / Bold; fallback DejaVu. Okładka: tytuł dopasowywany 64→40 px do 3 wierszy; rok nie dubluje się w plakietce.
 - src/players.py — nazwy do kadru (nadpisania *_first/*_last w katalogu), zdjęcia assets/players/<slug>.jpg + .json
