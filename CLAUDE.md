@@ -97,7 +97,13 @@ Pliki:
   weryfikacja: pgn_collect.py --catalog catalog/national_us.json. scheduler: historia i rubryka krajowa na przemian
   (episode.rubric), gdy jednej brak — druga. players.catalog_entry i fetch_portraits widzą też katalogi krajowe.
   national_us.json: 24 zwycięstwa Amerykanów nad mistrzami/pretendentami (bez duplikatów głównego katalogu); 22 z PGN
-  w ≥2 kolekcjach, Morphy–Anderssen 1858 i Christiansen–Karpov 1993 — 1 źródło (scheduler pomija). national_pl/de — do zrobienia.
+  w ≥2 kolekcjach, Morphy–Anderssen 1858 i Christiansen–Karpov 1993 — 1 źródło (scheduler pomija).
+  national_pl.json (23): zwycięstwa Polaków (też urodzonych na ziemiach polskich: Rubinstein, Najdorf, Winawer, Tartakower,
+  Przepiórka) nad mistrzami/pretendentami/czołówką, najpierw współczesne (Duda, Wojtaszek, Soćko, Krasenkow, Bartel) — 20 zweryfikowanych;
+  Duda–Kramnik 2019, Duda–Nepomniachtchi 2019 (tylko PgnMentor), Gukesh–Bartel 2024 (tylko TWIC) czekają; Janowski–Lasker 1909 odrzucony
+  (rundy niezgodne). national_de.json (24): Hübner, Naiditsch (do 2015), Keymer, Lasker, Tarrasch, Anderssen, Bogoljubow, Unzicker,
+  Sämisch, Darga, Lutz — 22 zweryfikowane; Keymer–Carlsen 2023 i Keymer–Ding 2024 tylko TWIC. Skan: wygrane graczy z kraju z partii
+  klasycznych (bez blitz/rapid/online), "mega" z ChessData nie liczy się jako źródło (to suma innych kolekcji).
   national_in.json (kanał hi): 19 zwycięstw Indusów (Anand: MŚ 2000/2007/2008/2010/2012/2014, PCA 1995, pretendenci; Sultan Khan
   1932; Harikrishna 2016; Gukesh/Praggnanandhaa 2023–24) — 14 zweryfikowanych; Gukesh–Caruana i Gukesh–Firouzja 2024,
   Praggnanandhaa–Carlsen 2024, Praggnanandhaa–Caruana 2023 i Anand–Kasparov 1991 tylko w 1 kolekcji (TWIC) — czekają na drugie

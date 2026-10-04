@@ -1,0 +1,608 @@
+{
+  "about": "Rubryka krajowa kanału DE: zwycięstwa niemieckich szachistów nad mistrzami świata, pretendentami i czołówką. Kandydaci ze skanu kolekcji, weryfikacja src/pgn_collect.py --catalog catalog/national_de.json (≥2 źródła).",
+  "games": [
+    {
+      "n": 1,
+      "id": "de_keymer_carlsen_2023",
+      "white": "Vincent Keymer",
+      "black": "Magnus Carlsen",
+      "year": 2023,
+      "event": "FIDE World Cup 2023",
+      "site": "Baku",
+      "round": "4",
+      "result": "1-0",
+      "moves": 58,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "FIDE-Weltpokal · Baku · Runde 4",
+      "event_de": "FIDE-Weltpokal · Baku · Runde 4",
+      "pgn_status": "single_source",
+      "pgn_sources": [
+        "twic"
+      ],
+      "pgn_verified": false
+    },
+    {
+      "n": 2,
+      "id": "de_huebner_kasparov_1992",
+      "white": "Robert Hübner",
+      "black": "Garry Kasparov",
+      "year": 1992,
+      "event": "Dortmund tournament",
+      "site": "Dortmund",
+      "round": "6",
+      "result": "1-0",
+      "moves": 50,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Dortmund · Runde 6",
+      "event_de": "Turnier · Dortmund · Runde 6",
+      "white_keys": [
+        "hubner",
+        "huebner"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 3,
+      "id": "de_naiditsch_carlsen_2015",
+      "white": "Arkadij Naiditsch",
+      "black": "Magnus Carlsen",
+      "year": 2015,
+      "event": "GRENKE Chess Classic",
+      "site": "Baden-Baden",
+      "round": "3",
+      "result": "1-0",
+      "moves": 61,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "GRENKE Chess Classic · Baden-Baden · Runde 3",
+      "event_de": "GRENKE Chess Classic · Baden-Baden · Runde 3",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 4,
+      "id": "de_lasker_steinitz_1894",
+      "white": "Emanuel Lasker",
+      "black": "Wilhelm Steinitz",
+      "year": 1894,
+      "event": "World Championship match · Game 19",
+      "site": "Montreal",
+      "round": "19",
+      "result": "1-0",
+      "moves": 52,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "WM-Kampf Steinitz – Lasker · Partie 19",
+      "event_de": "WM-Kampf Steinitz – Lasker · Partie 19",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "chessopolis",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 5,
+      "id": "de_keymer_ding_2024",
+      "white": "Vincent Keymer",
+      "black": "Ding Liren",
+      "year": 2024,
+      "event": "GRENKE Chess Classic",
+      "site": "Karlsruhe",
+      "round": "10",
+      "result": "1-0",
+      "moves": 31,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "GRENKE Chess Classic · Karlsruhe · Runde 10",
+      "event_de": "GRENKE Chess Classic · Karlsruhe · Runde 10",
+      "black_keys": [
+        "ding"
+      ],
+      "pgn_status": "single_source",
+      "pgn_sources": [
+        "twic"
+      ],
+      "pgn_verified": false
+    },
+    {
+      "n": 6,
+      "id": "de_huebner_korchnoi_1980",
+      "white": "Robert Hübner",
+      "black": "Viktor Korchnoi",
+      "year": 1980,
+      "event": "Candidates final match · Game 1",
+      "site": "Merano",
+      "round": "1",
+      "result": "1-0",
+      "moves": 36,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Kandidatenfinale Hübner – Kortschnoi · Meran · Partie 1",
+      "event_de": "Kandidatenfinale Hübner – Kortschnoi · Meran · Partie 1",
+      "white_keys": [
+        "hubner",
+        "huebner"
+      ],
+      "black_keys": [
+        "korchnoi",
+        "kortschnoj"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "chessopolis",
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 7,
+      "id": "de_naiditsch_kramnik_2008",
+      "white": "Arkadij Naiditsch",
+      "black": "Vladimir Kramnik",
+      "year": 2008,
+      "event": "Dortmund Sparkassen Chess Meeting",
+      "site": "Dortmund",
+      "round": "3",
+      "result": "1-0",
+      "moves": 42,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Sparkassen Chess Meeting · Dortmund · Runde 3",
+      "event_de": "Sparkassen Chess Meeting · Dortmund · Runde 3",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 8,
+      "id": "de_bogoljubov_alekhine_1929",
+      "white": "Efim Bogoljubov",
+      "black": "Alexander Alekhine",
+      "year": 1929,
+      "event": "World Championship match · Game 18",
+      "site": "Netherlands",
+      "round": "18",
+      "result": "1-0",
+      "moves": 51,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "WM-Kampf Aljechin – Bogoljubow · Partie 18",
+      "event_de": "WM-Kampf Aljechin – Bogoljubow · Partie 18",
+      "black_keys": [
+        "alekhine",
+        "aljechin"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "chessopolis",
+        "nostalgia",
+        "pgnmentor",
+        "wch"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 9,
+      "id": "de_naiditsch_caruana_2009",
+      "white": "Arkadij Naiditsch",
+      "black": "Fabiano Caruana",
+      "year": 2009,
+      "event": "European Team Championship",
+      "site": "Novi Sad",
+      "round": "7",
+      "result": "1-0",
+      "moves": 48,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Mannschaftseuropameisterschaft · Novi Sad · Runde 7",
+      "event_de": "Mannschaftseuropameisterschaft · Novi Sad · Runde 7",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 10,
+      "id": "de_unzicker_fischer_1960",
+      "white": "Wolfgang Unzicker",
+      "black": "Robert James Fischer",
+      "year": 1960,
+      "event": "Buenos Aires tournament",
+      "site": "Buenos Aires",
+      "round": "11",
+      "result": "1-0",
+      "moves": 22,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Buenos Aires · Runde 11",
+      "event_de": "Turnier · Buenos Aires · Runde 11",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 11,
+      "id": "de_huebner_smyslov_1983",
+      "white": "Robert Hübner",
+      "black": "Vasily Smyslov",
+      "year": 1983,
+      "event": "Candidates quarterfinal match · Game 9",
+      "site": "Velden",
+      "round": "9",
+      "result": "1-0",
+      "moves": 36,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Kandidatenviertelfinale Hübner – Smyslow · Velden · Partie 9",
+      "event_de": "Kandidatenviertelfinale Hübner – Smyslow · Velden · Partie 9",
+      "white_keys": [
+        "hubner",
+        "huebner"
+      ],
+      "black_keys": [
+        "smyslov"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "chessopolis",
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 12,
+      "id": "de_lasker_alekhine_1914",
+      "white": "Emanuel Lasker",
+      "black": "Alexander Alekhine",
+      "year": 1914,
+      "event": "St. Petersburg tournament (final)",
+      "site": "St. Petersburg",
+      "round": null,
+      "result": "1-0",
+      "moves": 35,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Sankt Petersburg · Finalrunde",
+      "event_de": "Turnier · Sankt Petersburg · Finalrunde",
+      "black_keys": [
+        "alekhine",
+        "aljechin"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 13,
+      "id": "de_naiditsch_leko_2005",
+      "white": "Arkadij Naiditsch",
+      "black": "Peter Leko",
+      "year": 2005,
+      "event": "Dortmund tournament",
+      "site": "Dortmund",
+      "round": "3",
+      "result": "1-0",
+      "moves": 59,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Dortmund · Runde 3",
+      "event_de": "Turnier · Dortmund · Runde 3",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 14,
+      "id": "de_tarrasch_alekhine_1910",
+      "white": "Siegbert Tarrasch",
+      "black": "Alexander Alekhine",
+      "year": 1910,
+      "event": "DSB Congress, Hamburg",
+      "site": "Hamburg",
+      "round": "12",
+      "result": "1-0",
+      "moves": 51,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "DSB-Kongress · Hamburg · Runde 12",
+      "event_de": "DSB-Kongress · Hamburg · Runde 12",
+      "black_keys": [
+        "alekhine",
+        "aljechin"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 15,
+      "id": "de_tal_huebner_1973",
+      "white": "Mikhail Tal",
+      "black": "Robert Hübner",
+      "year": 1973,
+      "event": "Leningrad Interzonal",
+      "site": "Leningrad",
+      "round": "4",
+      "result": "0-1",
+      "moves": 34,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Interzonenturnier · Leningrad · Runde 4",
+      "event_de": "Interzonenturnier · Leningrad · Runde 4",
+      "black_keys": [
+        "hubner",
+        "huebner"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "wch"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 16,
+      "id": "de_anderssen_steinitz_1862",
+      "white": "Adolf Anderssen",
+      "black": "Wilhelm Steinitz",
+      "year": 1862,
+      "event": "London tournament",
+      "site": "London",
+      "round": null,
+      "result": "1-0",
+      "moves": 42,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · London",
+      "event_de": "Turnier · London",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "pgnmentor",
+        "wch"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 17,
+      "id": "de_naiditsch_kramnik_2010",
+      "white": "Arkadij Naiditsch",
+      "black": "Vladimir Kramnik",
+      "year": 2010,
+      "event": "Dortmund Sparkassen Chess Meeting",
+      "site": "Dortmund",
+      "round": "9",
+      "result": "1-0",
+      "moves": 34,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Sparkassen Chess Meeting · Dortmund · Runde 9",
+      "event_de": "Sparkassen Chess Meeting · Dortmund · Runde 9",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 18,
+      "id": "de_saemisch_capablanca_1929",
+      "white": "Fritz Sämisch",
+      "black": "José Raúl Capablanca",
+      "year": 1929,
+      "event": "Karlsbad tournament",
+      "site": "Karlsbad",
+      "round": null,
+      "result": "1-0",
+      "moves": 62,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Karlsbad",
+      "event_de": "Turnier · Karlsbad",
+      "white_keys": [
+        "samisch",
+        "saemisch"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 19,
+      "id": "de_huebner_spassky_1978",
+      "white": "Robert Hübner",
+      "black": "Boris Spassky",
+      "year": 1978,
+      "event": "Tilburg tournament",
+      "site": "Tilburg",
+      "round": "9",
+      "result": "1-0",
+      "moves": 55,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Tilburg · Runde 9",
+      "event_de": "Turnier · Tilburg · Runde 9",
+      "white_keys": [
+        "hubner",
+        "huebner"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 20,
+      "id": "de_lasker_marshall_1907",
+      "white": "Emanuel Lasker",
+      "black": "Frank James Marshall",
+      "year": 1907,
+      "event": "World Championship match · Game 2",
+      "site": "USA",
+      "round": "2",
+      "result": "1-0",
+      "moves": 52,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "WM-Kampf Lasker – Marshall · Partie 2",
+      "event_de": "WM-Kampf Lasker – Marshall · Partie 2",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "chessopolis",
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 21,
+      "id": "de_lutz_topalov_1994",
+      "white": "Christopher Lutz",
+      "black": "Veselin Topalov",
+      "year": 1994,
+      "event": "Cap d'Agde tournament",
+      "site": "Cap d'Agde",
+      "round": "5",
+      "result": "1-0",
+      "moves": 41,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Cap d'Agde · Runde 5",
+      "event_de": "Turnier · Cap d'Agde · Runde 5",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 22,
+      "id": "de_unzicker_tal_1975",
+      "white": "Wolfgang Unzicker",
+      "black": "Mikhail Tal",
+      "year": 1975,
+      "event": "Milan tournament",
+      "site": "Milan",
+      "round": "1",
+      "result": "1-0",
+      "moves": 32,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Mailand · Runde 1",
+      "event_de": "Turnier · Mailand · Runde 1",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "chessopolis",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 23,
+      "id": "de_lasker_euwe_1936",
+      "white": "Emanuel Lasker",
+      "black": "Max Euwe",
+      "year": 1936,
+      "event": "Nottingham tournament",
+      "site": "Nottingham",
+      "round": null,
+      "result": "1-0",
+      "moves": 33,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Turnier · Nottingham",
+      "event_de": "Turnier · Nottingham",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 24,
+      "id": "de_darga_spassky_1964",
+      "white": "Klaus Darga",
+      "black": "Boris Spassky",
+      "year": 1964,
+      "event": "Amsterdam Interzonal",
+      "site": "Amsterdam",
+      "round": "1",
+      "result": "1-0",
+      "moves": 96,
+      "nickname": null,
+      "disputed": false,
+      "country": "de",
+      "label_de": "Interzonenturnier · Amsterdam · Runde 1",
+      "event_de": "Interzonenturnier · Amsterdam · Runde 1",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    }
+  ]
+}

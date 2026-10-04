@@ -1,0 +1,558 @@
+{
+  "about": "Rubryka krajowa kanału PL: zwycięstwa polskich szachistów (także urodzonych na ziemiach polskich: Rubinstein, Janowski, Najdorf) nad mistrzami świata, pretendentami i czołówką. Kandydaci ze skanu kolekcji, weryfikacja src/pgn_collect.py --catalog catalog/national_pl.json (≥2 źródła).",
+  "games": [
+    {
+      "n": 1,
+      "id": "pl_duda_karjakin_2021",
+      "white": "Jan-Krzysztof Duda",
+      "black": "Sergey Karjakin",
+      "year": 2021,
+      "event": "FIDE World Cup 2021",
+      "site": "Krasnaya Polyana",
+      "round": "8",
+      "result": "1-0",
+      "moves": 30,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Puchar Świata FIDE · runda 8",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "pgnmentor",
+        "twic"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 2,
+      "id": "pl_wojtaszek_carlsen_2015",
+      "white": "Radosław Wojtaszek",
+      "black": "Magnus Carlsen",
+      "year": 2015,
+      "event": "Tata Steel Masters",
+      "site": "Wijk aan Zee",
+      "round": "3",
+      "result": "1-0",
+      "moves": 52,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej Tata Steel · Wijk aan Zee · runda 3",
+      "white_keys": [
+        "wojtaszek"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 3,
+      "id": "pl_duda_caruana_2022",
+      "white": "Jan-Krzysztof Duda",
+      "black": "Fabiano Caruana",
+      "year": 2022,
+      "event": "FIDE Candidates Tournament",
+      "site": "Madrid",
+      "round": "10",
+      "result": "1-0",
+      "moves": 57,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej Pretendentów · Madryt · runda 10",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "pgnmentor",
+        "twic"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 4,
+      "id": "pl_rubinstein_alekhine_1911",
+      "white": "Akiba Rubinstein",
+      "black": "Alexander Alekhine",
+      "year": 1911,
+      "event": "Karlsbad tournament",
+      "site": "Karlsbad",
+      "round": null,
+      "result": "1-0",
+      "moves": 76,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej · Karlowe Wary",
+      "black_keys": [
+        "alekhine",
+        "aljechin"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 5,
+      "id": "pl_carlsen_socko_2008",
+      "white": "Magnus Carlsen",
+      "black": "Bartosz Soćko",
+      "year": 2008,
+      "event": "Bundesliga 2008/09",
+      "site": "Eppingen",
+      "round": "9",
+      "result": "0-1",
+      "moves": 91,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Bundesliga · Eppingen · runda 9",
+      "black_keys": [
+        "socko"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 6,
+      "id": "pl_krasenkow_karpov_1998",
+      "white": "Michał Krasenkow",
+      "black": "Anatoly Karpov",
+      "year": 1998,
+      "event": "Rubinstein Memorial",
+      "site": "Polanica-Zdrój",
+      "round": "1",
+      "result": "1-0",
+      "moves": 52,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Memoriał Rubinsteina · Polanica-Zdrój · runda 1",
+      "white_keys": [
+        "krasenkow"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 7,
+      "id": "pl_wojtaszek_caruana_2015",
+      "white": "Radosław Wojtaszek",
+      "black": "Fabiano Caruana",
+      "year": 2015,
+      "event": "Tata Steel Masters",
+      "site": "Wijk aan Zee",
+      "round": "5",
+      "result": "1-0",
+      "moves": 47,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej Tata Steel · Wijk aan Zee · runda 5",
+      "white_keys": [
+        "wojtaszek"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 8,
+      "id": "pl_duda_kramnik_2019",
+      "white": "Jan-Krzysztof Duda",
+      "black": "Vladimir Kramnik",
+      "year": 2019,
+      "event": "Tata Steel Masters",
+      "site": "Wijk aan Zee",
+      "round": "8",
+      "result": "1-0",
+      "moves": 45,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej Tata Steel · Wijk aan Zee · runda 8",
+      "pgn_status": "single_source",
+      "pgn_sources": [
+        "pgnmentor"
+      ],
+      "pgn_verified": false
+    },
+    {
+      "n": 9,
+      "id": "pl_bartel_caruana_2012",
+      "white": "Mateusz Bartel",
+      "black": "Fabiano Caruana",
+      "year": 2012,
+      "event": "Aeroflot Open",
+      "site": "Moscow",
+      "round": "7",
+      "result": "1-0",
+      "moves": 22,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Aeroflot Open · Moskwa · runda 7",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 10,
+      "id": "pl_alekhine_tartakower_1922",
+      "white": "Alexander Alekhine",
+      "black": "Savielly Tartakower",
+      "year": 1922,
+      "event": "Pistyan tournament",
+      "site": "Pistyan",
+      "round": "4",
+      "result": "0-1",
+      "moves": 31,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej · Pieszczany · runda 4",
+      "white_keys": [
+        "alekhine",
+        "aljechin"
+      ],
+      "black_keys": [
+        "tartakower"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 11,
+      "id": "pl_topalov_wojtaszek_2013",
+      "white": "Veselin Topalov",
+      "black": "Radosław Wojtaszek",
+      "year": 2013,
+      "event": "European Club Cup",
+      "site": "Rhodes",
+      "round": "6",
+      "result": "0-1",
+      "moves": 52,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Klubowy Puchar Europy · Rodos · runda 6",
+      "black_keys": [
+        "wojtaszek"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 12,
+      "id": "pl_duda_nepomniachtchi_2019",
+      "white": "Jan-Krzysztof Duda",
+      "black": "Ian Nepomniachtchi",
+      "year": 2019,
+      "event": "FIDE Grand Prix Hamburg",
+      "site": "Hamburg",
+      "round": "1",
+      "result": "1-0",
+      "moves": 44,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Grand Prix FIDE · Hamburg · runda 1",
+      "pgn_status": "single_source",
+      "pgn_sources": [
+        "pgnmentor"
+      ],
+      "pgn_verified": false
+    },
+    {
+      "n": 13,
+      "id": "pl_najdorf_botvinnik_1946",
+      "white": "Miguel Najdorf",
+      "black": "Mikhail Botvinnik",
+      "year": 1946,
+      "event": "Groningen tournament",
+      "site": "Groningen",
+      "round": "19",
+      "result": "1-0",
+      "moves": 40,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej · Groningen · runda 19",
+      "white_keys": [
+        "najdorf"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 14,
+      "id": "pl_bartel_nepomniachtchi_2015",
+      "white": "Mateusz Bartel",
+      "black": "Ian Nepomniachtchi",
+      "year": 2015,
+      "event": "European Individual Championship",
+      "site": "Jerusalem",
+      "round": "11",
+      "result": "1-0",
+      "moves": 39,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Indywidualne mistrzostwa Europy · Jerozolima · runda 11",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 15,
+      "id": "pl_tarrasch_rubinstein_1912",
+      "white": "Siegbert Tarrasch",
+      "black": "Akiba Rubinstein",
+      "year": 1912,
+      "event": "San Sebastián tournament",
+      "site": "San Sebastián",
+      "round": "16",
+      "result": "0-1",
+      "moves": 56,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej · San Sebastián · runda 16",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 16,
+      "id": "pl_gukesh_bartel_2024",
+      "white": "Gukesh Dommaraju",
+      "black": "Mateusz Bartel",
+      "year": 2024,
+      "event": "Prague Masters",
+      "site": "Prague",
+      "round": "6",
+      "result": "0-1",
+      "moves": 40,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Prague Masters · Praga · runda 6",
+      "white_keys": [
+        "gukesh"
+      ],
+      "pgn_status": "single_source",
+      "pgn_sources": [
+        "twic"
+      ],
+      "pgn_verified": false
+    },
+    {
+      "n": 17,
+      "id": "pl_short_krasenkow_2004",
+      "white": "Nigel Short",
+      "black": "Michał Krasenkow",
+      "year": 2004,
+      "event": "FIDE World Championship knockout",
+      "site": "Tripoli",
+      "round": "2",
+      "result": "0-1",
+      "moves": 122,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Mistrzostwa świata FIDE (system pucharowy) · Trypolis · runda 2",
+      "black_keys": [
+        "krasenkow"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 18,
+      "id": "pl_chigorin_winawer_1883",
+      "white": "Mikhail Chigorin",
+      "black": "Szymon Winawer",
+      "year": 1883,
+      "event": "London tournament",
+      "site": "London",
+      "round": "15",
+      "result": "0-1",
+      "moves": 30,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej · Londyn · runda 15",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "pgnmentor",
+        "wch"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 19,
+      "id": "pl_rubinstein_euwe_1922",
+      "white": "Akiba Rubinstein",
+      "black": "Max Euwe",
+      "year": 1922,
+      "event": "London tournament",
+      "site": "London",
+      "round": "11",
+      "result": "1-0",
+      "moves": 42,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej · Londyn · runda 11",
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 20,
+      "id": "pl_najdorf_petrosian_1953",
+      "white": "Miguel Najdorf",
+      "black": "Tigran Petrosian",
+      "year": 1953,
+      "event": "Candidates Tournament",
+      "site": "Zurich",
+      "round": "6",
+      "result": "1-0",
+      "moves": 33,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej Pretendentów · Zurych · runda 6",
+      "white_keys": [
+        "najdorf"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "chessopolis",
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 21,
+      "id": "pl_topalov_krasenkow_1995",
+      "white": "Veselin Topalov",
+      "black": "Michał Krasenkow",
+      "year": 1995,
+      "event": "Rubinstein Memorial",
+      "site": "Polanica-Zdrój",
+      "round": "11",
+      "result": "0-1",
+      "moves": 31,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Memoriał Rubinsteina · Polanica-Zdrój · runda 11",
+      "black_keys": [
+        "krasenkow"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "kingbase",
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 22,
+      "id": "pl_przepiorka_nimzowitsch_1930",
+      "white": "Dawid Przepiórka",
+      "black": "Aron Nimzowitsch",
+      "year": 1930,
+      "event": "Frankfurt tournament",
+      "site": "Frankfurt",
+      "round": "2",
+      "result": "1-0",
+      "moves": 72,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej · Frankfurt · runda 2",
+      "white_keys": [
+        "przepiorka"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    },
+    {
+      "n": 23,
+      "id": "pl_tartakower_euwe_1921",
+      "white": "Savielly Tartakower",
+      "black": "Max Euwe",
+      "year": 1921,
+      "event": "Budapest tournament",
+      "site": "Budapest",
+      "round": null,
+      "result": "1-0",
+      "moves": 17,
+      "nickname": null,
+      "disputed": false,
+      "country": "pl",
+      "label_pl": "Turniej · Budapeszt",
+      "white_keys": [
+        "tartakower"
+      ],
+      "pgn_status": "verified",
+      "pgn_sources": [
+        "nostalgia",
+        "pgnmentor"
+      ],
+      "pgn_verified": true
+    }
+  ]
+}
