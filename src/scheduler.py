@@ -236,9 +236,17 @@ def deliver_package(game: dict, pgn: Path, video: Path, title: str, description:
 
     g = load_game(pgn)
     tag = tag or f"{L.tag_prefix}ep{number:03d}-{game['id']}"
+    from cover_marks import compute as cover_marks
+
+    try:
+        marks = cover_marks(g, seed=number or game["id"])
+        print("Okładka — znaki:", "; ".join(marks.notes) or "strzałka ostatniego ruchu", f"[{marks.glyph or '-'}]")
+    except Exception as e:  # noqa: BLE001 — strzałki to ozdoba, nie blokują odcinka
+        print(f"::warning::Okładka — strzałki: {e.__class__.__name__}: {str(e)[:200]}")
+        marks = None
     cover = make_cover(g, title.split(" | ")[0], side(game, "white", game["white"]),
                        side(game, "black", game["black"]), str(game["year"]), L.out / f"{game['id']}_cover.jpg",
-                       badge=badge)
+                       badge=badge, marks=marks)
     from cover_ai import enabled as ai_enabled, make_ai_cover
     ai_cover, ai_note = (make_ai_cover(cover, cover.with_name(f"{game['id']}_cover_ai.jpg"))
                          if remote and ai_enabled() else (None, ""))

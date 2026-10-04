@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FLAGS = ROOT / "assets" / "flags"
 CACHE = ROOT / "assets" / "players" / "countries.json"
 
+STATE_YEARS = {"su": (1922, 1991), "de-nazi": (1933, 1945)}
 TEXT_CODES = {"ru": "RU", "by": "BY", "su": "SU", "de-nazi": "DE"}
 SPECIAL = {  # państwa bez kodu ISO albo z oznaczeniem tekstowym
     "Q15180": "su",      # ZSRR
@@ -96,8 +97,14 @@ def country(name: str, year: int | None = None) -> str | None:
     rec = _load().get(name)
     if not rec or not rec.get("periods"):
         return None
-    ps = rec["periods"]
+    # państwa, które już nie istnieją, mają znane lata — okres bez dat dostaje je z historii; inaczej okres
+    # "do 2013" bez początku (Spasski: Francja) wygrywał z niedatowanym ZSRR także dla partii z 1972
+    ps = [dict(p, **{"from": p["from"] or STATE_YEARS[p["code"]][0], "to": p["to"] or STATE_YEARS[p["code"]][1]})
+          if p["code"] in STATE_YEARS else p for p in rec["periods"]]
     if year:
+        for p in ps:  # najpierw okresy z obiema datami
+            if p["from"] and p["to"] and p["from"] <= year <= p["to"]:
+                return p["code"]
         for p in ps:
             if (p["from"] or -9999) <= year <= (p["to"] or 9999) and (p["from"] or p["to"]):
                 return p["code"]

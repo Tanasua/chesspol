@@ -15,21 +15,40 @@ from render import ACCENT, BG, DIM, FG, _fit, _font, _wrap
 CW, CH = 1280, 720
 BOARD_PX = 620
 PHOTO = (176, 210)
-GAP = 44  # odstęp między portretami (tu napis 'vs')
+GAP = 44
+GLYPH_COLORS = {"!": (38, 166, 65), "?": (214, 40, 40)}  # odstęp między portretami (tu napis 'vs')
 
 
-def _board_png(board: chess.Board, lastmove) -> Image.Image:
-    svg = chess.svg.board(board, size=BOARD_PX, coordinates=False, lastmove=lastmove,
+def _board_png(board: chess.Board, lastmove, arrows=()) -> Image.Image:
+    arrows = [chess.svg.Arrow(a, b, color=c) for a, b, c in arrows]
+    svg = chess.svg.board(board, size=BOARD_PX, coordinates=False, lastmove=lastmove, arrows=arrows,
                           colors={"square light": "#eed8b5", "square dark": "#b58863",
                                   "square light lastmove": "#f6d65a", "square dark lastmove": "#d9b440"})
     png = cairosvg.svg2png(bytestring=svg.encode(), output_width=BOARD_PX, output_height=BOARD_PX)
     return Image.open(io.BytesIO(png)).convert("RGB")
 
 
-def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path, badge: str = "") -> Path:
+def _glyph(img: Image.Image, origin: tuple, square: int, glyph: str) -> None:
+    """Znak '!' (zielony) / '?' (czerwony) w kółku w prawym górnym rogu pola — jak w serwisach szachowych."""
+    sq = BOARD_PX / 8
+    cx = origin[0] + (chess.square_file(square) + 1) * sq - sq * 0.12
+    cy = origin[1] + (7 - chess.square_rank(square)) * sq + sq * 0.12
+    r = int(sq * 0.30)
+    d = ImageDraw.Draw(img)
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=GLYPH_COLORS[glyph], outline=(255, 255, 255), width=3)
+    f = _font(int(r * 1.5), True, weight="black")
+    d.text((cx, cy + 1), glyph, font=f, fill=(255, 255, 255), anchor="mm")
+
+
+def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path, badge: str = "",
+               marks=None) -> Path:
+    """marks: cover_marks.Marks (strzałki + znak '!'/'?'); None = tylko podświetlenie ostatniego ruchu."""
     img = Image.new("RGB", (CW, CH), BG)
     last = game.plies[-1]
-    img.paste(_board_png(chess.Board(last.fen_after), last.move), (50, (CH - BOARD_PX) // 2))
+    origin = (50, (CH - BOARD_PX) // 2)
+    img.paste(_board_png(chess.Board(last.fen_after), last.move, marks.arrows if marks else ()), origin)
+    if marks and marks.glyph:
+        _glyph(img, origin, marks.glyph_square, marks.glyph)
 
     d = ImageDraw.Draw(img)
     x, w = 720, CW - 720 - 50
