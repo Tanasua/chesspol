@@ -74,6 +74,7 @@ jobs:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}
           ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
+          HI_PIECES: ${{ vars.HI_PIECES || 'hindi' }}   # nazwy figur: hindi (राजा, हाथी…) albo english (किंग, रूक…)
           HOST_NAME: ${{ vars.HOST_NAME_HI }}   # imię prowadzącego (np. Lukas); puste = powitanie bez imienia
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
