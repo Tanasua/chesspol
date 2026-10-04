@@ -239,7 +239,15 @@ def deliver_package(game: dict, pgn: Path, video: Path, title: str, description:
     cover = make_cover(g, title.split(" | ")[0], side(game, "white", game["white"]),
                        side(game, "black", game["black"]), str(game["year"]), L.out / f"{game['id']}_cover.jpg",
                        badge=badge)
-    pkg = write_package(ROOT / "out" / "packages" / tag, video, cover, title, description, tags, when)
+    from cover_ai import enabled as ai_enabled, make_ai_cover
+    ai_cover, ai_note = (make_ai_cover(cover, cover.with_name(f"{game['id']}_cover_ai.jpg"))
+                         if remote and ai_enabled() else (None, ""))
+    if ai_cover:
+        print(f"Okładka OpenAI: {ai_cover} ({ai_note})")
+    elif ai_note:
+        print(f"::warning::Okładka OpenAI: {ai_note[:300]}")
+    pkg = write_package(ROOT / "out" / "packages" / tag, video, cover, title, description, tags, when,
+                        ai_cover=ai_cover, ai_note=ai_note)
     info = {"package": str((ROOT / "out" / "packages" / tag).relative_to(ROOT))}
     if not remote:
         return info

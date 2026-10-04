@@ -27,17 +27,21 @@ CHANNEL_UK = {"pl": "польський канал", "de": "німецький �
 
 
 def write_package(folder: Path, video: Path, cover: Path, title: str, description: str,
-                  tags: list, when_local: str) -> dict:
+                  tags: list, when_local: str, ai_cover: Path | None = None, ai_note: str = "") -> dict:
     folder.mkdir(parents=True, exist_ok=True)
     files = {"video": folder / "video.mp4", "cover": folder / "cover.jpg", "text": folder / "opis.txt"}
     shutil.copyfile(video, files["video"])
     shutil.copyfile(cover, files["cover"])
+    if ai_cover:
+        files["cover_ai"] = folder / "cover_ai.jpg"
+        shutil.copyfile(ai_cover, files["cover_ai"])
     text = (f"ПЛАНОВА ПУБЛІКАЦІЯ: {when_local}\n\n"
             f"ЗАГОЛОВОК:\n{title}\n\nОПИС:\n{description}\n\nТЕГИ:\n{', '.join(tags)}\n")
     files["text"].write_text(text, encoding="utf-8")
     meta = {"title": title, "description": description, "tags": tags, "publish_at_local": when_local}
     (folder / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return {"files": files, "text": text, "title": title, "description": description, "tags": tags}
+    return {"files": files, "text": text, "title": title, "description": description, "tags": tags,
+            "ai_note": ai_note}
 
 
 def github_release(tag: str, name: str, pkg: dict, cwd: Path) -> str | None:
@@ -50,7 +54,8 @@ def github_release(tag: str, name: str, pkg: dict, cwd: Path) -> str | None:
     if subprocess.run(["gh", "release", "view", tag], cwd=cwd, capture_output=True).returncode == 0:
         subprocess.run(["gh", "release", "delete", tag, "--yes", "--cleanup-tag"], cwd=cwd,
                        capture_output=True, text=True, check=True)
-    r = subprocess.run(["gh", "release", "create", tag, str(f["video"]), str(f["cover"]), str(f["text"]),
+    assets = [str(f[k]) for k in ("video", "cover", "cover_ai", "text") if k in f]
+    r = subprocess.run(["gh", "release", "create", tag, *assets,
                         "--title", name, "--notes-file", str(notes)],
                        cwd=cwd, capture_output=True, text=True, check=True)
     return r.stdout.strip().splitlines()[-1] if r.stdout.strip() else None
@@ -102,8 +107,23 @@ def telegram(pkg: dict, title: str, when_local: str, release_url: str | None, nu
     caption = (f"{L.flag} Новий ролик — {CHANNEL_UK.get(L.code, L.code)}{episode}\n"
                f"🗓 Опублікувати: {when_local}\n\n"
                f"Нижче: відео, потім заголовок, опис і теги окремими блоками — натисніть на блок, щоб скопіювати.")[:1024]
-    with open(f["cover"], "rb") as fh:
-        _tg("sendPhoto", data={"chat_id": chat, "caption": caption}, files={"photo": fh})
+    if "cover_ai" in f:
+        # obie okładki obok siebie (album) — do porównania, czy OpenAI nic nie dodał
+        media = [{"type": "photo", "media": "attach://ours", "caption": caption},
+                 {"type": "photo", "media": "attach://ai",
+                  "caption": f"🤖 Обкладинка від OpenAI ({pkg.get('ai_note') or 'AI'}) — звірте з нашою"}]
+        with open(f["cover"], "rb") as a, open(f["cover_ai"], "rb") as b:
+            _tg("sendMediaGroup", data={"chat_id": chat, "media": json.dumps(media, ensure_ascii=False)},
+                files={"ours": a, "ai": b})
+        with open(f["cover_ai"], "rb") as fh:  # bez kompresji Telegrama — do wgrania na YouTube
+            _tg("sendDocument", data={"chat_id": chat, "caption": "🖼 Обкладинка OpenAI у повній якості"},
+                files={"document": ("cover_ai.jpg", fh, "image/jpeg")})
+    else:
+        with open(f["cover"], "rb") as fh:
+            _tg("sendPhoto", data={"chat_id": chat, "caption": caption}, files={"photo": fh})
+        if pkg.get("ai_note"):
+            _tg("sendMessage", data={"chat_id": chat,
+                                     "text": f"⚠️ Обкладинку OpenAI не згенеровано: {pkg['ai_note'][:600]}"})
     if f["video"].stat().st_size <= TG_LIMIT:
         with open(f["video"], "rb") as fh:
             _tg("sendDocument", data={"chat_id": chat, "caption": "🎬 Відео для завантаження на YouTube"},

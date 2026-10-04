@@ -31,6 +31,9 @@ Pliki:
 - src/pgn_collect.py — PGN z ≥2 niezależnych kolekcji (mirror rozim/ChessData: PgnMentor, ChessNostalgia, Chessopolis, RebelSite, WorldChampionships, Kingbase, Twic, Old…; + famous_games, ChessPGN); zgodność ruchów, wyniku, rundy i liczby ruchów
 - src/scheduler.py — co 3 dni 10:00 Europe/Kyiv; bufor 2 odcinków; PUBLISH_MODE=manual (domyślnie): paczka do ręcznego uploadu; PUBLISH_MODE=youtube: upload private + publishAt; stan w state/schedule.json
 - src/deliver.py, src/cover.py — paczka out/packages/epNNN-<id>/ (video.mp4, cover.jpg 1280x720, opis.txt: data, tytuł, opis [zachęta z LLM, karta partii, rozdziały z czasami z out/<id>.timing.json, PGN, atrybucja zdjęć, zdanie o weryfikacji PGN; BEZ akapitu o AI, BEZ zapisu ruchów i BEZ listy źródeł zdjęć — decyzje właściciela; autor/licencja zdjęcia tylko w kadrze], tagi) -> GitHub Release + opcjonalnie Telegram (sekrety TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; wideo ≤50 MB)
+- OKŁADKA AI: src/cover_ai.py — nasza okładka -> OpenAI Images API edit (COVER_AI_MODEL, domyślnie gpt-image-2.5-sunburst,
+  fallback gpt-image-2; 1536x864 -> 1280x720) z promptem właściciela (PROMPT, po ukraińsku, dosłownie) -> cover_ai.jpg w paczce
+  i Release; Telegram: album [nasza, AI] do porównania + cover_ai.jpg jako plik. Błąd/odmowa nie blokuje odcinka. COVER_AI=0 wyłącza.
 - Telegram/paczka: teksty dla właściciela PO UKRAIŃSKU (podpisy, nagłówki, data "пт, 02.10.2026 о 10:00 (за Києвом)"),
   tytuł/opis/tagi w języku kanału, każde w osobnym bloku <pre> (kopiowanie jednym dotknięciem); opis dzielony na części ≤3500 znaków
 - Tytuł YouTube: "<KICKER> <title> | Białe – Czarne (rok)"; kicker = 1–3 słowa WERSALIKAMI z "!" od LLM (pole "kicker",
