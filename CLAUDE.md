@@ -22,6 +22,13 @@ Pliki:
   paradoks, pytanie, odliczanie; fakty/oceny jak w scenariuszu; bez ruchów, markerów i cyfr; 40–300 znaków — script_check.build_hook).
   W tym czasie szachownica pokazuje pozycję po półruchu "ply" (render_video(flash=...)), potem powitanie i partia od startu;
   plansza nowości (preroll) przesunięta za hak. script_gen wymaga haka; stare scenariusze bez haka działają jak dawniej.
+- KLUCZOWE MOMENTY: src/key_moments.py (Stockfish, zasady 1 i 3) — ofiara (≥3 pkt materiału, nie wraca po 1/3/5 półruchach,
+  ocena grającego nie spada, przewaga przed ≤4 piony) albo zwrot oceny ≥2 piony (partia nierozstrzygnięta); maks. 2 na partię,
+  odstęp ≥8, bez 2 ostatnich półruchów; wariant silnika po ruchu (≤4 półruchy, ucięty przy "tam i z powrotem"; pomijamy, gdy
+  = dalszy ciąg partii). script_gen dodaje je do danych dla LLM i do scenariusza (script["key_moments"]); LLM MUSI wstawić
+  {{v:N}} raz zaraz po markerze N (script_check). System czyta wariant w notacji kanału i rysuje narastające strzałki
+  (Renderer.with_arrows: pod figurami, zielone = strona kluczowego ruchu, czerwone = przeciwnik, numer na strzałce);
+  partia stoi (schedule(barriers): kolejne ruchy dopiero VAR_HOLD=2 s po ostatnim ruchu wariantu).
 - Dźwięk figury: src/sfx.py — własna synteza (drewniane 'tok', bicie jaśniejsze z odbiciem), w chwili lądowania figury
   (ANIM_SEC*0.85 po starcie ruchu), SFX_GAIN_DB=-14, --no-sfx wyłącza; miksowany z lektorem przed muzyką.
 - Przewijanie pominiętych półruchów: AUTO_STEP 1.25 s/ruch (render.py, maks. 1.5); gdy lektor nie daje czasu, main.py rozcina

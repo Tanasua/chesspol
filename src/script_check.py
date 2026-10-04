@@ -12,6 +12,8 @@ Markery:
   {{m:N}}  - półruch N: system WSTAWIA jego zapis słowny (w języku kanału) do lektora
              i animuje ruch na pierwszym słowie tego zapisu.
   {{s:N}}  - półruch N animowany "po cichu" na następnym słowie tekstu.
+  {{v:N}}  - wariant silnika z pozycji po kluczowym półruchu N (script["key_moments"], src/key_moments.py):
+             system czyta jego ruchy i rysuje je narastającymi strzałkami; partia stoi w miejscu.
 Półruchy pominięte między markerami są odgrywane automatycznie tuż przed
 kolejnym markerem. LLM nigdy nie wypowiada ruchu własnymi słowami —
 zapis ruchu pochodzi wyłącznie z PGN, więc nie da się go "przekręcić".
@@ -22,13 +24,16 @@ import json
 import re
 from dataclasses import dataclass, field
 
+import chess
+
+from key_moments import line_plies
 from lang import notation
 
 _N = notation()
 spoken = _N.spoken
 PREPOSITIONS = _N.PREPOSITIONS
 
-MARKER_RE = re.compile(r"\{\{([ms]):(\d+)\}\}")
+MARKER_RE = re.compile(r"\{\{([msv]):(\d+)\}\}")
 # Surowe ruchy w tekście (notacja angielska, polska i niemiecka) — zakazane poza markerami.
 RAW_MOVE_RE = re.compile(r"(?<![\w-])(?:[KQRBNHWGSDTL]x?[a-h]?[1-8]?x?[a-h][1-8]|O-O(?:-O)?|[a-h]x[a-h][1-8])(?![\w])")
 MAX_AUTO_GAP = 6
@@ -46,6 +51,14 @@ class Anchor:
 
 
 @dataclass
+class VarMark:
+    """Ruch wariantu silnika (marker {{v:N}}): strzałka pojawia się na słowie token_index."""
+    ply_index: int        # kluczowy półruch N — wariant z pozycji PO nim
+    line_index: int       # który ruch wariantu (0..)
+    token_index: int
+
+
+@dataclass
 class Segment:
     id: str
     tts_text: str
@@ -53,6 +66,7 @@ class Segment:
     anchors: list = field(default_factory=list)
     pause_after: float = 0.5
     chapter: str = ""
+    variations: list = field(default_factory=list)   # [VarMark]
 
 
 def _tidy(tokens: list, anchors: list) -> tuple[list, list]:
@@ -106,6 +120,8 @@ def build_segments(script: dict, game) -> tuple[list, list]:
     n_plies = len(game.plies)
     segments, warnings = [], []
     last_ply = 0
+    moments = {km["ply"]: km for km in script.get("key_moments") or []}
+    used_v = set()
 
     for raw in script.get("segments", []):
         sid = raw["id"]
@@ -126,11 +142,30 @@ def build_segments(script: dict, game) -> tuple[list, list]:
                     f"[{sid}] cichy marker {m.group(0)} stoi w środku zdania — nie jest czytany, więc zdanie się "
                     f"rozpada. Stawiaj {{{{s:N}}}} tylko na początku zdania (po kropce) i nie opieraj na nim treści zdania.")
 
-        tokens, anchors = [], []
+        tokens, anchors, vmarks = [], [], []
         pos = 0
         for m in MARKER_RE.finditer(text):
             tokens.extend(text[pos:m.start()].split())
             kind, n = m.group(1), int(m.group(2))
+            if kind == "v":  # wariant silnika z pozycji po kluczowym półruchu N — czyta i rysuje system
+                if n not in moments:
+                    raise ScriptError(f"[{sid}] {m.group(0)}: półruch {n} nie jest kluczowym momentem "
+                                      f"(dozwolone: {sorted(moments) or 'brak'})")
+                if n in used_v:
+                    raise ScriptError(f"[{sid}] {m.group(0)} użyty drugi raz")
+                if last_ply != n:
+                    raise ScriptError(f"[{sid}] {m.group(0)} musi stać zaraz po markerze półruchu {n} "
+                                      f"(przed kolejnymi ruchami partii; teraz ostatni: {last_ply})")
+                used_v.add(n)
+                lp = line_plies(game.plies[n - 1].fen_after, [chess.Move.from_uci(u) for u in moments[n]["line"]])
+                for j, vp in enumerate(lp):
+                    vmarks.append(VarMark(n, j, len(tokens)))
+                    words = spoken(vp).split()
+                    if j < len(lp) - 1 and not words[-1].endswith((",", ".", "!", "?")):
+                        words[-1] += ","
+                    tokens.extend(words)
+                pos = m.end()
+                continue
             if not 1 <= n <= n_plies:
                 raise ScriptError(f"[{sid}] marker {m.group(0)} poza zakresem 1..{n_plies}")
             if n <= last_ply:
@@ -145,7 +180,7 @@ def build_segments(script: dict, game) -> tuple[list, list]:
             pos = m.end()
         tokens.extend(text[pos:].split())
 
-        tokens, anchors = _tidy(tokens, anchors)
+        tokens, _ = _tidy(tokens, anchors + vmarks)
         if not tokens:
             raise ScriptError(f"[{sid}] pusty segment")
         for a in anchors:  # cichy marker na samym końcu segmentu -> ostatnie słowo
@@ -153,7 +188,7 @@ def build_segments(script: dict, game) -> tuple[list, list]:
         segments.append(Segment(
             id=sid, tts_text=" ".join(tokens), tokens=tokens, anchors=anchors,
             pause_after=float(raw.get("pause_after", 0.5)),
-            chapter=(raw.get("chapter") or "").strip(),
+            chapter=(raw.get("chapter") or "").strip(), variations=vmarks,
         ))
 
     if not segments:
@@ -189,5 +224,10 @@ def build_segments(script: dict, game) -> tuple[list, list]:
                 raise ScriptError(f"Tytuł rozdziału za długi: '{c}' (maks. 60 znaków)")
     if last_ply != n_plies:
         raise ScriptError(f"Scenariusz kończy się na półruchu {last_ply}, a partia ma {n_plies}")
+    missing = sorted(set(moments) - used_v)
+    if missing:
+        raise ScriptError("Brak markerów wariantu silnika dla kluczowych momentów: "
+                          + ", ".join(f"{{{{v:{n}}}}}" for n in missing)
+                          + " — wstaw każdy raz, zaraz po markerze tego półruchu")
     build_hook(script, game)  # walidacja haka (jeśli jest)
     return segments, warnings

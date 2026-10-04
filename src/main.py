@@ -17,8 +17,11 @@ import sys
 import tempfile
 from pathlib import Path
 
+import chess
+
 from pgn_loader import load_game
 from lang import L, field_
+from key_moments import line_plies
 from phrases import OUTRO, cta_for, intro_for
 from players import catalog_entry, side
 from render import AUTO_STEP, Renderer, render_video, schedule
@@ -41,6 +44,12 @@ MUSIC = os.environ.get("MUSIC", str(ROOT / "assets" / "music" / "the_daily_ostin
 MUSIC_GAIN_DB = float(os.environ.get("MUSIC_GAIN_DB", "-20"))  # utwór ma ok. -16 LUFS -> ok. -36 LUFS w tle
 MUSIC_FADE_IN = 2.0
 MUSIC_FADE_OUT = 6.0
+
+
+VAR_HOLD = 2.0     # s — strzałki wariantu stoją jeszcze tyle po ostatnim ruchu wariantu, zanim partia ruszy dalej
+VAR_MAX = 12.0     # s — najdłużej po ostatnim ruchu wariantu (potem zwykła szachownica)
+VAR_HERO = (46, 184, 74, 215)    # ruchy strony, która zagrała kluczowy ruch
+VAR_OPP = (224, 52, 48, 215)     # odpowiedzi przeciwnika
 
 
 def build_audio(parts: list, out_wav: Path, workdir: Path) -> None:
@@ -131,6 +140,7 @@ def main() -> int:
     chapters = []
     preroll_until = None
     flash_until = None
+    var_marks, barriers = {}, {}  # kluczowe momenty: {N: [(nr ruchu wariantu, czas)]}, {N: koniec pauzy}
     for si, seg in enumerate(segments):
         if si == head and hook:  # koniec haka
             flash_until = cursor
@@ -143,11 +153,13 @@ def main() -> int:
         # Pominięte półruchy przed markerem przewijamy w tempie AUTO_STEP. Gdy lektor nie daje na to
         # dość czasu, rozcinamy nagranie tuż przed słowem markera i wstawiamy ciszę (muzyka gra dalej).
         clip_pos, shift = 0.0, 0.0
+        shifts = []  # (indeks słowa, przesunięcie od tego słowa) — do czasów strzałek wariantu
         for a in seg.anchors:
             t_word = times[a.token_index]
             gap = a.ply_index - (anchor_times[-1][1] if anchor_times else 0) - 1
             if gap > 0:
                 prev_t = anchor_times[-1][0] if anchor_times else 0.0
+                prev_t = max(prev_t, barriers.get(anchor_times[-1][1], 0.0) if anchor_times else 0.0)
                 deficit = (gap + 1) * AUTO_STEP - (cursor + shift + t_word - prev_t)
                 if deficit > 0.05:
                     cut = max(clip_pos, t_word - CUT_LEAD)
@@ -155,14 +167,32 @@ def main() -> int:
                         parts.append(("slice", (res.audio_path, clip_pos, cut)))
                     parts.append(("silence", deficit))
                     clip_pos, shift = cut, shift + deficit
+                    shifts.append((a.token_index, shift))
             anchor_times.append((cursor + shift + t_word, a.ply_index))
+        by_ply = {}
+        for vm in seg.variations:  # wariant silnika: strzałka na pierwszym słowie zapisu ruchu
+            sh = max((x for i, x in shifts if i <= vm.token_index), default=0.0)
+            by_ply.setdefault(vm.ply_index, []).append((vm.line_index, cursor + sh + times[vm.token_index]))
+        for n, marks in by_ply.items():
+            var_marks[n] = sorted(marks)
+            barriers[n] = marks[-1][1] + VAR_HOLD
         parts.append(("slice", (res.audio_path, clip_pos, None)) if clip_pos else ("file", res.audio_path))
         parts.append(("silence", seg.pause_after))
         cursor += res.duration + shift + seg.pause_after
     parts.append(("silence", TAIL))
     duration = cursor + TAIL
 
-    events = schedule(anchor_times, len(game.plies))
+    events = schedule(anchor_times, len(game.plies), barriers)
+    variations = []
+    moments = {km["ply"]: km for km in script.get("key_moments") or []}
+    for n, marks in var_marks.items():
+        lp = line_plies(game.plies[n - 1].fen_after, [chess.Move.from_uci(u) for u in moments[n]["line"]])
+        hero = game.plies[n - 1].color  # kto zagrał kluczowy ruch — jego ruchy w wariancie na zielono
+        arrows = [(lp[j].move.from_square, lp[j].move.to_square, t,
+                   VAR_HERO if lp[j].color == hero else VAR_OPP, j + 1) for j, t in marks]
+        start = marks[0][1] - 0.15
+        nxt = next((e.time for e in events if e.ply_index > n), duration)
+        variations.append({"ply": n, "start": start, "end": min(nxt, marks[-1][1] + VAR_MAX), "arrows": arrows})
     wanted = {p: t for t, p in anchor_times}
     for e in events:
         if e.ply_index in wanted and e.time - wanted[e.ply_index] > DRIFT_WARN:
@@ -206,7 +236,7 @@ def main() -> int:
             flash_until = max(0.0, events[0].time - 0.3)
         render_video(renderer, events, duration, wav, out, fps=args.fps,
                      preroll=(args.preroll, preroll_until) if args.preroll else None,
-                     flash=(hook_ply, flash_until) if hook else None)
+                     flash=(hook_ply, flash_until) if hook else None, variations=variations)
     timing = out.with_suffix(".timing.json")
     timing.write_text(json.dumps({"duration": round(duration, 2), "chapters": chapters,
                                   "moves": [[e.ply_index, round(e.time, 2)] for e in events],

@@ -48,6 +48,17 @@ DRAMATURGIE
   Bei Remis sag, dass die Partie remis endete.
 - Finale: sag, warum diese Partie wichtig ist.
 
+SCHLÜSSELMOMENTE (wenn die Daten einen Abschnitt SCHLÜSSELMOMENTE enthalten)
+- Setze für jeden Schlüsselmoment N GENAU EINMAL den Marker {{v:N}} direkt nach dem Marker von Halbzug N ({{m:N}} oder
+  {{s:N}}), vor dem nächsten Partiemarker — im selben oder im nächsten Segment. Das System hält die Partie dann an, liest
+  die Engine-Variante selbst vor und zeichnet sie mit wachsenden Pfeilen (grün — Züge der Seite, die den Schlüsselzug
+  gespielt hat, rot — Antworten des Gegners).
+- {{v:N}} steht wie {{m:N}}: nach einem Doppelpunkt oder am Satzanfang, nie nach einer Präposition. Z. B.:
+  "Die Engine zeigt, warum das funktioniert: {{v:31}}."
+- Vor der Variante ein Satz Ankündigung — klar, dass es eine Engine-Variante ist und NICHT Züge aus der Partie. Danach
+  1–2 Sätze zur Idee (ohne Züge, ohne Notation) und pause_after 1.0–1.5.
+- Beschreibe die Züge der Variante nicht mit eigenen Worten (Regel 1) — das System liest sie vor.
+
 HOOK (Feld "hook") — die ersten 8–12 Sekunden der Folge, VOR der Begrüßung; soll die Zuschauer bis zum Ende halten
 - "text": 1–2 kurze Sätze (40–300 Zeichen). Spannung, KEIN Spoiler: verrate weder das Ergebnis noch den Sieger.
   Typen (wähle einen, der zu dieser Partie passt): Einsatz ("Verliert er, ist der Traum vom Titel vorbei"),

@@ -86,7 +86,30 @@ def catalog_facts(name: str) -> str:
     return "\n".join(f"{k}: {v}" for k, v in rows if v)
 
 
-def build_user_message(game, name: str, evals: list | None) -> str:
+KM_TEXT = {
+    "pl": ("KLUCZOWE MOMENTY (wyznaczone silnikiem; każdy MUSI dostać marker {{v:N}} raz, zaraz po markerze półruchu N):",
+           {"sacrifice": "ofiara (materiał oddany, ocena silnika nie spada)", "turn": "zwrot w ocenie silnika"},
+           "wariant silnika po tym ruchu"),
+    "de": ("SCHLÜSSELMOMENTE (von der Engine bestimmt; jeder MUSS genau einmal den Marker {{v:N}} bekommen, direkt nach dem Marker von Halbzug N):",
+           {"sacrifice": "Opfer (Material gegeben, Engine-Bewertung fällt nicht)", "turn": "Wende in der Engine-Bewertung"},
+           "Engine-Variante nach diesem Zug"),
+    "en": ("KEY MOMENTS (found by the engine; each MUST get the marker {{v:N}} once, right after the marker of half-move N):",
+           {"sacrifice": "sacrifice (material given up, engine evaluation does not drop)", "turn": "turning point in the engine evaluation"},
+           "engine line after this move"),
+}
+
+
+def key_moments_text(game, moments: list) -> str:
+    head, kinds, line = KM_TEXT[L.code]
+    rows = [head]
+    for km in moments:
+        p = game.plies[km["ply"] - 1]
+        rows.append(f"N={km['ply']} ({p.san}) — {kinds[km['kind']]}; {line}: {km['line_san']} "
+                    f"[{km['eval_before'] / 100:+.2f} -> {km['eval_after'] / 100:+.2f}]")
+    return "\n".join(rows)
+
+
+def build_user_message(game, name: str, evals: list | None, moments: list | None = None) -> str:
     headers = "\n".join(f"[{k} \"{v}\"]" for k, v in game.headers.items())
     t = L.t
     parts = [f"{t['pgn_headers']}\n{headers}", f"{t['plies'].format(n=len(game.plies))}\n{ply_table(game, evals)}"]
@@ -100,6 +123,8 @@ def build_user_message(game, name: str, evals: list | None) -> str:
         parts.append(t["no_facts"])
     if not evals:
         parts.append(t["no_engine"])
+    if moments:
+        parts.append(key_moments_text(game, moments))
     parts.append(t["write"])
     return "\n\n".join(parts)
 
@@ -113,12 +138,14 @@ def _strip_fences(text: str) -> str:
     return t.strip()
 
 
-def _validate(text: str, game) -> tuple[dict | None, str | None, list]:
-    """(scenariusz, błąd, ostrzeżenia)."""
+def _validate(text: str, game, moments: list | None = None) -> tuple[dict | None, str | None, list]:
+    """(scenariusz, błąd, ostrzeżenia). moments — kluczowe momenty silnika, dołączane do scenariusza (nie od LLM)."""
     try:
         script = json.loads(_strip_fences(text))
     except json.JSONDecodeError as e:
         return None, f"Niepoprawny JSON: {e}", []
+    if isinstance(script, dict):
+        script["key_moments"] = moments or []
     if not isinstance(script, dict) or not isinstance(script.get("segments"), list):
         return None, "JSON musi być obiektem z polami \"title\" i \"segments\" (lista).", []
     for i, seg in enumerate(script["segments"]):
@@ -191,17 +218,17 @@ def _ask(client, model: str, system: str, messages: list) -> str:
     return text
 
 
-def generate(game, name: str, model: str, evals: list | None) -> tuple[dict, list]:
+def generate(game, name: str, model: str, evals: list | None, moments: list | None = None) -> tuple[dict, list]:
     from openai import OpenAI
 
     client = OpenAI()  # OPENAI_API_KEY ze środowiska
     system = PROMPT_PATH.read_text(encoding="utf-8")
-    messages = [{"role": "user", "content": build_user_message(game, name, evals)}]
+    messages = [{"role": "user", "content": build_user_message(game, name, evals, moments)}]
 
     last_err = None
     for attempt in range(1 + MAX_FIXES):
         text = _ask(client, model, system, messages)
-        script, err, warnings = _validate(text, game)
+        script, err, warnings = _validate(text, game, moments)
         if script is not None:
             return script, warnings
         last_err = err
@@ -230,18 +257,23 @@ def main() -> int:
         print(f"{out} już istnieje — użyj --force", file=sys.stderr)
         return 2
 
-    evals = None
+    evals, moments = None, []
     if not args.no_engine:
         if args.stockfish:
             evals = engine_evals(game, args.stockfish)
+            from key_moments import detect
+
+            moments = detect(game, args.stockfish)
+            for km in moments:
+                print(f"Kluczowy moment: półruch {km['ply']} ({km['kind']}), wariant: {km['line_san']}")
         else:
             print("UWAGA: brak Stockfisha — tabela bez ocen, LLM nie może oceniać ruchów", file=sys.stderr)
 
     if args.table_only:
-        print(build_user_message(game, name, evals))
+        print(build_user_message(game, name, evals, moments))
         return 0
 
-    script, warnings = generate(game, name, args.model, evals)
+    script, warnings = generate(game, name, args.model, evals, moments)
     for w in warnings:
         print("UWAGA:", w, file=sys.stderr)
     out.parent.mkdir(parents=True, exist_ok=True)

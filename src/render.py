@@ -27,6 +27,7 @@ label, san_local = _N.label, _N.san_local
 
 W, H = 1920, 1080
 SQ = 125
+ARROW_GROW = 0.45  # s — czas "wyrastania" strzałki wariantu
 BOARD = 8 * SQ
 BOARD_X, BOARD_Y = (W - BOARD) // 2, (H - BOARD) // 2
 LEFT_X, LEFT_W = 40, BOARD_X - 80          # treść lewej kolumny
@@ -289,22 +290,69 @@ class Renderer:
             od.ellipse([x + 6, y + 6, x + SQ - 6, y + SQ - 6], fill=CHECK)
         img.alpha_composite(ov)
 
+    def _compose(self, k: int, under_pieces: Image.Image | None = None, over_pieces: Image.Image | None = None) -> Image.Image:
+        board = self.boards[k]
+        img = self._squares.copy()
+        hl, chk = (), None
+        if k:
+            mv = self.game.plies[k - 1].move
+            hl = (mv.from_square, mv.to_square)
+            if board.is_check():
+                chk = board.king(board.turn)
+        self._overlay(img, hl, chk)
+        if under_pieces is not None:  # strzałki wariantu — pod figurami, żeby ich nie zasłaniały
+            img.alpha_composite(under_pieces)
+        for sq, piece in board.piece_map().items():
+            img.alpha_composite(self.sprites[(piece.piece_type, piece.color)], _sq_xy(sq))
+        if over_pieces is not None:
+            img.alpha_composite(over_pieces)
+        return self._frame(img, k, board.turn == chess.WHITE).convert("RGB")
+
     def static(self, k: int) -> Image.Image:
         """Pozycja po k półruchach (0 = start), z podświetleniem ostatniego ruchu."""
         if k not in self._static_cache:
-            board = self.boards[k]
-            img = self._squares.copy()
-            hl, chk = (), None
-            if k:
-                mv = self.game.plies[k - 1].move
-                hl = (mv.from_square, mv.to_square)
-                if board.is_check():
-                    chk = board.king(board.turn)
-            self._overlay(img, hl, chk)
-            for sq, piece in board.piece_map().items():
-                img.alpha_composite(self.sprites[(piece.piece_type, piece.color)], _sq_xy(sq))
-            self._static_cache[k] = self._frame(img, k, board.turn == chess.WHITE).convert("RGB")
+            self._static_cache[k] = self._compose(k)
         return self._static_cache[k]
+
+    def with_arrows(self, k: int, arrows: list, t: float) -> Image.Image:
+        """Pozycja po k półruchach + narastające strzałki wariantu silnika.
+        arrows: [(z_pola, na_pole, czas_pojawienia, kolor RGBA, numer)] — strzałka rośnie przez ARROW_GROW s."""
+        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(layer)
+        badges = []
+        for a, b, t0, color, num in arrows:
+            if t < t0:
+                continue
+            prog = min(1.0, (t - t0) / ARROW_GROW)
+            x0, y0 = _sq_xy(a)
+            x1, y1 = _sq_xy(b)
+            x0, y0, x1, y1 = x0 + SQ / 2, y0 + SQ / 2, x1 + SQ / 2, y1 + SQ / 2
+            dx, dy = x1 - x0, y1 - y0
+            dist = (dx * dx + dy * dy) ** 0.5
+            ux, uy = dx / dist, dy / dist
+            tip_full = (x1 - ux * SQ * 0.28, y1 - uy * SQ * 0.28)   # grot na skraju pola docelowego
+            sx, sy = x0 + ux * SQ * 0.2, y0 + uy * SQ * 0.2
+            tip = (sx + (tip_full[0] - sx) * _ease(prog), sy + (tip_full[1] - sy) * _ease(prog))
+            head_len, head_w = SQ * 0.30, SQ * 0.17
+            seg = ((tip[0] - sx) ** 2 + (tip[1] - sy) ** 2) ** 0.5
+            hl = min(head_len, seg)
+            base = (tip[0] - ux * hl, tip[1] - uy * hl)
+            d.line([(sx, sy), base], fill=color, width=int(SQ * 0.11))
+            px, py = -uy * head_w * hl / head_len, ux * head_w * hl / head_len
+            d.polygon([tip, (base[0] + px, base[1] + py), (base[0] - px, base[1] - py)], fill=color)
+            if prog >= 1.0:  # numer kolejności na gotowej strzałce; gdy miejsce zajęte (ruch "tam i z powrotem") — przesuwamy
+                for frac in (0.5, 0.72, 0.28, 0.85):
+                    bx, by = sx + (tip[0] - sx) * frac, sy + (tip[1] - sy) * frac
+                    if all((bx - ox) ** 2 + (by - oy) ** 2 > (SQ * 0.32) ** 2 for ox, oy, _, _ in badges):
+                        break
+                badges.append((bx, by, num, color))
+        top = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        dt = ImageDraw.Draw(top)
+        for bx, by, num, color in badges:
+            r = SQ * 0.14
+            dt.ellipse([bx - r, by - r, bx + r, by + r], fill=color[:3] + (255,), outline=(255, 255, 255, 255), width=2)
+            dt.text((bx, by + 1), str(num), font=_font(int(r * 1.3), True), fill=(255, 255, 255, 255), anchor="mm")
+        return self._compose(k, layer, top)
 
     def moving(self, k: int, t: float) -> Image.Image:
         """Klatka w trakcie wykonywania półruchu k (t w 0..1)."""
@@ -347,10 +395,16 @@ class Renderer:
         return self._frame(img, k - 1, before.turn == chess.WHITE).convert("RGB")
 
 
-def schedule(anchor_times: list, n_plies: int) -> list:
+def schedule(anchor_times: list, n_plies: int, barriers: dict | None = None) -> list:
     """anchor_times: [(czas, ply_index)] dla półruchów z markerów.
     Półruchy pomiędzy markerami rozkładamy równo tuż przed kolejnym markerem
-    (do AUTO_STEP_MAX s na ruch; gdy lektor mówi krótko — szybciej, ale nie szybciej niż MIN_GAP)."""
+    (do AUTO_STEP_MAX s na ruch; gdy lektor mówi krótko — szybciej, ale nie szybciej niż MIN_GAP).
+    barriers: {N: czas} — półruchy po N nie ruszają przed tym czasem (pauza na wariant silnika)."""
+    barriers = barriers or {}
+
+    def bar(ply):
+        return max((t for n, t in barriers.items() if ply > n), default=0.0)
+
     events, prev_t, prev_ply = [], 0.0, 0
     for t, ply in sorted(anchor_times, key=lambda x: x[1]):
         gap = ply - prev_ply - 1
@@ -360,18 +414,22 @@ def schedule(anchor_times: list, n_plies: int) -> list:
             for j in range(gap):
                 start = t - (gap - j) * step
                 floor = events[-1].time + MIN_GAP if events else 0.0
-                events.append(Event(max(start, floor, prev_t + MIN_GAP if prev_ply else 0.0), prev_ply + 1 + j))
+                events.append(Event(max(start, floor, prev_t + MIN_GAP if prev_ply else 0.0, bar(prev_ply + 1 + j)),
+                                    prev_ply + 1 + j))
         floor = events[-1].time + MIN_GAP if events else 0.0
-        events.append(Event(max(t, floor), ply))
+        events.append(Event(max(t, floor, bar(ply)), ply))
         prev_t, prev_ply = events[-1].time, ply
     assert [e.ply_index for e in events] == list(range(1, n_plies + 1))
     return events
 
 
 def render_video(renderer: Renderer, events: list, duration: float, audio_path, out_path, fps: int = 25,
-                 preroll=None, flash=None) -> None:
+                 preroll=None, flash=None, variations=None) -> None:
     """preroll: (ścieżka PNG 1920x1080, do_sekundy) — plansza na początku (np. drabinka turnieju).
-    flash: (półruch, do_sekundy) — hak: pozycja kluczowa na samym początku, potem zwykły przebieg od startu."""
+    flash: (półruch, do_sekundy) — hak: pozycja kluczowa na samym początku, potem zwykły przebieg od startu.
+    variations: [{"ply": N, "start": s, "end": s, "arrows": [...]}] — pauza na kluczowym momencie: pozycja po N
+    i narastające strzałki wariantu silnika (Renderer.with_arrows)."""
+    variations = variations or []
     flash_bytes, flash_until = None, 0.0
     if flash:
         flash_bytes, flash_until = renderer.static(flash[0]).tobytes(), flash[1]
@@ -401,9 +459,12 @@ def render_video(renderer: Renderer, events: list, duration: float, audio_path, 
             while ei < len(events) and t >= events[ei].time + ANIM_SEC:
                 k = events[ei].ply_index
                 ei += 1
+            var = next((v for v in variations if v["start"] <= t < v["end"] and v["ply"] == k), None)
             if ei < len(events) and t >= events[ei].time:
                 prog = (t - events[ei].time) / ANIM_SEC
                 frame = renderer.moving(events[ei].ply_index, prog).tobytes()
+            elif var:
+                frame = renderer.with_arrows(k, var["arrows"], t).tobytes()
             else:
                 if last_key != k:
                     last_key, last_bytes = k, renderer.static(k).tobytes()

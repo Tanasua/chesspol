@@ -43,6 +43,17 @@ DRAMATURGIA
   Przy remisie powiedz, że partia zakończyła się remisem.
 - Finał: nazwij, dlaczego ta partia jest ważna.
 
+KLUCZOWE MOMENTY (gdy w danych jest sekcja KLUCZOWE MOMENTY)
+- Dla każdego kluczowego momentu N wstaw RAZ marker {{v:N}} zaraz po markerze półruchu N ({{m:N}} albo {{s:N}}),
+  przed kolejnym markerem partii — w tym samym albo w następnym segmencie. System zatrzyma wtedy partię, sam przeczyta
+  wariant silnika i narysuje go narastającymi strzałkami (zielone — ruchy strony, która zagrała kluczowy ruch,
+  czerwone — odpowiedzi przeciwnika).
+- {{v:N}} stawiaj jak {{m:N}}: po dwukropku albo na początku zdania, nigdy po przyimku. Np.: "Silnik pokazuje,
+  dlaczego to działa: {{v:31}}."
+- Przed wariantem jedno zdanie zapowiedzi — jasno, że to wariant silnika, a NIE ruchy z partii. Po nim 1–2 zdania
+  o idei (bez ruchów, bez notacji) i pause_after 1.0–1.5.
+- Nie opisuj ruchów wariantu własnymi słowami (zasada 1) — czyta je system.
+
 HAK (pole "hook") — pierwsze 8–12 sekund odcinka, PRZED powitaniem; ma zatrzymać widza do końca
 - "text": 1–2 krótkie zdania (40–300 znaków). Intryga, NIE spoiler: nie zdradzaj wyniku ani kto wygra.
   Typy (wybierz jeden, pasujący do tej partii): stawka ("Przegra — i odpada z walki o koronę"),

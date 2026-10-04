@@ -48,6 +48,17 @@ STORYTELLING
   For a draw, say the game ended in a draw.
 - Finale: say why this game matters.
 
+KEY MOMENTS (when the data has a KEY MOMENTS section)
+- For each key moment N, insert the marker {{v:N}} EXACTLY ONCE, right after the marker of half-move N ({{m:N}} or
+  {{s:N}}), before the next game marker — in the same or the next segment. The system then pauses the game, reads the
+  engine line itself and draws it with growing arrows (green — moves of the side that played the key move,
+  red — the opponent's replies).
+- Place {{v:N}} like {{m:N}}: after a colon or at the start of a sentence, never after a preposition. E.g.:
+  "The engine shows why it works: {{v:31}}."
+- Before the line, one sentence of setup — make it clear it's the engine's line, NOT moves from the game. After it,
+  1–2 sentences about the idea (no moves, no notation) and pause_after 1.0–1.5.
+- Don't describe the moves of the line in your own words (rule 1) — the system reads them.
+
 HOOK (field "hook") — the first 8–12 seconds of the episode, BEFORE the greeting; it must keep viewers watching to the end
 - "text": 1–2 short sentences (40–300 characters). Intrigue, NOT a spoiler: don't reveal the result or who wins.
   Types (pick one that fits this game): stakes ("Lose this, and the title dream is over"),
