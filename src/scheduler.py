@@ -141,20 +141,18 @@ def _chapters(timing: dict) -> list:
 
 
 def _yt_title(main: str, white: str, black: str, game: dict, hook: str = "") -> str:
-    """Tytuł YouTube (maks. 100 znaków): '<dopisek>: <tytuł> | Białe – Czarne (rok)'.
-    Gdy za długo: najpierw same nazwiska, potem bez dopisku, na końcu skracamy tytuł."""
-    year = game["year"]
-    full = f"{white} – {black}"
-    short = f"{str(white).split()[-1]} – {str(black).split()[-1]}"
+    """Tytuł YouTube (maks. 100 znaków): '<dopisek>: <tytuł> | Nazwisko – Nazwisko (rok)'.
+    Tylko nazwiska (w pisowni języka kanału) — na telefonie widać ~40 pierwszych znaków; gdy za długo — bez dopisku,
+    na końcu skracamy tytuł."""
+    who = f"{white} – {black} ({game['year']})"
     heads = [f"{hook}: {main}" if hook and main else (hook or main)]
     if hook and main:
         heads.append(main)
     for head in heads:
-        for who in (full, short):
-            t = f"{head} | {who} ({year})" if head else f"{who} ({year})"
-            if len(t) <= 100:
-                return t
-    suffix = f" | {short} ({year})"
+        t = f"{head} | {who}" if head else who
+        if len(t) <= 100:
+            return t
+    suffix = f" | {who}"
     return f"{main[:100 - len(suffix) - 1].rstrip()}…{suffix}"
 
 
@@ -163,11 +161,14 @@ def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | N
     white, black = field_(game, "white"), field_(game, "black")
     place = field_(game, "site") or ""
     label = (field_(game, "label") or field_(game, "event") or "").replace(" · ", ", ")
+    from players import side
+
+    ws, bs = side(game, "white", white)["last"], side(game, "black", black)["last"]
     kicker = (script.get("kicker") or "").strip()
     if kicker:  # nowe scenariusze: "NIESAMOWITE! <tytuł>" zamiast stałego dopisku
-        title = _yt_title(f"{kicker} {script.get('title') or ''}".strip(), white, black, game)
+        title = _yt_title(f"{kicker} {script.get('title') or ''}".strip(), ws, bs, game)
     else:
-        title = _yt_title(script.get("title") or "", white, black, game, title_hook_for(game))
+        title = _yt_title(script.get("title") or "", ws, bs, game, title_hook_for(game))
 
     lines = []
     if script.get("description"):
@@ -280,6 +281,7 @@ def main() -> int:
     ap.add_argument("--no-upload", action="store_true")
     ap.add_argument("--dry-tts", action="store_true", help="test: cisza zamiast Inworld (wymusza --no-upload)")
     ap.add_argument("--first-day", help="YYYY-MM-DD pierwszej publikacji (tylko gdy brak historii)")
+    ap.add_argument("--game", help="id partii na najbliższy odcinek (z katalogu głównego albo krajowego), poza kolejką")
     args = ap.parse_args()
     if args.dry_tts:
         args.no_upload = True
@@ -316,7 +318,19 @@ def main() -> int:
         if len(future) >= BUFFER:
             print(f"Zaplanowane naprzód: {len(future)} (bufor {BUFFER}) — nic do zrobienia")
             break
-        rubric, game = pick(episodes, q, nq)
+        forced = None
+        if args.game and made == 0:  # wybór właściciela na najbliższy odcinek
+            for rub, src in (("history", q), ("national", nq)):
+                forced = next((g for g in src if g["id"] == args.game), None)
+                if forced:
+                    src.remove(forced)
+                    rubric, game = rub, forced
+                    break
+            if not forced:
+                print(f"::error::Partii {args.game} nie ma w kolejce (brak zweryfikowanego PGN albo już była)")
+                return 1
+        if not forced:
+            rubric, game = pick(episodes, q, nq)
         if not game:
             print("::error::Brak gotowych partii — dodaj zweryfikowane PGN (src/pgn_collect.py)")
             return 1

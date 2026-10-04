@@ -10,6 +10,9 @@ on:
     - cron: "47 4 * * *"
   workflow_dispatch:
     inputs:
+      game:
+        description: "Id partii na najbliższy odcinek (np. us_fischer_spassky_1972_g10) — poza kolejką"
+        required: false
       first_day:
         description: "Data pierwszej publikacji YYYY-MM-DD (tylko przy pierwszym uruchomieniu)"
         required: false
@@ -84,6 +87,7 @@ jobs:
           BUFFER: ${{ inputs.ahead || '2' }}
           MAX_PER_RUN: ${{ inputs.ahead || '1' }}
           FIRST_DAY: ${{ inputs.first_day }}
+          GAME: ${{ inputs.game }}
           NO_UPLOAD: ${{ inputs.no_upload }}
         run: |
           if [ -z "$ELEVENLABS_API_KEY" ] || [ -z "$ELEVENLABS_VOICE_ID" ]; then
@@ -91,6 +95,7 @@ jobs:
           fi
           ARGS=()
           if [ -n "$FIRST_DAY" ]; then ARGS+=(--first-day "$FIRST_DAY"); fi
+          if [ -n "$GAME" ]; then ARGS+=(--game "$GAME"); fi
           if [ "$NO_UPLOAD" = "true" ]; then ARGS+=(--no-upload); fi
           set -o pipefail
           python src/scheduler.py "${ARGS[@]}" 2>&1 | tee /tmp/produce.log

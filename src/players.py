@@ -63,6 +63,20 @@ def photo_path(name: str) -> Path | None:
     return sorted(hits)[0] if hits and len(qids) == 1 else None
 
 
+SURNAMES = ROOT / "catalog" / "surnames.json"  # {"pl": {"Alekhine": "Aljechin"}, "de": {...}} — pisownia w języku kanału
+_SURNAMES = None
+
+
+def local_surname(last: str) -> str:
+    """Nazwisko w pisowni języka kanału (np. Alekhine -> Aljechin po niemiecku); brak wpisu — bez zmian."""
+    global _SURNAMES
+    from lang import L
+
+    if _SURNAMES is None:
+        _SURNAMES = json.loads(SURNAMES.read_text(encoding="utf-8")) if SURNAMES.exists() else {}
+    return _SURNAMES.get(L.code, {}).get(last, last)
+
+
 def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     """color: 'white'/'black'. Zwraca {name, first, last, photo, credit}."""
     from lang import field_
@@ -72,6 +86,8 @@ def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     first, last = split_name(name)
     if field_(e, f"{color}_first") is not None or field_(e, f"{color}_last") is not None:
         first, last = field_(e, f"{color}_first") or "", field_(e, f"{color}_last") or name
+    else:
+        last = local_surname(last)
     jpg = photo_path(e.get(color) or pgn_name) or PHOTOS / "_brak_.jpg"  # po nazwie z bazy, nie po wersji językowej
     meta = jpg.with_suffix(".json")
     credit = json.loads(meta.read_text(encoding="utf-8")) if meta.exists() else None

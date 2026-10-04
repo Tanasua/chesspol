@@ -57,9 +57,11 @@ Pliki:
   i Release; Telegram: album [nasza, AI] do porównania + cover_ai.jpg jako plik. Błąd/odmowa nie blokuje odcinka. COVER_AI=0 wyłącza.
 - Telegram/paczka: teksty dla właściciela PO UKRAIŃSKU (podpisy, nagłówki, data "пт, 02.10.2026 о 10:00 (за Києвом)"),
   tytuł/opis/tagi w języku kanału, każde w osobnym bloku <pre> (kopiowanie jednym dotknięciem); opis dzielony na części ≤3500 znaków
-- Tytuł YouTube: "<KICKER> <title> | Białe – Czarne (rok)"; kicker = 1–3 słowa WERSALIKAMI z "!" od LLM (pole "kicker",
+- Tytuł YouTube: "<KICKER> <title> | Nazwisko – Nazwisko (rok)" (tylko nazwiska — decyzja właściciela; pisownia języka
+  kanału z catalog/surnames.json przez players.local_surname, ta sama w kadrze); kicker = 1–3 słowa WERSALIKAMI z "!" od LLM (pole "kicker",
   walidacja w script_check); stare scenariusze bez kickera -> dopisek z phrases.TITLE_HOOKS
 - src/youtube_upload.py, src/youtube_auth.py — YouTube Data API (OAuth refresh token)
+- scheduler --game <id> (workflow_dispatch input "game" w publish*.yml): wskazana partia na najbliższy odcinek, poza kolejką.
 - .github/workflows/publish.yml — cron codziennie 03:17 UTC, INTERVAL_DAYS=1 (1 odcinek dziennie; maks. 2 z nowością), commit stanu do repo
 - NOWOŚCI: src/news.py (+ .github/workflows/news.yml, workflow_dispatch: kanał, turniej/link Lichess, test). Lichess API
   (broadcast search / tour / round PGN) -> format nokaut/kołowy -> wybór JEDNEJ partii bez pytania (etap, tempo, wynik,
