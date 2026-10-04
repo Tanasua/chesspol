@@ -70,6 +70,10 @@ Pliki:
   "<KICKER> <title> | Nazwisko – Nazwisko (rok)" albo dopisek z phrases.TITLE_HOOKS.
 - src/youtube_upload.py, src/youtube_auth.py — YouTube Data API (OAuth refresh token)
 - scheduler --game <id> (workflow_dispatch input "game" w publish*.yml): wskazana partia na najbliższy odcinek, poza kolejką.
+- DZIURY W GRAFIKU (decyzja właściciela): scheduler.next_slot szuka najbliższego wolnego dnia od teraz (+MIN_LEAD), nie tylko
+  po ostatnim odcinku; dzień przed ostatnim zaplanowanym = dziura -> pick_gap: najnowsza partia spośród rubryki krajowej
+  i partii głównego katalogu z rokiem ≥ GAP_MODERN_YEAR (2010); odcinek dostaje "gap": true i nie zmienia rytmu
+  historia/rubryka. Bufor: nic nie robimy, gdy najbliższy wolny dzień ≥ start + BUFFER*INTERVAL_DAYS.
 - .github/workflows/publish.yml — cron codziennie 03:17 UTC, INTERVAL_DAYS=1 (1 odcinek dziennie; maks. 2 z nowością), commit stanu do repo
 - NOWOŚCI: src/news.py (+ .github/workflows/news.yml, workflow_dispatch: kanał, turniej/link Lichess, test). Lichess API
   (broadcast search / tour / round PGN) -> format nokaut/kołowy -> wybór JEDNEJ partii bez pytania (etap, tempo, wynik,
