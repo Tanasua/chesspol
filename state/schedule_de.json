@@ -26,6 +26,16 @@
       "package": "out/packages/de-ep003-shirov_polgar_1994",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep003-shirov_polgar_1994",
       "telegram": true
+    },
+    {
+      "id": "botvinnik_keres_1948",
+      "publish_at": "2026-10-09T07:00:00+00:00",
+      "title": "Plötzlich ist alles verloren! | Botwinnik – Keres (1948) — Botvinnik erzwingt ein Mattnetz",
+      "mode": "manual",
+      "package": "out/packages/de-ep004-botvinnik_keres_1948",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep004-botvinnik_keres_1948",
+      "telegram": true,
+      "rubric": "history"
     }
   ]
 }
