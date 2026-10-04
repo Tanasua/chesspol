@@ -15,7 +15,10 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 PROMPT = ("Згенеруй клікбейт-кавер форматом 16:9, проаналізувавши надане мною фото, "
-          "використовуючи його за основу і створи новий")
+          "використовуючи його за основу і створи новий. "
+          # dopisek właściciela (po przestawionych figurach na okładce Topalow–Anand 2010)
+          "Строге правило: усі фігури і стрілки мають лишатися на тих самих клітинках, що і в прикріпленому "
+          "зображенні. Стрілки можна робити яскравіші, неонові.")
 MODEL = os.environ.get("COVER_AI_MODEL", "gpt-image-2.5-sunburst")
 FALLBACK_MODEL = "gpt-image-2"
 SIZE = "1536x864"  # 16:9, obie krawędzie podzielne przez 16
