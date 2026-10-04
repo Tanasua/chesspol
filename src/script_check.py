@@ -82,7 +82,7 @@ def _tidy(tokens: list, anchors: list) -> tuple[list, list]:
             out[-1] += tok
             remap[i] = len(out) - 1
             continue
-        if not out or out[-1][-1] in ".!?":
+        if not out or out[-1][-1] in ".!?।":
             tok = tok[0].upper() + tok[1:]
         remap[i] = len(out)
         out.append(tok)
@@ -151,7 +151,7 @@ def build_segments(script: dict, game) -> tuple[list, list]:
                 raise ScriptError(
                     f"[{sid}] marker {m.group(0)} stoi po przyimku '{prev_word}' — zapis ruchu jest w mianowniku, "
                     f"więc zdanie będzie niegramatyczne. Wstaw ruch po dwukropku, np. 'Białe grają: {m.group(0)}.'")
-            if m.group(1) == "s" and before and before[-1] not in ".!?:—–" and not MARKER_RE.search(before[-12:]):
+            if m.group(1) == "s" and before and before[-1] not in ".!?:—–।" and not MARKER_RE.search(before[-12:]):
                 raise ScriptError(
                     f"[{sid}] cichy marker {m.group(0)} stoi w środku zdania — nie jest czytany, więc zdanie się "
                     f"rozpada. Stawiaj {{{{s:N}}}} tylko na początku zdania (po kropce) i nie opieraj na nim treści zdania.")

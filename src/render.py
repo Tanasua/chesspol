@@ -57,7 +57,11 @@ FALLBACK = ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts
 def _font(size: int, bold: bool = False, weight: str | None = None) -> ImageFont.FreeTypeFont:
     """Montserrat: zwykły tekst — Medium, pogrubiony — Bold; weight= wybiera inną grubość (np. 'black')."""
     name = WEIGHTS.get(weight or ("bold" if bold else "medium"), "Medium")
-    path = FONTS / f"Montserrat-{name}.ttf"
+    if L.font == "Hind":  # kanał hindi: dewanagari (Hind ma wagi Light–Bold; grubsze -> Bold)
+        name = name if name in ("Regular", "Medium", "SemiBold", "Bold") else "Bold"
+        path = FONTS / "hind" / f"Hind-{name}.ttf"
+    else:
+        path = FONTS / f"Montserrat-{name}.ttf"
     if path.exists():
         return ImageFont.truetype(str(path), size)
     return ImageFont.truetype(FALLBACK[1 if bold else 0], size)

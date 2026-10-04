@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       channel:
-        description: "Kanał: pl, de albo en"
+        description: "Kanał: pl, de, en albo hi"
         default: "pl"
       tournament:
         description: "Nazwa turnieju albo link lichess.org/broadcast/…"
@@ -57,9 +57,9 @@ jobs:
           INWORLD_MODEL: inworld-tts-2
           INWORLD_LANGUAGE: pl-PL
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          ELEVENLABS_VOICE_ID: ${{ inputs.channel == 'en' && secrets.ELEVENLABS_VOICE_ID_EN || secrets.ELEVENLABS_VOICE_ID_DE }}
+          ELEVENLABS_VOICE_ID: ${{ inputs.channel == 'en' && secrets.ELEVENLABS_VOICE_ID_EN || inputs.channel == 'hi' && secrets.ELEVENLABS_VOICE_ID_HI || secrets.ELEVENLABS_VOICE_ID_DE }}
           ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
-          HOST_NAME: ${{ inputs.channel == 'de' && vars.HOST_NAME_DE || inputs.channel == 'en' && vars.HOST_NAME_EN || vars.HOST_NAME }}
+          HOST_NAME: ${{ inputs.channel == 'de' && vars.HOST_NAME_DE || inputs.channel == 'en' && vars.HOST_NAME_EN || inputs.channel == 'hi' && vars.HOST_NAME_HI || vars.HOST_NAME }}
           STOCKFISH_PATH: /usr/games/stockfish
           GH_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

@@ -82,7 +82,7 @@ Pliki:
   (uzupełnia fetch_portraits.py dla katalogu i news.py dla turniejów). assets/flags/<iso>.svg (flag-icons, MIT; ru.svg i by.svg
   usunięte). Zamiast flag tekst: RU (Rosja, Imperium Ros., RFSRR), BY, SU (ZSRR), DE (III Rzesza 1933–45) — decyzja właściciela.
   Flagi na okładce (pod portretami) i w drabince; nowości: +2.5 pkt za partię z graczem z kraju kanału (Polak / Niemiec).
-- KANAŁY: src/lang.py (CHANNEL=pl domyślnie | de). Wspólne: katalog, PGN, zdjęcia, render, muzyka, Telegram (ten sam czat, flaga 🇵🇱/🇩🇪).
+- KANAŁY: src/lang.py (CHANNEL=pl domyślnie | de | en | hi). Wspólne: katalog, PGN, zdjęcia, render, muzyka, Telegram (ten sam czat, flaga 🇵🇱/🇩🇪).
   Osobne: kolejność (n / n_de, seed 20261001), stan (state/schedule.json / schedule_de.json), scenariusze (scripts/ / scripts_de/),
   wideo (out/ / out/de/), tagi Release (ep001-… / de-ep001-…), prompt (prompts/script_system_<kod>.md), zapis ruchów
   (pl_notation.py / de_notation.py: K D T L S, "Springer nach eff drei"), zwroty (phrases.TEXTS), teksty opisu (lang.L.t).
@@ -100,6 +100,13 @@ Pliki:
   scripts_en/, out/en/, state/schedule_en.json, tag en-…, flaga 🇺🇸, "swój" gracz = us (Channel.country);
   .github/workflows/publish_en.yml — cron 06:17 UTC, publikacja 10:00 America/New_York (w Telegramie także czas kijowski);
   sekrety ELEVENLABS_VOICE_ID_EN, zmienna HOST_NAME_EN; news.yml obsługuje kanał en.
+- KANAŁ HI (Indie, PRZYGOTOWANY, NIEAKTYWNY do czasu sekretu ELEVENLABS_VOICE_ID_HI): CHANNEL=hi — kolejność n_hi (seed 20261004),
+  pola katalogu *_hi z fallbackiem na *_en (Channel.fallback), hi_notation.py (HI_PIECES=hindi: राजा रानी हाथी ऊँट घोड़ा प्यादा —
+  wg hindi wersji chess.com; =english: किंग क्वीन रूक बिशप नाइट; "ऊँट बी छह पर काटता है, शह"; ekran: SAN), krój Hind
+  (assets/fonts/hind, SIL OFL; Pillow z raqm do dewanagari), prompts/script_system_hi.md (instrukcje po angielsku, tekst dla
+  widza w hindi), phrases/CTA hi (forma "हम"), scripts_hi/, out/hi/, state/schedule_hi.json, tag hi-, flaga 🇮🇳, "swój" = in;
+  .github/workflows/publish_hi.yml — cron 08:17 UTC, publikacja 18:00 Asia/Kolkata; news.yml / news_watch obsługują hi.
+  NIE zweryfikowane przez native speakera: nazwy figur, zwroty, teksty opisu — odsłuchać 1–2 pierwsze odcinki.
 - src/tts_elevenlabs.py — ElevenLabs /v1/text-to-speech/{voice}/with-timestamps (alignment znaków -> słowa), ELEVENLABS_MODEL
   (domyślnie eleven_multilingual_v2); NIE zweryfikowane na prawdziwym kluczu
 - .github/workflows/publish_de.yml — kanał niemiecki, cron 04:47 UTC, ta sama grupa concurrency co publish.yml; bez klucza ElevenLabs pomija.

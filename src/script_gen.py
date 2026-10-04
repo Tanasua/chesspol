@@ -87,6 +87,9 @@ def catalog_facts(name: str) -> str:
 
 
 KM_TEXT = {
+    "hi": ("KEY MOMENTS (found by the engine; each MUST get the marker {{v:N}} once, right after the marker of half-move N):",
+           {"sacrifice": "sacrifice (material given up, engine evaluation does not drop)", "turn": "turning point in the engine evaluation"},
+           "engine line after this move"),
     "pl": ("KLUCZOWE MOMENTY (wyznaczone silnikiem; każdy MUSI dostać marker {{v:N}} raz, zaraz po markerze półruchu N):",
            {"sacrifice": "ofiara (materiał oddany, ocena silnika nie spada)", "turn": "zwrot w ocenie silnika"},
            "wariant silnika po tym ruchu"),

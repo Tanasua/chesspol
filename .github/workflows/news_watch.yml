@@ -54,6 +54,7 @@ jobs:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID_DE: ${{ secrets.ELEVENLABS_VOICE_ID_DE }}
           ELEVENLABS_VOICE_ID_EN: ${{ secrets.ELEVENLABS_VOICE_ID_EN }}
+          ELEVENLABS_VOICE_ID_HI: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}
           ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
           STOCKFISH_PATH: /usr/games/stockfish
           GH_TOKEN: ${{ github.token }}

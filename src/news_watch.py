@@ -35,6 +35,7 @@ CHANNELS = {  # kanał -> zmienne z kluczem i głosem TTS (bez nich kanał pomij
     "pl": ("INWORLD_API_KEY", "INWORLD_VOICE_ID", None),
     "de": ("ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID_DE", "ELEVENLABS_VOICE_ID"),
     "en": ("ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID_EN", "ELEVENLABS_VOICE_ID"),
+    "hi": ("ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID_HI", "ELEVENLABS_VOICE_ID"),
 }
 
 

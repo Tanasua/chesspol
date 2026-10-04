@@ -1,0 +1,135 @@
+name: publish-episodes-hi
+
+# Kanał hindi / Indie (CHANNEL=hi, src/lang.py): ten sam katalog partii, własna kolejność (n_hi),
+# stan state/schedule_hi.json, scenariusze scripts_hi/, lektor ElevenLabs (głos z ELEVENLABS_VOICE_ID_HI),
+# krój Hind (dewanagari), publikacja 18:00 Asia/Kolkata. Bez ELEVENLABS_VOICE_ID_HI — pomija (kanał przygotowany, nieaktywny).
+# Codziennie: utrzymuje BUFFER odcinków przygotowanych naprzód. Tryb manual (domyślny): paczka
+# (wideo, okładka, tytuł, opis, tagi, data) w GitHub Releases + opcjonalnie Telegram; tryb youtube: publishAt.
+# Publikacja co 3 dni o 10:00 Europe/Kyiv robi sam YouTube — opóźnienia crona nie mają znaczenia.
+on:
+  schedule:
+    - cron: "17 8 * * *"
+  workflow_dispatch:
+    inputs:
+      game:
+        description: "Id partii na najbliższy odcinek (np. carlsen_praggnanandhaa_2022) — poza kolejką"
+        required: false
+      first_day:
+        description: "Data pierwszej publikacji YYYY-MM-DD (tylko przy pierwszym uruchomieniu)"
+        required: false
+      ahead:
+        description: "Ile odcinków mieć gotowych naprzód (domyślnie 2; np. 6 = zrób zapas)"
+        required: false
+      no_upload:
+        description: "Test: bez uploadu na YouTube"
+        type: boolean
+        default: false
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: System deps
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core libcairo2 stockfish
+
+      - name: Python deps
+        run: pip install -r requirements.txt
+
+      - name: TTS cache
+        uses: actions/cache@v4
+        with:
+          path: .tts_cache
+          key: tts-${{ github.run_id }}
+          restore-keys: tts-
+
+      - name: Portraits
+        continue-on-error: true
+        run: python src/fetch_portraits.py
+
+      - name: Plan
+        env:
+          CHANNEL: hi
+          PUBLISH_TZ: Asia/Kolkata
+        run: python src/scheduler.py --plan
+
+      - name: Produce and schedule
+        env:
+          CHANNEL: hi
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}
+          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
+          HOST_NAME: ${{ vars.HOST_NAME_HI }}   # imię prowadzącego (np. Lukas); puste = powitanie bez imienia
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          STOCKFISH_PATH: /usr/games/stockfish
+          PUBLISH_MODE: manual          # manual = paczki do ręcznego uploadu; youtube = automatyczny upload
+          GH_TOKEN: ${{ github.token }}  # GitHub Release z paczką
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PUBLISH_TZ: Asia/Kolkata
+          PUBLISH_HOUR: "18"
+          INTERVAL_DAYS: "1"           # 1 odcinek dziennie (+ ewentualnie nowość z turnieju)
+          BUFFER: ${{ inputs.ahead || '2' }}
+          MAX_PER_RUN: ${{ inputs.ahead || '1' }}
+          FIRST_DAY: ${{ inputs.first_day }}
+          GAME: ${{ inputs.game }}
+          NO_UPLOAD: ${{ inputs.no_upload }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ] || [ -z "$ELEVENLABS_VOICE_ID" ]; then
+            echo "::notice::Brak ELEVENLABS_API_KEY / ELEVENLABS_VOICE_ID_HI — kanał hindi pominięty"; exit 0
+          fi
+          ARGS=()
+          if [ -n "$FIRST_DAY" ]; then ARGS+=(--first-day "$FIRST_DAY"); fi
+          if [ -n "$GAME" ]; then ARGS+=(--game "$GAME"); fi
+          if [ "$NO_UPLOAD" = "true" ]; then ARGS+=(--no-upload); fi
+          set -o pipefail
+          python src/scheduler.py "${ARGS[@]}" 2>&1 | tee /tmp/produce.log
+
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "episode-bot"
+          git config user.email "episode-bot@users.noreply.github.com"
+          for p in state scripts scripts_de scripts_en scripts_hi assets/players; do [ -e "$p" ] && git add "$p"; done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "bot: schedule update (hi)"
+          for i in 1 2 3 4; do git pull --rebase && git push && exit 0; sleep $((2**i)); done
+          exit 1
+
+      - name: Telegram alert on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          [ -n "$TELEGRAM_BOT_TOKEN" ] || exit 0
+          REASON=$(grep -Eo "credit_balance_exhausted|insufficient_quota|quota_exceeded|invalid_api_key|missing_permissions|voice_not_found|HTTP [45][0-9]{2}" /tmp/produce.log 2>/dev/null | head -1 || true)
+          curl -sS -o /dev/null "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode chat_id="$TELEGRAM_CHAT_ID" \
+            --data-urlencode text="⚠️ Шаховий бот 🇮🇳 (канал гінді): запуск упав. ${REASON:+Причина: $REASON. }Лог: $RUN_URL"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: episodes-hi-${{ github.run_id }}
+          path: out/packages/
+          if-no-files-found: ignore
+          retention-days: 14

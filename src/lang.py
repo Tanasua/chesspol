@@ -1,4 +1,4 @@
-"""Kanał i język odcinka: CHANNEL=pl (domyślnie), de albo en (angielski, odbiorca amerykański).
+"""Kanał i język odcinka: CHANNEL=pl (domyślnie), de, en (angielski, odbiorca amerykański) albo hi (hindi, Indie).
 
 Wspólne dla kanałów: katalog 100 partii, PGN, zdjęcia, render, muzyka, Telegram.
 Osobne: kolejność publikacji (pole n / n_de w katalogu), scenariusze, stan harmonogramu,
@@ -28,6 +28,8 @@ class Channel:
     prompt: Path
     t: dict = field(default_factory=dict)
     country: str = ""        # kod ISO kraju kanału ("swój" gracz w nowościach); domyślnie = code
+    fallback: str = ""       # sufiks pól katalogu, gdy brak wersji kanału (hi -> _en); pusty = pole bazowe
+    font: str = "Montserrat"  # krój w kadrze i na okładce (hi: Hind — dewanagari + łacinka, SIL OFL)
 
 
 PL = Channel(
@@ -119,7 +121,39 @@ EN = Channel(
     },
 )
 
-CHANNELS = {"pl": PL, "de": DE, "en": EN}
+HI = Channel(
+    code="hi", tts="elevenlabs", voice_env="ELEVENLABS_VOICE_ID", order_key="n_hi", suffix="_hi",
+    state=ROOT / "state" / "schedule_hi.json", scripts=ROOT / "scripts_hi", out=ROOT / "out" / "hi",
+    tag_prefix="hi-", flag="🇮🇳", prompt=ROOT / "prompts" / "script_system_hi.md", country="in",
+    fallback="_en", font="Hind",
+    # teksty dla LLM po angielsku; teksty dla widza w hindi — NIE zweryfikowane przez native speakera
+    t={
+        "white": "सफ़ेद", "black": "काला", "year": "वर्ष", "event": "प्रतियोगिता", "place": "स्थान",
+        "round": "राउंड/बाज़ी", "result": "परिणाम", "nickname": "प्रसिद्ध नाम", "notes": "टिप्पणी",
+        "white_side": "White", "black_side": "Black",
+        "table_head": "N | move | color | SAN | FEN before the move | eval after the move (+ = better for White)",
+        "engine_best": "engine's best reply", "none": "none", "mate": "mate", "over": "game over",
+        "pgn_headers": "PGN HEADERS", "plies": "HALF-MOVES ({n} total)", "facts": "FACTS (verified)",
+        "catalog_facts": "FACTS FROM THE CATALOG (verified)",
+        "no_facts": "FACTS: none — use only the PGN headers.",
+        "no_engine": "ENGINE EVALUATIONS: none — no verdicts like \"mistake\" or \"best move\".",
+        "write": "Write the episode script following the rules (narration in Hindi). Return JSON only.",
+        "fix": "Validation rejected the script (message in Polish):\n{err}\n\n"
+               "Fix it and return the whole script again, JSON only.",
+        "chapters": "अध्याय:", "pgn": "बाज़ी का रिकॉर्ड (PGN):", "photos": "तस्वीरें (Wikimedia Commons):",
+        "unknown_author": "अज्ञात लेखक", "photo_by": "फ़ोटो:", "moves_header": "चालें",
+        "verified": "बाज़ी का रिकॉर्ड कम से कम दो शतरंज डेटाबेस में जाँचा गया है। ",
+        "hashtags": "#शतरंज #chess #chesshindi",
+        "tags": ["शतरंज", "chess", "chess hindi", "शतरंज का इतिहास", "famous chess games"],
+        "year_tag": "शतरंज {year}",
+        "stage": {1: "फ़ाइनल", 2: "सेमीफ़ाइनल", 4: "क्वार्टरफ़ाइनल", 8: "राउंड ऑफ़ 16", 16: "राउंड ऑफ़ 32"},
+        "third": "तीसरे स्थान का मुक़ाबला", "this_game": "यह बाज़ी", "standings": "इस बाज़ी से पहले की तालिका",
+        "round_n": "राउंड {n}", "pts": "अंक", "news_tags": ["शतरंज समाचार", "chess news", "chess tournament"],
+        "news_hashtags": "#शतरंज #chess #chessnews",
+    },
+)
+
+CHANNELS = {"pl": PL, "de": DE, "en": EN, "hi": HI}
 L = CHANNELS[os.environ.get("CHANNEL", "pl").strip().lower() or "pl"]
 
 
@@ -129,11 +163,15 @@ NATIONAL = ROOT / "catalog" / f"national_{L.country or L.code}.json"  # rubryka 
 def field_(entry: dict | None, name: str):
     """Pole katalogu w wersji językowej kanału (np. label_de), w razie braku — wersja bazowa."""
     e = entry or {}
-    v = e.get(f"{name}{L.suffix}")
-    return v if v not in (None, "") else e.get(name)
+    for key in (f"{name}{L.suffix}", f"{name}{L.fallback}" if L.fallback else None):
+        if key and e.get(key) not in (None, ""):
+            return e[key]
+    return e.get(name)
 
 
 def moves_word(n: int) -> str:
+    if L.code == "hi":
+        return "चाल" if n == 1 else "चालें"
     if L.code == "en":
         return "move" if n == 1 else "moves"
     if L.code == "de":
@@ -148,7 +186,7 @@ def credit_author(author: str | None) -> str:
     a = author or L.t["unknown_author"]
     if L.code != "pl":
         a = a.replace("autor nieznany", L.t["unknown_author"]).replace(
-            "; oprac.", "; bearb." if L.code == "de" else "; edited by")
+            "; oprac.", {"de": "; bearb.", "hi": "; संपादन"}.get(L.code, "; edited by"))
     return a
 
 
@@ -158,6 +196,8 @@ def notation():
         import de_notation as mod
     elif L.code == "en":
         import en_notation as mod
+    elif L.code == "hi":
+        import hi_notation as mod
     else:
         import pl_notation as mod
     return mod
