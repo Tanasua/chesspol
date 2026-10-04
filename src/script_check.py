@@ -77,6 +77,30 @@ def load_script(path) -> dict:
         return json.load(fh)
 
 
+HOOK_MIN, HOOK_MAX = 40, 300
+
+
+def build_hook(script: dict, game) -> tuple[Segment | None, int | None]:
+    """Hak na sam początek (przed powitaniem): {"text": "...", "ply": N}. Tekst bez ruchów, markerów i cyfr;
+    ply = pozycja kluczowa pokazywana na szachownicy, gdy lektor czyta hak. Stare scenariusze bez haka -> (None, None)."""
+    hook = script.get("hook")
+    if not hook:
+        return None, None
+    text = " ".join(str(hook.get("text") or "").split())
+    ply = hook.get("ply")
+    if not HOOK_MIN <= len(text) <= HOOK_MAX:
+        raise ScriptError(f"[hook] tekst musi mieć {HOOK_MIN}–{HOOK_MAX} znaków (ma {len(text)})")
+    if MARKER_RE.search(text):
+        raise ScriptError("[hook] bez markerów ruchów — hak niczego nie odgrywa, pozycję wskazuje pole \"ply\"")
+    for m in RAW_MOVE_RE.finditer(text):
+        raise ScriptError(f"[hook] surowy zapis ruchu '{m.group(0)}' — w haku nie podawaj ruchów")
+    if any(c.isdigit() for c in text):
+        raise ScriptError("[hook] liczby słownie (lektor), bez cyfr")
+    if not isinstance(ply, int) or not 1 <= ply <= len(game.plies):
+        raise ScriptError(f"[hook] pole \"ply\" musi być numerem półruchu 1..{len(game.plies)}")
+    return Segment(id="hook", tts_text=text, tokens=text.split(), pause_after=0.8), ply
+
+
 def build_segments(script: dict, game) -> tuple[list, list]:
     """Zwraca (segmenty, ostrzeżenia). Rzuca ScriptError przy błędach krytycznych."""
     n_plies = len(game.plies)
@@ -165,4 +189,5 @@ def build_segments(script: dict, game) -> tuple[list, list]:
                 raise ScriptError(f"Tytuł rozdziału za długi: '{c}' (maks. 60 znaków)")
     if last_ply != n_plies:
         raise ScriptError(f"Scenariusz kończy się na półruchu {last_ply}, a partia ma {n_plies}")
+    build_hook(script, game)  # walidacja haka (jeśli jest)
     return segments, warnings

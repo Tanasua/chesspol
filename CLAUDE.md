@@ -18,6 +18,10 @@ Pliki:
 - src/players.py — nazwy do kadru (nadpisania *_first/*_last w katalogu), zdjęcia assets/players/<slug>.jpg + .json
 - src/fetch_portraits.py — zdjęcia: Wikidata P18 -> Commons, tylko PD/CC0/CC BY/CC BY-SA, pełna zgodność nazwy + zawód szachista + rok urodzenia; raport assets/players/REPORT.md; atrybucja w kadrze i w opisie YouTube
 - src/main.py — CLI: --check-only, --dry-run; na końcu każdego odcinka stały segment OUTRO (podziękowanie, prośba o like i subskrypcję); na samym początku powitanie BEZ przedstawiania się (segment intro; decyzja właściciela); w połowie segment cta (phrases.CTA_TEXTS: łapka + subskrypcja) przed rozdziałem najbliższym środka; muzyka w tle assets/music/the_daily_ostinato.mp3 (Suno; pętla, MUSIC_GAIN_DB=-20, fade-in 2 s, fade-out 6 s na końcu; MUSIC="" albo --no-music wyłącza)
+- HAK (cold open): pole scenariusza "hook" {"text", "ply"} — 1–2 zdania PRZED powitaniem (intryga bez spoilera; typy: stawka,
+  paradoks, pytanie, odliczanie; fakty/oceny jak w scenariuszu; bez ruchów, markerów i cyfr; 40–300 znaków — script_check.build_hook).
+  W tym czasie szachownica pokazuje pozycję po półruchu "ply" (render_video(flash=...)), potem powitanie i partia od startu;
+  plansza nowości (preroll) przesunięta za hak. script_gen wymaga haka; stare scenariusze bez haka działają jak dawniej.
 - Dźwięk figury: src/sfx.py — własna synteza (drewniane 'tok', bicie jaśniejsze z odbiciem), w chwili lądowania figury
   (ANIM_SEC*0.85 po starcie ruchu), SFX_GAIN_DB=-14, --no-sfx wyłącza; miksowany z lektorem przed muzyką.
 - Przewijanie pominiętych półruchów: AUTO_STEP 1.25 s/ruch (render.py, maks. 1.5); gdy lektor nie daje czasu, main.py rozcina

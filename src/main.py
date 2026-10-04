@@ -22,7 +22,7 @@ from lang import L, field_
 from phrases import OUTRO, cta_for, intro_for
 from players import catalog_entry, side
 from render import AUTO_STEP, Renderer, render_video, schedule
-from script_check import Segment, build_segments, load_script
+from script_check import Segment, build_hook, build_segments, load_script
 from tts_inworld import dry_run, map_tokens_to_times
 
 if L.tts == "elevenlabs":
@@ -97,8 +97,12 @@ def main() -> int:
     segments, warnings = build_segments(script, game)
     entry = catalog_entry(Path(args.pgn).stem)
     intro = intro_for(entry)
-    if intro:  # powitanie prowadzącego na samym początku, przed hakiem scenariusza
+    if intro:  # powitanie prowadzącego przed pierwszym segmentem scenariusza
         segments.insert(0, Segment(id="intro", tts_text=intro, tokens=intro.split(), pause_after=0.6))
+    hook, hook_ply = build_hook(script, game)
+    if hook:  # hak na sam początek (przed powitaniem); szachownica pokazuje wtedy pozycję kluczową
+        segments.insert(0, hook)
+    head = 1 if hook else 0  # liczba segmentów przed powitaniem
     if len(segments) >= 6:  # prośba o łapkę w połowie — przed segmentem z rozdziałem najbliższym środka
         mid = len(segments) // 2
         starts = [i for i, sg in enumerate(segments) if sg.chapter and 2 <= i <= len(segments) - 2]
@@ -126,8 +130,11 @@ def main() -> int:
     cursor = LEAD_IN
     chapters = []
     preroll_until = None
+    flash_until = None
     for si, seg in enumerate(segments):
-        if si == 2 and args.preroll:  # plansza przez powitanie i hak (intro + s01), potem szachownica
+        if si == head and hook:  # koniec haka
+            flash_until = cursor
+        if si == head + 2 and args.preroll:  # plansza przez powitanie i s01, potem szachownica
             preroll_until = cursor
         if seg.chapter:
             chapters.append({"t": 0.0 if not chapters else round(cursor, 2), "title": seg.chapter})
@@ -195,8 +202,11 @@ def main() -> int:
             preroll_until = cursor
         if args.preroll and events and preroll_until > events[0].time:  # ruchy przed końcem planszy — skróć planszę
             preroll_until = max(0.0, events[0].time - 0.3)
+        if flash_until is not None and events and flash_until > events[0].time:
+            flash_until = max(0.0, events[0].time - 0.3)
         render_video(renderer, events, duration, wav, out, fps=args.fps,
-                     preroll=(args.preroll, preroll_until) if args.preroll else None)
+                     preroll=(args.preroll, preroll_until) if args.preroll else None,
+                     flash=(hook_ply, flash_until) if hook else None)
     timing = out.with_suffix(".timing.json")
     timing.write_text(json.dumps({"duration": round(duration, 2), "chapters": chapters,
                                   "moves": [[e.ply_index, round(e.time, 2)] for e in events],

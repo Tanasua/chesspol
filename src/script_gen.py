@@ -124,6 +124,9 @@ def _validate(text: str, game) -> tuple[dict | None, str | None, list]:
     for i, seg in enumerate(script["segments"]):
         if not isinstance(seg, dict) or not {"id", "text"} <= seg.keys():
             return None, f"Segment nr {i + 1} musi mieć pola \"id\" i \"text\".", []
+    hook = script.get("hook")
+    if not isinstance(hook, dict) or not (hook.get("text") or "").strip():
+        return None, "Pole \"hook\" jest puste — 1–2 zdania na sam początek odcinka + \"ply\" (pozycja kluczowa).", []
     if not (script.get("kicker") or "").strip():
         return None, "Pole \"kicker\" jest puste — 1–3 słowa WERSALIKAMI z wykrzyknikiem (np. \"NIESAMOWITE!\").", []
     try:
@@ -136,8 +139,14 @@ def _validate(text: str, game) -> tuple[dict | None, str | None, list]:
 SCRIPT_SCHEMA = {
     "type": "object",
     "additionalProperties": False,
-    "required": ["kicker", "title", "description", "segments"],
+    "required": ["hook", "kicker", "title", "description", "segments"],
     "properties": {
+        "hook": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ["text", "ply"],
+            "properties": {"text": {"type": "string"}, "ply": {"type": "integer"}},
+        },
         "kicker": {"type": "string"},
         "title": {"type": "string"},
         "description": {"type": "string"},

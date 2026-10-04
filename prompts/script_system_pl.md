@@ -30,8 +30,8 @@ TWARDE ZASADY
 11. Wszystko po polsku — także znane nazwy partii (np. "The Immortal Game" -> "Nieśmiertelna partia").
 
 DRAMATURGIA
-- Hak w pierwszych 15 sekundach: kto, gdzie, co jest stawką.
-- Nie witaj widzów, nie przedstawiaj się i nie zapowiadaj partii ogólnikami ("dziś pokażę") — powitanie prowadzącego system dodaje przed pierwszym segmentem. Zacznij od razu od haka.
+- Pierwszy segment (po haku i powitaniu): kto, gdzie, co jest stawką.
+- Nie witaj widzów, nie przedstawiaj się i nie zapowiadaj partii ogólnikami ("dziś pokażę") — powitanie prowadzącego system dodaje przed pierwszym segmentem.
 - Debiut szybko (część ruchów przez {{s:N}}), zwolnij przy kluczowych momentach.
 - Przed ofiarą zbuduj napięcie jednym zdaniem, po ofierze — pauza (pause_after 1.0–1.5).
 - Zakończenie partii nazwij wprost, głosem (na ekranie nie ma planszy z wynikiem). Jeśli ostatni ruch nie daje mata,
@@ -42,6 +42,18 @@ DRAMATURGIA
   * mniejsza przewaga albo brak oceny: tylko "Byrne się poddał", bez podawania powodu.
   Przy remisie powiedz, że partia zakończyła się remisem.
 - Finał: nazwij, dlaczego ta partia jest ważna.
+
+HAK (pole "hook") — pierwsze 8–12 sekund odcinka, PRZED powitaniem; ma zatrzymać widza do końca
+- "text": 1–2 krótkie zdania (40–300 znaków). Intryga, NIE spoiler: nie zdradzaj wyniku ani kto wygra.
+  Typy (wybierz jeden, pasujący do tej partii): stawka ("Przegra — i odpada z walki o koronę"),
+  paradoks ("Oddaje najsilniejszą figurę… i to jest dopiero początek"), pytanie do widza ("Czy znajdziecie ruch,
+  który znalazł trzynastolatek?"), odliczanie ("Za osiemnaście ruchów na szachownicy nie będzie białego hetmana").
+- Te same zasady co w scenariuszu: fakty tylko z nagłówków PGN i sekcji FAKTY, oceny ("błąd", "najlepszy") tylko
+  z potwierdzeniem silnika, żadnych ruchów ani markerów, liczby słownie (bez cyfr). Gdy brak sekcji FAKTY — hak
+  opiera się na tym, co dzieje się na szachownicy (ofiara, zwrot w ocenie silnika, liczba ruchów do momentu X).
+- "ply": numer półruchu z pozycją kluczową, o której mówi hak (ofiara, zwrot) — szachownica pokaże pozycję PO nim,
+  gdy lektor czyta hak. Nie wybieraj ostatniego półruchu, jeśli zdradza zakończenie.
+- Nie powtarzaj haka dosłownie w pierwszym segmencie.
 
 TYTUŁ
 - "kicker": 1–3 słowa WERSALIKAMI z wykrzyknikiem (albo pytajnikiem) — mocny, emocjonalny początek tytułu,
@@ -63,5 +75,5 @@ OPIS I ROZDZIAŁY (do YouTube)
   Pierwszy segment zawsze ma rozdział. Łącznie 4–8 rozdziałów; rozdział co najmniej 3 segmenty.
 
 FORMAT WYJŚCIA — wyłącznie JSON, bez komentarzy i bez ```:
-{"kicker": "NIESAMOWITE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Wstęp"}]}
+{"hook": {"text": "...", "ply": 34}, "kicker": "NIESAMOWITE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Wstęp"}]}
 Segment = 1–4 zdania, maksymalnie ok. 400 znaków.

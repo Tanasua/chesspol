@@ -34,9 +34,9 @@ HARD RULES
     and join closely related thoughts with a comma instead of a period.
 
 STORYTELLING
-- A hook in the first 15 seconds: who, where, what's at stake.
+- First segment (after the hook and the greeting): who, where, what's at stake.
 - Don't greet viewers, don't introduce yourself, and don't announce the game generically ("today I'll show you") —
-  the system adds the host's greeting before the first segment. Start straight with the hook.
+  the system adds the host's greeting before the first segment.
 - Move through the opening quickly (some moves via {{s:N}}), slow down at the key moments.
 - Before a sacrifice, build tension with one sentence; after the sacrifice — a pause (pause_after 1.0–1.5).
 - State the end of the game explicitly, by voice (there is no result card on screen). If the last move is not mate
@@ -47,6 +47,18 @@ STORYTELLING
   * smaller advantage or no evaluation: only "Byrne resigned", without a reason.
   For a draw, say the game ended in a draw.
 - Finale: say why this game matters.
+
+HOOK (field "hook") — the first 8–12 seconds of the episode, BEFORE the greeting; it must keep viewers watching to the end
+- "text": 1–2 short sentences (40–300 characters). Intrigue, NOT a spoiler: don't reveal the result or who wins.
+  Types (pick one that fits this game): stakes ("Lose this, and the title dream is over"),
+  paradox ("He gives up his strongest piece… and that's only the beginning"), a question to the viewer ("Can you find
+  the move a thirteen-year-old found?"), countdown ("In eighteen moves, there won't be a white queen on the board").
+- Same rules as the script: facts only from the PGN headers and the FACTS section, verdicts ("mistake", "best move")
+  only with engine confirmation, no moves and no markers, numbers in words (no digits). Without FACTS, the hook relies
+  on what happens on the board (a sacrifice, a swing in the engine evaluation, the number of moves until X).
+- "ply": the half-move number of the key position the hook talks about (sacrifice, turning point) — the board shows
+  the position AFTER it while the hook is read. Don't pick the last half-move if it gives away the ending.
+- Don't repeat the hook word for word in the first segment.
 
 TITLE
 - "kicker": 1–3 words in CAPITAL LETTERS with an exclamation mark (or question mark) — a strong, emotional opener
@@ -67,5 +79,5 @@ DESCRIPTION AND CHAPTERS (for YouTube)
   The first segment always has a chapter. 4–8 chapters in total; a chapter spans at least 3 segments.
 
 OUTPUT FORMAT — JSON only, no comments and no ```:
-{"kicker": "INSANE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Introduction"}]}
+{"hook": {"text": "...", "ply": 34}, "kicker": "INSANE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Introduction"}]}
 Segment = 1–4 sentences, at most about 400 characters.

@@ -369,8 +369,12 @@ def schedule(anchor_times: list, n_plies: int) -> list:
 
 
 def render_video(renderer: Renderer, events: list, duration: float, audio_path, out_path, fps: int = 25,
-                 preroll=None) -> None:
-    """preroll: (ścieżka PNG 1920x1080, do_sekundy) — plansza na początku (np. drabinka turnieju)."""
+                 preroll=None, flash=None) -> None:
+    """preroll: (ścieżka PNG 1920x1080, do_sekundy) — plansza na początku (np. drabinka turnieju).
+    flash: (półruch, do_sekundy) — hak: pozycja kluczowa na samym początku, potem zwykły przebieg od startu."""
+    flash_bytes, flash_until = None, 0.0
+    if flash:
+        flash_bytes, flash_until = renderer.static(flash[0]).tobytes(), flash[1]
     pre_bytes, pre_until = None, 0.0
     if preroll:
         pre_bytes = Image.open(preroll[0]).convert("RGB").resize((W, H)).tobytes()
@@ -388,6 +392,9 @@ def render_video(renderer: Renderer, events: list, duration: float, audio_path, 
     try:
         for f in range(n_frames):
             t = f / fps
+            if flash_bytes and t < flash_until:
+                proc.stdin.write(flash_bytes)
+                continue
             if pre_bytes and t < pre_until:
                 proc.stdin.write(pre_bytes)
                 continue
