@@ -14,6 +14,7 @@ from __future__ import annotations
 import html
 import json
 import os
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -26,10 +27,20 @@ TG_CHUNK = 3500  # zapas do limitu 4096 znaków po escapowaniu HTML
 CHANNEL_UK = {"pl": "польський канал", "de": "німецький канал", "en": "англійський (США) канал"}
 
 
+def video_filename(title: str) -> str:
+    """Nazwa pliku wideo z tytułu YouTube (YouTube podpowiada ją jako tytuł przy wgrywaniu): bez znaków
+    niedozwolonych w nazwach plików, maks. ~100 znaków."""
+    name = re.sub(r'[\\/:*?"<>|#%]+', " ", title.replace(" | ", " - ").replace(" — ", " - "))
+    name = re.sub(r"\s+", " ", name).strip(" .-")[:100].rstrip(" .-")
+    return f"{name or 'video'}.mp4"
+
+
 def write_package(folder: Path, video: Path, cover: Path, title: str, description: str,
                   tags: list, when_local: str, ai_cover: Path | None = None, ai_note: str = "") -> dict:
     folder.mkdir(parents=True, exist_ok=True)
-    files = {"video": folder / "video.mp4", "cover": folder / "cover.jpg", "text": folder / "opis.txt"}
+    for old in folder.glob("*.mp4"):  # ponowny render tego samego odcinka — bez starych plików
+        old.unlink()
+    files = {"video": folder / video_filename(title), "cover": folder / "cover.jpg", "text": folder / "opis.txt"}
     shutil.copyfile(video, files["video"])
     shutil.copyfile(cover, files["cover"])
     if ai_cover:
@@ -127,7 +138,7 @@ def telegram(pkg: dict, title: str, when_local: str, release_url: str | None, nu
     if f["video"].stat().st_size <= TG_LIMIT:
         with open(f["video"], "rb") as fh:
             _tg("sendDocument", data={"chat_id": chat, "caption": "🎬 Відео для завантаження на YouTube"},
-                files={"document": ("video.mp4", fh, "video/mp4")})
+                files={"document": (f["video"].name, fh, "video/mp4")})
     else:
         _tg("sendMessage", data={"chat_id": chat,
                                  "text": f"🎬 Відео більше за 50 МБ, Telegram його не прийме — "
