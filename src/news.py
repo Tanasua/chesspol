@@ -546,7 +546,8 @@ def main() -> int:
     when = "одразу (новина)" if not args.test else "ТЕСТ — новина, публікація на ваш розсуд"
     tag = f"{L.tag_prefix}news{'-test' if args.test else ''}-{gid}"[:120]
     info = S.deliver_package(entry, pgn_path, video, title, description, tags, when, 0,
-                             remote=not args.dry_tts, tag=tag, badge=label, preroll=pre)
+                             remote=not args.dry_tts, tag=tag, badge=label, preroll=pre,
+                             cover_title=S.cover_text(sc, title))
     print("Paczka:", info)
     return 0
 

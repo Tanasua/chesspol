@@ -207,6 +207,22 @@ def build_segments(script: dict, game) -> tuple[list, list]:
             raise ScriptError(f"[kicker] musi kończyć się wykrzyknikiem lub pytajnikiem: '{kicker}'")
         if RAW_MOVE_RE.search(kicker) or any(c.isdigit() for c in kicker):
             raise ScriptError(f"[kicker] bez ruchów i liczb: '{kicker}'")
+    yt_hook, yt_detail = (script.get("yt_hook") or "").strip(), (script.get("yt_detail") or "").strip()
+    if yt_hook:  # tytuł YouTube — osobny od okładki (kicker + title)
+        if len(yt_hook) > 45 or len(yt_hook.split()) < 2:
+            raise ScriptError(f"[yt_hook] 2–7 słów, maks. 45 znaków: '{yt_hook}'")
+        if RAW_MOVE_RE.search(yt_hook):
+            raise ScriptError(f"[yt_hook] bez zapisu ruchów: '{yt_hook}'")
+        cover_words = {w for w in re.findall(r"\w+", f"{kicker} {title}".lower()) if len(w) > 3}
+        hook_words = {w for w in re.findall(r"\w+", yt_hook.lower()) if len(w) > 3}
+        if hook_words and len(hook_words & cover_words) / len(hook_words) > 0.5:
+            raise ScriptError(f"[yt_hook] ma być INNĄ frazą niż okładka (kicker + title) — "
+                              f"powtarza: {sorted(hook_words & cover_words)}")
+    if yt_detail:
+        if len(yt_detail) > 60:
+            raise ScriptError(f"[yt_detail] maks. 60 znaków: '{yt_detail}'")
+        if RAW_MOVE_RE.search(yt_detail):
+            raise ScriptError(f"[yt_detail] bez zapisu ruchów: '{yt_detail}'")
     desc = (script.get("description") or "").strip()
     if desc:
         for m in RAW_MOVE_RE.finditer(desc):

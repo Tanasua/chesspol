@@ -67,15 +67,24 @@ HAK (pole "hook") — pierwsze 8–12 sekund odcinka, PRZED powitaniem; ma zatrz
 - Nie powtarzaj haka dosłownie w pierwszym segmencie.
 
 TYTUŁ
-- "kicker": 1–3 słowa WERSALIKAMI z wykrzyknikiem (albo pytajnikiem) — mocny, emocjonalny początek tytułu,
+- "kicker": 1–3 słowa WERSALIKAMI z wykrzyknikiem (albo pytajnikiem) — mocny, emocjonalny napis na okładkę,
   jak w polskim YouTube: "NIESAMOWITE!", "CO ZA PARTIA!", "GENIALNE!", "SZOK!", "MISTRZOWSKO!",
   "PRZECHYTRZYŁ MISTRZA!", "ROZGROMIŁA FAWORYTA!", "OFIARA HETMANA!".
   Musi pasować do TEJ partii i być zgodny z danymi: kto wygrał (wynik z PGN), co się wydarzyło (ofiara, mat, remis).
   Nie obiecuj czegoś, czego w partii nie ma; "BŁĄD STULECIA!" tylko z potwierdzeniem silnika (zasada 5).
   Forma czasownika musi zgadzać się z płcią gracza (przechytrzył / przechytrzyła); gdy nie masz pewności —
   wybierz zwrot bez czasownika ("NIESAMOWITE!", "CO ZA PARTIA!"). Bez liczb i bez zapisu ruchów.
-- "title": krótki, maks. 50 znaków, bez nazwisk graczy, bez roku i bez kickera (system złoży
-  "<kicker> <title> | Białe – Czarne (rok)"). Np. "Nieśmiertelna partia", "Ofiara hetmana w Paryżu".
+- "title": krótki, maks. 50 znaków, bez nazwisk graczy, bez roku i bez kickera. "kicker" + "title" idą na OKŁADKĘ
+  (duży napis). Np. "Nieśmiertelna partia", "Ofiara hetmana w Paryżu".
+
+TYTUŁ YOUTUBE (osobny od okładki — INNE słowa niż w kicker i title)
+- "yt_hook": inna chwytliwa fraza na początek tytułu YouTube, 2–7 słów, maks. 45 znaków, może kończyć się "!" lub "?".
+  Nie powtarzaj słów z kickera ani z title (poza nazwami własnymi). Np. "Trzynastolatek oddał hetmana!",
+  "Tego ruchu nikt się nie spodziewał". Forma czasownika zgodna z płcią gracza.
+- "yt_detail": konkretny szczegół — kto co zrobił, maks. 60 znaków. Np. "Fischer poświęca hetmana",
+  "Tal oddaje dwie figury i matuje". Fakty jak w scenariuszu (PGN, FAKTY, silnik), bez zapisu ruchów; cyfry dozwolone.
+- System złoży: "<yt_hook> | Nazwisko – Nazwisko (turniej, rok) — <yt_detail>". Nazwiska, rok i turniej dodaje sam —
+  nie wpisuj ich do yt_hook (nazwisko w yt_detail jest w porządku).
 
 OPIS I ROZDZIAŁY (do YouTube)
 - "description": 3–5 zdań zachęty do obejrzenia: kto gra, gdzie, dlaczego ta partia jest sławna,
@@ -86,5 +95,5 @@ OPIS I ROZDZIAŁY (do YouTube)
   Pierwszy segment zawsze ma rozdział. Łącznie 4–8 rozdziałów; rozdział co najmniej 3 segmenty.
 
 FORMAT WYJŚCIA — wyłącznie JSON, bez komentarzy i bez ```:
-{"hook": {"text": "...", "ply": 34}, "kicker": "NIESAMOWITE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Wstęp"}]}
+{"hook": {"text": "...", "ply": 34}, "yt_hook": "...", "yt_detail": "...", "kicker": "NIESAMOWITE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Wstęp"}]}
 Segment = 1–4 zdania, maksymalnie ok. 400 znaków.

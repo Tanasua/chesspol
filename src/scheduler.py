@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 from datetime import date, datetime, time, timedelta, timezone
@@ -156,6 +157,42 @@ def _yt_title(main: str, white: str, black: str, game: dict, hook: str = "") -> 
     return f"{main[:100 - len(suffix) - 1].rstrip()}…{suffix}"
 
 
+IMPORTANT_EVENT_RE = re.compile(
+    r"world championship|candidates|olympiad|interzonal|championship|world cup|grand chess tour|final|"
+    r"mistrzostw|pretendent|olimpiad|międzystref|puchar świata|finał|"
+    r"weltmeisterschaft|wm-|kandidaten|olympiade|interzonen|meisterschaft|weltpokal|finale", re.I)
+
+
+def _event_short(game: dict) -> str:
+    """Turniej do tytułu, gdy ważny (MŚ, kandydaci, olimpiada, mistrzostwa, finał) — bez numeru partii i roku."""
+    label = (field_(game, "label") or field_(game, "event") or "").split(" · ")[0]
+    label = re.sub(r"\b(18|19|20)\d\d\b", "", label).strip(" ,-–")
+    return label if label and IMPORTANT_EVENT_RE.search(label) else ""
+
+
+def yt_title(yt_hook: str, white: str, black: str, game: dict, detail: str = "") -> str:
+    """Tytuł YouTube (maks. 100 znaków), INNY niż napis na okładce:
+    '<fraza> | Nazwisko – Nazwisko (turniej, rok) — <szczegół>'. Gdy za długo: bez turnieju, potem bez szczegółu.
+    Turniej tylko ważny (MŚ, pretendenci, olimpiada, mistrzostwa, puchar świata, finał) — z katalogu, nie od LLM."""
+    event = _event_short(game)
+    def make(ev: str, det: str) -> str:
+        when = f"{ev}, {game['year']}" if ev else f"{game['year']}"
+        return f"{yt_hook} | {white} – {black} ({when})" + (f" — {det}" if det else "")
+
+    # pierwszeństwo: szczegół (kto co zrobił) ważniejszy niż nazwa turnieju
+    variants = [make(event, detail), make("", detail), make(event, ""), make("", "")]
+    for t in variants:
+        if len(t) <= 100:
+            return t
+    return variants[-1][:99].rstrip() + "…"
+
+
+def cover_text(script: dict, title: str) -> str:
+    """Napis na okładce: kicker + title ze scenariusza (tytuł YouTube jest osobny); starsze — początek tytułu."""
+    t = f"{(script.get('kicker') or '').strip()} {(script.get('title') or '').strip()}".strip()
+    return t if script.get("yt_hook") and t else title.split(" | ")[0]
+
+
 def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | None = None) -> tuple[str, str, list]:
     t = L.t
     white, black = field_(game, "white"), field_(game, "black")
@@ -165,7 +202,9 @@ def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | N
 
     ws, bs = side(game, "white", white)["last"], side(game, "black", black)["last"]
     kicker = (script.get("kicker") or "").strip()
-    if kicker:  # nowe scenariusze: "NIESAMOWITE! <tytuł>" zamiast stałego dopisku
+    if (script.get("yt_hook") or "").strip():  # osobny tytuł YouTube (okładka ma kicker + title)
+        title = yt_title(script["yt_hook"].strip(), ws, bs, game, (script.get("yt_detail") or "").strip())
+    elif kicker:  # starsze scenariusze: "NIESAMOWITE! <tytuł>"
         title = _yt_title(f"{kicker} {script.get('title') or ''}".strip(), ws, bs, game)
     else:
         title = _yt_title(script.get("title") or "", ws, bs, game, title_hook_for(game))
@@ -214,7 +253,7 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
     episode = {"id": gid, "publish_at": publish_at.isoformat(), "title": title, "mode": MODE}
     if MODE == "manual":
         episode.update(deliver_package(game, pgn, video, title, description, tags, when, number,
-                                       remote=not dry_tts))
+                                       remote=not dry_tts, cover_title=cover_text(script, title)))
         print(f"Paczka gotowa: {title} -> {when}")
         return episode
     if no_upload:
@@ -229,7 +268,7 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
 
 def deliver_package(game: dict, pgn: Path, video: Path, title: str, description: str, tags: list,
                     when: str, number: int, remote: bool = True, tag: str | None = None, badge: str = "",
-                    preroll: Path | None = None) -> dict:
+                    preroll: Path | None = None, cover_title: str | None = None) -> dict:
     from cover import make_cover
     from deliver import github_release, telegram, write_package
     from pgn_loader import load_game
@@ -245,7 +284,7 @@ def deliver_package(game: dict, pgn: Path, video: Path, title: str, description:
     except Exception as e:  # noqa: BLE001 — strzałki to ozdoba, nie blokują odcinka
         print(f"::warning::Okładka — strzałki: {e.__class__.__name__}: {str(e)[:200]}")
         marks = None
-    cover = make_cover(g, title.split(" | ")[0], side(game, "white", game["white"]),
+    cover = make_cover(g, cover_title or title.split(" | ")[0], side(game, "white", game["white"]),
                        side(game, "black", game["black"]), str(game["year"]), L.out / f"{game['id']}_cover.jpg",
                        badge=badge, marks=marks)
     from cover_ai import enabled as ai_enabled, make_ai_cover

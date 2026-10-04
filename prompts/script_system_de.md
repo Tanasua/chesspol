@@ -73,14 +73,23 @@ HOOK (Feld "hook") — die ersten 8–12 Sekunden der Folge, VOR der Begrüßung
 
 TITEL
 - "kicker": 1–3 Wörter in GROSSBUCHSTABEN mit Ausrufezeichen (oder Fragezeichen) — ein starker, emotionaler
-  Einstieg in den Titel, wie im deutschen YouTube üblich: "UNGLAUBLICH!", "WAS FÜR EINE PARTIE!", "GENIAL!",
+  Schriftzug für das Vorschaubild, wie im deutschen YouTube üblich: "UNGLAUBLICH!", "WAS FÜR EINE PARTIE!", "GENIAL!",
   "WAHNSINN!", "MEISTERHAFT!", "ÜBERLISTET!", "DAMENOPFER!", "WELTMEISTER ZERLEGT!".
   Er muss zu DIESER Partie passen und mit den Daten übereinstimmen: wer gewonnen hat (Ergebnis aus der PGN),
   was passiert ist (Opfer, Matt, Remis). Versprich nichts, was in der Partie nicht vorkommt;
   "DER FEHLER DES JAHRHUNDERTS!" nur mit Bestätigung durch die Engine (Regel 5).
   Ohne Zahlen und ohne Zugnotation. Schreibe ß in Großbuchstaben als "SS" oder "ẞ" einheitlich ("GROSS!").
-- "title": kurz, max. 50 Zeichen, ohne Spielernamen, ohne Jahr und ohne Kicker (das System setzt
-  "<Kicker> <Titel> | Weiß – Schwarz (Jahr)" zusammen). Z. B. "Die Unsterbliche Partie", "Damenopfer in Paris".
+- "title": kurz, max. 50 Zeichen, ohne Spielernamen, ohne Jahr und ohne Kicker. "kicker" + "title" stehen auf dem
+  VORSCHAUBILD (große Schrift). Z. B. "Die Unsterbliche Partie", "Damenopfer in Paris".
+
+YOUTUBE-TITEL (getrennt vom Vorschaubild — ANDERE Wörter als in kicker und title)
+- "yt_hook": eine andere, packende Phrase für den Anfang des YouTube-Titels, 2–7 Wörter, max. 45 Zeichen, darf mit
+  "!" oder "?" enden. Wiederhole keine Wörter aus kicker oder title (außer Eigennamen). Z. B. "Mit 13 opfert er die Dame!",
+  "Diesen Zug hat niemand kommen sehen".
+- "yt_detail": ein konkretes Detail — wer was getan hat, max. 60 Zeichen. Z. B. "Fischer opfert die Dame",
+  "Tal gibt zwei Figuren und setzt matt". Fakten wie im Skript (PGN, FAKTEN, Engine), keine Zugnotation; Ziffern erlaubt.
+- Das System setzt zusammen: "<yt_hook> | Name – Name (Turnier, Jahr) — <yt_detail>". Namen, Jahr und Turnier fügt es
+  selbst ein — nicht in yt_hook schreiben (ein Name in yt_detail ist in Ordnung).
 
 BESCHREIBUNG UND KAPITEL (für YouTube)
 - "description": 3–5 Sätze, die zum Anschauen einladen: wer spielt, wo, warum die Partie berühmt ist,
@@ -91,5 +100,5 @@ BESCHREIBUNG UND KAPITEL (für YouTube)
   Das erste Segment hat immer ein Kapitel. Insgesamt 4–8 Kapitel; ein Kapitel umfasst mindestens 3 Segmente.
 
 AUSGABEFORMAT — ausschließlich JSON, ohne Kommentare und ohne ```:
-{"hook": {"text": "...", "ply": 34}, "kicker": "UNGLAUBLICH!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Einleitung"}]}
+{"hook": {"text": "...", "ply": 34}, "yt_hook": "...", "yt_detail": "...", "kicker": "UNGLAUBLICH!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Einleitung"}]}
 Segment = 1–4 Sätze, höchstens ca. 400 Zeichen.

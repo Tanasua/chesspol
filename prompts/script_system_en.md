@@ -72,14 +72,23 @@ HOOK (field "hook") — the first 8–12 seconds of the episode, BEFORE the gree
 - Don't repeat the hook word for word in the first segment.
 
 TITLE
-- "kicker": 1–3 words in CAPITAL LETTERS with an exclamation mark (or question mark) — a strong, emotional opener
-  for the title, the way US chess YouTube does it: "INSANE!", "WHAT A GAME!", "GENIUS!", "BRILLIANT!",
+- "kicker": 1–3 words in CAPITAL LETTERS with an exclamation mark (or question mark) — a strong, emotional thumbnail line
+  (for the thumbnail), the way US chess YouTube does it: "INSANE!", "WHAT A GAME!", "GENIUS!", "BRILLIANT!",
   "OUTPLAYED!", "QUEEN SACRIFICE!", "CRUSHED!", "UNBELIEVABLE!".
   It must fit THIS game and agree with the data: who won (result from the PGN), what happened (sacrifice, mate, draw).
   Don't promise anything that isn't in the game; "BLUNDER OF THE CENTURY!" only with engine confirmation (rule 5).
   No numbers and no move notation.
-- "title": short, max. 50 characters, no player names, no year and no kicker (the system assembles
-  "<Kicker> <Title> | White – Black (year)"). Title Case. E.g. "The Immortal Game", "A Queen Sacrifice in Paris".
+- "title": short, max. 50 characters, no player names, no year and no kicker. "kicker" + "title" go on the
+  THUMBNAIL (big text). Title Case. E.g. "The Immortal Game", "A Queen Sacrifice in Paris".
+
+YOUTUBE TITLE (separate from the thumbnail — DIFFERENT words than kicker and title)
+- "yt_hook": a different, catchy phrase to open the YouTube title, 2–7 words, max. 45 characters, may end with
+  "!" or "?". Don't reuse words from the kicker or the title (except proper names). E.g. "He Gave Up His Queen at 13!",
+  "Nobody Saw This Move Coming". Title Case.
+- "yt_detail": one concrete detail — who did what, max. 60 characters. E.g. "Fischer sacrifices his queen",
+  "Tal gives up two pieces and mates". Facts as in the script (PGN, FACTS, engine), no move notation; digits allowed.
+- The system assembles: "<yt_hook> | Name – Name (event, year) — <yt_detail>". It adds the names, year and event
+  itself — don't put them in yt_hook (a name in yt_detail is fine).
 
 DESCRIPTION AND CHAPTERS (for YouTube)
 - "description": 3–5 sentences inviting people to watch: who plays, where, why the game is famous,
@@ -90,5 +99,5 @@ DESCRIPTION AND CHAPTERS (for YouTube)
   The first segment always has a chapter. 4–8 chapters in total; a chapter spans at least 3 segments.
 
 OUTPUT FORMAT — JSON only, no comments and no ```:
-{"hook": {"text": "...", "ply": 34}, "kicker": "INSANE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Introduction"}]}
+{"hook": {"text": "...", "ply": 34}, "yt_hook": "...", "yt_detail": "...", "kicker": "INSANE!", "title": "...", "description": "...", "segments": [{"id": "s01", "text": "...", "pause_after": 0.6, "chapter": "Introduction"}]}
 Segment = 1–4 sentences, at most about 400 characters.
