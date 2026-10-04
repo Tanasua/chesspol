@@ -59,8 +59,6 @@ Pliki:
 - OKŁADKA AI: src/cover_ai.py — nasza okładka -> OpenAI Images API edit (COVER_AI_MODEL, domyślnie gpt-image-2.5-sunburst,
   fallback gpt-image-2; 1536x864 -> 1280x720) z promptem właściciela (PROMPT, po ukraińsku, dosłownie) -> cover_ai.jpg w paczce
   i Release; Telegram: album [nasza, AI] do porównania + cover_ai.jpg jako plik. Błąd/odmowa nie blokuje odcinka. COVER_AI=0 wyłącza.
-  Szachownica nietykalna: maska (BOARD_BOX zachowany) + dopisek w prompcie + wklejenie naszej szachownicy piksel w piksel na wynik
-  (AI przestawiło hetmana i skoczka na okładce Topalow–Anand 2010).
 - Telegram/paczka: teksty dla właściciela PO UKRAIŃSKU (podpisy, nagłówki, data "пт, 02.10.2026 о 10:00 (за Києвом)"),
   tytuł/opis/tagi w języku kanału, każde w osobnym bloku <pre> (kopiowanie jednym dotknięciem); opis dzielony na części ≤3500 znaków
 - OKŁADKA vs TYTUŁ YOUTUBE (decyzja właściciela: różne słowa). Okładka: "<KICKER> <title>" (pola LLM kicker + title;

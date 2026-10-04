@@ -4,8 +4,6 @@ wynik 16:9 trafia do paczki jako cover_ai.jpg i do Telegrama obok naszej — do 
 Model: COVER_AI_MODEL (domyślnie gpt-image-2.5-sunburst — wg SDK openai 3.24 model do precyzyjnej edycji,
 rozmiary WIDTHxHEIGHT podzielne przez 16), przy błędzie modelu — gpt-image-2. COVER_AI=0 wyłącza.
 Błąd API (np. odmowa moderacji przy zdjęciach osób) nie blokuje odcinka: zwracamy None i powód.
-Szachownica: maska (obszar BOARD_BOX zachowany) + prośba w prompcie + wklejenie oryginalnej szachownicy na wynik —
-model nie może przestawić figur (wcześniej przestawiał).
 """
 from __future__ import annotations
 
@@ -17,11 +15,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 PROMPT = ("Згенеруй клікбейт-кавер форматом 16:9, проаналізувавши надане мною фото, "
-          "використовуючи його за основу і створи новий. "
-          # dopisek właściciela: AI przestawiało figury (Topalow–Anand 2010: hetman i skoczek na złych polach)
-          "Шахову дошку залиш точно такою, як на фото, на тому самому місці: не переставляй, не додавай і не прибирай "
-          "фігури, стрілки й позначки, не змінюй поля дошки.")
-BOARD_BOX = (50, 50, 670, 670)  # szachownica na naszej okładce 1280x720 (cover.py: BOARD_PX=620, margines 50)
+          "використовуючи його за основу і створи новий")
 MODEL = os.environ.get("COVER_AI_MODEL", "gpt-image-2.5-sunburst")
 FALLBACK_MODEL = "gpt-image-2"
 SIZE = "1536x864"  # 16:9, obie krawędzie podzielne przez 16
@@ -40,27 +34,16 @@ def make_ai_cover(src: Path, out: Path) -> tuple[Path | None, str]:
 
     client = OpenAI(timeout=300)
     errors = []
-    # maska: szachownica nieprzezroczysta = do zachowania, reszta przezroczysta = do przerobienia
-    base = Image.open(src).convert("RGB")
-    mask = Image.new("RGBA", base.size, (0, 0, 0, 0))
-    mask.paste((255, 255, 255, 255), BOARD_BOX)
-    mbuf = io.BytesIO()
-    mask.save(mbuf, "PNG")
     for model in dict.fromkeys([MODEL, FALLBACK_MODEL]):
         try:
             with open(src, "rb") as fh:
                 r = client.images.edit(model=model, image=("cover.jpg", fh, "image/jpeg"), prompt=PROMPT,
-                                       mask=("mask.png", mbuf.getvalue(), "image/png"),
                                        size=SIZE, quality="high", output_format="jpeg", n=1)
         except Exception as e:  # noqa: BLE001 — wariant AI to dodatek, nie blokuje odcinka
             errors.append(f"{model}: {e.__class__.__name__}: {str(e)[:200]}")
             continue
         img = Image.open(io.BytesIO(base64.b64decode(r.data[0].b64_json))).convert("RGB")
         img = ImageOps.fit(img, OUT_SIZE, Image.LANCZOS)  # gdyby model zwrócił inny kadr
-        # gwarancja poprawności: szachownicę (figury, strzałki, znaki) wklejamy z naszej okładki piksel w piksel —
-        # model potrafi przestawić figury nawet z maską (decyzja właściciela po błędzie na okładce Topalow–Anand)
-        if base.size == OUT_SIZE:
-            img.paste(base.crop(BOARD_BOX), BOARD_BOX[:2])
         out.parent.mkdir(parents=True, exist_ok=True)
         img.save(out, "JPEG", quality=92)
         return out, model
