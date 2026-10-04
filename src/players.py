@@ -77,6 +77,18 @@ def local_surname(last: str) -> str:
     return _SURNAMES.get(L.code, {}).get(last, last)
 
 
+def localize_names(text: str) -> str:
+    """Nazwiska w dowolnym tekście (np. szczegół w tytule od LLM) w pisowni języka kanału: Botvinnik -> Botwinnik."""
+    import re
+
+    from lang import L
+
+    local_surname("")  # wczytanie słownika
+    for en, loc in (_SURNAMES or {}).get(L.code, {}).items():
+        text = re.sub(rf"\b{re.escape(en)}(?=\b|[a-z])", loc, text)
+    return text
+
+
 def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     """color: 'white'/'black'. Zwraca {name, first, last, photo, credit}."""
     from lang import field_

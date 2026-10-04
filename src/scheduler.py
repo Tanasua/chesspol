@@ -174,7 +174,10 @@ def yt_title(yt_hook: str, white: str, black: str, game: dict, detail: str = "")
     """Tytuł YouTube (maks. 100 znaków), INNY niż napis na okładce:
     '<fraza> | Nazwisko – Nazwisko (turniej, rok) — <szczegół>'. Gdy za długo: bez turnieju, potem bez szczegółu.
     Turniej tylko ważny (MŚ, pretendenci, olimpiada, mistrzostwa, puchar świata, finał) — z katalogu, nie od LLM."""
+    from players import localize_names
+
     event = _event_short(game)
+    yt_hook, detail = localize_names(yt_hook), localize_names(detail)
     def make(ev: str, det: str) -> str:
         when = f"{ev}, {game['year']}" if ev else f"{game['year']}"
         return f"{yt_hook} | {white} – {black} ({when})" + (f" — {det}" if det else "")
