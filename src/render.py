@@ -215,7 +215,7 @@ class Renderer:
         d = ImageDraw.Draw(img)
         d.rounded_rectangle([fx0, fy0, fx1, fy1], radius=14, fill=(30, 27, 22), outline=ACCENT, width=2)
         d.rectangle([BOARD_X - 3, BOARD_Y - 3, BOARD_X + BOARD + 2, BOARD_Y + BOARD + 2], outline=GOLD_DIM, width=1)
-        # pola jak stary pergamin: delikatne ziarno + jaśniejszy środek, ciemniejsze rogi
+        # pola jak stary pergamin: jednolite kolory z delikatnym ziarnem (bez gradientu — decyzja właściciela)
         board = Image.new("RGB", (BOARD, BOARD))
         bd = ImageDraw.Draw(board)
         for sq in chess.SQUARES:
@@ -223,8 +223,6 @@ class Renderer:
             light = (chess.square_file(sq) + chess.square_rank(sq)) % 2 == 1
             bd.rectangle([x - BOARD_X, y - BOARD_Y, x - BOARD_X + SQ - 1, y - BOARD_Y + SQ - 1], fill=LIGHT if light else DARK)
         board = Image.blend(board, Image.effect_noise((BOARD, BOARD), 30).convert("RGB"), 0.05)
-        vign = Image.radial_gradient("L").resize((BOARD, BOARD)).point(lambda v: int(v * 0.30))
-        board.paste(Image.new("RGB", (BOARD, BOARD), (40, 26, 12)), (0, 0), vign)
         img.paste(board, (BOARD_X, BOARD_Y))
         f = _serif(21, "bold")
         on_light, on_dark = (110, 86, 58), (224, 206, 172)
