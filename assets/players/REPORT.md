@@ -15,20 +15,20 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Alireza Firouzja | ✅ (już jest) | Q22338182 | CC BY-SA 2.0 | Frans Peeters |
 | Anatoly Karpov | ✅ (już jest) | Q131674 | CC BY-SA 4.0 | Veni Markovski | Вени Марковски |
 | Andor Lilienthal | ✅ (już jest) | Q113167 | Public domain | Unknown authorUnknown author |
-| Arkadij Naiditsch | ✅ auto (Q77224) | Q77224 | CC BY-SA 3.0 | Stefan64 |
+| Arkadij Naiditsch | ✅ (już jest) | Q77224 | CC BY-SA 3.0 | Stefan64 |
 | Aron Nimzowitsch | ✅ (już jest) | Q295114 | Public domain | Not mentioned |
 | Artur Yusupov | ✅ (już jest) | Q60598 | CC BY-SA 3.0 | Stefan64 |
-| Bartosz Soćko | ✅ auto (Q809574) | Q809574 | CC BY-SA 4.0 | Krzysztof Szeląg |
+| Bartosz Soćko | ✅ (już jest) | Q809574 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Bent Larsen | ✅ (już jest) | Q108807 | CC0 | Hans Peters for Anefo |
 | Boris Gelfand | ✅ (już jest) | Q486778 | CC0 | TheBoburshokh |
 | Boris Spassky | ✅ (już jest) | Q177310 | CC0 | Rob Bogaerts for Anefo |
 | Carl Hamppe | brak zdjęcia w Wikidata | Q690803 | | |
 | Carl Schlechter | ✅ (już jest) | Q320017 | Public domain | Schumann, Fritz |
 | Carlos Torre Repetto | ✅ (już jest) | Q544520 | Public domain | Unknown authorUnknown author |
-| Christopher Lutz | ✅ auto (Q64754) | Q64754 | CC BY 2.0 | Adam Raoof from London, UK |
+| Christopher Lutz | ✅ (już jest) | Q64754 | CC BY 2.0 | Adam Raoof from London, UK |
 | Curt von Bardeleben | ✅ (już jest) | Q60779 | Public domain |  |
 | David Bronstein | ✅ (już jest) | Q312908 | CC0 | Joop van Bilsen / Anefo |
-| Dawid Przepiórka | ✅ auto (Q698406) | Q698406 | Public domain | Henri Weenink |
+| Dawid Przepiórka | ✅ (już jest) | Q698406 | Public domain | Henri Weenink |
 | Ding Liren | ✅ (już jest) | Q1191198 | CC BY-SA 3.0 | Stefan64 |
 | Donald Byrne | brak zdjęcia w Wikidata | Q1239750 | | |
 | Edward Lasker | ✅ (już jest) | Q60752 | Public domain | Unknown (Bain News Service, publisher) |
@@ -39,7 +39,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Frank James Marshall | ✅ (już jest) | Q312814 | Public domain | Oxford and Dilhoff |
 | Frank Marshall | ✅ (już jest) | Q312814 | Public domain | Oxford and Dilhoff |
 | Friedrich Sämisch | ✅ (już jest) | Q60860 | Public domain | Unknown authorUnknown author |
-| Fritz Sämisch | ✅ auto (Q60860) | Q60860 | Public domain | autor nieznany |
+| Fritz Sämisch | ✅ (już jest) | Q60860 | Public domain | autor nieznany |
 | Garry Kasparov | ✅ (już jest) | Q28614 | CC BY 4.0 | Lukasz Kobus |
 | Gata Kamsky | ✅ (już jest) | Q315155 | CC BY-SA 3.0 | Stefan64 |
 | Georg Rotlewi | ✅ (już jest) | Q2470049 | Public domain | Unknown authorUnknown author |
@@ -58,7 +58,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | José Raúl Capablanca | ✅ (już jest) | Q160702 | Public domain | autor nieznany (Keystone-France) |
 | José Sanz Aguado | ✅ (już jest) | Q9014806 | CC BY-SA 3.0 | Lear88 |
 | Judit Polgar | ✅ (już jest) | Q183250 | CC BY-SA 3.0 | Przemysław Jahr / Wikimedia Commons |
-| Klaus Darga | ✅ auto (Q63752) | Q63752 | CC BY-SA 3.0 nl | Harry Pot for Anefo ]] |
+| Klaus Darga | ✅ (już jest) | Q63752 | CC BY-SA 3.0 nl | Harry Pot for Anefo ]] |
 | Lajos Portisch | ✅ (już jest) | Q390430 | CC BY-SA 4.0 | MBIHund |
 | Larry Christiansen | ✅ (już jest) | Q534057 | CC BY-SA 3.0 | © James F. Perry |
 | Lazaro Bruzon Batista | ✅ (już jest) | Q932307 | CC BY-SA 3.0 | Stefan64 |
@@ -70,10 +70,10 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Luděk Pachman | ✅ (już jest) | Q61673 | CC BY-SA 3.0 | Unknown authorUnknown author |
 | Magnus Carlsen | ✅ (już jest) | Q106807 | CC BY-SA 2.0 | Andreas Kontokanis from Piraeus, Greece |
 | Martín Ortueta Esteban | brak: brak wyników w Wikidata | | | |
-| Mateusz Bartel | ✅ auto (Q724047) | Q724047 | CC BY-SA 4.0 | Krzysztof Szeląg |
+| Mateusz Bartel | ✅ (już jest) | Q724047 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Max Euwe | ✅ (już jest) | Q173714 | CC BY-SA 3.0 nl | Anefo / Mieremet, R. |
 | Michael Adams | ✅ (już jest) | Q299636 | CC BY-SA 4.0 | Paul Meyer-Dunker |
-| Michał Krasenkow | ✅ auto (Q961090) | Q961090 | CC BY-SA 4.0 | Krzysztof Szeląg |
+| Michał Krasenkow | ✅ (już jest) | Q961090 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Miguel Najdorf | ✅ (już jest) | Q310532 | CC BY-SA 3.0 | Bert Verhoeff for Anefo |
 | Mikhail Botvinnik | ✅ (już jest) | Q178865 | CC BY-SA 3.0 nl | Harry Pot for Anefo ]] |
 | Mikhail Chigorin | ✅ (już jest) | Q298286 | Public domain |  |
@@ -89,13 +89,13 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Peter Leko | ✅ (już jest) | Q210922 | CC BY-SA 4.0 | Stefan64 |
 | Peter Svidler | ✅ (już jest) | Q278777 | CC BY-SA 4.0 | Stefan64 |
 | Philipp Meitner | brak zdjęcia w Wikidata | Q264630 | | |
-| Radosław Wojtaszek | ✅ auto (Q185236) | Q185236 | CC BY-SA 4.0 | Krzysztof Szeląg |
+| Radosław Wojtaszek | ✅ (już jest) | Q185236 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Rameshbabu Praggnanandhaa | ✅ (już jest) | Q26703041 | CC BY-SA 2.0 | Frans Peeters |
 | Rashid Nezhmetdinov | brak zdjęcia w Wikidata | Q203477 | | |
 | Reuben Fine | ✅ (już jest) | Q352418 | CC BY-SA 3.0 nl | Harry Pot for Anefo ]] |
 | Richard Réti | ✅ (już jest) | Q312985 | Public domain |  |
 | Robert Eugene Byrne | ✅ (już jest) | Q961003 | CC0 | Evers, Joost / Anefo |
-| Robert Hübner | ✅ auto (Q77389) | Q77389 | CC0 | Rob Bogaerts for Anefo |
+| Robert Hübner | ✅ (już jest) | Q77389 | CC0 | Rob Bogaerts for Anefo |
 | Robert James Fischer | ✅ (już jest) | Q41314 | CC BY-SA 3.0 | Ulrich Kohls (Bundesarchiv); oprac. Karpouzi |
 | Salo Flohr | ✅ (już jest) | Q317890 | CC0 | Harry Pot for Anefo |
 | Samuel Reshevsky | ✅ (już jest) | Q311737 | CC0 | Jack de Nijs for Anefo |
@@ -104,7 +104,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Siegbert Tarrasch | ✅ (już jest) | Q76558 | Public domain |  |
 | Sipke Ernst | ✅ (już jest) | Q738658 | CC BY-SA 3.0 | Stefan64 |
 | Stepan Levitsky | ✅ (już jest) | Q166086 | Public domain | Unknown authorUnknown author |
-| Szymon Winawer | ✅ auto (Q376206) | Q376206 | Public domain | Schumann, Fritz |
+| Szymon Winawer | ✅ (już jest) | Q376206 | Public domain | Schumann, Fritz |
 | Tigran Petrosian | ✅ (już jest) | Q180636 | CC0 | Harry Pot / Anefo |
 | Vasily Smyslov | ✅ (już jest) | Q104148 | CC0 | Koen Suyk / Anefo |
 | Vassily Ivanchuk | ✅ (już jest) | Q208229 | CC BY 3.0 | GibChess |
