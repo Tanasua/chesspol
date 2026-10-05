@@ -132,7 +132,7 @@ Pliki:
   NIE zweryfikowane przez native speakera: nazwy figur, zwroty, teksty opisu — odsłuchać 1–2 pierwsze odcinki.
 - src/tts_elevenlabs.py — ElevenLabs /v1/text-to-speech/{voice}/with-timestamps (alignment znaków -> słowa), ELEVENLABS_MODEL
   (domyślnie eleven_multilingual_v2); NIE zweryfikowane na prawdziwym kluczu
-- .github/workflows/publish_de.yml — kanał niemiecki, cron 04:47 UTC, ta sama grupa concurrency co publish.yml; bez klucza ElevenLabs pomija.
+- .github/workflows/publish_de.yml — kanał niemiecki, cron 04:47 UTC, własna grupa concurrency (publish-de; wspólna grupa kasowała oczekujące runy innych kanałów); bez klucza ElevenLabs pomija.
   Sekrety: ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID_DE (+ wspólne OPENAI_API_KEY, TELEGRAM_*); zmienne: HOST_NAME_DE, opcjonalnie ELEVENLABS_MODEL
 - .github/workflows/build.yml — workflow_dispatch, sekrety INWORLD_API_KEY, INWORLD_VOICE_ID
 - sekrety publish.yml: OPENAI_API_KEY, INWORLD_API_KEY, INWORLD_VOICE_ID; opcjonalnie TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID; tylko w trybie youtube: YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN

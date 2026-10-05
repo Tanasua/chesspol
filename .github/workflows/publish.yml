@@ -22,8 +22,8 @@ on:
         type: boolean
         default: false
 
-concurrency:
-  group: publish
+concurrency:  # osobna kolejka na kanał: wspólna grupa trzyma tylko 1 oczekujący run i kasuje pozostałe
+  group: publish-pl
   cancel-in-progress: false
 
 permissions:
