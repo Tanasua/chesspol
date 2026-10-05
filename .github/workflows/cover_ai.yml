@@ -23,6 +23,7 @@ jobs:
       - name: OpenAI
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          COVER_AI: "1"  # ręczne, jednorazowe uruchomienie — zawsze włączone
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           IMAGE: ${{ inputs.image }}
