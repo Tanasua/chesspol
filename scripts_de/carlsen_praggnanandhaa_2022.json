@@ -1,0 +1,128 @@
+{
+  "hook": {
+    "text": "Plötzlich steht ein schwarzer Springer tief im weißen Lager, und die Dame lauert direkt dahinter. Findet ihr, warum die Stellung so kippt?",
+    "ply": 64
+  },
+  "yt_hook": "Die Nummer eins wackelt!",
+  "yt_detail": "Praggnanandhaa besiegt Carlsen online",
+  "kicker": "ÜBERLISTET!",
+  "title": "Teenager-Coup",
+  "description": "Beim Airthings Masters 2022 trifft Magnus Carlsen in Runde 8 online auf Rameshbabu Praggnanandhaa. Der 16-jährige Praggnanandhaa hat Schwarz und kommt mit einem schweren Turnierstart in diese Partie. Achtet auf den Moment, in dem ein scheinbar aktiver weißer Aufbau plötzlich in schwarzen Damendruck umschlägt. Berühmt wurde die Partie auch, weil Praggnanandhaa damit als dritter indischer Spieler Carlsen besiegte.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Airthings Masters zweitausendzweiundzwanzig, online, Runde acht. Magnus Carlsen spielt mit Weiß, Weltmeister und Nummer eins. Rameshbabu Praggnanandhaa sitzt mit Schwarz am Brett, in einem Schnellschachturnier mit sechzehn Spielern, Teil der Meltwater Champions Chess Tour.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Praggnanandhaa ist damals sechzehn Jahre alt. Vor dieser Runde hat er einen Sieg gegen Levon Aronian, zwei Remis und vier Niederlagen. Er war schon mit zwölf Jahren, zehn Monaten und dreizehn Tagen Großmeister geworden, aber hier wartet die schwerste Art von Prüfung.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Die Partie beginnt mit ruhigem Zentrumsspiel: {{m:1}}. Schwarz folgt der erwarteten Antwort: {{m:2}}. {{s:7}} Schnell entsteht ein klassisches Zentrum, beide Seiten kämpfen um Kontrolle. {{s:13}} Weiß entwickelt Druck am Damenflügel.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "Schwarz entwickelt eine Figur und bleibt sehr solide: {{m:16}}. {{s:18}} Beide Könige sind gesichert, und die Stellung ist fast ausgeglichen. Weiß fragt nach Raum am Königsflügel: {{m:19}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:22}} Schwarz stellt die Figuren harmonisch, und Weiß setzt einen Springer ins Zentrum. Die Engine sieht kaum Unterschied zwischen den Seiten. Schwarz wählt eine ruhige Verteidigung: {{m:24}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "{{s:28}} Die Damen stehen sich indirekt gegenüber, und Weiß entscheidet sich für eine Veränderung der Struktur. Der Tausch beginnt: {{m:29}}. Schwarz akzeptiert die neue Bauernstruktur: {{m:30}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Kampf um Linien",
+      "text": "Jetzt kommt Carlsen mit dem Springer an den Rand: {{m:31}}. Schwarz weicht mit der Dame aus: {{m:32}}. {{s:34}} Der schwarze Springer landet stark im Zentrum, doch noch hält alles zusammen.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Weiß stößt ihn mit einem Bauern an: {{m:35}}. Schwarz sucht sofort Gegenspiel am Königsflügel: {{m:36}}. {{s:38}} Nach weiteren Manövern zeigt die Engine erstmals spürbar in Richtung Schwarz.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Carlsen zieht den Läufer zurück: {{m:39}}. Schwarz zentralisiert den Springer: {{m:40}}. Jetzt greift Weiß Material, aber die Stellung wird plötzlich gefährlich, würdet ihr euch darauf einlassen? {{p}} Weiß spielt: {{m:41}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s10",
+      "chapter": "Die Wende",
+      "text": "Schwarz antwortet: {{m:42}}. Das ist nicht die härteste Engine-Fortsetzung, und ein Teil des Vorteils verschwindet, aber die schwarzen Figuren bleiben aktiv. Weiß stellt den Springer zurück in die Mitte: {{m:43}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Es folgt ein Abtausch im Zentrum: {{m:44}}. Weiß nimmt: {{m:45}}. {{s:49}} Die Schwerfiguren verschwinden, und nach dem Schach beseitigt Schwarz die letzte weiße Turmaktivität. Schwarz nimmt heraus: {{m:50}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Weiß sucht mit dem Läufer Halt: {{m:51}}. Schwarz schiebt den Freibauern nach vorn: {{m:52}}. {{s:56}} Die Damen bleiben auf dem Brett, und die Könige suchen Sicherheit. Weiß stellt den König um: {{m:57}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "Damendruck",
+      "text": "Schwarz zieht den Läufer zurück: {{m:58}}. Weiß greift am Damenflügel zu: {{m:59}}. Schwarz antwortet mit Gegenspiel auf der Grundreihe: {{m:60}}. Die Balance hält noch, aber sie wirkt brüchig.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Carlsen sammelt einen Bauern: {{m:61}}. Schwarz aktiviert die Dame: {{m:62}}. Weiß stellt den Springer um: {{m:63}}, und genau jetzt kippt die Engine klar zu Schwarz. Schwarz hat hier laut Engine die stärkste Antwort, findet ihr sie? {{p}} Die Antwort lautet: {{m:64}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Weiß versucht zu blockieren: {{m:65}}. Schwarz dringt mit der Dame ein: {{m:66}}. {{s:68}} Der Springer findet weitere Tempi, und Weiß hat keinen ruhigen Zug mehr. Weiß schafft Luft am Rand: {{m:69}}, doch Schwarz hat laut Engine die präzise Antwort, seht ihr sie? {{p}} Schwarz spielt: {{m:70}}.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s16",
+      "chapter": "Finale",
+      "text": "Carlsen sucht Gegenspiel mit der Dame: {{m:71}}. Schwarz nimmt am Königsflügel: {{m:72}}. Der materielle Abstand wächst, und die weißen Drohungen kommen zu spät.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Weiß entfernt den Bauern: {{m:73}}. Schwarz gibt Schach: {{m:74}}. Der weiße König muss nach vorn: {{m:75}}. Schwarz stellt den Springer mitten hinein: {{m:76}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Der letzte Versuch kommt: {{m:77}}. Schwarz findet nicht die zwingende Mattführung, aber er hält eine klar gewonnene Stellung: {{m:78}}. Carlsen erkannte, dass seine Stellung verloren war, und gab auf. Für Praggnanandhaa war das ein Sieg mit sechzehn Jahren gegen den Weltmeister und die Nummer eins.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Die Partie blieb hängen: Praggnanandhaa wurde der dritte indische Spieler, der Carlsen besiegte, nach Viswanathan Anand und Pentala Harikrishna. Es wurde außerdem berichtet, dass er der jüngste Spieler war, der Carlsen während dessen Zeit als Weltmeister schlug. Und sie stoppte Carlsens Serie von drei Siegen in diesem Turnier.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}

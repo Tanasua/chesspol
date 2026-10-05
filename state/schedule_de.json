@@ -36,6 +36,17 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep004-botvinnik_keres_1948",
       "telegram": true,
       "rubric": "history"
+    },
+    {
+      "id": "carlsen_praggnanandhaa_2022",
+      "publish_at": "2026-10-06T07:00:00+00:00",
+      "title": "Die Nummer eins wackelt! | Carlsen – Praggnanandhaa (2022) — Praggnanandhaa besiegt Carlsen online",
+      "mode": "manual",
+      "package": "out/packages/de-ep005-carlsen_praggnanandhaa_2022",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep005-carlsen_praggnanandhaa_2022",
+      "telegram": true,
+      "rubric": "history",
+      "gap": true
     }
   ]
 }
