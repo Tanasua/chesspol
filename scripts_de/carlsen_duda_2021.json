@@ -1,0 +1,170 @@
+{
+  "hook": {
+    "text": "Alles wirkt haltbar, dann hängt das ganze Endspiel an einem einzigen Tempo. Erkennt ihr den Moment, bevor er vorbei ist?",
+    "ply": 124
+  },
+  "yt_hook": "Plötzlich kippt alles!",
+  "yt_detail": "Duda bezwingt Carlsen nach 74 Zügen",
+  "kicker": "ENDSPIEL-DRAMA!",
+  "title": "Der Tiebreak-Krimi",
+  "description": "Magnus Carlsen und Jan-Krzysztof Duda treffen beim FIDE-Weltpokal 2021 in Sotschi im Halbfinale des Tiebreaks aufeinander. Aus einer lange kontrollierten Stellung entsteht ein Endspiel, in dem kleine Tempi alles verändern. Achtet darauf, wie Schwarz erst Vorteil bekommt, ihn fast wieder hergibt und dann im Läuferendspiel die zweite Chance nutzt. Am Ende entscheidet Duda die Partie gegen Carlsen.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Magnus Carlsen hat Weiß, Jan-Krzysztof Duda Schwarz, im Halbfinale des FIDE-Weltpokals zweitausendeinundzwanzig in Sotschi, im Tiebreak. Jeder Übergang kann entscheiden. Weiß beginnt: {{m:1}}. Duda antwortet sofort: {{m:2}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:5}} Carlsen setzt den frühen Schachimpuls, Duda blockt solide: {{m:6}}. {{s:7}} Die Damen kommen früh ins Spiel, aber die Stellung bleibt kontrolliert: {{m:8}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Carlsen bringt den König in Sicherheit: {{m:9}}. {{s:13}} Beide Seiten bauen das Zentrum auf, noch ohne klare Zielscheibe. Dann öffnet Weiß den Raum: {{m:15}}. Schwarz nimmt die Spannung sofort: {{m:16}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Langsamer Druck",
+      "text": "{{s:18}} Das Zentrum schließt sich, und Duda stellt einen Springer aktiv hinein: {{m:20}}. {{s:22}} Nach dem Abtausch sucht der schwarze Läufer eine aktive Diagonale: {{m:24}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:26}} Jetzt sind die Könige sortiert. Carlsen zieht die Dame in Richtung Königsflügel: {{m:27}}. Duda stellt einen Turm auf die offene Linie: {{m:30}}. {{s:32}} Sein Springer schaut auf die Damenflügel-Bauern.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Carlsen stabilisiert die Bauernkette: {{m:33}}. Duda wechselt mit der Dame die Seite: {{m:36}}. {{s:38}} Für den Moment ist es ein Ringen um Felder, nicht um Material. {{s:40}} Die Engine sieht fast Gleichgewicht.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Duda hält die Dame aktiv: {{m:42}}. Carlsen gewinnt Raum am Königsflügel: {{m:45}}. {{s:46}} Schwarz bleibt ruhig und drückt am anderen Flügel weiter. Nach dem Vormarsch dort entsteht die erste kleine Unwucht: {{m:50}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "Dudas Initiative",
+      "text": "Carlsen greift am Damenflügel zu: {{m:51}}. Duda lässt sich nicht ziehen und gibt dem König Luft: {{m:52}}. Dann kommt ein unauffälliger Moment, nach dem Schwarz spürbar angenehmer steht: {{m:53}}. Duda findet die Rückgruppierung: {{m:54}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "{{s:56}} Die schwarze Dame taucht tief ein, Carlsen stellt sich ihr entgegen. Duda hält sie aktiv: {{m:58}}. Dann setzt er den Springer in die weiße Struktur: {{m:60}}. {{s:62}} Der Druck bleibt, auch ohne sofortigen Gewinn.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Carlsen sucht Gegenspiel über die zweite Reihe: {{m:63}}. Duda verbessert erst den Läufer: {{m:66}}. Dann folgt ein Springerzug, der die weißen Figuren bindet: {{m:68}}. {{s:70}} Die Dame bleibt wachsam, und Schwarz steht etwas besser. {{s:72}} Noch ist nichts entschieden.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Carlsen nimmt Material vom Brett: {{m:73}}. Duda schlägt zurück: {{m:74}}. Carlsen stellt den Turm zurück: {{m:75}}. Danach hätte Schwarz laut Engine noch mehr herausholen können, Duda wählt Aktivität: {{m:76}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s12",
+      "chapter": "Der Übergang",
+      "text": "{{s:78}} Es verschwinden weitere Figuren. Duda zentralisiert die Dame: {{m:80}}. {{s:82}} Sein Turm dringt ein, aber Carlsen hält zäh dagegen. Dann kommt wieder ein stiller weißer Zug, und die Bewertung kippt stärker zu Schwarz: {{m:83}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Duda zieht den Läufer zurück und hält alles gedeckt: {{m:84}}. Am Königsflügel öffnen sich Linien: {{m:86}}. Duda erzwingt den Damentausch: {{m:88}}. Carlsen nimmt: {{m:89}}. Schwarz schlägt mit dem Bauern zurück: {{m:90}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Jetzt entscheidet sich, ob Schwarz nur bequem steht oder wirklich auf Gewinn spielen kann. Carlsen stößt im Zentrum vor: {{m:91}}. Duda hat laut Engine die beste Antwort. Findet ihr sie? {{p}} Genau so kommt es: {{m:92}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Carlsen bringt den Turm zurück: {{m:93}}. Duda aktiviert den Turm tief in der Stellung: {{m:94}}. Weiß tauscht: {{m:95}}. Nach der schwarzen Antwort bleibt ein gefährlicher Freibauer zurück: {{m:96}}. {{s:98}} Der Vorteil schrumpft später deutlich, und das Endspiel bleibt offen.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "Läuferendspiel",
+      "text": "Carlsen nutzt die Chance und bringt den König näher: {{m:99}}. Duda spielt einen Königszug, und die Engine sieht plötzlich Ausgleich: {{m:100}}. Weiß hat hier die Ressource, die alles zusammenhält. Findet ihr sie? {{p}} Carlsen findet sie: {{m:101}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Duda weicht aus: {{m:102}}. {{s:105}} Carlsen beseitigt den gefährlichen Bauern und atmet auf. Schwarz schafft sich Raum am Königsflügel: {{m:106}}. {{s:108}} Die Läufer stehen sich nicht einfach gegenüber, sie kämpfen um Tempi.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Carlsen legt den entfernten Bauern fest: {{m:109}}. Duda bringt den Läufer zurück in die Verteidigung: {{m:110}}. {{s:112}} Ein Schach zwingt den König wieder weg. {{s:114}} Die Stellung bleibt schwer zu durchbrechen.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Carlsen wiederholt den Weg nach vorn: {{m:115}}. Duda probiert eine andere Läuferstellung: {{m:116}}. Weiß zieht den Läufer zurück: {{m:117}}. Schwarz hält den König aktiv: {{m:118}}. {{s:120}} Alles wirkt haltbar.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Carlsen geht mit dem König auf die Jagd: {{m:121}}. Duda stellt den Läufer an den Rand: {{m:122}}. Jetzt kommt der Moment, an dem eine fast ausgeglichene Stellung kippt: {{m:123}}. Duda hat laut Engine die beste Antwort. Seht ihr sie? {{p}} Hier ist sie: {{m:124}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s21",
+      "chapter": "Entscheidung",
+      "text": "Carlsen versucht sofort Gegenspiel mit dem Freibauern: {{m:125}}. Duda antwortet kalt und schneidet den weißen König ab: {{m:126}}. Weiß muss zurück in die Defensive: {{m:127}}. {{s:128}} Schwarz bleibt flexibel.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Carlsen stellt den Läufer auf die Blockade: {{m:129}}. Duda zwingt ihn zu einer Entscheidung: {{m:130}}. Weiß schlägt den Bauern: {{m:131}}. Schwarz nimmt dafür den wichtigen Bauern am anderen Flügel: {{m:132}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Carlsen hält den Läufer aktiv: {{m:133}}. Duda stellt sich wieder auf die Diagonale: {{m:134}}. Der weiße König läuft zum Bauern: {{m:135}}. Schwarz schiebt seinen Freibauern weiter: {{m:136}}. {{s:137}} Weiß blockiert, doch Schwarz bringt den König näher: {{m:138}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Der weiße König wird zur Seite gedrängt: {{m:139}}. Duda verbessert den König: {{m:140}}. Carlsen kehrt zurück: {{m:141}}. Schwarz dringt weiter ein: {{m:142}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s25",
+      "chapter": "",
+      "text": "Carlsen sucht Halt mit dem Läufer: {{m:143}}. Duda antwortet präzise und hält beide Flügel im Griff: {{m:144}}. Weiß nimmt den Bauern: {{m:145}}. Schwarz beseitigt den gefährlichen Freibauern: {{m:146}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "Carlsen versucht noch einen letzten Königszug: {{m:147}}. Duda stellt den Läufer so, dass die weißen Bauern nicht mehr reichen: {{m:148}}. Carlsen erkannte, dass seine Stellung verloren war, und gab auf. Diese Partie ist wichtig, weil Duda im Tiebreak gegen Carlsen die Kontrolle behielt, selbst nachdem der Gewinnweg einmal verschwunden war.",
+      "pause_after": 1.0
+    }
+  ],
+  "key_moments": []
+}

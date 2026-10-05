@@ -47,6 +47,17 @@
       "telegram": true,
       "rubric": "history",
       "gap": true
+    },
+    {
+      "id": "carlsen_duda_2021",
+      "publish_at": "2026-10-07T07:00:00+00:00",
+      "title": "Plötzlich kippt alles! | Carlsen – Duda (2021) — Duda bezwingt Carlsen nach 74 Zügen",
+      "mode": "manual",
+      "package": "out/packages/de-ep006-carlsen_duda_2021",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep006-carlsen_duda_2021",
+      "telegram": true,
+      "rubric": "history",
+      "gap": true
     }
   ]
 }
