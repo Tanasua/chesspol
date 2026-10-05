@@ -1,0 +1,110 @@
+{
+  "hook": {
+    "text": "Nie ma tu jednej eksplozji. Jest przewaga, która rośnie po cichu — aż czarne figury zaczynają dusić się we własnej obronie.",
+    "ply": 49
+  },
+  "yt_hook": "Cicha dominacja na planszy!",
+  "yt_detail": "Duda przejmuje kontrolę w końcówce",
+  "kicker": "MISTRZOWSKO!",
+  "title": "Presja bez hetmanów",
+  "description": "Jan-Krzysztof Duda gra białymi przeciwko Sergeyowi Karjakinowi w ósmej rundzie Pucharu Świata FIDE 2021 w Krasnaya Polyana. Zobacz partię, w której debiutowe napięcie przechodzi w długą walkę bez hetmanów. Najważniejsze jest tu cierpliwe zwiększanie nacisku: aktywne wieże, król w centrum i przewaga, która rośnie bez fajerwerków. To spotkanie warto znać jako lekcję technicznej kontroli na najwyższym poziomie.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Krasnaya Polyana, Puchar Świata FIDE dwa tysiące dwudziesty pierwszy, runda ósma. Jan-Krzysztof Duda ma białe, Sergey Karjakin czarne, a partia rusza spokojnie: {{m:1}}. Karjakin odpowiada: {{m:2}}, i od razu widać, że margines błędu będzie minimalny.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Duda kontynuuje: {{m:3}}, i nadal nie zdradza pośpiechu. {{s:5}} Białe rozwijają grę bez ryzyka, a pozycja jest blisko równowagi. Karjakin wybiera aktywną odpowiedź: {{m:8}}, więc debiut nie daje nikomu łatwego komfortu.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Teraz zaczyna się pierwsze czyszczenie centrum. Duda gra: {{m:11}}, biorąc na siebie konkretną odpowiedzialność. Czarne odpowiadają: {{m:12}}, i napięcie trochę opada. Następny ważny ruch białych: {{m:13}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut pod kontrolą",
+      "text": "Karjakin wybiera spokojną drogę: {{m:16}}, ale Duda nie zamierza tylko odtwarzać schematów. {{s:17}} Białe poprawiają ustawienie ciężkiej figury. Czarne odpowiadają: {{m:18}}, i plansza robi się asymetryczna.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Duda gra: {{m:19}}, i nacisk przenosi się na drugą stronę planszy. Wkrótce białe dokładają kolejny element: {{m:21}}. Karjakin wybiera: {{m:22}}, i od tej chwili każdy ruch hetmanem ma cenę.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Białe wybierają: {{m:23}}, i czarny układ traci ważnego obrońcę. Karjakin odpowiada: {{m:24}}, nie unikając wymian. Duda gra: {{m:25}}, Karjakin: {{m:26}}, a potem biała wieża wchodzi do gry: {{m:27}}. Czarne biorą materiał: {{m:28}}, ale to nie kończy problemów.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "Król w centrum",
+      "text": "Najbardziej niezwykłe jest to, że biały król zostaje w centrum wydarzeń. Duda gra: {{m:29}}, a później spina ciężkie figury: {{m:31}}. Karjakin odpowiada: {{m:32}}, lecz ocena silnika już lekko przechyla się w stronę białych.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Białe nie chowają się, tylko poprawiają aktywność: {{m:33}}. Czarne szukają kontrgry: {{m:34}}, więc Duda proponuje uproszczenie: {{m:35}}. Karjakin przyjmuje: {{m:36}}, a po zejściu hetmanów biała inicjatywa nie znika.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Najpierw białe porządkują pozycję: {{m:37}}. Czarne wybierają: {{m:38}}, i tu przewaga zaczyna być już wyraźna. Duda nie śpieszy się z taktyką; uruchamia piony: {{m:39}}, bo trzeba zabrać czarnemu królowi powietrze.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s10",
+      "chapter": "Marsz pionów",
+      "text": "Karjakin próbuje zatrzymać napór: {{m:40}}. Duda odpowiada spokojnie: {{m:41}}, a czarne stawiają barierę: {{m:42}}. Białe mimo to idą dalej: {{m:43}}, i linie przy królu czarnych zaczynają się rozchylać.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Czarne biorą wyzwanie: {{m:44}}, ale Duda natychmiast odtwarza nacisk: {{m:45}}. Karjakin wycofuje obrońcę: {{m:46}}, a białe stawiają figurę w idealnym miejscu: {{m:47}}. To już nie jest tylko przestrzeń; to konkretna presja na siódmą linię.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Czarne wybierają: {{m:48}}, i silnik po tym ruchu widzi wyraźny skok przewagi białych. Jak wykorzystać ten moment, kiedy czarne figury stoją trochę niezgrabnie? {{p}} Odpowiedź Dudy: {{m:49}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s13",
+      "chapter": "Wieże wchodzą",
+      "text": "Karjakin próbuje zablokować wejście: {{m:50}}. Duda nie odpuszcza i przerzuca nacisk: {{m:51}}. Czarne wybierają: {{m:52}}, a ocena robi się dla nich bardzo ciężka.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Tu napięcie jest największe, bo białe mają kilka kuszących kontynuacji. Duda wybiera: {{m:53}}. Karjakin odpowiada: {{m:54}}, i nagle pojawia się uderzenie z szachem. Znajdziecie je? {{p}} Oto ruch z partii: {{m:55}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Król czarnych musi odejść: {{m:56}}, ale to nie usuwa głównego problemu. Duda zabiera kolejną warstwę obrony: {{m:57}}, a Karjakin odpowiada: {{m:58}}. Materiał i aktywność są już po stronie białych.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "Poddanie",
+      "text": "Teraz przychodzi ostatni cichy ruch: {{m:59}}. Nie ma efektownego mata na planszy, ale przewaga białych jest ogromna. Karjakin zrozumiał, że jego pozycja jest przegrana, i się poddał. Dlatego ta partia jest ważna: Duda wygrał ją nie jednym fajerwerkiem, tylko konsekwentnym odbieraniem kontrgry.",
+      "pause_after": 0.8
+    }
+  ],
+  "key_moments": []
+}

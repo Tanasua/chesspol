@@ -172,6 +172,35 @@
     ],
     "qid": "Q113167"
   },
+  "Arkadij Naiditsch": {
+    "periods": [
+      {
+        "code": "lv",
+        "from": null,
+        "prop": "P1532",
+        "to": 1997
+      },
+      {
+        "code": "de",
+        "from": 1998,
+        "prop": "P1532",
+        "to": 2015
+      },
+      {
+        "code": "az",
+        "from": 2015,
+        "prop": "P1532",
+        "to": 2024
+      },
+      {
+        "code": "bg",
+        "from": 2024,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q77224"
+  },
   "Aron Nimzowitsch": {
     "periods": [
       {
@@ -211,6 +240,17 @@
       }
     ],
     "qid": "Q60598"
+  },
+  "Bartosz Soćko": {
+    "periods": [
+      {
+        "code": "pl",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q809574"
   },
   "Bent Larsen": {
     "periods": [
@@ -302,6 +342,17 @@
     ],
     "qid": "Q544520"
   },
+  "Christopher Lutz": {
+    "periods": [
+      {
+        "code": "de",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q64754"
+  },
   "Curt von Bardeleben": {
     "periods": [
       {
@@ -329,6 +380,17 @@
       }
     ],
     "qid": "Q312908"
+  },
+  "Dawid Przepiórka": {
+    "periods": [
+      {
+        "code": "pl",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q698406"
   },
   "Ding Liren": {
     "periods": [
@@ -466,6 +528,17 @@
     "qid": "Q312814"
   },
   "Friedrich Sämisch": {
+    "periods": [
+      {
+        "code": "de",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q60860"
+  },
+  "Fritz Sämisch": {
     "periods": [
       {
         "code": "de",
@@ -709,6 +782,17 @@
     ],
     "qid": "Q183250"
   },
+  "Klaus Darga": {
+    "periods": [
+      {
+        "code": "de",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q63752"
+  },
   "Lajos Portisch": {
     "periods": [
       {
@@ -867,6 +951,17 @@
     ],
     "qid": "Q106807"
   },
+  "Mateusz Bartel": {
+    "periods": [
+      {
+        "code": "pl",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q724047"
+  },
   "Max Euwe": {
     "periods": [
       {
@@ -888,6 +983,29 @@
       }
     ],
     "qid": "Q299636"
+  },
+  "Michał Krasenkow": {
+    "periods": [
+      {
+        "code": "pl",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "su",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "ru",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q961090"
   },
   "Miguel Najdorf": {
     "periods": [
@@ -1113,6 +1231,17 @@
     ],
     "qid": "Q26703041"
   },
+  "Radosław Wojtaszek": {
+    "periods": [
+      {
+        "code": "pl",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q185236"
+  },
   "Rameshbabu Praggnanandhaa": {
     "periods": [
       {
@@ -1173,6 +1302,17 @@
       }
     ],
     "qid": "Q961003"
+  },
+  "Robert Hübner": {
+    "periods": [
+      {
+        "code": "de",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q77389"
   },
   "Robert James Fischer": {
     "periods": [
@@ -1285,6 +1425,17 @@
       }
     ],
     "qid": "Q166086"
+  },
+  "Szymon Winawer": {
+    "periods": [
+      {
+        "code": "pl",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q376206"
   },
   "Tigran Petrosian": {
     "periods": [

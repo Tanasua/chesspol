@@ -44,6 +44,16 @@
       "package": "out/packages/ep005-byrne_fischer_1963",
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep005-byrne_fischer_1963",
       "telegram": true
+    },
+    {
+      "id": "pl_duda_karjakin_2021",
+      "publish_at": "2026-10-07T07:00:00+00:00",
+      "title": "Cicha dominacja na planszy! | Duda – Kariakin (2021) — Duda przejmuje kontrolę w końcówce",
+      "mode": "manual",
+      "package": "out/packages/ep006-pl_duda_karjakin_2021",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep006-pl_duda_karjakin_2021",
+      "telegram": true,
+      "rubric": "national"
     }
   ],
   "first_day": "2026-09-27"
