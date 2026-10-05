@@ -19,6 +19,16 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep002-in_anand_kasparov_1995",
       "telegram": true,
       "rubric": "national"
+    },
+    {
+      "id": "carlsen_praggnanandhaa_2022",
+      "publish_at": "2026-10-07T12:30:00+00:00",
+      "title": "दिग्गज को झटका! | Carlsen – Praggnanandhaa (2022) — प्रज्ञानानंदा ने काले मोहरों से कार्लसन को हराया",
+      "mode": "manual",
+      "package": "out/packages/hi-ep003-carlsen_praggnanandhaa_2022",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep003-carlsen_praggnanandhaa_2022",
+      "telegram": true,
+      "rubric": "history"
     }
   ]
 }
