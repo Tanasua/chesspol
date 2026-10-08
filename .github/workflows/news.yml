@@ -16,8 +16,8 @@ on:
         type: boolean
         default: true
 
-concurrency:
-  group: publish
+concurrency:  # osobna kolejka: wspólna grupa trzyma tylko 1 oczekujący run i kasuje pozostałe
+  group: news-${{ inputs.channel }}
   cancel-in-progress: false
 
 permissions:
