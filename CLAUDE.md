@@ -81,7 +81,7 @@ Pliki:
   i partii głównego katalogu z rokiem ≥ GAP_MODERN_YEAR (2010); odcinek dostaje "gap": true i nie zmienia rytmu
   historia/rubryka. Bufor: nic nie robimy, gdy najbliższy wolny dzień ≥ start + BUFFER*INTERVAL_DAYS.
 - .github/workflows/publish.yml — cron codziennie 03:17 UTC, INTERVAL_DAYS=1 (1 odcinek dziennie; maks. 2 z nowością), commit stanu do repo
-- NOWOŚCI: src/news.py (+ .github/workflows/news.yml, workflow_dispatch: kanał, turniej/link Lichess, test). Lichess API
+- NOWOŚCI: src/news.py (+ .github/workflows/news.yml, workflow_dispatch: kanał pl/de/en/hi albo all — wszystkie po kolei w jednym runie, turniej/link Lichess, test). Lichess API
   (broadcast search / tour / round PGN) -> format nokaut/kołowy -> wybór JEDNEJ partii bez pytania (etap, tempo, wynik,
   ranking, dramat wg Stockfisha, partia rozstrzygająca mecz, wzmianki r/chess) -> portrety po FIDE ID (Wikidata P1440)
   -> src/bracket.py: plansza na początek (drabinka z przekreślonymi odpadłymi / tabela; stan PRZED partią) -> catalog/news.json,
