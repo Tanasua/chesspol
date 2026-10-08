@@ -1,6 +1,6 @@
 Turniej: 2026 Grand Chess Tour Finals
 Runda w transmisji: Finals | Classical | Game 1
-Data: 2026.08.19
+Data: 2026.08.25
 Miejsce: Saint Louis, United States
 Tempo gry: classical
 Rankingi: Fabiano Caruana 2792, Praggnanandhaa 2750
