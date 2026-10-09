@@ -29,6 +29,16 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep003-carlsen_praggnanandhaa_2022",
       "telegram": true,
       "rubric": "history"
+    },
+    {
+      "id": "in_sultankhan_flohr_1932",
+      "publish_at": "2026-10-10T12:30:00+00:00",
+      "title": "धीरे-धीरे दम घुटा! | Khan – Flohr (1932) — सफ़ेद ने रूक एंडगेम निचोड़ा",
+      "mode": "manual",
+      "package": "out/packages/hi-ep004-in_sultankhan_flohr_1932",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep004-in_sultankhan_flohr_1932",
+      "telegram": true,
+      "rubric": "national"
     }
   ]
 }
