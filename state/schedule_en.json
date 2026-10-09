@@ -38,6 +38,16 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep004-bogoljubov_alekhine_1922",
       "telegram": true,
       "rubric": "history"
+    },
+    {
+      "id": "us_pillsbury_lasker_1904",
+      "publish_at": "2026-10-10T14:00:00+00:00",
+      "title": "Nothing Stops The Attack! | Pillsbury – Lasker (1904)",
+      "mode": "manual",
+      "package": "out/packages/en-ep005-us_pillsbury_lasker_1904",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep005-us_pillsbury_lasker_1904",
+      "telegram": true,
+      "rubric": "national"
     }
   ]
 }

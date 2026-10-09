@@ -1,0 +1,142 @@
+{
+  "hook": {
+    "text": "A queen is offered in check, and the engine barely blinks. The real question is what survives after the smoke clears.",
+    "ply": 54
+  },
+  "yt_hook": "Nothing Stops The Attack!",
+  "yt_detail": "Lasker's queen offer fails to stop the attack",
+  "kicker": "QUEEN SACRIFICE!",
+  "title": "Cambridge Springs Fire",
+  "description": "Harry Nelson Pillsbury faces Emanuel Lasker in round 6 of the 1904 Cambridge Springs tournament. The game starts as a tense queen pawn battle, then turns into a race of activity, exposed kings, and loose material. Watch for the evaluation swing near move 19, then the queen sacrifice that the engine says keeps resistance alive. The final position shows why Pillsbury's coordination mattered.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Introduction",
+      "text": "In round six of the Cambridge Springs tournament, Harry Nelson Pillsbury has White against Emanuel Lasker in Cambridge Springs. The year is nineteen oh four, and the full point is at stake, but the real fight will be over which king can survive the complications.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "White starts in the center: {{m:1}}. Black answers: {{m:2}}. {{s:3}} The first center clash is on. {{s:4}} Black keeps the position firm.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:5}} White keeps developing. {{s:6}} Black matches the pace. A pin appears early: {{m:9}}. White is already asking questions on the king side.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Early Imbalance",
+      "text": "Lasker accepts a damaged structure: {{m:14}}. Pillsbury brings the queen into the story: {{m:15}}. It is not a random adventure; it keeps pressure in the air while the center is still unsettled.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:16}} The center opens another file. White chooses coordination: {{m:17}}. The position has a sharp imbalance now, structure against activity.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Lasker reroutes a knight: {{m:20}}. Pillsbury challenges it at once: {{m:21}}. Black answers: {{m:22}}. The board looks calmer, but both pawn shields are awkward.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Queen On The Loose",
+      "text": "Pillsbury collects material and steadies the position: {{m:23}}. Lasker sends the queen forward: {{m:24}}. Black goes hunting: {{m:26}}. The question is simple, is that queen brave, or trapped in traffic?",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Pillsbury gets his king safe: {{m:27}}. Lasker lines up pressure: {{m:28}}. White replies with practical central control: {{m:29}}. Black keeps the queenside tension alive: {{m:30}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "White's knight jumps into the fight: {{m:31}}. A few moves later it gives check: {{m:33}}. Lasker steps away: {{m:34}}. The queens are still active, and every tempo now matters.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s10",
+      "chapter": "The Evaluation Swings",
+      "text": "Black creates immediate discomfort: {{m:36}}. Pillsbury pushes: {{m:37}}. For a moment, the engine says Black is the one with the chances.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Now comes the turn. Black can keep the advantage, but one natural-looking decision changes the story. Can you spot the danger before it happens? {{p}} Black chooses: {{m:38}}. The evaluation flips; White is now clearly better.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Pillsbury immediately centralizes the queen: {{m:39}}. Lasker tries to cover key squares: {{m:40}}. White takes the open chance: {{m:41}}. Black tries to slow the attack: {{m:42}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "King Under Fire",
+      "text": "Pillsbury keeps pieces near the black king: {{m:43}}. Lasker covers: {{m:44}}. The knight swings again: {{m:45}}. Black's next choice lets the fire spread: {{m:46}}. White's advantage is now overwhelming.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "The queen arrives with check: {{m:47}}. Lasker moves the king: {{m:48}}. Pillsbury adds another attacker: {{m:49}}. Black tries to build a barrier: {{m:50}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Then Pillsbury opens the line: {{m:51}}. Black is allowed to take it: {{m:52}}. White's last rook steps in: {{m:53}}. The position is balanced only in material dreams, not in king safety.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "The Queen Offer",
+      "text": "Lasker has one spectacular defensive resource. Would you give up the queen if it kept resistance alive? {{p}} Black goes for it: {{m:54}}. The engine shows why this queen sacrifice is not just a collapse: {{v:54}}. The line keeps Black resisting, but it does not solve the danger around the king.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Back in the game, Pillsbury is not scared: {{m:55}}. Black tries one last defensive move: {{m:56}}. White returns with check: {{m:57}}. Black chooses: {{m:58}}. Now mate is in the air.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "White has one move that makes the threat impossible to stop. Can you find the final idea? {{p}} White plays: {{m:59}}. Lasker realized mate could not be avoided, and resigned.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "This is why the game matters: it is not just a king hunt, it is a lesson in activity over appearances. Lasker even throws in a queen sacrifice, yet Pillsbury's coordination keeps the attack alive until resignation.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": [
+    {
+      "ply": 54,
+      "kind": "sacrifice",
+      "line": [
+        "g1f1",
+        "c6c4",
+        "g4e5",
+        "f7g8"
+      ],
+      "line_san": "Kxf1 Rxc4 Ne5+ Kg8",
+      "eval_before": 482,
+      "eval_after": 476
+    }
+  ]
+}
