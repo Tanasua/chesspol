@@ -58,6 +58,16 @@
       "telegram": true,
       "rubric": "history",
       "gap": true
+    },
+    {
+      "id": "de_huebner_kasparov_1992",
+      "publish_at": "2026-10-10T07:00:00+00:00",
+      "title": "Alles kippt im Mittelspiel! | Hübner – Kasparow (1992) — Hübner bezwingt Kasparow im Endspiel",
+      "mode": "manual",
+      "package": "out/packages/de-ep007-de_huebner_kasparov_1992",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep007-de_huebner_kasparov_1992",
+      "telegram": true,
+      "rubric": "national"
     }
   ]
 }

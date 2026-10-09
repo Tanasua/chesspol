@@ -1,0 +1,158 @@
+{
+  "hook": {
+    "text": "Ein aktives Schachgebot soll befreien, doch genau dort wird die Stellung heikel. Könnt ihr den kalten Konter finden?",
+    "ply": 74
+  },
+  "yt_hook": "Alles kippt im Mittelspiel!",
+  "yt_detail": "Hübner bezwingt Kasparov im Endspiel",
+  "kicker": "ÜBERLISTET!",
+  "title": "Der zähe Durchbruch",
+  "description": "1992 in Dortmund trifft Robert Hübner in Runde 6 des Turniers auf Garry Kasparov. Aus einer ruhigen Eröffnung entsteht ein schweres strategisches Ringen, in dem Raum, Blockaden und Vereinfachungen entscheiden. Achtet besonders auf den Moment, in dem ein aktives Schachgebot Schwarz nicht befreit, sondern Weiß klaren Vorteil gibt. Danach geht es in ein Endspiel, das Hübner präzise zum Sieg führt.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Dortmund, Turnier, Runde sechs, neunzehnhundertzweiundneunzig. Robert Hübner führt die weißen Steine, Garry Kasparov die schwarzen. Weiß beginnt: {{m:1}}. Schwarz antwortet: {{m:2}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:3}} Weiß nimmt Raum im Zentrum, Schwarz bereitet den Kampf auf den langen Diagonalen vor. Schwarz entwickelt sich: {{m:6}}. Weiß stellt den Läufer dagegen: {{m:7}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Schwarz bringt den König in Sicherheit: {{m:8}}. Weiß bleibt klassisch: {{m:9}}. {{s:14}} Im Zentrum ist der Kontakt hergestellt, aber noch ist nichts entschieden.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "Hübner nimmt das Zentrum ernst: {{m:15}}. Schwarz hält dagegen: {{m:16}}. {{s:17}} Hübner gibt seinem König Luft, dann setzt Schwarz die Dame aktiv ein: {{m:18}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Jetzt wird das Zentrum konkret. Weiß stößt vor: {{m:19}}. Schwarz nimmt an: {{m:20}}. Hübner öffnet die Linie: {{m:21}}. Schwarz zieht die Figur zurück: {{m:22}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Weiß lenkt einen Springer an den Rand: {{m:23}}. Kasparov wählt eine andere Damenstellung: {{m:24}}. Dann verlagert sich der Kampf auf die Felder vor dem schwarzen König. {{s:29}} Ein Läufer dringt ein, und Schwarz muss ihn ernst nehmen.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "Raum und Druck",
+      "text": "Kasparov stellt den Turm dagegen: {{m:30}}. Hübner bleibt mit dem Läufer tief in der Stellung: {{m:31}}. Schwarz blockiert: {{m:32}}. Der erste Schwung ist gebremst, aber die Struktur bleibt unangenehm.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Weiß greift am Damenflügel Raum: {{m:33}}. Schwarz schiebt weiter: {{m:34}}. Beide Seiten sortieren ihre Figuren neu. {{s:38}} Der schwarze Läufer zielt jetzt in die weiße Stellung hinein.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Hübner antwortet am Königsflügel: {{m:39}}. Kasparov schließt den Bauern weiter vor: {{m:40}}. Weiß stellt den König aus der Diagonale: {{m:41}}. Schwarz verdoppelt den Druck: {{m:42}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Die Engine sieht die Stellung hier fast ausgeglichen, doch der Weg ist schmal. Weiß sucht Halt: {{m:43}}. Schwarz bringt den Springer zurück ins Spiel: {{m:44}}. Nach dem weißen Turmzug entscheidet sich Kasparov für Vereinfachung: {{m:46}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "Umschwung",
+      "text": "Mit der nächsten Antwort kippt das Gefühl der Partie. Weiß stellt eine Figur ins Zentrum: {{m:47}}. Schwarz stößt weiter: {{m:48}}. Hübner findet die zentrale Umgruppierung: {{m:49}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Schwarz tauscht einen Springer: {{m:50}}. Weiß nimmt zurück: {{m:51}}. Der schwarze Freibauer rennt los: {{m:52}}. Hübner stoppt ihn mit der Dame: {{m:53}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "{{s:54}} Schwarz stellt noch einmal eine Figur aktiv hin. Weiß weicht mit der Dame aus: {{m:55}}. Kasparov bietet den Damentausch an: {{m:56}}. Hübner hält Raum: {{m:57}}. Schwarz bleibt auf der Linie: {{m:58}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Jetzt verschwindet ein wichtiger Verteidiger. Weiß schlägt zuerst: {{m:59}}. Schwarz nimmt zurück: {{m:60}}. Hübner drückt den Bauern nach vorn: {{m:61}}. Kasparov sucht Gegenspiel: {{m:62}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "Taktik im Zentrum",
+      "text": "Weiß hält den Vorposten lebendig: {{m:63}}. Schwarz stellt die Dame dagegen: {{m:64}}. Hübner zwingt die Dame zur Arbeit: {{m:65}}. Schwarz nimmt: {{m:66}}. Weiß setzt den Springer in die Stellung: {{m:67}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Auf der offenen Linie wird getauscht: {{m:68}}. Weiß nimmt zurück: {{m:69}}. Danach greift Schwarz einen Bauern, und Hübner aktiviert seinen Läufer: {{m:71}}. {{s:73}} Weiß hält die Verbindung zur eigenen zweiten Reihe.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Jetzt kommt der Moment aus dem Hook. Schwarz gibt Schach und setzt auf Aktivität: {{m:74}}. Nimmt Weiß an, oder gibt er dem König Luft? Die Engine erwartet den direkten Zugriff, findet ihr die Antwort? {{p}} Hübner entscheidet sich: {{m:75}}. Kasparov wirft den Turm hinterher: {{m:76}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Weiß akzeptiert die Abwicklung: {{m:77}}. Schwarz nimmt die Dame: {{m:78}}. Doch Hübner hat den letzten Zwischenschlag der Sequenz: {{m:79}}. Schwarz nimmt den Turm, aber die Bewertung steht jetzt klar auf Weiß: {{m:80}}.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s19",
+      "chapter": "Endspielkampf",
+      "text": "Die Damen sind weg, die Türme sind weg, und jetzt zählt Technik, Weiß rettet zuerst den Läufer: {{m:81}}. Schwarz schiebt seinen Freibauern: {{m:82}}. Wie bringt Weiß den Springer ins Rennen? {{p}} Hübner spielt: {{m:83}}. Schwarz antwortet mit dem nächsten Vorstoß: {{m:84}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Weiß stellt den Läufer auf die wichtige Diagonale: {{m:85}}. Schwarz versucht ihn abzulenken: {{m:86}}. Hübner bringt den König näher: {{m:87}}. Schwarz behält den Läufer aktiv: {{m:88}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Jetzt marschiert auch der weiße König, Weiß geht vor: {{m:89}}. Schwarz nähert sich: {{m:90}}. Weiß hält den Kontakt: {{m:91}}. Der schwarze Bauer verwandelt sich: {{m:92}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s22",
+      "chapter": "Finale",
+      "text": "Die neue Dame bleibt nicht lange, Weiß nimmt sie: {{m:93}}. Schwarz nimmt zurück: {{m:94}}. Der weiße Springer kommt rechtzeitig vor den Freibauern: {{m:95}}. Schwarz geht mit dem König heran: {{m:96}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Jetzt entscheidet der entfernte Freibauer, Weiß schiebt ihn weiter: {{m:97}}. Schwarz blockiert: {{m:98}}. Hübner öffnet die nächste Front: {{m:99}}. Kasparov erkannte, dass seine Stellung verloren war, und gab auf.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Warum ist diese Partie wichtig? Sie zeigt Hübner nicht als Spieler für einen einzigen Schlag, sondern als Spieler, der Kasparov Schritt für Schritt in ein ungünstiges Endspiel führt. Der kritische Moment war kein Mattangriff, sondern die präzise Entscheidung, die schwarze Aktivität auszuhalten.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}
