@@ -54,6 +54,16 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep006-pl_duda_karjakin_2021",
       "telegram": true,
       "rubric": "national"
+    },
+    {
+      "id": "kasparov_anand_1995",
+      "publish_at": "2026-10-10T07:00:00+00:00",
+      "title": "Mistrz oddaje wieżę! | Kasparow – Anand (1995) — Kasparow wyrównuje mecz po ofierze materiału",
+      "mode": "manual",
+      "package": "out/packages/ep007-kasparov_anand_1995",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep007-kasparov_anand_1995",
+      "telegram": true,
+      "rubric": "history"
     }
   ],
   "first_day": "2026-09-27"

@@ -1,0 +1,148 @@
+{
+  "hook": {
+    "text": "Najpierw znika jedna wieża, potem druga. Na sto siódmym piętrze w Nowym Jorku prowadzący w meczu Anand musi sprawdzić, czy przygotowanie Kasparowa naprawdę działa.",
+    "ply": 41
+  },
+  "yt_hook": "Mistrz oddaje wieżę!",
+  "yt_detail": "Kasparov wyrównuje mecz po ofierze materiału",
+  "kicker": "CO ZA KONTRA!",
+  "title": "Partia na szczycie Nowego Jorku",
+  "description": "Kasparov i Anand grają 10. partię meczu o tytuł PCA World Championship 1995 na 107. piętrze World Trade Center w Nowym Jorku. Po ośmiu remisach Anand wygrał partię 9 i prowadził 5–4, więc presja na obrońcy tytułu była ogromna. W centrum odcinka jest moment, w którym materiał znika z planszy, a silnik pokazuje, że atak wciąż ma sens. Kasparov mówił po partii, że przygotowywał ją około 48 godzin; ta wygrana wyrównała mecz na 5–5.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Nowy Jork, tysiąc dziewięćset dziewięćdziesiąty piąty: dziesiąta partia meczu o tytuł PCA. Kasparov broni tytułu, Anand jest pretendentem, a grają na sto siódmym piętrze World Trade Center. Po ośmiu remisach Anand wygrał dziewiątą partię i prowadzi pięć do czterech. Kasparov musi natychmiast odpowiedzieć.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:1}} Pierwsze ruchy są klasyczne, bez fajerwerków, ale z bardzo jasnym planem walki o centrum. {{s:5}} Białe wybierają hiszpańską presję, a czarne pytają gońca, ile ma odwagi. Kasparov szybko zabezpiecza króla: {{m:9}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Anand od razu bierze pion w centrum: {{m:10}}. {{s:12}} Czarne ruszają pionami na skrzydle hetmańskim. Potem centrum pęka: {{m:14}}. {{s:16}} Pozycja jest napięta, ale jeszcze pod kontrolą.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut przyspiesza",
+      "text": "Kasparov kończy rozwój figury: {{m:17}}, a Anand przestawia skoczka bliżej środka: {{m:18}}. {{s:20}} Centrum zamyka się, linie są poszarpane, a każdy pion zostawia za sobą słabe pola. To już nie jest spokojny debiut, tylko przygotowana walka o konkret.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "I nagle Kasparov wybiera ostrzejszą drogę: {{m:21}}. Silnik po tym ruchu po raz pierwszy przestaje trzymać stronę białych, ale tylko na moment. Anand zabiera pionem w centrum: {{m:22}}, a białe natychmiast wchodzą w wymianę: {{m:23}}. Czarne odbijają: {{m:24}}, po czym Kasparov porządkuje strukturę: {{m:25}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Czarny hetman wchodzi głęboko: {{m:26}}. Kasparov atakuje hetmana tempem: {{m:27}}, a Anand bierze kolejnego pionka: {{m:28}}. Materiał zaczyna wyglądać niepokojąco, ale ocena silnika rośnie dla białych. To znak, że ważniejsze od pionów będą król i koordynacja.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "Hetman na łupach",
+      "text": "{{s:29}} Białe przestawiają figurę, a czarne natychmiast ją zdejmują: {{m:30}}. Kasparov odbija: {{m:31}}, lecz Anand wbija skoczka w centrum: {{m:32}}. Białe ustawiają nacisk na króla: {{m:33}}. I wtedy czarny hetman bierze róg planszy: {{m:34}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Białe straciły wieżę, więc naturalny odruch mówi: trzeba odzyskać materiał. Ale Kasparov patrzy gdzie indziej: na króla, który wciąż tkwi w centrum. Co jest tu mocniejsze niż proste liczenie figur? {{p}} Odpowiedź: {{m:35}}, a Anand ustawia obronę: {{m:36}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Atak nabiera kształtu: {{m:37}}. Anand szuka kontrgry hetmanem: {{m:38}}. Kasparov zdejmuje ważnego obrońcę: {{m:39}}. Teraz czarne muszą zdecydować, czy ratować materiał, czy grać o własne szanse.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s10",
+      "chapter": "Ofiara materiału",
+      "text": "Wisi czarna wieża w rogu, ale Anand nie gra pod materiał; wybiera kontrę: {{m:40}}. To jest wariant silnika, nie kontynuacja partii: {{v:40}}. W tej linii czarne dostają szachy i kontrgrę, a ocena prawie nie spada. Ofiara ma więc konkretną taktyczną podstawę.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Partia wraca na właściwe tory i pytanie jest proste: czy białe mogą naprawdę zabrać wieżę? Znajdziecie decyzję Kasparowa? {{p}} Oto ona: {{m:41}}. Anand odpowiada aktywnie: {{m:42}}.",
+      "pause_after": 1
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Kasparov nie zwalnia nacisku: {{m:43}}, a czarne podstawiają obronę: {{m:44}}. Białe zdejmują kluczowego obrońcę: {{m:45}}. Anand wreszcie wymienia hetmany: {{m:46}}, a Kasparov odbija: {{m:47}}. Król czarnych zbiera jeszcze jedną figurę: {{m:48}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Po burzy zostaje końcówka, ale nie równa: silnik widzi wyraźną przewagę białych. Kasparov ustawia wieżę na aktywnej linii: {{m:49}}, a czarne szukają oddechu: {{m:50}}. Biały pion rusza do przodu: {{m:51}}. Anand odpowiada pionem na drugim skrzydle: {{m:52}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s14",
+      "chapter": "Król w marszu",
+      "text": "Teraz zaczyna się marsz króla. Kasparov podprowadza monarchę: {{m:53}}, a Anand odpycha pionem: {{m:54}}. Biały król idzie jeszcze bliżej centrum: {{m:55}}, więc czarne próbują zamknąć skrzydło: {{m:56}}. Kasparov cofa gońca: {{m:57}}, a Anand pcha piona dalej: {{m:58}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Kasparov uruchamia kolejnego piona: {{m:59}}. Czarne przesuwają wieżę: {{m:60}}, a białe stawiają własną wieżę aktywniej: {{m:61}}. Anand odpowiada: {{m:62}}. Po tym ruchu przewaga białych robi się naprawdę duża.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Jak wykorzystać tę przewagę: liczyć piony czy wprowadzić króla jeszcze głębiej? {{p}} Kasparov wybiera marsz: {{m:63}}. Anand ustawia wieżę z tyłu: {{m:64}}. Białe zabierają ważnego piona: {{m:65}}.",
+      "pause_after": 1
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Anand próbuje zatrzymać wszystko skoczkiem: {{m:66}}. Kasparov centralizuje wieżę: {{m:67}}, a czarne przenoszą własną wieżę: {{m:68}}. Biały pion idzie dalej: {{m:69}}. Czarne figury są aktywne, ale białe piony stają się coraz groźniejsze.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "Ostatnia próba",
+      "text": "Anand daje szacha: {{m:70}}. Król białych wraca spokojnie: {{m:71}}, a czarne ustawiają skoczka w blokadzie: {{m:72}}. Kasparov pcha kolejnego piona: {{m:73}}. Ostatnia aktywność czarnych to wejście wieży: {{m:74}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Kasparov odpowiada prosto i mocno: {{m:75}}. Anand zrozumiał, że jego pozycja jest przegrana, i się poddał. Zwycięstwo w dziesiątej partii wyrównało mecz na pięć do pięciu.",
+      "pause_after": 1
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Ta partia jest ważna nie tylko przez taktykę, ale przez kontekst: po serii remisów i porażce w dziewiątej partii Kasparov od razu odzyskał równowagę. Później obronił tytuł PCA, wygrywając mecz dziesięć i pół do siedmiu i pół, a po tej partii powiedział widzom, że przygotowywał ją około czterdziestu ośmiu godzin.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": [
+    {
+      "ply": 40,
+      "kind": "sacrifice",
+      "line": [
+        "g7h8",
+        "d4e2",
+        "g1h1",
+        "d8d4"
+      ],
+      "line_san": "Bxh8 Ne2+ Kh1 Rd4",
+      "eval_before": 168,
+      "eval_after": 158
+    }
+  ]
+}
