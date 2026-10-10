@@ -1,0 +1,140 @@
+{
+  "hook": {
+    "text": "Wie kann eine Stellung kippen, obwohl fast alles noch auf dem Brett steht? In Kopenhagen entsteht ein Käfig, Zug für Zug.",
+    "ply": 46
+  },
+  "yt_hook": "Der Käfig schnappt zu!",
+  "yt_detail": "Nimzowitsch schnürt Sämisch ein",
+  "kicker": "OHNE AUSWEG!",
+  "title": "Unsterbliche Zugzwangpartie",
+  "description": "Friedrich Sämisch und Aron Nimzowitsch treffen in Runde 6 des internationalen Turniers in Kopenhagen 1923 aufeinander. Die Partie wurde als „Unsterbliche Zugzwangpartie“ bekannt, weil die Schlussstellung als seltener Fall von Zugzwang im Mittelspiel gilt. Achtet darauf, wie Nimzowitsch die weißen Figuren Schritt für Schritt einschränkt. Das Turnier war ein doppelrundiges Sechserfeld, das Nimzowitsch ohne Niederlage gewann.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Im März neunzehnhundertdreiundzwanzig treffen Friedrich Sämisch und Aron Nimzowitsch in Kopenhagen aufeinander. Es ist die sechste Runde eines internationalen Turniers mit sechs Spielern, doppelrundig. Diese Partie wird später als die Unsterbliche Zugzwangpartie bekannt.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Nimzowitsch führt die schwarzen Steine. Er gewinnt dieses Turnier am Ende mit acht Punkten aus zehn, ohne Niederlage und mit zwei Punkten Vorsprung. Aber hier geht es nicht um eine Kombination mit Feuerwerk, sondern um langsames Einschränken.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:1}} Sämisch nimmt Raum, und Nimzowitsch antwortet ohne Eile: {{m:2}}. Die ersten Züge fühlen sich normal an, aber Schwarz legt schon die Grundlage für Druck auf lange Sicht.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "{{s:3}} Weiß baut ein breites Zentrum auf. {{s:5}} Nimzowitsch wählt früh einen flexiblen Aufbau: {{m:6}}. Noch ist nichts festgelegt, und genau das passt zu seinem Stil in dieser Partie.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:7}} Weiß bereitet den Königsflügel vor. Schwarz zeigt seinen Plan: {{m:8}}. {{s:9}} Die Stellung bleibt ruhig, und Schwarz entwickelt weiter: {{m:10}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "{{s:11}} Sämisch entwickelt harmonisch, und Schwarz klärt die Königssicherheit: {{m:12}}. {{s:13}} Kurz darauf stellt Nimzowitsch die Frage im Zentrum: {{m:14}}. Jetzt beginnt der Kampf um die Felder.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Der Käfig",
+      "text": "{{s:15}} Weiß sucht Aktivität in der Mitte, aber Schwarz bleibt nüchtern: {{m:16}}. {{s:17}} Die Spannung löst sich kurz, und Schwarz nimmt zurück: {{m:18}}. Aus dem offenen Kampf wird eher ein Positionsduell.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "{{s:19}} Sämisch erhöht den Druck, doch Nimzowitsch lässt sich Zeit: {{m:20}}. {{s:21}} Dann wird der Damenflügel konkreter: {{m:22}}. Der Raum dort wird immer wichtiger.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Sämisch schaut auf aktive Möglichkeiten: {{m:23}}. Nimzowitsch antwortet zentral und flexibel: {{m:24}}. {{s:25}} Schwarz nimmt zurück: {{m:26}}. Die Stellung wirkt ausgeglichen, aber die schwarzen Figuren bekommen klare Ziele.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "Die Klammer",
+      "text": "Hier gibt Weiß Schwarz den ersten deutlichen Zugriff: {{m:27}}. Nimzowitsch antwortet genau: {{m:28}}. Die Bewertung kippt, Schwarz steht jetzt besser.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Sämisch bringt den König aus der Spannung: {{m:29}}. Schwarz setzt sofort dagegen: {{m:30}}. Der Druck ist noch nicht entscheidend, aber die Richtung hat sich geändert.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Sämisch ordnet die Figuren: {{m:31}}. Nimzowitsch wählt einen scharfen Plan: {{m:32}}. Noch ist nichts entschieden, doch Weiß muss sehr präzise bleiben.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Weiß weicht zurück: {{m:33}}. Jetzt kann Schwarz Raum festlegen und eine Figur an den Rand drängen. Findet ihr den Zug? {{p}} Nimzowitsch spielt: {{m:34}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s14",
+      "chapter": "Der Einschlag",
+      "text": "Weiß muss zurück: {{m:35}}. Schwarz stellt die nächste Sperre auf: {{m:36}}. Sämisch sucht Gegenspiel: {{m:37}}. Nimzowitsch bleibt ruhig: {{m:38}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Jetzt öffnet Weiß die Stellung: {{m:39}}. Danach springt die Bewertung klar zu Schwarz. Nimzowitsch nimmt die Einladung an: {{m:40}}. Plötzlich zählt jeder Zug.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Sämisch greift nach Aktivität: {{m:41}}. Materiell wirkt das verlockend, aber Schwarz hat laut Engine die stärkste Antwort. Findet ihr sie? {{p}} Hier kommt sie: {{m:42}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s17",
+      "chapter": "Finale",
+      "text": "Weiß hält die Dame aktiv: {{m:43}}. Schwarz bringt mehr Schwerfiguren in die Linie: {{m:44}}. Sämisch hat kaum Luft und zieht den König: {{m:45}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Nimzowitsch verstärkt weiter: {{m:46}}. Weiß sucht ein Rettungsfeld: {{m:47}}. Schwarz antwortet nicht mit Lärm, sondern mit Kontrolle: {{m:48}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Sämisch stellt noch einmal Verteidigung auf: {{m:49}}. Jetzt kommt der stille Schlusszug. Welche ruhige Entscheidung lässt Weiß ohne sinnvollen Plan zurück? {{p}} Nimzowitsch spielt: {{m:50}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Sämisch erkannte, dass seine Stellung verloren war, und gab auf. Die Schlussstellung gilt als seltener Fall von Zugzwang im Mittelspiel, die Pflicht zu ziehen ist selbst das Problem. Genau deshalb blieb diese Partie berühmt.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Nimzowitsch schrieb später in der Wiener Schachzeitung, der Name sei in dänischen Schachkreisen entstanden. Er nahm die Partie auch in „Mein System“ auf. Wichtig ist sie, weil sie zeigt, wie eine Stellung ohne sofortiges Matt völlig ersticken kann.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}

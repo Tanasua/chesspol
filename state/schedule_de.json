@@ -68,6 +68,16 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep007-de_huebner_kasparov_1992",
       "telegram": true,
       "rubric": "national"
+    },
+    {
+      "id": "samisch_nimzowitsch_1923",
+      "publish_at": "2026-10-11T07:00:00+00:00",
+      "title": "Der Käfig schnappt zu! | Sämisch – Nimzowitsch (1923) — Nimzowitsch schnürt Sämisch ein",
+      "mode": "manual",
+      "package": "out/packages/de-ep008-samisch_nimzowitsch_1923",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep008-samisch_nimzowitsch_1923",
+      "telegram": true,
+      "rubric": "history"
     }
   ]
 }
