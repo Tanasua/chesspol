@@ -1,0 +1,122 @@
+{
+  "hook": {
+    "text": "Równowaga nagle pęka. Jeden ruch czarnych i Wojtaszek może przejąć stery — tylko jak?",
+    "ply": 56
+  },
+  "yt_hook": "Gdy równowaga pęka",
+  "yt_detail": "Wojtaszek wykorzystuje przełom w końcówce",
+  "kicker": "MISTRZOWSKO!",
+  "title": "Technika pod presją",
+  "description": "W Tata Steel Masters 2015 w Wijk aan Zee Radosław Wojtaszek mierzy się białymi z Magnusem Carlsenem. To partia, w której przewaga nie przychodzi jednym ciosem: najpierw jest presja na skrzydle, potem walka o centrum i dopiero techniczne domykanie końcówki. Zobacz, jak po pozornym wyrównaniu białe odnajdują energię, wymuszają uproszczenia i zostawiają czarne bez wygodnej kontrgry. Zwycięstwo Wojtaszka nad Carlsenem pokazuje, jak cierpliwie zamieniać aktywność figur w wygraną pozycję.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Trzecia runda Tata Steel Masters, Wijk aan Zee, dwa tysiące piętnasty rok: Radosław Wojtaszek gra białymi, Magnus Carlsen czarnymi. Stawką jest pełny punkt i inicjatywa od pierwszych posunięć. {{s:1}} Białe zajmują centrum. {{s:2}} Czarne wybierają elastyczną odpowiedź.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:3}} Białe rozwijają figurę bez pośpiechu. {{s:4}} Czarne szykują nacisk po długiej przekątnej. {{s:5}} Centrum Wojtaszka rośnie, ale Carlsen od razu rzuca wyzwanie: {{m:6}}. {{s:7}} Białe pchają skrzydło hetmańskie, a czarne kończą ustawienie: {{m:8}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:9}} Białe wzmacniają długą przekątną. {{s:10}} Czarne zaczepiają piony z boku. {{s:11}} Wojtaszek zamyka przestrzeń na skrzydle, ale czarne odpowiadają: {{m:12}}. {{s:13}} Obie strony kończą mobilizację: czarne grają: {{m:14}}, białe odpowiadają: {{m:15}}, a czarne podważają centrum: {{m:16}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Pierwsze starcie",
+      "text": "{{s:17}} Pierwsze bicie otwiera linię na skrzydle. Czarne odbijają: {{m:18}}. Białe zabezpieczają króla: {{m:19}}, a czarne robią to samo: {{m:20}}. {{s:21}} Hetmany zaczynają patrzeć na centrum, czarne odpowiadają: {{m:22}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:23}} Wojtaszek dokłada figurę do walki o środek. Czarne wciskają pionka głęboko: {{m:24}}. Białe cofają gońca: {{m:25}}, a czarne kończą rozwój: {{m:26}}. {{s:27}} Wieża wchodzi na linię, czarne odpowiadają centralnym skoczkiem: {{m:28}}, białe biją: {{m:29}}, i czarne odbijają: {{m:30}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "{{s:31}} Białe przegrupowują skoczka i trzymają napięcie. {{s:32}} Carlsen odprowadza figurę do obrony, ale wieża białych rusza po więcej: {{m:33}}. Czarne odpowiadają: {{m:34}}, a Wojtaszek natychmiast zjada pionka: {{m:35}}. {{s:36}} Carlsen pcha pionka na królewskim skrzydle; białe zdejmują wieżę: {{m:37}}, a czarne odbijają: {{m:38}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "{{s:39}} Białe porządkują tyły. Czarne grają: {{m:40}} — i pytają, czy król białych będzie miał powietrze. Wojtaszek wybiera spokojny rozwój: {{m:41}}, ale według silnika przewaga wyraźnie topnieje. Czarne dociskają: {{m:42}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s08",
+      "chapter": "Napięcie rośnie",
+      "text": "{{s:43}} Białe nie biorą od razu pionka, tylko budują osłonę króla. Czarne ustawiają hetmana: {{m:44}}. {{s:45}} Wojtaszek wzmacnia pierwszą linię, a Carlsen szuka aktywności: {{m:46}}. Białe znajdują ważną przekątną: {{m:47}}, czarne przegrupowują skoczka: {{m:48}}, białe pchają wolnego pionka: {{m:49}}, a czarne odpowiadają: {{m:50}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "{{s:51}} Wieża białych wraca, bo linia może być potrzebna w obronie. Czarne ustawiają ciężką figurę: {{m:52}}. Wojtaszek cofa hetmana: {{m:53}}, a Carlsen uderza w centrum: {{m:54}}. Białe grają: {{m:55}}; według silnika pozycja niemal się wyrównuje, ale czarne wybierają: {{m:56}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Teraz Wojtaszek ma szansę odwrócić grę — jak otworzyć pozycję, gdy pionki blokują planszę? {{p}} Odpowiedź jest natychmiastowa: {{m:57}}. Czarne biją w centrum: {{m:58}}, białe odbijają: {{m:59}}, a wymiany idą dalej: {{m:60}}. {{s:61}} Białe biorą pionem, czarne pchają wolnego pionka: {{m:62}}, białe otwierają linię: {{m:63}}, a czarne odbijają: {{m:64}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "{{s:65}} Biały skoczek wraca do obrony i jednocześnie pilnuje kluczowych pól. Carlsen daje szacha: {{m:66}}, a król białych bije: {{m:67}}. Czarne sprawdzają króla jeszcze raz: {{m:68}}, białe odchodzą: {{m:69}}. {{s:70}} Hetman czarnych szuka kontrgry; białe ustawiają się solidnie: {{m:71}}, ale czarne zbierają piona: {{m:72}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "Przejście do końcówki",
+      "text": "{{s:73}} Biała wieża staje aktywnie za plecami czarnych pionów. Carlsen próbuje nie dopuścić do uproszczeń: {{m:74}}. Wojtaszek zasłania króla: {{m:75}}, a czarny król rusza bliżej centrum: {{m:76}}. Białe ustawiają hetmana: {{m:77}}, czarne odchodzą królem: {{m:78}}, białe wchodzą w kontakt: {{m:79}}, a czarne biją: {{m:80}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Gdy biały hetman znika z planszy, większość ataków powinna przygasnąć, ale tutaj jest taktyczny haczyk. Co zrobić, kiedy czarna hetmanowa zdobycz wydaje się bezpieczna? {{p}} Wojtaszek gra z szachem: {{m:81}}. Czarne odchodzą: {{m:82}}, a białe odzyskują materiał: {{m:83}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "{{s:84}} Czarne skaczą w stronę centrum i próbują zablokować piony. Białe nie spieszą się: {{m:85}}, a czarny król staje bliżej walki: {{m:86}}. Wojtaszek poprawia króla: {{m:87}}, czarne ścigają piony wieżą: {{m:88}}. Biały goniec wraca do gry: {{m:89}}, a czarne dają szacha: {{m:90}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "{{s:91}} Król białych wychodzi aktywnie, choć wygląda to ryzykownie. Czarne ustawiają wieżę za pionami: {{m:92}}. Wojtaszek przechodzi na bardziej techniczny plan: {{m:93}}, a Carlsen natychmiast szachuje: {{m:94}}. Biały król cofa się: {{m:95}}, ale kolejny szach czarnych nie zmienia oceny: {{m:96}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "Technika wygrywania",
+      "text": "{{m:97}} — biały król wraca do centrum i wspiera własne piony. Czarne szukają kontrgry z tyłu: {{m:98}}. Wojtaszek upraszcza zadanie: {{m:99}}, a Carlsen próbuje jeszcze aktywizować wieżę: {{m:100}}. Według silnika przewaga białych jest już duża, ale trzeba ją jeszcze domknąć.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Najpierw biała wieża wiąże obronę czarnych: {{m:101}}. Czarne próbują ostatniego ustawienia skoczka: {{m:102}}. Wojtaszek odpowiada najdokładniej według silnika: {{m:103}}. Carlsen zrozumiał, że jego pozycja jest przegrana, i się poddał.",
+      "pause_after": 1
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Ważność tej partii nie polega na jednym fajerwerku. To pokaz cierpliwego nacisku: najpierw przestrzeń, potem otwarcie linii, a na końcu końcówka, w której każdy ruch białych ogranicza kontrgrę. Dlatego zwycięstwo Wojtaszka w Wijk aan Zee zostaje jako partia o kontroli, nie o przypadku.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}

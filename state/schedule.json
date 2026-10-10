@@ -64,6 +64,16 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep007-kasparov_anand_1995",
       "telegram": true,
       "rubric": "history"
+    },
+    {
+      "id": "pl_wojtaszek_carlsen_2015",
+      "publish_at": "2026-10-11T07:00:00+00:00",
+      "title": "Gdy równowaga pęka | Wojtaszek – Carlsen (2015) — Wojtaszek wykorzystuje przełom w końcówce",
+      "mode": "manual",
+      "package": "out/packages/ep008-pl_wojtaszek_carlsen_2015",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep008-pl_wojtaszek_carlsen_2015",
+      "telegram": true,
+      "rubric": "national"
     }
   ],
   "first_day": "2026-09-27"
