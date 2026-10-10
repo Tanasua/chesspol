@@ -1,0 +1,136 @@
+{
+  "hook": {
+    "text": "One pawn is almost home, but Black plants a knight in the road. Can you see why the obvious finish is not so simple?",
+    "ply": 52
+  },
+  "yt_hook": "A Queenside Avalanche",
+  "yt_detail": "Anton Guijarro turns a passer into a win",
+  "kicker": "BREAKTHROUGH!",
+  "title": "The Pawn That Would Not Stop",
+  "description": "David Anton Guijarro faces Arthur de Winter in Round 1 of the German Bundesliga 2026/27 (Schachbundesliga), played in Neuwied, Germany. This classical game starts as an English Opening and turns into a sharp queenside race. Watch for the outside passer, the material sacrifice the engine approves, and the strange final twist before the recorded 1-0 result.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Round One Stakes",
+      "text": "This is round one of the German Bundesliga twenty twenty-six to twenty-seven, played in Neuwied, Germany, at classical time control. David Anton Guijarro, rated two thousand six hundred fifty, has White against Arthur de Winter, rated two thousand four hundred fifty-nine. Before this game, the broadcast table already listed eight players on one point.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "The header names an English Opening, King's English Variation. White begins: {{m:1}}. {{s:2}} Black answers in the center, and White chooses the long diagonal: {{m:3}}. {{s:4}} Black supports the center, then White takes space: {{m:5}}. Black pushes past it: {{m:6}}.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "White challenges the advanced pawn: {{m:7}}. Black develops calmly: {{m:8}}. {{s:9}} White puts a bishop on the long diagonal, and Black hits the center: {{m:10}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Opening Tension",
+      "text": "The flank pawns start asking questions: {{m:11}}. {{s:12}} Black keeps the kingside ready, and White develops: {{m:13}}. Black releases the central tension: {{m:14}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "White recaptures: {{m:15}}. Black grabs a queenside pawn: {{m:16}}. White gets the king safe: {{m:17}}. Black does the same: {{m:18}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Now White builds a big center: {{m:19}}. Black answers with queenside space: {{m:20}}. {{s:21}} White gives the king a little air. {{s:22}} Black keeps rolling on the edge.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Queenside Storm",
+      "text": "White steps the king away from any back-rank tricks: {{m:23}}. Black develops the bishop: {{m:24}}. Anton redirects a knight toward the kingside: {{m:25}}. Black throws another pawn forward: {{m:26}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "White's knight on the rim still has a job: {{m:27}}. Black challenges the center again: {{m:28}}. White takes: {{m:29}}. Black takes back: {{m:30}}. The early edge has almost disappeared.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "White takes one more pawn: {{m:31}}. Black brings in another defender: {{m:32}}. White develops the bishop: {{m:33}}. Black chops in the center: {{m:34}}. White accepts: {{m:35}}. Black answers: {{m:36}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "The Passed Pawn",
+      "text": "Now the queenside finally opens: {{m:37}}. Black chooses activity with the queen: {{m:38}}. This is the first big turn, because White's advantage is suddenly clear.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "The next move is the clean invasion. Can you find the engine's first choice for White? {{p}} Here it is: {{m:39}}. Black covers key squares: {{m:40}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Anton does not rush an attack on the king. He runs the outside pawn: {{m:41}}. Black brings a rook toward the fight: {{m:42}}. White pushes again: {{m:43}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "The Sacrifice",
+      "text": "Black grabs the back rank: {{m:44}}. White ignores the noise and advances the passer: {{m:45}}. Black takes the rook: {{m:46}}. White clears it away: {{m:47}}. Now Black blockades: {{m:48}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "White plants a knight deep in Black's position: {{m:49}}. Black snatches a bishop: {{m:50}}. Anton activates the last rook: {{m:51}}. Before the passer crowns, Black has a resource: {{m:52}}. The engine's alternate reality shows why this sacrifice holds up: {{v:52}}. Black gives material, but keeps the blockade alive, and White must still prove the conversion.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "The game continuation is even more forcing. White cashes the passer: {{m:53}}. Black spends a rook to erase it: {{m:54}}. White takes the rook: {{m:55}}. Black brings the king closer: {{m:56}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "Final Twist",
+      "text": "The position has simplified, but White is still pressing hard. The rook swings over: {{m:57}}. Black tries to distract it: {{m:58}}. White removes the pawn: {{m:59}}. Black centralizes the king: {{m:60}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Anton keeps the rook active: {{m:61}}. Black pushes a passer of his own: {{m:62}}. It looks like technique, but one tempo can flip the story.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "White has a tempting push here. Is it safe? {{p}} In the game, White chooses: {{m:63}}. The engine suddenly swings back toward Black, and Black creates his own threat: {{m:64}}. The score ends there: de Winter resigned, so Anton Guijarro took the point. That is why this game matters: a modern Bundesliga fight where a passed pawn dominated the board, and the final position still asks questions.",
+      "pause_after": 1.0
+    }
+  ],
+  "key_moments": [
+    {
+      "ply": 52,
+      "kind": "sacrifice",
+      "line": [
+        "c7c8r",
+        "a8c8",
+        "d6c8",
+        "f7f6"
+      ],
+      "line_san": "c8=R+ Rxc8 Nxc8 f6",
+      "eval_before": 433,
+      "eval_after": 439
+    }
+  ]
+}

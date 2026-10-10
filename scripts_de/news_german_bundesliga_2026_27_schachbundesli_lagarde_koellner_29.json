@@ -1,0 +1,155 @@
+{
+  "hook": {
+    "text": "Ein zentraler Bauernzug sieht aktiv aus, doch danach kippt die Bewertung deutlich. Könnt ihr erkennen, wo der Druck wirklich entsteht?",
+    "ply": 62
+  },
+  "yt_hook": "Ausgeglichen, dann bricht alles!",
+  "yt_detail": "Lagarde nutzt den Königsflügel",
+  "kicker": "ÜBERROLLT!",
+  "title": "Die Wende im Zentrum",
+  "description": "Maxime Lagarde und Ruben Gideon Koellner treffen in Runde 1 der Schachbundesliga 2026/27 aufeinander. Aus dem abgelehnten Damengambit, Abtauschvariante, entsteht lange eine fast ausgeglichene Stellung. Achtet auf den Moment im Zentrum, nach dem Weiß die offenen Linien am Königsflügel nutzt. Eine aktuelle Bundesliga-Partie, die zeigt, wie aus ruhigem Druck ein klarer Vorteil wird.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Großmeister Maxime Lagarde spielt für OSG Baden-Baden mit Weiß, Internationaler Meister Ruben Gideon Koellner für SG Solingen mit Schwarz. Es ist Runde eins der Schachbundesliga Saison zweitausendsechsundzwanzig zu zweitausendsiebenundzwanzig, im klassischen Tempo. Vor dieser Partie hatten acht Spieler schon einen Punkt, der Druck ist also sofort da.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Der Aufbau beginnt kontrolliert. Weiß setzt den ersten Akzent: {{m:1}}. Schwarz hält dagegen: {{m:2}}. {{s:8}} Nach den frühen Bauernentscheidungen entsteht das abgelehnte Damengambit in der Abtauschvariante.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Die Leichtfiguren kommen heraus, aber niemand überzieht, Weiß entwickelt mit Druck: {{m:9}}. Schwarz bleibt solide: {{m:10}}. {{s:13}} Der weiße Läufer zielt auf die Königsseite, und Schwarz stellt sofort Fragen: {{m:14}}. Weiß bleibt ruhig: {{m:15}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "Jetzt geht es um Felder, nicht um Taktik. Schwarz bringt eine weitere Figur ins Spiel: {{m:16}}. Weiß hält die Spannung: {{m:17}}. Schwarz greift den Läufer an: {{m:18}}, und Weiß entscheidet sich für den Tausch: {{m:19}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Schwarz wählt die natürliche Antwort: {{m:20}}. {{s:22}} Beide Könige bekommen Sicherheit, Weiß zuerst: {{m:23}}. Schwarz direkt danach: {{m:24}}. Die Engine sieht hier praktisch Gleichgewicht.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Die Damen bleiben aktiv, aber die Partie ist leise. Weiß verbessert die Koordination: {{m:27}}. Schwarz antwortet am Damenflügel: {{m:28}}. {{s:30}} Nach dem Damenausflug stellt Weiß um: {{m:31}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Mittelspiel",
+      "text": "Im Mittelspiel verschwindet ein wichtiger Läufer, Schwarz entscheidet sich: {{m:32}}. Weiß stützt das Zentrum: {{m:33}}. Schwarz tauscht: {{m:34}}, Weiß hält die Struktur zusammen: {{m:35}}. Danach bringt Schwarz eine Figur zurück ins Spiel: {{m:36}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Die Damen schauen einander an, Weiß deckt ruhig: {{m:37}}. Schwarz zentralisiert die Dame: {{m:38}}. Weiß erhöht den Druck: {{m:39}}, Schwarz hält dagegen: {{m:40}}. {{s:42}} Noch gibt es keine Entscheidung.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Jetzt gewinnt der Raumkampf an Schärfe, Weiß stößt am Königsflügel vor: {{m:43}}. Schwarz findet die richtige Ordnung: {{m:44}}. {{s:46}} Weiß bringt eine weitere Figur in Richtung Angriff: {{m:47}}. Dann folgt eine schwarze Neuordnung: {{m:48}}, und die Bewertung zeigt erstmals klar nach oben für Weiß.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s10",
+      "chapter": "Die Wende",
+      "text": "Weiß spürt, dass etwas möglich ist. Der Springer erreicht einen starken Posten: {{m:49}}. Schwarz verdoppelt die Türme: {{m:50}}. Weiß öffnet das Zentrum: {{m:51}}, Schwarz nimmt die Herausforderung an: {{m:52}}, und Weiß hält die Mitte: {{m:53}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Schwarz versucht, die weißen Figuren zu vertreiben: {{m:54}}, Weiß legt den Raumvorteil fest: {{m:55}}. Schwarz stellt sich dagegen: {{m:56}}. Weiß hebt den Turm, ohne die Spannung zu lösen: {{m:57}}. {{s:59}} Der Vorteil ist da, aber noch nicht entschieden.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Schwarz reduziert eine aktive Figur: {{m:60}}, Weiß hält die Initiative: {{m:61}}. Überlegt kurz, was ihr tun würdet, im Zentrum öffnen oder den Druck aushalten {{p}} Schwarz entscheidet sich: {{m:62}}. Die Engine zeigt die alternative Realität: {{v:62}}. Der Kern ist offene Linien, nicht Material, und von jetzt an ist der weiße Vorteil klar.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Und Weiß findet sofort den Hebel: {{m:63}}. Schwarz schlägt zu: {{m:64}}. Genau dadurch öffnen sich die Linien, die Weiß gebraucht hat. Die Stellung ist jetzt nicht mehr nur angenehm, sie ist fast gewonnen.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s14",
+      "chapter": "Endspieljagd",
+      "text": "Jetzt wird es konkret. Weiß schlägt auf der Königsseite: {{m:65}}. Schwarz gewinnt Material, aber der König bleibt offen: {{m:66}}. Weiß bringt die Dame mit Schach: {{m:67}}, Schwarz entkommt vorerst: {{m:68}}, und Weiß bleibt am König: {{m:69}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Schwarz sucht Gegenspiel und nimmt Material: {{m:70}}, Weiß aktiviert die Schwerfiguren: {{m:71}}. Schwarz gibt Schach: {{m:72}}, Weiß geht heraus: {{m:73}}. Schwarz wiederholt den Angriff auf den König: {{m:74}}. Weiß wählt einen anderen Weg: {{m:75}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Schwarz braucht noch eine praktische Chance. Der weiße König wirkt kurz angreifbar, also überlegt, ob ihr hier Material geben würdet {{p}} Schwarz wirft den Turm hinein: {{m:76}}. Die Engine zeigt, warum das die Lage nicht rettet: {{v:76}}. Weiß bleibt stabil, weil der König entkommt und die Aktivität erhalten bleibt.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s17",
+      "chapter": "Finale",
+      "text": "Weiß nimmt die Gabe an: {{m:77}}. Schwarz versucht, den Damentausch zu erzwingen: {{m:78}}. Weiß geht darauf ein: {{m:79}}. Schwarz nimmt zurück und gibt noch einmal Schach: {{m:80}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Der weiße König findet Sicherheit: {{m:81}}. Schwarz stellt den König um: {{m:82}}. Dann setzt Weiß den letzten Vorstoß: {{m:83}}. Koellner erkannte, dass seine Stellung verloren war, und gab auf.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Diese Partie ist wichtig, weil sie aus einer fast ausgeglichenen Bundesliga-Stellung entsteht. Kein Feuerwerk aus dem Nichts, sondern langsamer Druck, dann die Wende im Zentrum, und am Ende eine saubere Verwertung. Genau daran seht ihr, wie schnell ein ruhiges Mittelspiel kippen kann.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": [
+    {
+      "ply": 62,
+      "kind": "turn",
+      "line": [
+        "g4g5",
+        "e8e6",
+        "g5h6",
+        "c8e7"
+      ],
+      "line_san": "g5 Re6 gxh6 Ne7",
+      "eval_before": 43,
+      "eval_after": 270
+    },
+    {
+      "ply": 76,
+      "kind": "sacrifice",
+      "line": [
+        "e1f2",
+        "d1d2",
+        "f2e3",
+        "d2d3"
+      ],
+      "line_san": "Kf2 Rd2+ Ke3 Rd3+",
+      "eval_before": 516,
+      "eval_after": 524
+    }
+  ]
+}

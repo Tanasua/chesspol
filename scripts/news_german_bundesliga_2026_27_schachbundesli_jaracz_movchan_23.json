@@ -1,0 +1,110 @@
+{
+  "hook": {
+    "text": "W spokojnej pozycji jeden ruch hetmanem sprawia, że ocena nagle ucieka. Czy białe znajdą dokładną drogę?",
+    "ply": 30
+  },
+  "yt_hook": "Cicha presja, wielki finał",
+  "yt_detail": "Jaracz zamienia przewagę w punkt",
+  "kicker": "MISTRZOWSKO!",
+  "title": "Nacisk na króla",
+  "description": "Paweł Jaracz i Nataliia Movchan grają w German Bundesliga 2026/27 (Schachbundesliga), w rundzie 1 transmisji. To świeża partia z bieżącego turnieju kołowego; przed nią w tabeli była grupa zawodników z jednym punktem. W odmówionym gambicie hetmańskim, wariancie wymiennym, białe stopniowo zwiększają presję, aż silnik zaczyna pokazywać dużą przewagę. Zwróć uwagę na moment po ruchu hetmanem czarnych, kiedy spokojna pozycja nagle robi się bardzo konkretna.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Stawka rundy",
+      "text": "Dziewiątego października dwa tysiące dwudziestego szóstego roku, German Bundesliga sezonu dwa tysiące dwadzieścia sześć, dwa tysiące dwadzieścia siedem, runda pierwsza w transmisji. Paweł Jaracz, ranking dwa tysiące czterysta trzydzieści siedem, gra białymi z Nataliią Movchan, ranking tysiąc osiemset dwadzieścia siedem. To turniej kołowy; stawką są punkty do tabeli już w pierwszej rundzie, a przed partią jest tam grupa z jednym punktem.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:1}} Centrum jest zajęte bez fajerwerków. {{s:4}} Powstaje odmówiony gambit hetmański w wymiennej strukturze. Białe wyjaśniają napięcie: {{m:7}}, i linia ce przestaje być zamknięta. Czarne kończą pierwszą część rozwoju: {{m:10}}, zachowując solidny układ.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:13}} Białe ustawiają figury przeciwko centrum. {{s:16}} Czarne uderzają w bazę tej struktury. Wymiana w centrum kończy się ruchem: {{m:19}}, więc napięcie spada. Białe kończą zabezpieczanie króla: {{m:21}}, i można przejść do gry środkowej.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Pierwszy zwrot",
+      "text": "Movchan natychmiast redukuje jedną figurę: {{m:22}}, zdejmując ważnego skoczka. Jaracz odbija bez straty harmonii: {{m:23}}, a hetman zostaje aktywny. {{s:24}} Hetman czarnych wychodzi wysoko, ale białe odpowiadają ustawieniem ciężkich figur. {{s:27}} Wszystko wygląda spokojnie, tylko linie zaczynają się prostować.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Teraz czarne stawiają wieżę na otwartej linii: {{m:28}}, ale białe mają gotową odpowiedź. Figura Jaracza wchodzi bliżej króla: {{m:29}}, i robi się konkretnie. Czarne grają: {{m:30}}, a ocena silnika od razu mocno rośnie na korzyść białych. Co teraz wyciąga z pozycji Jaracz? {{p}} Odpowiedź jest natychmiastowa: {{m:31}}, z szachem i jasnym planem.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Movchan odbija: {{m:32}}, ale to nie kończy kłopotów. Biały hetman wchodzi centralnie: {{m:33}}, tworząc nacisk na wielu polach. {{s:34}} Czarne próbują związać ciężkie figury na linii. Jaracz dokłada presję: {{m:35}}, i białe stoją coraz swobodniej.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "{{s:36}} Czarne próbują podtrzymać pozycję. Ale teraz białe mogą naruszyć osłonę króla. Znajdziecie sposób? {{p}} Jaracz wybiera: {{m:37}}, i decyzja jest bardzo konkretna. Czarne odbijają: {{m:38}}, a białe od razu celują w osłabienia: {{m:39}}, bez zwłoki.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s08",
+      "chapter": "Król pod presją",
+      "text": "{{s:40}} Ciężkie figury czarnych szukają aktywności, ale król ma już coraz mniej komfortu. {{s:41}} Jaracz robi mały ruch profilaktyczny. Movchan odchodzi królem: {{m:42}}, lecz linia ataku zostaje. Białe sprawdzają obronę: {{m:43}}, a czarne chowają się w rogu: {{m:44}}, bardzo pasywnie.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Teraz ważna jest cierpliwość. Białe podnoszą wieżę: {{m:45}}, jakby chciały naciskać z bocznej strony. {{s:46}} Czarne szukają kontrgry pionem, lecz hetman białych wraca do pracy: {{m:47}}, z chłodną kontrolą. Movchan centralizuje hetmana: {{m:48}}, próbując wymienić napięcie.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Jaracz przegrupowuje skoczka: {{m:49}}, bez pośpiechu. Czarne odpowiadają aktywnie: {{m:50}}, ale nie zmieniają oceny pozycji. Białe poprawiają figurę: {{m:51}}, a czarne blokują jedną z linii: {{m:52}}, szukając oporu.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "{{s:53}} Białe robią miejsce dla figur i nie spieszą się z rozstrzygnięciem. {{s:54}} Czarne ustawiają obronę na siódmej linii. Hetman białych wraca do ataku: {{m:55}}, naciskając na skrzydło królewskie. Czarne zasłaniają najważniejsze pola: {{m:56}}, i chwilowo wszystko trzyma się na taktyce.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "Technika przewagi",
+      "text": "Przez kilka ruchów wygląda, jakby białe tylko krążyły. Jaracz wraca skoczkiem: {{m:57}}, sprawdzając cierpliwość obrony. Czarne odpowiadają: {{m:58}}, i według silnika przewaga białych przekracza już granicę technicznej wygranej. Biała wieża rusza w bok ataku: {{m:59}}, a czarne trzymają hetmana blisko króla: {{m:60}}, w obronie.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Białe szukają wejścia skoczkiem: {{m:61}}, dalej bez pośpiechu. Czarne przesuwają wieżę: {{m:62}}, ale obrona zaczyna pękać. Jaracz wybiera praktyczne zbicie: {{m:63}}, utrzymując dużą przewagę.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Movchan trzyma hetmana przy obronie: {{m:64}}, bo groźby są już blisko. Białe cofają skoczka do centrum: {{m:65}}, zachowując pełną kontrolę. Czarne grają: {{m:66}}, i tu silnik pokazuje już ogromną przewagę białych. Czas na ruch, który ucina nadzieje na obronę.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Zatrzymajcie planszę. Białe mają ruch z szachem i rozstrzygającą przewagę — co zagrać? {{p}} Jaracz znajduje wskazanie silnika: {{m:67}}, i król czarnych znowu jest pod ogniem. Na tym partia się kończy: Movchan zrozumiała, że jej pozycja jest przegrana, i się poddała.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Ta partia jest ważna, bo pokazuje świeżą, klasyczną technikę z bieżącej Bundesligi: bez wielkiej ofiary, za to z narastającą presją. Najpierw mały wzrost oceny, potem konsekwentne przegrupowania, a na końcu pozycja, w której strona broniąca nie ma już praktycznego wyboru.",
+      "pause_after": 0.8
+    }
+  ],
+  "key_moments": []
+}
