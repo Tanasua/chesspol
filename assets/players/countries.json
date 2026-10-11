@@ -822,6 +822,17 @@
     ],
     "qid": "Q72822"
   },
+  "Haochen Jiang": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q134314506"
+  },
   "Harry Nelson Pillsbury": {
     "periods": [
       {
@@ -832,6 +843,17 @@
       }
     ],
     "qid": "Q326580"
+  },
+  "Huang Renjie": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q122182886"
   },
   "Ian Nepomniachtchi": {
     "periods": [
@@ -898,6 +920,17 @@
       }
     ],
     "qid": "Q62040"
+  },
+  "Jiner Zhu": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q57235640"
   },
   "Johann Hermann Bauer": {
     "periods": [
@@ -1830,6 +1863,17 @@
     ],
     "qid": "Q1569036"
   },
+  "Tianqi Yan": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q114353532"
+  },
   "Tigran Petrosian": {
     "periods": [
       {
@@ -1862,6 +1906,17 @@
       }
     ],
     "qid": "Q27526373"
+  },
+  "Tong Xiao": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q126736023"
   },
   "Vasily Smyslov": {
     "periods": [
@@ -1986,6 +2041,17 @@
     ],
     "qid": "Q161092"
   },
+  "Wang Hao": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q964913"
+  },
   "Wei Yi": {
     "periods": [
       {
@@ -2042,6 +2108,39 @@
     ],
     "qid": "Q61823"
   },
+  "Xiangrui Kong": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q134540460"
+  },
+  "Xiongjian Peng": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27529725"
+  },
+  "Xu Xiangyu": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27534227"
+  },
   "Yasser Seirawan": {
     "periods": [
       {
@@ -2052,6 +2151,28 @@
       }
     ],
     "qid": "Q319208"
+  },
+  "Yihan Meng": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q135467370"
+  },
+  "Yu Yangyi": {
+    "periods": [
+      {
+        "code": "cn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q377866"
   },
   "Yuri Averbakh": {
     "periods": [

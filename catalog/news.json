@@ -101,6 +101,23 @@
       "news": true,
       "lichess_tour": "jJzJv14g",
       "pgn_verified": false
+    },
+    {
+      "id": "news_shenzhen_nanshan_masters_2026_yu_huang_14",
+      "white": "Yu Yangyi",
+      "black": "Huang Renjie",
+      "year": 2026,
+      "result": "1-0",
+      "white_last": "Yu",
+      "black_last": "Huang",
+      "white_first": "Yangyi",
+      "black_first": "Renjie",
+      "site": "https://lichess.org/broadcast/shenzhen-nanshan-masters-2026-main-event/quarterfinals-game-1/njUPbMHT/tWOh1vSU",
+      "event": "Shenzhen Nanshan Masters 2026",
+      "label": "Shenzhen Nanshan Masters · क्वार्टरफ़ाइनल",
+      "news": true,
+      "lichess_tour": "T9eMnL3X",
+      "pgn_verified": false
     }
   ]
 }
