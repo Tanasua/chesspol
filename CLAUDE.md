@@ -20,7 +20,7 @@ Pliki:
   Nagłówki (nazwisko, rok, bieżący ruch, współrzędne): Playfair Display (assets/fonts/playfair, SIL OFL; statyczne wagi
   wycięte z wersji zmiennej), render._serif(), cyfry równe (features lnum, wymaga raqm); kanał hi — Hind.
 - Krój: Montserrat (assets/fonts, SIL OFL — OFL.txt), render._font(size, bold, weight=regular|medium|semibold|bold|extrabold|black);
-  domyślnie Medium / Bold; fallback DejaVu. Okładka: tytuł dopasowywany 64→40 px do 3 wierszy; rok nie dubluje się w plakietce.
+  domyślnie Medium / Bold; fallback DejaVu. Okładka: tekst i portrety po lewej, plansza po prawej (decyzja właściciela 11.10.2026); tytuł dopasowywany 64→40 px do 3 wierszy; rok nie dubluje się w plakietce.
 - src/players.py — nazwy do kadru (nadpisania *_first/*_last w katalogu), zdjęcia assets/players/<slug>.jpg + .json
 - src/fetch_portraits.py — zdjęcia: Wikidata P18 -> Commons, tylko PD/CC0/CC BY/CC BY-SA, pełna zgodność nazwy + zawód szachista + rok urodzenia; raport assets/players/REPORT.md; atrybucja w kadrze i w opisie YouTube
 - src/main.py — CLI: --check-only, --dry-run; na końcu każdego odcinka stały segment OUTRO (podziękowanie, prośba o like i subskrypcję); na samym początku powitanie BEZ przedstawiania się (segment intro; decyzja właściciela); w połowie segment cta (phrases.CTA_TEXTS: łapka + subskrypcja) przed rozdziałem najbliższym środka; muzyka assets/music/the_daily_ostinato.mp3 (Suno; pętla, MUSIC_GAIN_DB=-20) TYLKO na początku (hak + powitanie, potem cichnie przez 4 s) i na końcu (wraca przez 6 s, pełna od outro, fade-out 6 s) — w środku sam lektor (decyzja właściciela); MUSIC="" albo --no-music wyłącza

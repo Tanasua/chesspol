@@ -1,4 +1,4 @@
-"""Okładka (miniatura YouTube) 1280x720: pozycja końcowa po lewej, tytuł i gracze po prawej."""
+"""Okładka (miniatura YouTube) 1280x720: tytuł i gracze po lewej, pozycja końcowa po prawej (decyzja właściciela)."""
 from __future__ import annotations
 
 import io
@@ -87,13 +87,13 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
     """marks: cover_marks.Marks (strzałki + znak '!'/'?'); None = tylko podświetlenie ostatniego ruchu."""
     img = Image.new("RGB", (CW, CH), BG)
     last = game.plies[-1]
-    origin = (50, (CH - BOARD_PX) // 2)
+    origin = (CW - 50 - BOARD_PX, (CH - BOARD_PX) // 2)
     img.paste(_board_png(chess.Board(last.fen_after), last.move, marks.arrows if marks else ()), origin)
     if marks and marks.glyph:
         _glyph(img, origin, marks.glyph_square, marks.glyph)
 
     d = ImageDraw.Draw(img)
-    x, w = 720, CW - 720 - 50
+    x, w = 50, origin[0] - 50 - 50  # kolumna tekstu: od lewego marginesu do odstępu przed planszą
     y = 60
     d.line([x, y, x + 80, y], fill=ACCENT, width=5)
     y += 25
@@ -111,8 +111,8 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
     badge = " ".join(x for x in badge.split() if x != str(year))  # rok jest już obok
     if badge:  # turniej / etap, np. "GRAND CHESS TOUR FINALS · FINAŁ"
         bx = x + d.textlength(str(year), font=_font(56, True)) + 24
-        fb = _fit(d, badge.upper(), 30, CW - 50 - bx, True)
-        lines = _wrap(d, badge.upper(), fb, CW - 50 - bx, 2)
+        fb = _fit(d, badge.upper(), 30, x + w - bx, True)
+        lines = _wrap(d, badge.upper(), fb, x + w - bx, 2)
         for i, ln in enumerate(lines):
             d.text((bx, y + 6 + i * (fb.size + 4)), ln, font=fb, fill=FG)
     y += 80
