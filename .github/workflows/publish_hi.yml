@@ -18,8 +18,12 @@ on:
         description: "Data pierwszej publikacji YYYY-MM-DD (tylko przy pierwszym uruchomieniu)"
         required: false
       ahead:
-        description: "Ile odcinków mieć gotowych naprzód (domyślnie 2; np. 6 = zrób zapas)"
+        description: "Ile odcinków mieć gotowych naprzód (domyślnie 7 = tydzień)"
         required: false
+      publish_now:
+        description: "Pierwszy odcinek tego runu — publicznie od razu (odcinek na dziś)"
+        type: boolean
+        default: false
       no_upload:
         description: "Test: bez uploadu na YouTube"
         type: boolean
@@ -78,16 +82,17 @@ jobs:
           HOST_NAME: ${{ vars.HOST_NAME_HI }}   # imię prowadzącego (np. Lukas); puste = powitanie bez imienia
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN_HI }}   # osobny token na kanał
           STOCKFISH_PATH: /usr/games/stockfish
-          PUBLISH_MODE: manual          # manual = paczki do ręcznego uploadu; youtube = automatyczny upload
+          PUBLISH_MODE: youtube         # youtube = automatyczny upload + miniatura (okładka OpenAI); manual = paczki do ręcznego uploadu
+          PUBLISH_NOW: ${{ inputs.publish_now }}
           GH_TOKEN: ${{ github.token }}  # GitHub Release z paczką
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PUBLISH_TZ: Asia/Kolkata
           PUBLISH_HOUR: "18"
           INTERVAL_DAYS: "1"           # 1 odcinek dziennie (+ ewentualnie nowość z turnieju)
-          BUFFER: ${{ inputs.ahead || '2' }}
+          BUFFER: ${{ inputs.ahead || '7' }}         # tydzień naprzód
           MAX_PER_RUN: ${{ inputs.ahead || '1' }}
           FIRST_DAY: ${{ inputs.first_day }}
           GAME: ${{ inputs.game }}
@@ -95,6 +100,9 @@ jobs:
         run: |
           if [ -z "$ELEVENLABS_API_KEY" ] || [ -z "$ELEVENLABS_VOICE_ID" ]; then
             echo "::notice::Brak ELEVENLABS_API_KEY / ELEVENLABS_VOICE_ID_HI — kanał hindi pominięty"; exit 0
+          fi
+          if [ "$PUBLISH_MODE" = "youtube" ] && [ "$NO_UPLOAD" != "true" ] && { [ -z "$YT_CLIENT_ID" ] || [ -z "$YT_CLIENT_SECRET" ] || [ -z "$YT_REFRESH_TOKEN" ]; }; then
+            echo "::error::Brak sekretów YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN_HI"; exit 1
           fi
           ARGS=()
           if [ -n "$FIRST_DAY" ]; then ARGS+=(--first-day "$FIRST_DAY"); fi
