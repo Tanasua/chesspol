@@ -17,6 +17,7 @@ SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 TOKEN_URI = "https://oauth2.googleapis.com/token"
 CATEGORY_ID = os.environ.get("YT_CATEGORY_ID", "27")  # 27 = Education
 SYNTHETIC = os.environ.get("YT_SYNTHETIC_MEDIA", "false").lower() == "true"
+LANG = (os.environ.get("CHANNEL", "pl").strip().lower() or "pl")  # pl / de / en / hi
 
 
 def _service():
@@ -37,21 +38,25 @@ def _service():
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
-def video_body(title: str, description: str, tags: list, publish_at: datetime) -> dict:
+def video_body(title: str, description: str, tags: list, publish_at: datetime, now: bool = False) -> dict:
+    """now=True: od razu publiczny (odcinek "na dziś"); inaczej private + publishAt."""
     if publish_at.tzinfo is None:
         raise ValueError("publish_at musi mieć strefę czasową")
+    status = ({"privacyStatus": "public"} if now else {
+        "privacyStatus": "private",  # publishAt wymaga private
+        "publishAt": publish_at.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+    })
     return {
         "snippet": {
             "title": title[:100],
             "description": description[:5000],
             "tags": tags,
             "categoryId": CATEGORY_ID,
-            "defaultLanguage": "pl",
-            "defaultAudioLanguage": "pl",
+            "defaultLanguage": LANG,
+            "defaultAudioLanguage": LANG,
         },
         "status": {
-            "privacyStatus": "private",  # publishAt wymaga private
-            "publishAt": publish_at.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"),
+            **status,
             "selfDeclaredMadeForKids": False,
             "containsSyntheticMedia": SYNTHETIC,
         },
@@ -83,3 +88,11 @@ def upload(video_path: Path, body: dict, service=None, retries: int = 5) -> str:
     if "id" not in response:
         raise RuntimeError(f"Nieoczekiwana odpowiedź YouTube: {response}")
     return response["id"]
+
+
+def set_thumbnail(video_id: str, image: Path, service=None) -> None:
+    """Okładka (OpenAI albo nasza). Wymaga zweryfikowanego kanału (własne miniatury); błąd nie blokuje odcinka."""
+    from googleapiclient.http import MediaFileUpload
+
+    yt = service or _service()
+    yt.thumbnails().set(videoId=video_id, media_body=MediaFileUpload(str(image), mimetype="image/jpeg")).execute()

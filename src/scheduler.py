@@ -46,6 +46,7 @@ MAX_PER_RUN = int(os.environ.get("MAX_PER_RUN", "1"))
 MODERN_YEAR = int(os.environ.get("GAP_MODERN_YEAR", "2010"))  # "współczesna" partia do wypełnienia dziury
 MIN_LEAD = timedelta(hours=int(os.environ.get("MIN_LEAD_HOURS", "6")))  # zapas na przetworzenie przez YouTube
 LOW_QUEUE_WARN = 3
+PUBLISH_NOW = os.environ.get("PUBLISH_NOW", "").lower() == "true"  # pierwszy odcinek runu — publicznie od razu
 MODE = os.environ.get("PUBLISH_MODE", "manual")  # manual: paczka do ręcznego uploadu; youtube: upload z publishAt
 
 
@@ -262,7 +263,8 @@ def describe(game: dict, script: dict, pgn: Path | None = None, timing: dict | N
     return title, description, tags
 
 
-def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = False, number: int = 1) -> dict:
+def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = False, number: int = 1,
+            now: bool = False) -> dict:
     gid = game["id"]
     pgn = ROOT / "games" / f"{gid}.pgn"
     script_path = L.scripts / f"{gid}.json"
@@ -283,13 +285,24 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
                                        remote=not dry_tts, cover_title=cover_text(script, title)))
         print(f"Paczka gotowa: {title} -> {when}")
         return episode
+    # youtube: ta sama paczka (okładka + okładka OpenAI, Release, Telegram), potem upload i miniatura
+    episode.update(deliver_package(game, pgn, video, title, description, tags, when, number,
+                                   remote=not dry_tts, cover_title=cover_text(script, title)))
     if no_upload:
         print(f"[no-upload] {title} -> {when}")
         return episode
 
-    from youtube_upload import upload, video_body
-    episode["video_id"] = upload(video, video_body(title, description, tags, publish_at))
-    print(f"Wgrano {episode['video_id']}: {title} -> {when}")
+    from youtube_upload import set_thumbnail, upload, video_body
+    episode["video_id"] = upload(video, video_body(title, description, tags, publish_at, now=now))
+    print(f"Wgrano https://youtu.be/{episode['video_id']}: {title} -> {'TERAZ (public)' if now else when}")
+    cover_ai, cover = L.out / f"{gid}_cover_ai.jpg", L.out / f"{gid}_cover.jpg"
+    thumb = cover_ai if cover_ai.exists() else cover
+    try:
+        set_thumbnail(episode["video_id"], thumb)
+        episode["thumbnail"] = thumb.name
+        print(f"Miniatura: {thumb.name}")
+    except Exception as e:  # noqa: BLE001 — np. kanał bez weryfikacji telefonem
+        print(f"::warning::Miniatura nie ustawiona ({thumb.name}): {e.__class__.__name__}: {str(e)[:300]}")
     return episode
 
 
@@ -380,9 +393,12 @@ def main() -> int:
 
     made = 0
     while made < MAX_PER_RUN:
+        publish_now = PUBLISH_NOW and made == 0 and MODE == "youtube"
         slot, gap = next_slot(episodes, now, first_day)
+        if publish_now:  # odcinek "na dziś": publicznie od razu, dzień dzisiejszy zajęty
+            slot, gap = datetime.now(timezone.utc), False
         horizon = start_day(now, first_day) + timedelta(days=BUFFER * INTERVAL_DAYS)
-        if slot.astimezone(TZ).date() >= horizon:
+        if not publish_now and slot.astimezone(TZ).date() >= horizon:
             print(f"Zaplanowane naprzód: najbliższy wolny termin {slot.astimezone(TZ):%Y-%m-%d} (bufor {BUFFER}) "
                   "— nic do zrobienia")
             break
@@ -404,7 +420,7 @@ def main() -> int:
             return 1
         if gap:
             print(f"Dziura w grafiku {slot.astimezone(TZ):%Y-%m-%d} — {rubric}: {game['id']} ({game['year']})")
-        episode = produce(game, slot, args.no_upload, args.dry_tts, number=len(episodes) + 1)
+        episode = produce(game, slot, args.no_upload, args.dry_tts, number=len(episodes) + 1, now=publish_now)
         episode["rubric"] = rubric
         if gap:
             episode["gap"] = True
