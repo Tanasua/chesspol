@@ -1,0 +1,152 @@
+{
+  "hook": {
+    "text": "Fischer robi coś, czego w poważnej grze wcześniej nie robił. Z pozornie cichego debiutu zaczyna rosnąć presja, której mistrz świata nie może zignorować.",
+    "ply": 1
+  },
+  "yt_hook": "Pretendent zaskoczył salę!",
+  "yt_detail": "Fischer porzuca swój zwykły debiut",
+  "kicker": "PRZEŁOM!",
+  "title": "Zmiana stylu w Reykjavíku",
+  "description": "W 6. partii meczu o mistrzostwo świata 1972 w Reykjavíku Robert James Fischer gra z Borisem Spasskim w stylu innym niż ten, z którego był znany. Spassky był panującym mistrzem świata od 1969 roku, a Fischer, znany niemal wyłącznie z gry pionem królewskim, wybiera tu inną drogę. Zobacz, jak z cichego debiutu rośnie długotrwała presja na czarnego króla. Ta partia stała się przełomem meczu i jednym z najważniejszych pokazów cierpliwego ataku.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Stawka meczu",
+      "text": "W Reykjavíku trwa szósta partia meczu o mistrzostwo świata. Białymi gra amerykański pretendent Robert James Fischer, czarnymi radziecki mistrz świata Boris Spassky. Stawką jest korona, ale też przełamanie psychologiczne po bardzo nerwowym starcie meczu.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Presja jest ogromna: Spassky prowadził już dwa do zera, a drugi punkt dostał walkowerem po sporze o kamery w sali. Fischer, znany niemal wyłącznie z gry pionem królewskim, zaczyna inaczej: {{m:1}}. {{s:2}} Spassky przyjmuje spokojny układ. {{s:3}} Białe rozwijają figurę. {{s:4}} Centrum od razu dostaje napięcie.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:5}} Kierunek staje się jasny: Fischer zabiera mistrza świata na teren gambitu hetmańskiego, którego w poważnej grze wcześniej nie wybierał. {{s:6}} Spassky rozwija się bez pośpiechu. {{s:7}} Białe wzmacniają centrum. {{s:8}} Czarne szykują bezpieczeństwo króla. Fischer pokazuje pierwszą igłę: {{m:9}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut niespodzianka",
+      "text": "Czarne zabezpieczają króla: {{m:10}}. {{s:11}} Fischer buduje bardzo solidny układ. Spassky pyta gońca: {{m:12}}. {{s:13}} Białe nie spieszą się z wymianą. {{s:14}} Czarne przygotowują nacisk na centrum.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:15}} Napięcie w centrum wreszcie pęka. Czarne odbijają: {{m:16}}. Fischer decyduje się na wymianę: {{m:17}}. {{s:18}} Hetman czarnych wchodzi do gry. {{s:19}} Białe zdejmują aktywną figurę. {{s:20}} Spassky odzyskuje równowagę materiału.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Fischer ustawia wieżę na otwartej linii: {{m:21}}. Czarne rozwijają figurę: {{m:22}}. Biały hetman wychodzi aktywnie: {{m:23}}. Spassky od razu uderza w centrum: {{m:24}}. {{s:25}} Hetman białych zmienia trasę. {{s:26}} Czarne zajmują linię wieżą.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Fischer wprowadza gońca z tempem: {{m:27}}. Spassky natychmiast zadaje pytanie: {{m:28}}. {{s:29}} Białe rozładowują centrum. {{s:30}} Czarne odbijają pionem. Król białych wreszcie trafia w bezpieczniejsze miejsce: {{m:31}}. Czarne przerzucają wieżę: {{m:32}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "Środek gry",
+      "text": "Po debiucie nie ma fajerwerków, ale to jest pozycja, w której liczy się cierpliwość. {{s:33}} Fischer kończy rozwój. {{s:34}} Spassky trzyma centrum, lecz przewaga zaczyna lekko przechylać się ku białym. Biały skoczek wchodzi w sam środek: {{m:35}}. Czarne odpowiadają: {{m:36}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Fischer sprawdza, co naprawdę trzyma czarną pozycję: {{m:37}}. Czarne biją: {{m:38}}. Białe ruszają centrum: {{m:39}}. Spassky zamyka drzwi: {{m:40}}. A teraz pierwszy ważny wybór: jak otworzyć skrzydło królewskie? {{p}} Fischer gra: {{m:41}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Czarne szukają kontrgry: {{m:42}}. Fischer przepycha piony dalej: {{m:43}}. Spassky traci czas na manewr wieżą: {{m:44}}. Biały goniec wchodzi na aktywne pole: {{m:45}}. Król czarnych ucieka: {{m:46}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Fischer przenosi hetmana bliżej króla: {{m:47}}. Czarne wybierają obronę: {{m:48}}, ale po niej białe mają już wyraźną przewagę. {{s:49}} Białe dają królowi oddech. {{s:50}} Spassky szuka miejsca na skrzydle. Atak nabiera siły: {{m:51}}. Czarne biją: {{m:52}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "Atak rośnie",
+      "text": "Teraz materiał nie jest najważniejszy. Fischer wpuszcza do gry ciężką figurę: {{m:53}}. To wygląda prosto, ale od tej chwili czarne nie mogą już spokojnie przestawiać obrony.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Czarne cofają figurę do obrony: {{m:54}}. Fischer dokłada drugą wieżę: {{m:55}}. Spassky ustawia hetmana: {{m:56}}, lecz silnik widzi już przewagę białych większą niż figura. Hetman białych poprawia pozycję: {{m:57}}. Czarne bronią wejścia: {{m:58}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Fischer nie spieszy się z ostatnim ciosem; najpierw odcina ucieczki. {{s:59}} Białe robią miejsce pionem. {{s:60}} Czarne przerzucają wieżę. Teraz pion w centrum wchodzi bardzo głęboko: {{m:61}}. Czarne próbują blokady: {{m:62}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Biały hetman ustawia się centralnie: {{m:63}}. Czarne muszą wracać: {{m:64}}. {{s:65}} Fischer zabiera przestrzeń na skrzydle. {{s:66}} Hetman czarnych znów się cofa. Białe powoli dublują ciężkie figury: {{m:67}}. Spassky odpowiada: {{m:68}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s16",
+      "chapter": "Pętla matowa",
+      "text": "Tu presja zamienia się w duszenie. {{s:69}} Biała wieża znajduje lepszy tor. {{s:70}} Czarne tylko przesuwają hetmana. Goniec dołącza do ataku: {{m:71}}. Spassky wraca: {{m:72}}. Hetman białych skraca dystans: {{m:73}}. Czarne stawiają kolejną zaporę: {{m:74}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Teraz można było wygrać spokojnie, ale na szachownicy jest bardziej bezpośredni sposób. Widzicie, jak rozerwać osłonę króla? {{p}} Fischer uderza: {{m:75}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Czarne przyjmują wyzwanie: {{m:76}}. I natychmiast wchodzi druga wieża: {{m:77}}. Król czarnych odchodzi: {{m:78}}, ale to już nie jest ucieczka, tylko oczekiwanie na dokładność białych.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Fischer ustawia ostatnią figurę do ataku: {{m:79}}. Spassky przesuwa króla: {{m:80}}. Po tej decyzji ocena skacze tak wysoko, że chodzi już nie o piony, tylko o wymuszoną drogę do mata.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s20",
+      "chapter": "Ostatni cios",
+      "text": "To ostatnia decyzja na planszy. Jak domknąć sieć wokół czarnego króla? {{p}} Fischer wybiera: {{m:81}}. Spassky zrozumiał, że nie uniknie mata, i się poddał.",
+      "pause_after": 1.5
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "W sali wydarzyło się coś rzadkiego: Spassky dołączył do publiczności i oklaskiwał Fischera. Po tej partii Fischer po raz pierwszy objął prowadzenie w meczu: trzy i pół do dwóch i pół.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Cały mecz Fischer wygrał później dwanaście i pół do osiem i pół, gdy Spassky poddał odłożoną dwudziestą pierwszą partię pierwszego września tysiąc dziewięćset siedemdziesiątego drugiego roku. Fischer został jedenastym mistrzem świata i pierwszym Amerykaninem z oficjalnym tytułem.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Ta partia jest ważna, bo pokazuje nie tylko atak, lecz także zmianę stylu w najważniejszym momencie. Fischer zagrał cierpliwie, bez pośpiechu, a potem zamienił drobne przewagi w pozycję, której Spassky nie był już w stanie utrzymać.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}
