@@ -74,6 +74,18 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep008-pl_wojtaszek_carlsen_2015",
       "telegram": true,
       "rubric": "national"
+    },
+    {
+      "id": "fischer_spassky_1972",
+      "publish_at": "2026-10-20T07:00:00+00:00",
+      "title": "Pretendent zaskoczył salę! | Fischer – Spasski (1972) — Fischer porzuca swój zwykły debiut",
+      "mode": "youtube",
+      "package": "out/packages/ep009-fischer_spassky_1972",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep009-fischer_spassky_1972",
+      "telegram": true,
+      "video_id": "IMSrmP4FVgY",
+      "thumbnail": "fischer_spassky_1972_cover_ai.jpg",
+      "rubric": "history"
     }
   ],
   "first_day": "2026-09-27"
