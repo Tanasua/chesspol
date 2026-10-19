@@ -35,6 +35,18 @@
       "thumbnail": "fischer_spassky_1972_cover_ai.jpg",
       "rubric": "history",
       "day_rubric": "history"
+    },
+    {
+      "id": "anderssen_kieseritzky_1851",
+      "publish_at": "2026-10-19T14:25:04.302650+00:00",
+      "title": "Віддав усе за атаку! | Андерсен – Кізерицький (1851) — мат без двох тур і ферзя",
+      "mode": "youtube",
+      "package": "out/packages/uk-ep004-anderssen_kieseritzky_1851",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/uk-ep004-anderssen_kieseritzky_1851",
+      "video_id": "F5HlLOvSjVg",
+      "thumbnail": "anderssen_kieseritzky_1851_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "history"
     }
   ]
 }
