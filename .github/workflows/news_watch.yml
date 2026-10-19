@@ -11,6 +11,10 @@ on:
         description: "Tylko pokaż, co by zrobił"
         type: boolean
         default: false
+      force:
+        description: "Nie czekaj na piątek (szukaj nowości od razu)"
+        type: boolean
+        default: false
 
 concurrency:  # osobna kolejka: wspólna grupa trzyma tylko 1 oczekujący run i kasuje pozostałe
   group: news-watch
@@ -74,9 +78,10 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           DRY: ${{ inputs.dry }}
+          FORCE: ${{ inputs.force }}
         run: |
           set -o pipefail
-          python src/news_watch.py $([ "$DRY" = "true" ] && echo --dry) 2>&1 | tee /tmp/produce.log
+          python src/news_watch.py $([ "$DRY" = "true" ] && echo --dry) $([ "$FORCE" = "true" ] && echo --force) 2>&1 | tee /tmp/produce.log
 
       - name: Commit state
         if: always()
