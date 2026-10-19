@@ -36,8 +36,11 @@ class Channel:
     name_uk: str = ""        # nazwa kanału po ukraińsku w miejscowniku: "на польському каналі"
 
 
+_PL_TTS = os.environ.get("PL_TTS", "inworld").strip().lower() or "inworld"
 PL = Channel(
-    code="pl", tts="inworld", voice_env="INWORLD_VOICE_ID", order_key="n", suffix="_pl",
+    # PL_TTS=elevenlabs (workflow, gdy jest sekret ELEVENLABS_VOICE_ID_PL — decyzja właściciela 19.10.2026), inaczej Inworld
+    code="pl", tts=_PL_TTS, voice_env="ELEVENLABS_VOICE_ID" if _PL_TTS == "elevenlabs" else "INWORLD_VOICE_ID",
+    order_key="n", suffix="_pl",
     state=ROOT / "state" / "schedule.json", scripts=ROOT / "scripts", out=ROOT / "out",
     tag_prefix="", flag="🇵🇱", prompt=ROOT / "prompts" / "script_system_pl.md",
     t={

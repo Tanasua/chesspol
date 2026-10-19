@@ -72,6 +72,9 @@ jobs:
           INWORLD_VOICE_ID: ${{ secrets.INWORLD_VOICE_ID }}
           INWORLD_MODEL: inworld-tts-2
           INWORLD_LANGUAGE: pl-PL
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_PL }}
+          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
           HOST_NAME: ${{ vars.HOST_NAME }}   # imię prowadzącego; puste = nazwa głosu Inworld
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
@@ -94,6 +97,10 @@ jobs:
           if [ "$PUBLISH_MODE" = "youtube" ] && [ "$NO_UPLOAD" != "true" ] && { [ -z "$YT_CLIENT_ID" ] || [ -z "$YT_CLIENT_SECRET" ] || [ -z "$YT_REFRESH_TOKEN" ]; }; then
             echo "::error::Brak sekretów YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN_PL"; exit 1
           fi
+          # głos: ElevenLabs, gdy jest sekret ELEVENLABS_VOICE_ID_PL; inaczej dotychczasowy Inworld
+          if [ -n "$ELEVENLABS_API_KEY" ] && [ -n "$ELEVENLABS_VOICE_ID" ]; then export PL_TTS=elevenlabs; else
+            export PL_TTS=inworld; echo "::warning::Brak ELEVENLABS_VOICE_ID_PL — polski kanał na Inworld"; fi
+          echo "Głos PL: $PL_TTS"
           ARGS=()
           if [ -n "$FIRST_DAY" ]; then ARGS+=(--first-day "$FIRST_DAY"); fi
           if [ -n "$GAME" ]; then ARGS+=(--game "$GAME"); fi

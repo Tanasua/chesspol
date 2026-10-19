@@ -57,6 +57,7 @@ jobs:
           INWORLD_MODEL: inworld-tts-2
           INWORLD_LANGUAGE: pl-PL
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          VOICE_PL: ${{ secrets.ELEVENLABS_VOICE_ID_PL }}
           VOICE_DE: ${{ secrets.ELEVENLABS_VOICE_ID_DE }}
           VOICE_EN: ${{ secrets.ELEVENLABS_VOICE_ID_EN }}
           VOICE_HI: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}
@@ -102,9 +103,10 @@ jobs:
               uk) V=$VOICE_UK; HN=$HOST_UK ;;
               ru) V=$VOICE_RU; HN=$HOST_RU ;;
               tr) V=$VOICE_TR; HN=$HOST_TR ;;
-              *)  V=$VOICE_DE; HN=$HOST_PL ;;
+              *)  V=$VOICE_PL; HN=$HOST_PL ;;
             esac
-            CHANNEL=$ch ELEVENLABS_VOICE_ID=$V HOST_NAME=$HN python src/news.py "${ARGS[@]}" 2>&1 | tee -a /tmp/produce.log || rc=1
+            PT=inworld; if [ "$ch" = "pl" ] && [ -n "$VOICE_PL" ]; then PT=elevenlabs; fi
+            PL_TTS=$PT CHANNEL=$ch ELEVENLABS_VOICE_ID=$V HOST_NAME=$HN python src/news.py "${ARGS[@]}" 2>&1 | tee -a /tmp/produce.log || rc=1
             echo "::endgroup::"
           done
           exit $rc

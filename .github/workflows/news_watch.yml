@@ -56,6 +56,7 @@ jobs:
           INWORLD_MODEL: inworld-tts-2
           INWORLD_LANGUAGE: pl-PL
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID_PL: ${{ secrets.ELEVENLABS_VOICE_ID_PL }}
           ELEVENLABS_VOICE_ID_DE: ${{ secrets.ELEVENLABS_VOICE_ID_DE }}
           ELEVENLABS_VOICE_ID_EN: ${{ secrets.ELEVENLABS_VOICE_ID_EN }}
           ELEVENLABS_VOICE_ID_HI: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}

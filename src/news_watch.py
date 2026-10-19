@@ -42,7 +42,8 @@ INDIA = re.compile(r"india|indian|chennai|kolkata|mumbai|delhi|bengaluru|bangalo
                    r"india.{0,30}national|national.{0,30}india", re.I)
 SKIP = re.compile(r"blitz|bullet|freestyle|chess960|titled|armageddon|junior|youth|women'?s rapid|u\d\d", re.I)
 CHANNELS = {  # kanał -> zmienne z kluczem i głosem TTS (bez nich kanał pomijamy)
-    "pl": ("INWORLD_API_KEY", "INWORLD_VOICE_ID", None),
+    "pl": (("ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID_PL", "ELEVENLABS_VOICE_ID") if os.environ.get("ELEVENLABS_VOICE_ID_PL")
+           else ("INWORLD_API_KEY", "INWORLD_VOICE_ID", None)),  # polski: ElevenLabs, gdy jest głos, inaczej Inworld
     "de": ("ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID_DE", "ELEVENLABS_VOICE_ID"),
     "en": ("ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID_EN", "ELEVENLABS_VOICE_ID"),
     "hi": ("ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID_HI", "ELEVENLABS_VOICE_ID"),
@@ -163,7 +164,8 @@ def main() -> int:
                 if args.dry:
                     made = True
                     break
-                env = {**os.environ, "CHANNEL": ch}
+                env = {**os.environ, "CHANNEL": ch,
+                       "PL_TTS": "elevenlabs" if ch == "pl" and target_env else "inworld"}
                 if target_env:
                     env[target_env] = os.environ[voice_env]
                 cmd = [sys.executable, str(ROOT / "src" / "news.py"), "--tournament", tour["id"],

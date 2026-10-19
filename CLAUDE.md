@@ -158,6 +158,8 @@ Pliki:
   "берёт"; Кр Ф Л С К), tr_notation.py ("At fe üçe", "Fil fe yediyi alır"; Ş V K F A). RAW_MOVE_RE łapie też Кр/Ф/Т/Л/С/К
   i Ş/V/K/F/A. Prompty script_system_{uk,ru,tr}.md (instrukcje EN, tekst w języku kanału). Kraj "swój": ua / ru / tr
   (katalogi krajowe jeszcze brak). NIE zweryfikowane przez native speakera (TR szczególnie) — odsłuchać.
+- GŁOS PL (decyzja właściciela 19.10.2026): ElevenLabs (sekret ELEVENLABS_VOICE_ID_PL, ELEVENLABS_API_KEY wspólny) —
+  lang.PL.tts wg PL_TTS (publish.yml / news.yml / news_watch ustawiają elevenlabs, gdy sekret jest; inaczej Inworld + ostrzeżenie).
 - src/tts_elevenlabs.py — ElevenLabs /v1/text-to-speech/{voice}/with-timestamps (alignment znaków -> słowa), ELEVENLABS_MODEL
   (domyślnie eleven_multilingual_v2); NIE zweryfikowane na prawdziwym kluczu
 - .github/workflows/publish_de.yml — kanał niemiecki, cron 04:47 UTC, własna grupa concurrency (publish-de; wspólna grupa kasowała oczekujące runy innych kanałów); bez klucza ElevenLabs pomija.
