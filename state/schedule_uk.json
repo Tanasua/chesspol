@@ -1,0 +1,16 @@
+{
+  "episodes": [
+    {
+      "id": "byrne_fischer_1963",
+      "publish_at": "2026-10-20T15:00:00+00:00",
+      "title": "Захист тріщить! | Бірн – Фішер (Чемпіонат США, 1963) — Фішер розкриває короля за 21 хід",
+      "mode": "youtube",
+      "package": "out/packages/uk-ep001-byrne_fischer_1963",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/uk-ep001-byrne_fischer_1963",
+      "telegram": true,
+      "video_id": "FxsFpDX-CrQ",
+      "thumbnail": "byrne_fischer_1963_cover_ai.jpg",
+      "rubric": "history"
+    }
+  ]
+}
