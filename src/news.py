@@ -538,17 +538,42 @@ def main() -> int:
     subprocess.run([py, str(SRC / "main.py"), "--pgn", str(pgn_path), "--script", str(script), "--out", str(video),
                     "--preroll", str(pre)] + (["--dry-run"] if args.dry_tts else []), check=True, cwd=ROOT)
 
+    os.environ.setdefault("INTERVAL_DAYS", "1")
     import scheduler as S
     sc = json.loads(script.read_text(encoding="utf-8"))
     title, description, tags = S.describe(entry, sc, pgn_path, json.loads(video.with_suffix(".timing.json").read_text()))
     tags = [t for t in tags if t not in L.t["tags"][3:]] + L.t["news_tags"]
     description = description.replace(L.t["hashtags"], L.t["news_hashtags"])
-    when = "одразу (новина)" if not args.test else "ТЕСТ — новина, публікація на ваш розсуд"
     tag = f"{L.tag_prefix}news{'-test' if args.test else ''}-{gid}"[:120]
+    # nowość -> YouTube w najbliższym wolnym terminie kanału (wt/czw/sob/nd, wieczór); w Telegramie tylko link
+    # po premierze (src/announce.py). Paczka z plikami do Telegrama — tylko test albo brak dostępu do YouTube.
+    to_yt = (not args.test and not args.dry_tts and bool(os.environ.get("YT_CLIENT_ID"))
+             and bool(os.environ.get("YT_REFRESH_TOKEN") or os.environ.get(f"YT_REFRESH_TOKEN_{L.yt}")))
+    state = S.load_json(S.STATE, {"episodes": []})
+    slot = S.next_slot(state["episodes"], datetime.now(timezone.utc), None)[0] if to_yt else None
+    when = (S.when_uk(slot) if slot else
+            "ТЕСТ — новина, публікація на ваш розсуд" if args.test else "одразу (новина)")
     info = S.deliver_package(entry, pgn_path, video, title, description, tags, when, 0,
                              remote=not args.dry_tts, tag=tag, badge=label, preroll=pre,
-                             cover_title=S.cover_text(sc, title))
+                             cover_title=S.cover_text(sc, title), notify=not to_yt)
     print("Paczka:", info)
+    if not to_yt:
+        return 0
+    from youtube_upload import set_thumbnail, upload, video_body
+    vid = upload(video, video_body(title, description, tags, slot))
+    print(f"Wgrano https://youtu.be/{vid}: {title} -> {when}")
+    episode = {"id": gid, "publish_at": slot.isoformat(), "title": title, "mode": "youtube", "release": tag,
+               "video_id": vid, "rubric": "news", **info}
+    cover_ai, cover = L.out / f"{gid}_cover_ai.jpg", L.out / f"{gid}_cover.jpg"
+    thumb = cover_ai if cover_ai.exists() else cover
+    try:
+        set_thumbnail(vid, thumb)
+        episode["thumbnail"] = thumb.name
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning::Miniatura nie ustawiona ({thumb.name}): {e.__class__.__name__}: {str(e)[:300]}")
+    state = S.load_json(S.STATE, {"episodes": []})
+    state["episodes"].append(episode)
+    S.save_json(S.STATE, state)
     return 0
 
 

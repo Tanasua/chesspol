@@ -81,6 +81,12 @@ Pliki:
 - ZALEGŁE PACZKI: src/upload_backlog.py + .github/workflows/upload_backlog.yml (workflow_dispatch: kanały, after, dry) —
   Release'y z trybu manual (niewgrane) -> YouTube private + publishAt w kolejnych wolnych terminach, miniatura OpenAI
   (z Release albo nowa z cover.jpg); wpis {release, video_id} w stanie kanału; raport do Telegrama.
+- TELEGRAM = TYLKO ZAPOWIEDŹ (decyzja właściciela 19.10.2026): w trybie youtube żadnych plików w Telegramie
+  (deliver_package(notify=False)); src/announce.py + .github/workflows/announce.yml (co 10 min) wysyła
+  "Свіже відео на польському каналі!\n<link>", gdy termin minął i YouTube oEmbed widzi film (publiczny); po 3 h bez
+  publiczności — jedno ostrzeżenie; >48 h po terminie — bez wiadomości. Stan: state/announced.json. Nowości (news.py) idą
+  na YouTube w najbliższy wolny termin kanału (rubric "news"); pliki do Telegrama tylko przy --test albo bez tokenu YouTube.
+  Kanał -> strefa / sekret: lang.Channel.tz, .yt (YT_REFRESH_TOKEN_<yt>, uk -> UA), .name_uk.
 - scheduler --game <id> (workflow_dispatch input "game" w publish*.yml): wskazana partia na najbliższy odcinek, poza kolejką.
 - DZIURY W GRAFIKU (decyzja właściciela): scheduler.next_slot szuka najbliższego wolnego dnia od teraz (+MIN_LEAD), nie tylko
   po ostatnim odcinku; dzień przed ostatnim zaplanowanym = dziura -> pick_gap: najnowsza partia spośród rubryki krajowej

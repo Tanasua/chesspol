@@ -31,6 +31,9 @@ class Channel:
     country: str = ""        # kod ISO kraju kanału ("swój" gracz w nowościach); domyślnie = code
     fallback: str = ""       # sufiks pól katalogu, gdy brak wersji kanału (hi -> _en); pusty = pole bazowe
     font: str = "Montserrat"  # krój w kadrze i na okładce (hi: Hind — dewanagari + łacinka, SIL OFL)
+    tz: str = "Europe/Kyiv"  # strefa publikacji (PUBLISH_TZ nadpisuje)
+    yt: str = ""             # sufiks sekretu YT_REFRESH_TOKEN_<yt> (uk -> UA)
+    name_uk: str = ""        # nazwa kanału po ukraińsku w miejscowniku: "на польському каналі"
 
 
 PL = Channel(
@@ -248,6 +251,12 @@ TR = Channel(
 )
 
 CHANNELS = {"pl": PL, "de": DE, "en": EN, "hi": HI, "uk": UK, "ru": RU, "tr": TR}
+for _c, _tz, _yt, _nm in (("pl", "Europe/Warsaw", "PL", "польському"), ("de", "Europe/Berlin", "DE", "німецькому"),
+                          ("en", "America/New_York", "EN", "американському"), ("hi", "Asia/Kolkata", "HI", "індійському"),
+                          ("uk", "Europe/Kyiv", "UA", "українському"), ("ru", "Europe/Moscow", "RU", "російському"),
+                          ("tr", "Europe/Istanbul", "TR", "турецькому")):
+    for _k, _v in (("tz", _tz), ("yt", _yt), ("name_uk", f"на {_nm} каналі")):
+        object.__setattr__(CHANNELS[_c], _k, _v)  # frozen dataclass
 LANG_NAME = {"uk": "Ukrainian", "ru": "Russian", "tr": "Turkish"}
 L = CHANNELS[os.environ.get("CHANNEL", "pl").strip().lower() or "pl"]
 

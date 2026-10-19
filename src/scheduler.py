@@ -38,7 +38,7 @@ SRC = ROOT / "src"
 CATALOG = ROOT / "catalog" / "games.json"
 STATE = L.state
 
-TZ = ZoneInfo(os.environ.get("PUBLISH_TZ", "Europe/Kyiv"))
+TZ = ZoneInfo(os.environ.get("PUBLISH_TZ") or L.tz)
 PUBLISH_HOUR = int(os.environ.get("PUBLISH_HOUR", "10"))
 INTERVAL_DAYS = int(os.environ.get("INTERVAL_DAYS", "3"))
 BUFFER = int(os.environ.get("BUFFER", "2"))            # ile odcinków trzymać zaplanowanych naprzód
@@ -144,7 +144,8 @@ def national_queue(national: dict, episodes: list) -> list:
 def pick(episodes: list, q: list, nq: list) -> tuple[str, dict | None]:
     """Na przemian: historia -> rubryka krajowa -> historia… Gdy jednej kolejki brak — druga.
     Rubryka poprzednika wg daty publikacji, bez odcinków z dziur (te nie zmieniają rytmu)."""
-    regular = sorted((e for e in episodes if not e.get("gap")), key=lambda e: e["publish_at"])
+    regular = sorted((e for e in episodes if not e.get("gap") and e.get("rubric", "history") in ("history", "national")),
+                     key=lambda e: e["publish_at"])  # nowości i zaległe paczki też nie zmieniają rytmu
     last = regular[-1].get("rubric", "history") if regular else "national"
     order = ("national", "history") if last == "history" else ("history", "national")
     for rubric in order:
@@ -309,9 +310,10 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
                                        remote=not dry_tts, cover_title=cover_text(script, title)))
         print(f"Paczka gotowa: {title} -> {when}")
         return episode
-    # youtube: ta sama paczka (okładka + okładka OpenAI, Release, Telegram), potem upload i miniatura
+    # youtube: ta sama paczka (okładka + okładka OpenAI, Release) bez plików w Telegramie (decyzja właściciela
+    # 19.10.2026: tylko link po premierze — src/announce.py), potem upload i miniatura
     episode.update(deliver_package(game, pgn, video, title, description, tags, when, number,
-                                   remote=not dry_tts, cover_title=cover_text(script, title)))
+                                   remote=not dry_tts, cover_title=cover_text(script, title), notify=False))
     if no_upload:
         print(f"[no-upload] {title} -> {when}")
         return episode
@@ -332,7 +334,8 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
 
 def deliver_package(game: dict, pgn: Path, video: Path, title: str, description: str, tags: list,
                     when: str, number: int, remote: bool = True, tag: str | None = None, badge: str = "",
-                    preroll: Path | None = None, cover_title: str | None = None) -> dict:
+                    preroll: Path | None = None, cover_title: str | None = None, notify: bool = True) -> dict:
+    """notify=False: bez Telegrama (wideo idzie na YouTube; o premierze zawiadamia src/announce.py)."""
     from cover import make_cover
     from deliver import github_release, telegram, write_package
     from pgn_loader import load_game
@@ -370,6 +373,8 @@ def deliver_package(game: dict, pgn: Path, video: Path, title: str, description:
             print(f"GitHub Release: {url}")
     except subprocess.CalledProcessError as e:
         print(f"::warning::GitHub Release nie powstał: {e.stderr.strip()[:300]}")
+    if not notify:
+        return info
     try:
         info["telegram"] = telegram(pkg, title, when, info.get("release_url"), number)
     except Exception as e:  # noqa: BLE001 — Telegram to wygoda, nie blokuje odcinka

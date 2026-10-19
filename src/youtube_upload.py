@@ -24,6 +24,10 @@ def _service():
     from google.oauth2.credentials import Credentials
     from googleapiclient.discovery import build
 
+    if not os.environ.get("YT_REFRESH_TOKEN"):  # sekret kanału: YT_REFRESH_TOKEN_PL / _DE / … / _UA
+        from lang import L
+        os.environ["YT_REFRESH_TOKEN"] = os.environ.get(f"YT_REFRESH_TOKEN_{L.yt}", "")
+
     missing = [k for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN") if not os.environ.get(k)]
     if missing:
         raise RuntimeError(f"Brak zmiennych: {', '.join(missing)}")

@@ -1,0 +1,46 @@
+name: Announce published videos
+
+# Telegram: "Свіже відео на <канал>!" + link, gdy film zaplanowany w state/schedule*.json stał się publiczny
+# (src/announce.py). Co 10 minut — terminy są co 5 minut w wieczornym oknie kanału.
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: "Tylko sprawdź (bez Telegrama)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: announce
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Announce
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DRY: ${{ inputs.dry }}
+        run: python src/announce.py $([ "$DRY" = "true" ] && echo --dry)
+      - name: Commit state
+        run: |
+          git config user.name "episode-bot"
+          git config user.email "episode-bot@users.noreply.github.com"
+          git add state/announced.json 2>/dev/null || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "bot: announced videos"
+          for i in 1 2 3 4; do git pull --rebase && git push && exit 0; sleep $((2**i)); done
+          exit 1
