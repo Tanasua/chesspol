@@ -1,0 +1,16 @@
+{
+  "episodes": [
+    {
+      "id": "kasparov_anand_1995",
+      "publish_at": "2026-10-20T15:30:00+00:00",
+      "title": "Bir Kale Gitti, Tahta Yandı! | Kasparov – Anand (1995) — 107. katta maç eşitlendi",
+      "mode": "youtube",
+      "package": "out/packages/tr-ep001-kasparov_anand_1995",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/tr-ep001-kasparov_anand_1995",
+      "video_id": "RWQJkPJ4yJA",
+      "thumbnail": "kasparov_anand_1995_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "history"
+    }
+  ]
+}

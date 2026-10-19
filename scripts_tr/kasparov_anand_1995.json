@@ -1,0 +1,172 @@
+{
+  "hook": {
+    "text": "Siyah bir Kale alıyor, ama tahta hiç sakinleşmiyor. Bu gerçekten kazanç mı, yoksa hazırlanmış bir fırtına mı?",
+    "ply": 34
+  },
+  "yt_hook": "Bir Kale Gitti, Tahta Yandı!",
+  "yt_detail": "107. katta maç eşitlendi",
+  "kicker": "FEDÂ!",
+  "title": "Kulede hazırlık savaşı",
+  "description": "1995 PCA Dünya Şampiyonluğu maçının 10. oyununda Garry Kasparov ile Viswanathan Anand, New York'ta World Trade Center'ın 107. katındaki gözlem katında karşılaşıyor. Maçın ilk 8 oyunu berabere bitmiş, 9. oyunu Anand kazanıp 5-4 öne geçmişti. Bu partide Kasparov'un yaklaşık 48 saatlik hazırlığının tahta üzerinde nasıl çalıştığını izleyeceksiniz. Açılıştan çıkan karmaşa, Siyah vezirin macerası ve finale giden dönüşüm özellikle dikkat çekiyor.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Maçın durumu",
+      "text": "Bu, bin dokuz yüz doksan beş PCA Dünya Şampiyonluğu maçının onuncu oyunu. Unvanını savunan Garry Kasparov, meydan okuyan Viswanathan Anand'a karşı New York'ta, World Trade Center'ın yüz yedinci katındaki gözlem katında oynuyor. İlk sekiz oyun berabere bitmiş, Anand dokuzuncu oyunu kazanıp beş-dört öne geçmişti; Kasparov'un burada maçı eşitlemesi gerekiyor.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:1}} Merkez kavgası başlıyor. {{s:5}} İspanyol yapısı geliyor; iki taraf da tanıdık karelere yerleşiyor. {{s:8}} Siyah gelişimi tamamlamadan önce gerilimi canlı tutuyor.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{m:9}}. Tahta sakin görünüyor, ama Anand hemen ilk taktik teması açıyor: {{m:10}}. Açılış burada kuru ezber olmaktan çıkıyor.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Açılış düğümü",
+      "text": "{{s:12}} Siyah vezir kanadında alan kazanıyor. {{s:14}} Merkez açıldıkça her taşın temposu önem kazanıyor. {{s:16}} Şimdilik kimse geri adım atmıyor.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:18}} Siyah'ın taşları merkeze daha fazla baskı yapıyor. {{s:20}} Açık hatlar ve zayıf kareler çoğalıyor. Şimdi Kasparov ilk keskin soruyu soruyor: {{m:21}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Anand daha sert bir cevap seçiyor: {{m:22}}. Kasparov tempo kaybetmeden karşılık veriyor: {{m:23}}. {{s:24}} Siyah materyali geri alıyor, ama şah kanadı artık daha gevşek.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "{{s:25}} Beyaz merkezin hasarını onarıyor. Anand veziriyle sahaya giriyor: {{m:26}}. Kasparov araya savunma koyuyor: {{m:27}}. Siyah piyon toplamaya devam ediyor: {{m:28}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "Vezir oyunda",
+      "text": "{{s:29}} Beyaz, Vezir baskısından kaçmak yerine taşlarını toparlıyor. Anand değişimi kabul ediyor: {{m:30}}. {{s:32}} Siyah Atı merkeze yerleşiyor, ama Kasparov'un cevabı doğrudan geliyor: {{m:33}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Şimdi tahta garip bir soru soruyor: köşedeki Kale gerçekten yenebilir mi? Siz olsanız bu riski alır mıydınız? {{p}} Anand geri adım atmıyor: {{m:34}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Kasparov panik yapmıyor; saldırı yönünü değiştiriyor: {{m:35}}. Siyah merkezi savunuyor: {{m:36}}. Ardından Beyaz, şah kanadındaki zayıflıkları hedefe koyuyor: {{m:37}}. Anand'ın veziri hâlâ çok aktif: {{m:38}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Kasparov materyale değil, koordinasyona bakıyor: {{m:39}}. Siyah bu karmaşada materyal hesabını daha da derinleştiriyor: {{m:40}}. Motor burada oyundaki devamı değil, olası bir yolu gösteriyor: {{v:40}}. Fikir şu: Siyah aktif taşlarla zaman kazanmak istiyor, fakat Beyaz'ın baskısı dağılmıyor.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s12",
+      "chapter": "Kasparov sakin",
+      "text": "Burada Beyaz'ın açgözlü değil, çok soğukkanlı olması gerekiyor. Hangi taşı almak güvenli? {{p}} Kasparov tereddüt etmiyor: {{m:41}}. Anand veziri tekrar oyuna sokuyor: {{m:42}}. Kasparov saldırı taşını geri çekmiyor: {{m:43}}.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "{{s:44}} Siyah sadeleşme arıyor. Kasparov değişimi kabul ediyor: {{m:45}}. Vezirler çarpışıyor; Anand önce alıyor: {{m:46}}. Kasparov cevap veriyor: {{m:47}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "{{m:48}}. Tahtada artık vezir yok, ama Beyaz'ın taşları daha uyumlu. Kasparov hemen aktivite arıyor: {{m:49}}. Anand geçit arıyor: {{m:50}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Beyaz piyonlarını yürütmeye başlıyor: {{m:51}}. Siyah kanattan alan açıyor: {{m:52}}. Kasparov Şahını merkeze yaklaştırıyor: {{m:53}}. Anand piyonları daha da itiyor: {{m:54}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "Finale geçiş",
+      "text": "Şahlar oyuna girince bu artık başka bir parti gibi. Kasparov merkeze yürüyor: {{m:55}}. Anand karşı kanatta boşluk yaratıyor: {{m:56}}. Beyaz kontrolü elinde tutuyor: {{m:57}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Siyah piyonu bir adım daha yaklaştırıyor: {{m:58}}. Kasparov bunu görünce şah kanadında ikinci cephe açıyor: {{m:59}}. Anand aktif savunma kuruyor: {{m:60}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Beyaz Kalesi aktifleşiyor: {{m:61}}. Siyah karşı oyun arıyor: {{m:62}}. Kasparov'un Şahı artık sadece savunma taşı değil: {{m:63}}. Anand geri çekiliyor: {{m:64}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Şimdi Beyaz piyonları teker teker toplamaya başlıyor: {{m:65}}. Siyah Atını merkeze koyup tutunmak istiyor: {{m:66}}. Kasparov baskıyı artırıyor: {{m:67}}. Anand yine aktif savunma deniyor: {{m:68}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s20",
+      "chapter": "Bitiş baskısı",
+      "text": "Beyaz'ın ilerleyen piyonları artık çok ciddi. Kasparov zinciri bir adım daha ileri taşıyor: {{m:69}}. Siyah şah çekerek tempo arıyor: {{m:70}}. Kasparov Şahını sakin bir kareye çekiyor: {{m:71}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Anand Atıyla blokaj kurmak istiyor: {{m:72}}. Kasparov piyon zincirini ileri taşıyor: {{m:73}}. Bu noktada değerlendirme artık Beyaz lehine çok net; Siyah'ın pasif savunması yetmiyor.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Siyah son bir karşı oyun deniyor: {{m:74}}. Kasparov her şeyi bağlıyor: {{m:75}}. Anand konumunun kayıp olduğunu gördü ve terk etti.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Bu galibiyetle Kasparov maç skorunu beş beşe getirdi. Oyundan sonra izleyicilere bu hazırlık için yaklaşık kırk sekiz saat harcadığını söyledi. Maçın sonunda da on buçuk-yedi buçuk kazanıp PCA unvanını korudu.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Bu yüzden bu parti hâlâ değerli: açılış hazırlığı, materyal dengesi ve final tekniği tek bir zincir gibi çalışıyor. Anand'ın aktif vezir oyunu çok tehlikeli görünse de, Kasparov kontrolü elden bırakmıyor.",
+      "pause_after": 0.8
+    }
+  ],
+  "key_moments": [
+    {
+      "ply": 40,
+      "kind": "sacrifice",
+      "line": [
+        "g7h8",
+        "d4e2",
+        "g1h1",
+        "d8d4"
+      ],
+      "line_san": "Bxh8 Ne2+ Kh1 Rd4",
+      "eval_before": 168,
+      "eval_after": 158
+    }
+  ]
+}
