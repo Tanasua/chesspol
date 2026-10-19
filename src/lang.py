@@ -30,7 +30,7 @@ class Channel:
     t: dict = field(default_factory=dict)
     country: str = ""        # kod ISO kraju kanału ("swój" gracz w nowościach); domyślnie = code
     fallback: str = ""       # sufiks pól katalogu, gdy brak wersji kanału (hi -> _en); pusty = pole bazowe
-    font: str = "Montserrat"  # krój w kadrze i na okładce (hi: Hind — dewanagari + łacinka, SIL OFL)
+    font: str = "Montserrat"  # krój w kadrze i na okładce (render.FONT_FILES; ustawiany per kanał niżej)
     tz: str = "Europe/Kyiv"  # strefa publikacji (PUBLISH_TZ nadpisuje)
     yt: str = ""             # sufiks sekretu YT_REFRESH_TOKEN_<yt> (uk -> UA)
     name_uk: str = ""        # nazwa kanału po ukraińsku w miejscowniku: "на польському каналі"
@@ -132,7 +132,7 @@ HI = Channel(
     code="hi", tts="elevenlabs", voice_env="ELEVENLABS_VOICE_ID", order_key="n_hi", suffix="_hi",
     state=ROOT / "state" / "schedule_hi.json", scripts=ROOT / "scripts_hi", out=ROOT / "out" / "hi",
     tag_prefix="hi-", flag="🇮🇳", prompt=ROOT / "prompts" / "script_system_hi.md", country="in",
-    fallback="_en", font="Hind",
+    fallback="_en",
     # teksty dla LLM po angielsku; teksty dla widza w hindi — NIE zweryfikowane przez native speakera
     t={
         "white": "सफ़ेद", "black": "काला", "year": "वर्ष", "event": "प्रतियोगिता", "place": "स्थान",
@@ -258,7 +258,10 @@ for _c, _tz, _yt, _nm in (("pl", "Europe/Warsaw", "PL", "польському"),
                           ("en", "America/New_York", "EN", "американському"), ("hi", "Asia/Kolkata", "HI", "індійському"),
                           ("uk", "Europe/Kyiv", "UA", "українському"), ("ru", "Europe/Moscow", "RU", "російському"),
                           ("tr", "Europe/Istanbul", "TR", "турецькому")):
-    for _k, _v in (("tz", _tz), ("yt", _yt), ("name_uk", f"на {_nm} каналі")):
+    # krój kanału w kadrze i na okładce (decyzja właściciela 19.10.2026): każdy kanał inny, z najpopularniejszych Google Fonts
+    _fn = {"pl": "Montserrat", "de": "Lato", "en": "Inter", "hi": "Poppins", "uk": "Open Sans", "ru": "Roboto",
+           "tr": "Raleway"}[_c]
+    for _k, _v in (("tz", _tz), ("yt", _yt), ("name_uk", f"на {_nm} каналі"), ("font", _fn)):
         object.__setattr__(CHANNELS[_c], _k, _v)  # frozen dataclass
 LANG_NAME = {"uk": "Ukrainian", "ru": "Russian", "tr": "Turkish"}
 L = CHANNELS[os.environ.get("CHANNEL", "pl").strip().lower() or "pl"]

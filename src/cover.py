@@ -10,7 +10,8 @@ import chess.svg
 from PIL import Image, ImageDraw, ImageOps
 
 from countries import badge as flag_badge
-from render import ACCENT, BG, DIM, FG, _fit, _font, _wrap
+import themes
+from render import FG, _fit, _font, _wrap
 
 CW, CH = 1280, 720
 BOARD_PX = 620
@@ -19,9 +20,22 @@ GAP = 44  # odstęp między portretami (tu napis 'vs')
 GLYPH_COLORS = {"!": (38, 166, 65), "?": (214, 40, 40)}
 
 
-SQ_COLORS = {"square light": "#eed8b5", "square dark": "#b58863",
-             "square light lastmove": "#f6d65a", "square dark lastmove": "#d9b440"}
-CLEAR = {k: "#00000000" for k in SQ_COLORS}
+LASTMOVE = (246, 214, 90)  # żółte podświetlenie ostatniego ruchu (jak w filmie), zmieszane z kolorem pola
+
+
+def _mix(a: tuple, b: tuple, t: float) -> tuple:
+    return tuple(round(x + (y - x) * t) for x, y in zip(a, b))
+
+
+def _sq_colors() -> dict:
+    """Pola wg motywu dnia (src/themes.py) — ta sama plansza co w filmie."""
+    t = themes.current()
+    return {"square light": themes.hex_(t["light"]), "square dark": themes.hex_(t["dark"]),
+            "square light lastmove": themes.hex_(_mix(t["light"], LASTMOVE, 0.75)),
+            "square dark lastmove": themes.hex_(_mix(t["dark"], LASTMOVE, 0.6))}
+
+
+CLEAR = {k: "#00000000" for k in ("square light", "square dark", "square light lastmove", "square dark lastmove")}
 SS = 4  # nadpróbkowanie strzałek (gładkie krawędzie)
 
 
@@ -63,7 +77,7 @@ def _arrows_layer(arrows) -> Image.Image:
 def _board_png(board: chess.Board, lastmove, arrows=()) -> Image.Image:
     """Warstwy: pola -> strzałki -> figury (figury zawsze w pełni widoczne, także dla modelu OpenAI)."""
     squares = _svg_png(chess.svg.board(chess.Board(None), size=BOARD_PX, coordinates=False,
-                                       lastmove=lastmove, colors=SQ_COLORS))
+                                       lastmove=lastmove, colors=_sq_colors()))
     pieces = _svg_png(chess.svg.board(board, size=BOARD_PX, coordinates=False, colors=CLEAR))
     if arrows:
         squares = Image.alpha_composite(squares, _arrows_layer(arrows))
@@ -82,10 +96,20 @@ def _glyph(img: Image.Image, origin: tuple, square: int, glyph: str) -> None:
     d.text((cx, cy + 1), glyph, font=f, fill=(255, 255, 255), anchor="mm")
 
 
+def _cover_bg(bg: tuple, accent: tuple) -> Image.Image:
+    """Tło okładki: kolor motywu z miękką poświatą akcentu za planszą (prawa strona) — każdy dzień inna gama."""
+    mask = Image.radial_gradient("L").resize((CW * 2, CW * 2)).crop((CW - CW // 2 - 280, CW - CH // 2,
+                                                                       CW + CW // 2 - 280, CW + CH // 2))
+    glow = Image.new("RGB", (CW, CH), _mix(bg, accent, 0.22))
+    return Image.composite(Image.new("RGB", (CW, CH), bg), glow, mask)
+
+
 def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path, badge: str = "",
                marks=None) -> Path:
     """marks: cover_marks.Marks (strzałki + znak '!'/'?'); None = tylko podświetlenie ostatniego ruchu."""
-    img = Image.new("RGB", (CW, CH), BG)
+    t = themes.current()  # gama okładki wg motywu dnia: tło, akcent, kolor pomocniczy
+    bg, accent, dim = t["cover_bg"], t["accent"], t["dim"]
+    img = _cover_bg(bg, accent)
     last = game.plies[-1]
     origin = (CW - 50 - BOARD_PX, (CH - BOARD_PX) // 2)
     img.paste(_board_png(chess.Board(last.fen_after), last.move, marks.arrows if marks else ()), origin)
@@ -95,7 +119,7 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
     d = ImageDraw.Draw(img)
     x, w = 50, origin[0] - 50 - 50  # kolumna tekstu: od lewego marginesu do odstępu przed planszą
     y = 60
-    d.line([x, y, x + 80, y], fill=ACCENT, width=5)
+    d.line([x, y, x + 80, y], fill=accent, width=5)
     y += 25
     for size in (64, 56, 50, 44, 40):  # największy krój, przy którym cały tytuł mieści się w 3 wierszach
         f_title = _font(size, True)
@@ -107,7 +131,7 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
         d.text((x, y), ln, font=f_title, fill=FG)
         y += lh
     y += 20
-    d.text((x, y), str(year), font=_font(56, True), fill=ACCENT)
+    d.text((x, y), str(year), font=_font(56, True), fill=accent)
     badge = " ".join(x for x in badge.split() if x != str(year))  # rok jest już obok
     if badge:  # turniej / etap, np. "GRAND CHESS TOUR FINALS · FINAŁ"
         bx = x + d.textlength(str(year), font=_font(56, True)) + 24
@@ -133,7 +157,7 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
                 size -= 1
             d.text((px, y + PHOTO[1] + 8), last, font=_font(size, True), fill=FG)
         fvs = _font(26, True)
-        d.text((x + PHOTO[0] + (GAP - d.textlength("vs", font=fvs)) / 2, y + PHOTO[1] // 2 - 16), "vs", font=fvs, fill=DIM)
+        d.text((x + PHOTO[0] + (GAP - d.textlength("vs", font=fvs)) / 2, y + PHOTO[1] // 2 - 16), "vs", font=fvs, fill=dim)
     else:
         for p in (white, black):
             fl = flag_badge(p.get("country"), 34)
@@ -148,7 +172,7 @@ def make_cover(game, title: str, white: dict, black: dict, year: str, out: Path,
                 d.text((tx, y), ln, font=_font(size, True), fill=FG)
                 y += size + 8
             if p is white:
-                d.text((x, y), "vs", font=_font(26, True), fill=DIM)
+                d.text((x, y), "vs", font=_font(26, True), fill=dim)
                 y += 40
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, "JPEG", quality=90)

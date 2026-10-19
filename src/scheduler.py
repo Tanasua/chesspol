@@ -324,6 +324,9 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
     video = L.out / f"{gid}.mp4"
     py = sys.executable
 
+    import themes
+    os.environ["BOARD_THEME"] = themes.for_day(publish_at.astimezone(TZ))  # plansza i gama okładki wg dnia publikacji
+    print(f"Motyw dnia: {os.environ['BOARD_THEME']}")
     if not script_path.exists():
         run([py, str(SRC / "script_gen.py"), "--pgn", str(pgn), "--out", str(script_path), "--name", gid])
     run([py, str(SRC / "main.py"), "--pgn", str(pgn), "--script", str(script_path), "--out", str(video)]

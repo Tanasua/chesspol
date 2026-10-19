@@ -21,6 +21,7 @@ import chess.svg
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from lang import L, credit_author, notation
+import themes as _themes
 
 _N = notation()
 label, san_local = _N.label, _N.san_local
@@ -40,7 +41,8 @@ PHOTO_W, PHOTO_H = 220, 275
 
 # Stylistyka "ciemny lux": grafitowe tło z ciepłym gradientem i winietą, złote akcenty, plansza jak stary pergamin
 # w złotej ramie z poświatą, karty z cienką złotą obwódką, nagłówki szeryfowe (Playfair Display, SIL OFL).
-LIGHT, DARK = (238, 216, 181), (181, 136, 99)  # klasyczna brązowa plansza (jak Lichess: #f0d9b5 / #b58863) — decyzja właściciela
+# plansza wg motywu dnia (src/themes.py, BOARD_THEME ustawia scheduler/news przed renderem); domyślnie brązowa Lichess
+LIGHT, DARK = _themes.current()["light"], _themes.current()["dark"]
 HL = (246, 214, 90, 110)
 CHECK = (200, 40, 36, 150)
 BG, FG, DIM, ACCENT = (12, 11, 10), (240, 232, 214), (150, 140, 122), (214, 176, 96)
@@ -54,29 +56,45 @@ MIN_GAP = ANIM_SEC + 0.05  # animacje nigdy na siebie nie nachodzą
 AUTO_STEP = 1.25  # tempo przewijania pominiętych półruchów (s/ruch); main.py robi na nie miejsce
 AUTO_STEP_MAX = 1.5
 
-FONTS = Path(__file__).resolve().parent.parent / "assets" / "fonts"  # Montserrat (SIL OFL, assets/fonts/OFL.txt)
+FONTS = Path(__file__).resolve().parent.parent / "assets" / "fonts"  # kroje SIL OFL (OFL.txt w każdym katalogu)
 WEIGHTS = {"regular": "Regular", "medium": "Medium", "semibold": "SemiBold", "bold": "Bold",
            "extrabold": "ExtraBold", "black": "Black"}
 FALLBACK = ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]
 
 
+# krój kanału (lang.Channel.font, decyzja właściciela 19.10.2026: każdy kanał ma swój, z najpopularniejszych Google Fonts;
+# wszystkie SIL OFL, statyczne wagi wycięte z wersji zmiennych): katalog w assets/fonts i przedrostek pliku
+FONT_FILES = {"Montserrat": ("", "Montserrat"), "Lato": ("lato", "Lato"), "Inter": ("inter", "Inter"),
+              "Poppins": ("poppins", "Poppins"), "Open Sans": ("opensans", "OpenSans"), "Roboto": ("roboto", "Roboto"),
+              "Raleway": ("raleway", "Raleway"), "Hind": ("hind", "Hind")}
+WEIGHT_ORDER = ["Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black"]
+
+
+def _font_path(family: str, name: str) -> Path | None:
+    """Plik danej grubości; gdy krój jej nie ma (Lato: Regular/Bold/Black) — najbliższa dostępna."""
+    folder, prefix = FONT_FILES.get(family, FONT_FILES["Montserrat"])
+    base = FONTS / folder if folder else FONTS
+    i = WEIGHT_ORDER.index(name) if name in WEIGHT_ORDER else 1
+    for j in sorted(range(len(WEIGHT_ORDER)), key=lambda j: (abs(j - i), -j)):
+        path = base / f"{prefix}-{WEIGHT_ORDER[j]}.ttf"
+        if path.exists():
+            return path
+    return None
+
+
 def _font(size: int, bold: bool = False, weight: str | None = None) -> ImageFont.FreeTypeFont:
-    """Montserrat: zwykły tekst — Medium, pogrubiony — Bold; weight= wybiera inną grubość (np. 'black')."""
+    """Krój kanału: zwykły tekst — Medium, pogrubiony — Bold; weight= wybiera inną grubość (np. 'black')."""
     name = WEIGHTS.get(weight or ("bold" if bold else "medium"), "Medium")
-    if L.font == "Hind":  # kanał hindi: dewanagari (Hind ma wagi Light–Bold; grubsze -> Bold)
-        name = name if name in ("Regular", "Medium", "SemiBold", "Bold") else "Bold"
-        path = FONTS / "hind" / f"Hind-{name}.ttf"
-    else:
-        path = FONTS / f"Montserrat-{name}.ttf"
-    if path.exists():
+    path = _font_path(L.font, name) or _font_path("Montserrat", name)
+    if path:
         return ImageFont.truetype(str(path), size)
     return ImageFont.truetype(FALLBACK[1 if bold else 0], size)
 
 
 def _serif(size: int, weight: str = "semibold") -> ImageFont.FreeTypeFont:
-    """Nagłówki (rok, bieżący ruch, nazwisko): Playfair Display; kanał hindi — Hind (brak szeryfowego dewanagari)."""
+    """Nagłówki (rok, bieżący ruch, nazwisko): Playfair Display; kanał hindi — krój kanału (brak szeryfowego dewanagari)."""
     path = FONTS / "playfair" / f"PlayfairDisplay-{WEIGHTS.get(weight, 'SemiBold')}.ttf"
-    if L.font == "Hind" or not path.exists():
+    if L.code == "hi" or not path.exists():
         return _font(size, True)
     return ImageFont.truetype(str(path), size)
 

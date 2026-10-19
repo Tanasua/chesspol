@@ -539,6 +539,19 @@ def main() -> int:
     else:
         draw_table(tour.get("name", ""), year, standings(games, pick.seq), pick, pre)
 
+    os.environ.setdefault("INTERVAL_DAYS", "1")
+    import scheduler as S
+    # nowość -> YouTube w najbliższym wolnym terminie kanału (wt/czw/sob/nd, wieczór); w Telegramie tylko link
+    # po premierze (src/announce.py). Paczka z plikami do Telegrama — tylko test albo brak dostępu do YouTube.
+    to_yt = (not args.test and not args.dry_tts and bool(os.environ.get("YT_CLIENT_ID"))
+             and bool(os.environ.get("YT_REFRESH_TOKEN") or os.environ.get(f"YT_REFRESH_TOKEN_{L.yt}")))
+    state = S.load_json(S.STATE, {"episodes": []})
+    slot = (S.next_slot(state["episodes"], datetime.now(timezone.utc), None, ("news",) if args.news_day else None)[0]
+            if to_yt else None)
+    import themes
+    os.environ["BOARD_THEME"] = themes.for_day((slot or datetime.now(timezone.utc)).astimezone(S.TZ))
+    print(f"Motyw dnia: {os.environ['BOARD_THEME']}")
+
     py = sys.executable
     script = L.scripts / f"{gid}.json"
     video = L.out / f"{gid}.mp4"
@@ -548,20 +561,11 @@ def main() -> int:
     subprocess.run([py, str(SRC / "main.py"), "--pgn", str(pgn_path), "--script", str(script), "--out", str(video),
                     "--preroll", str(pre)] + (["--dry-run"] if args.dry_tts else []), check=True, cwd=ROOT)
 
-    os.environ.setdefault("INTERVAL_DAYS", "1")
-    import scheduler as S
     sc = json.loads(script.read_text(encoding="utf-8"))
     title, description, tags = S.describe(entry, sc, pgn_path, json.loads(video.with_suffix(".timing.json").read_text()))
     tags = [t for t in tags if t not in L.t["tags"][3:]] + L.t["news_tags"]
     description = description.replace(L.t["hashtags"], L.t["news_hashtags"])
     tag = f"{L.tag_prefix}news{'-test' if args.test else ''}-{gid}"[:120]
-    # nowość -> YouTube w najbliższym wolnym terminie kanału (wt/czw/sob/nd, wieczór); w Telegramie tylko link
-    # po premierze (src/announce.py). Paczka z plikami do Telegrama — tylko test albo brak dostępu do YouTube.
-    to_yt = (not args.test and not args.dry_tts and bool(os.environ.get("YT_CLIENT_ID"))
-             and bool(os.environ.get("YT_REFRESH_TOKEN") or os.environ.get(f"YT_REFRESH_TOKEN_{L.yt}")))
-    state = S.load_json(S.STATE, {"episodes": []})
-    slot = (S.next_slot(state["episodes"], datetime.now(timezone.utc), None, ("news",) if args.news_day else None)[0]
-            if to_yt else None)
     when = (S.when_uk(slot) if slot else
             "ТЕСТ — новина, публікація на ваш розсуд" if args.test else "одразу (новина)")
     info = S.deliver_package(entry, pgn_path, video, title, description, tags, when, 0,

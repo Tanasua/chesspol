@@ -19,6 +19,13 @@ Pliki:
   ruchu — jasna obwódka z poświatą zamiast paska), złote ozdobniki z koroną (_ornament), ruchy w "pigułkach", bieżący — złota.
   Nagłówki (nazwisko, rok, bieżący ruch, współrzędne): Playfair Display (assets/fonts/playfair, SIL OFL; statyczne wagi
   wycięte z wersji zmiennej), render._serif(), cyfry równe (features lnum, wymaga raqm); kanał hi — Hind.
+- MOTYW DNIA (decyzja właściciela 19.10.2026, src/themes.py): plansza wg dnia publikacji — wt brązowa (Lichess #f0d9b5/#b58863),
+  czw zielona (Chess.com #eeeed2/#769656), sob niebieska (Lichess blue #dee3e6/#8ca2ad), nd fioletowa (odcienie dobrane przez nas);
+  ta sama plansza w filmie i na okładce; okładka dostaje też gamę dnia (tło, akcent, poświata za planszą). BOARD_THEME ustawia
+  scheduler.produce / news.py (termin liczony PRZED renderem); dni poza grafikiem (ręczne "teraz") — brązowa.
+- KRÓJ KANAŁU (decyzja właściciela 19.10.2026): pl Montserrat, de Lato, en Inter, hi Poppins (dewanagari), uk Open Sans,
+  ru Roboto, tr Raleway — Google Fonts, SIL OFL, statyczne wagi wycięte z wersji zmiennych (fontTools) w assets/fonts/<krój>/;
+  render.FONT_FILES, brakująca grubość -> najbliższa (Lato: Regular/Bold/Black). Nagłówki: Playfair (oprócz hi).
 - Krój: Montserrat (assets/fonts, SIL OFL — OFL.txt), render._font(size, bold, weight=regular|medium|semibold|bold|extrabold|black);
   domyślnie Medium / Bold; fallback DejaVu. Okładka: tekst i portrety po lewej, plansza po prawej (decyzja właściciela 11.10.2026); tytuł dopasowywany 64→40 px do 3 wierszy; rok nie dubluje się w plakietce.
 - src/players.py — nazwy do kadru (nadpisania *_first/*_last w katalogu), zdjęcia assets/players/<slug>.jpg + .json
