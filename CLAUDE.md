@@ -49,7 +49,7 @@ Pliki:
 - Koniec partii tylko głosem (bez planszy na ekranie — decyzja właściciela): prompty każą powiedzieć, kto się poddał;
   powód wg oceny silnika po ostatnim ruchu: #N -> 'nie uniknie mata', ≥~3 piony -> 'pozycja przegrana', inaczej bez powodu.
 - src/phrases.py — powitania (GREETING z imieniem), warianty zapowiedzi (INTRO, 11) i dopisków do tytułu YouTube (TITLE_HOOKS, 8); wybór wg n z katalogu, kolejne odcinki dostają kolejne warianty
-- src/script_gen.py — PGN -> tabela półruchów (N, SAN, FEN, ocena Stockfisha) -> OpenAI Responses API (gpt-5.5, SCRIPT_MODEL; OPENAI_API_KEY) z prompts/script_system_pl.md -> build_segments -> do 3 poprawek -> scripts/<nazwa>.json
+- src/script_gen.py — PGN -> tabela półruchów (N, SAN, FEN, ocena Stockfisha) -> OpenAI Responses API (gpt-5.5, SCRIPT_MODEL; rozumowanie SCRIPT_REASONING=high — decyzja właściciela 19.10.2026 po porównaniu z medium; input reasoning w publish*.yml; OPENAI_API_KEY) z prompts/script_system_pl.md -> build_segments -> do 3 poprawek -> scripts/<nazwa>.json
 - prompts/script_system_pl.md — system prompt do generowania scenariuszy
 - catalog/games.json — 100 partii (kolejność n, metadane zweryfikowane wyszukiwaniem, status PGN); catalog/LISTA.md generuje src/catalog_list.py
 - src/pgn_collect.py — PGN z ≥2 niezależnych kolekcji (mirror rozim/ChessData: PgnMentor, ChessNostalgia, Chessopolis, RebelSite, WorldChampionships, Kingbase, Twic, Old…; + famous_games, ChessPGN); zgodność ruchów, wyniku, rundy i liczby ruchów
