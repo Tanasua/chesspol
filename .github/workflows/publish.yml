@@ -28,6 +28,9 @@ on:
       reasoning:
         description: "Rozumowanie scenariusza: high (domyślnie) / medium (taniej) / low"
         required: false
+      tts_model:
+        description: "Model ElevenLabs: eleven_flash_v2_5 (domyślnie, taniej) / eleven_multilingual_v2"
+        required: false
 
 concurrency:  # osobna kolejka na kanał: wspólna grupa trzyma tylko 1 oczekujący run i kasuje pozostałe
   group: publish-pl
@@ -78,7 +81,7 @@ jobs:
           INWORLD_LANGUAGE: pl-PL
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_PL }}
-          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_flash_v2_5' }}
+          ELEVENLABS_MODEL: ${{ inputs.tts_model || vars.ELEVENLABS_MODEL || 'eleven_flash_v2_5' }}
           HOST_NAME: ${{ vars.HOST_NAME }}   # imię prowadzącego; puste = nazwa głosu Inworld
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
