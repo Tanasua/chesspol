@@ -161,7 +161,7 @@ Pliki:
 - GŁOS PL (decyzja właściciela 19.10.2026): ElevenLabs (sekret ELEVENLABS_VOICE_ID_PL, ELEVENLABS_API_KEY wspólny) —
   lang.PL.tts wg PL_TTS (publish.yml / news.yml / news_watch ustawiają elevenlabs, gdy sekret jest; inaczej Inworld + ostrzeżenie).
 - src/tts_elevenlabs.py — ElevenLabs /v1/text-to-speech/{voice}/with-timestamps (alignment znaków -> słowa), ELEVENLABS_MODEL
-  (domyślnie eleven_multilingual_v2); NIE zweryfikowane na prawdziwym kluczu
+  (domyślnie eleven_flash_v2_5 — tańszy, decyzja właściciela 19.10.2026; wcześniej eleven_multilingual_v2)
 - .github/workflows/publish_de.yml — kanał niemiecki, cron 04:47 UTC, własna grupa concurrency (publish-de; wspólna grupa kasowała oczekujące runy innych kanałów); bez klucza ElevenLabs pomija.
   Sekrety: ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID_DE (+ wspólne OPENAI_API_KEY, TELEGRAM_*); zmienne: HOST_NAME_DE, opcjonalnie ELEVENLABS_MODEL
 - .github/workflows/build.yml — workflow_dispatch, sekrety INWORLD_API_KEY, INWORLD_VOICE_ID

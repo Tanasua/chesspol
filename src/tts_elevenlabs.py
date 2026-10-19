@@ -3,7 +3,7 @@
 API zwraca czasy znaków (alignment); składamy z nich czasy słów w tym samym formacie
 co tts_inworld.TTSResult, więc reszta potoku (dopasowanie markerów, render) jest wspólna.
 
-Zmienne: ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID, ELEVENLABS_MODEL (domyślnie eleven_multilingual_v2).
+Zmienne: ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID, ELEVENLABS_MODEL (domyślnie eleven_flash_v2_5; przy błędzie — eleven_multilingual_v2).
 NIE zweryfikowane na prawdziwym kluczu w środowisku deweloperskim — format odpowiedzi według dokumentacji.
 """
 from __future__ import annotations
@@ -20,7 +20,7 @@ import requests
 from tts_inworld import TTSRequestError, TTSResult, _probe_duration
 
 API_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
-DEFAULT_MODEL = os.environ.get("ELEVENLABS_MODEL", "eleven_multilingual_v2")
+DEFAULT_MODEL = os.environ.get("ELEVENLABS_MODEL") or "eleven_flash_v2_5"  # tańszy (decyzja właściciela 19.10.2026)
 OUTPUT_FORMAT = "mp3_44100_128"
 
 
@@ -46,8 +46,22 @@ def words_from_alignment(alignment: dict) -> tuple[list, list, list]:
     return words, ws, we
 
 
+FALLBACK_MODEL = "eleven_multilingual_v2"
+
+
 def synthesize(text: str, cache_dir: Path, voice_id: str, model: str = DEFAULT_MODEL,
                retries: int = 3) -> TTSResult:
+    """Jak _synthesize; gdy tańszy model odrzuci żądanie albo nie zwróci alignment — ten sam tekst na FALLBACK_MODEL."""
+    try:
+        return _synthesize(text, cache_dir, voice_id, model, retries)
+    except (TTSRequestError, RuntimeError) as e:
+        if model == FALLBACK_MODEL or not ("model" in str(e).lower() or "alignment" in str(e)):
+            raise
+        print(f"::warning::ElevenLabs {model}: {str(e)[:200]} — powtarzam na {FALLBACK_MODEL}")
+        return _synthesize(text, cache_dir, voice_id, FALLBACK_MODEL, retries)
+
+
+def _synthesize(text: str, cache_dir: Path, voice_id: str, model: str, retries: int) -> TTSResult:
     api_key = os.environ.get("ELEVENLABS_API_KEY")
     if not api_key:
         raise RuntimeError("Brak ELEVENLABS_API_KEY")

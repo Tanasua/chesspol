@@ -74,7 +74,7 @@ jobs:
           INWORLD_LANGUAGE: pl-PL
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_PL }}
-          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
+          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_flash_v2_5' }}
           HOST_NAME: ${{ vars.HOST_NAME }}   # imię prowadzącego; puste = nazwa głosu Inworld
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
