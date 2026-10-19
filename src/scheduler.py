@@ -44,6 +44,10 @@ INTERVAL_DAYS = int(os.environ.get("INTERVAL_DAYS", "3"))
 BUFFER = int(os.environ.get("BUFFER", "2"))            # ile odcinków trzymać zaplanowanych naprzód
 MAX_PER_RUN = int(os.environ.get("MAX_PER_RUN", "1"))
 MODERN_YEAR = int(os.environ.get("GAP_MODERN_YEAR", "2010"))  # "współczesna" partia do wypełnienia dziury
+# dni publikacji (0 = pon): wt, czw, sob, nd — "praktycznie co drugi dzień" (decyzja właściciela 19.10.2026)
+PUBLISH_DAYS = {int(x) for x in os.environ.get("PUBLISH_DAYS", "1,3,5,6").split(",") if x.strip()}
+PUBLISH_WINDOW = os.environ.get("PUBLISH_WINDOW", "18:00-21:30")  # okno wieczorne, czas lokalny kanału
+PUBLISH_RANDOM = os.environ.get("PUBLISH_RANDOM", "1") != "0"
 MIN_LEAD = timedelta(hours=int(os.environ.get("MIN_LEAD_HOURS", "6")))  # zapas na przetworzenie przez YouTube
 LOW_QUEUE_WARN = 3
 PUBLISH_NOW = os.environ.get("PUBLISH_NOW", "").lower() == "true"  # pierwszy odcinek runu — publicznie od razu
@@ -61,16 +65,32 @@ def save_json(path: Path, data) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def _evening(day: date) -> time:
+    """Losowa (ale powtarzalna: kanał + dzień) godzina wieczorna z okna PUBLISH_WINDOW, co 5 minut —
+    każdy kanał i dzień o innej porze (decyzja właściciela 19.10.2026)."""
+    import hashlib
+
+    a, b = (int(x.split(":")[0]) * 60 + int(x.split(":")[1]) for x in PUBLISH_WINDOW.split("-"))
+    n = int(hashlib.sha256(f"{L.code}-{day.isoformat()}".encode()).hexdigest(), 16)
+    m = a + (n % ((b - a) // 5 + 1)) * 5
+    return time(m // 60, m % 60)
+
+
+def allowed(day: date) -> bool:
+    return day.weekday() in PUBLISH_DAYS
+
+
 def slot_at(day: date) -> datetime:
-    """10:00 czasu lokalnego danego dnia (z uwzględnieniem zmiany czasu) w UTC."""
-    return datetime.combine(day, time(PUBLISH_HOUR), tzinfo=TZ).astimezone(timezone.utc)
+    """Termin publikacji danego dnia w UTC: losowy wieczór (PUBLISH_RANDOM=1, domyślnie) albo PUBLISH_HOUR."""
+    t = _evening(day) if PUBLISH_RANDOM else time(PUBLISH_HOUR)
+    return datetime.combine(day, t, tzinfo=TZ).astimezone(timezone.utc)
 
 
 def start_day(now: datetime, first_day: date | None) -> date:
     """Pierwszy dzień, na który da się jeszcze zaplanować odcinek (zapas MIN_LEAD, nie przed first_day)."""
     earliest = now + MIN_LEAD
     day = max(earliest.astimezone(TZ).date(), first_day) if first_day else earliest.astimezone(TZ).date()
-    while slot_at(day) < earliest:
+    while slot_at(day) < earliest or not allowed(day):
         day += timedelta(days=1)
     return day
 
@@ -83,7 +103,7 @@ def next_slot(episodes: list, now: datetime, first_day: date | None) -> tuple[da
     """
     booked = sorted(datetime.fromisoformat(e["publish_at"]).astimezone(TZ).date() for e in episodes)
     day = start_day(now, first_day)
-    while any(abs((day - b).days) < INTERVAL_DAYS for b in booked):
+    while not allowed(day) or any(abs((day - b).days) < INTERVAL_DAYS for b in booked):
         day += timedelta(days=1)
     return slot_at(day), bool(booked) and day < booked[-1]
 

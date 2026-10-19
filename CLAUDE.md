@@ -75,6 +75,12 @@ Pliki:
   pisowni języka kanału (catalog/surnames.json, players.local_surname, ta sama w kadrze). Starsze scenariusze bez yt_hook:
   "<KICKER> <title> | Nazwisko – Nazwisko (rok)" albo dopisek z phrases.TITLE_HOOKS.
 - src/youtube_upload.py, src/youtube_auth.py — YouTube Data API (OAuth refresh token)
+- TERMINY (decyzja właściciela 19.10.2026): wszystkie kanały wt/czw/sob/nd (PUBLISH_DAYS=1,3,5,6), godzina losowa
+  wieczorem w strefie kanału (PUBLISH_WINDOW=18:00-21:30, co 5 min, powtarzalna: hash kanał+dzień; PUBLISH_RANDOM=0 -> PUBLISH_HOUR).
+  Strefy: pl Europe/Warsaw, de Europe/Berlin, en America/New_York, hi Asia/Kolkata, uk Europe/Kyiv, ru Moscow, tr Istanbul.
+- ZALEGŁE PACZKI: src/upload_backlog.py + .github/workflows/upload_backlog.yml (workflow_dispatch: kanały, after, dry) —
+  Release'y z trybu manual (niewgrane) -> YouTube private + publishAt w kolejnych wolnych terminach, miniatura OpenAI
+  (z Release albo nowa z cover.jpg); wpis {release, video_id} w stanie kanału; raport do Telegrama.
 - scheduler --game <id> (workflow_dispatch input "game" w publish*.yml): wskazana partia na najbliższy odcinek, poza kolejką.
 - DZIURY W GRAFIKU (decyzja właściciela): scheduler.next_slot szuka najbliższego wolnego dnia od teraz (+MIN_LEAD), nie tylko
   po ostatnim odcinku; dzień przed ostatnim zaplanowanym = dziura -> pick_gap: najnowsza partia spośród rubryki krajowej

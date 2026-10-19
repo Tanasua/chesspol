@@ -68,6 +68,7 @@ jobs:
         env:
           CHANNEL: en
           PUBLISH_TZ: America/New_York
+          INTERVAL_DAYS: "1"
         run: python src/scheduler.py --plan
 
       - name: Produce and schedule
@@ -88,7 +89,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           PUBLISH_TZ: America/New_York
-          PUBLISH_HOUR: "10"
+          PUBLISH_HOUR: "10"           # używane tylko przy PUBLISH_RANDOM=0; domyślnie losowy wieczór (PUBLISH_WINDOW)
           INTERVAL_DAYS: "1"           # 1 odcinek dziennie (+ ewentualnie nowość z turnieju)
           BUFFER: ${{ inputs.ahead || '7' }}         # tydzień naprzód
           MAX_PER_RUN: ${{ inputs.ahead || '1' }}

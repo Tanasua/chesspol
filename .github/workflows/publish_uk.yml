@@ -67,6 +67,7 @@ jobs:
         env:
           CHANNEL: uk
           PUBLISH_TZ: Europe/Kyiv
+          INTERVAL_DAYS: "1"
         run: python src/scheduler.py --plan
 
       - name: Produce and schedule

@@ -86,8 +86,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}  # GitHub Release z paczką
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          PUBLISH_TZ: Europe/Kyiv
-          PUBLISH_HOUR: "10"
+          PUBLISH_TZ: Europe/Berlin
+          PUBLISH_HOUR: "10"           # używane tylko przy PUBLISH_RANDOM=0; domyślnie losowy wieczór (PUBLISH_WINDOW)
           INTERVAL_DAYS: "1"           # 1 odcinek dziennie (+ ewentualnie nowość z turnieju)
           BUFFER: ${{ inputs.ahead || '7' }}         # tydzień naprzód
           MAX_PER_RUN: ${{ inputs.ahead || '1' }}
