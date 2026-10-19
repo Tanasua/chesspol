@@ -25,6 +25,9 @@ on:
         description: "Test: bez uploadu na YouTube"
         type: boolean
         default: false
+      reasoning:
+        description: "Rozumowanie scenariusza: high (domyślnie) / medium (taniej) / low"
+        required: false
 
 concurrency:  # osobna kolejka na kanał: wspólna grupa trzyma tylko 1 oczekujący run i kasuje pozostałe
   group: publish-pl
@@ -68,6 +71,7 @@ jobs:
       - name: Produce and schedule
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SCRIPT_REASONING: ${{ inputs.reasoning || vars.SCRIPT_REASONING || 'high' }}
           INWORLD_API_KEY: ${{ secrets.INWORLD_API_KEY }}
           INWORLD_VOICE_ID: ${{ secrets.INWORLD_VOICE_ID }}
           INWORLD_MODEL: inworld-tts-2
