@@ -48,6 +48,36 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep005-us_pillsbury_lasker_1904",
       "telegram": true,
       "rubric": "national"
+    },
+    {
+      "id": "en-news-news_2026_grand_chess_tour_finals_caruana_r_17",
+      "publish_at": "2026-10-20T22:45:00+00:00",
+      "title": "A Quiet Italian Boils Over | Caruana – Praggnanandhaa (2026) — Caruana converts a tense rook endgame",
+      "mode": "youtube",
+      "release": "en-news-news_2026_grand_chess_tour_finals_caruana_r_17",
+      "video_id": "KDcAQ57TEi4",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "en-ep005-us_pillsbury_lasker_1904",
+      "publish_at": "2026-10-22T22:10:00+00:00",
+      "title": "Nothing Stops The Attack! | Pillsbury – Lasker (1904)",
+      "mode": "youtube",
+      "release": "en-ep005-us_pillsbury_lasker_1904",
+      "video_id": "t1Ify3_p4Mc",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "en-news-news_german_bundesliga_2026_27_schachbundesli_guijarro_winter_51",
+      "publish_at": "2026-10-25T00:00:00+00:00",
+      "title": "A Queenside Avalanche | Anton Guijarro – De Winter (2026) — Anton Guijarro turns a passer into a win",
+      "mode": "youtube",
+      "release": "en-news-news_german_bundesliga_2026_27_schachbundesli_guijarro_winter_51",
+      "video_id": "NEWN_NVdx20",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
     }
   ]
 }

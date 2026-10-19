@@ -86,6 +86,46 @@
       "video_id": "IMSrmP4FVgY",
       "thumbnail": "fischer_spassky_1972_cover_ai.jpg",
       "rubric": "history"
+    },
+    {
+      "id": "news-news_2026_grand_chess_tour_finals_caruana_r_17",
+      "publish_at": "2026-10-22T17:15:00+00:00",
+      "title": "MISTRZOWSKO! Techniczny nokaut w finale | Caruana – Praggnanandhaa (2026)",
+      "mode": "youtube",
+      "release": "news-news_2026_grand_chess_tour_finals_caruana_r_17",
+      "video_id": "HGxNanFG1zo",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "ep007-kasparov_anand_1995",
+      "publish_at": "2026-10-24T19:10:00+00:00",
+      "title": "Mistrz oddaje wieżę! | Kasparow – Anand (1995) — Kasparow wyrównuje mecz po ofierze materiału",
+      "mode": "youtube",
+      "release": "ep007-kasparov_anand_1995",
+      "video_id": "wqMFa0L7F3M",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "news-news_german_bundesliga_2026_27_schachbundesli_jaracz_movchan_23",
+      "publish_at": "2026-10-25T17:30:00+00:00",
+      "title": "Cicha presja, wielki finał | Jaracz – Movchan (2026) — Jaracz zamienia przewagę w punkt",
+      "mode": "youtube",
+      "release": "news-news_german_bundesliga_2026_27_schachbundesli_jaracz_movchan_23",
+      "video_id": "D90Kc5BRuNI",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "ep008-pl_wojtaszek_carlsen_2015",
+      "publish_at": "2026-10-27T18:15:00+00:00",
+      "title": "Gdy równowaga pęka | Wojtaszek – Carlsen (2015) — Wojtaszek wykorzystuje przełom w końcówce",
+      "mode": "youtube",
+      "release": "ep008-pl_wojtaszek_carlsen_2015",
+      "video_id": "qAB1oCs1_Pw",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
     }
   ],
   "first_day": "2026-09-27"

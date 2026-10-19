@@ -78,6 +78,46 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep008-samisch_nimzowitsch_1923",
       "telegram": true,
       "rubric": "history"
+    },
+    {
+      "id": "de-news-news_2026_grand_chess_tour_finals_r_keymer_2",
+      "publish_at": "2026-10-20T17:10:00+00:00",
+      "title": "GEDREHT! Ein Endspiel kippt völlig | Praggnanandhaa – Keymer (2026)",
+      "mode": "youtube",
+      "release": "de-news-news_2026_grand_chess_tour_finals_r_keymer_2",
+      "video_id": "0wgmbUdNRJs",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "de-ep007-de_huebner_kasparov_1992",
+      "publish_at": "2026-10-22T16:25:00+00:00",
+      "title": "Alles kippt im Mittelspiel! | Hübner – Kasparow (1992) — Hübner bezwingt Kasparow im Endspiel",
+      "mode": "youtube",
+      "release": "de-ep007-de_huebner_kasparov_1992",
+      "video_id": "Q9KKCFMXUb0",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "de-news-news_german_bundesliga_2026_27_schachbundesli_lagarde_koellner_29",
+      "publish_at": "2026-10-24T18:40:00+00:00",
+      "title": "Ausgeglichen, dann bricht alles! | Lagarde – Koellner (2026) — Lagarde nutzt den Königsflügel",
+      "mode": "youtube",
+      "release": "de-news-news_german_bundesliga_2026_27_schachbundesli_lagarde_koellner_29",
+      "video_id": "yobv6rvQD0U",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "de-ep008-samisch_nimzowitsch_1923",
+      "publish_at": "2026-10-25T18:55:00+00:00",
+      "title": "Der Käfig schnappt zu! | Sämisch – Nimzowitsch (1923) — Nimzowitsch schnürt Sämisch ein",
+      "mode": "youtube",
+      "release": "de-ep008-samisch_nimzowitsch_1923",
+      "video_id": "OCbJ5pnavO0",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
     }
   ]
 }

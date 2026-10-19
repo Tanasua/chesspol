@@ -39,6 +39,36 @@
       "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep004-in_sultankhan_flohr_1932",
       "telegram": true,
       "rubric": "national"
+    },
+    {
+      "id": "hi-news-news_2026_grand_chess_tour_finals_caruana_r_17",
+      "publish_at": "2026-10-20T13:15:00+00:00",
+      "title": "धीरे-धीरे शिकंजा! | Caruana – Praggnanandhaa (2026) — करूआना ने दबाव को जीत में बदला",
+      "mode": "youtube",
+      "release": "hi-news-news_2026_grand_chess_tour_finals_caruana_r_17",
+      "video_id": "zRxjGlwVDhc",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "hi-ep004-in_sultankhan_flohr_1932",
+      "publish_at": "2026-10-22T12:45:00+00:00",
+      "title": "धीरे-धीरे दम घुटा! | Khan – Flohr (1932) — सफ़ेद ने रूक एंडगेम निचोड़ा",
+      "mode": "youtube",
+      "release": "hi-ep004-in_sultankhan_flohr_1932",
+      "video_id": "o5pTR-uy0WY",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
+    },
+    {
+      "id": "hi-news-news_german_bundesliga_2026_27_schachbundesli_samunenkov_anand_59",
+      "publish_at": "2026-10-24T14:50:00+00:00",
+      "title": "मिडिलगेम में तूफ़ान! | Samunenkov – Anand (2026) — प्रणव आनंद ने पहल को जीत में बदला",
+      "mode": "youtube",
+      "release": "hi-news-news_german_bundesliga_2026_27_schachbundesli_samunenkov_anand_59",
+      "video_id": "JMVeLLAxjQ8",
+      "thumbnail": "cover_ai.jpg",
+      "rubric": "backlog"
     }
   ]
 }
