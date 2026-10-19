@@ -430,6 +430,10 @@ def main() -> int:
     ap.add_argument("--select-only", action="store_true")
     ap.add_argument("--dry-tts", action="store_true")
     ap.add_argument("--round-id", help="wybieraj tylko spośród partii tej rundy (autośledzenie: ostatnia zakończona runda)")
+    ap.add_argument("--news-day", action="store_true",
+                    help="termin: najbliższa wolna sobota (rubryka 'news'); bez tego — najbliższy wolny dzień (zamówienie ręczne)")
+    ap.add_argument("--require-home", action="store_true",
+                    help="tylko partia z graczem z kraju kanału (hindi: zawsze Indus); brak -> kod 3")
     args = ap.parse_args()
 
     data = find_tour(args.tournament)
@@ -451,6 +455,7 @@ def main() -> int:
     year_now = datetime.now(timezone.utc).year
     for g in ranked:  # "swój" gracz: Polak na kanale polskim, Niemiec na niemieckim
         home = [p for p in (g.white, g.black) if countries.country(names.get(p, p), year_now) == (L.country or L.code)]
+        g.home = bool(home)
         if home:
             g.score = round(g.score + HOME_BONUS, 2)
             g.why.append(f"swój gracz: {', '.join(home)}")
@@ -460,11 +465,16 @@ def main() -> int:
     if args.select_only:
         return 0
 
+    if args.require_home:
+        ranked = [g for g in ranked if getattr(g, "home", False)]
+        if not ranked:
+            print(f"Brak partii z graczem z kraju kanału ({L.country or L.code}) — nic do zrobienia")
+            return 3
     if args.round_id:  # nowość z konkretnej rundy; kontekst (drabinka/tabela) liczony z całego turnieju
         ranked = [g for g in ranked if g.round_id == args.round_id]
         if not ranked:
             print(f"Brak zakończonych partii w rundzie {args.round_id} — nic do zrobienia")
-            return 0
+            return 3
         print(f"Runda {args.round_id}: wybrano {ranked[0].white} – {ranked[0].black} ({ranked[0].score})")
     pick = ranked[0]
     year = int((pick.game.headers.get("Date") or "")[:4] or datetime.now(timezone.utc).year)
@@ -550,7 +560,8 @@ def main() -> int:
     to_yt = (not args.test and not args.dry_tts and bool(os.environ.get("YT_CLIENT_ID"))
              and bool(os.environ.get("YT_REFRESH_TOKEN") or os.environ.get(f"YT_REFRESH_TOKEN_{L.yt}")))
     state = S.load_json(S.STATE, {"episodes": []})
-    slot = S.next_slot(state["episodes"], datetime.now(timezone.utc), None)[0] if to_yt else None
+    slot = (S.next_slot(state["episodes"], datetime.now(timezone.utc), None, ("news",) if args.news_day else None)[0]
+            if to_yt else None)
     when = (S.when_uk(slot) if slot else
             "ТЕСТ — новина, публікація на ваш розсуд" if args.test else "одразу (новина)")
     info = S.deliver_package(entry, pgn_path, video, title, description, tags, when, 0,

@@ -1,5 +1,9 @@
-"""Autośledzenie turniejów (codziennie): jeśli w ciągu ostatniej doby zakończyła się runda ważnego turnieju
-transmitowanego na Lichess — jedna nowość na kanał (najważniejsza partia tej rundy, src/news.py --round-id).
+"""Autośledzenie turniejów: nowość na sobotę (rubryka "news", scheduler.RUBRIC_DAYS — decyzja właściciela 19.10.2026).
+
+Działa tylko dla kanałów, których najbliższa wolna sobota zaczyna się w ciągu NEWS_LEAD_HOURS (domyślnie 36 h —
+w praktyce przebieg w piątek wieczorem). Szuka rund ważnych turniejów z Lichess zakończonych w ostatnich 30 h,
+a gdy brak — 7 dni, potem 30 dni (NEWS_WINDOWS); najważniejsza partia rundy (src/news.py --round-id --news-day).
+Kanał hindi: tylko partia z Indusem (--require-home; news.py kod 3 = brak takiej, próbujemy następnej rundy).
 
 Ważny turniej: poziom transmisji Lichess (tier) najwyższy albo nazwa z listy WATCH; bez tempa blitz/bullet/Freestyle.
 Stan: state/news_watch.json {kanał: {"rounds": [id…], "last_day": "YYYY-MM-DD"}} — maks. 1 nowość na kanał dziennie,
@@ -26,7 +30,10 @@ ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "state" / "news_watch.json"
 API = "https://lichess.org/api"
 UA = {"User-Agent": "chesspol-news/1.0 (https://github.com/tanasua/chesspol)"}
-WINDOW = timedelta(hours=int(os.environ.get("NEWS_WINDOW_HOURS", "30")))
+WINDOWS = [timedelta(hours=int(h)) for h in os.environ.get("NEWS_WINDOWS", "30,168,720").split(",")]
+LEAD = timedelta(hours=int(os.environ.get("NEWS_LEAD_HOURS", "36")))
+MIN_LEAD = timedelta(hours=int(os.environ.get("MIN_LEAD_HOURS", "6")))
+TRIES = int(os.environ.get("NEWS_TRIES", "4"))  # ile rund próbować na kanał (hindi: szukanie partii z Indusem)
 WATCH = re.compile(r"world championship|candidates|tata steel|norway chess|grand chess tour|sinquefield|superbet|"
                    r"olympiad|world cup|grand swiss|london chess classic|gibraltar|dortmund|shamkir|chessable masters",
                    re.I)
@@ -63,10 +70,31 @@ def _ts(ms) -> datetime | None:
     return datetime.fromtimestamp(ms / 1000, timezone.utc) if ms else None
 
 
-def finished_rounds(now: datetime) -> list:
-    """[(waga, tour, round)] — rundy zakończone w oknie WINDOW, ważne turnieje, od najważniejszej."""
+def news_due(ch: str, now: datetime):
+    """Najbliższa sobota bez odcinka w harmonogramie kanału, jeśli zaczyna się (18:00 lokalnie) w ciągu LEAD."""
+    from zoneinfo import ZoneInfo
+    from lang import CHANNELS as LC
+    c = LC[ch]
+    tz = ZoneInfo(c.tz)
+    eps = json.loads(c.state.read_text(encoding="utf-8")).get("episodes", []) if c.state.exists() else []
+    booked = {datetime.fromisoformat(e["publish_at"]).astimezone(tz).date() for e in eps if e.get("publish_at")}
+    day = (now + MIN_LEAD).astimezone(tz).date()
+    while day.weekday() != 5 or day in booked:
+        day += timedelta(days=1)
+    start = datetime(day.year, day.month, day.day, 18, tzinfo=tz)
+    return day if start - now <= LEAD else None
+
+
+def finished_rounds(now: datetime, window: timedelta) -> list:
+    """[(waga, tour, round)] — rundy zakończone w oknie `window`, ważne turnieje, od najważniejszej."""
     data = _get(f"{API}/broadcast/top", params={"page": 1}).json()
     entries = list(data.get("active", [])) + list((data.get("past") or {}).get("currentPageResults", []))
+    for page in range(2, 2 + min(4, int(window / timedelta(days=7)))):  # dłuższe okno — starsze strony "past"
+        try:
+            more = _get(f"{API}/broadcast/top", params={"page": page}).json()
+        except requests.HTTPError:
+            break
+        entries += list((more.get("past") or {}).get("currentPageResults", []))
     print("Lichess top — klucze:", sorted(data.keys()), "| pozycji:", len(entries))
     for e in entries[:25]:
         t, r = e.get("tour", {}), e.get("round", {})
@@ -91,7 +119,7 @@ def finished_rounds(now: datetime) -> list:
         for rnd in full.get("rounds", []):
             done = bool(rnd.get("finished") or rnd.get("finishedAt"))
             when = _ts(rnd.get("finishedAt")) or (_ts(rnd.get("startsAt")) + timedelta(hours=6) if rnd.get("startsAt") else None)
-            if done and when and now - WINDOW <= when <= now:
+            if done and when and now - window <= when <= now:
                 weight = tier * 10 + (5 if watched else 0) + (3 if re.search(r"final|world championship", name, re.I) else 0)
                 tour = dict(tour, _india=india, _main=watched or tier >= 5)
                 out.append((weight, tour, rnd))
@@ -104,47 +132,58 @@ def finished_rounds(now: datetime) -> list:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--force", action="store_true", help="bez warunku 'sobota w ciągu NEWS_LEAD_HOURS'")
     args = ap.parse_args()
     now = datetime.now(timezone.utc)
     today = now.strftime("%Y-%m-%d")
     state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {}
-    print("Zakończone rundy ważnych turniejów (ostatnie", WINDOW, "):")
-    rounds = finished_rounds(now)
-    if not rounds:
-        print("Brak — dziś bez nowości.")
-        return 0
+    cache: dict = {}
     rc = 0
     for ch, (key_env, voice_env, target_env) in CHANNELS.items():
         st = state.setdefault(ch, {"rounds": [], "last_day": ""})
         if not (os.environ.get(key_env) and os.environ.get(voice_env)):
             print(f"[{ch}] pominięty — brak {key_env}/{voice_env}")
             continue
-        if st["last_day"] == today:
-            print(f"[{ch}] dziś już była nowość")
+        day = news_due(ch, now)
+        if not day and not args.force:
+            print(f"[{ch}] najbliższa wolna sobota jeszcze nie teraz — czekam")
             continue
-        todo = [(w + (40 if ch == "hi" and t.get("_india") else 0), t, r) for w, t, r in rounds
-                if r.get("id") not in st["rounds"] and (t.get("_main") or ch == "hi")]
-        todo = [(t, r) for _, t, r in sorted(todo, key=lambda x: -x[0])]
-        if not todo:
-            print(f"[{ch}] wszystkie rundy już omówione")
-            continue
-        tour, rnd = todo[0]
-        print(f"[{ch}] nowość: {tour.get('name')} — {rnd.get('name')}")
-        if args.dry:
-            continue
-        env = {**os.environ, "CHANNEL": ch}
-        if target_env:
-            env[target_env] = os.environ[voice_env]
-        r = subprocess.run([sys.executable, str(ROOT / "src" / "news.py"), "--tournament", tour["id"],
-                            "--round-id", rnd["id"]], cwd=ROOT, env=env)
-        if r.returncode != 0:
-            print(f"::error::[{ch}] news.py zakończył się kodem {r.returncode}")
-            rc = 1
-            continue
-        st["rounds"] = (st["rounds"] + [rnd["id"]])[-200:]
-        st["last_day"] = today
-        STATE.parent.mkdir(parents=True, exist_ok=True)
-        STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"[{ch}] nowość na {day}")
+        made = False
+        for window in WINDOWS:
+            if window not in cache:
+                print(f"Zakończone rundy ważnych turniejów (ostatnie {window}):")
+                cache[window] = finished_rounds(now, window)
+            todo = [(w + (40 if ch == "hi" and t.get("_india") else 0), t, r) for w, t, r in cache[window]
+                    if r.get("id") not in st["rounds"] and (t.get("_main") or ch == "hi")]
+            todo = [(t, r) for _, t, r in sorted(todo, key=lambda x: -x[0])]
+            for tour, rnd in todo[:TRIES]:
+                print(f"[{ch}] próba: {tour.get('name')} — {rnd.get('name')} (okno {window})")
+                if args.dry:
+                    made = True
+                    break
+                env = {**os.environ, "CHANNEL": ch}
+                if target_env:
+                    env[target_env] = os.environ[voice_env]
+                cmd = [sys.executable, str(ROOT / "src" / "news.py"), "--tournament", tour["id"],
+                       "--round-id", rnd["id"], "--news-day"] + (["--require-home"] if ch == "hi" else [])
+                r = subprocess.run(cmd, cwd=ROOT, env=env)
+                if r.returncode == 3:  # w tej rundzie nic dla kanału (np. bez Indusa) — następna
+                    continue
+                if r.returncode != 0:
+                    print(f"::error::[{ch}] news.py zakończył się kodem {r.returncode}")
+                    rc = 1
+                    continue
+                st["rounds"] = (st["rounds"] + [rnd["id"]])[-200:]
+                st["last_day"] = today
+                STATE.parent.mkdir(parents=True, exist_ok=True)
+                STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                made = True
+                break
+            if made:
+                break
+        if not made:
+            print(f"::warning::[{ch}] brak nowości nawet z {WINDOWS[-1]} — sobotę wypełni scheduler (zastępstwo)")
     return rc
 
 

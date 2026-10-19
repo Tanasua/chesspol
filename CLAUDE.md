@@ -78,6 +78,14 @@ Pliki:
 - TERMINY (decyzja właściciela 19.10.2026): wszystkie kanały wt/czw/sob/nd (PUBLISH_DAYS=1,3,5,6), godzina losowa
   wieczorem w strefie kanału (PUBLISH_WINDOW=18:00-21:30, co 5 min, powtarzalna: hash kanał+dzień; PUBLISH_RANDOM=0 -> PUBLISH_HOUR).
   Strefy: pl Europe/Warsaw, de Europe/Berlin, en America/New_York, hi Asia/Kolkata, uk Europe/Kyiv, ru Moscow, tr Istanbul.
+- RUBRYKI WG DNIA (decyzja właściciela 19.10.2026, scheduler.RUBRIC_DAYS): wt — historia (bez współczesnych partii
+  czołówki), czw — gwiazda kraju kanału (catalog/national_*), sob — świeży turniej (nowość: news_watch w piątek wieczorem,
+  gdy sobota wolna i zaczyna się w ciągu 36 h; rundy z 30 h -> 7 dni -> 30 dni; news.py --news-day), nd — topowy szachista
+  (scheduler.TOP_RE, partie z rokiem >= 2010 z katalogu głównego i krajowego, najnowsze najpierw). Codzienny scheduler
+  wypełnia wt/czw/nd; sobotę tylko jako zastępstwo, gdy do niej <24 h, a nowości brak (NEWS_FALLBACK_HOURS).
+  Zastępstwa: national -> history (uk/ru/tr nie mają jeszcze katalogów krajowych), top -> history, news -> top -> national.
+  Hindi: wt/czw/sob zawsze z Indusem (historia tylko z Indusem, potem national_in; news --require-home).
+  Ręczne zamówienie nowości (news.yml) — najbliższy wolny dzień dowolnej rubryki (grafik się przesuwa).
 - ZALEGŁE PACZKI: src/upload_backlog.py + .github/workflows/upload_backlog.yml (workflow_dispatch: kanały, after, dry) —
   Release'y z trybu manual (niewgrane) -> YouTube private + publishAt w kolejnych wolnych terminach, miniatura OpenAI
   (z Release albo nowa z cover.jpg); wpis {release, video_id} w stanie kanału; raport do Telegrama.
@@ -99,8 +107,8 @@ Pliki:
   -> src/bracket.py: plansza na początek (drabinka z przekreślonymi odpadłymi / tabela; stan PRZED partią) -> catalog/news.json,
   facts/<id>.md (fakty policzone z PGN) -> script_gen -> main.py --preroll -> paczka (tag news[-test]-…, okładka z plakietką turnieju).
   Nazwiska z formatu FIDE w PGN ("Ding, Liren" -> DING). lichess.org zablokowany w środowisku deweloperskim — test tylko w Actions.
-- AUTOŚLEDZENIE: src/news_watch.py + .github/workflows/news_watch.yml (cron 21:17 UTC, codziennie): Lichess /api/broadcast/top,
-  rundy zakończone w ostatnich 30 h, turnieje z listy WATCH albo tier ≥5, bez blitz/bullet/Freestyle; dla każdego kanału z głosem
+- AUTOŚLEDZENIE: src/news_watch.py + .github/workflows/news_watch.yml (cron 21:17 UTC, codziennie; działa tylko przed sobotą): Lichess /api/broadcast/top,
+  rundy zakończone w ostatnich 30 h (potem 7 / 30 dni), turnieje z listy WATCH albo tier ≥5, bez blitz/bullet/Freestyle; dla każdego kanału z głosem
   1 nowość dziennie (news.py --round-id: wybór tylko z tej rundy, kontekst z całego turnieju); stan state/news_watch.json.
 - FLAGI: src/countries.py — kraj gracza z Wikidata P1532 (z datami od/do; fallback P27), pamięć assets/players/countries.json
   (uzupełnia fetch_portraits.py dla katalogu i news.py dla turniejów). assets/flags/<iso>.svg (flag-icons, MIT; ru.svg i by.svg

@@ -95,15 +95,30 @@ def start_day(now: datetime, first_day: date | None) -> date:
     return day
 
 
-def next_slot(episodes: list, now: datetime, first_day: date | None) -> tuple[datetime, bool]:
-    """Najbliższy wolny termin (co INTERVAL_DAYS dni) i czy to dziura przed ostatnim zaplanowanym odcinkiem.
+# RUBRYKI WG DNIA (decyzja właściciela 19.10.2026): wt — historia, czw — gwiazda kraju kanału, sob — świeży turniej
+# (nowość z Lichess, src/news_watch.py), nd — topowy szachista współczesności. Dni spoza mapy: rubryka "history".
+RUBRIC_DAYS = {1: "history", 3: "national", 5: "news", 6: "top"}
+DAILY = ("history", "national", "top")  # dni, które wypełnia codzienny scheduler; sobota czeka na nowość
+NEWS_FALLBACK = timedelta(hours=int(os.environ.get("NEWS_FALLBACK_HOURS", "24")))  # sobota bez nowości -> zastępstwo
+# "topowy szachista współczesności" — wybór redakcyjny (media/ranking), nie twierdzenie o aktualnym rankingu FIDE
+TOP_RE = re.compile(r"Carlsen|Nakamura|Caruana|Gukesh|Praggnanandhaa|Firouzja|Erigaisi|Nepomniachtchi|\bDing\b|"
+                    r"Abdusattorov|Wesley So|\bSo, W|Giri|Keymer|Anand|Kramnik|Aronian|Karjakin|Duda", re.I)
 
-    Dziura powstaje np. po ręcznym prowadzeniu albo po zmianie odstępu — wypełniamy ją, zamiast dopisywać na koniec.
+
+def rubric_of(day: date) -> str:
+    return RUBRIC_DAYS.get(day.weekday(), "history")
+
+
+def next_slot(episodes: list, now: datetime, first_day: date | None,
+              rubrics: tuple | None = None) -> tuple[datetime, bool]:
+    """Najbliższy wolny termin (co INTERVAL_DAYS dni; tylko dni z rubrykami `rubrics`, gdy podane)
+    i czy to dziura przed ostatnim zaplanowanym odcinkiem.
     Dzień jest wolny, gdy żaden odcinek nie stoi bliżej niż INTERVAL_DAYS (przy 1 — po prostu inny dzień).
     """
     booked = sorted(datetime.fromisoformat(e["publish_at"]).astimezone(TZ).date() for e in episodes)
     day = start_day(now, first_day)
-    while not allowed(day) or any(abs((day - b).days) < INTERVAL_DAYS for b in booked):
+    while (not allowed(day) or (rubrics and rubric_of(day) not in rubrics)
+           or any(abs((day - b).days) < INTERVAL_DAYS for b in booked)):
         day += timedelta(days=1)
     return slot_at(day), bool(booked) and day < booked[-1]
 
@@ -141,29 +156,42 @@ def national_queue(national: dict, episodes: list) -> list:
             if g["id"] not in done and ready(g)]
 
 
-def pick(episodes: list, q: list, nq: list) -> tuple[str, dict | None]:
-    """Na przemian: historia -> rubryka krajowa -> historia… Gdy jednej kolejki brak — druga.
-    Rubryka poprzednika wg daty publikacji, bez odcinków z dziur (te nie zmieniają rytmu)."""
-    regular = sorted((e for e in episodes if not e.get("gap") and e.get("rubric", "history") in ("history", "national")),
-                     key=lambda e: e["publish_at"])  # nowości i zaległe paczki też nie zmieniają rytmu
-    last = regular[-1].get("rubric", "history") if regular else "national"
-    order = ("national", "history") if last == "history" else ("history", "national")
-    for rubric in order:
-        src = nq if rubric == "national" else q
+def home(game: dict) -> bool:
+    """Czy gra gracz z kraju kanału (assets/players/countries.json, kraj w roku partii)."""
+    import countries
+    want = L.country or L.code
+    return any(countries.country(game[s], game.get("year")) == want for s in ("white", "black"))
+
+
+def top_queue(q: list, nq: list) -> list:
+    """Rubryka "top": współczesne (rok >= MODERN_YEAR) partie czołówki z katalogu głównego i krajowego, najnowsze najpierw."""
+    games = {g["id"]: g for g in q + nq if g["year"] >= MODERN_YEAR and TOP_RE.search(f"{g['white']} {g['black']}")}
+    return sorted(games.values(), key=lambda g: -g["year"])
+
+
+def pick(rubric: str, q: list, nq: list) -> tuple[str, dict | None]:
+    """Partia dla rubryki dnia. Zastępstwa, gdy kolejki brak: national -> top -> history, top -> history,
+    history -> national. Kanał hindi: we wt/czw/sob zawsze gracz z Indii (decyzja właściciela) —
+    historia najpierw z partii z Indusem, potem rubryka krajowa. Zwraca (rubryka faktyczna, partia) i zdejmuje
+    partię ze wszystkich kolejek."""
+    hi = L.code == "hi"
+    tq = top_queue(q, nq)
+    # historia bez współczesnych partii czołówki (te czekają na niedzielę); hindi — tylko partie z Indusem
+    hq = [g for g in q if home(g)] if hi else [g for g in q if g not in tq]
+    chains = {"history": [("history", hq), ("national", nq)] + ([] if hi else [("top", tq)]),
+              "national": [("national", nq)] + ([("top", [g for g in tq if home(g)])] if hi else [])
+              + [("history", hq)],
+              "top": [("top", tq), ("history", q)],
+              "news": ([("national", nq), ("top", [g for g in tq if home(g)])] if hi else [("top", tq), ("national", nq)])
+              + [("history", hq)]}
+    for actual, src in chains.get(rubric, chains["history"]) + [("history", q)]:
         if src:
-            return rubric, src.pop(0)
+            game = src[0]
+            for lst in (q, nq):
+                if game in lst:
+                    lst.remove(game)
+            return actual, game
     return "", None
-
-
-def pick_gap(episodes: list, q: list, nq: list) -> tuple[str, dict | None]:
-    """Dziura w grafiku (decyzja właściciela): współczesna partia czołówki (rok >= MODERN_YEAR) albo partia
-    gracza z kraju kanału (rubryka krajowa) — najnowsza z nich; przy remisie kolejność kolejki."""
-    cands = [("national", g) for g in nq] + [("history", g) for g in q if g["year"] >= MODERN_YEAR]
-    if not cands:
-        return pick(episodes, q, nq)
-    rubric, game = max(cands, key=lambda c: c[1]["year"])
-    (nq if rubric == "national" else q).remove(game)
-    return rubric, game
 
 
 def run(cmd: list) -> None:
@@ -411,19 +439,29 @@ def main() -> int:
     if args.plan:
         eps = list(episodes)
         q2, nq2 = list(q), list(nq)
-        for _ in range(10):
-            slot, gap = next_slot(eps, now, first_day)
-            rubric, g = (pick_gap if gap else pick)(eps, q2, nq2)
+        for _ in range(12):
+            slot, _gap = next_slot(eps, now, first_day)
+            day_rubric = rubric_of(slot.astimezone(TZ).date())
+            if day_rubric == "news":
+                print(f"{slot.astimezone(TZ):%Y-%m-%d %H:%M %Z}  [{L.code}] news     (nowość z Lichess; bez niej — zastępstwo)")
+                eps.append({"id": f"news@{slot.date()}", "publish_at": slot.isoformat(), "rubric": "news"})
+                continue
+            rubric, g = pick(day_rubric, q2, nq2)
             if not g:
                 break
-            print(f"{slot.astimezone(TZ):%Y-%m-%d %H:%M %Z}  [{L.code}] {rubric:8} {g['id']}{'  (dziura)' if gap else ''}")
-            eps.append({"id": g["id"], "publish_at": slot.isoformat(), "rubric": rubric, "gap": gap})
+            print(f"{slot.astimezone(TZ):%Y-%m-%d %H:%M %Z}  [{L.code}] {rubric:8} {g['id']}"
+                  f"{'' if rubric == day_rubric else f'  (zastępstwo za {day_rubric})'}")
+            eps.append({"id": g["id"], "publish_at": slot.isoformat(), "rubric": rubric})
         return 0
 
     made = 0
     while made < MAX_PER_RUN:
         publish_now = PUBLISH_NOW and made == 0 and MODE == "youtube"
-        slot, gap = next_slot(episodes, now, first_day)
+        slot, gap = next_slot(episodes, now, first_day, DAILY)
+        news_slot, _ = next_slot(episodes, now, first_day, ("news",))
+        if news_slot < slot and news_slot - now <= NEWS_FALLBACK:  # sobota, a nowości (news_watch) brak
+            print(f"::warning::Brak nowości na {news_slot.astimezone(TZ):%Y-%m-%d} — zastępstwo z katalogu")
+            slot = news_slot
         if publish_now:  # odcinek "na dziś": publicznie od razu, dzień dzisiejszy zajęty
             slot, gap = datetime.now(timezone.utc), False
         horizon = start_day(now, first_day) + timedelta(days=BUFFER * INTERVAL_DAYS)
@@ -442,17 +480,16 @@ def main() -> int:
             if not forced:
                 print(f"::error::Partii {args.game} nie ma w kolejce (brak zweryfikowanego PGN albo już była)")
                 return 1
+        day_rubric = rubric_of(slot.astimezone(TZ).date())
         if not forced:
-            rubric, game = (pick_gap if gap else pick)(episodes, q, nq)
+            rubric, game = pick(day_rubric, q, nq)
         if not game:
             print("::error::Brak gotowych partii — dodaj zweryfikowane PGN (src/pgn_collect.py)")
             return 1
-        if gap:
-            print(f"Dziura w grafiku {slot.astimezone(TZ):%Y-%m-%d} — {rubric}: {game['id']} ({game['year']})")
+        print(f"{slot.astimezone(TZ):%Y-%m-%d} ({day_rubric}) — {rubric}: {game['id']} ({game['year']})")
         episode = produce(game, slot, args.no_upload, args.dry_tts, number=len(episodes) + 1, now=publish_now)
         episode["rubric"] = rubric
-        if gap:
-            episode["gap"] = True
+        episode["day_rubric"] = day_rubric
         if args.dry_tts or (args.no_upload and MODE != "manual"):
             break  # test — bez zapisu stanu
         episodes.append(episode)
