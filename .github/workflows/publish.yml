@@ -45,6 +45,8 @@ jobs:
     timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
+      - name: Sync with latest branch state  # run z kolejki widzi stan zapisany przez poprzedni run (bez duplikatów)
+        run: git fetch -q origin "${{ github.ref_name }}" && git reset -q --hard "origin/${{ github.ref_name }}"
 
       - uses: actions/setup-python@v5
         with:
