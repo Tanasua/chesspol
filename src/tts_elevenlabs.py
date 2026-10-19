@@ -3,7 +3,7 @@
 API zwraca czasy znaków (alignment); składamy z nich czasy słów w tym samym formacie
 co tts_inworld.TTSResult, więc reszta potoku (dopasowanie markerów, render) jest wspólna.
 
-Zmienne: ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID, ELEVENLABS_MODEL (domyślnie eleven_flash_v2_5; przy błędzie — eleven_multilingual_v2).
+Zmienne: ELEVENLABS_API_KEY, ELEVENLABS_VOICE_ID, ELEVENLABS_MODEL (domyślnie eleven_multilingual_v2).
 NIE zweryfikowane na prawdziwym kluczu w środowisku deweloperskim — format odpowiedzi według dokumentacji.
 """
 from __future__ import annotations
@@ -20,7 +20,7 @@ import requests
 from tts_inworld import TTSRequestError, TTSResult, _probe_duration
 
 API_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
-DEFAULT_MODEL = os.environ.get("ELEVENLABS_MODEL") or "eleven_flash_v2_5"  # tańszy (decyzja właściciela 19.10.2026)
+DEFAULT_MODEL = os.environ.get("ELEVENLABS_MODEL") or "eleven_multilingual_v2"  # decyzja właściciela 19.10.2026 (po porównaniu z flash)
 OUTPUT_FORMAT = "mp3_44100_128"
 
 

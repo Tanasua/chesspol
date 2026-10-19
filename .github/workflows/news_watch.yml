@@ -63,7 +63,7 @@ jobs:
           ELEVENLABS_VOICE_ID_UA: ${{ secrets.ELEVENLABS_VOICE_ID_UA }}
           ELEVENLABS_VOICE_ID_RU: ${{ secrets.ELEVENLABS_VOICE_ID_RU }}
           ELEVENLABS_VOICE_ID_TR: ${{ secrets.ELEVENLABS_VOICE_ID_TR }}
-          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_flash_v2_5' }}
+          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
           STOCKFISH_PATH: /usr/games/stockfish
           GH_TOKEN: ${{ github.token }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

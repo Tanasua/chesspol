@@ -64,7 +64,7 @@ jobs:
           VOICE_UK: ${{ secrets.ELEVENLABS_VOICE_ID_UA }}
           VOICE_RU: ${{ secrets.ELEVENLABS_VOICE_ID_RU }}
           VOICE_TR: ${{ secrets.ELEVENLABS_VOICE_ID_TR }}
-          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_flash_v2_5' }}
+          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
           HOST_PL: ${{ vars.HOST_NAME }}
           HOST_DE: ${{ vars.HOST_NAME_DE }}
           HOST_EN: ${{ vars.HOST_NAME_EN }}
