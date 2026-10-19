@@ -40,7 +40,7 @@ STATE = L.state
 
 TZ = ZoneInfo(os.environ.get("PUBLISH_TZ") or L.tz)
 PUBLISH_HOUR = int(os.environ.get("PUBLISH_HOUR", "10"))
-INTERVAL_DAYS = int(os.environ.get("INTERVAL_DAYS", "3"))
+INTERVAL_DAYS = int(os.environ.get("INTERVAL_DAYS", "1"))  # 1: każdy dozwolony dzień (wt/czw/sob/nd)
 BUFFER = int(os.environ.get("BUFFER", "2"))            # ile odcinków trzymać zaplanowanych naprzód
 MAX_PER_RUN = int(os.environ.get("MAX_PER_RUN", "1"))
 MODERN_YEAR = int(os.environ.get("GAP_MODERN_YEAR", "2010"))  # "współczesna" partia do wypełnienia dziury
