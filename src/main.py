@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -36,6 +37,8 @@ else:
 LEAD_IN = 1.0     # sekundy ciszy na początku (pozycja startowa na ekranie)
 TAIL = 3.0        # końcowa pauza z pozycją matową / końcową
 DRIFT_WARN = 0.3
+SENTENCE_PAUSE = float(os.environ.get("SENTENCE_PAUSE", "0.5"))  # cisza po każdym zdaniu (decyzja właściciela 19.10.2026)
+SENTENCE_END = re.compile(r"[.!?…][\"'»”)\]]*$")
 THINK_SEC = float(os.environ.get("THINK_SEC", "4.0"))  # pauza {{p}}: widz sam szuka ruchu (decyzja właściciela: 3–5 s)
 CUT_LEAD = 0.04   # rozcięcie nagrania tyle sekund przed początkiem słowa markera
 # Stałe zakończenie każdego odcinka (OUTRO, czytane po scenariuszu) — w src/phrases.py, w języku kanału
@@ -181,12 +184,13 @@ def main() -> int:
             clip_pos, shift = cut, shift + sec
             shifts.append((token_index, shift))
 
-        # pauzy "pomyśl sam" ({{p}}) i kotwice ruchów w kolejności słów (pauza przed słowem — najpierw)
-        items = sorted([(i, 0, None) for i in seg.pauses] + [(a.token_index, 1, a) for a in seg.anchors],
-                       key=lambda x: (x[0], x[1]))
+        # pauzy po zdaniach, "pomyśl sam" ({{p}}) i kotwice ruchów w kolejności słów (pauzy przed słowem — najpierw)
+        sentence = [i for i in range(1, len(seg.tokens)) if SENTENCE_PAUSE > 0 and SENTENCE_END.search(seg.tokens[i - 1])]
+        items = sorted([(i, 0, None) for i in sentence] + [(i, 1, None) for i in seg.pauses]
+                       + [(a.token_index, 2, a) for a in seg.anchors], key=lambda x: (x[0], x[1]))
         for token_index, kind, a in items:
-            if kind == 0:
-                insert_silence(token_index, THINK_SEC)
+            if kind < 2:
+                insert_silence(token_index, SENTENCE_PAUSE if kind == 0 else THINK_SEC)
                 continue
             t_word = times[a.token_index]
             gap = a.ply_index - (anchor_times[-1][1] if anchor_times else 0) - 1

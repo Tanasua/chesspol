@@ -28,6 +28,8 @@ Pliki:
   paradoks, pytanie, odliczanie; fakty/oceny jak w scenariuszu; bez ruchów, markerów i cyfr; 40–300 znaków — script_check.build_hook).
   W tym czasie szachownica pokazuje pozycję po półruchu "ply" (render_video(flash=...)), potem powitanie i partia od startu;
   plansza nowości (preroll) przesunięta za hak. script_gen wymaga haka; stare scenariusze bez haka działają jak dawniej.
+- PAUZA PO ZDANIU (decyzja właściciela 19.10.2026): main.SENTENCE_PAUSE=0.5 s ciszy po każdym zdaniu (słowo kończące się
+  . ! ? …) na wszystkich kanałach — rozcięcie nagrania przed następnym słowem (insert_silence), czasy ruchów przesuwają się.
 - PAUZA DO NAMYSŁU: marker {{p}} w tekście (maks. 3 na odcinek, zawsze przed {{m:N}} w tym samym segmencie) — lektor
   zadaje pytanie, potem THINK_SEC=4 s ciszy (main.insert_silence, szachownica stoi), potem ruch (decyzja właściciela: 3–5 s).
 - KLUCZOWE MOMENTY: src/key_moments.py (Stockfish, zasady 1 i 3) — ofiara (≥3 pkt materiału, nie wraca po 1/3/5 półruchach,
