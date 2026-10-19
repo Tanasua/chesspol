@@ -39,7 +39,7 @@ WATCH = re.compile(r"world championship|candidates|tata steel|norway chess|grand
                    re.I)
 # kanał hindi: turnieje indyjskie (także niższy tier) i pierwszeństwo przed resztą (decyzja właściciela: skupić się na Indiach)
 INDIA = re.compile(r"india|indian|chennai|kolkata|mumbai|delhi|bengaluru|bangalore|global chess league|tata steel india|"
-                   r"national chess championship", re.I)
+                   r"india.{0,30}national|national.{0,30}india", re.I)
 SKIP = re.compile(r"blitz|bullet|freestyle|chess960|titled|armageddon|junior|youth|women'?s rapid|u\d\d", re.I)
 CHANNELS = {  # kanał -> zmienne z kluczem i głosem TTS (bez nich kanał pomijamy)
     "pl": ("INWORLD_API_KEY", "INWORLD_VOICE_ID", None),
@@ -154,7 +154,8 @@ def main() -> int:
             if window not in cache:
                 print(f"Zakończone rundy ważnych turniejów (ostatnie {window}):")
                 cache[window] = finished_rounds(now, window)
-            todo = [(w + (40 if ch == "hi" and t.get("_india") else 0), t, r) for w, t, r in cache[window]
+            # hindi: najpierw ważne turnieje (partia z Indusem — --require-home), potem turnieje indyjskie niższej rangi
+            todo = [(w + (100 if ch == "hi" and t.get("_main") else 0), t, r) for w, t, r in cache[window]
                     if r.get("id") not in st["rounds"] and (t.get("_main") or ch == "hi")]
             todo = [(t, r) for _, t, r in sorted(todo, key=lambda x: -x[0])]
             for tour, rnd in todo[:TRIES]:
