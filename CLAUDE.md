@@ -130,8 +130,8 @@ Pliki:
   widza w hindi), phrases/CTA hi (forma "हम"), scripts_hi/, out/hi/, state/schedule_hi.json, tag hi-, flaga 🇮🇳, "swój" = in;
   .github/workflows/publish_hi.yml — cron 08:17 UTC, publikacja 18:00 Asia/Kolkata; news.yml / news_watch obsługują hi.
   NIE zweryfikowane przez native speakera: nazwy figur, zwroty, teksty opisu — odsłuchać 1–2 pierwsze odcinki.
-- KANAŁY UK / RU / TR (19.10.2026): CHANNEL=uk|ru|tr, ElevenLabs (ELEVENLABS_VOICE_ID_UK/RU/TR), upload na YouTube
-  (YT_REFRESH_TOKEN_UK/RU/TR, PUBLISH_MODE=youtube), .github/workflows/publish_{uk,ru,tr}.yml (18:00 Europe/Kyiv / Moscow /
+- KANAŁY UK / RU / TR (19.10.2026): CHANNEL=uk|ru|tr, ElevenLabs (ELEVENLABS_VOICE_ID_UA / _RU / _TR — ukraiński ma sufiks UA), upload na YouTube
+  (YT_REFRESH_TOKEN_UA / _RU / _TR, PUBLISH_MODE=youtube), .github/workflows/publish_{uk,ru,tr}.yml (18:00 Europe/Kyiv / Moscow /
   Istanbul). Kolejność n_uk/n_ru/n_tr (seed 20261005–7, tasowanie w blokach po 10). Pola katalogu label_/event_{uk,ru,tr}
   (tłumaczenie label_en), fallback _en. Imiona/nazwiska cyrylicą: catalog/names_cyr.json (players.cyrillic) + surnames.json
   uk/ru. Zapis ruchów: uk_notation.py ("кінь еф три", "слон бере еф сім"; ekran Кр Ф Т С К), ru_notation.py ("конь эф три",

@@ -1,9 +1,9 @@
 name: publish-episodes-uk
 
 # Kanał ukraiński (CHANNEL=uk, src/lang.py): ten sam katalog partii, własna kolejność (n_uk),
-# stan state/schedule_uk.json, scenariusze scripts_uk/, lektor ElevenLabs (głos z ELEVENLABS_VOICE_ID_UK),
-# publikacja 18:00 Europe/Kyiv; tryb youtube: upload private + publishAt (YT_REFRESH_TOKEN_UK) + miniatura.
-# Bez ELEVENLABS_VOICE_ID_UK — pomija.
+# stan state/schedule_uk.json, scenariusze scripts_uk/, lektor ElevenLabs (głos z ELEVENLABS_VOICE_ID_UA),
+# publikacja 18:00 Europe/Kyiv; tryb youtube: upload private + publishAt (YT_REFRESH_TOKEN_UA) + miniatura.
+# Bez ELEVENLABS_VOICE_ID_UA — pomija.
 on:
   schedule:
     - cron: "47 9 * * *"
@@ -74,12 +74,12 @@ jobs:
           CHANNEL: uk
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_UK }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_UA }}
           ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
           HOST_NAME: ${{ vars.HOST_NAME_UK }}   # imię prowadzącego (np. Lukas); puste = powitanie bez imienia
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN_UK }}   # osobny token na kanał
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN_UA }}   # osobny token na kanał
           STOCKFISH_PATH: /usr/games/stockfish
           PUBLISH_MODE: youtube         # youtube = automatyczny upload + miniatura (okładka OpenAI); manual = paczki do ręcznego uploadu
           PUBLISH_NOW: ${{ inputs.publish_now }}
@@ -96,10 +96,10 @@ jobs:
           NO_UPLOAD: ${{ inputs.no_upload }}
         run: |
           if [ -z "$ELEVENLABS_API_KEY" ] || [ -z "$ELEVENLABS_VOICE_ID" ]; then
-            echo "::notice::Brak ELEVENLABS_API_KEY / ELEVENLABS_VOICE_ID_UK — kanał uk pominięty"; exit 0
+            echo "::notice::Brak ELEVENLABS_API_KEY / ELEVENLABS_VOICE_ID_UA — kanał uk pominięty"; exit 0
           fi
           if [ "$PUBLISH_MODE" = "youtube" ] && [ "$NO_UPLOAD" != "true" ] && { [ -z "$YT_CLIENT_ID" ] || [ -z "$YT_CLIENT_SECRET" ] || [ -z "$YT_REFRESH_TOKEN" ]; }; then
-            echo "::error::Brak sekretów YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN_UK"; exit 1
+            echo "::error::Brak sekretów YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN_UA"; exit 1
           fi
           ARGS=()
           if [ -n "$FIRST_DAY" ]; then ARGS+=(--first-day "$FIRST_DAY"); fi

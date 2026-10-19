@@ -60,7 +60,7 @@ jobs:
           VOICE_DE: ${{ secrets.ELEVENLABS_VOICE_ID_DE }}
           VOICE_EN: ${{ secrets.ELEVENLABS_VOICE_ID_EN }}
           VOICE_HI: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}
-          VOICE_UK: ${{ secrets.ELEVENLABS_VOICE_ID_UK }}
+          VOICE_UK: ${{ secrets.ELEVENLABS_VOICE_ID_UA }}
           VOICE_RU: ${{ secrets.ELEVENLABS_VOICE_ID_RU }}
           VOICE_TR: ${{ secrets.ELEVENLABS_VOICE_ID_TR }}
           ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}

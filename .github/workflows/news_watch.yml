@@ -55,7 +55,7 @@ jobs:
           ELEVENLABS_VOICE_ID_DE: ${{ secrets.ELEVENLABS_VOICE_ID_DE }}
           ELEVENLABS_VOICE_ID_EN: ${{ secrets.ELEVENLABS_VOICE_ID_EN }}
           ELEVENLABS_VOICE_ID_HI: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}
-          ELEVENLABS_VOICE_ID_UK: ${{ secrets.ELEVENLABS_VOICE_ID_UK }}
+          ELEVENLABS_VOICE_ID_UA: ${{ secrets.ELEVENLABS_VOICE_ID_UA }}
           ELEVENLABS_VOICE_ID_RU: ${{ secrets.ELEVENLABS_VOICE_ID_RU }}
           ELEVENLABS_VOICE_ID_TR: ${{ secrets.ELEVENLABS_VOICE_ID_TR }}
           ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
