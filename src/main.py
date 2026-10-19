@@ -185,7 +185,9 @@ def main() -> int:
             shifts.append((token_index, shift))
 
         # pauzy po zdaniach, "pomyśl sam" ({{p}}) i kotwice ruchów w kolejności słów (pauzy przed słowem — najpierw)
-        sentence = [i for i in range(1, len(seg.tokens)) if SENTENCE_PAUSE > 0 and SENTENCE_END.search(seg.tokens[i - 1])]
+        # ElevenLabs robi pauzę sam (tag <break>, tts_elevenlabs.with_breaks) — tniemy nagranie tylko dla innych TTS
+        cut_pause = SENTENCE_PAUSE > 0 and L.tts != "elevenlabs"
+        sentence = [i for i in range(1, len(seg.tokens)) if cut_pause and SENTENCE_END.search(seg.tokens[i - 1])]
         items = sorted([(i, 0, None) for i in sentence] + [(i, 1, None) for i in seg.pauses]
                        + [(a.token_index, 2, a) for a in seg.anchors], key=lambda x: (x[0], x[1]))
         for token_index, kind, a in items:

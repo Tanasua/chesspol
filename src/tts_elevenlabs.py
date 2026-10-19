@@ -12,6 +12,7 @@ import base64
 import hashlib
 import json
 import os
+import re
 import time
 from pathlib import Path
 
@@ -22,6 +23,31 @@ from tts_inworld import TTSRequestError, TTSResult, _probe_duration
 API_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/with-timestamps"
 DEFAULT_MODEL = os.environ.get("ELEVENLABS_MODEL") or "eleven_multilingual_v2"  # decyzja właściciela 19.10.2026 (po porównaniu z flash)
 OUTPUT_FORMAT = "mp3_44100_128"
+# pauza po zdaniu robiona przez sam głos (tag SSML <break>, obsługiwany przez multilingual v2 / flash v2.5) —
+# z naturalnym oddechem, bez cięcia nagrania (decyzja właściciela 19.10.2026); 0 = bez tagów
+SENTENCE_BREAK = float(os.environ.get("SENTENCE_PAUSE", "0.5"))
+SENTENCE_RE = re.compile(r"([.!?…][\"'»”)\]]*)(\s+)(?=\S)")
+BREAK_RE = re.compile(r"<break\b[^>]*/>")
+
+
+def with_breaks(text: str) -> str:
+    """'Zdanie. Następne' -> 'Zdanie. <break time="0.5s" /> Następne' (bez tagu po ostatnim zdaniu)."""
+    if SENTENCE_BREAK <= 0:
+        return text
+    return SENTENCE_RE.sub(lambda m: f'{m.group(1)} <break time="{SENTENCE_BREAK:g}s" />{m.group(2)}', text)
+
+
+def strip_break_chars(alignment: dict) -> dict:
+    """Gdyby API oddało znaki tagu <break> w alignment — usuwamy je, żeby słowa zgadzały się z tekstem."""
+    chars = alignment.get("characters") or []
+    joined = "".join(chars)
+    spans = [m.span() for m in BREAK_RE.finditer(joined)]
+    if not spans:
+        return alignment
+    drop = {i for a, b in spans for i in range(a, b)}
+    keep = [i for i in range(len(chars)) if i not in drop]
+    return {k: [alignment[k][i] for i in keep] for k in
+            ("characters", "character_start_times_seconds", "character_end_times_seconds") if k in alignment}
 
 
 def words_from_alignment(alignment: dict) -> tuple[list, list, list]:
@@ -67,12 +93,12 @@ def _synthesize(text: str, cache_dir: Path, voice_id: str, model: str, retries: 
         raise RuntimeError("Brak ELEVENLABS_API_KEY")
 
     cache_dir.mkdir(parents=True, exist_ok=True)
-    key = hashlib.sha256(json.dumps(["elevenlabs", text, voice_id, model]).encode()).hexdigest()[:16]
+    key = hashlib.sha256(json.dumps(["elevenlabs", with_breaks(text), voice_id, model]).encode()).hexdigest()[:16]
     audio_path = cache_dir / f"el_{key}.mp3"
     meta_path = cache_dir / f"el_{key}.json"
 
     if not (audio_path.exists() and meta_path.exists()):
-        body = {"text": text, "model_id": model}
+        body = {"text": with_breaks(text), "model_id": model}
         headers = {"xi-api-key": api_key, "Content-Type": "application/json"}
         url = API_URL.format(voice_id=voice_id)
         last_err = None
@@ -94,7 +120,7 @@ def _synthesize(text: str, cache_dir: Path, voice_id: str, model: str, retries: 
         else:
             raise RuntimeError(f"ElevenLabs TTS nie odpowiedział: {last_err}")
 
-        words, starts, ends = words_from_alignment(data.get("alignment") or {})
+        words, starts, ends = words_from_alignment(strip_break_chars(data.get("alignment") or {}))
         if not words:
             raise RuntimeError("Odpowiedź ElevenLabs bez alignment — synchronizacja niemożliwa")
         audio_path.write_bytes(base64.b64decode(data["audio_base64"]))
