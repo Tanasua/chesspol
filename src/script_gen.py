@@ -221,6 +221,11 @@ def _ask(client, model: str, system: str, messages: list) -> str:
         max_output_tokens=32000,
         store=False,
     )
+    u = getattr(resp, "usage", None)
+    if u:  # do pomiaru kosztu (high vs medium): wejście, wyjście, w tym rozumowanie
+        det = getattr(u, "output_tokens_details", None)
+        print(f"OpenAI usage [{model}, effort={REASONING_EFFORT}]: in={u.input_tokens} out={u.output_tokens} "
+              f"reasoning={getattr(det, 'reasoning_tokens', '?')}", flush=True)
     if resp.status == "incomplete":
         reason = resp.incomplete_details.reason if resp.incomplete_details else None
         raise RuntimeError(f"Odpowiedź niepełna ({reason})")
