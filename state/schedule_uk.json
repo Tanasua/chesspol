@@ -11,6 +11,18 @@
       "video_id": "FxsFpDX-CrQ",
       "thumbnail": "byrne_fischer_1963_cover_ai.jpg",
       "rubric": "history"
+    },
+    {
+      "id": "kasparov_anand_1995",
+      "publish_at": "2026-10-19T13:55:49.436837+00:00",
+      "title": "Ферзь іде під вогонь! | Каспаров – Ананд (1995) — Каспаров зрівняв матч після відставання",
+      "mode": "youtube",
+      "package": "out/packages/uk-ep002-kasparov_anand_1995",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/uk-ep002-kasparov_anand_1995",
+      "video_id": "9LXEpOt4jnk",
+      "thumbnail": "kasparov_anand_1995_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "history"
     }
   ]
 }
