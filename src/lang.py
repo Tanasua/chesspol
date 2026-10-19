@@ -1,4 +1,5 @@
-"""Kanał i język odcinka: CHANNEL=pl (domyślnie), de, en (angielski, odbiorca amerykański) albo hi (hindi, Indie).
+"""Kanał i język odcinka: CHANNEL=pl (domyślnie), de, en (angielski, odbiorca amerykański), hi (hindi, Indie),
+uk (ukraiński), ru (rosyjski) albo tr (turecki).
 
 Wspólne dla kanałów: katalog 100 partii, PGN, zdjęcia, render, muzyka, Telegram.
 Osobne: kolejność publikacji (pole n / n_de w katalogu), scenariusze, stan harmonogramu,
@@ -153,7 +154,101 @@ HI = Channel(
     },
 )
 
-CHANNELS = {"pl": PL, "de": DE, "en": EN, "hi": HI}
+# Kanały UK / RU / TR: instrukcje dla LLM po angielsku (jak hi), teksty dla widza w języku kanału.
+# Pola katalogu *_uk / *_ru / *_tr z fallbackiem na *_en; imiona i nazwiska cyrylicą — catalog/names_cyr.json.
+# NIE zweryfikowane przez native speakera: zapis ruchów, zwroty, teksty opisu (TR szczególnie).
+UK = Channel(
+    code="uk", tts="elevenlabs", voice_env="ELEVENLABS_VOICE_ID", order_key="n_uk", suffix="_uk",
+    state=ROOT / "state" / "schedule_uk.json", scripts=ROOT / "scripts_uk", out=ROOT / "out" / "uk",
+    tag_prefix="uk-", flag="🇺🇦", prompt=ROOT / "prompts" / "script_system_uk.md", country="ua", fallback="_en",
+    t={
+        "white": "Білі", "black": "Чорні", "year": "Рік", "event": "Змагання", "place": "Місце",
+        "round": "Тур/партія", "result": "Результат", "nickname": "Відома назва партії", "notes": "Примітки",
+        "white_side": "White", "black_side": "Black",
+        "table_head": "N | move | color | SAN | FEN before the move | eval after the move (+ = better for White)",
+        "engine_best": "engine's best reply", "none": "none", "mate": "mate", "over": "game over",
+        "pgn_headers": "PGN HEADERS", "plies": "HALF-MOVES ({n} total)", "facts": "FACTS (verified)",
+        "catalog_facts": "FACTS FROM THE CATALOG (verified)",
+        "no_facts": "FACTS: none — use only the PGN headers.",
+        "no_engine": "ENGINE EVALUATIONS: none — no verdicts like \"mistake\" or \"best move\".",
+        "write": "Write the episode script following the rules (narration in Ukrainian). Return JSON only.",
+        "fix": "Validation rejected the script (message in Polish):\n{err}\n\n"
+               "Fix it and return the whole script again, JSON only.",
+        "chapters": "Розділи:", "pgn": "Запис партії (PGN):", "photos": "Фото (Wikimedia Commons):",
+        "unknown_author": "автор невідомий", "photo_by": "фото:", "moves_header": "ХОДИ",
+        "verified": "Запис партії перевірено щонайменше у двох шахових базах. ",
+        "hashtags": "#шахи #chess #історіяшахів",
+        "tags": ["шахи", "chess", "шахова партія", "історія шахів", "відомі шахові партії"],
+        "year_tag": "шахи {year}",
+        "stage": {1: "Фінал", 2: "Півфінал", 4: "Чвертьфінал", 8: "1/8 фіналу", 16: "1/16 фіналу"},
+        "third": "Матч за 3-тє місце", "this_game": "ЦЯ ПАРТІЯ", "standings": "Таблиця перед цією партією",
+        "round_n": "Тур {n}", "pts": "оч.", "news_tags": ["шахи наживо", "шаховий турнір", "шахові новини"],
+        "news_hashtags": "#шахи #chess #шаховийтурнір",
+    },
+)
+
+RU = Channel(
+    code="ru", tts="elevenlabs", voice_env="ELEVENLABS_VOICE_ID", order_key="n_ru", suffix="_ru",
+    state=ROOT / "state" / "schedule_ru.json", scripts=ROOT / "scripts_ru", out=ROOT / "out" / "ru",
+    tag_prefix="ru-", flag="🇷🇺", prompt=ROOT / "prompts" / "script_system_ru.md", country="ru", fallback="_en",
+    t={
+        "white": "Белые", "black": "Чёрные", "year": "Год", "event": "Соревнование", "place": "Место",
+        "round": "Тур/партия", "result": "Результат", "nickname": "Известное название партии", "notes": "Примечания",
+        "white_side": "White", "black_side": "Black",
+        "table_head": "N | move | color | SAN | FEN before the move | eval after the move (+ = better for White)",
+        "engine_best": "engine's best reply", "none": "none", "mate": "mate", "over": "game over",
+        "pgn_headers": "PGN HEADERS", "plies": "HALF-MOVES ({n} total)", "facts": "FACTS (verified)",
+        "catalog_facts": "FACTS FROM THE CATALOG (verified)",
+        "no_facts": "FACTS: none — use only the PGN headers.",
+        "no_engine": "ENGINE EVALUATIONS: none — no verdicts like \"mistake\" or \"best move\".",
+        "write": "Write the episode script following the rules (narration in Russian). Return JSON only.",
+        "fix": "Validation rejected the script (message in Polish):\n{err}\n\n"
+               "Fix it and return the whole script again, JSON only.",
+        "chapters": "Главы:", "pgn": "Запись партии (PGN):", "photos": "Фото (Wikimedia Commons):",
+        "unknown_author": "автор неизвестен", "photo_by": "фото:", "moves_header": "ХОДЫ",
+        "verified": "Запись партии проверена как минимум в двух шахматных базах. ",
+        "hashtags": "#шахматы #chess #историяшахмат",
+        "tags": ["шахматы", "chess", "шахматная партия", "история шахмат", "знаменитые шахматные партии"],
+        "year_tag": "шахматы {year}",
+        "stage": {1: "Финал", 2: "Полуфинал", 4: "Четвертьфинал", 8: "1/8 финала", 16: "1/16 финала"},
+        "third": "Матч за 3-е место", "this_game": "ЭТА ПАРТИЯ", "standings": "Таблица перед этой партией",
+        "round_n": "Тур {n}", "pts": "оч.", "news_tags": ["шахматы онлайн", "шахматный турнир", "шахматные новости"],
+        "news_hashtags": "#шахматы #chess #шахматныйтурнир",
+    },
+)
+
+TR = Channel(
+    code="tr", tts="elevenlabs", voice_env="ELEVENLABS_VOICE_ID", order_key="n_tr", suffix="_tr",
+    state=ROOT / "state" / "schedule_tr.json", scripts=ROOT / "scripts_tr", out=ROOT / "out" / "tr",
+    tag_prefix="tr-", flag="🇹🇷", prompt=ROOT / "prompts" / "script_system_tr.md", country="tr", fallback="_en",
+    t={
+        "white": "Beyaz", "black": "Siyah", "year": "Yıl", "event": "Turnuva", "place": "Yer",
+        "round": "Tur/oyun", "result": "Sonuç", "nickname": "Bilinen adı", "notes": "Notlar",
+        "white_side": "White", "black_side": "Black",
+        "table_head": "N | move | color | SAN | FEN before the move | eval after the move (+ = better for White)",
+        "engine_best": "engine's best reply", "none": "none", "mate": "mate", "over": "game over",
+        "pgn_headers": "PGN HEADERS", "plies": "HALF-MOVES ({n} total)", "facts": "FACTS (verified)",
+        "catalog_facts": "FACTS FROM THE CATALOG (verified)",
+        "no_facts": "FACTS: none — use only the PGN headers.",
+        "no_engine": "ENGINE EVALUATIONS: none — no verdicts like \"mistake\" or \"best move\".",
+        "write": "Write the episode script following the rules (narration in Turkish). Return JSON only.",
+        "fix": "Validation rejected the script (message in Polish):\n{err}\n\n"
+               "Fix it and return the whole script again, JSON only.",
+        "chapters": "Bölümler:", "pgn": "Oyun kaydı (PGN):", "photos": "Fotoğraflar (Wikimedia Commons):",
+        "unknown_author": "yazarı bilinmiyor", "photo_by": "foto:", "moves_header": "HAMLELER",
+        "verified": "Oyun kaydı en az iki satranç veritabanında kontrol edildi. ",
+        "hashtags": "#satranç #chess #satranctarihi",
+        "tags": ["satranç", "chess", "satranç oyunu", "satranç tarihi", "ünlü satranç oyunları"],
+        "year_tag": "satranç {year}",
+        "stage": {1: "Final", 2: "Yarı final", 4: "Çeyrek final", 8: "Son 16", 16: "Son 32"},
+        "third": "Üçüncülük maçı", "this_game": "BU OYUN", "standings": "Bu oyundan önceki puan durumu",
+        "round_n": "{n}. tur", "pts": "puan", "news_tags": ["canlı satranç", "satranç turnuvası", "satranç haberleri"],
+        "news_hashtags": "#satranç #chess #satrançturnuvası",
+    },
+)
+
+CHANNELS = {"pl": PL, "de": DE, "en": EN, "hi": HI, "uk": UK, "ru": RU, "tr": TR}
+LANG_NAME = {"uk": "Ukrainian", "ru": "Russian", "tr": "Turkish"}
 L = CHANNELS[os.environ.get("CHANNEL", "pl").strip().lower() or "pl"]
 
 
@@ -170,6 +265,13 @@ def field_(entry: dict | None, name: str):
 
 
 def moves_word(n: int) -> str:
+    if L.code in ("uk", "ru"):  # 1 хід / 2–4 ходи / 5+ ходів (ru: ход / хода / ходов)
+        forms = ("хід", "ходи", "ходів") if L.code == "uk" else ("ход", "хода", "ходов")
+        if n % 10 == 1 and n % 100 != 11:
+            return forms[0]
+        return forms[1] if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14) else forms[2]
+    if L.code == "tr":
+        return "hamle"
     if L.code == "hi":
         return "चाल" if n == 1 else "चालें"
     if L.code == "en":
@@ -186,7 +288,8 @@ def credit_author(author: str | None) -> str:
     a = author or L.t["unknown_author"]
     if L.code != "pl":
         a = a.replace("autor nieznany", L.t["unknown_author"]).replace(
-            "; oprac.", {"de": "; bearb.", "hi": "; संपादन"}.get(L.code, "; edited by"))
+            "; oprac.", {"de": "; bearb.", "hi": "; संपादन", "uk": "; обробка", "ru": "; обработка",
+                         "tr": "; düzenleme"}.get(L.code, "; edited by"))
     return a
 
 
@@ -198,6 +301,12 @@ def notation():
         import en_notation as mod
     elif L.code == "hi":
         import hi_notation as mod
+    elif L.code == "uk":
+        import uk_notation as mod
+    elif L.code == "ru":
+        import ru_notation as mod
+    elif L.code == "tr":
+        import tr_notation as mod
     else:
         import pl_notation as mod
     return mod

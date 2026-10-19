@@ -21,7 +21,13 @@
         "pgnmentor",
         "twic"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Кубок світу ФІДЕ 2021",
+      "event_uk": "Кубок світу ФІДЕ 2021",
+      "label_ru": "Кубок мира ФИДЕ 2021",
+      "event_ru": "Кубок мира ФИДЕ 2021",
+      "label_tr": "FIDE Dünya Kupası 2021",
+      "event_tr": "FIDE Dünya Kupası 2021"
     },
     {
       "n": 2,
@@ -46,7 +52,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Tata Steel Masters",
+      "event_uk": "Tata Steel Masters",
+      "label_ru": "Tata Steel Masters",
+      "event_ru": "Tata Steel Masters",
+      "label_tr": "Tata Steel Masters",
+      "event_tr": "Tata Steel Masters"
     },
     {
       "n": 3,
@@ -68,7 +80,13 @@
         "pgnmentor",
         "twic"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір претендентів ФІДЕ",
+      "event_uk": "Турнір претендентів ФІДЕ",
+      "label_ru": "Турнир претендентов ФИДЕ",
+      "event_ru": "Турнир претендентов ФИДЕ",
+      "label_tr": "FIDE Adaylar Turnuvası",
+      "event_tr": "FIDE Adaylar Turnuvası"
     },
     {
       "n": 4,
@@ -94,7 +112,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Карлсбаді",
+      "event_uk": "Турнір у Карлсбаді",
+      "label_ru": "Турнир в Карлсбаде",
+      "event_ru": "Турнир в Карлсбаде",
+      "label_tr": "Karlsbad turnuvası",
+      "event_tr": "Karlsbad turnuvası"
     },
     {
       "n": 5,
@@ -119,7 +143,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Бундесліга 2008/09",
+      "event_uk": "Бундесліга 2008/09",
+      "label_ru": "Бундеслига 2008/09",
+      "event_ru": "Бундеслига 2008/09",
+      "label_tr": "Bundesliga 2008/09",
+      "event_tr": "Bundesliga 2008/09"
     },
     {
       "n": 6,
@@ -145,7 +175,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Меморіал Рубінштейна",
+      "event_uk": "Меморіал Рубінштейна",
+      "label_ru": "Мемориал Рубинштейна",
+      "event_ru": "Мемориал Рубинштейна",
+      "label_tr": "Rubinstein Anma Turnuvası",
+      "event_tr": "Rubinstein Anma Turnuvası"
     },
     {
       "n": 7,
@@ -170,7 +206,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Tata Steel Masters",
+      "event_uk": "Tata Steel Masters",
+      "label_ru": "Tata Steel Masters",
+      "event_ru": "Tata Steel Masters",
+      "label_tr": "Tata Steel Masters",
+      "event_tr": "Tata Steel Masters"
     },
     {
       "n": 8,
@@ -191,7 +233,13 @@
       "pgn_sources": [
         "pgnmentor"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Tata Steel Masters",
+      "event_uk": "Tata Steel Masters",
+      "label_ru": "Tata Steel Masters",
+      "event_ru": "Tata Steel Masters",
+      "label_tr": "Tata Steel Masters",
+      "event_tr": "Tata Steel Masters"
     },
     {
       "n": 9,
@@ -213,7 +261,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Аерофлот Опен",
+      "event_uk": "Аерофлот Опен",
+      "label_ru": "Аэрофлот Опен",
+      "event_ru": "Аэрофлот Опен",
+      "label_tr": "Aeroflot Open",
+      "event_tr": "Aeroflot Open"
     },
     {
       "n": 10,
@@ -242,7 +296,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у П'єштяні",
+      "event_uk": "Турнір у П'єштяні",
+      "label_ru": "Турнир в Пьештяни",
+      "event_ru": "Турнир в Пьештяни",
+      "label_tr": "Piešťany turnuvası",
+      "event_tr": "Piešťany turnuvası"
     },
     {
       "n": 11,
@@ -267,7 +327,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Клубний кубок Європи",
+      "event_uk": "Клубний кубок Європи",
+      "label_ru": "Клубный кубок Европы",
+      "event_ru": "Клубный кубок Европы",
+      "label_tr": "Avrupa Kulüpler Kupası",
+      "event_tr": "Avrupa Kulüpler Kupası"
     },
     {
       "n": 12,
@@ -288,7 +354,13 @@
       "pgn_sources": [
         "pgnmentor"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Гран-прі ФІДЕ, Гамбург",
+      "event_uk": "Гран-прі ФІДЕ, Гамбург",
+      "label_ru": "Гран-при ФИДЕ, Гамбург",
+      "event_ru": "Гран-при ФИДЕ, Гамбург",
+      "label_tr": "FIDE Grand Prix Hamburg",
+      "event_tr": "FIDE Grand Prix Hamburg"
     },
     {
       "n": 13,
@@ -313,7 +385,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Гронінгені",
+      "event_uk": "Турнір у Гронінгені",
+      "label_ru": "Турнир в Гронингене",
+      "event_ru": "Турнир в Гронингене",
+      "label_tr": "Groningen turnuvası",
+      "event_tr": "Groningen turnuvası"
     },
     {
       "n": 14,
@@ -335,7 +413,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Особистий чемпіонат Європи",
+      "event_uk": "Особистий чемпіонат Європи",
+      "label_ru": "Личный чемпионат Европы",
+      "event_ru": "Личный чемпионат Европы",
+      "label_tr": "Avrupa Bireysel Şampiyonası",
+      "event_tr": "Avrupa Bireysel Şampiyonası"
     },
     {
       "n": 15,
@@ -357,7 +441,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Сан-Себастьяні",
+      "event_uk": "Турнір у Сан-Себастьяні",
+      "label_ru": "Турнир в Сан-Себастьяне",
+      "event_ru": "Турнир в Сан-Себастьяне",
+      "label_tr": "San Sebastián turnuvası",
+      "event_tr": "San Sebastián turnuvası"
     },
     {
       "n": 16,
@@ -381,7 +471,13 @@
       "pgn_sources": [
         "twic"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Prague Masters",
+      "event_uk": "Prague Masters",
+      "label_ru": "Prague Masters",
+      "event_ru": "Prague Masters",
+      "label_tr": "Prague Masters",
+      "event_tr": "Prague Masters"
     },
     {
       "n": 17,
@@ -406,7 +502,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Чемпіонат світу ФІДЕ (нокаут)",
+      "event_uk": "Чемпіонат світу ФІДЕ (нокаут)",
+      "label_ru": "Чемпионат мира ФИДЕ (нокаут)",
+      "event_ru": "Чемпионат мира ФИДЕ (нокаут)",
+      "label_tr": "FIDE Dünya Şampiyonası (eleme)",
+      "event_tr": "FIDE Dünya Şampiyonası (eleme)"
     },
     {
       "n": 18,
@@ -428,7 +530,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Лондоні",
+      "event_uk": "Турнір у Лондоні",
+      "label_ru": "Турнир в Лондоне",
+      "event_ru": "Турнир в Лондоне",
+      "label_tr": "Londra turnuvası",
+      "event_tr": "Londra turnuvası"
     },
     {
       "n": 19,
@@ -450,7 +558,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Лондоні",
+      "event_uk": "Турнір у Лондоні",
+      "label_ru": "Турнир в Лондоне",
+      "event_ru": "Турнир в Лондоне",
+      "label_tr": "Londra turnuvası",
+      "event_tr": "Londra turnuvası"
     },
     {
       "n": 20,
@@ -476,7 +590,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір претендентів",
+      "event_uk": "Турнір претендентів",
+      "label_ru": "Турнир претендентов",
+      "event_ru": "Турнир претендентов",
+      "label_tr": "Adaylar Turnuvası",
+      "event_tr": "Adaylar Turnuvası"
     },
     {
       "n": 21,
@@ -502,7 +622,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Меморіал Рубінштейна",
+      "event_uk": "Меморіал Рубінштейна",
+      "label_ru": "Мемориал Рубинштейна",
+      "event_ru": "Мемориал Рубинштейна",
+      "label_tr": "Rubinstein Anma Turnuvası",
+      "event_tr": "Rubinstein Anma Turnuvası"
     },
     {
       "n": 22,
@@ -527,7 +653,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Франкфурті",
+      "event_uk": "Турнір у Франкфурті",
+      "label_ru": "Турнир во Франкфурте",
+      "event_ru": "Турнир во Франкфурте",
+      "label_tr": "Frankfurt turnuvası",
+      "event_tr": "Frankfurt turnuvası"
     },
     {
       "n": 23,
@@ -552,7 +684,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Будапешті",
+      "event_uk": "Турнір у Будапешті",
+      "label_ru": "Турнир в Будапеште",
+      "event_ru": "Турнир в Будапеште",
+      "label_tr": "Budapeşte turnuvası",
+      "event_tr": "Budapeşte turnuvası"
     }
   ]
 }

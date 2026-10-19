@@ -130,6 +130,14 @@ Pliki:
   widza w hindi), phrases/CTA hi (forma "हम"), scripts_hi/, out/hi/, state/schedule_hi.json, tag hi-, flaga 🇮🇳, "swój" = in;
   .github/workflows/publish_hi.yml — cron 08:17 UTC, publikacja 18:00 Asia/Kolkata; news.yml / news_watch obsługują hi.
   NIE zweryfikowane przez native speakera: nazwy figur, zwroty, teksty opisu — odsłuchać 1–2 pierwsze odcinki.
+- KANAŁY UK / RU / TR (19.10.2026): CHANNEL=uk|ru|tr, ElevenLabs (ELEVENLABS_VOICE_ID_UK/RU/TR), upload na YouTube
+  (YT_REFRESH_TOKEN_UK/RU/TR, PUBLISH_MODE=youtube), .github/workflows/publish_{uk,ru,tr}.yml (18:00 Europe/Kyiv / Moscow /
+  Istanbul). Kolejność n_uk/n_ru/n_tr (seed 20261005–7, tasowanie w blokach po 10). Pola katalogu label_/event_{uk,ru,tr}
+  (tłumaczenie label_en), fallback _en. Imiona/nazwiska cyrylicą: catalog/names_cyr.json (players.cyrillic) + surnames.json
+  uk/ru. Zapis ruchów: uk_notation.py ("кінь еф три", "слон бере еф сім"; ekran Кр Ф Т С К), ru_notation.py ("конь эф три",
+  "берёт"; Кр Ф Л С К), tr_notation.py ("At fe üçe", "Fil fe yediyi alır"; Ş V K F A). RAW_MOVE_RE łapie też Кр/Ф/Т/Л/С/К
+  i Ş/V/K/F/A. Prompty script_system_{uk,ru,tr}.md (instrukcje EN, tekst w języku kanału). Kraj "swój": ua / ru / tr
+  (katalogi krajowe jeszcze brak). NIE zweryfikowane przez native speakera (TR szczególnie) — odsłuchać.
 - src/tts_elevenlabs.py — ElevenLabs /v1/text-to-speech/{voice}/with-timestamps (alignment znaków -> słowa), ELEVENLABS_MODEL
   (domyślnie eleven_multilingual_v2); NIE zweryfikowane na prawdziwym kluczu
 - .github/workflows/publish_de.yml — kanał niemiecki, cron 04:47 UTC, własna grupa concurrency (publish-de; wspólna grupa kasowała oczekujące runy innych kanałów); bez klucza ElevenLabs pomija.

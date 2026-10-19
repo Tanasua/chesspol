@@ -24,7 +24,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч за звання чемпіона світу PCA · партія 9",
+      "event_uk": "Матч за звання чемпіона світу PCA · партія 9",
+      "label_ru": "Матч за звание чемпиона мира PCA · партия 9",
+      "event_ru": "Матч за звание чемпиона мира PCA · партия 9",
+      "label_tr": "PCA Dünya Şampiyonluğu maçı · 9. oyun",
+      "event_tr": "PCA Dünya Şampiyonluğu maçı · 9. oyun"
     },
     {
       "n": 2,
@@ -46,7 +52,13 @@
       "pgn_sources": [
         "twic"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Norway Chess",
+      "event_uk": "Norway Chess",
+      "label_ru": "Norway Chess",
+      "event_ru": "Norway Chess",
+      "label_tr": "Norway Chess",
+      "event_tr": "Norway Chess"
     },
     {
       "n": 3,
@@ -72,7 +84,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч у Лондоні · партія 3",
+      "event_uk": "Матч у Лондоні · партія 3",
+      "label_ru": "Матч в Лондоне · партия 3",
+      "event_ru": "Матч в Лондоне · партия 3",
+      "label_tr": "Londra maçı · 3. oyun",
+      "event_tr": "Londra maçı · 3. oyun"
     },
     {
       "n": 4,
@@ -99,7 +117,13 @@
       "pgn_sources": [
         "twic"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Шахова олімпіада",
+      "event_uk": "Шахова олімпіада",
+      "label_ru": "Шахматная олимпиада",
+      "event_ru": "Шахматная олимпиада",
+      "label_tr": "Satranç Olimpiyatı",
+      "event_tr": "Satranç Olimpiyatı"
     },
     {
       "n": 5,
@@ -121,7 +145,13 @@
       "pgn_sources": [
         "pgnmentor"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Турнір у Тілбурзі",
+      "event_uk": "Турнір у Тілбурзі",
+      "label_ru": "Турнир в Тилбурге",
+      "event_ru": "Турнир в Тилбурге",
+      "label_tr": "Tilburg turnuvası",
+      "event_tr": "Tilburg turnuvası"
     },
     {
       "n": 6,
@@ -145,7 +175,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Фінал чемпіонату світу ФІДЕ · партія 2",
+      "event_uk": "Фінал чемпіонату світу ФІДЕ · партія 2",
+      "label_ru": "Финал чемпионата мира ФИДЕ · партия 2",
+      "event_ru": "Финал чемпионата мира ФИДЕ · партия 2",
+      "label_tr": "FIDE Dünya Şampiyonası finali · 2. oyun",
+      "event_tr": "FIDE Dünya Şampiyonası finali · 2. oyun"
     },
     {
       "n": 7,
@@ -172,7 +208,13 @@
       "pgn_sources": [
         "twic"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Турнір претендентів",
+      "event_uk": "Турнір претендентів",
+      "label_ru": "Турнир претендентов",
+      "event_ru": "Турнир претендентов",
+      "label_tr": "Adaylar Turnuvası",
+      "event_tr": "Adaylar Turnuvası"
     },
     {
       "n": 8,
@@ -195,7 +237,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч за звання чемпіона світу · партія 8",
+      "event_uk": "Матч за звання чемпіона світу · партія 8",
+      "label_ru": "Матч за звание чемпиона мира · партия 8",
+      "event_ru": "Матч за звание чемпиона мира · партия 8",
+      "label_tr": "Dünya Şampiyonluğu maçı · 8. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 8. oyun"
     },
     {
       "n": 9,
@@ -217,7 +265,13 @@
       "pgn_sources": [
         "twic"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Кубок світу ФІДЕ, півфінал, тай-брейк",
+      "event_uk": "Кубок світу ФІДЕ, півфінал, тай-брейк",
+      "label_ru": "Кубок мира ФИДЕ, полуфинал, тай-брейк",
+      "event_ru": "Кубок мира ФИДЕ, полуфинал, тай-брейк",
+      "label_tr": "FIDE Dünya Kupası, yarı final, eşitlik bozma",
+      "event_tr": "FIDE Dünya Kupası, yarı final, eşitlik bozma"
     },
     {
       "n": 10,
@@ -240,7 +294,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч за звання чемпіона світу · партія 6",
+      "event_uk": "Матч за звання чемпіона світу · партія 6",
+      "label_ru": "Матч за звание чемпиона мира · партия 6",
+      "event_ru": "Матч за звание чемпиона мира · партия 6",
+      "label_tr": "Dünya Şampiyonluğu maçı · 6. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 6. oyun"
     },
     {
       "n": 11,
@@ -263,7 +323,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Шахова олімпіада",
+      "event_uk": "Шахова олімпіада",
+      "label_ru": "Шахматная олимпиада",
+      "event_ru": "Шахматная олимпиада",
+      "label_tr": "Satranç Olimpiyatı",
+      "event_tr": "Satranç Olimpiyatı"
     },
     {
       "n": 12,
@@ -286,7 +352,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч за звання чемпіона світу · партія 4",
+      "event_uk": "Матч за звання чемпіона світу · партія 4",
+      "label_ru": "Матч за звание чемпиона мира · партия 4",
+      "event_ru": "Матч за звание чемпиона мира · партия 4",
+      "label_tr": "Dünya Şampiyonluğu maçı · 4. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 4. oyun"
     },
     {
       "n": 13,
@@ -309,7 +381,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч за звання чемпіона світу · партія 3",
+      "event_uk": "Матч за звання чемпіона світу · партія 3",
+      "label_ru": "Матч за звание чемпиона мира · партия 3",
+      "event_ru": "Матч за звание чемпиона мира · партия 3",
+      "label_tr": "Dünya Şampiyonluğu maçı · 3. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 3. oyun"
     },
     {
       "n": 14,
@@ -335,7 +413,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Фінал претендентів PCA · партія 3",
+      "event_uk": "Фінал претендентів PCA · партія 3",
+      "label_ru": "Финал претендентов PCA · партия 3",
+      "event_ru": "Финал претендентов PCA · партия 3",
+      "label_tr": "PCA Adaylar finali · 3. oyun",
+      "event_tr": "PCA Adaylar finali · 3. oyun"
     },
     {
       "n": 15,
@@ -358,7 +442,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір претендентів",
+      "event_uk": "Турнір претендентів",
+      "label_ru": "Турнир претендентов",
+      "event_ru": "Турнир претендентов",
+      "label_tr": "Adaylar Turnuvası",
+      "event_tr": "Adaylar Turnuvası"
     },
     {
       "n": 16,
@@ -383,7 +473,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Чвертьфінал претендентів · партія 6",
+      "event_uk": "Чвертьфінал претендентів · партія 6",
+      "label_ru": "Четвертьфинал претендентов · партия 6",
+      "event_ru": "Четвертьфинал претендентов · партия 6",
+      "label_tr": "Adaylar çeyrek finali · 6. oyun",
+      "event_tr": "Adaylar çeyrek finali · 6. oyun"
     },
     {
       "n": 17,
@@ -406,7 +502,13 @@
         "kingbase",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч-турнір на першість світу",
+      "event_uk": "Матч-турнір на першість світу",
+      "label_ru": "Матч-турнир на первенство мира",
+      "event_ru": "Матч-турнир на первенство мира",
+      "label_tr": "Dünya Şampiyonası turnuvası",
+      "event_tr": "Dünya Şampiyonası turnuvası"
     },
     {
       "n": 18,
@@ -430,7 +532,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Чемпіонат світу ФІДЕ",
+      "event_uk": "Чемпіонат світу ФІДЕ",
+      "label_ru": "Чемпионат мира ФИДЕ",
+      "event_ru": "Чемпионат мира ФИДЕ",
+      "label_tr": "FIDE Dünya Şampiyonası",
+      "event_tr": "FIDE Dünya Şampiyonası"
     },
     {
       "n": 19,
@@ -456,7 +564,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Лондоні",
+      "event_uk": "Турнір у Лондоні",
+      "label_ru": "Турнир в Лондоне",
+      "event_ru": "Турнир в Лондоне",
+      "label_tr": "Londra turnuvası",
+      "event_tr": "Londra turnuvası"
     }
   ]
 }

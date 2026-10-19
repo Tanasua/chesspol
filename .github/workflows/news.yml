@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       channel:
-        description: "Kanał: pl, de, en, hi albo all (wszystkie po kolei w jednym runie)"
+        description: "Kanał: pl, de, en, hi, uk, ru, tr albo all (wszystkie po kolei w jednym runie)"
         default: "pl"
       tournament:
         description: "Nazwa turnieju albo link lichess.org/broadcast/…"
@@ -50,7 +50,7 @@ jobs:
 
       - name: Produce news episode
         env:
-          CHANNELS: ${{ inputs.channel == 'all' && 'pl de en hi' || inputs.channel }}
+          CHANNELS: ${{ inputs.channel == 'all' && 'pl de en hi uk ru tr' || inputs.channel }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           INWORLD_API_KEY: ${{ secrets.INWORLD_API_KEY }}
           INWORLD_VOICE_ID: ${{ secrets.INWORLD_VOICE_ID }}
@@ -60,11 +60,17 @@ jobs:
           VOICE_DE: ${{ secrets.ELEVENLABS_VOICE_ID_DE }}
           VOICE_EN: ${{ secrets.ELEVENLABS_VOICE_ID_EN }}
           VOICE_HI: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}
+          VOICE_UK: ${{ secrets.ELEVENLABS_VOICE_ID_UK }}
+          VOICE_RU: ${{ secrets.ELEVENLABS_VOICE_ID_RU }}
+          VOICE_TR: ${{ secrets.ELEVENLABS_VOICE_ID_TR }}
           ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
           HOST_PL: ${{ vars.HOST_NAME }}
           HOST_DE: ${{ vars.HOST_NAME_DE }}
           HOST_EN: ${{ vars.HOST_NAME_EN }}
           HOST_HI: ${{ vars.HOST_NAME_HI }}
+          HOST_UK: ${{ vars.HOST_NAME_UK }}
+          HOST_RU: ${{ vars.HOST_NAME_RU }}
+          HOST_TR: ${{ vars.HOST_NAME_TR }}
           STOCKFISH_PATH: /usr/games/stockfish
           GH_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -83,6 +89,9 @@ jobs:
               de) V=$VOICE_DE; HN=$HOST_DE ;;
               en) V=$VOICE_EN; HN=$HOST_EN ;;
               hi) V=$VOICE_HI; HN=$HOST_HI ;;
+              uk) V=$VOICE_UK; HN=$HOST_UK ;;
+              ru) V=$VOICE_RU; HN=$HOST_RU ;;
+              tr) V=$VOICE_TR; HN=$HOST_TR ;;
               *)  V=$VOICE_DE; HN=$HOST_PL ;;
             esac
             CHANNEL=$ch ELEVENLABS_VOICE_ID=$V HOST_NAME=$HN python src/news.py "${ARGS[@]}" 2>&1 | tee -a /tmp/produce.log || rc=1
@@ -95,7 +104,7 @@ jobs:
         run: |
           git config user.name "episode-bot"
           git config user.email "episode-bot@users.noreply.github.com"
-          for p in catalog/news.json games/news facts scripts scripts_de scripts_en scripts_hi assets/players; do [ -e "$p" ] && git add "$p"; done
+          for p in catalog/news.json games/news facts scripts scripts_de scripts_en scripts_hi scripts_uk scripts_ru scripts_tr assets/players; do [ -e "$p" ] && git add "$p"; done
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "bot: news episode"
           for i in 1 2 3 4; do git pull --rebase && git push && exit 0; sleep $((2**i)); done

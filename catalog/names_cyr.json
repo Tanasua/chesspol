@@ -1,0 +1,1207 @@
+{
+ "_about": "Imiona i nazwiska cyrylicą dla kanałów uk/ru: pełna nazwa z katalogu/PGN -> [imię, nazwisko]. Pisownia wg ukr./ros. tradycji szachowej; NIE zweryfikowane przez native speakera.",
+ "uk": {
+  "Adolf Anderssen": [
+   "Адольф",
+   "Андерсен"
+  ],
+  "Akiba Rubinstein": [
+   "Акіба",
+   "Рубінштейн"
+  ],
+  "Alexander Alekhine": [
+   "Олександр",
+   "Алехін"
+  ],
+  "Alexander Beliavsky": [
+   "Олександр",
+   "Бєлявський"
+  ],
+  "Alexander Kotov": [
+   "Олександр",
+   "Котов"
+  ],
+  "Alexander McDonnell": [
+   "Александер",
+   "Макдоннелл"
+  ],
+  "Alexander Morozevich": [
+   "Олександр",
+   "Морозевич"
+  ],
+  "Alexei Shirov": [
+   "Олексій",
+   "Широв"
+  ],
+  "Alireza Firouzja": [
+   "Аліреза",
+   "Фіруджа"
+  ],
+  "AlphaZero": [
+   "",
+   "AlphaZero"
+  ],
+  "Anatoly Karpov": [
+   "Анатолій",
+   "Карпов"
+  ],
+  "Andor Lilienthal": [
+   "Андор",
+   "Ліліенталь"
+  ],
+  "Arkadij Naiditsch": [
+   "Аркадій",
+   "Найдіч"
+  ],
+  "Aron Nimzowitsch": [
+   "Арон",
+   "Німцович"
+  ],
+  "Arthur de Winter": [
+   "Артур",
+   "де Вінтер"
+  ],
+  "Artur Yusupov": [
+   "Артур",
+   "Юсупов"
+  ],
+  "Bartosz Soćko": [
+   "Бартош",
+   "Соцко"
+  ],
+  "Bent Larsen": [
+   "Бент",
+   "Ларсен"
+  ],
+  "Boris Gelfand": [
+   "Борис",
+   "Гельфанд"
+  ],
+  "Boris Spassky": [
+   "Борис",
+   "Спаський"
+  ],
+  "Carl Hamppe": [
+   "Карл",
+   "Гамппе"
+  ],
+  "Carl Schlechter": [
+   "Карл",
+   "Шлехтер"
+  ],
+  "Carlos Torre Repetto": [
+   "Карлос",
+   "Торре"
+  ],
+  "Christopher Lutz": [
+   "Крістофер",
+   "Лутц"
+  ],
+  "Curt von Bardeleben": [
+   "Курт",
+   "фон Барделебен"
+  ],
+  "David Anton Guijarro": [
+   "Давид",
+   "Антон Гіхарро"
+  ],
+  "David Bronstein": [
+   "Давид",
+   "Бронштейн"
+  ],
+  "Dawid Przepiórka": [
+   "Давид",
+   "Пшепюрка"
+  ],
+  "Deep Blue": [
+   "",
+   "Deep Blue"
+  ],
+  "Deep Fritz": [
+   "",
+   "Deep Fritz"
+  ],
+  "Ding Liren": [
+   "",
+   "Дін Ліжень"
+  ],
+  "Donald Byrne": [
+   "Дональд",
+   "Бірн"
+  ],
+  "Duke Karl of Brunswick & Count Isouard": [
+   "",
+   "Герцог Брауншвейзький і граф Ізуар"
+  ],
+  "Edward Lasker": [
+   "Едвард",
+   "Ласкер"
+  ],
+  "Efim Bogoljubov": [
+   "Юхим",
+   "Боголюбов"
+  ],
+  "Efim Geller": [
+   "Юхим",
+   "Геллер"
+  ],
+  "Emanuel Lasker": [
+   "Емануїл",
+   "Ласкер"
+  ],
+  "Fabiano Caruana": [
+   "Фабіано",
+   "Каруана"
+  ],
+  "Frank James Marshall": [
+   "Френк",
+   "Маршалл"
+  ],
+  "Frank Marshall": [
+   "Френк",
+   "Маршалл"
+  ],
+  "Friedrich Sämisch": [
+   "Фрідріх",
+   "Земіш"
+  ],
+  "Fritz Sämisch": [
+   "Фріц",
+   "Земіш"
+  ],
+  "Garry Kasparov": [
+   "Гаррі",
+   "Каспаров"
+  ],
+  "Gata Kamsky": [
+   "Гата",
+   "Камський"
+  ],
+  "Georg Rotlewi": [
+   "Георг",
+   "Ротлеві"
+  ],
+  "George Alan Thomas": [
+   "Джордж Алан",
+   "Томас"
+  ],
+  "Glücksberg": [
+   "",
+   "Глюксберг"
+  ],
+  "Gukesh Dommaraju": [
+   "",
+   "Гукеш"
+  ],
+  "Gukesh D": [
+   "",
+   "Гукеш"
+  ],
+  "Hans-Joachim Hecht": [
+   "Ганс-Йоахім",
+   "Гехт"
+  ],
+  "Harry Nelson Pillsbury": [
+   "Гаррі Нельсон",
+   "Пільсбері"
+  ],
+  "Huang Renjie": [
+   "",
+   "Хуан Женьцзе"
+  ],
+  "Ian Nepomniachtchi": [
+   "Ян",
+   "Непомнящий"
+  ],
+  "Ihor Samunenkov": [
+   "Ігор",
+   "Самуненков"
+  ],
+  "Jan Timman": [
+   "Ян",
+   "Тімман"
+  ],
+  "Jan-Krzysztof Duda": [
+   "Ян-Кшиштоф",
+   "Дуда"
+  ],
+  "Jean Dufresne": [
+   "Жан",
+   "Дюфрен"
+  ],
+  "Johann Hermann Bauer": [
+   "Йоганн Германн",
+   "Бауер"
+  ],
+  "Johannes Zukertort": [
+   "Йоганнес",
+   "Цукерторт"
+  ],
+  "John Nunn": [
+   "Джон",
+   "Нанн"
+  ],
+  "Joseph Henry Blackburne": [
+   "Джозеф Генрі",
+   "Блекберн"
+  ],
+  "José Raúl Capablanca": [
+   "Хосе Рауль",
+   "Капабланка"
+  ],
+  "José Sanz Aguado": [
+   "Хосе",
+   "Санс"
+  ],
+  "Judit Polgar": [
+   "Юдіт",
+   "Полгар"
+  ],
+  "Klaus Darga": [
+   "Клаус",
+   "Дарга"
+  ],
+  "Lajos Portisch": [
+   "Лайош",
+   "Портіш"
+  ],
+  "Larry Christiansen": [
+   "Ларрі",
+   "Крістіансен"
+  ],
+  "Lazaro Bruzon Batista": [
+   "Ласаро",
+   "Брусон"
+  ],
+  "Lev Polugaevsky": [
+   "Лев",
+   "Полугаєвський"
+  ],
+  "Levon Aronian": [
+   "Левон",
+   "Аронян"
+  ],
+  "Lionel Kieseritzky": [
+   "Ліонель",
+   "Кізерицький"
+  ],
+  "Louis Paulsen": [
+   "Луї",
+   "Паульсен"
+  ],
+  "Louis-Charles Mahé de La Bourdonnais": [
+   "Луї-Шарль",
+   "де Лабурдоне"
+  ],
+  "Luděk Pachman": [
+   "Людек",
+   "Пахман"
+  ],
+  "Magnus Carlsen": [
+   "Магнус",
+   "Карлсен"
+  ],
+  "Martín Ortueta Esteban": [
+   "Мартін",
+   "Ортуета"
+  ],
+  "Mateusz Bartel": [
+   "Матеуш",
+   "Бартель"
+  ],
+  "Max Euwe": [
+   "Макс",
+   "Ейве"
+  ],
+  "Maxime Lagarde": [
+   "Максім",
+   "Лагард"
+  ],
+  "Michael Adams": [
+   "Майкл",
+   "Адамс"
+  ],
+  "Michał Krasenkow": [
+   "Міхал",
+   "Красенков"
+  ],
+  "Miguel Najdorf": [
+   "Мігель",
+   "Найдорф"
+  ],
+  "Mikhail Botvinnik": [
+   "Михайло",
+   "Ботвинник"
+  ],
+  "Mikhail Chigorin": [
+   "Михайло",
+   "Чигорін"
+  ],
+  "Mikhail Tal": [
+   "Михайло",
+   "Таль"
+  ],
+  "Mir Sultan Khan": [
+   "Мір",
+   "Султан Хан"
+  ],
+  "Nataliia Movchan": [
+   "Наталія",
+   "Мовчан"
+  ],
+  "Nigel Short": [
+   "Найджел",
+   "Шорт"
+  ],
+  "Oleg Chernikov": [
+   "Олег",
+   "Черніков"
+  ],
+  "Ossip Bernstein": [
+   "Осип",
+   "Бернштейн"
+  ],
+  "Pal Benko": [
+   "Пал",
+   "Бенко"
+  ],
+  "Paul Keres": [
+   "Пауль",
+   "Керес"
+  ],
+  "Paul Morphy": [
+   "Пол",
+   "Морфі"
+  ],
+  "Paweł Jaracz": [
+   "Павел",
+   "Ярач"
+  ],
+  "Pentala Harikrishna": [
+   "Пентала",
+   "Харікрішна"
+  ],
+  "Peter Leko": [
+   "Петер",
+   "Леко"
+  ],
+  "Peter Svidler": [
+   "Петро",
+   "Свідлер"
+  ],
+  "Philipp Meitner": [
+   "Філіпп",
+   "Мейтнер"
+  ],
+  "Praggnanandhaa": [
+   "",
+   "Прагнанандха"
+  ],
+  "Praggnanandhaa R": [
+   "",
+   "Прагнанандха"
+  ],
+  "Pranav Anand": [
+   "Пранав",
+   "Ананд"
+  ],
+  "Radosław Wojtaszek": [
+   "Радослав",
+   "Войташек"
+  ],
+  "Rameshbabu Praggnanandhaa": [
+   "",
+   "Прагнанандха"
+  ],
+  "Rashid Nezhmetdinov": [
+   "Рашид",
+   "Нежметдінов"
+  ],
+  "Reuben Fine": [
+   "Рубен",
+   "Файн"
+  ],
+  "Richard Réti": [
+   "Ріхард",
+   "Реті"
+  ],
+  "Robert Eugene Byrne": [
+   "Роберт",
+   "Бірн"
+  ],
+  "Robert Hübner": [
+   "Роберт",
+   "Гюбнер"
+  ],
+  "Robert James Fischer": [
+   "Роберт",
+   "Фішер"
+  ],
+  "Ruben Gideon Koellner": [
+   "Рубен Гідеон",
+   "Кельнер"
+  ],
+  "Salo Flohr": [
+   "Сало",
+   "Флор"
+  ],
+  "Samuel Reshevsky": [
+   "Семюел",
+   "Решевський"
+  ],
+  "Savielly Tartakower": [
+   "Савелій",
+   "Тартаковер"
+  ],
+  "Sergey Karjakin": [
+   "Сергій",
+   "Карякін"
+  ],
+  "Siegbert Tarrasch": [
+   "Зігберт",
+   "Тарраш"
+  ],
+  "Sipke Ernst": [
+   "Сіпке",
+   "Ернст"
+  ],
+  "Stepan Levitsky": [
+   "Степан",
+   "Левицький"
+  ],
+  "Stockfish 8": [
+   "",
+   "Stockfish 8"
+  ],
+  "Szymon Winawer": [
+   "Шимон",
+   "Вінавер"
+  ],
+  "The World": [
+   "",
+   "Світ"
+  ],
+  "Tigran Petrosian": [
+   "Тигран",
+   "Петросян"
+  ],
+  "Vasily Smyslov": [
+   "Василь",
+   "Смислов"
+  ],
+  "Vassily Ivanchuk": [
+   "Василь",
+   "Іванчук"
+  ],
+  "Veselin Topalov": [
+   "Веселин",
+   "Топалов"
+  ],
+  "Viktor Korchnoi": [
+   "Віктор",
+   "Корчной"
+  ],
+  "Vincent Keymer": [
+   "Вінсент",
+   "Каймер"
+  ],
+  "Viswanathan Anand": [
+   "Вішванатан",
+   "Ананд"
+  ],
+  "Vladimir Kramnik": [
+   "Володимир",
+   "Крамник"
+  ],
+  "Wei Yi": [
+   "",
+   "Вей Ї"
+  ],
+  "Wilhelm Steinitz": [
+   "Вільгельм",
+   "Стейніц"
+  ],
+  "Wolfgang Unzicker": [
+   "Вольфганг",
+   "Унцикер"
+  ],
+  "Yasser Seirawan": [
+   "Ясер",
+   "Сейраван"
+  ],
+  "Yu Yangyi": [
+   "",
+   "Юй Янъї"
+  ],
+  "Yuri Averbakh": [
+   "Юрій",
+   "Авербах"
+  ],
+  "Wesley So": [
+   "Веслі",
+   "Со"
+  ],
+  "Hikaru Nakamura": [
+   "Хікару",
+   "Накамура"
+  ],
+  "Javokhir Sindarov": [
+   "Джавохір",
+   "Сіндаров"
+  ],
+  "Nodirbek Abdusattorov": [
+   "Нодірбек",
+   "Абдусатторов"
+  ],
+  "Anish Giri": [
+   "Аніш",
+   "Гірі"
+  ],
+  "Arjun Erigaisi": [
+   "Арджун",
+   "Ерігайсі"
+  ],
+  "Maxime Vachier-Lagrave": [
+   "Максім",
+   "Ваш'є-Лаграв"
+  ],
+  "Shakhriyar Mamedyarov": [
+   "Шахріяр",
+   "Мамедьяров"
+  ],
+  "Teimour Radjabov": [
+   "Теймур",
+   "Раджабов"
+  ],
+  "Anna Muzychuk": [
+   "Анна",
+   "Музичук"
+  ],
+  "Mariya Muzychuk": [
+   "Марія",
+   "Музичук"
+  ],
+  "Ruslan Ponomariov": [
+   "Руслан",
+   "Пономарьов"
+  ],
+  "Pavel Eljanov": [
+   "Павло",
+   "Ельянов"
+  ],
+  "Anton Korobov": [
+   "Антон",
+   "Коробов"
+  ],
+  "Andrei Volokitin": [
+   "Андрій",
+   "Волокітін"
+  ],
+  "Daniil Dubov": [
+   "Даниїл",
+   "Дубов"
+  ]
+ },
+ "ru": {
+  "Adolf Anderssen": [
+   "Адольф",
+   "Андерсен"
+  ],
+  "Akiba Rubinstein": [
+   "Акиба",
+   "Рубинштейн"
+  ],
+  "Alexander Alekhine": [
+   "Александр",
+   "Алехин"
+  ],
+  "Alexander Beliavsky": [
+   "Александр",
+   "Белявский"
+  ],
+  "Alexander Kotov": [
+   "Александр",
+   "Котов"
+  ],
+  "Alexander McDonnell": [
+   "Александер",
+   "Макдоннелл"
+  ],
+  "Alexander Morozevich": [
+   "Александр",
+   "Морозевич"
+  ],
+  "Alexei Shirov": [
+   "Алексей",
+   "Широв"
+  ],
+  "Alireza Firouzja": [
+   "Алиреза",
+   "Фирузджа"
+  ],
+  "AlphaZero": [
+   "",
+   "AlphaZero"
+  ],
+  "Anatoly Karpov": [
+   "Анатолий",
+   "Карпов"
+  ],
+  "Andor Lilienthal": [
+   "Андор",
+   "Лилиенталь"
+  ],
+  "Arkadij Naiditsch": [
+   "Аркадий",
+   "Найдич"
+  ],
+  "Aron Nimzowitsch": [
+   "Арон",
+   "Нимцович"
+  ],
+  "Arthur de Winter": [
+   "Артур",
+   "де Винтер"
+  ],
+  "Artur Yusupov": [
+   "Артур",
+   "Юсупов"
+  ],
+  "Bartosz Soćko": [
+   "Бартош",
+   "Соцко"
+  ],
+  "Bent Larsen": [
+   "Бент",
+   "Ларсен"
+  ],
+  "Boris Gelfand": [
+   "Борис",
+   "Гельфанд"
+  ],
+  "Boris Spassky": [
+   "Борис",
+   "Спасский"
+  ],
+  "Carl Hamppe": [
+   "Карл",
+   "Гамппе"
+  ],
+  "Carl Schlechter": [
+   "Карл",
+   "Шлехтер"
+  ],
+  "Carlos Torre Repetto": [
+   "Карлос",
+   "Торре"
+  ],
+  "Christopher Lutz": [
+   "Кристофер",
+   "Лутц"
+  ],
+  "Curt von Bardeleben": [
+   "Курт",
+   "фон Барделебен"
+  ],
+  "David Anton Guijarro": [
+   "Давид",
+   "Антон Гихарро"
+  ],
+  "David Bronstein": [
+   "Давид",
+   "Бронштейн"
+  ],
+  "Dawid Przepiórka": [
+   "Давид",
+   "Пшепюрка"
+  ],
+  "Deep Blue": [
+   "",
+   "Deep Blue"
+  ],
+  "Deep Fritz": [
+   "",
+   "Deep Fritz"
+  ],
+  "Ding Liren": [
+   "",
+   "Дин Лижэнь"
+  ],
+  "Donald Byrne": [
+   "Дональд",
+   "Бирн"
+  ],
+  "Duke Karl of Brunswick & Count Isouard": [
+   "",
+   "Герцог Брауншвейгский и граф Изуар"
+  ],
+  "Edward Lasker": [
+   "Эдвард",
+   "Ласкер"
+  ],
+  "Efim Bogoljubov": [
+   "Ефим",
+   "Боголюбов"
+  ],
+  "Efim Geller": [
+   "Ефим",
+   "Геллер"
+  ],
+  "Emanuel Lasker": [
+   "Эмануил",
+   "Ласкер"
+  ],
+  "Fabiano Caruana": [
+   "Фабиано",
+   "Каруана"
+  ],
+  "Frank James Marshall": [
+   "Фрэнк",
+   "Маршалл"
+  ],
+  "Frank Marshall": [
+   "Фрэнк",
+   "Маршалл"
+  ],
+  "Friedrich Sämisch": [
+   "Фридрих",
+   "Земиш"
+  ],
+  "Fritz Sämisch": [
+   "Фриц",
+   "Земиш"
+  ],
+  "Garry Kasparov": [
+   "Гарри",
+   "Каспаров"
+  ],
+  "Gata Kamsky": [
+   "Гата",
+   "Камский"
+  ],
+  "Georg Rotlewi": [
+   "Георг",
+   "Ротлеви"
+  ],
+  "George Alan Thomas": [
+   "Джордж Алан",
+   "Томас"
+  ],
+  "Glücksberg": [
+   "",
+   "Глюксберг"
+  ],
+  "Gukesh Dommaraju": [
+   "",
+   "Гукеш"
+  ],
+  "Gukesh D": [
+   "",
+   "Гукеш"
+  ],
+  "Hans-Joachim Hecht": [
+   "Ханс-Йоахим",
+   "Хехт"
+  ],
+  "Harry Nelson Pillsbury": [
+   "Гарри Нельсон",
+   "Пильсбери"
+  ],
+  "Huang Renjie": [
+   "",
+   "Хуан Жэньцзе"
+  ],
+  "Ian Nepomniachtchi": [
+   "Ян",
+   "Непомнящий"
+  ],
+  "Ihor Samunenkov": [
+   "Игорь",
+   "Самуненков"
+  ],
+  "Jan Timman": [
+   "Ян",
+   "Тимман"
+  ],
+  "Jan-Krzysztof Duda": [
+   "Ян-Кшиштоф",
+   "Дуда"
+  ],
+  "Jean Dufresne": [
+   "Жан",
+   "Дюфрен"
+  ],
+  "Johann Hermann Bauer": [
+   "Иоганн Герман",
+   "Бауэр"
+  ],
+  "Johannes Zukertort": [
+   "Иоганн",
+   "Цукерторт"
+  ],
+  "John Nunn": [
+   "Джон",
+   "Нанн"
+  ],
+  "Joseph Henry Blackburne": [
+   "Джозеф Генри",
+   "Блэкберн"
+  ],
+  "José Raúl Capablanca": [
+   "Хосе Рауль",
+   "Капабланка"
+  ],
+  "José Sanz Aguado": [
+   "Хосе",
+   "Санс"
+  ],
+  "Judit Polgar": [
+   "Юдит",
+   "Полгар"
+  ],
+  "Klaus Darga": [
+   "Клаус",
+   "Дарга"
+  ],
+  "Lajos Portisch": [
+   "Лайош",
+   "Портиш"
+  ],
+  "Larry Christiansen": [
+   "Ларри",
+   "Кристиансен"
+  ],
+  "Lazaro Bruzon Batista": [
+   "Ласаро",
+   "Брусон"
+  ],
+  "Lev Polugaevsky": [
+   "Лев",
+   "Полугаевский"
+  ],
+  "Levon Aronian": [
+   "Левон",
+   "Аронян"
+  ],
+  "Lionel Kieseritzky": [
+   "Лионель",
+   "Кизерицкий"
+  ],
+  "Louis Paulsen": [
+   "Луи",
+   "Паульсен"
+  ],
+  "Louis-Charles Mahé de La Bourdonnais": [
+   "Луи-Шарль",
+   "де Лабурдоне"
+  ],
+  "Luděk Pachman": [
+   "Людек",
+   "Пахман"
+  ],
+  "Magnus Carlsen": [
+   "Магнус",
+   "Карлсен"
+  ],
+  "Martín Ortueta Esteban": [
+   "Мартин",
+   "Ортуэта"
+  ],
+  "Mateusz Bartel": [
+   "Матеуш",
+   "Бартель"
+  ],
+  "Max Euwe": [
+   "Макс",
+   "Эйве"
+  ],
+  "Maxime Lagarde": [
+   "Максим",
+   "Лагард"
+  ],
+  "Michael Adams": [
+   "Майкл",
+   "Адамс"
+  ],
+  "Michał Krasenkow": [
+   "Михал",
+   "Красенков"
+  ],
+  "Miguel Najdorf": [
+   "Мигель",
+   "Найдорф"
+  ],
+  "Mikhail Botvinnik": [
+   "Михаил",
+   "Ботвинник"
+  ],
+  "Mikhail Chigorin": [
+   "Михаил",
+   "Чигорин"
+  ],
+  "Mikhail Tal": [
+   "Михаил",
+   "Таль"
+  ],
+  "Mir Sultan Khan": [
+   "Мир",
+   "Султан Хан"
+  ],
+  "Nataliia Movchan": [
+   "Наталия",
+   "Мовчан"
+  ],
+  "Nigel Short": [
+   "Найджел",
+   "Шорт"
+  ],
+  "Oleg Chernikov": [
+   "Олег",
+   "Черников"
+  ],
+  "Ossip Bernstein": [
+   "Осип",
+   "Бернштейн"
+  ],
+  "Pal Benko": [
+   "Пал",
+   "Бенко"
+  ],
+  "Paul Keres": [
+   "Пауль",
+   "Керес"
+  ],
+  "Paul Morphy": [
+   "Пол",
+   "Морфи"
+  ],
+  "Paweł Jaracz": [
+   "Павел",
+   "Ярач"
+  ],
+  "Pentala Harikrishna": [
+   "Пентала",
+   "Харикришна"
+  ],
+  "Peter Leko": [
+   "Петер",
+   "Леко"
+  ],
+  "Peter Svidler": [
+   "Пётр",
+   "Свидлер"
+  ],
+  "Philipp Meitner": [
+   "Филипп",
+   "Мейтнер"
+  ],
+  "Praggnanandhaa": [
+   "",
+   "Прагнанандха"
+  ],
+  "Praggnanandhaa R": [
+   "",
+   "Прагнанандха"
+  ],
+  "Pranav Anand": [
+   "Пранав",
+   "Ананд"
+  ],
+  "Radosław Wojtaszek": [
+   "Радослав",
+   "Войташек"
+  ],
+  "Rameshbabu Praggnanandhaa": [
+   "",
+   "Прагнанандха"
+  ],
+  "Rashid Nezhmetdinov": [
+   "Рашид",
+   "Нежметдинов"
+  ],
+  "Reuben Fine": [
+   "Рубен",
+   "Файн"
+  ],
+  "Richard Réti": [
+   "Рихард",
+   "Рети"
+  ],
+  "Robert Eugene Byrne": [
+   "Роберт",
+   "Бирн"
+  ],
+  "Robert Hübner": [
+   "Роберт",
+   "Хюбнер"
+  ],
+  "Robert James Fischer": [
+   "Роберт",
+   "Фишер"
+  ],
+  "Ruben Gideon Koellner": [
+   "Рубен Гидеон",
+   "Кёльнер"
+  ],
+  "Salo Flohr": [
+   "Сало",
+   "Флор"
+  ],
+  "Samuel Reshevsky": [
+   "Сэмюэл",
+   "Решевский"
+  ],
+  "Savielly Tartakower": [
+   "Савелий",
+   "Тартаковер"
+  ],
+  "Sergey Karjakin": [
+   "Сергей",
+   "Карякин"
+  ],
+  "Siegbert Tarrasch": [
+   "Зигберт",
+   "Тарраш"
+  ],
+  "Sipke Ernst": [
+   "Сипке",
+   "Эрнст"
+  ],
+  "Stepan Levitsky": [
+   "Степан",
+   "Левицкий"
+  ],
+  "Stockfish 8": [
+   "",
+   "Stockfish 8"
+  ],
+  "Szymon Winawer": [
+   "Шимон",
+   "Винавер"
+  ],
+  "The World": [
+   "",
+   "Мир"
+  ],
+  "Tigran Petrosian": [
+   "Тигран",
+   "Петросян"
+  ],
+  "Vasily Smyslov": [
+   "Василий",
+   "Смыслов"
+  ],
+  "Vassily Ivanchuk": [
+   "Василий",
+   "Иванчук"
+  ],
+  "Veselin Topalov": [
+   "Веселин",
+   "Топалов"
+  ],
+  "Viktor Korchnoi": [
+   "Виктор",
+   "Корчной"
+  ],
+  "Vincent Keymer": [
+   "Винсент",
+   "Кеймер"
+  ],
+  "Viswanathan Anand": [
+   "Вишванатан",
+   "Ананд"
+  ],
+  "Vladimir Kramnik": [
+   "Владимир",
+   "Крамник"
+  ],
+  "Wei Yi": [
+   "",
+   "Вэй И"
+  ],
+  "Wilhelm Steinitz": [
+   "Вильгельм",
+   "Стейниц"
+  ],
+  "Wolfgang Unzicker": [
+   "Вольфганг",
+   "Унцикер"
+  ],
+  "Yasser Seirawan": [
+   "Ясер",
+   "Сейраван"
+  ],
+  "Yu Yangyi": [
+   "",
+   "Юй Янъи"
+  ],
+  "Yuri Averbakh": [
+   "Юрий",
+   "Авербах"
+  ],
+  "Wesley So": [
+   "Уэсли",
+   "Со"
+  ],
+  "Hikaru Nakamura": [
+   "Хикару",
+   "Накамура"
+  ],
+  "Javokhir Sindarov": [
+   "Джавохир",
+   "Синдаров"
+  ],
+  "Nodirbek Abdusattorov": [
+   "Нодирбек",
+   "Абдусатторов"
+  ],
+  "Anish Giri": [
+   "Аниш",
+   "Гири"
+  ],
+  "Arjun Erigaisi": [
+   "Арджун",
+   "Эригайси"
+  ],
+  "Maxime Vachier-Lagrave": [
+   "Максим",
+   "Вашье-Лаграв"
+  ],
+  "Shakhriyar Mamedyarov": [
+   "Шахрияр",
+   "Мамедьяров"
+  ],
+  "Teimour Radjabov": [
+   "Теймур",
+   "Раджабов"
+  ],
+  "Anna Muzychuk": [
+   "Анна",
+   "Музычук"
+  ],
+  "Mariya Muzychuk": [
+   "Мария",
+   "Музычук"
+  ],
+  "Ruslan Ponomariov": [
+   "Руслан",
+   "Пономарёв"
+  ],
+  "Pavel Eljanov": [
+   "Павел",
+   "Эльянов"
+  ],
+  "Anton Korobov": [
+   "Антон",
+   "Коробов"
+  ],
+  "Andrei Volokitin": [
+   "Андрей",
+   "Волокитин"
+  ],
+  "Daniil Dubov": [
+   "Даниил",
+   "Дубов"
+  ]
+ }
+}

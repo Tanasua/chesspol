@@ -24,7 +24,8 @@ import requests
 TG_LIMIT = 49 * 1024 * 1024
 TG_API = "https://api.telegram.org/bot{token}/{method}"
 TG_CHUNK = 3500  # zapas do limitu 4096 znaków po escapowaniu HTML
-CHANNEL_UK = {"pl": "польський канал", "de": "німецький канал", "en": "англійський (США) канал", "hi": "канал гінді"}
+CHANNEL_UK = {"pl": "польський канал", "de": "німецький канал", "en": "англійський (США) канал", "hi": "канал гінді",
+              "uk": "український канал", "ru": "російськомовний канал", "tr": "турецький канал"}
 
 
 def video_filename(title: str) -> str:

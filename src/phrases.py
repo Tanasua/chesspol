@@ -165,6 +165,88 @@ CTA_TEXTS["hi"] = [
     "आगे बढ़ने से पहले: अगर यह बाज़ी आपको रोमांचक लग रही है, तो लाइक और सब्सक्राइब ज़रूर करें।",
     "अगर आपको ऐसे विश्लेषण पसंद हैं, तो वीडियो को लाइक करें और चैनल को सब्सक्राइब करें, इससे चैनल को बहुत मदद मिलती है।",
 ]
+# UK / RU / TR — forma "ми" / "мы" / "biz" (bez rodzaju gramatycznego lektora); NIE zweryfikowane przez native speakera
+TEXTS["uk"] = {
+    "greeting": ["Привіт, я {name}.", "Вітаю, з вами {name}.", "Привіт усім, я {name}."],
+    "greeting_no_name": ["Привіт.", "Вітаю.", "Привіт усім."],
+    "intro": [
+        "Сьогодні розберемо партію, яка назавжди увійшла в історію шахів.",
+        "Сьогодні подивимося одну з найнапруженіших партій в історії.",
+        "Сьогодні на нас чекає партія, що увійшла в історію світових шахів.",
+        "Сьогодні розберемо партію, яку варто знати кожному шахісту.",
+        "Сьогодні подивимося партію, яка змінила історію шахів.",
+        "Сьогодні розберемо партію, яку кожен любитель шахів має побачити хоча б раз.",
+        "Сьогодні розберемо одну з найзахопливіших партій в історії шахів.",
+        "Сьогодні подивимося партію, про яку шахісти говорять досі. Зараз побачите чому.",
+        "Сьогоднішню партію варто знати, навіть якщо ви тільки починаєте грати в шахи.",
+        "Сьогодні розберемо партію, без якої важко розповісти історію шахів.",
+        "Сьогодні подивимося партію, яка й досі захоплює шахістів у всьому світі.",
+    ],
+    "outro": "Дякуємо за перегляд. Якщо вам подобаються шахи, поставте вподобайку і підпишіться на канал.",
+    "title_hooks": [
+        "Партія, яку треба знати", "Партія, що увійшла в історію", "Легендарна партія", "Класика, яку варто знати",
+        "Одна з найвідоміших партій", "Партія, яку треба побачити", "Шахова легенда", "Назавжди в історії шахів",
+    ],
+}
+TEXTS["ru"] = {
+    "greeting": ["Привет, я {name}.", "Здравствуйте, с вами {name}.", "Всем привет, я {name}."],
+    "greeting_no_name": ["Привет.", "Здравствуйте.", "Всем привет."],
+    "intro": [
+        "Сегодня разберём партию, которая навсегда вошла в историю шахмат.",
+        "Сегодня посмотрим одну из самых напряжённых партий в истории.",
+        "Сегодня нас ждёт партия, вошедшая в историю мировых шахмат.",
+        "Сегодня разберём партию, которую стоит знать каждому шахматисту.",
+        "Сегодня посмотрим партию, которая изменила историю шахмат.",
+        "Сегодня разберём партию, которую каждый любитель шахмат должен увидеть хотя бы раз.",
+        "Сегодня разберём одну из самых захватывающих партий в истории шахмат.",
+        "Сегодня посмотрим партию, о которой шахматисты говорят до сих пор. Сейчас увидите почему.",
+        "Сегодняшнюю партию стоит знать, даже если вы только начинаете играть в шахматы.",
+        "Сегодня разберём партию, без которой трудно рассказать историю шахмат.",
+        "Сегодня посмотрим партию, которая до сих пор восхищает шахматистов по всему миру.",
+    ],
+    "outro": "Спасибо за просмотр. Если вам нравятся шахматы, поставьте лайк и подпишитесь на канал.",
+    "title_hooks": [
+        "Партия, которую нужно знать", "Партия, вошедшая в историю", "Легендарная партия", "Классика, которую стоит знать",
+        "Одна из самых известных партий", "Партия, которую нужно увидеть", "Шахматная легенда", "Навсегда в истории шахмат",
+    ],
+}
+TEXTS["tr"] = {
+    "greeting": ["Merhaba, ben {name}.", "Merhaba arkadaşlar, ben {name}.", "Hoş geldiniz, ben {name}."],
+    "greeting_no_name": ["Merhaba.", "Merhaba arkadaşlar.", "Hoş geldiniz."],
+    "intro": [
+        "Bugün satranç tarihine geçmiş bir oyunu inceleyeceğiz.",
+        "Bugün tarihin en heyecanlı oyunlarından birine bakacağız.",
+        "Bugün dünya satranç tarihine adını yazdırmış bir oyun bizi bekliyor.",
+        "Bugün her satranççının bilmesi gereken bir oyunu inceleyeceğiz.",
+        "Bugün satranç tarihini değiştiren bir oyuna bakacağız.",
+        "Bugün her satranç severin en az bir kez görmesi gereken bir oyunu inceleyeceğiz.",
+        "Bugün satranç tarihinin en sürükleyici oyunlarından birini inceleyeceğiz.",
+        "Bugün satranççıların hâlâ konuştuğu bir oyuna bakacağız. Nedenini birazdan göreceksiniz.",
+        "Satranca yeni başlamış olsanız bile bugünkü oyunu bilmeye değer.",
+        "Bugün satranç tarihini anlatırken atlanamayacak bir oyunu inceleyeceğiz.",
+        "Bugün dünyanın dört bir yanındaki satranççıları hâlâ büyüleyen bir oyuna bakacağız.",
+    ],
+    "outro": "İzlediğiniz için teşekkürler. Satrancı seviyorsanız videoyu beğenin ve kanala abone olun.",
+    "title_hooks": [
+        "Bilmeniz Gereken Bir Oyun", "Tarihe Geçen Oyun", "Efsane Oyun", "Bilinmesi Gereken Bir Klasik",
+        "En Ünlü Oyunlardan Biri", "Mutlaka Görmeniz Gereken Oyun", "Bir Satranç Efsanesi", "Satranç Tarihinde Ölümsüz",
+    ],
+}
+CTA_TEXTS["uk"] = [
+    "Якщо вам подобається це відео, поставте вподобайку і підпишіться на канал. Це дуже допомагає.",
+    "Перш ніж підемо далі: якщо ця партія вас захопила, поставте лайк і підпишіться на канал. Це справді допомагає.",
+    "Якщо вам цікаві такі розбори, вподобайте відео і підпишіться на канал, це дуже нам допомагає.",
+]
+CTA_TEXTS["ru"] = [
+    "Если вам нравится это видео, поставьте лайк и подпишитесь на канал. Это очень помогает.",
+    "Прежде чем идти дальше: если эта партия вас захватила, поставьте лайк и подпишитесь на канал. Это правда помогает.",
+    "Если вам интересны такие разборы, поставьте лайк и подпишитесь на канал, это очень нам помогает.",
+]
+CTA_TEXTS["tr"] = [
+    "Bu videoyu beğendiyseniz beğen butonuna basın ve kanala abone olun. Bu bize çok yardımcı oluyor.",
+    "Devam etmeden önce: bu oyun ilginizi çektiyse videoyu beğenin ve kanala abone olun. Gerçekten çok yardımcı oluyor.",
+    "Bu tür analizleri seviyorsanız videoyu beğenin ve kanala abone olun, kanala çok faydası oluyor.",
+]
 CTA = CTA_TEXTS[L.code]
 T = TEXTS[L.code]
 GREETING, GREETING_NO_NAME, INTRO, TITLE_HOOKS = T["greeting"], T["greeting_no_name"], T["intro"], T["title_hooks"]

@@ -30,7 +30,16 @@
       "n_en": 58,
       "label_en": "Casual game",
       "event_en": "Casual game",
-      "n_hi": 16
+      "n_hi": 16,
+      "n_uk": 5,
+      "n_ru": 2,
+      "n_tr": 4,
+      "label_uk": "Товариська партія",
+      "event_uk": "Товариська партія",
+      "label_ru": "Товарищеская партия",
+      "event_ru": "Товарищеская партия",
+      "label_tr": "Dostluk oyunu",
+      "event_tr": "Dostluk oyunu"
     },
     {
       "n": 2,
@@ -61,7 +70,16 @@
       "n_en": 61,
       "label_en": "Thematic tournament (Sicilian Defense) · Round 8",
       "event_en": "Thematic tournament (Sicilian Defense) · Round 8",
-      "n_hi": 57
+      "n_hi": 57,
+      "n_uk": 6,
+      "n_ru": 9,
+      "n_tr": 8,
+      "label_uk": "Тематичний турнір (Сицилійський захист) · тур 8",
+      "event_uk": "Тематичний турнір (Сицилійський захист) · тур 8",
+      "label_ru": "Тематический турнир (Сицилианская защита) · тур 8",
+      "event_ru": "Тематический турнир (Сицилианская защита) · тур 8",
+      "label_tr": "Tematik turnuva (Sicilya Savunması) · 8. tur",
+      "event_tr": "Tematik turnuva (Sicilya Savunması) · 8. tur"
     },
     {
       "n": 3,
@@ -91,7 +109,16 @@
       "n_en": 42,
       "label_en": "Exhibition match",
       "event_en": "Exhibition match",
-      "n_hi": 12
+      "n_hi": 12,
+      "n_uk": 2,
+      "n_ru": 7,
+      "n_tr": 7,
+      "label_uk": "Показовий матч",
+      "event_uk": "Показовий матч",
+      "label_ru": "Показательный матч",
+      "event_ru": "Показательный матч",
+      "label_tr": "Gösteri maçı",
+      "event_tr": "Gösteri maçı"
     },
     {
       "n": 4,
@@ -122,7 +149,16 @@
       "n_en": 52,
       "label_en": "Tournament · St. Petersburg · Round 3",
       "event_en": "Tournament · St. Petersburg · Round 3",
-      "n_hi": 37
+      "n_hi": 37,
+      "n_uk": 7,
+      "n_ru": 1,
+      "n_tr": 10,
+      "label_uk": "Турнір · Санкт-Петербург · тур 3",
+      "event_uk": "Турнір · Санкт-Петербург · тур 3",
+      "label_ru": "Турнир · Санкт-Петербург · тур 3",
+      "event_ru": "Турнир · Санкт-Петербург · тур 3",
+      "label_tr": "Turnuva · St. Petersburg · 3. tur",
+      "event_tr": "Turnuva · St. Petersburg · 3. tur"
     },
     {
       "n": 5,
@@ -155,7 +191,16 @@
       "n_en": 48,
       "label_en": "Candidates Tournament · Round 6",
       "event_en": "Candidates Tournament · Round 6",
-      "n_hi": 15
+      "n_hi": 15,
+      "n_uk": 10,
+      "n_ru": 8,
+      "n_tr": 6,
+      "label_uk": "Турнір претендентів · тур 6",
+      "event_uk": "Турнір претендентів · тур 6",
+      "label_ru": "Турнир претендентов · тур 6",
+      "event_ru": "Турнир претендентов · тур 6",
+      "label_tr": "Adaylar Turnuvası · 6. tur",
+      "event_tr": "Adaylar Turnuvası · 6. tur"
     },
     {
       "n": 6,
@@ -189,7 +234,16 @@
       "n_en": 20,
       "label_en": "U.S. Championship · Round 3",
       "event_en": "U.S. Championship · Round 3",
-      "n_hi": 18
+      "n_hi": 18,
+      "n_uk": 1,
+      "n_ru": 4,
+      "n_tr": 9,
+      "label_uk": "Чемпіонат США · тур 3",
+      "event_uk": "Чемпіонат США · тур 3",
+      "label_ru": "Чемпионат США · тур 3",
+      "event_ru": "Чемпионат США · тур 3",
+      "label_tr": "ABD Şampiyonası · 3. tur",
+      "event_tr": "ABD Şampiyonası · 3. tur"
     },
     {
       "n": 7,
@@ -223,7 +277,16 @@
       "n_en": 13,
       "label_en": "World Championship match · Game 10",
       "event_en": "World Championship match · Game 10",
-      "n_hi": 8
+      "n_hi": 8,
+      "n_uk": 3,
+      "n_ru": 3,
+      "n_tr": 1,
+      "label_uk": "Матч за звання чемпіона світу · партія 10",
+      "event_uk": "Матч за звання чемпіона світу · партія 10",
+      "label_ru": "Матч за звание чемпиона мира · партия 10",
+      "event_ru": "Матч за звание чемпиона мира · партия 10",
+      "label_tr": "Dünya Şampiyonluğu maçı · 10. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 10. oyun"
     },
     {
       "n": 8,
@@ -256,7 +319,16 @@
       "n_en": 94,
       "label_en": "World Championship match · Game 6",
       "event_en": "World Championship match · Game 6",
-      "n_hi": 71
+      "n_hi": 71,
+      "n_uk": 4,
+      "n_ru": 10,
+      "n_tr": 3,
+      "label_uk": "Матч за звання чемпіона світу · партія 6",
+      "event_uk": "Матч за звання чемпіона світу · партія 6",
+      "label_ru": "Матч за звание чемпиона мира · партия 6",
+      "event_ru": "Матч за звание чемпиона мира · партия 6",
+      "label_tr": "Dünya Şampiyonluğu maçı · 6. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 6. oyun"
     },
     {
       "n": 9,
@@ -288,7 +360,16 @@
       "n_en": 56,
       "label_en": "Hoogovens tournament · Round 4",
       "event_en": "Hoogovens tournament · Round 4",
-      "n_hi": 51
+      "n_hi": 51,
+      "n_uk": 9,
+      "n_ru": 5,
+      "n_tr": 5,
+      "label_uk": "Турнір Hoogovens · тур 4",
+      "event_uk": "Турнір Hoogovens · тур 4",
+      "label_ru": "Турнир Hoogovens · тур 4",
+      "event_ru": "Турнир Hoogovens · тур 4",
+      "label_tr": "Hoogovens turnuvası · 4. tur",
+      "event_tr": "Hoogovens turnuvası · 4. tur"
     },
     {
       "n": 10,
@@ -321,7 +402,16 @@
       "n_en": 92,
       "label_en": "Monte Carlo tournament · Round 7",
       "event_en": "Monte Carlo tournament · Round 7",
-      "n_hi": 77
+      "n_hi": 77,
+      "n_uk": 8,
+      "n_ru": 6,
+      "n_tr": 2,
+      "label_uk": "Турнір у Монте-Карло · тур 7",
+      "event_uk": "Турнір у Монте-Карло · тур 7",
+      "label_ru": "Турнир в Монте-Карло · тур 7",
+      "event_ru": "Турнир в Монте-Карло · тур 7",
+      "label_tr": "Monte Carlo turnuvası · 7. tur",
+      "event_tr": "Monte Carlo turnuvası · 7. tur"
     },
     {
       "n": 11,
@@ -363,7 +453,18 @@
       "event_en": "Kasparov vs. the World (online)",
       "black_en": "The World",
       "black_last_en": "The World",
-      "n_hi": 32
+      "n_hi": 32,
+      "n_uk": 13,
+      "n_ru": 19,
+      "n_tr": 16,
+      "label_uk": "Каспаров проти світу (онлайн)",
+      "event_uk": "Каспаров проти світу (онлайн)",
+      "label_ru": "Каспаров против мира (онлайн)",
+      "event_ru": "Каспаров против мира (онлайн)",
+      "label_tr": "Kasparov Dünyaya Karşı (çevrimiçi)",
+      "event_tr": "Kasparov Dünyaya Karşı (çevrimiçi)",
+      "black_tr": "Dünya",
+      "black_last_tr": "Dünya"
     },
     {
       "n": 12,
@@ -395,7 +496,16 @@
       "n_en": 75,
       "label_en": "World Championship match · Game 10",
       "event_en": "World Championship match · Game 10",
-      "n_hi": 52
+      "n_hi": 52,
+      "n_uk": 11,
+      "n_ru": 20,
+      "n_tr": 18,
+      "label_uk": "Матч за звання чемпіона світу · партія 10",
+      "event_uk": "Матч за звання чемпіона світу · партія 10",
+      "label_ru": "Матч за звание чемпиона мира · партия 10",
+      "event_ru": "Матч за звание чемпиона мира · партия 10",
+      "label_tr": "Dünya Şampiyonluğu maçı · 10. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 10. oyun"
     },
     {
       "n": 13,
@@ -425,7 +535,16 @@
       "n_en": 93,
       "label_en": "Chigorin Cup (team)",
       "event_en": "Chigorin Cup (team)",
-      "n_hi": 85
+      "n_hi": 85,
+      "n_uk": 12,
+      "n_ru": 15,
+      "n_tr": 13,
+      "label_uk": "Кубок Чигоріна (командний)",
+      "event_uk": "Кубок Чигоріна (командний)",
+      "label_ru": "Кубок Чигорина (командный)",
+      "event_ru": "Кубок Чигорина (командный)",
+      "label_tr": "Çigorin Kupası (takım)",
+      "event_tr": "Çigorin Kupası (takım)"
     },
     {
       "n": 14,
@@ -456,7 +575,16 @@
       "n_en": 87,
       "label_en": "Tata Steel Chess · Round 4",
       "event_en": "Tata Steel Chess · Round 4",
-      "n_hi": 4
+      "n_hi": 4,
+      "n_uk": 16,
+      "n_ru": 18,
+      "n_tr": 15,
+      "label_uk": "Tata Steel Chess · тур 4",
+      "event_uk": "Tata Steel Chess · тур 4",
+      "label_ru": "Tata Steel Chess · тур 4",
+      "event_ru": "Tata Steel Chess · тур 4",
+      "label_tr": "Tata Steel Chess · 4. tur",
+      "event_tr": "Tata Steel Chess · 4. tur"
     },
     {
       "n": 15,
@@ -487,7 +615,16 @@
       "n_en": 25,
       "label_en": "World Championship match · Game 6",
       "event_en": "World Championship match · Game 6",
-      "n_hi": 25
+      "n_hi": 25,
+      "n_uk": 20,
+      "n_ru": 13,
+      "n_tr": 12,
+      "label_uk": "Матч за звання чемпіона світу · партія 6",
+      "event_uk": "Матч за звання чемпіона світу · партія 6",
+      "label_ru": "Матч за звание чемпиона мира · партия 6",
+      "event_ru": "Матч за звание чемпиона мира · партия 6",
+      "label_tr": "Dünya Şampiyonluğu maçı · 6. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 6. oyun"
     },
     {
       "n": 16,
@@ -517,7 +654,16 @@
       "n_en": 96,
       "label_en": "Masters tournament, Manhattan CC · Round 1",
       "event_en": "Masters tournament, Manhattan CC · Round 1",
-      "n_hi": 24
+      "n_hi": 24,
+      "n_uk": 17,
+      "n_ru": 11,
+      "n_tr": 14,
+      "label_uk": "Турнір майстрів, Манхеттенський шаховий клуб · тур 1",
+      "event_uk": "Турнір майстрів, Манхеттенський шаховий клуб · тур 1",
+      "label_ru": "Турнир мастеров, Манхэттенский шахматный клуб · тур 1",
+      "event_ru": "Турнир мастеров, Манхэттенский шахматный клуб · тур 1",
+      "label_tr": "Ustalar turnuvası, Manhattan SK · 1. tur",
+      "event_tr": "Ustalar turnuvası, Manhattan SK · 1. tur"
     },
     {
       "n": 17,
@@ -550,7 +696,16 @@
       "n_en": 59,
       "label_en": "World Championship tournament · Round 10",
       "event_en": "World Championship tournament · Round 10",
-      "n_hi": 93
+      "n_hi": 93,
+      "n_uk": 15,
+      "n_ru": 16,
+      "n_tr": 17,
+      "label_uk": "Матч-турнір на першість світу · тур 10",
+      "event_uk": "Матч-турнір на першість світу · тур 10",
+      "label_ru": "Матч-турнир на первенство мира · тур 10",
+      "event_ru": "Матч-турнир на первенство мира · тур 10",
+      "label_tr": "Dünya Şampiyonası turnuvası · 10. tur",
+      "event_tr": "Dünya Şampiyonası turnuvası · 10. tur"
     },
     {
       "n": 18,
@@ -583,7 +738,16 @@
       "n_en": 28,
       "label_en": "World Championship match · Game 16",
       "event_en": "World Championship match · Game 16",
-      "n_hi": 61
+      "n_hi": 61,
+      "n_uk": 14,
+      "n_ru": 14,
+      "n_tr": 11,
+      "label_uk": "Матч за звання чемпіона світу · партія 16",
+      "event_uk": "Матч за звання чемпіона світу · партія 16",
+      "label_ru": "Матч за звание чемпиона мира · партия 16",
+      "event_ru": "Матч за звание чемпиона мира · партия 16",
+      "label_tr": "Dünya Şampiyonluğu maçı · 16. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 16. oyun"
     },
     {
       "n": 19,
@@ -616,7 +780,16 @@
       "n_en": 85,
       "label_en": "Tournament · St. Petersburg · Round 18",
       "event_en": "Tournament · St. Petersburg · Round 18",
-      "n_hi": 91
+      "n_hi": 91,
+      "n_uk": 19,
+      "n_ru": 17,
+      "n_tr": 20,
+      "label_uk": "Турнір · Санкт-Петербург · тур 18",
+      "event_uk": "Турнір · Санкт-Петербург · тур 18",
+      "label_ru": "Турнир · Санкт-Петербург · тур 18",
+      "event_ru": "Турнир · Санкт-Петербург · тур 18",
+      "label_tr": "Turnuva · St. Petersburg · 18. tur",
+      "event_tr": "Turnuva · St. Petersburg · 18. tur"
     },
     {
       "n": 20,
@@ -650,7 +823,16 @@
       "n_en": 26,
       "label_en": "Candidates quarterfinal · Game 9",
       "event_en": "Candidates quarterfinal · Game 9",
-      "n_hi": 79
+      "n_hi": 79,
+      "n_uk": 18,
+      "n_ru": 12,
+      "n_tr": 19,
+      "label_uk": "Чвертьфінал претендентів · партія 9",
+      "event_uk": "Чвертьфінал претендентів · партія 9",
+      "label_ru": "Четвертьфинал претендентов · партия 9",
+      "event_ru": "Четвертьфинал претендентов · партия 9",
+      "label_tr": "Adaylar çeyrek finali · 9. oyun",
+      "event_tr": "Adaylar çeyrek finali · 9. oyun"
     },
     {
       "n": 21,
@@ -683,7 +865,16 @@
       "n_en": 88,
       "label_en": "Candidates Tournament · Round 2",
       "event_en": "Candidates Tournament · Round 2",
-      "n_hi": 59
+      "n_hi": 59,
+      "n_uk": 22,
+      "n_ru": 28,
+      "n_tr": 26,
+      "label_uk": "Турнір претендентів · тур 2",
+      "event_uk": "Турнір претендентів · тур 2",
+      "label_ru": "Турнир претендентов · тур 2",
+      "event_ru": "Турнир претендентов · тур 2",
+      "label_tr": "Adaylar Turnuvası · 2. tur",
+      "event_tr": "Adaylar Turnuvası · 2. tur"
     },
     {
       "n": 22,
@@ -718,7 +909,16 @@
       "n_en": 89,
       "label_en": "World Championship match, tiebreak · Game 4",
       "event_en": "World Championship match, tiebreak · Game 4",
-      "n_hi": 54
+      "n_hi": 54,
+      "n_uk": 23,
+      "n_ru": 26,
+      "n_tr": 30,
+      "label_uk": "Матч за звання чемпіона світу, тай-брейк · партія 4",
+      "event_uk": "Матч за звання чемпіона світу, тай-брейк · партія 4",
+      "label_ru": "Матч за звание чемпиона мира, тай-брейк · партия 4",
+      "event_ru": "Матч за звание чемпиона мира, тай-брейк · партия 4",
+      "label_tr": "Dünya Şampiyonluğu maçı, eşitlik bozma · 4. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı, eşitlik bozma · 4. oyun"
     },
     {
       "n": 23,
@@ -749,7 +949,16 @@
       "n_en": 91,
       "label_en": "Tournament · New York · Round 12",
       "event_en": "Tournament · New York · Round 12",
-      "n_hi": 100
+      "n_hi": 100,
+      "n_uk": 30,
+      "n_ru": 22,
+      "n_tr": 28,
+      "label_uk": "Турнір · Нью-Йорк · тур 12",
+      "event_uk": "Турнір · Нью-Йорк · тур 12",
+      "label_ru": "Турнир · Нью-Йорк · тур 12",
+      "event_ru": "Турнир · Нью-Йорк · тур 12",
+      "label_tr": "Turnuva · New York · 12. tur",
+      "event_tr": "Turnuva · New York · 12. tur"
     },
     {
       "n": 24,
@@ -781,7 +990,16 @@
       "n_en": 30,
       "label_en": "World Championship match · Game 10",
       "event_en": "World Championship match · Game 10",
-      "n_hi": 65
+      "n_hi": 65,
+      "n_uk": 25,
+      "n_ru": 29,
+      "n_tr": 23,
+      "label_uk": "Матч за звання чемпіона світу · партія 10",
+      "event_uk": "Матч за звання чемпіона світу · партія 10",
+      "label_ru": "Матч за звание чемпиона мира · партия 10",
+      "event_ru": "Матч за звание чемпиона мира · партия 10",
+      "label_tr": "Dünya Şampiyonluğu maçı · 10. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 10. oyun"
     },
     {
       "n": 25,
@@ -812,7 +1030,16 @@
       "n_en": 55,
       "label_en": "World Championship match · Game 6",
       "event_en": "World Championship match · Game 6",
-      "n_hi": 6
+      "n_hi": 6,
+      "n_uk": 21,
+      "n_ru": 21,
+      "n_tr": 22,
+      "label_uk": "Матч за звання чемпіона світу · партія 6",
+      "event_uk": "Матч за звання чемпіона світу · партія 6",
+      "label_ru": "Матч за звание чемпиона мира · партия 6",
+      "event_ru": "Матч за звание чемпиона мира · партия 6",
+      "label_tr": "Dünya Şampiyonluğu maçı · 6. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 6. oyun"
     },
     {
       "n": 26,
@@ -844,7 +1071,16 @@
       "n_en": 10,
       "label_en": "Candidates final · Game 7",
       "event_en": "Candidates final · Game 7",
-      "n_hi": 35
+      "n_hi": 35,
+      "n_uk": 29,
+      "n_ru": 30,
+      "n_tr": 21,
+      "label_uk": "Фінал претендентів · партія 7",
+      "event_uk": "Фінал претендентів · партія 7",
+      "label_ru": "Финал претендентов · партия 7",
+      "event_ru": "Финал претендентов · партия 7",
+      "label_tr": "Adaylar finali · 7. oyun",
+      "event_tr": "Adaylar finali · 7. oyun"
     },
     {
       "n": 27,
@@ -874,7 +1110,16 @@
       "n_en": 14,
       "label_en": "Tournament · Amsterdam · Round 1",
       "event_en": "Tournament · Amsterdam · Round 1",
-      "n_hi": 87
+      "n_hi": 87,
+      "n_uk": 28,
+      "n_ru": 23,
+      "n_tr": 24,
+      "label_uk": "Турнір · Амстердам · тур 1",
+      "event_uk": "Турнір · Амстердам · тур 1",
+      "label_ru": "Турнир · Амстердам · тур 1",
+      "event_ru": "Турнир · Амстердам · тур 1",
+      "label_tr": "Turnuva · Amsterdam · 1. tur",
+      "event_tr": "Turnuva · Amsterdam · 1. tur"
     },
     {
       "n": 28,
@@ -906,7 +1151,16 @@
       "n_en": 22,
       "label_en": "U.S. Championship · Round 10",
       "event_en": "U.S. Championship · Round 10",
-      "n_hi": 86
+      "n_hi": 86,
+      "n_uk": 26,
+      "n_ru": 27,
+      "n_tr": 25,
+      "label_uk": "Чемпіонат США · тур 10",
+      "event_uk": "Чемпіонат США · тур 10",
+      "label_ru": "Чемпионат США · тур 10",
+      "event_ru": "Чемпионат США · тур 10",
+      "label_tr": "ABD Şampiyonası · 10. tur",
+      "event_tr": "ABD Şampiyonası · 10. tur"
     },
     {
       "n": 29,
@@ -940,7 +1194,16 @@
       "n_en": 21,
       "label_en": "FIDE World Cup, semifinal (tiebreak)",
       "event_en": "FIDE World Cup, semifinal (tiebreak)",
-      "n_hi": 73
+      "n_hi": 73,
+      "n_uk": 24,
+      "n_ru": 25,
+      "n_tr": 29,
+      "label_uk": "Кубок світу ФІДЕ, півфінал (тай-брейк)",
+      "event_uk": "Кубок світу ФІДЕ, півфінал (тай-брейк)",
+      "label_ru": "Кубок мира ФИДЕ, полуфинал (тай-брейк)",
+      "event_ru": "Кубок мира ФИДЕ, полуфинал (тай-брейк)",
+      "label_tr": "FIDE Dünya Kupası, yarı final (eşitlik bozma)",
+      "event_tr": "FIDE Dünya Kupası, yarı final (eşitlik bozma)"
     },
     {
       "n": 30,
@@ -972,7 +1235,16 @@
       "n_en": 2,
       "label_en": "Tournament · Hastings · Round 10",
       "event_en": "Tournament · Hastings · Round 10",
-      "n_hi": 70
+      "n_hi": 70,
+      "n_uk": 27,
+      "n_ru": 24,
+      "n_tr": 27,
+      "label_uk": "Турнір · Гастінгс · тур 10",
+      "event_uk": "Турнір · Гастінгс · тур 10",
+      "label_ru": "Турнир · Гастингс · тур 10",
+      "event_ru": "Турнир · Гастингс · тур 10",
+      "label_tr": "Turnuva · Hastings · 10. tur",
+      "event_tr": "Turnuva · Hastings · 10. tur"
     },
     {
       "n": 31,
@@ -1003,7 +1275,16 @@
       "n_en": 63,
       "label_en": "Russia vs. Rest of the World, rapid",
       "event_en": "Russia vs. Rest of the World, rapid",
-      "n_hi": 13
+      "n_hi": 13,
+      "n_uk": 40,
+      "n_ru": 38,
+      "n_tr": 39,
+      "label_uk": "Росія проти збірної світу, рапід",
+      "event_uk": "Росія проти збірної світу, рапід",
+      "label_ru": "Россия против сборной мира, рапид",
+      "event_ru": "Россия против сборной мира, рапид",
+      "label_tr": "Rusya Dünya Karmasına Karşı, hızlı",
+      "event_tr": "Rusya Dünya Karmasına Karşı, hızlı"
     },
     {
       "n": 32,
@@ -1038,7 +1319,16 @@
       "n_en": 38,
       "label_en": "Candidates Tournament · Round 8",
       "event_en": "Candidates Tournament · Round 8",
-      "n_hi": 84
+      "n_hi": 84,
+      "n_uk": 31,
+      "n_ru": 31,
+      "n_tr": 31,
+      "label_uk": "Турнір претендентів · тур 8",
+      "event_uk": "Турнір претендентів · тур 8",
+      "label_ru": "Турнир претендентов · тур 8",
+      "event_ru": "Турнир претендентов · тур 8",
+      "label_tr": "Adaylar Turnuvası · 8. tur",
+      "event_tr": "Adaylar Turnuvası · 8. tur"
     },
     {
       "n": 33,
@@ -1071,7 +1361,16 @@
       "n_en": 46,
       "label_en": "World Championship match · Game 26",
       "event_en": "World Championship match · Game 26",
-      "n_hi": 17
+      "n_hi": 17,
+      "n_uk": 38,
+      "n_ru": 40,
+      "n_tr": 37,
+      "label_uk": "Матч за звання чемпіона світу · партія 26",
+      "event_uk": "Матч за звання чемпіона світу · партія 26",
+      "label_ru": "Матч за звание чемпиона мира · партия 26",
+      "event_ru": "Матч за звание чемпиона мира · партия 26",
+      "label_tr": "Dünya Şampiyonluğu maçı · 26. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 26. oyun"
     },
     {
       "n": 34,
@@ -1102,7 +1401,16 @@
       "n_en": 45,
       "label_en": "World Championship match · Game 3",
       "event_en": "World Championship match · Game 3",
-      "n_hi": 5
+      "n_hi": 5,
+      "n_uk": 39,
+      "n_ru": 34,
+      "n_tr": 40,
+      "label_uk": "Матч за звання чемпіона світу · партія 3",
+      "event_uk": "Матч за звання чемпіона світу · партія 3",
+      "label_ru": "Матч за звание чемпиона мира · партия 3",
+      "event_ru": "Матч за звание чемпиона мира · партия 3",
+      "label_tr": "Dünya Şampiyonluğu maçı · 3. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 3. oyun"
     },
     {
       "n": 35,
@@ -1133,7 +1441,16 @@
       "n_en": 24,
       "label_en": "World Championship match · Game 23",
       "event_en": "World Championship match · Game 23",
-      "n_hi": 82
+      "n_hi": 82,
+      "n_uk": 35,
+      "n_ru": 33,
+      "n_tr": 35,
+      "label_uk": "Матч за звання чемпіона світу · партія 23",
+      "event_uk": "Матч за звання чемпіона світу · партія 23",
+      "label_ru": "Матч за звание чемпиона мира · партия 23",
+      "event_ru": "Матч за звание чемпиона мира · партия 23",
+      "label_tr": "Dünya Şampiyonluğu maçı · 23. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 23. oyun"
     },
     {
       "n": 36,
@@ -1174,7 +1491,16 @@
       "n_en": 100,
       "label_en": "Computer chess match",
       "event_en": "Computer chess match",
-      "n_hi": 97
+      "n_hi": 97,
+      "n_uk": 32,
+      "n_ru": 36,
+      "n_tr": 38,
+      "label_uk": "Матч комп'ютерних програм",
+      "event_uk": "Матч комп'ютерних програм",
+      "label_ru": "Матч шахматных программ",
+      "event_ru": "Матч шахматных программ",
+      "label_tr": "Bilgisayar satranç maçı",
+      "event_tr": "Bilgisayar satranç maçı"
     },
     {
       "n": 37,
@@ -1207,7 +1533,16 @@
       "n_en": 90,
       "label_en": "World Championship match · Game 20",
       "event_en": "World Championship match · Game 20",
-      "n_hi": 28
+      "n_hi": 28,
+      "n_uk": 36,
+      "n_ru": 35,
+      "n_tr": 32,
+      "label_uk": "Матч за звання чемпіона світу · партія 20",
+      "event_uk": "Матч за звання чемпіона світу · партія 20",
+      "label_ru": "Матч за звание чемпиона мира · партия 20",
+      "event_ru": "Матч за звание чемпиона мира · партия 20",
+      "label_tr": "Dünya Şampiyonluğu maçı · 20. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 20. oyun"
     },
     {
       "n": 38,
@@ -1239,7 +1574,16 @@
       "n_en": 76,
       "label_en": "First American Chess Congress",
       "event_en": "First American Chess Congress",
-      "n_hi": 53
+      "n_hi": 53,
+      "n_uk": 37,
+      "n_ru": 39,
+      "n_tr": 36,
+      "label_uk": "Перший американський шаховий конгрес",
+      "event_uk": "Перший американський шаховий конгрес",
+      "label_ru": "Первый американский шахматный конгресс",
+      "event_ru": "Первый американский шахматный конгресс",
+      "label_tr": "Birinci Amerikan Satranç Kongresi",
+      "event_tr": "Birinci Amerikan Satranç Kongresi"
     },
     {
       "n": 39,
@@ -1285,7 +1629,18 @@
       "event_en": "Consultation game at the opera",
       "black_en": "Duke Karl of Brunswick & Count Isouard",
       "black_last_en": "Duke of Brunswick & Count Isouard",
-      "n_hi": 98
+      "n_hi": 98,
+      "n_uk": 34,
+      "n_ru": 37,
+      "n_tr": 34,
+      "label_uk": "Консультаційна партія в опері",
+      "event_uk": "Консультаційна партія в опері",
+      "label_ru": "Консультационная партия в опере",
+      "event_ru": "Консультационная партия в опере",
+      "label_tr": "Operada danışma oyunu",
+      "event_tr": "Operada danışma oyunu",
+      "black_tr": "Brunswick Dükü Karl ve Kont Isouard",
+      "black_last_tr": "Brunswick Dükü ve Kont Isouard"
     },
     {
       "n": 40,
@@ -1318,7 +1673,16 @@
       "n_en": 78,
       "label_en": "Candidates Tournament · Round 14",
       "event_en": "Candidates Tournament · Round 14",
-      "n_hi": 55
+      "n_hi": 55,
+      "n_uk": 33,
+      "n_ru": 32,
+      "n_tr": 33,
+      "label_uk": "Турнір претендентів · тур 14",
+      "event_uk": "Турнір претендентів · тур 14",
+      "label_ru": "Турнир претендентов · тур 14",
+      "event_ru": "Турнир претендентов · тур 14",
+      "label_tr": "Adaylar Turnuvası · 14. tur",
+      "event_tr": "Adaylar Turnuvası · 14. tur"
     },
     {
       "n": 41,
@@ -1350,7 +1714,16 @@
       "n_en": 17,
       "label_en": "Tournament · Zurich · Round 12",
       "event_en": "Tournament · Zurich · Round 12",
-      "n_hi": 38
+      "n_hi": 38,
+      "n_uk": 42,
+      "n_ru": 43,
+      "n_tr": 50,
+      "label_uk": "Турнір · Цюрих · тур 12",
+      "event_uk": "Турнір · Цюрих · тур 12",
+      "label_ru": "Турнир · Цюрих · тур 12",
+      "event_ru": "Турнир · Цюрих · тур 12",
+      "label_tr": "Turnuva · Zürih · 12. tur",
+      "event_tr": "Turnuva · Zürih · 12. tur"
     },
     {
       "n": 42,
@@ -1378,7 +1751,16 @@
       "n_en": 40,
       "label_en": "Chess Olympiad · Round 4",
       "event_en": "Chess Olympiad · Round 4",
-      "n_hi": 14
+      "n_hi": 14,
+      "n_uk": 46,
+      "n_ru": 49,
+      "n_tr": 49,
+      "label_uk": "Шахова олімпіада · тур 4",
+      "event_uk": "Шахова олімпіада · тур 4",
+      "label_ru": "Шахматная олимпиада · тур 4",
+      "event_ru": "Шахматная олимпиада · тур 4",
+      "label_tr": "Satranç Olimpiyatı · 4. tur",
+      "event_tr": "Satranç Olimpiyatı · 4. tur"
     },
     {
       "n": 43,
@@ -1409,7 +1791,16 @@
       "n_en": 72,
       "label_en": "27th USSR Championship",
       "event_en": "27th USSR Championship",
-      "n_hi": 33
+      "n_hi": 33,
+      "n_uk": 50,
+      "n_ru": 44,
+      "n_tr": 41,
+      "label_uk": "27-й чемпіонат СРСР",
+      "event_uk": "27-й чемпіонат СРСР",
+      "label_ru": "27-й чемпионат СССР",
+      "event_ru": "27-й чемпионат СССР",
+      "label_tr": "27. SSCB Şampiyonası",
+      "event_tr": "27. SSCB Şampiyonası"
     },
     {
       "n": 44,
@@ -1441,7 +1832,16 @@
       "n_en": 3,
       "label_en": "Tournament · Hastings · Round 5",
       "event_en": "Tournament · Hastings · Round 5",
-      "n_hi": 58
+      "n_hi": 58,
+      "n_uk": 45,
+      "n_ru": 47,
+      "n_tr": 42,
+      "label_uk": "Турнір · Гастінгс · тур 5",
+      "event_uk": "Турнір · Гастінгс · тур 5",
+      "label_ru": "Турнир · Гастингс · тур 5",
+      "event_ru": "Турнир · Гастингс · тур 5",
+      "label_tr": "Turnuva · Hastings · 5. tur",
+      "event_tr": "Turnuva · Hastings · 5. tur"
     },
     {
       "n": 45,
@@ -1477,7 +1877,16 @@
       "n_en": 73,
       "label_en": "Man vs. machine · Game 2",
       "event_en": "Man vs. machine · Game 2",
-      "n_hi": 66
+      "n_hi": 66,
+      "n_uk": 47,
+      "n_ru": 50,
+      "n_tr": 45,
+      "label_uk": "Людина проти машини · партія 2",
+      "event_uk": "Людина проти машини · партія 2",
+      "label_ru": "Человек против машины · партия 2",
+      "event_ru": "Человек против машины · партия 2",
+      "label_tr": "İnsan makineye karşı · 2. oyun",
+      "event_tr": "İnsan makineye karşı · 2. oyun"
     },
     {
       "n": 46,
@@ -1511,7 +1920,16 @@
       "n_en": 12,
       "label_en": "World Championship match · Game 6",
       "event_en": "World Championship match · Game 6",
-      "n_hi": 43
+      "n_hi": 43,
+      "n_uk": 43,
+      "n_ru": 45,
+      "n_tr": 44,
+      "label_uk": "Матч за звання чемпіона світу · партія 6",
+      "event_uk": "Матч за звання чемпіона світу · партія 6",
+      "label_ru": "Матч за звание чемпиона мира · партия 6",
+      "event_ru": "Матч за звание чемпиона мира · партия 6",
+      "label_tr": "Dünya Şampiyonluğu maçı · 6. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 6. oyun"
     },
     {
       "n": 47,
@@ -1542,7 +1960,16 @@
       "n_en": 41,
       "label_en": "Tournament · Hastings · Round 10",
       "event_en": "Tournament · Hastings · Round 10",
-      "n_hi": 88
+      "n_hi": 88,
+      "n_uk": 41,
+      "n_ru": 48,
+      "n_tr": 46,
+      "label_uk": "Турнір · Гастінгс · тур 10",
+      "event_uk": "Турнір · Гастінгс · тур 10",
+      "label_ru": "Турнир · Гастингс · тур 10",
+      "event_ru": "Турнир · Гастингс · тур 10",
+      "label_tr": "Turnuva · Hastings · 10. tur",
+      "event_tr": "Turnuva · Hastings · 10. tur"
     },
     {
       "n": 48,
@@ -1578,7 +2005,16 @@
       "n_en": 33,
       "label_en": "Tournament · Copenhagen · Round 6",
       "event_en": "Tournament · Copenhagen · Round 6",
-      "n_hi": 72
+      "n_hi": 72,
+      "n_uk": 48,
+      "n_ru": 42,
+      "n_tr": 47,
+      "label_uk": "Турнір · Копенгаген · тур 6",
+      "event_uk": "Турнір · Копенгаген · тур 6",
+      "label_ru": "Турнир · Копенгаген · тур 6",
+      "event_ru": "Турнир · Копенгаген · тур 6",
+      "label_tr": "Turnuva · Kopenhag · 6. tur",
+      "event_tr": "Turnuva · Kopenhag · 6. tur"
     },
     {
       "n": 49,
@@ -1612,7 +2048,16 @@
       "n_en": 99,
       "label_en": "Tournament · Baden-Baden · Round 8",
       "event_en": "Tournament · Baden-Baden · Round 8",
-      "n_hi": 34
+      "n_hi": 34,
+      "n_uk": 49,
+      "n_ru": 46,
+      "n_tr": 43,
+      "label_uk": "Турнір · Баден-Баден · тур 8",
+      "event_uk": "Турнір · Баден-Баден · тур 8",
+      "label_ru": "Турнир · Баден-Баден · тур 8",
+      "event_ru": "Турнир · Баден-Баден · тур 8",
+      "label_tr": "Turnuva · Baden-Baden · 8. tur",
+      "event_tr": "Turnuva · Baden-Baden · 8. tur"
     },
     {
       "n": 50,
@@ -1644,7 +2089,16 @@
       "n_en": 84,
       "label_en": "World Championship match · Game 24",
       "event_en": "World Championship match · Game 24",
-      "n_hi": 68
+      "n_hi": 68,
+      "n_uk": 44,
+      "n_ru": 41,
+      "n_tr": 48,
+      "label_uk": "Матч за звання чемпіона світу · партія 24",
+      "event_uk": "Матч за звання чемпіона світу · партія 24",
+      "label_ru": "Матч за звание чемпиона мира · партия 24",
+      "event_ru": "Матч за звание чемпиона мира · партия 24",
+      "label_tr": "Dünya Şampiyonluğu maçı · 24. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 24. oyun"
     },
     {
       "n": 51,
@@ -1684,7 +2138,16 @@
       "n_en": 4,
       "label_en": "World Championship match · Game 14",
       "event_en": "World Championship match · Game 14",
-      "n_hi": 7
+      "n_hi": 7,
+      "n_uk": 58,
+      "n_ru": 58,
+      "n_tr": 59,
+      "label_uk": "Матч за звання чемпіона світу · партія 14",
+      "event_uk": "Матч за звання чемпіона світу · партія 14",
+      "label_ru": "Матч за звание чемпиона мира · партия 14",
+      "event_ru": "Матч за звание чемпиона мира · партия 14",
+      "label_tr": "Dünya Şampiyonluğu maçı · 14. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 14. oyun"
     },
     {
       "n": 52,
@@ -1716,7 +2179,16 @@
       "n_en": 37,
       "label_en": "All-Russian Masters Tournament",
       "event_en": "All-Russian Masters Tournament",
-      "n_hi": 39
+      "n_hi": 39,
+      "n_uk": 59,
+      "n_ru": 55,
+      "n_tr": 52,
+      "label_uk": "Всеросійський турнір майстрів",
+      "event_uk": "Всеросійський турнір майстрів",
+      "label_ru": "Всероссийский турнир мастеров",
+      "event_ru": "Всероссийский турнир мастеров",
+      "label_tr": "Tüm Rusya Ustalar Turnuvası",
+      "event_tr": "Tüm Rusya Ustalar Turnuvası"
     },
     {
       "n": 53,
@@ -1749,7 +2221,16 @@
       "n_en": 7,
       "label_en": "Tournament · Nikšić · Round 4",
       "event_en": "Tournament · Nikšić · Round 4",
-      "n_hi": 62
+      "n_hi": 62,
+      "n_uk": 51,
+      "n_ru": 52,
+      "n_tr": 51,
+      "label_uk": "Турнір · Нікшич · тур 4",
+      "event_uk": "Турнір · Нікшич · тур 4",
+      "label_ru": "Турнир · Никшич · тур 4",
+      "event_ru": "Турнир · Никшич · тур 4",
+      "label_tr": "Turnuva · Nikšić · 4. tur",
+      "event_tr": "Turnuva · Nikšić · 4. tur"
     },
     {
       "n": 54,
@@ -1779,7 +2260,16 @@
       "n_en": 15,
       "label_en": "Tournament · Hastings · Round 2",
       "event_en": "Tournament · Hastings · Round 2",
-      "n_hi": 75
+      "n_hi": 75,
+      "n_uk": 55,
+      "n_ru": 51,
+      "n_tr": 54,
+      "label_uk": "Турнір · Гастінгс · тур 2",
+      "event_uk": "Турнір · Гастінгс · тур 2",
+      "label_ru": "Турнир · Гастингс · тур 2",
+      "event_ru": "Турнир · Гастингс · тур 2",
+      "label_tr": "Turnuva · Hastings · 2. tur",
+      "event_tr": "Turnuva · Hastings · 2. tur"
     },
     {
       "n": 55,
@@ -1810,7 +2300,16 @@
       "n_en": 8,
       "label_en": "Tournament · Tilburg · Round 4",
       "event_en": "Tournament · Tilburg · Round 4",
-      "n_hi": 74
+      "n_hi": 74,
+      "n_uk": 60,
+      "n_ru": 54,
+      "n_tr": 60,
+      "label_uk": "Турнір · Тілбург · тур 4",
+      "event_uk": "Турнір · Тілбург · тур 4",
+      "label_ru": "Турнир · Тилбург · тур 4",
+      "event_ru": "Турнир · Тилбург · тур 4",
+      "label_tr": "Turnuva · Tilburg · 4. tur",
+      "event_tr": "Turnuva · Tilburg · 4. tur"
     },
     {
       "n": 56,
@@ -1842,7 +2341,16 @@
       "n_en": 65,
       "label_en": "Tournament · St. Petersburg",
       "event_en": "Tournament · St. Petersburg",
-      "n_hi": 48
+      "n_hi": 48,
+      "n_uk": 57,
+      "n_ru": 57,
+      "n_tr": 58,
+      "label_uk": "Турнір · Санкт-Петербург",
+      "event_uk": "Турнір · Санкт-Петербург",
+      "label_ru": "Турнир · Санкт-Петербург",
+      "event_ru": "Турнир · Санкт-Петербург",
+      "label_tr": "Turnuva · St. Petersburg",
+      "event_tr": "Turnuva · St. Petersburg"
     },
     {
       "n": 57,
@@ -1873,7 +2381,16 @@
       "n_en": 74,
       "label_en": "World Championship match · Game 12",
       "event_en": "World Championship match · Game 12",
-      "n_hi": 1
+      "n_hi": 1,
+      "n_uk": 54,
+      "n_ru": 56,
+      "n_tr": 55,
+      "label_uk": "Матч за звання чемпіона світу · партія 12",
+      "event_uk": "Матч за звання чемпіона світу · партія 12",
+      "label_ru": "Матч за звание чемпиона мира · партия 12",
+      "event_ru": "Матч за звание чемпиона мира · партия 12",
+      "label_tr": "Dünya Şampiyonluğu maçı · 12. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 12. oyun"
     },
     {
       "n": 58,
@@ -1903,7 +2420,16 @@
       "n_en": 11,
       "label_en": "Tournament · London · Round 6",
       "event_en": "Tournament · London · Round 6",
-      "n_hi": 56
+      "n_hi": 56,
+      "n_uk": 56,
+      "n_ru": 59,
+      "n_tr": 57,
+      "label_uk": "Турнір · Лондон · тур 6",
+      "event_uk": "Турнір · Лондон · тур 6",
+      "label_ru": "Турнир · Лондон · тур 6",
+      "event_ru": "Турнир · Лондон · тур 6",
+      "label_tr": "Turnuva · Londra · 6. tur",
+      "event_tr": "Turnuva · Londra · 6. tur"
     },
     {
       "n": 59,
@@ -1931,7 +2457,16 @@
       "n_en": 64,
       "label_en": "Casual game",
       "event_en": "Casual game",
-      "n_hi": 31
+      "n_hi": 31,
+      "n_uk": 52,
+      "n_ru": 60,
+      "n_tr": 56,
+      "label_uk": "Товариська партія",
+      "event_uk": "Товариська партія",
+      "label_ru": "Товарищеская партия",
+      "event_ru": "Товарищеская партия",
+      "label_tr": "Dostluk oyunu",
+      "event_tr": "Dostluk oyunu"
     },
     {
       "n": 60,
@@ -1964,7 +2499,16 @@
       "n_en": 60,
       "label_en": "World Championship match · Game 2",
       "event_en": "World Championship match · Game 2",
-      "n_hi": 9
+      "n_hi": 9,
+      "n_uk": 53,
+      "n_ru": 53,
+      "n_tr": 53,
+      "label_uk": "Матч за звання чемпіона світу · партія 2",
+      "event_uk": "Матч за звання чемпіона світу · партія 2",
+      "label_ru": "Матч за звание чемпиона мира · партия 2",
+      "event_ru": "Матч за звание чемпиона мира · партия 2",
+      "label_tr": "Dünya Şampiyonluğu maçı · 2. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 2. oyun"
     },
     {
       "n": 61,
@@ -2001,7 +2545,16 @@
       "n_en": 77,
       "label_en": "Man vs. machine rematch · Game 6",
       "event_en": "Man vs. machine rematch · Game 6",
-      "n_hi": 92
+      "n_hi": 92,
+      "n_uk": 65,
+      "n_ru": 70,
+      "n_tr": 62,
+      "label_uk": "Людина проти машини, матч-реванш · партія 6",
+      "event_uk": "Людина проти машини, матч-реванш · партія 6",
+      "label_ru": "Человек против машины, матч-реванш · партия 6",
+      "event_ru": "Человек против машины, матч-реванш · партия 6",
+      "label_tr": "İnsan makineye karşı, rövanş · 6. oyun",
+      "event_tr": "İnsan makineye karşı, rövanş · 6. oyun"
     },
     {
       "n": 62,
@@ -2034,7 +2587,16 @@
       "n_en": 62,
       "label_en": "World Championship match · Game 19",
       "event_en": "World Championship match · Game 19",
-      "n_hi": 67
+      "n_hi": 67,
+      "n_uk": 70,
+      "n_ru": 66,
+      "n_tr": 67,
+      "label_uk": "Матч за звання чемпіона світу · партія 19",
+      "event_uk": "Матч за звання чемпіона світу · партія 19",
+      "label_ru": "Матч за звание чемпиона мира · партия 19",
+      "event_ru": "Матч за звание чемпиона мира · партия 19",
+      "label_tr": "Dünya Şampiyonluğu maçı · 19. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 19. oyun"
     },
     {
       "n": 63,
@@ -2066,7 +2628,16 @@
       "n_en": 86,
       "label_en": "Tournament · San Remo · Round 3",
       "event_en": "Tournament · San Remo · Round 3",
-      "n_hi": 23
+      "n_hi": 23,
+      "n_uk": 69,
+      "n_ru": 63,
+      "n_tr": 68,
+      "label_uk": "Турнір · Сан-Ремо · тур 3",
+      "event_uk": "Турнір · Сан-Ремо · тур 3",
+      "label_ru": "Турнир · Сан-Ремо · тур 3",
+      "event_ru": "Турнир · Сан-Ремо · тур 3",
+      "label_tr": "Turnuva · San Remo · 3. tur",
+      "event_tr": "Turnuva · San Remo · 3. tur"
     },
     {
       "n": 64,
@@ -2097,7 +2668,16 @@
       "n_en": 49,
       "label_en": "Tournament · Bled · Round 6",
       "event_en": "Tournament · Bled · Round 6",
-      "n_hi": 19
+      "n_hi": 19,
+      "n_uk": 61,
+      "n_ru": 64,
+      "n_tr": 64,
+      "label_uk": "Турнір · Блед · тур 6",
+      "event_uk": "Турнір · Блед · тур 6",
+      "label_ru": "Турнир · Блед · тур 6",
+      "event_ru": "Турнир · Блед · тур 6",
+      "label_tr": "Turnuva · Bled · 6. tur",
+      "event_tr": "Turnuva · Bled · 6. tur"
     },
     {
       "n": 65,
@@ -2130,7 +2710,16 @@
       "n_en": 51,
       "label_en": "World Championship match · Game 10",
       "event_en": "World Championship match · Game 10",
-      "n_hi": 41
+      "n_hi": 41,
+      "n_uk": 66,
+      "n_ru": 61,
+      "n_tr": 66,
+      "label_uk": "Матч за звання чемпіона світу · партія 10",
+      "event_uk": "Матч за звання чемпіона світу · партія 10",
+      "label_ru": "Матч за звание чемпиона мира · партия 10",
+      "event_ru": "Матч за звание чемпиона мира · партия 10",
+      "label_tr": "Dünya Şampiyonluğu maçı · 10. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 10. oyun"
     },
     {
       "n": 66,
@@ -2161,7 +2750,16 @@
       "n_en": 44,
       "label_en": "Airthings Masters (online) · Round 8",
       "event_en": "Airthings Masters (online) · Round 8",
-      "n_hi": 2
+      "n_hi": 2,
+      "n_uk": 62,
+      "n_ru": 62,
+      "n_tr": 65,
+      "label_uk": "Airthings Masters (онлайн) · тур 8",
+      "event_uk": "Airthings Masters (онлайн) · тур 8",
+      "label_ru": "Airthings Masters (онлайн) · тур 8",
+      "event_ru": "Airthings Masters (онлайн) · тур 8",
+      "label_tr": "Airthings Masters (çevrimiçi) · 8. tur",
+      "event_tr": "Airthings Masters (çevrimiçi) · 8. tur"
     },
     {
       "n": 67,
@@ -2192,7 +2790,16 @@
       "n_en": 98,
       "label_en": "World Championship match · Game 34",
       "event_en": "World Championship match · Game 34",
-      "n_hi": 96
+      "n_hi": 96,
+      "n_uk": 67,
+      "n_ru": 69,
+      "n_tr": 69,
+      "label_uk": "Матч за звання чемпіона світу · партія 34",
+      "event_uk": "Матч за звання чемпіона світу · партія 34",
+      "label_ru": "Матч за звание чемпиона мира · партия 34",
+      "event_ru": "Матч за звание чемпиона мира · партия 34",
+      "label_tr": "Dünya Şampiyonluğu maçı · 34. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 34. oyun"
     },
     {
       "n": 68,
@@ -2224,7 +2831,16 @@
       "n_en": 50,
       "label_en": "Tournament · New York · Round 6",
       "event_en": "Tournament · New York · Round 6",
-      "n_hi": 22
+      "n_hi": 22,
+      "n_uk": 68,
+      "n_ru": 68,
+      "n_tr": 63,
+      "label_uk": "Турнір · Нью-Йорк · тур 6",
+      "event_uk": "Турнір · Нью-Йорк · тур 6",
+      "label_ru": "Турнир · Нью-Йорк · тур 6",
+      "event_ru": "Турнир · Нью-Йорк · тур 6",
+      "label_tr": "Turnuva · New York · 6. tur",
+      "event_tr": "Turnuva · New York · 6. tur"
     },
     {
       "n": 69,
@@ -2255,7 +2871,16 @@
       "n_en": 83,
       "label_en": "Interzonal · Round 7",
       "event_en": "Interzonal · Round 7",
-      "n_hi": 42
+      "n_hi": 42,
+      "n_uk": 63,
+      "n_ru": 67,
+      "n_tr": 70,
+      "label_uk": "Міжзональний турнір · тур 7",
+      "event_uk": "Міжзональний турнір · тур 7",
+      "label_ru": "Межзональный турнир · тур 7",
+      "event_ru": "Межзональный турнир · тур 7",
+      "label_tr": "Bölgelerarası turnuva · 7. tur",
+      "event_tr": "Bölgelerarası turnuva · 7. tur"
     },
     {
       "n": 70,
@@ -2287,7 +2912,16 @@
       "n_en": 18,
       "label_en": "Candidates semifinal · Game 10",
       "event_en": "Candidates semifinal · Game 10",
-      "n_hi": 64
+      "n_hi": 64,
+      "n_uk": 64,
+      "n_ru": 65,
+      "n_tr": 61,
+      "label_uk": "Півфінал претендентів · партія 10",
+      "event_uk": "Півфінал претендентів · партія 10",
+      "label_ru": "Полуфинал претендентов · партия 10",
+      "event_ru": "Полуфинал претендентов · партия 10",
+      "label_tr": "Adaylar yarı finali · 10. oyun",
+      "event_tr": "Adaylar yarı finali · 10. oyun"
     },
     {
       "n": 71,
@@ -2320,7 +2954,16 @@
       "n_en": 80,
       "label_en": "Tournament · Hastings · Round 3",
       "event_en": "Tournament · Hastings · Round 3",
-      "n_hi": 3
+      "n_hi": 3,
+      "n_uk": 73,
+      "n_ru": 76,
+      "n_tr": 77,
+      "label_uk": "Турнір · Гастінгс · тур 3",
+      "event_uk": "Турнір · Гастінгс · тур 3",
+      "label_ru": "Турнир · Гастингс · тур 3",
+      "event_ru": "Турнир · Гастингс · тур 3",
+      "label_tr": "Turnuva · Hastings · 3. tur",
+      "event_tr": "Turnuva · Hastings · 3. tur"
     },
     {
       "n": 72,
@@ -2352,7 +2995,16 @@
       "n_en": 47,
       "label_en": "Hoogovens tournament · Round 2",
       "event_en": "Hoogovens tournament · Round 2",
-      "n_hi": 50
+      "n_hi": 50,
+      "n_uk": 71,
+      "n_ru": 80,
+      "n_tr": 80,
+      "label_uk": "Турнір Hoogovens · тур 2",
+      "event_uk": "Турнір Hoogovens · тур 2",
+      "label_ru": "Турнир Hoogovens · тур 2",
+      "event_ru": "Турнир Hoogovens · тур 2",
+      "label_tr": "Hoogovens turnuvası · 2. tur",
+      "event_tr": "Hoogovens turnuvası · 2. tur"
     },
     {
       "n": 73,
@@ -2383,7 +3035,16 @@
       "n_en": 31,
       "label_en": "Tournament · New York · Round 5",
       "event_en": "Tournament · New York · Round 5",
-      "n_hi": 30
+      "n_hi": 30,
+      "n_uk": 76,
+      "n_ru": 75,
+      "n_tr": 75,
+      "label_uk": "Турнір · Нью-Йорк · тур 5",
+      "event_uk": "Турнір · Нью-Йорк · тур 5",
+      "label_ru": "Турнир · Нью-Йорк · тур 5",
+      "event_ru": "Турнир · Нью-Йорк · тур 5",
+      "label_tr": "Turnuva · New York · 5. tur",
+      "event_tr": "Turnuva · New York · 5. tur"
     },
     {
       "n": 74,
@@ -2413,7 +3074,16 @@
       "n_en": 82,
       "label_en": "Casual game",
       "event_en": "Casual game",
-      "n_hi": 20
+      "n_hi": 20,
+      "n_uk": 72,
+      "n_ru": 71,
+      "n_tr": 76,
+      "label_uk": "Товариська партія",
+      "event_uk": "Товариська партія",
+      "label_ru": "Товарищеская партия",
+      "event_ru": "Товарищеская партия",
+      "label_tr": "Dostluk oyunu",
+      "event_tr": "Dostluk oyunu"
     },
     {
       "n": 75,
@@ -2450,7 +3120,16 @@
       "n_en": 79,
       "label_en": "La Bourdonnais – McDonnell match · Game 16",
       "event_en": "La Bourdonnais – McDonnell match · Game 16",
-      "n_hi": 36
+      "n_hi": 36,
+      "n_uk": 79,
+      "n_ru": 77,
+      "n_tr": 74,
+      "label_uk": "Матч Лабурдоне – Макдоннелл · партія 16",
+      "event_uk": "Матч Лабурдоне – Макдоннелл · партія 16",
+      "label_ru": "Матч Лабурдоне – Макдоннелл · партия 16",
+      "event_ru": "Матч Лабурдоне – Макдоннелл · партия 16",
+      "label_tr": "La Bourdonnais – McDonnell maçı · 16. oyun",
+      "event_tr": "La Bourdonnais – McDonnell maçı · 16. oyun"
     },
     {
       "n": 76,
@@ -2481,7 +3160,16 @@
       "n_en": 5,
       "label_en": "Credit Suisse Masters · Round 9",
       "event_en": "Credit Suisse Masters · Round 9",
-      "n_hi": 29
+      "n_hi": 29,
+      "n_uk": 78,
+      "n_ru": 78,
+      "n_tr": 78,
+      "label_uk": "Credit Suisse Masters · тур 9",
+      "event_uk": "Credit Suisse Masters · тур 9",
+      "label_ru": "Credit Suisse Masters · тур 9",
+      "event_ru": "Credit Suisse Masters · тур 9",
+      "label_tr": "Credit Suisse Masters · 9. tur",
+      "event_tr": "Credit Suisse Masters · 9. tur"
     },
     {
       "n": 77,
@@ -2514,7 +3202,16 @@
       "n_en": 39,
       "label_en": "USSR vs. Rest of the World · Game 2",
       "event_en": "USSR vs. Rest of the World · Game 2",
-      "n_hi": 89
+      "n_hi": 89,
+      "n_uk": 74,
+      "n_ru": 74,
+      "n_tr": 72,
+      "label_uk": "СРСР проти збірної світу · партія 2",
+      "event_uk": "СРСР проти збірної світу · партія 2",
+      "label_ru": "СССР против сборной мира · партия 2",
+      "event_ru": "СССР против сборной мира · партия 2",
+      "label_tr": "SSCB Dünya Karmasına Karşı · 2. oyun",
+      "event_tr": "SSCB Dünya Karmasına Karşı · 2. oyun"
     },
     {
       "n": 78,
@@ -2549,7 +3246,16 @@
       "n_en": 27,
       "label_en": "Tournament · Moscow · Round 12",
       "event_en": "Tournament · Moscow · Round 12",
-      "n_hi": 10
+      "n_hi": 10,
+      "n_uk": 75,
+      "n_ru": 72,
+      "n_tr": 71,
+      "label_uk": "Турнір · Москва · тур 12",
+      "event_uk": "Турнір · Москва · тур 12",
+      "label_ru": "Турнир · Москва · тур 12",
+      "event_ru": "Турнир · Москва · тур 12",
+      "label_tr": "Turnuva · Moskova · 12. tur",
+      "event_tr": "Turnuva · Moskova · 12. tur"
     },
     {
       "n": 79,
@@ -2586,7 +3292,16 @@
       "n_en": 16,
       "label_en": "Man vs. machine · Game 1",
       "event_en": "Man vs. machine · Game 1",
-      "n_hi": 49
+      "n_hi": 49,
+      "n_uk": 77,
+      "n_ru": 79,
+      "n_tr": 79,
+      "label_uk": "Людина проти машини · партія 1",
+      "event_uk": "Людина проти машини · партія 1",
+      "label_ru": "Человек против машины · партия 1",
+      "event_ru": "Человек против машины · партия 1",
+      "label_tr": "İnsan makineye karşı · 1. oyun",
+      "event_tr": "İnsan makineye karşı · 1. oyun"
     },
     {
       "n": 80,
@@ -2617,7 +3332,16 @@
       "n_en": 67,
       "label_en": "World Championship match, tiebreak · Game 4",
       "event_en": "World Championship match, tiebreak · Game 4",
-      "n_hi": 44
+      "n_hi": 44,
+      "n_uk": 80,
+      "n_ru": 73,
+      "n_tr": 73,
+      "label_uk": "Матч за звання чемпіона світу, тай-брейк · партія 4",
+      "event_uk": "Матч за звання чемпіона світу, тай-брейк · партія 4",
+      "label_ru": "Матч за звание чемпиона мира, тай-брейк · партия 4",
+      "event_ru": "Матч за звание чемпиона мира, тай-брейк · партия 4",
+      "label_tr": "Dünya Şampiyonluğu maçı, eşitlik bozma · 4. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı, eşitlik bozma · 4. oyun"
     },
     {
       "n": 81,
@@ -2658,7 +3382,16 @@
       "n_en": 66,
       "label_en": "Tournament · Danzhou · Round 2",
       "event_en": "Tournament · Danzhou · Round 2",
-      "n_hi": 78
+      "n_hi": 78,
+      "n_uk": 90,
+      "n_ru": 86,
+      "n_tr": 83,
+      "label_uk": "Турнір · Даньчжоу · тур 2",
+      "event_uk": "Турнір · Даньчжоу · тур 2",
+      "label_ru": "Турнир · Даньчжоу · тур 2",
+      "event_ru": "Турнир · Даньчжоу · тур 2",
+      "label_tr": "Turnuva · Danzhou · 2. tur",
+      "event_tr": "Turnuva · Danzhou · 2. tur"
     },
     {
       "n": 82,
@@ -2688,7 +3421,16 @@
       "n_en": 35,
       "label_en": "RSFSR Championship",
       "event_en": "RSFSR Championship",
-      "n_hi": 26
+      "n_hi": 26,
+      "n_uk": 85,
+      "n_ru": 85,
+      "n_tr": 86,
+      "label_uk": "Чемпіонат РРФСР",
+      "event_uk": "Чемпіонат РРФСР",
+      "label_ru": "Чемпионат РСФСР",
+      "event_ru": "Чемпионат РСФСР",
+      "label_tr": "RSFSC Şampiyonası",
+      "event_tr": "RSFSC Şampiyonası"
     },
     {
       "n": 83,
@@ -2720,7 +3462,16 @@
       "n_en": 23,
       "label_en": "Corus tournament, Group C · Round 12",
       "event_en": "Corus tournament, Group C · Round 12",
-      "n_hi": 47
+      "n_hi": 47,
+      "n_uk": 86,
+      "n_ru": 88,
+      "n_tr": 81,
+      "label_uk": "Турнір Corus, група C · тур 12",
+      "event_uk": "Турнір Corus, група C · тур 12",
+      "label_ru": "Турнир Corus, группа C · тур 12",
+      "event_ru": "Турнир Corus, группа C · тур 12",
+      "label_tr": "Corus turnuvası, C grubu · 12. tur",
+      "event_tr": "Corus turnuvası, C grubu · 12. tur"
     },
     {
       "n": 84,
@@ -2752,7 +3503,16 @@
       "n_en": 36,
       "label_en": "AVRO tournament · Round 11",
       "event_en": "AVRO tournament · Round 11",
-      "n_hi": 27
+      "n_hi": 27,
+      "n_uk": 82,
+      "n_ru": 82,
+      "n_tr": 85,
+      "label_uk": "Турнір АВРО · тур 11",
+      "event_uk": "Турнір АВРО · тур 11",
+      "label_ru": "Турнир АВРО · тур 11",
+      "event_ru": "Турнир АВРО · тур 11",
+      "label_tr": "AVRO turnuvası · 11. tur",
+      "event_tr": "AVRO turnuvası · 11. tur"
     },
     {
       "n": 85,
@@ -2785,7 +3545,16 @@
       "n_en": 69,
       "label_en": "Casual game",
       "event_en": "Casual game",
-      "n_hi": 45
+      "n_hi": 45,
+      "n_uk": 89,
+      "n_ru": 87,
+      "n_tr": 84,
+      "label_uk": "Товариська партія",
+      "event_uk": "Товариська партія",
+      "label_ru": "Товарищеская партия",
+      "event_ru": "Товарищеская партия",
+      "label_tr": "Dostluk oyunu",
+      "event_tr": "Dostluk oyunu"
     },
     {
       "n": 86,
@@ -2820,7 +3589,16 @@
       "n_en": 57,
       "label_en": "Ortueta – Sanz match",
       "event_en": "Ortueta – Sanz match",
-      "n_hi": 94
+      "n_hi": 94,
+      "n_uk": 88,
+      "n_ru": 84,
+      "n_tr": 89,
+      "label_uk": "Матч Ортуета – Санс",
+      "event_uk": "Матч Ортуета – Санс",
+      "label_ru": "Матч Ортуэта – Санс",
+      "event_ru": "Матч Ортуэта – Санс",
+      "label_tr": "Ortueta – Sanz maçı",
+      "event_tr": "Ortueta – Sanz maçı"
     },
     {
       "n": 87,
@@ -2856,7 +3634,16 @@
       "n_en": 97,
       "label_en": "World Championship match · Game 24",
       "event_en": "World Championship match · Game 24",
-      "n_hi": 81
+      "n_hi": 81,
+      "n_uk": 83,
+      "n_ru": 83,
+      "n_tr": 90,
+      "label_uk": "Матч за звання чемпіона світу · партія 24",
+      "event_uk": "Матч за звання чемпіона світу · партія 24",
+      "label_ru": "Матч за звание чемпиона мира · партия 24",
+      "event_ru": "Матч за звание чемпиона мира · партия 24",
+      "label_tr": "Dünya Şampiyonluğu maçı · 24. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 24. oyun"
     },
     {
       "n": 88,
@@ -2887,7 +3674,16 @@
       "n_en": 9,
       "label_en": "Tournament · St. Petersburg · Round 10",
       "event_en": "Tournament · St. Petersburg · Round 10",
-      "n_hi": 76
+      "n_hi": 76,
+      "n_uk": 84,
+      "n_ru": 89,
+      "n_tr": 87,
+      "label_uk": "Турнір · Санкт-Петербург · тур 10",
+      "event_uk": "Турнір · Санкт-Петербург · тур 10",
+      "label_ru": "Турнир · Санкт-Петербург · тур 10",
+      "event_ru": "Турнир · Санкт-Петербург · тур 10",
+      "label_tr": "Turnuva · St. Petersburg · 10. tur",
+      "event_tr": "Turnuva · St. Petersburg · 10. tur"
     },
     {
       "n": 89,
@@ -2919,7 +3715,16 @@
       "n_en": 19,
       "label_en": "Chess Olympiad · Round 9",
       "event_en": "Chess Olympiad · Round 9",
-      "n_hi": 40
+      "n_hi": 40,
+      "n_uk": 81,
+      "n_ru": 81,
+      "n_tr": 88,
+      "label_uk": "Шахова олімпіада · тур 9",
+      "event_uk": "Шахова олімпіада · тур 9",
+      "label_ru": "Шахматная олимпиада · тур 9",
+      "event_ru": "Шахматная олимпиада · тур 9",
+      "label_tr": "Satranç Olimpiyatı · 9. tur",
+      "event_tr": "Satranç Olimpiyatı · 9. tur"
     },
     {
       "n": 90,
@@ -2951,7 +3756,16 @@
       "n_en": 53,
       "label_en": "World Championship match · Game 32",
       "event_en": "World Championship match · Game 32",
-      "n_hi": 63
+      "n_hi": 63,
+      "n_uk": 87,
+      "n_ru": 90,
+      "n_tr": 82,
+      "label_uk": "Матч за звання чемпіона світу · партія 32",
+      "event_uk": "Матч за звання чемпіона світу · партія 32",
+      "label_ru": "Матч за звание чемпиона мира · партия 32",
+      "event_ru": "Матч за звание чемпиона мира · партия 32",
+      "label_tr": "Dünya Şampiyonluğu maçı · 32. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 32. oyun"
     },
     {
       "n": 91,
@@ -2985,7 +3799,16 @@
       "n_en": 29,
       "label_en": "Tournament · Stavanger · Round 5",
       "event_en": "Tournament · Stavanger · Round 5",
-      "n_hi": 95
+      "n_hi": 95,
+      "n_uk": 92,
+      "n_ru": 93,
+      "n_tr": 95,
+      "label_uk": "Турнір · Ставангер · тур 5",
+      "event_uk": "Турнір · Ставангер · тур 5",
+      "label_ru": "Турнир · Ставангер · тур 5",
+      "event_ru": "Турнир · Ставангер · тур 5",
+      "label_tr": "Turnuva · Stavanger · 5. tur",
+      "event_tr": "Turnuva · Stavanger · 5. tur"
     },
     {
       "n": 92,
@@ -3023,7 +3846,16 @@
       "n_en": 34,
       "label_en": "Warsaw tournament",
       "event_en": "Warsaw tournament",
-      "n_hi": 11
+      "n_hi": 11,
+      "n_uk": 91,
+      "n_ru": 99,
+      "n_tr": 98,
+      "label_uk": "Турнір у Варшаві",
+      "event_uk": "Турнір у Варшаві",
+      "label_ru": "Турнир в Варшаве",
+      "event_ru": "Турнир в Варшаве",
+      "label_tr": "Varşova turnuvası",
+      "event_tr": "Varşova turnuvası"
     },
     {
       "n": 93,
@@ -3055,7 +3887,16 @@
       "n_en": 71,
       "label_en": "Tournament · Linares · Round 10",
       "event_en": "Tournament · Linares · Round 10",
-      "n_hi": 80
+      "n_hi": 80,
+      "n_uk": 97,
+      "n_ru": 94,
+      "n_tr": 93,
+      "label_uk": "Турнір · Лінарес · тур 10",
+      "event_uk": "Турнір · Лінарес · тур 10",
+      "label_ru": "Турнир · Линарес · тур 10",
+      "event_ru": "Турнир · Линарес · тур 10",
+      "label_tr": "Turnuva · Linares · 10. tur",
+      "event_tr": "Turnuva · Linares · 10. tur"
     },
     {
       "n": 94,
@@ -3087,7 +3928,16 @@
       "n_en": 6,
       "label_en": "World Championship match · Game 14",
       "event_en": "World Championship match · Game 14",
-      "n_hi": 46
+      "n_hi": 46,
+      "n_uk": 99,
+      "n_ru": 95,
+      "n_tr": 96,
+      "label_uk": "Матч за звання чемпіона світу · партія 14",
+      "event_uk": "Матч за звання чемпіона світу · партія 14",
+      "label_ru": "Матч за звание чемпиона мира · партия 14",
+      "event_ru": "Матч за звание чемпиона мира · партия 14",
+      "label_tr": "Dünya Şampiyonluğu maçı · 14. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 14. oyun"
     },
     {
       "n": 95,
@@ -3120,7 +3970,16 @@
       "n_en": 54,
       "label_en": "Fischer – Spassky rematch · Game 1",
       "event_en": "Fischer – Spassky rematch · Game 1",
-      "n_hi": 69
+      "n_hi": 69,
+      "n_uk": 94,
+      "n_ru": 92,
+      "n_tr": 97,
+      "label_uk": "Матч-реванш Фішер – Спаський · партія 1",
+      "event_uk": "Матч-реванш Фішер – Спаський · партія 1",
+      "label_ru": "Матч-реванш Фишер – Спасский · партия 1",
+      "event_ru": "Матч-реванш Фишер – Спасский · партия 1",
+      "label_tr": "Fischer – Spassky rövanş maçı · 1. oyun",
+      "event_tr": "Fischer – Spassky rövanş maçı · 1. oyun"
     },
     {
       "n": 96,
@@ -3151,7 +4010,16 @@
       "n_en": 32,
       "label_en": "Second Piatigorsky Cup · Round 7",
       "event_en": "Second Piatigorsky Cup · Round 7",
-      "n_hi": 90
+      "n_hi": 90,
+      "n_uk": 95,
+      "n_ru": 97,
+      "n_tr": 92,
+      "label_uk": "Другий Кубок П'ятигорського · тур 7",
+      "event_uk": "Другий Кубок П'ятигорського · тур 7",
+      "label_ru": "Второй Кубок Пятигорского · тур 7",
+      "event_ru": "Второй Кубок Пятигорского · тур 7",
+      "label_tr": "İkinci Piatigorsky Kupası · 7. tur",
+      "event_tr": "İkinci Piatigorsky Kupası · 7. tur"
     },
     {
       "n": 97,
@@ -3181,7 +4049,16 @@
       "n_en": 95,
       "label_en": "German Chess Federation Congress",
       "event_en": "German Chess Federation Congress",
-      "n_hi": 99
+      "n_hi": 99,
+      "n_uk": 96,
+      "n_ru": 91,
+      "n_tr": 100,
+      "label_uk": "Конгрес Німецького шахового союзу",
+      "event_uk": "Конгрес Німецького шахового союзу",
+      "label_ru": "Конгресс Германского шахматного союза",
+      "event_ru": "Конгресс Германского шахматного союза",
+      "label_tr": "Alman Satranç Federasyonu Kongresi",
+      "event_tr": "Alman Satranç Federasyonu Kongresi"
     },
     {
       "n": 98,
@@ -3215,7 +4092,16 @@
       "n_en": 70,
       "label_en": "World Championship match · Game 16",
       "event_en": "World Championship match · Game 16",
-      "n_hi": 60
+      "n_hi": 60,
+      "n_uk": 100,
+      "n_ru": 98,
+      "n_tr": 91,
+      "label_uk": "Матч за звання чемпіона світу · партія 16",
+      "event_uk": "Матч за звання чемпіона світу · партія 16",
+      "label_ru": "Матч за звание чемпиона мира · партия 16",
+      "event_ru": "Матч за звание чемпиона мира · партия 16",
+      "label_tr": "Dünya Şampiyonluğu maçı · 16. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 16. oyun"
     },
     {
       "n": 99,
@@ -3243,7 +4129,16 @@
       "n_en": 68,
       "label_en": "Casual game",
       "event_en": "Casual game",
-      "n_hi": 21
+      "n_hi": 21,
+      "n_uk": 98,
+      "n_ru": 100,
+      "n_tr": 94,
+      "label_uk": "Товариська партія",
+      "event_uk": "Товариська партія",
+      "label_ru": "Товарищеская партия",
+      "event_ru": "Товарищеская партия",
+      "label_tr": "Dostluk oyunu",
+      "event_tr": "Dostluk oyunu"
     },
     {
       "n": 100,
@@ -3275,7 +4170,16 @@
       "n_en": 81,
       "label_en": "Rosenwald Memorial",
       "event_en": "Rosenwald Memorial",
-      "n_hi": 83
+      "n_hi": 83,
+      "n_uk": 93,
+      "n_ru": 96,
+      "n_tr": 99,
+      "label_uk": "Меморіал Розенвальда",
+      "event_uk": "Меморіал Розенвальда",
+      "label_ru": "Мемориал Розенвальда",
+      "event_ru": "Мемориал Розенвальда",
+      "label_tr": "Rosenwald Anma Turnuvası",
+      "event_tr": "Rosenwald Anma Turnuvası"
     }
   ]
 }

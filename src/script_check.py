@@ -36,7 +36,8 @@ PREPOSITIONS = _N.PREPOSITIONS
 
 MARKER_RE = re.compile(r"\{\{([msv]):(\d+)\}\}")
 # Surowe ruchy w tekście (notacja angielska, polska i niemiecka) — zakazane poza markerami.
-RAW_MOVE_RE = re.compile(r"(?<![\w-])(?:[KQRBNHWGSDTL]x?[a-h]?[1-8]?x?[a-h][1-8]|O-O(?:-O)?|[a-h]x[a-h][1-8])(?![\w])")
+# litery figur: EN/PL/DE (K Q R B N H W G S D T L), UK/RU (Кр Ф Т Л С К), TR (Ş V K F A)
+RAW_MOVE_RE = re.compile(r"(?<![\w-])(?:(?:[KQRBNHWGSDTLVAFŞ]|Кр|[ФТЛСК])x?[a-h]?[1-8]?x?[a-h][1-8]|O-O(?:-O)?|[a-h]x[a-h][1-8])(?![\w])")
 MAX_AUTO_GAP = 6
 THINK_RE = re.compile(r"\{\{p\}\}")   # pauza "pomyśl sam" przed ważnym ruchem
 THINK_TOKEN = "\u23f8"                  # znacznik roboczy w tokenach (usuwany przed TTS)

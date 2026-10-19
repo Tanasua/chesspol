@@ -55,6 +55,9 @@ jobs:
           ELEVENLABS_VOICE_ID_DE: ${{ secrets.ELEVENLABS_VOICE_ID_DE }}
           ELEVENLABS_VOICE_ID_EN: ${{ secrets.ELEVENLABS_VOICE_ID_EN }}
           ELEVENLABS_VOICE_ID_HI: ${{ secrets.ELEVENLABS_VOICE_ID_HI }}
+          ELEVENLABS_VOICE_ID_UK: ${{ secrets.ELEVENLABS_VOICE_ID_UK }}
+          ELEVENLABS_VOICE_ID_RU: ${{ secrets.ELEVENLABS_VOICE_ID_RU }}
+          ELEVENLABS_VOICE_ID_TR: ${{ secrets.ELEVENLABS_VOICE_ID_TR }}
           ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
           STOCKFISH_PATH: /usr/games/stockfish
           GH_TOKEN: ${{ github.token }}
@@ -70,7 +73,7 @@ jobs:
         run: |
           git config user.name "episode-bot"
           git config user.email "episode-bot@users.noreply.github.com"
-          for p in state catalog/news.json games/news facts scripts scripts_de scripts_en scripts_hi assets/players; do [ -e "$p" ] && git add "$p"; done
+          for p in state catalog/news.json games/news facts scripts scripts_de scripts_en scripts_hi scripts_uk scripts_ru scripts_tr assets/players; do [ -e "$p" ] && git add "$p"; done
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "bot: news watch"
           for i in 1 2 3 4; do git pull --rebase && git push && exit 0; sleep $((2**i)); done

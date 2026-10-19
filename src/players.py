@@ -89,6 +89,26 @@ def localize_names(text: str) -> str:
     return text
 
 
+NAMES_CYR = ROOT / "catalog" / "names_cyr.json"  # {"uk": {"Magnus Carlsen": ["Магнус", "Карлсен"]}, "ru": {...}}
+_CYR = None
+
+
+def cyrillic(name: str) -> tuple | None:
+    """(imię, nazwisko) cyrylicą dla kanałów uk/ru; inne kanały i brak wpisu — None."""
+    global _CYR
+    from lang import L
+
+    if L.code not in ("uk", "ru") or not name:
+        return None
+    if _CYR is None:
+        _CYR = json.loads(NAMES_CYR.read_text(encoding="utf-8")) if NAMES_CYR.exists() else {}
+    hit = _CYR.get(L.code, {}).get(name)
+    if hit is None and "," in name:  # format FIDE z PGN: "Carlsen, Magnus"
+        last, _, first = name.partition(",")
+        hit = _CYR.get(L.code, {}).get(f"{first.strip()} {last.strip()}")
+    return tuple(hit) if hit else None
+
+
 def side(entry: dict | None, color: str, pgn_name: str) -> dict:
     """color: 'white'/'black'. Zwraca {name, first, last, photo, credit}."""
     from lang import field_
@@ -100,6 +120,10 @@ def side(entry: dict | None, color: str, pgn_name: str) -> dict:
         first, last = field_(e, f"{color}_first") or "", field_(e, f"{color}_last") or name
     else:
         last = local_surname(last)
+    cyr = cyrillic(e.get(color) or pgn_name)
+    if cyr:  # kanały uk/ru: imię i nazwisko cyrylicą (catalog/names_cyr.json)
+        first, last = cyr
+        name = f"{first} {last}".strip()
     jpg = photo_path(e.get(color) or pgn_name) or PHOTOS / "_brak_.jpg"  # po nazwie z bazy, nie po wersji językowej
     meta = jpg.with_suffix(".json")
     credit = json.loads(meta.read_text(encoding="utf-8")) if meta.exists() else None

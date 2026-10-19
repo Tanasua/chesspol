@@ -24,7 +24,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Півфінальний матч претендентів · партія 5",
+      "event_uk": "Півфінальний матч претендентів · партія 5",
+      "label_ru": "Полуфинальный матч претендентов · партия 5",
+      "event_ru": "Полуфинальный матч претендентов · партия 5",
+      "label_tr": "Adaylar yarı final maçı · 5. oyun",
+      "event_tr": "Adaylar yarı final maçı · 5. oyun"
     },
     {
       "n": 2,
@@ -47,7 +53,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Кембридж-Спрінгс",
+      "event_uk": "Турнір у Кембридж-Спрінгс",
+      "label_ru": "Турнир в Кембридж-Спрингс",
+      "event_ru": "Турнир в Кембридж-Спрингс",
+      "label_tr": "Cambridge Springs turnuvası",
+      "event_tr": "Cambridge Springs turnuvası"
     },
     {
       "n": 3,
@@ -73,7 +85,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч за звання чемпіона світу ФІДЕ · партія 2",
+      "event_uk": "Матч за звання чемпіона світу ФІДЕ · партія 2",
+      "label_ru": "Матч за звание чемпиона мира ФИДЕ · партия 2",
+      "event_ru": "Матч за звание чемпиона мира ФИДЕ · партия 2",
+      "label_tr": "FIDE Dünya Şampiyonluğu maçı · 2. oyun",
+      "event_tr": "FIDE Dünya Şampiyonluğu maçı · 2. oyun"
     },
     {
       "n": 4,
@@ -95,7 +113,13 @@
       "pgn_sources": [
         "pgnmentor"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Матч Морфі – Андерсен · партія 9",
+      "event_uk": "Матч Морфі – Андерсен · партія 9",
+      "label_ru": "Матч Морфи – Андерсен · партия 9",
+      "event_ru": "Матч Морфи – Андерсен · партия 9",
+      "label_tr": "Morphy – Anderssen maçı · 9. oyun",
+      "event_tr": "Morphy – Anderssen maçı · 9. oyun"
     },
     {
       "n": 5,
@@ -120,7 +144,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір претендентів",
+      "event_uk": "Турнір претендентів",
+      "label_ru": "Турнир претендентов",
+      "event_ru": "Турнир претендентов",
+      "label_tr": "Adaylar Turnuvası",
+      "event_tr": "Adaylar Turnuvası"
     },
     {
       "n": 6,
@@ -145,7 +175,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч за звання чемпіона світу · партія 10",
+      "event_uk": "Матч за звання чемпіона світу · партія 10",
+      "label_ru": "Матч за звание чемпиона мира · партия 10",
+      "event_ru": "Матч за звание чемпиона мира · партия 10",
+      "label_tr": "Dünya Şampiyonluğu maçı · 10. oyun",
+      "event_tr": "Dünya Şampiyonluğu maçı · 10. oyun"
     },
     {
       "n": 7,
@@ -168,7 +204,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Маргейті",
+      "event_uk": "Турнір у Маргейті",
+      "label_ru": "Турнир в Маргейте",
+      "event_ru": "Турнир в Маргейте",
+      "label_tr": "Margate turnuvası",
+      "event_tr": "Margate turnuvası"
     },
     {
       "n": 8,
@@ -191,7 +233,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Дортмунді",
+      "event_uk": "Турнір у Дортмунді",
+      "label_ru": "Турнир в Дортмунде",
+      "event_ru": "Турнир в Дортмунде",
+      "label_tr": "Dortmund turnuvası",
+      "event_tr": "Dortmund turnuvası"
     },
     {
       "n": 9,
@@ -215,7 +263,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Бледі",
+      "event_uk": "Турнір у Бледі",
+      "label_ru": "Турнир в Бледе",
+      "event_ru": "Турнир в Бледе",
+      "label_tr": "Bled turnuvası",
+      "event_tr": "Bled turnuvası"
     },
     {
       "n": 10,
@@ -238,7 +292,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Парижі",
+      "event_uk": "Турнір у Парижі",
+      "label_ru": "Турнир в Париже",
+      "event_ru": "Турнир в Париже",
+      "label_tr": "Paris turnuvası",
+      "event_tr": "Paris turnuvası"
     },
     {
       "n": 11,
@@ -260,7 +320,13 @@
       "pgn_sources": [
         "pgnmentor"
       ],
-      "pgn_verified": false
+      "pgn_verified": false,
+      "label_uk": "Матч у Вейк-ан-Зеє · партія 2",
+      "event_uk": "Матч у Вейк-ан-Зеє · партія 2",
+      "label_ru": "Матч в Вейк-ан-Зее · партия 2",
+      "event_ru": "Матч в Вейк-ан-Зее · партия 2",
+      "label_tr": "Wijk aan Zee maçı · 2. oyun",
+      "event_tr": "Wijk aan Zee maçı · 2. oyun"
     },
     {
       "n": 12,
@@ -284,7 +350,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч-турнір на першість світу",
+      "event_uk": "Матч-турнір на першість світу",
+      "label_ru": "Матч-турнир на первенство мира",
+      "event_ru": "Матч-турнир на первенство мира",
+      "label_tr": "Dünya Şampiyonası turnuvası",
+      "event_tr": "Dünya Şampiyonası turnuvası"
     },
     {
       "n": 13,
@@ -309,7 +381,13 @@
         "nostalgia",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч претендентів PCA · партія 2",
+      "event_uk": "Матч претендентів PCA · партія 2",
+      "label_ru": "Матч претендентов PCA · партия 2",
+      "event_ru": "Матч претендентов PCA · партия 2",
+      "label_tr": "PCA Adaylar maçı · 2. oyun",
+      "event_tr": "PCA Adaylar maçı · 2. oyun"
     },
     {
       "n": 14,
@@ -334,7 +412,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір претендентів",
+      "event_uk": "Турнір претендентів",
+      "label_ru": "Турнир претендентов",
+      "event_ru": "Турнир претендентов",
+      "label_tr": "Adaylar Turnuvası",
+      "event_tr": "Adaylar Turnuvası"
     },
     {
       "n": 15,
@@ -357,7 +441,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір АВРО",
+      "event_uk": "Турнір АВРО",
+      "label_ru": "Турнир АВРО",
+      "event_ru": "Турнир АВРО",
+      "label_tr": "AVRO turnuvası",
+      "event_tr": "AVRO turnuvası"
     },
     {
       "n": 16,
@@ -380,7 +470,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір Phillips & Drew Kings",
+      "event_uk": "Турнір Phillips & Drew Kings",
+      "label_ru": "Турнир Phillips & Drew Kings",
+      "event_ru": "Турнир Phillips & Drew Kings",
+      "label_tr": "Phillips & Drew Kings turnuvası",
+      "event_tr": "Phillips & Drew Kings turnuvası"
     },
     {
       "n": 17,
@@ -405,7 +501,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Шахова олімпіада",
+      "event_uk": "Шахова олімпіада",
+      "label_ru": "Шахматная олимпиада",
+      "event_ru": "Шахматная олимпиада",
+      "label_tr": "Satranç Olimpiyatı",
+      "event_tr": "Satranç Olimpiyatı"
     },
     {
       "n": 18,
@@ -431,7 +533,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч претендентів ФІДЕ · партія 6",
+      "event_uk": "Матч претендентів ФІДЕ · партія 6",
+      "label_ru": "Матч претендентов ФИДЕ · партия 6",
+      "event_ru": "Матч претендентов ФИДЕ · партия 6",
+      "label_tr": "FIDE Adaylar maçı · 6. oyun",
+      "event_tr": "FIDE Adaylar maçı · 6. oyun"
     },
     {
       "n": 19,
@@ -455,7 +563,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір претендентів",
+      "event_uk": "Турнір претендентів",
+      "label_ru": "Турнир претендентов",
+      "event_ru": "Турнир претендентов",
+      "label_tr": "Adaylar Turnuvası",
+      "event_tr": "Adaylar Turnuvası"
     },
     {
       "n": 20,
@@ -478,7 +592,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Ноттінгемі",
+      "event_uk": "Турнір у Ноттінгемі",
+      "label_ru": "Турнир в Ноттингеме",
+      "event_ru": "Турнир в Ноттингеме",
+      "label_tr": "Nottingham turnuvası",
+      "event_tr": "Nottingham turnuvası"
     },
     {
       "n": 21,
@@ -503,7 +623,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір претендентів",
+      "event_uk": "Турнір претендентів",
+      "label_ru": "Турнир претендентов",
+      "event_ru": "Турнир претендентов",
+      "label_tr": "Adaylar Turnuvası",
+      "event_tr": "Adaylar Turnuvası"
     },
     {
       "n": 22,
@@ -526,7 +652,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Турнір у Нікшичі",
+      "event_uk": "Турнір у Нікшичі",
+      "label_ru": "Турнир в Никшиче",
+      "event_ru": "Турнир в Никшиче",
+      "label_tr": "Nikšić turnuvası",
+      "event_tr": "Nikšić turnuvası"
     },
     {
       "n": 23,
@@ -550,7 +682,13 @@
         "nostalgia",
         "pgnmentor"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Міжзональний турнір",
+      "event_uk": "Міжзональний турнір",
+      "label_ru": "Межзональный турнир",
+      "event_ru": "Межзональный турнир",
+      "label_tr": "Bölgelerarası turnuva",
+      "event_tr": "Bölgelerarası turnuva"
     },
     {
       "n": 24,
@@ -575,7 +713,13 @@
         "pgnmentor",
         "wch"
       ],
-      "pgn_verified": true
+      "pgn_verified": true,
+      "label_uk": "Матч за звання чемпіона світу ФІДЕ · партія 10",
+      "event_uk": "Матч за звання чемпіона світу ФІДЕ · партія 10",
+      "label_ru": "Матч за звание чемпиона мира ФИДЕ · партия 10",
+      "event_ru": "Матч за звание чемпиона мира ФИДЕ · партия 10",
+      "label_tr": "FIDE Dünya Şampiyonluğu maçı · 10. oyun",
+      "event_tr": "FIDE Dünya Şampiyonluğu maçı · 10. oyun"
     }
   ]
 }

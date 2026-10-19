@@ -108,7 +108,8 @@ def when_uk(dt: datetime) -> str:
     if TZ.key == "Europe/Kyiv":
         return f"{WEEKDAYS_UK[loc.weekday()]}, {loc:%d.%m.%Y} о {loc:%H:%M} (за Києвом)"
     kyiv = dt.astimezone(ZoneInfo("Europe/Kyiv"))  # канал для іншого ринку: місцевий час + київський
-    city = {"America/New_York": "Нью-Йорком", "Europe/Berlin": "Берліном", "Europe/Warsaw": "Варшавою"}.get(TZ.key, TZ.key)
+    city = {"America/New_York": "Нью-Йорком", "Europe/Berlin": "Берліном", "Europe/Warsaw": "Варшавою",
+            "Asia/Kolkata": "Колкатою", "Europe/Moscow": "Москвою", "Europe/Istanbul": "Стамбулом"}.get(TZ.key, TZ.key)
     return (f"{WEEKDAYS_UK[loc.weekday()]}, {loc:%d.%m.%Y} о {loc:%H:%M} (за {city}) = "
             f"{WEEKDAYS_UK[kyiv.weekday()]} {kyiv:%H:%M} за Києвом")
 
@@ -185,7 +186,10 @@ def _yt_title(main: str, white: str, black: str, game: dict, hook: str = "") -> 
 IMPORTANT_EVENT_RE = re.compile(
     r"world championship|candidates|olympiad|interzonal|championship|world cup|grand chess tour|final|"
     r"mistrzostw|pretendent|olimpiad|międzystref|puchar świata|finał|"
-    r"weltmeisterschaft|wm-|kandidaten|olympiade|interzonen|meisterschaft|weltpokal|finale", re.I)
+    r"weltmeisterschaft|wm-|kandidaten|olympiade|interzonen|meisterschaft|weltpokal|finale|"
+    r"чемпіон|претендент|олімпіад|міжзональн|кубок світу|фінал|"
+    r"чемпион|олимпиад|межзональн|кубок мира|финал|"
+    r"şampiyon|adaylar|olimpiyat|bölgelerarası|dünya kupası", re.I)
 
 
 def _event_short(game: dict) -> str:

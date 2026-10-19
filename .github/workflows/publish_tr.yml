@@ -1,0 +1,141 @@
+name: publish-episodes-tr
+
+# Kanał turecki (CHANNEL=tr, src/lang.py): ten sam katalog partii, własna kolejność (n_tr),
+# stan state/schedule_tr.json, scenariusze scripts_tr/, lektor ElevenLabs (głos z ELEVENLABS_VOICE_ID_TR),
+# publikacja 18:00 Europe/Istanbul; tryb youtube: upload private + publishAt (YT_REFRESH_TOKEN_TR) + miniatura.
+# Bez ELEVENLABS_VOICE_ID_TR — pomija.
+on:
+  schedule:
+    - cron: "47 10 * * *"
+  workflow_dispatch:
+    inputs:
+      game:
+        description: "Id partii na najbliższy odcinek (np. carlsen_praggnanandhaa_2022) — poza kolejką"
+        required: false
+      first_day:
+        description: "Data pierwszej publikacji YYYY-MM-DD (tylko przy pierwszym uruchomieniu)"
+        required: false
+      ahead:
+        description: "Ile odcinków mieć gotowych naprzód (domyślnie 7 = tydzień)"
+        required: false
+      publish_now:
+        description: "Pierwszy odcinek tego runu — publicznie od razu (odcinek na dziś)"
+        type: boolean
+        default: false
+      no_upload:
+        description: "Test: bez uploadu na YouTube"
+        type: boolean
+        default: false
+
+concurrency:  # osobna kolejka na kanał: wspólna grupa trzyma tylko 1 oczekujący run i kasuje pozostałe
+  group: publish-tr
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: System deps
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core libcairo2 stockfish
+
+      - name: Python deps
+        run: pip install -r requirements.txt
+
+      - name: TTS cache
+        uses: actions/cache@v4
+        with:
+          path: .tts_cache
+          key: tts-${{ github.run_id }}
+          restore-keys: tts-
+
+      - name: Portraits
+        continue-on-error: true
+        run: python src/fetch_portraits.py
+
+      - name: Plan
+        env:
+          CHANNEL: tr
+          PUBLISH_TZ: Europe/Istanbul
+        run: python src/scheduler.py --plan
+
+      - name: Produce and schedule
+        env:
+          CHANNEL: tr
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID_TR }}
+          ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL || 'eleven_multilingual_v2' }}
+          HOST_NAME: ${{ vars.HOST_NAME_TR }}   # imię prowadzącego (np. Lukas); puste = powitanie bez imienia
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN_TR }}   # osobny token na kanał
+          STOCKFISH_PATH: /usr/games/stockfish
+          PUBLISH_MODE: youtube         # youtube = automatyczny upload + miniatura (okładka OpenAI); manual = paczki do ręcznego uploadu
+          PUBLISH_NOW: ${{ inputs.publish_now }}
+          GH_TOKEN: ${{ github.token }}  # GitHub Release z paczką
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PUBLISH_TZ: Europe/Istanbul
+          PUBLISH_HOUR: "18"
+          INTERVAL_DAYS: "1"           # 1 odcinek dziennie (+ ewentualnie nowość z turnieju)
+          BUFFER: ${{ inputs.ahead || '7' }}         # tydzień naprzód
+          MAX_PER_RUN: ${{ inputs.ahead || '1' }}
+          FIRST_DAY: ${{ inputs.first_day }}
+          GAME: ${{ inputs.game }}
+          NO_UPLOAD: ${{ inputs.no_upload }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ] || [ -z "$ELEVENLABS_VOICE_ID" ]; then
+            echo "::notice::Brak ELEVENLABS_API_KEY / ELEVENLABS_VOICE_ID_TR — kanał tr pominięty"; exit 0
+          fi
+          if [ "$PUBLISH_MODE" = "youtube" ] && [ "$NO_UPLOAD" != "true" ] && { [ -z "$YT_CLIENT_ID" ] || [ -z "$YT_CLIENT_SECRET" ] || [ -z "$YT_REFRESH_TOKEN" ]; }; then
+            echo "::error::Brak sekretów YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN_TR"; exit 1
+          fi
+          ARGS=()
+          if [ -n "$FIRST_DAY" ]; then ARGS+=(--first-day "$FIRST_DAY"); fi
+          if [ -n "$GAME" ]; then ARGS+=(--game "$GAME"); fi
+          if [ "$NO_UPLOAD" = "true" ]; then ARGS+=(--no-upload); fi
+          set -o pipefail
+          python src/scheduler.py "${ARGS[@]}" 2>&1 | tee /tmp/produce.log
+
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "episode-bot"
+          git config user.email "episode-bot@users.noreply.github.com"
+          for p in state scripts scripts_de scripts_en scripts_hi scripts_uk scripts_ru scripts_tr assets/players; do [ -e "$p" ] && git add "$p"; done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "bot: schedule update (tr)"
+          for i in 1 2 3 4; do git pull --rebase && git push && exit 0; sleep $((2**i)); done
+          exit 1
+
+      - name: Telegram alert on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          [ -n "$TELEGRAM_BOT_TOKEN" ] || exit 0
+          REASON=$(grep -Eo "credit_balance_exhausted|insufficient_quota|quota_exceeded|invalid_api_key|missing_permissions|voice_not_found|HTTP [45][0-9]{2}" /tmp/produce.log 2>/dev/null | head -1 || true)
+          curl -sS -o /dev/null "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode chat_id="$TELEGRAM_CHAT_ID" \
+            --data-urlencode text="⚠️ Шаховий бот 🇹🇷 (турецький канал): запуск упав. ${REASON:+Причина: $REASON. }Лог: $RUN_URL"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: episodes-tr-${{ github.run_id }}
+          path: out/packages/
+          if-no-files-found: ignore
+          retention-days: 14
