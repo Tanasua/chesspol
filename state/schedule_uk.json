@@ -48,6 +48,18 @@
       "rubric": "history",
       "day_rubric": "history",
       "duplicate_video_id": "F5HlLOvSjVg"
+    },
+    {
+      "id": "shirov_polgar_1994",
+      "publish_at": "2026-10-22T15:45:00+00:00",
+      "title": "Тиск не зупинити! | Широв – Полгар (1994) — атака триває навіть без ферзів",
+      "mode": "youtube",
+      "package": "out/packages/uk-ep005-shirov_polgar_1994",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/uk-ep005-shirov_polgar_1994",
+      "video_id": "cmupq-k-s64",
+      "thumbnail": "shirov_polgar_1994_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "national"
     }
   ]
 }
