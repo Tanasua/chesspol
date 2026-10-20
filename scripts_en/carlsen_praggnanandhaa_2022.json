@@ -1,0 +1,134 @@
+{
+  "hook": {
+    "text": "A sixteen-year-old with a rough tournament start faces the world champion, then the queen slips into enemy territory and the board catches fire.",
+    "ply": 64
+  },
+  "yt_hook": "Sixteen And Fearless!",
+  "yt_detail": "a 16-year-old beats Carlsen with Black",
+  "kicker": "UPSET!",
+  "title": "The Teenager Strikes",
+  "description": "Magnus Carlsen faces 16-year-old Rameshbabu Praggnanandhaa in round 8 of the online Airthings Masters 2022, a rapid event on the Meltwater Champions Chess Tour. Praggnanandhaa entered with a modest score, but with the black pieces he found a way to turn a balanced middlegame into a dangerous queen-and-knight attack. Watch for the moment Carlsen's knight retreat changes the evaluation, and how Black keeps the pressure without needing a final checkmate on the board. The game is remembered because Praggnanandhaa became the third Indian player to beat Carlsen and was reported as the youngest to do so during Carlsen's world champion reign.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Setup And Opening",
+      "text": "Round eight of the Airthings Masters two thousand twenty-two was online rapid chess, part of the Meltwater Champions Chess Tour. Magnus Carlsen had the white pieces. Rameshbabu Praggnanandhaa was sixteen, playing Black against the world champion and world number one. After one win, two draws, and four losses, this was a brutal test.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Carlsen starts quietly but firmly: {{m:1}}. Praggnanandhaa answers immediately: {{m:2}}. {{s:8}} The center is challenged from both sides, and nobody is trying to win this game in one blow.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "White opens the position: {{m:11}}. Black takes back: {{m:12}}. {{s:18}} The early tension clears just enough for both kings to reach safety, but the center is still loaded.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Pressure Builds",
+      "text": "Carlsen gives his king a little air: {{m:19}}. Black does the same: {{m:20}}. The bishops and rooks start fighting for active posts, and Black places a rook on the open lane: {{m:24}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Carlsen develops pressure with the bishop: {{m:25}}. Praggnanandhaa replies: {{m:26}}. White's rook joins the same file: {{m:27}}. Then Black's queen steps to an active square: {{m:28}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Carlsen decides to change the pawn structure: {{m:29}}. Black accepts: {{m:30}}. The knight heads to the edge: {{m:31}}. Black's queen sidesteps: {{m:32}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "White lifts a rook across the third rank: {{m:33}}. Black plants a knight in the center: {{m:34}}. Carlsen kicks it: {{m:35}}. Praggnanandhaa jumps forward: {{m:36}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s08",
+      "chapter": "The Tactical Grab",
+      "text": "White doubles the rook pressure: {{m:37}}. Black pulls the queen back toward the long diagonal: {{m:38}}. {{s:40}} Black has the easier play now, and the engine already leans his way.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Now a tempting target appears. Would you take it, or step away from the tactics? {{p}} Carlsen goes for it: {{m:41}}. Black answers: {{m:42}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Carlsen centralizes the knight: {{m:43}}. Black removes it: {{m:44}}. White recaptures: {{m:45}}. The black knight lands deep in White's camp: {{m:46}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "Queens Remain",
+      "text": "The open file now gets cleared by force. White starts the trades: {{m:47}}. Black takes back: {{m:48}}. Carlsen keeps trading: {{m:49}}. Praggnanandhaa's queen finishes the sequence: {{m:50}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "The queens stay on, and that matters. White tucks the bishop away: {{m:51}}. Black pushes the passed pawn: {{m:52}}. {{s:56}} After more queen maneuvering, both kings are exposed enough that one tempo can swing everything.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Carlsen moves his king: {{m:57}}. Black pulls the bishop back: {{m:58}}. White's queen raids the corner pawn: {{m:61}}. Black answers by bringing the queen back into the attack: {{m:62}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "The Turning Point",
+      "text": "Carlsen retreats the knight: {{m:63}}. Here the whole game pivots, because Black has one forcing jump that the engine wanted. Can you find it? {{p}} Praggnanandhaa finds it: {{m:64}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "White tries to regroup: {{m:65}}. Black sends the queen deep into enemy territory: {{m:66}}. The queen and knight are now working as a team, and Carlsen's king has fewer squares than it looks.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Carlsen brings the knight back toward defense: {{m:67}}. Praggnanandhaa improves his knight again: {{m:68}}. White pushes a kingside pawn: {{m:69}}. Black's queen invasion is decisive: {{m:70}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Carlsen tries for counterplay: {{m:71}}. Black can cash in right now, without rushing checks. Which defender falls? {{p}} Praggnanandhaa chooses the engine's first choice: {{m:72}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s18",
+      "chapter": "Finale",
+      "text": "White grabs the advanced pawn: {{m:73}}. Black checks the king: {{m:74}}. Carlsen walks forward: {{m:75}}. Praggnanandhaa places the knight where it cannot be ignored: {{m:76}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Carlsen brings the queen back: {{m:77}}. The engine says Black had a forced mate available, but he chooses a move that still leaves him completely winning: {{m:78}}. Carlsen realized his position was lost, and resigned.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "That result ended Carlsen's run of three consecutive victories in the tournament. Praggnanandhaa became the third Indian player to beat Carlsen, after Viswanathan Anand and Pentala Harikrishna. He was reported as the youngest player to defeat Carlsen during his reign as world champion. That is why this game lives on: a rough tournament start, the black pieces, and total nerve in the critical moment.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}
