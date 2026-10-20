@@ -1,0 +1,122 @@
+{
+  "hook": {
+    "text": "Siyah Vezir bir Kaleyi alıyor, ama bu ganimetin bedeli ağır olabilir. Tahtada asıl hedef, köşeye sıkışan Şah.",
+    "ply": 42
+  },
+  "yt_hook": "Bu Plan Her Şeyi Değiştirdi!",
+  "yt_detail": "Ağır taşlar Portisch'in savunmasını kırdı",
+  "kicker": "KALE AKINI!",
+  "title": "Yedinci yatay baskını",
+  "description": "Mikhail Botvinnik ve Lajos Portisch, 3-17 Nisan 1968'de düzenlenen Monte Carlo turnuvasının 7. turunda karşılaşıyor. Botvinnik, 56 yaşındaki eski dünya şampiyonu; Portisch ise Siyah taşlarla savunmada. Bu partide izlenecek ana fikir, açık hattın ve yedinci yatayın nasıl doğrudan şah saldırısına dönüştüğü. Turnuvayı Bent Larsen 9.5/13 ile kazandı; Botvinnik 9 puanla ikinci bitirdi.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Monte Carlo",
+      "text": "Monte Carlo'da, bin dokuz yüz altmış sekiz yılının yedinci turu. Beyaz taşlarda eski dünya şampiyonu Mikhail Botvinnik, karşısında Lajos Portisch var. Botvinnik elli altı yaşında ve turnuvanın zirvesi için çok değerli puanların peşinde.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "İlk hamle: {{m:1}}. Siyah merkezden karşılık veriyor: {{m:2}}. İngiliz Açılışı havası var; iki taraf da hemen açık bir kavga yerine uzun vadeli baskı kuruyor.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Botvinnik taşlarını sakin çıkarıyor: {{m:5}}. {{s:6}} Merkez hemen temas ediyor, taşlar hızla oyuna giriyor. Kısa rokla kral güvene alınıyor: {{m:13}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Açılış Kuruluyor",
+      "text": "Siyah da gelişimi tamamlamaya çalışıyor, Beyaz ise sabırlı: {{m:17}}. Portisch aynı bölgede cevap veriyor: {{m:18}}. Botvinnik taşlarını birbirine bağlıyor: {{m:19}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Siyah rok atıyor: {{m:20}}. Pozisyon sadeleşecek gibi görünüyor: {{m:21}}. Portisch kabul ediyor: {{m:22}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Beyaz gerilimi azaltıyor: {{m:23}}. {{s:24}} Tahtada baskı noktaları belirginleşiyor. {{s:28}} Siyah savunmayı sıkı tutmak istiyor, ama açık hatlar Beyaz'ın tarafına çalışıyor.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "Açık Hat",
+      "text": "Hazırlığın son dokunuşu geliyor: {{m:29}}. Plan belli; ağır taşlar tek bir kapıya yığılıyor. Portisch'in sonraki tercihi kritik: {{m:30}}. Motor değerlendirmesi burada Beyaz lehine sert yükseliyor.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Şimdi kritik an. Beyaz yedinci yataya girebilir mi, yoksa bu fazla mı erken? Siz bulun. {{p}} İşte cevap: {{m:31}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Siyah yolu kapatmaya çalışıyor: {{m:32}}. Botvinnik geri adım atmıyor; fedâ kokusu geliyor: {{m:33}}. Portisch kabul ediyor: {{m:34}}. Ama içeride kalan Kale şimdi daha da tehlikeli.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s10",
+      "chapter": "Kale Baskını",
+      "text": "Saldırı devam ediyor: {{m:35}}. Bu sadece piyon toplamak değil; Beyaz, Siyah Şah'ın çevresindeki savunma iplerini kesiyor. Portisch savunmada bir tempo harcıyor: {{m:36}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Botvinnik baskıyı canlı tutuyor: {{m:37}}. Yedinci yataydaki varlık Siyah'ı pasifleştiriyor. Portisch savunmayı toplamaya çalışıyor: {{m:38}}. Beyaz temposunu kaybetmeden şah veriyor: {{m:39}}. Siyah cevap veriyor: {{m:40}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Burada Beyaz'ın devamı en keskin yol değil; motor daha temiz bir yol gösteriyordu. Yine de pratik baskı büyüyor: {{m:41}}. Portisch ganimeti alıyor: {{m:42}}. Kağıt üzerinde bir Kale gitti, ama tahtada asıl mesele Şah güvenliği.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s13",
+      "chapter": "Şah Avı",
+      "text": "Şimdi soru şu: alınan Kale gerçekten bedava mı? Beyaz'ın hamlesini bulabilir misiniz? {{p}} Cevap çok sert: {{m:43}}. Siyah cevap vermek zorunda: {{m:44}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Botvinnik hücuma yeni bir taş katıyor: {{m:45}}. Portisch savunmayı örmeye çalışıyor: {{m:46}}. Fakat Beyaz tempo üstüne tempo kazanıyor: {{m:47}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Siyah son bir savunma denemesi yapıyor: {{m:48}}. Burada Beyaz'ın vuracağı yer çok dar; doğru hamleyi görüyor musunuz? {{p}} Devam: {{m:49}}. Şah hâlâ açıkta.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s16",
+      "chapter": "Final",
+      "text": "Portisch dayanmak istiyor: {{m:50}}. Botvinnik baskıyı bırakmıyor: {{m:51}}. Bu hamleden sonra Portisch konumunun kayıp olduğunu gördü ve terk etti. Oyun Beyaz'ın zaferiyle bitti.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Bu partinin gücü, Botvinnik'in taş etkinliğini maddeden önde tutmasında. Açılışta küçük duran üstünlük, açık hat ve yedinci yatay kontrolüyle doğrudan Şah saldırısına dönüştü.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Monte Carlo tablosunda Botvinnik ikinci, Bent Larsen birinciydi. Yine de bu oyun, eski dünya şampiyonunun imzasını çok net gösteriyor: sabır, hat kontrolü ve sonra hızlı bir Şah avı.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}

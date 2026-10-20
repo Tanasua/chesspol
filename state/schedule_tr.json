@@ -11,6 +11,18 @@
       "thumbnail": "kasparov_anand_1995_cover_ai.jpg",
       "rubric": "history",
       "day_rubric": "history"
+    },
+    {
+      "id": "botvinnik_portisch_1968",
+      "publish_at": "2026-10-22T18:10:00+00:00",
+      "title": "Bu Plan Her Şeyi Değiştirdi! | Botvinnik – Portisch (1968)",
+      "mode": "youtube",
+      "package": "out/packages/tr-ep002-botvinnik_portisch_1968",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/tr-ep002-botvinnik_portisch_1968",
+      "video_id": "ix79X0AitBM",
+      "thumbnail": "botvinnik_portisch_1968_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "national"
     }
   ]
 }
