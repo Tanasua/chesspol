@@ -11,6 +11,18 @@
       "thumbnail": "rubinstein_lasker_1909_cover_ai.jpg",
       "rubric": "history",
       "day_rubric": "history"
+    },
+    {
+      "id": "anderssen_kieseritzky_1851",
+      "publish_at": "2026-10-22T15:10:00+00:00",
+      "title": "Так играть нельзя? | Андерсен – Кизерицкий (1851) — белые отдают почти всё ради атаки",
+      "mode": "youtube",
+      "package": "out/packages/ru-ep002-anderssen_kieseritzky_1851",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ru-ep002-anderssen_kieseritzky_1851",
+      "video_id": "FOFu2FViG0I",
+      "thumbnail": "anderssen_kieseritzky_1851_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "national"
     }
   ]
 }
