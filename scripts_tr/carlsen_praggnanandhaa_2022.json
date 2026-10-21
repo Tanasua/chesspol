@@ -1,0 +1,140 @@
+{
+  "hook": {
+    "text": "Dünya şampiyonunun veziri uzakta, Şah kanadı sıkışık. On altı yaşındaki Praggnanandhaa burada tek bir At hamlesiyle her şeyi değiştirebilir.",
+    "ply": 64
+  },
+  "yt_hook": "16 Yaşında Dev İmza!",
+  "yt_detail": "Praggnanandhaa, Carlsen'i siyah taşlarla yendi",
+  "kicker": "ŞOK!",
+  "title": "Şampiyon sıkıştı",
+  "description": "Airthings Masters 2022'nin 8. turunda Magnus Carlsen ile Rameshbabu Praggnanandhaa çevrim içi hızlı satrançta karşılaşıyor. Praggnanandhaa o sırada 16 yaşında ve turnuvaya mütevazı başlamış durumda. Bu oyun, onun Carlsen'i siyah taşlarla yenmesi ve Carlsen'in üç galibiyetlik serisini bitirmesiyle ünlendi. Vezirlerin sahada kaldığı finalde özellikle Siyah'ın sakin baskısına dikkat edin. Anand ve Harikrishna'dan sonra Carlsen'i yenen üçüncü Hintli oyuncu olması da oyunu özel kıldı.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Sahne",
+      "text": "Airthings Masters iki bin yirmi iki, şubat ayı, çevrim içi hızlı satranç ve sekizinci tur. Beyaz taşlarda dünya şampiyonu Magnus Carlsen, Siyah taşlarda on altı yaşındaki Rameshbabu Praggnanandhaa var. Carlsen üç galibiyetlik seriyle geliyor; Praggnanandhaa'nın başlangıcı ise bir galibiyet, iki beraberlik ve dört yenilgi.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Tahta sessiz açılıyor. İlk hamle: {{m:1}}. {{s:6}} Merkezde klasik bir gerilim kuruluyor, iki taraf da taşlarını hızla oyuna sokmak istiyor.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Carlsen alanı tutuyor, Praggnanandhaa hemen karşı basınç arıyor. {{s:11}} Piyon yapısı netleşiyor. Sonra Beyaz ilk net planını gösteriyor: {{m:13}}. Bu, açılıştaki bağlama fikrini masaya getiriyor.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Açılış",
+      "text": "{{s:18}} İki Şah da güvene alınıyor, ama konum hâlâ tamamen dengede. Carlsen merkezi yokluyor: {{m:23}}. Praggnanandhaa oyunu sakin tutmayı seçiyor.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:28}} Vezir kanadında baskı birikiyor. Carlsen yapıyı değiştiren kararı veriyor: {{m:29}}. Siyah'ın piyonları çirkin görünüyor, ama karşılığında açık hatlar ve hedefler var.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Carlsen beklenmedik bir rota seçiyor: {{m:31}}. Siyah esnek kalıyor: {{m:32}}. {{s:34}} Tahtada gözle görülmeyen bir kavga var, herkes ideal kareler için pazarlık yapıyor.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "İlk Çatlak",
+      "text": "Gerilim artık elle tutuluyor, Carlsen konumu sorgulayan bir hamle yapıyor: {{m:35}}. Praggnanandhaa aynı sakinlikle yanıt veriyor: {{m:36}}. {{s:40}} Merkezde nefes alan taraf artık Siyah gibi, ama Carlsen keskin yolu seçebilir mi? {{p}} Seçiyor: {{m:41}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Motor bu anda Siyah için çok güçlü bir fırsat gösteriyor, ama oyunda başka bir yol geliyor: {{m:42}}. Carlsen nefes almaya çalışıyor: {{m:43}}. Praggnanandhaa sadeleşmeyi kabul ediyor: {{m:44}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Taşlar peş peşe değişiliyor. {{s:48}} Açık hatlar temizleniyor, denge bir süre daha korunuyor. Carlsen son değişim dalgasını başlatıyor: {{m:49}}. Siyah da kabul ediyor: {{m:50}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "Vezirler Sahada",
+      "text": "Artık tahtada vezirler ve hafif taşlar konuşuyor. {{s:56}} Şahlar biraz kenara çekiliyor, ama asıl baskı merkezde kalıyor. Praggnanandhaa içeri sızma fikrini gösteriyor: {{m:60}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Carlsen maddi dengeyi kurcalıyor: {{m:61}}. Siyah hemen karşı tehdit kuruyor: {{m:62}}. Dışarıdan bakınca Beyaz aktif görünüyor, ama kendi Şahının etrafında kareler inceliyor.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Şimdi bölümün en kritik anı. Carlsen geri dönüş yolunu seçiyor: {{m:63}}. Siyah'ın motorun da onayladığı en güçlü cevabı var, bulabilir misiniz? {{p}} Cevap geliyor: {{m:64}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s13",
+      "chapter": "Av Başlıyor",
+      "text": "Bir anda tablo değişiyor. Carlsen savunma karesi arıyor: {{m:65}}. Praggnanandhaa baskıyı bir adım daha derinleştiriyor: {{m:66}}. Şimdi Beyaz'ın taşları savunmada birbirine yardım etmekte zorlanıyor.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Carlsen savunma düzenini topluyor: {{m:67}}. Siyah baskıyı yaklaştırıyor: {{m:68}}. Bu hamleden sonra artık Siyah açıkça daha iyi; saldırı hem Şaha hem taşlara dokunuyor.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Carlsen son savunma fikrine sarılıyor: {{m:69}}. Praggnanandhaa hiç acele etmiyor: {{m:70}}. Vezir merkezde kalınca Beyaz'ın kaçış kareleri azalmaya başlıyor.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "Son Sıkıştırma",
+      "text": "Carlsen karşı oyun arıyor: {{m:71}}. Siyah hemen cevap veriyor: {{m:72}}. Carlsen karşılık buluyor: {{m:73}}. Ama şahın çevresindeki güvenlik artık geri gelmiyor.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Praggnanandhaa ritmi elinde tutuyor: {{m:74}}. Carlsen kaçış yolu seçiyor: {{m:75}}. Siyah baskıyı yeniden düzenliyor: {{m:76}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Son anda Carlsen savunma kurmaya çalışıyor: {{m:77}}. Praggnanandhaa son hamleyi yapıyor: {{m:78}}. Carlsen konumunun kayıp olduğunu gördü ve terk etti.",
+      "pause_after": 1
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Bu sonuç sadece bir puan değildi. Praggnanandhaa, Anand ve Harikrishna'dan sonra Carlsen'i yenen üçüncü Hintli oyuncu oldu. Ayrıca Carlsen'in turnuvadaki üç galibiyetlik serisini bitirdi.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Praggnanandhaa'nın geçmişi zaten dikkat çekiciydi; iki bin on sekiz haziranında, on iki yıl, on ay, on üç günlükken büyükusta olmuştu. Bu oyun da onun, Carlsen'in iki bin on üçte başlayan dünya şampiyonluğu döneminde onu yenen en genç oyuncu olarak haberleştirilmesini sağladı.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Carlsen turnuvayı sonunda kazandı, finalde Ian Nepomniachtchi'yi geçti. Ama bu parti ayrı kaldı; çünkü baskı büyüdüğünde genç oyuncu dağılmadı, oyunu sonuna kadar sıkı tuttu.",
+      "pause_after": 0.8
+    }
+  ],
+  "key_moments": []
+}
