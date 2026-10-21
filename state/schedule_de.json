@@ -118,6 +118,18 @@
       "video_id": "OCbJ5pnavO0",
       "thumbnail": "cover_ai.jpg",
       "rubric": "backlog"
+    },
+    {
+      "id": "lasker_schlechter_1910",
+      "publish_at": "2026-10-27T19:10:00+00:00",
+      "title": "Drei Tage um alles | Lasker – Schlechter (WM-Kampf, 1910) — Lasker gleicht das Match aus",
+      "mode": "youtube",
+      "package": "out/packages/de-ep013-lasker_schlechter_1910",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep013-lasker_schlechter_1910",
+      "video_id": "hxo88Tc-vsc",
+      "thumbnail": "lasker_schlechter_1910_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "history"
     }
   ]
 }

@@ -1,0 +1,248 @@
+{
+  "hook": {
+    "text": "Schlechter führt vor der letzten Partie. Dann hält er drei Tage lang dagegen, bis ein Königszug das Endspiel kippen lässt.",
+    "ply": 128
+  },
+  "yt_hook": "Drei Tage um alles",
+  "yt_detail": "Lasker gleicht das Match aus",
+  "kicker": "TITELKAMPF!",
+  "title": "Finale in Berlin",
+  "description": "Emanuel Lasker und Carl Schlechter treffen im WM-Kampf 1910 zur 10. Partie in Berlin aufeinander. Schlechter geht mit einem Punkt Vorsprung in dieses letzte Spiel, das am 8., 9. und 10. Februar 1910 ausgetragen wurde. Achtet besonders darauf, wie aus einem scharfen Mittelspiel ein langes Damen- und Turmendspiel wird. Laskers Sieg führte zum 5-5 im Match, und er behielt den Weltmeistertitel.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Berlin, Februar neunzehnhundertzehn. Emanuel Lasker spielt mit Weiß gegen Carl Schlechter, in der zehnten und letzten Partie des Weltmeisterschaftskampfes. Schlechter führt mit einem Punkt, Lasker braucht den vollen Punkt, um auszugleichen, und diese Partie zieht sich über drei Tage.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Weiß beginnt ruhig: {{m:1}}. Lasker legt sofort im Zentrum nach: {{m:3}}. Die Entwicklung läuft ohne frühe Explosion, Schwarz bleibt solide: {{m:6}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Schlechter trifft eine praktische Entscheidung für den König: {{m:12}}. Dann wird der Damenflügel konkret: {{m:16}}. Es ist noch keine Krise, aber die Bauernstruktur bekommt ihren ersten Bruch.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Eröffnung",
+      "text": "Lasker beantwortet den Kontakt sofort: {{m:17}}. Ein paar Züge später findet eine weiße Figur einen ungewöhnlichen Platz: {{m:21}}. Die Stellung ist asymmetrisch, aber noch gut spielbar für beide Seiten.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Nach dem Schlagabtausch am Damenflügel ordnen sich die Figuren neu: {{m:24}}. Weiß bekommt den Turm in eine aktivere Rolle: {{m:25}}. Von außen wirkt das ruhig, doch fast jede Figur hat jetzt eine Aufgabe.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Jetzt kommt Laskers erster Vorstoß in die schwarze Koordination: {{m:27}}. Schlechter reagiert am Königsflügel: {{m:28}}. Noch ist nichts entschieden, aber die Stellung wird deutlich schärfer.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Weiß greift zu Raumgewinn: {{m:29}}. Schwarz entscheidet sich für Abtausch: {{m:30}}. Das nimmt Tempo aus dem direkten Angriff, aber es macht die Bauernstellung schwerer zu lesen.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Lasker schlägt nicht dort zurück, wo man zuerst hinsieht: {{m:31}}. Schwarz bleibt auf der langen Diagonale präsent: {{m:32}}. Nach dem weiteren Abtausch ist die Lage laut Engine wieder völlig ausgeglichen: {{m:34}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "Der Angriff",
+      "text": "Die Mitte ist ruhig, also sucht Lasker neue Ziele: {{m:35}}. Schlechter erzeugt Druck gegen den weißen König: {{m:38}}. Danach stellt Weiß die Figuren zusammen: {{m:39}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Die Damen schauen einander an, aber niemand darf gedankenlos vereinfachen. Schwarz wechselt die Drohkulisse zum Königsflügel: {{m:44}}. Jetzt beginnt die Phase, in der ein einziger falscher Zug die Partie drehen kann.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Weiß kann Material festhalten, oder er kann das Brett öffnen. Was würdet ihr hier spielen? {{p}} Lasker entscheidet sich für Komplikationen: {{m:45}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Schlechter nimmt die Einladung nicht einfach hin, er sucht sofort Gegenspiel: {{m:46}}. Lasker deckt den eigenen König: {{m:47}}. Schwarz löst den unmittelbaren Druck: {{m:48}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Jetzt hängt die Partie an konkreter Taktik. Lasker erzwingt Aktivität mit Schach: {{m:49}}. Nach dem nächsten Übergang ist die Bewertung wieder ausgeglichen: {{m:52}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "Ohne Netz",
+      "text": "Die Stellung bleibt wild. Lasker stützt sein Zentrum: {{m:55}}. Danach hält Schlechter den weißen König mit weiteren Checks in der Mitte: {{m:60}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Lasker geht dem Dauerdruck nicht aus dem Weg: {{m:61}}. Schwarz setzt nach: {{m:64}}. Die Engine sieht weiterhin keinen klaren Gewinner, obwohl beide Seiten ständig am Rand spielen.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Weiß baut eine Verteidigung vor dem König auf: {{m:65}}. Schwarz verbessert eine Figur: {{m:66}}. Dann greift Lasker am Damenflügel zu: {{m:67}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Schlechter findet Gegenspiel gegen den aktiven Turm: {{m:70}}. Lasker nimmt die Herausforderung an: {{m:72}}. Es folgt ein Schach auf der achten Reihe: {{m:73}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Schwarz hält die Grundreihe zusammen: {{m:74}}. Danach kommen wieder Schachs gegen den weißen König: {{m:76}}. Der König weicht zurück: {{m:77}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s19",
+      "chapter": "Die Wende",
+      "text": "Hier hat Schwarz mehrere Wege, den Druck festzuhalten. Welche Fortsetzung würdet ihr wählen? {{p}} Schlechter entscheidet sich für diesen Schachzug: {{m:78}}. Danach zeigt die Bewertung nach langer Zeit wieder klar in Laskers Richtung.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Lasker nutzt die zusätzliche Luft sofort: {{m:79}}. Schwarz bleibt mit der Dame aktiv: {{m:80}}. Der weiße König läuft weiter, aber diesmal ist es kein reines Überleben mehr: {{m:81}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Jetzt werden die Schwerfiguren reduziert. Die Abwicklung beginnt: {{m:82}}. Lasker hält die Koordination: {{m:83}}. Schwarz bekommt Tempo gegen den König: {{m:84}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "Nach weiteren Checks stabilisiert sich die Stellung etwas, Schwarz stellt eine Figur zentraler: {{m:88}}. Kurz darauf findet Weiß einen aktiven Turmposten: {{m:89}}. Lasker steht besser, aber der Weg ist noch lang.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Schlechter sucht weiter die ewigen Schachs: {{m:94}}. Laskers König geht nach vorn statt zurück: {{m:95}}. Diese Wanderung wird eines der Bilder dieser Partie.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s24",
+      "chapter": "Königswanderung",
+      "text": "Die schwarze Dame hält Kontakt: {{m:100}}. Lasker zieht den König bis an den Rand des Brettes: {{m:101}}. Das sieht riskant aus, aber Weiß behält die wichtigsten Fluchtfelder.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s25",
+      "chapter": "",
+      "text": "Jetzt verschwinden Figuren und Bauern in schneller Folge. Schwarz bringt den König näher: {{m:102}}. Lasker nimmt Material: {{m:103}}, und Schwarz antwortet sofort: {{m:104}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "Die Damen übernehmen wieder die Bühne. Lasker richtet sich neu aus: {{m:105}}. Dann kommt ein Schach von Weiß: {{m:107}}. Der schwarze König bleibt beweglich: {{m:108}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s27",
+      "chapter": "",
+      "text": "Lasker sammelt weiter Material am Damenflügel: {{m:109}}. Schlechter gibt Schach und hält die Partie kompliziert: {{m:110}}. Weiß zentralisiert die Dame: {{m:111}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s28",
+      "chapter": "",
+      "text": "Schlechter lässt den weißen König nicht in Ruhe: {{m:112}}. Lasker geht zurück auf ein sichereres Feld: {{m:115}}. Noch immer ist das kein einfacher Punkt, aber Weiß steht immer besser.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s29",
+      "chapter": "Übergang",
+      "text": "Jetzt beginnt Lasker, die Damenstellung zu kontrollieren. Schwarz versucht einen neuen Winkel: {{m:116}}. Nach einem weiteren Manöver steht der schwarze König im Zentrum: {{m:118}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s30",
+      "chapter": "",
+      "text": "Der Turm kommt aktiv dazu: {{m:119}}. Schwarz stellt den König davor: {{m:120}}. Lasker wechselt den Turm auf die nächste aktive Linie: {{m:121}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s31",
+      "chapter": "",
+      "text": "Schlechter setzt noch einmal Schach: {{m:122}}. Lasker blockt mit dem Turm: {{m:123}}. Nach der nächsten schwarzen Aktivierung bleibt der weiße Vorteil groß: {{m:124}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s32",
+      "chapter": "",
+      "text": "Die Figuren stehen jetzt so, dass ein Damentausch für Weiß attraktiv werden kann. Lasker verbessert zuerst die Koordination: {{m:125}}. Schwarz sucht Gegenspiel von der Seite: {{m:126}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s33",
+      "chapter": "",
+      "text": "Ein Schach zwingt den schwarzen König zur Entscheidung: {{m:127}}. Schlechter wählt ein Feld, und die Engine sieht Weiß nun fast gewonnen: {{m:128}}. Findet ihr Laskers Übergang ins Endspiel? {{p}} Hier ist er: {{m:129}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s34",
+      "chapter": "Finale",
+      "text": "Schlechter hat keine bessere Antwort als den Damentausch: {{m:130}}. Lasker nimmt zurück und bleibt mit Turm gegen Springer im Vorteil: {{m:131}}. Jetzt zählt jedes Tempo des Königs.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s35",
+      "chapter": "",
+      "text": "Schwarz bringt den König näher: {{m:132}}. Lasker verbessert den Turm: {{m:133}}. Der Springer geht zurück in die Verteidigung: {{m:134}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s36",
+      "chapter": "",
+      "text": "Der weiße König marschiert heran: {{m:135}}. Schwarz sucht Gegenspiel mit dem König: {{m:136}}. Aber die Koordination spricht klar für Weiß.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s37",
+      "chapter": "",
+      "text": "Lasker hält den schwarzen König mit dem Turm beschäftigt: {{m:137}}. Schlechter weicht zurück: {{m:138}}. Der weiße König kommt noch näher: {{m:139}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s38",
+      "chapter": "",
+      "text": "Der letzte Versuch ist der Springerzug an den Rand: {{m:140}}. Lasker spielt den letzten Zug der Partie: {{m:141}}. Schlechter erkannte, dass seine Stellung verloren war, und gab auf.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s39",
+      "chapter": "",
+      "text": "Damit gewann Lasker die zehnte Partie, der Wettkampf endete fünf zu fünf, und Lasker behielt den Weltmeistertitel. Genau deshalb ist diese Partie mehr als ein langes Endspiel, sie prägte einen ganzen Weltmeisterschaftskampf, dessen vollständige Regeln nie gefunden wurden.",
+      "pause_after": 0.8
+    }
+  ],
+  "key_moments": []
+}
