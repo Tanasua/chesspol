@@ -90,6 +90,18 @@
       "thumbnail": "carlsen_praggnanandhaa_2022_cover_ai.jpg",
       "rubric": "top",
       "day_rubric": "top"
+    },
+    {
+      "id": "lilienthal_capablanca_1935",
+      "publish_at": "2026-10-28T00:00:00+00:00",
+      "title": "He Let It Vanish! | Lilienthal – Capablanca (1935) — Lilienthal gives up his queen",
+      "mode": "youtube",
+      "package": "out/packages/en-ep010-lilienthal_capablanca_1935",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/en-ep010-lilienthal_capablanca_1935",
+      "video_id": "nqit_T2Z4W0",
+      "thumbnail": "lilienthal_capablanca_1935_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "history"
     }
   ]
 }

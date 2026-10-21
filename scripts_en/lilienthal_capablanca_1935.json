@@ -1,0 +1,122 @@
+{
+  "hook": {
+    "text": "White could try to save his queen. Instead, a twenty-three-year-old lets the board explode against Capablanca.",
+    "ply": 39
+  },
+  "yt_hook": "He Let It Vanish!",
+  "yt_detail": "Lilienthal gives up his queen",
+  "kicker": "QUEEN SACRIFICE!",
+  "title": "The Hastings Shock",
+  "description": "Andor Lilienthal faces José Raúl Capablanca in Round 5 at Hastings 1934/35, played on 1 January 1935. Capablanca had been world champion from 1921 to 1927, while Lilienthal was 23. Watch how a tense central battle turns into a queen sacrifice, in the win later described as the most celebrated victory of Lilienthal's career. The finale shows how activity and a dangerous pawn can outweigh the biggest material loss.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Introduction",
+      "text": "January first, nineteen thirty-five, Hastings, round five of the Hastings Christmas tournament of nineteen thirty-four to thirty-five. Andor Lilienthal, twenty-three years old, has White against José Raúl Capablanca, world champion from nineteen twenty-one to nineteen twenty-seven. The stake is reputation, a chance at the result that would become the most celebrated of Lilienthal's career.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Lilienthal begins: {{m:1}}. Capablanca replies: {{m:2}}. {{s:3}} White adds pressure in the center. {{s:4}} Black stays compact.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Now the first imbalance appears: {{m:5}}. Capablanca pins immediately: {{m:6}}. {{s:7}} White challenges that bishop. {{s:8}} Black gives it up and damages the queenside pawns.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Opening Tension",
+      "text": "Lilienthal accepts the doubled pawns: {{m:9}}. {{s:10}} Capablanca prepares to strike at the center. White commits a pawn: {{m:11}}. Black hits back: {{m:12}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "The position is not quiet, both sides are asking who will own the dark squares. White develops actively: {{m:13}}. Black nudges the bishop: {{m:14}}. {{s:15}} White keeps the bishop alive.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Capablanca's bishop swings to a sharp diagonal: {{m:16}}. Lilienthal pushes the center: {{m:17}}. Black takes on the queenside: {{m:18}}. White restores the balance: {{m:19}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s07",
+      "chapter": "Center Breaks",
+      "text": "Black clarifies the tension: {{m:20}}. White checks from the side: {{m:21}}. Capablanca blocks with queen pressure: {{m:22}}. Lilienthal takes back: {{m:23}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Capablanca centralizes his queen: {{m:24}}. White keeps his queen close to the center: {{m:25}}. {{s:26}} Black brings another knight toward the fight. White follows with development: {{m:27}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Black brings a rook to the file: {{m:28}}. Lilienthal gets his king safe: {{m:29}}. Capablanca gains queenside space: {{m:30}}. The structure is locked enough that one break will matter.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "Pressure Mounts",
+      "text": "Lilienthal chooses a calmer queen square: {{m:31}}. Capablanca answers with pressure: {{m:32}}. White throws a pawn forward: {{m:33}}. Black puts a rook behind the pressure: {{m:34}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Now Lilienthal fixes his sights on Black's king. White advances: {{m:35}}. Black challenges the center: {{m:36}}. White captures: {{m:37}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Capablanca has a tempting target. He takes it: {{m:38}}. The engine's verdict changes sharply here, White is now clearly winning, if he finds the point. Can you find Lilienthal's reply? {{p}} Here it is: {{m:39}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s13",
+      "chapter": "The Queen Vanishes",
+      "text": "The offer is on the board. Capablanca accepts: {{m:40}}. Now pause the board, White is down the queen, but Black's king has almost no comfort. What would you play? {{p}} Lilienthal continues: {{m:41}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Capablanca must stop the dangerous pawn: {{m:42}}. Lilienthal brings in another piece: {{m:43}}. Black's queen tries to stay active: {{m:44}}. White's rook enters the fight: {{m:45}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Black brings the knight closer: {{m:46}}. Lilienthal does not drift. He forces the exchange: {{m:47}}. Black recaptures: {{m:48}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s16",
+      "chapter": "Finale",
+      "text": "White's remaining rook takes over the file: {{m:49}}. Capablanca finally removes the advanced pawn: {{m:50}}. But the damage has already been done.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Lilienthal has one more clean capture, and it comes with check: {{m:51}}. Capablanca realized his position was lost, and resigned.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "This is why the game matters, Lilienthal trusted calculation over material against Capablanca. The queen disappeared, but the passed pawn and rooks carried the attack. The win became the most celebrated victory of Lilienthal's career.",
+      "pause_after": 0.8
+    }
+  ],
+  "key_moments": []
+}
