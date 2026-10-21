@@ -60,6 +60,18 @@
       "thumbnail": "shirov_polgar_1994_cover_ai.jpg",
       "rubric": "history",
       "day_rubric": "national"
+    },
+    {
+      "id": "carlsen_praggnanandhaa_2022",
+      "publish_at": "2026-10-25T18:55:00+00:00",
+      "title": "Юний удар по фавориту! | Карлсен – Прагнанандха (2022) — 16-річний Прагнанандха обіграв Карлсена",
+      "mode": "youtube",
+      "package": "out/packages/uk-ep006-carlsen_praggnanandhaa_2022",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/uk-ep006-carlsen_praggnanandhaa_2022",
+      "video_id": "kXQxNDGJyrE",
+      "thumbnail": "carlsen_praggnanandhaa_2022_cover_ai.jpg",
+      "rubric": "top",
+      "day_rubric": "top"
     }
   ]
 }
