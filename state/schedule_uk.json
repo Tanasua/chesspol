@@ -72,6 +72,18 @@
       "thumbnail": "carlsen_praggnanandhaa_2022_cover_ai.jpg",
       "rubric": "top",
       "day_rubric": "top"
+    },
+    {
+      "id": "rubinstein_lasker_1909",
+      "publish_at": "2026-10-27T17:25:00+00:00",
+      "title": "Коли ризик не рятує | Рубінштейн – Ласкер (1909) — Рубінштейн дотиснув Ласкера після хаосу",
+      "mode": "youtube",
+      "package": "out/packages/uk-ep007-rubinstein_lasker_1909",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/uk-ep007-rubinstein_lasker_1909",
+      "video_id": "tUDH-BONULo",
+      "thumbnail": "rubinstein_lasker_1909_cover_ai.jpg",
+      "rubric": "history",
+      "day_rubric": "history"
     }
   ]
 }
