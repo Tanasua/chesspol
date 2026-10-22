@@ -23,6 +23,18 @@
       "thumbnail": "anderssen_kieseritzky_1851_cover_ai.jpg",
       "rubric": "history",
       "day_rubric": "national"
+    },
+    {
+      "id": "carlsen_praggnanandhaa_2022",
+      "publish_at": "2026-10-25T16:05:00+00:00",
+      "title": "Юный гроссмейстер не дрогнул | Карлсен – Прагнанандха (2022) — 16-летний игрок победил №1 чёрными",
+      "mode": "youtube",
+      "package": "out/packages/ru-ep003-carlsen_praggnanandhaa_2022",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ru-ep003-carlsen_praggnanandhaa_2022",
+      "video_id": "4J3XWDUN0Bo",
+      "thumbnail": "carlsen_praggnanandhaa_2022_cover_ai.jpg",
+      "rubric": "top",
+      "day_rubric": "top"
     }
   ]
 }
