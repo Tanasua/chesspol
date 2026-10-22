@@ -1,0 +1,140 @@
+{
+  "hook": {
+    "text": "Kale gitti, ama saldırı bitmedi. Bu konumda Siyah Şah neden hâlâ nefes alamıyor?",
+    "ply": 76
+  },
+  "yt_hook": "Tahta Bir Anda Daraldı!",
+  "yt_detail": "6. oyunda beklenmedik açılış seçimi",
+  "kicker": "KALE FEDÂSI!",
+  "title": "Reykjavik'te Dengeler Kırıldı",
+  "description": "1972 Dünya Şampiyonluğu maçının 6. oyununda Robert James Fischer ve Boris Spassky, Reykjavik'te karşı karşıya geliyor. Fischer, neredeyse sadece Şah piyonu oyuncusu olarak bilinmesine rağmen Vezir Gambiti düzenine giriyor. Bu partide açılış sürprizinden merkez baskısına, ardından Kale fedâsıyla gelen final saldırısına kadar tempo hiç düşmüyor. Son bölümde Spassky'nin neden seyirciyle birlikte Fischer'ı alkışladığını göreceksiniz.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Reykjavik'te Baskı",
+      "text": "Bin dokuz yüz yetmiş iki, Reykjavik. Dünya Şampiyonluğu maçının altıncı oyununda Amerikalı meydan okuyucu Robert James Fischer, Sovyet dünya şampiyonu Boris Spassky'nin karşısında. Spassky maçın başında iki sıfır öne geçmişti; ikinci oyun, kamera tartışmasında Fischer gelmediği için hükmen ona yazılmıştı. Bu oyun, maçın psikolojisini çevirebilecek an.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Fischer neredeyse sadece Şah piyonu oyuncusu olarak biliniyordu; ciddi oyunlarda bu yolu daha önce seçmemişti. Ama burada başka bir kapı açıyor: {{m:1}}. Spassky sağlam kalıyor: {{m:2}}. {{s:7}} Taşlar doğal karelerine yerleşiyor, ardından Beyaz baskı fikrini gösteriyor: {{m:9}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:10}} Siyah güvenli yapısını kuruyor, Fischer ise oyunu soğutmuyor. {{s:13}} Her iki taraf da taş değişimine hazır. İlk merkez gerilimi geliyor: {{m:15}}. Spassky cevabı hemen veriyor: {{m:16}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Sürpriz Açılış",
+      "text": "Filler değişilirken tahta sadeleşiyor: {{m:17}}. Spassky dengeyi koruyor: {{m:18}}. {{s:21}} Fischer Kale'sini açık hatta koyunca oyun ağırlaşıyor. Şimdi Vezir erken sahneye çıkıyor: {{m:23}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Spassky merkeze karşı hamle yapıyor: {{m:24}}. Fischer Vezir'iyle yeni bir açı arıyor: {{m:25}}. {{s:28}} Siyah vezir kanadında alan kazanırken, Beyaz henüz uzun planını saklıyor.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Merkezdeki piyon gerilimi çözülüyor: {{m:29}}. Siyah dosyaları açmayı kabul ediyor: {{m:30}}. Fischer gelişimini tamamlıyor: {{m:31}}. Spassky savunma bağlantısını kuruyor: {{m:32}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "Merkez Sıkışıyor",
+      "text": "Fischer sakin bir taş geliştiriyor: {{m:33}}. Spassky merkezi daha sıkı tutmak istiyor: {{m:34}}. Beyaz, zayıf koyu karelere bakmaya başlıyor: {{m:35}}. Siyah Vezir'i savunmaya yaklaştırıyor: {{m:36}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Şimdi Fischer küçük ama rahatsız edici bir değişim fikrine giriyor: {{m:37}}. Spassky kabul ediyor: {{m:38}}. Merkez piyonları yürümeye başlayınca alan değişiyor: {{m:39}}. Siyah geçit kapatmaya çalışıyor: {{m:40}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Şimdi Beyaz'ın merkezi sadece tutması değil, ileri itmesi gerekiyor; motorun da sevdiği planı bulur musunuz? {{p}} Fischer seçimini yapıyor: {{m:41}}. Birkaç hamle içinde hatlar kilitleniyor: {{m:44}}. Artık Beyaz açıkça daha rahat, çünkü saldırı için daha fazla alan var.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s10",
+      "chapter": "Kanat Hücumu",
+      "text": "Fischer taşını aktif kareye getiriyor: {{m:45}}. Spassky dar bir savunma düzenine geçiyor: {{m:46}}. Sonra Beyaz'ın Vezir'i birden Şah tarafına bakıyor: {{m:47}}. Siyah savunma taşını geri çekiyor: {{m:48}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "{{s:49}} Fischer önce arka kapıları kapatıyor. Spassky kanatta yer istiyor: {{m:50}}. Beyaz piyonları sürerek taşları ateşe çağırıyor: {{m:51}}. Siyah kabul ediyor: {{m:52}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Fischer saldırı ağına yeni güç ekliyor: {{m:53}}. Spassky savunma kaynağı arıyor: {{m:54}}. {{s:55}} İki Kale artık aynı hedefe bakıyor. Siyah Vezir'i geriye dönünce üstünlük belirginleşiyor: {{m:56}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Fischer Vezir'iyle baskıyı artırıyor: {{m:57}}. Spassky savunma hattını kalınlaştırıyor: {{m:58}}. {{s:61}} Beyaz'ın ileri piyonu artık savunmanın içine saplanmış durumda. Siyah yer arıyor ama kareler azalıyor: {{m:62}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Vezirler birbirini yokluyor: {{m:63}}. Spassky değişim tehdidini soğutmaya çalışıyor: {{m:64}}. {{s:65}} Beyaz vezir kanadında da hava alıyor. Siyah tekrar geri dönüyor: {{m:66}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Fischer ağır taşlarını yeniden diziyor: {{m:67}}. Spassky aynı savunma fikrine tutunuyor: {{m:68}}. Bir Kale daha hücum dosyasına yaklaşıyor: {{m:69}}. Siyah yine bekleme düzeninde: {{m:70}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "Kale Fedâsı",
+      "text": "Fischer Fil'iyle son savunma bağlarını zorluyor: {{m:71}}. Spassky Vezir'iyle kapıyı kapatmak istiyor: {{m:72}}. Beyaz Vezir'i merkeze girince tehditler tek tek birleşiyor: {{m:73}}. Siyah karşı koyacak taşını öne çıkarıyor: {{m:74}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Burada hamle sadece taş kazanmak değil, Şahın etrafındaki son nefesi kesmek. Bilgisayarın da işaret ettiği güçlü darbeyi bulabilir misiniz? {{p}} Fischer vuruyor: {{m:75}}. Tahta bir anda yanıyor.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Spassky karşılık veriyor: {{m:76}}. Fakat Fischer'in diğer Kale'si saldırıyı bırakmıyor: {{m:77}}. Siyah Şah için güvenli bir kare bulmak çok zor: {{m:78}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s19",
+      "chapter": "Son Darbe",
+      "text": "Fischer Fil'i yeniden devreye alıyor: {{m:79}}. Spassky savunmayı en dar noktaya topluyor: {{m:80}}. Bu anda tablo çok ağır; Beyaz için yol artık mat ağına bağlanıyor.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Son hamle hemen mat değil, ama motor matın kaçınılmaz olduğunu görüyor. Sizce kilidi hangi taş açıyor? {{p}} Cevap geliyor: {{m:81}}. Spassky matın önlenemeyeceğini gördü ve terk etti. Oyun burada bitti.",
+      "pause_after": 1
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Bu galibiyetle Fischer maçta ilk kez öne geçti, skor üç buçuk iki buçuk oldu. Oyun bitince Spassky seyircilerle birlikte Fischer'ı alkışladı. Bu parti; sürpriz açılışı, sabırlı baskısı ve finaldeki Kale fedâsı için unutulmadı. Daha sonra Fischer maçı on iki buçuk sekiz buçuk kazanarak resmi dünya unvanını alan ilk Amerikalı oldu.",
+      "pause_after": 1
+    }
+  ],
+  "key_moments": []
+}
