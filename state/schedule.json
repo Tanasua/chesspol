@@ -126,6 +126,18 @@
       "video_id": "qAB1oCs1_Pw",
       "thumbnail": "cover_ai.jpg",
       "rubric": "backlog"
+    },
+    {
+      "id": "pl_duda_caruana_2022",
+      "publish_at": "2026-10-29T17:10:00+00:00",
+      "title": "Presja aż do końca! | Duda – Caruana (Turniej Pretendentów, 2022) — Duda łamie obronę Caruany",
+      "mode": "youtube",
+      "package": "out/packages/ep014-pl_duda_caruana_2022",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/ep014-pl_duda_caruana_2022",
+      "video_id": "PhCGB9ukXTk",
+      "thumbnail": "pl_duda_caruana_2022_cover_ai.jpg",
+      "rubric": "national",
+      "day_rubric": "national"
     }
   ],
   "first_day": "2026-09-27"

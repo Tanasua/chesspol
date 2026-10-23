@@ -1,0 +1,140 @@
+{
+  "hook": {
+    "text": "W turnieju kandydatów spokojna pozycja nagle zaczyna pękać. Jeden skok lekkiej figury sprawia, że król czarnych ma coraz mniej powietrza.",
+    "ply": 53
+  },
+  "yt_hook": "Presja aż do końca!",
+  "yt_detail": "Duda łamie obronę Caruany",
+  "kicker": "MISTRZOWSKO!",
+  "title": "Atak z długim lontem",
+  "description": "Jan-Krzysztof Duda gra białymi z Fabiano Caruaną w 10. rundzie Turnieju Kandydatów FIDE w Madrycie w 2022 roku. To partia, w której małe decyzje na skrzydłach przechodzą w długotrwały nacisk na króla czarnych. Warto patrzeć, jak białe najpierw ograniczają kontrgrę, potem wymieniają materiał w dobrym momencie i przechodzą do końcówki. Finał pokazuje, jak przewaga pozycyjna zamienia się w techniczne zwycięstwo.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Madryt, dwa tysiące dwudziesty drugi rok, Turniej Kandydatów FIDE, runda dziesiąta. Jan-Krzysztof Duda ma białe, Fabiano Caruana czarne, a stawką jest pełny punkt w turnieju, w którym każdy szczegół waży bardzo dużo.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:1}} Białe od razu wybierają klasyczny środek i zapraszają do spokojnej, ale napiętej gry. {{s:7}} Po kilku naturalnych posunięciach powstaje układ, w którym obie strony mają czas na manewry, a centrum jeszcze nie zdradza, gdzie pęknie.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Duda delikatnie zaznacza przestrzeń na skrzydle hetmańskim: {{m:13}}. Caruana odpowiada rozwojem i przygotowuje wymiany: {{m:18}}. Na razie to partia cierpliwości, bez fajerwerków, ale z coraz większą liczbą małych haczyków.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut",
+      "text": "Duda wypycha przestrzeń na lewym skrzydle: {{m:21}}. Caruana aktywizuje skoczka: {{m:24}}. Po wymianie napięcia czarny hetman wchodzi bliżej gry: {{m:28}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Białe nie cofają się i idą do przodu: {{m:31}}. Czarne odpowiadają ostro: {{m:34}}. Silnik po tym fragmencie zaczyna coraz bardziej lubić pozycję białych, bo król czarnych będzie potrzebował dokładnej obrony.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Teraz centrum zaczyna pracować: {{m:37}}. Caruana ustawia hetmana tak, żeby pilnować słabych pól: {{m:40}}. To jeszcze nie jest szturm, raczej powolne zaciskanie przestrzeni.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "{{s:44}} Czarne cofają ciężką figurę do obrony i białe mogą wreszcie uderzyć w centrum. Znajdziecie właściwy moment? {{p}} Duda gra: {{m:45}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s08",
+      "chapter": "Przełom w centrum",
+      "text": "Czarne biorą na skrzydle: {{m:48}}. Białe nie boją się otwartych linii; każdy pion odsłania kolejną drogę do króla. Caruana szuka obrony. Pada ruch: {{m:52}}. Ocena silnika mówi już o wyraźnej przewadze białych.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "To jest moment na celny skok. Jaki ruch podkręca nacisk na króla? {{p}} Duda odpowiada: {{m:53}}. Hetman czarnych jest blisko obrony, ale czarny król zostaje coraz bardziej samotny.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Caruana próbuje ustawić hetmana między królem a zagrożeniami: {{m:56}}. Duda przerzuca ciężkie figury w pobliże celu, a czarne odpowiadają: {{m:60}}. Plansza wygląda jak klincz: nikt nie matuje, ale każdy ruch kosztuje energię.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Białe na chwilę odsuwają hetmana: {{m:63}}. Caruana szuka kontrgry i przestawia własnego hetmana: {{m:66}}. Przewaga białych spada, ale nie znika; nacisk tylko zmienia kształt.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "Manewry pod presją",
+      "text": "Czarne łapią oddech na skrzydle hetmańskim: {{m:70}}. Duda nie odpuszcza króla i prowokuje wymiany: {{m:72}}. Ta partia nie eksploduje jednym ciosem; ona mieli obronę powoli.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Po serii wymian białe znów kierują lekką figurę w okolice króla: {{m:75}}. Caruana odpowiada aktywnością w centrum: {{m:78}}. Silnik znowu pokazuje, że białe mają wyraźną przewagę.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Teraz Duda wybiera ruch, który upraszcza napięcie, ale nie wypuszcza kontroli: {{m:79}}. Czarne cofają hetmana daleko od własnego króla: {{m:82}}. Atak zmienia się w lepszą strukturę i zdrowszą końcówkę.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Caruana próbuje przestraszyć białego króla: {{m:86}}. Duda zachowuje zimną krew, a czarne zbierają materiał: {{m:90}}. Na pierwszy rzut oka to chaos, ale ocena nadal mocno trzyma stronę białych.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "Przejście do końcówki",
+      "text": "Czarne wymieniają centralnego obrońcę: {{m:94}}. Potem hetman Caruany wchodzi na linię wymiany: {{m:96}}. Czy Duda powinien uprościć pozycję, czy dalej grać z hetmanami? {{p}} Decyzja jest prosta i mocna: {{m:97}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Czarne muszą odbić: {{m:98}}. Hetmany znikają, a na planszy zostaje końcówka, w której aktywność białych figur jest ważniejsza niż sam materiał. Caruana próbuje ustawić wieżę aktywnie: {{m:100}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Duda zabiera kolejnego piona: {{m:103}}. Czarne szukają kontrszans wieżą: {{m:106}}. To już nie jest atak na króla, tylko technika: ograniczyć kontrę, wygrać tempo, podejść królem.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Biały król i wieża współpracują coraz lepiej. Duda poprawia wieżę: {{m:109}}. Caruana daje jeszcze szacha: {{m:112}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "Finał",
+      "text": "Białe wychodzą z szacha: {{m:113}}. To ostatni ruch partii. Caruana zrozumiał, że jego pozycja jest przegrana, i się poddał.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Ta partia jest ważna, bo pokazuje bardzo dojrzałe zwycięstwo Dudy w Turnieju Kandydatów. Bez jednej wielkiej eksplozji, za to z naciskiem, cierpliwością i końcówką, w której przewaga pozycyjna zamienia się w pełny punkt przeciwko Caruanie.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}
