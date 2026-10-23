@@ -130,6 +130,18 @@
       "thumbnail": "lasker_schlechter_1910_cover_ai.jpg",
       "rubric": "history",
       "day_rubric": "history"
+    },
+    {
+      "id": "de_naiditsch_carlsen_2015",
+      "publish_at": "2026-10-29T18:30:00+00:00",
+      "title": "Bis zuletzt unter Feuer! | Naiditsch – Carlsen (2015) — Naiditsch bezwingt Carlsen im Endspiel",
+      "mode": "youtube",
+      "package": "out/packages/de-ep014-de_naiditsch_carlsen_2015",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/de-ep014-de_naiditsch_carlsen_2015",
+      "video_id": "NLMNfU9jVv4",
+      "thumbnail": "de_naiditsch_carlsen_2015_cover_ai.jpg",
+      "rubric": "national",
+      "day_rubric": "national"
     }
   ]
 }

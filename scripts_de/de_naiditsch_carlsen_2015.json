@@ -1,0 +1,164 @@
+{
+  "hook": {
+    "text": "Ein einzelner Bauer erreicht die siebte Reihe, und plötzlich wird aus Druck etwas Handfestes. Aber noch ist kein Matt auf dem Brett.",
+    "ply": 119
+  },
+  "yt_hook": "Bis zuletzt unter Feuer!",
+  "yt_detail": "Naiditsch bezwingt Carlsen im Endspiel",
+  "kicker": "ÜBERLISTET!",
+  "title": "Der Freibauer entscheidet",
+  "description": "In Baden-Baden treffen 2015 Arkadij Naiditsch und Magnus Carlsen in Runde 3 der GRENKE Chess Classic aufeinander. Aus einer scharfen Eröffnung entsteht ein langes Endspiel, in dem kleine Entscheidungen immer mehr Gewicht bekommen. Achtet darauf, wie Weiß den Druck festhält und am Ende einen entfernten Freibauern gefährlich macht. Naiditsch gewinnt diese Partie nach einem zähen Kampf.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Start in Baden-Baden",
+      "text": "In Baden-Baden, Runde drei der GRENKE Chess Classic zweitausendfünfzehn: Arkadij Naiditsch führt die weißen Steine, Magnus Carlsen die schwarzen. Es wird kein kurzer Schlagabtausch, sondern ein langer Test, ob ein Vorteil gegen zähes Gegenspiel wirklich hält.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Weiß nimmt sofort Raum im Zentrum: {{m:1}}. {{s:2}} Schwarz antwortet asymmetrisch, nicht mit Spiegelbild. {{s:3}} Weiß baut das Zentrum weiter aus. Schwarz fianchettiert: {{m:4}}.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:5}} Die weißen Figuren kommen schnell heraus. {{s:6}} Schwarz hält dagegen, ohne das Zentrum festzulegen. Weiß stellt einen Läufer aktiv auf: {{m:7}}. {{s:8}} Am Damenflügel entsteht sofort ein kleiner Kontakt.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Königsflügel unter Spannung",
+      "text": "Weiß beginnt den nächsten Plan: {{m:9}}. {{s:10}} Schwarz entwickelt und wartet auf den richtigen Hebel. {{s:11}} Weiß bereitet den Königsflügel vor. {{s:12}} Der schwarze König verschwindet aus der Mitte. Dann kommt der erste klare Vorstoß: {{m:13}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:14}} Schwarz sucht Gegenspiel im Zentrum. Weiß trifft eine feste Entscheidung: {{m:15}}. {{s:16}} Jetzt wird die Bauernstruktur festgelegt. {{s:17}} Weiß entwickelt ruhig weiter. {{s:18}} Schwarz nimmt Spannung heraus. Weiß bleibt bei seinem Plan: {{m:19}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Schwarz steht vor einer Versuchung. Greift er jetzt zu, oder hält er die Struktur geschlossen? {{p}} In der Partie entscheidet er sich: {{m:20}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Weiß nimmt die Herausforderung an: {{m:21}}. {{s:22}} Schwarz bekommt Aktivität, aber nicht die volle Kontrolle. Weiß verbindet die Schwerfiguren: {{m:23}}. {{s:24}} Die Stellung bleibt kompliziert. Weiß zentralisiert weiter: {{m:25}}. {{s:26}} Schwarz stört sofort.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Weiß entwickelt Druck gegen den schwarzen König: {{m:27}}. {{s:28}} Schwarz sucht Gegenspiel gegen den Damenflügel. Weiß bringt die nächste Figur ins Spiel: {{m:29}}. {{s:30}} Schwarz stabilisiert. Weiß tauscht eine wichtige Figur: {{m:31}}. {{s:32}} Das Material wird übersichtlicher.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "Dame im Lager",
+      "text": "Weiß zieht eine Figur zurück: {{m:33}}. Schwarz greift zu: {{m:34}}. Jetzt ist die Dame tief im weißen Lager. Weiß jagt sie an: {{m:35}}. {{s:36}} Die Dame bleibt aktiv, aber sie steht auch weit weg vom eigenen König.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Weiß schlägt am Damenflügel zurück: {{m:37}}. Jetzt zeigt die Engine plötzlich: Der Ausgleich ist greifbar, aber nur mit präziser Verteidigung. Findet Schwarz sie am Brett? {{p}} In der Partie kommt: {{m:38}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Danach steht Weiß laut Engine wieder klar besser. Weiß stabilisiert die eigene Dame: {{m:39}}. {{s:40}} Schwarz sucht aktive Felder. Weiß bleibt bei der Initiative: {{m:41}}. {{s:42}} Schwarz weicht aus. Weiß geht weiter in die schwarze Hälfte: {{m:43}}. {{s:44}} Der schwarze Vorstoß schafft Gegenspiel.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Die weiße Dame bleibt unangenehm: {{m:45}}. {{s:46}} Schwarz zwingt Vereinfachungen. Weiß bringt den König in Sicherheit: {{m:47}}. {{s:48}} Die Damen verschwinden. Weiß nimmt zurück: {{m:49}}. {{s:50}} Jetzt beginnt eine neue Partie.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "Der Übergang",
+      "text": "Weiß verdoppelt Druck auf der offenen Linie: {{m:51}}. {{s:52}} Schwarz stellt eine Luftfrage. Weiß klärt eine wichtige Spannung: {{m:53}}. {{s:54}} Schwarz nimmt zurück. Weiß nimmt den nächsten taktischen Punkt: {{m:55}}. {{s:56}} Der schwarze Läufer wird aktiv.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Die Figuren ordnen sich neu: {{m:57}}. {{s:58}} Schwarz wird auf der zweiten Reihe aktiv. Weiß stellt den Springer wieder zentral: {{m:59}}. {{s:60}} Schwarz sucht seitliches Gegenspiel. Weiß zieht den Läufer zurück: {{m:61}}. {{s:62}} Jetzt ist die schwarze Verteidigung kompakt.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Plötzlich schrumpft der Vorteil, Weiß steht nur noch leicht besser. Weiß weicht mit dem Springer aus: {{m:63}}. {{s:64}} Schwarz bringt den König näher. Weiß hält den Läufer aktiv: {{m:65}}. {{s:66}} Schwarz deckt die siebte Reihe. Weiß hebt den Turm: {{m:67}}. {{s:68}} Schwarz bleibt lästig.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Weiß stellt den Läufer um: {{m:69}}. {{s:70}} Schwarz nimmt dem Turm Felder. Weiß dringt erneut ein: {{m:71}}. {{s:72}} Schwarz kontert sofort. Weiß tauscht auf der siebten Reihe: {{m:73}}. {{s:74}} Schwarz reduziert Material.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Weiß bleibt aktiv: {{m:75}}. {{s:76}} Schwarz sichert Raum am Königsflügel. Weiß bringt den Springer zurück: {{m:77}}. {{s:78}} Schwarz hält den Turm beweglich. Weiß verbessert den König: {{m:79}}. {{s:80}} Der schwarze Randbauer läuft.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s18",
+      "chapter": "Zähe Verteidigung",
+      "text": "Weiß stellt den Turm zentraler: {{m:81}}. Schwarz gibt Schach: {{m:82}}. Weiß geht aus der Linie: {{m:83}}. {{s:84}} Schwarz schiebt weiter. Weiß bleibt auf der dritten Reihe: {{m:85}}. {{s:86}} Der Läufer kehrt auf eine starke Diagonale zurück.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Weiß deckt kritische Felder: {{m:87}}. {{s:88}} Schwarz hält Druck gegen den weißen König. Weiß sucht Sicherheit: {{m:89}}. {{s:90}} Schwarz stellt eine Drohung auf. Weiß verteidigt mit dem Turm: {{m:91}}. {{s:92}} Die Könige rücken näher.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Weiß zieht den Springer zurück: {{m:93}}. {{s:94}} Schwarz hält den Läufer aktiv. Weiß zentralisiert den Springer: {{m:95}}. {{s:96}} Schwarz bringt den König aggressiv nach vorn. Weiß bleibt ruhig: {{m:97}}. {{s:98}} Schwarz wiederholt nicht einfach, sondern prüft weiter.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Weiß verbessert den Springer: {{m:99}}. {{s:100}} Schwarz schiebt die Bauernmehrheit. Weiß gewinnt am Rand einen Bauern: {{m:101}}. {{s:102}} Jetzt wird der schwarze Freibauer gefährlicher. Weiß blockiert: {{m:103}}. {{s:104}} Schwarz schafft neuen Druck.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s22",
+      "chapter": "Der Freibauer läuft",
+      "text": "Weiß kehrt mit dem Springer zurück: {{m:105}}. {{s:106}} Schwarz hält den Turm hinter dem Geschehen. Weiß greift im Zentrum zu: {{m:107}}. {{s:108}} Schwarz nimmt zurück. Weiß setzt den entfernten Bauern in Bewegung: {{m:109}}. {{s:110}} Schwarz bleibt aktiv.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Weiß stellt den Turm hinter den eigenen Plan: {{m:111}}. Schwarz gibt Schach: {{m:112}}. Weiß geht dorthin: {{m:113}}. {{s:114}} Schwarz sucht seitlichen Druck. Der weiße Bauer ist jetzt das Thema.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Weiß schiebt weiter: {{m:115}}. Schwarz gibt Schach: {{m:116}}. Weiß weicht aus: {{m:117}}. Schwarz schafft noch einen gefährlichen Bauern: {{m:118}}. Jetzt hat Weiß laut Engine den klaren Durchbruch. Findet ihr ihn? {{p}} Hier ist er: {{m:119}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s25",
+      "chapter": "",
+      "text": "{{s:120}} Schwarz versucht noch, den Turm aktiv zu halten. Weiß antwortet ruhig: {{m:121}}. Damit ist die Partie vorbei. Magnus Carlsen erkannte, dass seine Stellung verloren war, und gab auf. Diese Partie ist wichtig, weil Naiditsch über ein sehr langes Endspiel den Druck festhält und den entfernten Bauern zum entscheidenden Faktor macht.",
+      "pause_after": 0.8
+    }
+  ],
+  "key_moments": []
+}
