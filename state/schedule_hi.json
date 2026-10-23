@@ -69,6 +69,18 @@
       "video_id": "JMVeLLAxjQ8",
       "thumbnail": "cover_ai.jpg",
       "rubric": "backlog"
+    },
+    {
+      "id": "carlsen_nepomniachtchi_2021",
+      "publish_at": "2026-10-25T13:25:00+00:00",
+      "title": "बोर्ड पर 136 चालें! | Carlsen – Nepomniachtchi (2021) — कार्लसन ने 136 चालों की बाज़ी जीती",
+      "mode": "youtube",
+      "package": "out/packages/hi-ep008-carlsen_nepomniachtchi_2021",
+      "release_url": "https://github.com/Tanasua/chesspol/releases/tag/hi-ep008-carlsen_nepomniachtchi_2021",
+      "video_id": "sXUbXODbiHE",
+      "thumbnail": "carlsen_nepomniachtchi_2021_cover.jpg",
+      "rubric": "top",
+      "day_rubric": "top"
     }
   ]
 }
