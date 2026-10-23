@@ -1,0 +1,212 @@
+{
+  "hook": {
+    "text": "A bishop vanishes beside the black king, and then the queen on A five becomes the real target. This game turns one spark into a long, cold squeeze.",
+    "ply": 42
+  },
+  "yt_hook": "Pressure Never Let Go",
+  "yt_detail": "Kamsky turns a sacrifice into a won ending",
+  "kicker": "QUEEN TRAP!",
+  "title": "The Elista Squeeze",
+  "description": "Gata Kamsky faces Anatoly Karpov in Game 2 of the 1996 FIDE World Championship match in Elista. A quiet opening becomes sharp when a bishop sacrifice pulls the black king into the story. Watch for the queen on A five, the material imbalance, and the long conversion. The game is memorable because the attack turns into patient technique instead of a quick finish.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Introduction",
+      "text": "In Elista, in nineteen ninety-six, Gata Kamsky has White against Anatoly Karpov. This is game two of the FIDE World Championship match, so every quiet decision carries match weight.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "White begins: {{m:1}}. Black answers: {{m:2}}. White takes the full center: {{m:3}}. Black hits it at once: {{m:4}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "The early pawn trades leave a balanced but tense structure. {{s:7}} White sets up pressure in the center. Black develops: {{m:8}}. White brings out a knight: {{m:11}}. Black pins and asks questions: {{m:12}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Opening Pressure",
+      "text": "{{s:16}} Black keeps pieces aimed at the middle, and White finishes safety first. White castles: {{m:19}}. Black castles too: {{m:20}}. Nobody has won anything yet, but the files are beginning to line up.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "White improves the queen: {{m:21}}. {{s:24}} Black completes development, but White’s rooks take the center seriously. White chooses an open file: {{m:25}}. {{s:28}} Black centralizes a knight, and the tension stays.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "{{s:31}} Kamsky makes a little space on the queen side. Black’s queen moves: {{m:32}}. That gives White a clear tempo for activity. White pins: {{m:33}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Black’s queen steps toward the edge: {{m:34}}. White opens the center: {{m:35}}. {{s:36}} Black accepts the challenge. White removes a defender: {{m:37}}. {{s:38}} Black recaptures, and now the king side is sensitive.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s08",
+      "chapter": "The First Sacrifice",
+      "text": "Here Kamsky can play quietly, or he can force the black king to make a choice. Can you find the sacrifice? {{p}} White plays: {{m:39}}.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Black accepts: {{m:40}}. The sacrifice is not a mate hunt yet, it is a way to pull the king and loosen the whole position. White continues: {{m:41}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Now Karpov hits back: {{m:42}}. White has lost a knight, and the queen on A five is hanging in the air. What is the clean way to cash in? {{p}} White answers: {{m:43}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s11",
+      "chapter": "Queen Hunt",
+      "text": "Black replies: {{m:44}}. The rook disappears, but the exchange has forced Black’s queen off the board. White immediately chases that bishop: {{m:45}}. Black steps away: {{m:46}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "White takes the bishop: {{m:47}}. Black activates the other bishop: {{m:48}}. White pushes the passed pawn: {{m:49}}. Black removes it: {{m:50}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "White centralizes the queen: {{m:51}}. Black cuts down the last white knight: {{m:52}}. White recaptures: {{m:53}}. The board has transformed into queen and rook against two rooks and a knight.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "{{s:54}} Karpov brings a rook to the open file. {{s:55}} White relocates the rook. {{s:56}} Black doubles down, and White is still clearly better, but this will not be quick.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s15",
+      "chapter": "The Long Squeeze",
+      "text": "White gives the king an escape square: {{m:57}}. {{s:58}} Karpov grabs the D file. {{s:59}} Kamsky keeps the queen active. {{s:60}} Black shifts the rook wall across the sixth rank.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "White’s rook joins the queen side: {{m:61}}. {{s:62}} Black regroups. White probes: {{m:63}}. {{s:64}} Karpov tries to make a passed pawn of his own.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "White pins that pawn down: {{m:65}}. Black checks: {{m:66}}. White moves the king: {{m:67}}. Black invades the second rank: {{m:68}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "White brings the rook behind the attack: {{m:69}}. {{s:70}} Black shifts again. White keeps the queen close: {{m:71}}. {{s:72}} The rooks remain active, but they cannot break the grip.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "White cuts across: {{m:73}}. Black challenges that rook: {{m:74}}. {{s:75}} White sidesteps. {{s:76}} Black repeats the pressure, and Kamsky refuses to rush.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "White returns to the active post: {{m:77}}. {{s:78}} Black covers it again. White changes the queen’s angle: {{m:79}}. {{s:80}} Karpov keeps the rook shield in place.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "White swings the queen toward the king: {{m:81}}. Black blocks the line: {{m:82}}. White changes sides: {{m:83}}. {{s:84}} Black answers by regrouping, and the squeeze continues.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s22",
+      "chapter": "",
+      "text": "White reaches the seventh rank: {{m:85}}. Black counters: {{m:86}}. White comes back in: {{m:87}}. {{s:88}} The black rooks are busy defending everything.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s23",
+      "chapter": "Pawn Breaks",
+      "text": "White starts a pawn break: {{m:89}}. Black challenges it: {{m:90}}. White pushes on: {{m:91}}. Black captures: {{m:92}}. White takes back: {{m:93}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "{{s:94}} Karpov keeps the rooks connected. White tucks the rook to the side: {{m:95}}. Black mirrors the idea: {{m:96}}. White checks: {{m:97}}. Black chooses the safer square: {{m:98}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s25",
+      "chapter": "",
+      "text": "White centralizes again: {{m:99}}. Black keeps contact: {{m:100}}. White’s queen drops back: {{m:101}}. Black resets the rook formation: {{m:102}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "White aims at the back of the board: {{m:103}}. Black’s king steps closer: {{m:104}}. White repeats the rook lift: {{m:105}}. Black answers in kind: {{m:106}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s27",
+      "chapter": "",
+      "text": "White returns to the B file: {{m:107}}. {{s:108}} Black defends from the sixth rank. White repositions the queen: {{m:109}}. Black moves the king back: {{m:110}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s28",
+      "chapter": "Final Checks",
+      "text": "White keeps teasing the rook net: {{m:111}}. Black holds: {{m:112}}. White improves the rook: {{m:113}}. Black’s reply lets the advantage grow: {{m:114}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s29",
+      "chapter": "",
+      "text": "White checks the queen’s route: {{m:115}}. Black defends: {{m:116}}. White sharpens the aim: {{m:117}}. Black steps into more trouble: {{m:118}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s30",
+      "chapter": "",
+      "text": "White tightens: {{m:119}}. Black retreats: {{m:120}}. Then the queen comes with check: {{m:121}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s31",
+      "chapter": "",
+      "text": "Black steps out: {{m:122}}. White brings the rook back to the center: {{m:123}}. Black’s king runs forward: {{m:124}}. White cuts across: {{m:125}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s32",
+      "chapter": "",
+      "text": "Black blocks with activity: {{m:126}}. White lifts the rook: {{m:127}}. Black covers a key route: {{m:128}}. White plays the final move of the game: {{m:129}}.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s33",
+      "chapter": "",
+      "text": "Karpov realized his position was lost, and resigned. This game matters because the attack does not end in a quick mate, Kamsky turns one sacrifice into a queen capture, then into a long technical squeeze against Karpov.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}
