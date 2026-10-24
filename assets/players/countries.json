@@ -166,6 +166,45 @@
     ],
     "qid": "Q214713"
   },
+  "Alexia-Ioana Hoanca": {
+    "periods": [
+      {
+        "code": "ro",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q140528044"
+  },
+  "Alice Lee": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q108352686"
+  },
+  "Alina Bivol": {
+    "periods": [
+      {
+        "code": "ru",
+        "from": null,
+        "prop": "P1532",
+        "to": 2023
+      },
+      {
+        "code": "rs",
+        "from": 2026,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q20090303"
+  },
   "Alireza Firouzja": {
     "periods": [
       {
@@ -182,6 +221,17 @@
       }
     ],
     "qid": "Q22338182"
+  },
+  "Amin Tabatabaei": {
+    "periods": [
+      {
+        "code": "ir",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q23710569"
   },
   "Anatoly Karpov": {
     "periods": [
@@ -227,6 +277,68 @@
       }
     ],
     "qid": "Q276885"
+  },
+  "Andy Woodward": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q109386679"
+  },
+  "Anish Giri": {
+    "periods": [
+      {
+        "code": "nl",
+        "from": 2009,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "ru",
+        "from": null,
+        "prop": "P1532",
+        "to": 2009
+      }
+    ],
+    "qid": "Q548946"
+  },
+  "Anna M. Sargsyan": {
+    "periods": [
+      {
+        "code": "am",
+        "from": null,
+        "prop": "P1532",
+        "to": 2025
+      },
+      {
+        "code": "us",
+        "from": 2025,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q68948716"
+  },
+  "Anna Zatonskih": {
+    "periods": [
+      {
+        "code": "ua",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q436927"
   },
   "Aram Hakobyan": {
     "periods": [
@@ -330,6 +442,17 @@
     ],
     "qid": "Q60598"
   },
+  "Awonder Liang": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q4830120"
+  },
   "Aydın Süleymanlı": {
     "periods": [
       {
@@ -362,6 +485,17 @@
       }
     ],
     "qid": "Q93674"
+  },
+  "Benjámin Gledura": {
+    "periods": [
+      {
+        "code": "hu",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q22570141"
   },
   "Bent Larsen": {
     "periods": [
@@ -419,6 +553,17 @@
       }
     ],
     "qid": "Q177310"
+  },
+  "Carissa Yip": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q66980214"
   },
   "Carl Hamppe": {
     "periods": [
@@ -586,6 +731,17 @@
     ],
     "qid": "Q1239750"
   },
+  "Eduard Miller": {
+    "periods": [
+      {
+        "code": "de",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q71316218"
+  },
   "Edward Lasker": {
     "periods": [
       {
@@ -654,6 +810,17 @@
     ],
     "qid": "Q57095"
   },
+  "Emil Schmidek": {
+    "periods": [
+      {
+        "code": "de",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q71318214"
+  },
   "Fabiano Caruana": {
     "periods": [
       {
@@ -698,6 +865,17 @@
       }
     ],
     "qid": "Q312814"
+  },
+  "Frank Sawatzki": {
+    "periods": [
+      {
+        "code": "de",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27531595"
   },
   "Frederik Svane": {
     "periods": [
@@ -800,6 +978,23 @@
     ],
     "qid": "Q1387704"
   },
+  "Grigoriy Oparin": {
+    "periods": [
+      {
+        "code": "ru",
+        "from": null,
+        "prop": "P1532",
+        "to": 2022
+      },
+      {
+        "code": "us",
+        "from": 2022,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q15302250"
+  },
   "Gukesh Dommaraju": {
     "periods": [
       {
@@ -810,6 +1005,28 @@
       }
     ],
     "qid": "Q56026072"
+  },
+  "Gulnar Mammadova": {
+    "periods": [
+      {
+        "code": "az",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q9283967"
+  },
+  "Hans Niemann": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q59137809"
   },
   "Hans-Joachim Hecht": {
     "periods": [
@@ -877,6 +1094,28 @@
     ],
     "qid": "Q108396478"
   },
+  "Ilze Bērziņa": {
+    "periods": [
+      {
+        "code": "lv",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q4084868"
+  },
+  "Irina Krush": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q271436"
+  },
   "Jakub Seemann": {
     "periods": [
       {
@@ -898,6 +1137,17 @@
       }
     ],
     "qid": "Q139438"
+  },
+  "Jan Zienkiewicz": {
+    "periods": [
+      {
+        "code": "fr",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q122956003"
   },
   "Jan-Krzysztof Duda": {
     "periods": [
@@ -921,6 +1171,28 @@
     ],
     "qid": "Q62040"
   },
+  "Jeffery Xiong": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q20973724"
+  },
+  "Jennifer Yu": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27597952"
+  },
   "Jiner Zhu": {
     "periods": [
       {
@@ -931,6 +1203,17 @@
       }
     ],
     "qid": "Q57235640"
+  },
+  "Joar Ostlund": {
+    "periods": [
+      {
+        "code": "se",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q110822274"
   },
   "Johann Hermann Bauer": {
     "periods": [
@@ -983,6 +1266,17 @@
     ],
     "qid": "Q450419"
   },
+  "Jorden van Foreest": {
+    "periods": [
+      {
+        "code": "nl",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q15877133"
+  },
   "Joseph Henry Blackburne": {
     "periods": [],
     "qid": "Q352459"
@@ -1030,6 +1324,17 @@
       }
     ],
     "qid": "Q27526417"
+  },
+  "Khazar Babazada": {
+    "periods": [
+      {
+        "code": "az",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q71319521"
   },
   "Kirill Alekseenko": {
     "periods": [
@@ -1080,6 +1385,28 @@
       }
     ],
     "qid": "Q534057"
+  },
+  "Laszlo Takacs": {
+    "periods": [
+      {
+        "code": "sk",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q71316818"
+  },
+  "Laura Unuk": {
+    "periods": [
+      {
+        "code": "si",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q18684375"
   },
   "Lazaro Bruzon Batista": {
     "periods": [
@@ -1155,6 +1482,17 @@
     ],
     "qid": "Q313177"
   },
+  "Ljilja Drljevic": {
+    "periods": [
+      {
+        "code": "rs",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27598415"
+  },
   "Lorenzo Lodici": {
     "periods": [
       {
@@ -1216,6 +1554,17 @@
       }
     ],
     "qid": "Q61673"
+  },
+  "Lukas Bango": {
+    "periods": [
+      {
+        "code": "sk",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q141148383"
   },
   "Luke McShane": {
     "periods": [
@@ -1304,6 +1653,17 @@
       }
     ],
     "qid": "Q256923"
+  },
+  "Mei-En Emmanuelle Hng": {
+    "periods": [
+      {
+        "code": "sg",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q108643151"
   },
   "Michael Adams": {
     "periods": [
@@ -1395,6 +1755,17 @@
     ],
     "qid": "Q102664"
   },
+  "Milan Chovan": {
+    "periods": [
+      {
+        "code": "sk",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q71316869"
+  },
   "Mir Sultan Khan": {
     "periods": [
       {
@@ -1423,6 +1794,23 @@
     ],
     "qid": "Q123614165"
   },
+  "Nazí Paikidze": {
+    "periods": [
+      {
+        "code": "us",
+        "from": 2014,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "ge",
+        "from": null,
+        "prop": "P1532",
+        "to": 2014
+      }
+    ],
+    "qid": "Q517307"
+  },
   "Nigel Short": {
     "periods": [
       {
@@ -1444,6 +1832,39 @@
       }
     ],
     "qid": "Q27528282"
+  },
+  "Nikola Đukić": {
+    "periods": [
+      {
+        "code": "me",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q2927210"
+  },
+  "Nodirbek Abdusattorov": {
+    "periods": [
+      {
+        "code": "uz",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q20908925"
+  },
+  "Nodirbek Yakubboev": {
+    "periods": [
+      {
+        "code": "uz",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27534239"
   },
   "Oleg Chernikov": {
     "periods": [
@@ -1668,6 +2089,17 @@
     ],
     "qid": "Q203477"
   },
+  "Ray Robson": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q2064538"
+  },
   "Reuben Fine": {
     "periods": [
       {
@@ -1729,6 +2161,28 @@
     ],
     "qid": "Q41314"
   },
+  "Rosa Adela Lorente Serrano": {
+    "periods": [
+      {
+        "code": "es",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q108354285"
+  },
+  "Rose Atwell": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q124710536"
+  },
   "Ruben Gideon Koellner": {
     "periods": [
       {
@@ -1757,6 +2211,17 @@
     ],
     "qid": "Q317890"
   },
+  "Sam Shankland": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q2218873"
+  },
   "Samuel Reshevsky": {
     "periods": [
       {
@@ -1767,6 +2232,17 @@
       }
     ],
     "qid": "Q311737"
+  },
+  "Samuel Sevian": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q7412591"
   },
   "Savielly Tartakower": {
     "periods": [
@@ -1790,6 +2266,41 @@
       }
     ],
     "qid": "Q161135"
+  },
+  "Sergei Movsesian": {
+    "periods": [
+      {
+        "code": "am",
+        "from": 2010,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "sk",
+        "from": 2002,
+        "prop": "P1532",
+        "to": 2010
+      },
+      {
+        "code": "cz",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "ge",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "rs",
+        "from": null,
+        "prop": "P1532",
+        "to": 2002
+      }
+    ],
+    "qid": "Q460020"
   },
   "Sergey Karjakin": {
     "periods": [
@@ -1851,6 +2362,51 @@
       }
     ],
     "qid": "Q376206"
+  },
+  "Tatev Abrahamyan": {
+    "periods": [
+      {
+        "code": "us",
+        "from": 2002,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "am",
+        "from": null,
+        "prop": "P1532",
+        "to": 2002
+      }
+    ],
+    "qid": "Q1878892"
+  },
+  "Thalia Cervantes Landeiro": {
+    "periods": [
+      {
+        "code": "us",
+        "from": 2015,
+        "prop": "P1532",
+        "to": null
+      },
+      {
+        "code": "cu",
+        "from": null,
+        "prop": "P1532",
+        "to": 2015
+      }
+    ],
+    "qid": "Q108313263"
+  },
+  "Thibault Dudognon": {
+    "periods": [
+      {
+        "code": "fr",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q71316627"
   },
   "Thies Heinemann": {
     "periods": [
@@ -2024,6 +2580,17 @@
     ],
     "qid": "Q45747"
   },
+  "Viviana Galvan Cipriani": {
+    "periods": [
+      {
+        "code": "es",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q28480039"
+  },
   "Vladimir Kramnik": {
     "periods": [
       {
@@ -2151,6 +2718,17 @@
       }
     ],
     "qid": "Q319208"
+  },
+  "Yağız Kaan Erdoğmuş": {
+    "periods": [
+      {
+        "code": "tr",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q83732440"
   },
   "Yihan Meng": {
     "periods": [
