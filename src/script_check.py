@@ -28,7 +28,7 @@ from dataclasses import dataclass, field
 import chess
 
 from key_moments import line_plies
-from lang import notation
+from lang import L, notation
 
 _N = notation()
 spoken = _N.spoken
@@ -98,6 +98,17 @@ def load_script(path) -> dict:
 
 
 HOOK_MIN, HOOK_MAX = 40, 300
+
+
+def sober_style(script: dict) -> dict:
+    """Kanał niemiecki (decyzja właściciela 24.10.2026): okładka i tytuł bez klikbajtu — zdejmuje "!"/"?" z kicker
+    i "!" z yt_hook (także w scenariuszach wygenerowanych wcześniej). Na innych kanałach bez zmian."""
+    if L.code == "de":
+        if script.get("kicker"):
+            script["kicker"] = script["kicker"].strip().rstrip("!?").strip()
+        if script.get("yt_hook"):
+            script["yt_hook"] = " ".join(script["yt_hook"].replace("!", "").split())
+    return script
 
 
 def build_hook(script: dict, game) -> tuple[Segment | None, int | None]:
@@ -232,7 +243,9 @@ def build_segments(script: dict, game) -> tuple[list, list]:
             raise ScriptError(f"[kicker] za długi: '{kicker}' (maks. 4 słowa, 30 znaków)")
         if kicker != kicker.upper() or not any(c.isalpha() for c in kicker):
             raise ScriptError(f"[kicker] musi być WERSALIKAMI: '{kicker}'")
-        if kicker[-1] not in "!?":
+        if L.code == "de":  # kanał niemiecki bez klikbajtu: znaki zdejmuje sober_style (też w starszych scenariuszach)
+            kicker = sober_style(script)["kicker"]
+        elif kicker[-1] not in "!?":
             raise ScriptError(f"[kicker] musi kończyć się wykrzyknikiem lub pytajnikiem: '{kicker}'")
         if RAW_MOVE_RE.search(kicker) or any(c.isdigit() for c in kicker):
             raise ScriptError(f"[kicker] bez ruchów i liczb: '{kicker}'")
@@ -242,6 +255,8 @@ def build_segments(script: dict, game) -> tuple[list, list]:
             raise ScriptError(f"[yt_hook] 2–7 słów, maks. 45 znaków: '{yt_hook}'")
         if RAW_MOVE_RE.search(yt_hook):
             raise ScriptError(f"[yt_hook] bez zapisu ruchów: '{yt_hook}'")
+        if L.code == "de":  # rzeczowo, nie klikbajt — bez "!"
+            yt_hook = sober_style(script)["yt_hook"]
         cover_words = {w for w in re.findall(r"\w+", f"{kicker} {title}".lower()) if len(w) > 3}
         hook_words = {w for w in re.findall(r"\w+", yt_hook.lower()) if len(w) > 3}
         if hook_words and len(hook_words & cover_words) / len(hook_words) > 0.5:

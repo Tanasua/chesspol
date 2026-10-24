@@ -20,6 +20,24 @@ PROMPT = ("Згенеруй клікбейт-кавер форматом 16:9, �
           # dopisek właściciela (po przestawionych figurach na okładce Topalow–Anand 2010)
           "Строге правило: усі фігури і стрілки мають лишатися на тих самих клітинках, що і в прикріпленому "
           "зображенні. Стрілки можна робити яскравіші, неонові. Мовою оригіналу!")
+# kanał niemiecki (decyzja właściciela 24.10.2026): bez klikbajtu — styl rzeczowy, elegancki (jak magazyn szachowy /
+# dokument), ta sama "строге правило"; strzałki bez neonu. Badań o preferencjach niemieckich widzów nie znaleziono —
+# to wybór redakcyjny, nie wynik danych.
+PROMPT_DE = ("Згенеруй стриманий, елегантний кавер форматом 16:9 для німецької аудиторії, проаналізувавши надане мною "
+             "фото, використовуючи його за основу і створи новий. Стиль — якісний шаховий журнал або документальний "
+             "фільм: спокійна, впорядкована композиція, благородні приглушені кольори, чиста сучасна типографіка, "
+             "багато повітря. Без клікбейту: без неонових ефектів, вибухів, блискавок, червоних кіл, великих знаків "
+             "оклику, перебільшених емоцій і облич з відкритим ротом. "
+             "Строге правило: усі фігури і стрілки мають лишатися на тих самих клітинках, що і в прикріпленому "
+             "зображенні; кольори клітинок дошки не змінюй. Стрілки — чіткі, але не неонові. Мовою оригіналу!")
+PROMPTS = {"de": PROMPT_DE}
+
+
+def prompt() -> str:
+    from lang import L
+    return PROMPTS.get(L.code, PROMPT)
+
+
 MODEL = os.environ.get("COVER_AI_MODEL", "gpt-image-2.5-sunburst")
 FALLBACK_MODEL = "gpt-image-2"
 SIZE = "1536x864"  # 16:9, obie krawędzie podzielne przez 16
@@ -41,7 +59,7 @@ def make_ai_cover(src: Path, out: Path) -> tuple[Path | None, str]:
     for model in dict.fromkeys([MODEL, FALLBACK_MODEL]):
         try:
             with open(src, "rb") as fh:
-                r = client.images.edit(model=model, image=("cover.jpg", fh, "image/jpeg"), prompt=PROMPT,
+                r = client.images.edit(model=model, image=("cover.jpg", fh, "image/jpeg"), prompt=prompt(),
                                        size=SIZE, quality="high", output_format="jpeg", n=1)
         except Exception as e:  # noqa: BLE001 — wariant AI to dodatek, nie blokuje odcinka
             errors.append(f"{model}: {e.__class__.__name__}: {str(e)[:200]}")

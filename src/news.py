@@ -561,7 +561,8 @@ def main() -> int:
     subprocess.run([py, str(SRC / "main.py"), "--pgn", str(pgn_path), "--script", str(script), "--out", str(video),
                     "--preroll", str(pre)] + (["--dry-run"] if args.dry_tts else []), check=True, cwd=ROOT)
 
-    sc = json.loads(script.read_text(encoding="utf-8"))
+    from script_check import sober_style
+    sc = sober_style(json.loads(script.read_text(encoding="utf-8")))  # de: bez klikbajtu
     title, description, tags = S.describe(entry, sc, pgn_path, json.loads(video.with_suffix(".timing.json").read_text()))
     tags = [t for t in tags if t not in L.t["tags"][3:]] + L.t["news_tags"]
     description = description.replace(L.t["hashtags"], L.t["news_hashtags"])

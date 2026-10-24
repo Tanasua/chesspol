@@ -332,7 +332,8 @@ def produce(game: dict, publish_at: datetime, no_upload: bool, dry_tts: bool = F
     run([py, str(SRC / "main.py"), "--pgn", str(pgn), "--script", str(script_path), "--out", str(video)]
         + (["--dry-run"] if dry_tts else []))
 
-    script = load_json(script_path, {})
+    from script_check import sober_style
+    script = sober_style(load_json(script_path, {}))  # de: bez klikbajtu (też starsze scenariusze)
     title, description, tags = describe(game, script, pgn, load_json(video.with_suffix(".timing.json"), {}))
     when = when_uk(publish_at)
     episode = {"id": gid, "publish_at": publish_at.isoformat(), "title": title, "mode": MODE}

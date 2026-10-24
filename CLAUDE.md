@@ -75,6 +75,11 @@ Pliki:
 - OKŁADKA AI: src/cover_ai.py — nasza okładka -> OpenAI Images API edit (COVER_AI_MODEL, domyślnie gpt-image-2.5-sunburst,
   fallback gpt-image-2; 1536x864 -> 1280x720) z promptem właściciela (PROMPT, po ukraińsku, dosłownie; + jego "строге правило": figury i strzałki na tych samych polach, strzałki mogą być neonowe) -> cover_ai.jpg w paczce
   i Release; Telegram: album [nasza, AI] do porównania + cover_ai.jpg jako plik. Błąd/odmowa nie blokuje odcinka. Włączone (11.10.2026, po przerwie od 05.10); COVER_AI=0 wyłącza. Prompt = roboczy prompt właściciela z dopiskiem "Мовою оригіналу!" (tekst na okładce w języku kanału).
+- KANAŁ DE BEZ KLIKBAJTU (decyzja właściciela 24.10.2026): cover_ai.PROMPT_DE — rzeczowa, elegancka okładka (styl magazynu
+  szachowego / dokumentu, przygaszone kolory, bez neonu, czerwonych kół i "!"; ta sama "строге правило" + bez zmiany kolorów pól);
+  prompts/script_system_de.md: kicker = temat partii WERSALIKAMI bez "!"/"?" ("DAMENOPFER"), yt_hook rzeczowy bez "!";
+  script_check.sober_style zdejmuje te znaki także w starszych scenariuszach (scheduler/news/build_segments).
+  Badań o preferencjach niemieckich widzów nie znaleziono — wybór redakcyjny.
 - Telegram/paczka: teksty dla właściciela PO UKRAIŃSKU (podpisy, nagłówki, data "пт, 02.10.2026 о 10:00 (за Києвом)"),
   tytuł/opis/tagi w języku kanału, każde w osobnym bloku <pre> (kopiowanie jednym dotknięciem); opis dzielony na części ≤3500 znaków
 - OKŁADKA vs TYTUŁ YOUTUBE (decyzja właściciela: różne słowa). Okładka: "<KICKER> <title>" (pola LLM kicker + title;
