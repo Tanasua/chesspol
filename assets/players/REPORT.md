@@ -22,7 +22,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Bent Larsen | ✅ (już jest) | Q108807 | CC0 | Hans Peters for Anefo |
 | Boris Gelfand | ✅ (już jest) | Q486778 | CC0 | TheBoburshokh |
 | Boris Spassky | ✅ (już jest) | Q177310 | CC0 | Rob Bogaerts for Anefo |
-| Carl Hamppe | brak zdjęcia w Wikidata | Q690803 | | |
+| Carl Hamppe | brak: brak wyników w Wikidata | | | |
 | Carl Schlechter | ✅ (już jest) | Q320017 | Public domain | Schumann, Fritz |
 | Carlos Torre Repetto | ✅ (już jest) | Q544520 | Public domain | Unknown authorUnknown author |
 | Christopher Lutz | ✅ (już jest) | Q64754 | CC BY 2.0 | Adam Raoof from London, UK |
