@@ -88,10 +88,10 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Pentala Harikrishna | ✅ (już jest) | Q555232 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Peter Leko | ✅ (już jest) | Q210922 | CC BY-SA 4.0 | Stefan64 |
 | Peter Svidler | ✅ (już jest) | Q278777 | CC BY-SA 4.0 | Stefan64 |
-| Philipp Meitner | brak: brak wyników w Wikidata | | | |
+| Philipp Meitner | brak zdjęcia w Wikidata | Q264630 | | |
 | Radosław Wojtaszek | ✅ (już jest) | Q185236 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Rameshbabu Praggnanandhaa | ✅ (już jest) | Q26703041 | CC BY-SA 2.0 | Frans Peeters |
-| Rashid Nezhmetdinov | brak zdjęcia w Wikidata | Q203477 | | |
+| Rashid Nezhmetdinov | brak: brak wyników w Wikidata | | | |
 | Reuben Fine | ✅ (już jest) | Q352418 | CC BY-SA 3.0 nl | Harry Pot for Anefo ]] |
 | Richard Réti | ✅ (już jest) | Q312985 | Public domain |  |
 | Robert Eugene Byrne | ✅ (już jest) | Q961003 | CC0 | Evers, Joost / Anefo |
