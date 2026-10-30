@@ -1061,6 +1061,17 @@
     ],
     "qid": "Q326580"
   },
+  "Hikaru Nakamura": {
+    "periods": [
+      {
+        "code": "us",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q337223"
+  },
   "Huang Renjie": {
     "periods": [
       {
@@ -1159,6 +1170,17 @@
       }
     ],
     "qid": "Q10860652"
+  },
+  "Javokhir Sindarov": {
+    "periods": [
+      {
+        "code": "uz",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27532037"
   },
   "Jean Dufresne": {
     "periods": [
