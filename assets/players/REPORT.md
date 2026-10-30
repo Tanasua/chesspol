@@ -22,7 +22,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Bent Larsen | ✅ (już jest) | Q108807 | CC0 | Hans Peters for Anefo |
 | Boris Gelfand | ✅ (już jest) | Q486778 | CC0 | TheBoburshokh |
 | Boris Spassky | ✅ (już jest) | Q177310 | CC0 | Rob Bogaerts for Anefo |
-| Carl Hamppe | brak zdjęcia w Wikidata | Q690803 | | |
+| Carl Hamppe | brak: brak wyników w Wikidata | | | |
 | Carl Schlechter | ✅ (już jest) | Q320017 | Public domain | Schumann, Fritz |
 | Carlos Torre Repetto | ✅ (już jest) | Q544520 | Public domain | Unknown authorUnknown author |
 | Christopher Lutz | ✅ (już jest) | Q64754 | CC BY 2.0 | Adam Raoof from London, UK |
@@ -30,7 +30,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | David Bronstein | ✅ (już jest) | Q312908 | CC0 | Joop van Bilsen / Anefo |
 | Dawid Przepiórka | ✅ (już jest) | Q698406 | Public domain | Henri Weenink |
 | Ding Liren | ✅ (już jest) | Q1191198 | CC BY-SA 3.0 | Stefan64 |
-| Donald Byrne | brak zdjęcia w Wikidata | Q1239750 | | |
+| Donald Byrne | brak: brak wyników w Wikidata | | | |
 | Edward Lasker | ✅ (już jest) | Q60752 | Public domain | Unknown (Bain News Service, publisher) |
 | Efim Bogoljubov | ✅ (już jest) | Q57310 | Public domain | Unknown authorUnknown author |
 | Efim Geller | ✅ (już jest) | Q352495 | CC0 | Hugo van Gelderen / Anefo |
@@ -88,7 +88,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Pentala Harikrishna | ✅ (już jest) | Q555232 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Peter Leko | ✅ (już jest) | Q210922 | CC BY-SA 4.0 | Stefan64 |
 | Peter Svidler | ✅ (już jest) | Q278777 | CC BY-SA 4.0 | Stefan64 |
-| Philipp Meitner | brak zdjęcia w Wikidata | Q264630 | | |
+| Philipp Meitner | brak: brak wyników w Wikidata | | | |
 | Radosław Wojtaszek | ✅ (już jest) | Q185236 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Rameshbabu Praggnanandhaa | ✅ (już jest) | Q26703041 | CC BY-SA 2.0 | Frans Peeters |
 | Rashid Nezhmetdinov | brak zdjęcia w Wikidata | Q203477 | | |
