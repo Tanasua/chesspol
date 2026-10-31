@@ -80,7 +80,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Mikhail Tal | ✅ (już jest) | Q102664 | CC BY-SA 3.0 nl | Croes, Rob C. for Anefo |
 | Mir Sultan Khan | ✅ (już jest) | Q1351701 | CC BY-SA 4.0 | Unknown Cameraman of 1932 |
 | Nigel Short | ✅ (już jest) | Q313778 | CC BY-SA 3.0 | Przemysław Jahr / Wikimedia Commons |
-| Oleg Chernikov | brak zdjęcia w Wikidata | Q4513619 | | |
+| Oleg Chernikov | brak: brak wyników w Wikidata | | | |
 | Ossip Bernstein | ✅ (już jest) | Q470169 | Public domain | PDFSimpli; instructions by User:Friend |
 | Pal Benko | ✅ (już jest) | Q465247 | CC0 | Broers, F.N. / Anefo |
 | Paul Keres | ✅ (już jest) | Q207727 | Public domain | Photographer unknown, own scan |
