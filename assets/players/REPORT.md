@@ -9,7 +9,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Alexander Alekhine | ✅ (już jest) | Q131374 | Public domain | George Grantham Bain Collection (Library of Congress); oprac. JesusAngelRey |
 | Alexander Beliavsky | ✅ (już jest) | Q352413 | CC BY-SA 3.0 | Stefan64 |
 | Alexander Kotov | ✅ (już jest) | Q364896 | CC0 | Jack de Nijs for Anefo |
-| Alexander McDonnell | brak: brak wyników w Wikidata | | | |
+| Alexander McDonnell | brak zdjęcia w Wikidata | Q555043 | | |
 | Alexander Morozevich | ✅ (już jest) | Q312918 | CC BY-SA 3.0 | Przemysław Jahr |
 | Alexei Shirov | ✅ (już jest) | Q214713 | CC BY-SA 3.0 | Stefan64 |
 | Alireza Firouzja | ✅ (już jest) | Q22338182 | CC BY-SA 2.0 | Frans Peeters |
@@ -51,7 +51,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Jan Timman | ✅ (już jest) | Q139438 | Public domain | Winicjusz Drozdowski, Poland |
 | Jan-Krzysztof Duda | ✅ (już jest) | Q10860652 | CC BY 3.0 pl | Danuta Matloch / Ministerstwo Kultury, Dziedzictwa Narodowego i Sportu |
 | Jean Dufresne | ✅ (już jest) | Q62040 | Public domain | autor nieznany |
-| Johann Hermann Bauer | brak: brak wyników w Wikidata | | | |
+| Johann Hermann Bauer | brak zdjęcia w Wikidata | Q700107 | | |
 | Johannes Zukertort | ✅ (już jest) | Q60182 | Public domain |  |
 | John Nunn | ✅ (już jest) | Q450419 | CC BY-SA 3.0 | Stefan64; oprac. Brittle heaven |
 | Joseph Henry Blackburne | ✅ (już jest) | Q352459 | Public domain |  |
