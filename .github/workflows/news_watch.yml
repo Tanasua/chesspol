@@ -3,8 +3,9 @@ name: news-watch
 # Autośledzenie turniejów (src/news_watch.py): codziennie wieczorem sprawdza transmisje Lichess; jeśli w ciągu
 # ostatniej doby zakończyła się runda ważnego turnieju — jedna nowość na kanał (pl/de/en), maks. 1 dziennie na kanał.
 on:
-  schedule:
-    - cron: "17 21 * * *"
+  # ПАУЗА (1.11.2026): розклад вимкнено на прохання власника
+  # schedule:
+  #   - cron: "17 21 * * *"
   workflow_dispatch:
     inputs:
       dry:

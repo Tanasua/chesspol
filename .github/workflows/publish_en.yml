@@ -6,8 +6,9 @@ name: publish-episodes-en
 # (wideo, okładka, tytuł, opis, tagi, data) w GitHub Releases + opcjonalnie Telegram; tryb youtube: publishAt.
 # Publikacja co 3 dni o 10:00 Europe/Kyiv robi sam YouTube — opóźnienia crona nie mają znaczenia.
 on:
-  schedule:
-    - cron: "17 6 * * *"
+  # ПАУЗА (1.11.2026): розклад вимкнено на прохання власника
+  # schedule:
+  #   - cron: "17 6 * * *"
   workflow_dispatch:
     inputs:
       game:
