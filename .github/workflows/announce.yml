@@ -3,8 +3,9 @@ name: Announce published videos
 # Telegram: "Свіже відео на <канал>!" + link, gdy film zaplanowany w state/schedule*.json stał się publiczny
 # (src/announce.py). Co 10 minut — terminy są co 5 minut w wieczornym oknie kanału.
 on:
-  schedule:
-    - cron: "*/10 * * * *"
+  # ПАУЗА (1.11.2026): розклад вимкнено на прохання власника
+  # schedule:
+  #   - cron: "*/10 * * * *"
   workflow_dispatch:
     inputs:
       dry:

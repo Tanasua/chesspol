@@ -5,8 +5,9 @@ name: publish-episodes-ru
 # publikacja 18:00 Europe/Moscow; tryb youtube: upload private + publishAt (YT_REFRESH_TOKEN_RU) + miniatura.
 # Bez ELEVENLABS_VOICE_ID_RU — pomija.
 on:
-  schedule:
-    - cron: "17 10 * * *"
+  # ПАУЗА (1.11.2026): розклад вимкнено на прохання власника
+  # schedule:
+  #   - cron: "17 10 * * *"
   workflow_dispatch:
     inputs:
       game:
