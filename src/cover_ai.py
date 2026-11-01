@@ -2,8 +2,8 @@
 wynik 16:9 trafia do paczki jako cover_ai.jpg i do Telegrama obok naszej — do porównania, czy model nic nie dodał.
 
 Model: COVER_AI_MODEL (domyślnie gpt-image-2.5-sunburst — wg SDK openai 3.24 model do precyzyjnej edycji,
-rozmiary WIDTHxHEIGHT podzielne przez 16), przy błędzie modelu — gpt-image-2. COVER_AI=0 wyłącza
-(włączone ponownie 11.10.2026 z roboczym promptem właściciela).
+rozmiary WIDTHxHEIGHT podzielne przez 16), przy błędzie modelu — gpt-image-2. COVER_AI=0 wyłącza,
+jakość COVER_AI_QUALITY (domyślnie low — decyzja właściciela 01.11.2026; wcześniej high) (włączone ponownie 11.10.2026 z roboczym promptem właściciela).
 Błąd API (np. odmowa moderacji przy zdjęciach osób) nie blokuje odcinka: zwracamy None i powód.
 """
 from __future__ import annotations
@@ -40,6 +40,8 @@ def prompt() -> str:
 
 MODEL = os.environ.get("COVER_AI_MODEL", "gpt-image-2.5-sunburst")
 FALLBACK_MODEL = "gpt-image-2"
+# jakość generacji (decyzja właściciela 01.11.2026: low — taniej); COVER_AI_QUALITY=medium|high|auto nadpisuje
+QUALITY = os.environ.get("COVER_AI_QUALITY", "low")
 SIZE = "1536x864"  # 16:9, obie krawędzie podzielne przez 16
 OUT_SIZE = (1280, 720)  # jak cover.jpg (YouTube)
 
@@ -60,7 +62,7 @@ def make_ai_cover(src: Path, out: Path) -> tuple[Path | None, str]:
         try:
             with open(src, "rb") as fh:
                 r = client.images.edit(model=model, image=("cover.jpg", fh, "image/jpeg"), prompt=prompt(),
-                                       size=SIZE, quality="high", output_format="jpeg", n=1)
+                                       size=SIZE, quality=QUALITY, output_format="jpeg", n=1)
         except Exception as e:  # noqa: BLE001 — wariant AI to dodatek, nie blokuje odcinka
             errors.append(f"{model}: {e.__class__.__name__}: {str(e)[:200]}")
             continue
