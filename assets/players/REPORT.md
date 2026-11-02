@@ -9,7 +9,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Alexander Alekhine | ✅ (już jest) | Q131374 | Public domain | George Grantham Bain Collection (Library of Congress); oprac. JesusAngelRey |
 | Alexander Beliavsky | ✅ (już jest) | Q352413 | CC BY-SA 3.0 | Stefan64 |
 | Alexander Kotov | ✅ (już jest) | Q364896 | CC0 | Jack de Nijs for Anefo |
-| Alexander McDonnell | brak: brak wyników w Wikidata | | | |
+| Alexander McDonnell | brak zdjęcia w Wikidata | Q555043 | | |
 | Alexander Morozevich | ✅ (już jest) | Q312918 | CC BY-SA 3.0 | Przemysław Jahr |
 | Alexei Shirov | ✅ (już jest) | Q214713 | CC BY-SA 3.0 | Stefan64 |
 | Alireza Firouzja | ✅ (już jest) | Q22338182 | CC BY-SA 2.0 | Frans Peeters |
@@ -91,7 +91,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Philipp Meitner | brak zdjęcia w Wikidata | Q264630 | | |
 | Radosław Wojtaszek | ✅ (już jest) | Q185236 | CC BY-SA 4.0 | Krzysztof Szeląg |
 | Rameshbabu Praggnanandhaa | ✅ (już jest) | Q26703041 | CC BY-SA 2.0 | Frans Peeters |
-| Rashid Nezhmetdinov | brak: brak wyników w Wikidata | | | |
+| Rashid Nezhmetdinov | brak zdjęcia w Wikidata | Q203477 | | |
 | Reuben Fine | ✅ (już jest) | Q352418 | CC BY-SA 3.0 nl | Harry Pot for Anefo ]] |
 | Richard Réti | ✅ (już jest) | Q312985 | Public domain |  |
 | Robert Eugene Byrne | ✅ (już jest) | Q961003 | CC0 | Evers, Joost / Anefo |
