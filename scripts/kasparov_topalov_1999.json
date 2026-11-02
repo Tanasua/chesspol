@@ -1,0 +1,154 @@
+{
+  "hook": {
+    "text": "Czarny król ucieka przez całą planszę, aż trafia na stronę przeciwnika. Ale czy to atak — czy pułapka dla atakującego?",
+    "ply": 70
+  },
+  "yt_hook": "Monarcha bez schronienia!",
+  "yt_detail": "Kasparov goni czarnego króla przez planszę",
+  "kicker": "POŚCIG ZA KRÓLEM!",
+  "title": "Nieśmiertelna partia",
+  "description": "W czwartej rundzie Hoogovens 1999 w Wijk aan Zee Garry Kasparov grał białymi z Veselinem Topalovem. Ta partia jest znana jako „Nieśmiertelna Kasparova”: czarny król zostaje wypchnięty przez całą planszę aż na stronę białych. W odcinku zatrzymujemy się przy ofierze, po której atak zamienia się w pościg, oraz przy niezwykłej końcówce z hetmanami i wolnymi pionami. Po zakończeniu publiczność nagrodziła grę owacją na stojąco, a centrum prasowe zareagowało oklaskami.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Dwudziestego stycznia tysiąc dziewięćset dziewięćdziesiątego dziewiątego roku, w czwartej rundzie Hoogovens w Wijk aan Zee, Garry Kasparov ma białe przeciwko Veselinowi Topalovowi. Stawką jest nie tylko punkt w turnieju, ale kontrola nad partią od pierwszych chwil. Kasparov zaczyna od centrum: {{m:1}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:2}} Topalov wybiera elastyczną obronę i nie oddaje centrum za darmo. Białe rozciągają presję: {{m:3}}. {{s:4}} Czarne szybko wyprowadzają figurę. Kasparov dokłada naturalny rozwój: {{m:5}}.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:6}} Czarne szykują grę po długiej przekątnej. Kasparov ustawia gońca: {{m:7}}. {{s:8}} Topalov kończy ten fragment rozwoju. Białe łączą hetmana z atakiem na skrzydło królewskie: {{m:9}}. {{s:10}} Czarna struktura jest gotowa do kontrgry.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut pod napięciem",
+      "text": "{{s:11}} Kasparov wzmacnia centrum, choć silnik nie daje mu jeszcze nic wielkiego. {{s:12}} Topalov od razu rusza pionem po skrzydle hetmańskim. Białe rozwijają kolejną figurę: {{m:13}}. {{s:14}} Czarny skoczek domyka centrum; Kasparov celuje w obrońcę: {{m:15}}, Topalov przyjmuje wymianę: {{m:16}}, a białe odbijają hetmanem: {{m:17}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:18}} Czarne ustawiają gońca na długiej przekątnej, a biały hetman zostaje wysoko. {{s:19}} Kasparov daje sobie pole ucieczki, ale Topalov uderza w centrum: {{m:20}}. Białe chowają króla na drugą stronę: {{m:21}}. {{s:22}} Czarne wiążą obronę z kontrą; Kasparov uspokaja króla: {{m:23}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "{{s:24}} Topalov zabezpiecza skrzydło, a Kasparov cofa skoczka: {{m:25}}. Czarne robią długą roszadę: {{m:26}}. Króle stoją po przeciwnych stronach, więc każdy ruch pionem może od teraz otwierać drzwi do ataku.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Pierwsze spięcie",
+      "text": "{{s:27}} Białe przestawiają skoczka bliżej centrum. Czarne otwierają linię: {{m:28}}. Kasparov bije wieżą: {{m:29}}. {{s:30}} Topalov od razu ją przepędza, białe cofają się: {{m:31}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "{{s:32}} Czarne domykają ważne pole skoczkiem. {{s:33}} Kasparov robi miejsce dla króla i porządkuje tyły. {{s:34}} Topalov spokojnie odsuwa monarchę. Białe ruszają skoczkiem: {{m:35}}, a czarne odpowiadają dokładnie: {{m:36}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Kasparov szuka nacisku: {{m:37}}. Topalov odpowiada uderzeniem w centrum: {{m:38}}. Białe sprawdzają króla: {{m:39}}. Czarne odchodzą: {{m:40}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s10",
+      "chapter": "Centrum pęka",
+      "text": "{{s:41}} Biała wieża dołącza do nacisku na otwarte linie. Czarne odpowiadają: {{m:42}}. Kasparov wbija skoczka w centrum: {{m:43}}. Topalov zdejmuje tę figurę: {{m:44}}, białe odbijają: {{m:45}}, a czarne ustawiają hetmana aktywnie: {{m:46}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Tu zaczyna się partia, z której powstała legenda: czy białe mogą oddać materiał i nie wypuścić czarnego króla? {{p}} Kasparov wybiera ofiarę: {{m:47}}. Silnik pokazuje, że w alternatywnej linii ta decyzja się trzyma; to tylko wariant, nie partia: {{v:47}}. Idea jest jasna: tempo na króla jest ważniejsze niż spokojne liczenie pionów.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "W partii Topalov przyjmuje wyzwanie: {{m:48}}. Kasparov natychmiast wchodzi z szachem: {{m:49}}. Król czarnych idzie naprzód: {{m:50}}. To już nie jest zwykły atak; to pościg przez pół szachownicy.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Białe muszą nie pozwolić królowi wrócić do domu. Jak wymusić dalszy marsz? {{p}} Kasparov gra z szachem: {{m:51}}. Topalov chwyta skoczka: {{m:52}}, ale białe stawiają mu przeszkodę: {{m:53}}. Król ucieka: {{m:54}}, Kasparov przestawia hetmana: {{m:55}}, a czarne zdejmują piona z centrum: {{m:56}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "Pościg za królem",
+      "text": "Kasparov wprowadza wieżę na siódmą linię: {{m:57}}. Topalov zasłania się gońcem: {{m:58}}, ale białe go zdejmują: {{m:59}}. Czarne szukają kontrgry hetmanem: {{m:60}}. Białe zabierają ważnego obrońcę: {{m:61}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "{{s:62}} Topalov zamiast wracać, zabiera piona przy białym królu. Kasparov daje kolejny szach: {{m:63}}. Czarne biją następnego piona: {{m:64}}. Białe popychają piona z szachem: {{m:65}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Topalov bierze go i wchodzi jeszcze głębiej: {{m:66}}. Kasparov prowadzi hetmana z szachem: {{m:67}}. Król czarnych dociera na stronę białych: {{m:68}}. Białe sprawdzają jeszcze raz: {{m:69}}, król idzie na pole de jeden: {{m:70}}, a Kasparov zasłania własnego monarchę: {{m:71}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Czarne ustawiają wieżę na drugiej linii: {{m:72}}. Teraz ocena zaczyna wyraźniej przechylać się ku białym. Kasparov wymusza wymianę: {{m:73}}. Topalov odpowiada: {{m:74}}, a białe gońcem zabierają hetmana: {{m:75}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s18",
+      "chapter": "Finał",
+      "text": "Czarne odbijają: {{m:76}}. Kasparov zgarnia wieżę w rogu: {{m:77}}. Topalov aktywuje swoją ostatnią ciężką figurę: {{m:78}}. Na planszy zostały hetmany, piony i nerwy.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Białe przestawiają hetmana: {{m:79}}. Czarne pchają wolnego piona: {{m:80}}. Kasparov ma jeszcze jeden szach, który trzyma wszystko pod kontrolą; znajdziecie go? {{p}} Odpowiedź: {{m:81}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Król czarnych wraca na pierwszą linię: {{m:82}}. Kasparov wzmacnia piona: {{m:83}}, a Topalov próbuje tworzyć kontrszanse: {{m:84}}. Biały król staje bezpieczniej: {{m:85}}. Czarne dają ostatni ruch wieżą: {{m:86}}, lecz Kasparov zamyka sprawę: {{m:87}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Topalov zrozumiał, że jego pozycja jest przegrana, i się poddał. Tak kończy się Nieśmiertelna Kasparova: po ofierze, pościgu i królu zagonionym aż na stronę białych. Po partii publiczność nagrodziła grę owacją na stojąco, a w centrum prasowym Kasparova przyjęto oklaskami.",
+      "pause_after": 1.0
+    }
+  ],
+  "key_moments": [
+    {
+      "ply": 47,
+      "kind": "sacrifice",
+      "line": [
+        "a7b6",
+        "b2b4",
+        "d6f4",
+        "d4f4"
+      ],
+      "line_san": "Kb6 b4 Qxf4 Rxf4",
+      "eval_before": -31,
+      "eval_after": -27
+    }
+  ]
+}
