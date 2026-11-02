@@ -1,0 +1,104 @@
+{
+  "hook": {
+    "text": "A rook vanishes on the queenside, and Kasparov's knight starts taking over the board. Shirov's counterplay looks scary, but is it real?",
+    "ply": 34
+  },
+  "yt_hook": "Pure Board Control!",
+  "yt_detail": "Kasparov sacrifices the exchange",
+  "kicker": "GENIUS!",
+  "title": "A Knight Takes Over",
+  "description": "At the 1994 Credit Suisse Masters in Horgen, Garry Kasparov faces Alexei Shirov in a sharp Sicilian Defense, Sveshnikov Variation. Shirov was ranked third in the world, while Kasparov held the Professional Chess Association world title. The game is remembered for Kasparov's exchange sacrifice and the domination of his centralized knight. Watch how queenside chaos turns into long-term control.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Introduction",
+      "text": "In Horgen, near Zurich, Switzerland, the Credit Suisse Masters is in round nine, in September nineteen ninety-four. Garry Kasparov, holding the Professional Chess Association world title, has White against Alexei Shirov, then ranked third in the world. They will finish first and second in this event, so this is a direct clash at the top.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Kasparov starts: {{m:1}}. Shirov answers: {{m:2}}. {{s:3}} The board enters a Sicilian Defense, and the shape soon becomes the Sveshnikov Variation. {{s:4}} Both players are aiming for active pieces, not comfort.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "White opens the center: {{m:5}}. {{s:6}} The first exchange clears the D-file, then White recaptures: {{m:7}}. Black develops: {{m:8}}, and White adds pressure: {{m:9}}. {{s:10}} The fight is already about squares, not material.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s04",
+      "chapter": "Sveshnikov Tension",
+      "text": "Kasparov jumps a knight forward: {{m:11}}. Black builds the Sveshnikov center: {{m:12}}, and White develops: {{m:13}}. Black claims space: {{m:14}}. {{s:15}} Pressure lands on the kingside, then comes the nudge: {{m:16}}, asking the knight where it belongs.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Kasparov retreats to the edge: {{m:17}}, and Shirov expands: {{m:18}}. White drops a knight into the center: {{m:19}}, then Black calmly develops: {{m:20}}. White chooses a trade: {{m:21}}. Black accepts: {{m:22}}, and the position becomes easier to read, but not easier to play.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "White supports the center: {{m:23}}. Black develops the other bishop: {{m:24}}, and Kasparov re-routes: {{m:25}}. {{s:26}} Shirov steps back, then the A-file opens: {{m:27}}. Black accepts: {{m:28}}, White recaptures: {{m:29}}, and Black centralizes: {{m:30}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "Exchange Sacrifice",
+      "text": "Kasparov swings the rook across: {{m:31}}. Shirov centralizes a knight: {{m:32}}. White can play normally, but there is a deeper idea, can you find Kasparov's choice? {{p}} Here it is: {{m:33}}. Black accepts: {{m:34}}, and the exchange sacrifice is on the board.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Kasparov does not chase material, he locks down squares: {{m:35}}. Black brings a bishop to an aggressive diagonal: {{m:36}}. White's knight returns: {{m:37}}, and Shirov finally castles: {{m:38}}. Kasparov improves: {{m:39}}, but Black tries to crack the queenside: {{m:40}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "White develops the last bishop: {{m:41}}. {{s:42}} The queenside tension is released, and White answers: {{m:43}}. Shirov chooses: {{m:44}}, and the engine's view suddenly jumps toward White. Kasparov pushes the pawn on the H-file: {{m:45}}, then Black keeps counterplay alive: {{m:46}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s10",
+      "chapter": "Knight Outpost",
+      "text": "The knight steps into the heart of Black's position: {{m:47}}. Shirov invades with the rook: {{m:48}}, and Kasparov calmly castles: {{m:49}}. Black goes deeper: {{m:50}}. White's queen joins the attack: {{m:51}}, and Shirov shifts his queen: {{m:52}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Kasparov's knight reaches an even stronger square: {{m:53}}. Black blocks it: {{m:54}}, but the engine points to a direct solution. Can you find it? {{p}} Kasparov plays: {{m:55}}. Black responds: {{m:56}}, and White is now clearly better.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Kasparov adds a passed-pawn lever: {{m:57}}. Shirov looks for counterplay with the queen: {{m:58}}. White centralizes the queen with threats: {{m:59}}, and Black's king steps back: {{m:60}}. Kasparov brings in the bishop: {{m:61}}, while Black grabs activity: {{m:62}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s13",
+      "chapter": "Final Attack",
+      "text": "Now Kasparov turns toward the king: {{m:63}}. Shirov takes a bishop: {{m:64}}, but the attack has become more important than that piece. White gives check: {{m:65}}. The black king runs: {{m:66}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "The knight comes with tempo: {{m:67}}. Black has to move again: {{m:68}}. Kasparov restores material balance his way: {{m:69}}. Shirov centralizes the queen: {{m:70}}, but his king still has no peace.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Kasparov brings the rook to the first rank: {{m:71}}. Shirov answers: {{m:72}}, and White sidesteps: {{m:73}}. Black tries one last resource: {{m:74}}, but Kasparov shuts it down: {{m:75}}. Shirov realized his position was lost, and resigned, and this game remains famous for the exchange sacrifice and the domination of Kasparov's centralized knight.",
+      "pause_after": 1.0
+    }
+  ],
+  "key_moments": []
+}

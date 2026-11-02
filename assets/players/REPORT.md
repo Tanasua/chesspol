@@ -9,7 +9,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Alexander Alekhine | ✅ (już jest) | Q131374 | Public domain | George Grantham Bain Collection (Library of Congress); oprac. JesusAngelRey |
 | Alexander Beliavsky | ✅ (już jest) | Q352413 | CC BY-SA 3.0 | Stefan64 |
 | Alexander Kotov | ✅ (już jest) | Q364896 | CC0 | Jack de Nijs for Anefo |
-| Alexander McDonnell | brak zdjęcia w Wikidata | Q555043 | | |
+| Alexander McDonnell | brak: brak wyników w Wikidata | | | |
 | Alexander Morozevich | ✅ (już jest) | Q312918 | CC BY-SA 3.0 | Przemysław Jahr |
 | Alexei Shirov | ✅ (już jest) | Q214713 | CC BY-SA 3.0 | Stefan64 |
 | Alireza Firouzja | ✅ (już jest) | Q22338182 | CC BY-SA 2.0 | Frans Peeters |
