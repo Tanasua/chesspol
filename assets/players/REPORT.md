@@ -51,7 +51,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | Jan Timman | ✅ (już jest) | Q139438 | Public domain | Winicjusz Drozdowski, Poland |
 | Jan-Krzysztof Duda | ✅ (już jest) | Q10860652 | CC BY 3.0 pl | Danuta Matloch / Ministerstwo Kultury, Dziedzictwa Narodowego i Sportu |
 | Jean Dufresne | ✅ (już jest) | Q62040 | Public domain | autor nieznany |
-| Johann Hermann Bauer | brak zdjęcia w Wikidata | Q700107 | | |
+| Johann Hermann Bauer | brak: brak wyników w Wikidata | | | |
 | Johannes Zukertort | ✅ (już jest) | Q60182 | Public domain |  |
 | John Nunn | ✅ (już jest) | Q450419 | CC BY-SA 3.0 | Stefan64; oprac. Brittle heaven |
 | Joseph Henry Blackburne | ✅ (już jest) | Q352459 | Public domain |  |
