@@ -1,0 +1,167 @@
+{
+  "hook": {
+    "text": "İki Kale de gidiyor, Şah ortada kalıyor. Peki Beyaz neden hâlâ saldırıya devam ediyor?",
+    "ply": 38
+  },
+  "yt_hook": "Tahtada Yangın Çıktı!",
+  "yt_detail": "iki Kale düşüyor, hücum durmuyor",
+  "kicker": "VEZİRSİZ MAT!",
+  "title": "Ölümsüz Oyun",
+  "description": "Adolf Anderssen ve Lionel Kieseritzky, 1851'de Londra'da bir dostluk oyununda karşılaşıyor. Sonradan Ölümsüz Oyun (The Immortal Game) adıyla bilinen bu partide, taş fedâları ve tempo yarışı her şeyi belirliyor. İki Kale giderken bile saldırının nasıl canlı kaldığını izleyin. Finalde ise vezirsiz kalan tahtada mat ağı tamamlanıyor.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Londra'da Başlangıç",
+      "text": "Bin sekiz yüz elli bir yılında Londra'dayız. Adolf Anderssen Beyaz, Lionel Kieseritzky Siyah; bu bir dostluk oyunu. Masadaki asıl konu puan değil, tempo: Şah güvenliği mi, saldırı hızı mı?",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "{{s:1}} Taşlar merkeze çarpıyor, Beyaz piyon verip hat açıyor. Siyah erken bir şah çekiyor: {{m:6}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Şah rok hakkını kaybediyor: {{m:7}}. {{s:8}} Kanatta bir piyon ileri gidiyor. {{s:9}} Beyaz filiyle bu piyonu kaldırıyor. Siyah gelişerek baskıyı tazeliyor: {{m:10}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Vezir Kovalamacası",
+      "text": "{{s:11}} Beyaz atını oyuna sokuyor. Siyah veziri bir kez daha sahneye çıkarıyor: {{m:12}}. Şimdi hedefler netleşiyor: açık Şah ve oyalanabilecek bir vezir.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:13}} Beyaz merkezi destekliyor. Siyah atıyla kenardan baskı kuruyor: {{m:14}}. Beyaz'ın cevabı cesur ama konum kaygan: {{m:15}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Vezir yaklaşıyor: {{m:16}}. Beyaz atını ileri atıyor: {{m:17}}. {{s:18}} Siyah filin yolunu kesmeyi seçiyor; oyun hâlâ iki tarafa da açık.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "Kale Fedâsı",
+      "text": "Şimdi tahta alevleniyor. Beyaz piyonunu sürüp veziri rahatsız ediyor: {{m:19}}. Siyah atını geri alıyor: {{m:20}}. Sıradaki hamle, bütün oyunun tonunu değiştiriyor.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Beyaz burada sadece savunma yapmayabilir; kaleyi aynı hatta koyup baskıyı artırabilir. Sizce hamle ne? {{p}} Motor çizgisi bu fedânın neden hemen çökmediğini anlatacak; işte hamle: {{m:21}}. {{v:21}} Fikir şu: Siyah taş kazanıyor gibi görünse de zaman kaybediyor.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Beyaz piyonlarla veziri kovalamaya, taşlarla Şah'a bakmaya devam ediyor. Bu artık normal bir taş hesabı değil. Her tempo, saldırının yakıtı.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s10",
+      "chapter": "Vezir Kaçıyor",
+      "text": "Siyah fili sonunda alıyor: {{m:22}}. Beyaz hemen hattan itiyor: {{m:23}}. Vezir geri çekiliyor: {{m:24}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Piyon yine geliyor: {{m:25}}. Vezir bu kez merkeze yakın bir kareye kaçıyor: {{m:26}}. Beyaz vezirini oyuna sokunca tehditler artık tek kanatta kalmıyor: {{m:27}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Siyah atını geri çekiyor: {{m:28}}. Beyaz filini kullanıp önemli piyonu alıyor: {{m:29}}. Vezirler bakışıyor: {{m:30}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "Dönüm Noktası",
+      "text": "Beyaz son eksik taşını da oyuna katıyor: {{m:31}}. Motor şimdi bir dönüm noktası gösteriyor; Siyah doğal görünen bir gelişim hamlesi yapıyor: {{m:32}}. {{v:32}} Ana fikir basit: merkez açılınca Siyah Şah'ın güvenliği parçalanıyor.",
+      "pause_after": 1.3
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Beyaz artık taş eksiğini değil, tempoyu sayıyor. Siyah vezir uzakta, Şah merkezde, beyaz taşlar ise aynı hedefe bakıyor.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Beyaz atını merkeze yerleştiriyor: {{m:33}}. Siyah veziriyle piyon alıyor: {{m:34}}. Ama bu, saldırının durduğu anlamına gelmiyor; tam tersine, Beyaz taşları Şah'a daha da yaklaşıyor.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "Son Kombinasyon",
+      "text": "Şimdi beyaz fil sahneye giriyor: {{m:35}}. Siyah ise köşedeki Kaleyi alıp şah çekiyor: {{m:36}}. Maddi tablo korkutucu, ama saldırı henüz bitmedi.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Şah yürüyerek kaçıyor: {{m:37}}. Siyah ikinci Kaleyi de alıyor: {{m:38}}. İki Kale gitti, Beyaz Şah ortada; yine de hamle sırası saldıranın.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Beyaz merkezi ileri sürüyor: {{m:39}}. Siyah atını kenara geliştirince motor artık zorunlu mat görüyor: {{m:40}}. Kritik darbeyi bulabilir misiniz? {{p}} Beyaz başlıyor: {{m:41}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Siyah Şah mecburen geriliyor: {{m:42}}. Şimdi Beyaz vezirini ateşin içine atıyor: {{m:43}}. Bu fedâ bir gösteri değil; son kareleri zorla kapatıyor.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Siyah veziri almak zorunda kalıyor: {{m:44}}. Tahtada Beyaz'ın veziri yok, iki Kalesi yok. Ama son söz Fil'de.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Ve mat: {{m:45}}. Bu hamle mat; oyun burada bitti ve Adolf Anderssen kazandı. Ölümsüz Oyun'u ölümsüz yapan şey de bu: taşlar tek tek giderken, fikir tahtada kalıyor.",
+      "pause_after": 1.2
+    }
+  ],
+  "key_moments": [
+    {
+      "ply": 21,
+      "kind": "sacrifice",
+      "line": [
+        "h7h5",
+        "h2h4",
+        "g5g6",
+        "b5a4"
+      ],
+      "line_san": "h5 h4 Qg6 Ba4",
+      "eval_before": -45,
+      "eval_after": -57
+    },
+    {
+      "ply": 32,
+      "kind": "turn",
+      "line": [
+        "d3d4",
+        "g8e7",
+        "d4c5",
+        "e7f5"
+      ],
+      "line_san": "d4 Ne7 dxc5 Nxf5",
+      "eval_before": 240,
+      "eval_after": 444
+    }
+  ]
+}
