@@ -1,0 +1,158 @@
+{
+  "hook": {
+    "text": "In dieser WM-Partie verschwinden die Damen früh, doch die Gefahr bleibt. Plötzlich steht ein König im Zentrum, und jeder Zug entscheidet, ob er entkommt.",
+    "ply": 54
+  },
+  "yt_hook": "Damen früh vom Brett",
+  "yt_detail": "Lasker verwertet den Vorteil",
+  "kicker": "ENDSPIELDRUCK",
+  "title": "Der König im Zentrum",
+  "description": "Emanuel Lasker und Wilhelm Steinitz treffen in Montreal in Partie 19 ihres WM-Kampfs 1894 aufeinander. Die Damen verschwinden früh vom Brett, doch daraus entsteht keine ruhige Partie. Achtet darauf, wie Weiß den schwarzen König und die Springer Schritt für Schritt bindet. Am Ende zeigt Lasker, wie ein scheinbar technisches Endspiel zu einer klar gewonnenen Stellung wird.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Einleitung",
+      "text": "Emanuel Lasker hat Weiß, Wilhelm Steinitz Schwarz, in Montreal im WM-Kampf von achtzehnhundertvierundneunzig, Partie neunzehn. Lasker beginnt solide: {{m:1}}. Steinitz antwortet im gleichen Geist: {{m:2}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Weiß setzt nach: {{m:3}}. Der Kampf um das Zentrum ist sofort da, und Schwarz baut erst ruhig auf: {{m:4}}. Lasker entwickelt weiter: {{m:5}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:6}} Die Figuren kommen schnell heraus, aber noch ist alles im Gleichgewicht. Weiß legt den nächsten Springer bereit: {{m:7}}. Schwarz bleibt solide: {{m:8}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Früher Damentausch",
+      "text": "{{s:9}} Beide Seiten lassen die Spannung stehen, dann bringt Schwarz Gegenspiel im Zentrum: {{m:12}}. Lasker entscheidet sich, die Struktur zu klären: {{m:13}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:14}} Jetzt wird nicht auf Angriff gespielt, sondern auf Vereinfachung. Schwarz erzwingt den Damentausch: {{m:16}}. Lasker nimmt die neue Lage an: {{m:17}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "{{s:18}} Ohne Damen sind die Könige trotzdem nicht bequem. Weiß treibt am Damenflügel Raum nach vorn: {{m:21}}. Schwarz nutzt sofort die offene Linie: {{m:22}}. Lasker geht nicht zurück ins Versteck: {{m:23}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "Druck aufbauen",
+      "text": "{{s:24}} Der schwarze Läufer zieht sich zurück, und Weiß stellt den Läufer auf die lange Diagonale: {{m:25}}. Danach besetzt Weiß die offene Linie: {{m:27}}. Schwarz hält dagegen: {{m:28}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "Die nächsten Züge wirken leise, aber jedes Feld zählt. Lasker zentralisiert einen Springer: {{m:31}}. Steinitz schlägt im Zentrum zurück: {{m:34}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Lasker sichert erst den Springer: {{m:35}}. Schwarz setzt eine Fesselung auf: {{m:36}}. Der erste Turmtausch folgt: {{m:37}}. Schwarz nimmt zurück: {{m:38}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Lasker fragt den Läufer: {{m:39}}. Schwarz tauscht ihn ab: {{m:40}}. Weiß akzeptiert die beschädigte Bauernstruktur: {{m:41}}. Kurz darauf muss der schwarze König entscheiden: {{m:44}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s11",
+      "chapter": "Die Wende",
+      "text": "{{s:45}} Lasker zieht den Springer zurück in die Richtung der schwachen Felder: {{m:47}}. Einige Züge später muss Schwarz eine Verteidigungsaufgabe übernehmen: {{m:52}}. Die Bewertung kippt nun deutlich zu Weiß.",
+      "pause_after": 0.9
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Steinitz bringt den König vor: {{m:54}}. Jetzt hat Lasker eine konkrete Möglichkeit, die Bindung zu verstärken. Findet ihr sie? {{p}} Die Antwort der Partie ist: {{m:55}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Schwarz versucht, den Springer zu befragen: {{m:56}}. Lasker tauscht einen wichtigen Verteidiger ab: {{m:57}}. Schwarz nimmt zurück: {{m:58}}. Weiß ordnet den Springer neu: {{m:59}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Steinitz sucht Gegenspiel am Königsflügel: {{m:60}}. Wie öffnet Weiß jetzt weitere Linien am Damenflügel? {{p}} Lasker zeigt es: {{m:61}}. Schwarz nimmt: {{m:62}}, und Weiß bleibt aktiv: {{m:63}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s15",
+      "chapter": "Aktive Figuren",
+      "text": "Der schwarze König kommt weiter ins Freie: {{m:64}}. Lasker hält die Läuferdiagonale lebendig: {{m:65}}. Schwarz zieht einen Springer zurück: {{m:66}}. Dann tauscht Weiß im richtigen Moment: {{m:67}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Jetzt wird die Stellung technischer, aber nicht harmlos. Weiß stellt den Läufer aktiv: {{m:69}}. Schwarz zentralisiert einen Springer: {{m:70}}. Der weiße Turm kommt auf die offene Linie: {{m:71}}. Schwarz deckt sich: {{m:72}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "Lasker nimmt Tempo heraus und verbessert den Läufer: {{m:73}}. Der König marschiert näher heran: {{m:75}}. Schwarz stellt sich gegenüber: {{m:76}}. Weiß öffnet das Zentrum: {{m:77}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Schwarz findet keine Ruhe und setzt einen Springer um: {{m:78}}. Weiß bringt den Läufer zurück: {{m:79}}. Dann fällt die Spannung im Zentrum: {{m:80}}. Lasker nimmt zurück: {{m:81}}, und Schwarz sucht Gegenspiel: {{m:82}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "Turm und Läufer",
+      "text": "Weiß stützt sein Zentrum: {{m:83}}. Schwarz blockiert aktiv: {{m:84}}. Lasker stellt den Turm hinter den Plan: {{m:85}}. Schwarz versucht, die Springer neu zu ordnen: {{m:86}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Der weiße Läufer nimmt eine defensive, aber flexible Rolle ein: {{m:87}}. Schwarz bringt einen Springer näher heran: {{m:88}}. Jetzt dringt der Turm ein: {{m:89}}. Schwarz hält noch einmal dagegen: {{m:90}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Ein zentraler Bauer ist plötzlich verwundbar. Seht ihr, wie Weiß ihn nimmt, ohne die Aktivität zu verlieren? {{p}} Lasker schlägt zu: {{m:91}}. Schwarz stellt sich dagegen: {{m:92}}. Der Turm wechselt die Angriffsseite: {{m:93}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s22",
+      "chapter": "Finale",
+      "text": "{{s:94}} Schwarz schiebt einen Randbauern, aber Weiß hält die Initiative. Der Turm kehrt zurück: {{m:95}}. Schwarz sucht Gegenspiel mit Bauernzügen: {{m:96}}. Lasker antwortet ruhig: {{m:97}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Schwarz nimmt am Rand: {{m:98}}. Der Turm bleibt hinter dem Bauern: {{m:99}}. Schwarz führt den König näher heran: {{m:100}}. Lasker kassiert den Bauern: {{m:101}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Steinitz gibt noch ein Schach: {{m:102}}. Weiß muss den König nur richtig stellen. Laskers letzter Zug der Partie: {{m:103}}. Steinitz erkannte, dass seine Stellung verloren war, und gab auf. Wichtig ist diese Partie, weil Lasker in einem WM-Kampf zeigt, wie Druck ohne Damen Schritt für Schritt wächst.",
+      "pause_after": 1.2
+    }
+  ],
+  "key_moments": []
+}
