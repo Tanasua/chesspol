@@ -30,7 +30,7 @@ Sprawdź, czy zdjęcie przedstawia właściwą osobę. Poprawki: overrides.json.
 | David Bronstein | ✅ (już jest) | Q312908 | CC0 | Joop van Bilsen / Anefo |
 | Dawid Przepiórka | ✅ (już jest) | Q698406 | Public domain | Henri Weenink |
 | Ding Liren | ✅ (już jest) | Q1191198 | CC BY-SA 3.0 | Stefan64 |
-| Donald Byrne | brak zdjęcia w Wikidata | Q1239750 | | |
+| Donald Byrne | brak: brak wyników w Wikidata | | | |
 | Edward Lasker | ✅ (już jest) | Q60752 | Public domain | Unknown (Bain News Service, publisher) |
 | Efim Bogoljubov | ✅ (już jest) | Q57310 | Public domain | Unknown authorUnknown author |
 | Efim Geller | ✅ (już jest) | Q352495 | CC0 | Hugo van Gelderen / Anefo |
