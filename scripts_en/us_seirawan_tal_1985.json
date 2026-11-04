@@ -1,0 +1,140 @@
+{
+  "hook": {
+    "text": "One loose queenside push turns a tense grind into a queen-and-bishop chase. Can you feel the danger before it lands?",
+    "ply": 58
+  },
+  "yt_hook": "Montpellier Tension Boils Over",
+  "yt_detail": "Seirawan turns a small edge into resignation",
+  "kicker": "OUTPLAYED!",
+  "title": "Queen And Bishop Squeeze",
+  "description": "Yasser Seirawan has White against Mikhail Tal in Round 14 of the 1985 Candidates Tournament in Montpellier. The game starts as a tense central battle, then simplifies into a queen-and-bishop fight where every pawn move matters. Watch for the moment Black pushes on the queenside and Seirawan turns small pressure into a winning endgame. The final sequence is all about active pieces, loose pawns, and a check that ends the struggle.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Introduction",
+      "text": "In Montpellier, nineteen eighty-five, round fourteen of the Candidates Tournament: Yasser Seirawan has White, Mikhail Tal has Black. The event name already tells you the stakes. White starts: {{m:1}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Black replies in the center: {{m:2}}. White immediately questions it: {{m:3}}. Black supports the structure: {{m:4}}.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "{{s:5}} White develops without declaring the bishop yet. Black keeps pace: {{m:6}}. White adds another piece: {{m:7}}. Tal chooses a compact setup: {{m:8}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Opening Tension",
+      "text": "{{s:9}} White keeps the central chain solid, and Black brings another defender: {{m:10}}. White aims a bishop at the kingside: {{m:11}}. Tal pins and provokes: {{m:12}}. Both kings now step away from the center, White first: {{m:13}}, and Black follows: {{m:14}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "{{s:15}} White unpins and keeps development simple. Tal's queen comes out: {{m:16}}. White points the queen at the queenside: {{m:17}}, so Black releases the center: {{m:18}}. White recaptures: {{m:19}}, and Tal develops with pressure: {{m:20}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "White centralizes a knight: {{m:21}}. Tal trades it off: {{m:22}}, and White takes back: {{m:23}}. Now Black strikes at the center: {{m:24}}. The position has shed some tension, but not its bite.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s07",
+      "chapter": "The Center Opens",
+      "text": "{{s:25}} White steps back and keeps options open. Black makes room around his king: {{m:26}}. White puts a bishop on the long diagonal: {{m:27}}, and Tal brings a rook to the central file: {{m:28}}. White matches him: {{m:29}}, then Black pushes for space: {{m:30}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "",
+      "text": "White opens the center at the right moment: {{m:31}}. Black takes: {{m:32}}, and White captures again: {{m:33}}. Tal answers with a pawn capture: {{m:34}}. White's knight jumps to an active post: {{m:35}}, and Black tucks the bishop back: {{m:36}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "White's knight retreats toward defense: {{m:37}}. Black activates a bishop: {{m:38}}, and White reroutes the knight: {{m:39}}. Tal brings a rook into the fight: {{m:40}}. White tries to harass the bishops: {{m:41}}, but Tal lifts the rook aggressively: {{m:42}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s10",
+      "chapter": "Rooks Trade Off",
+      "text": "White contests the file: {{m:43}}. Tal doubles behind it: {{m:44}}. Now the heavy pieces start coming off, White captures: {{m:45}}. Tal recaptures: {{m:46}}, and the game begins to move toward an endgame.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "{{s:47}} White forces more simplification on the same file. Tal gives up bishop for knight: {{m:48}}. White accepts: {{m:49}}, and Tal trades rooks with check: {{m:50}}. White's queen takes over: {{m:51}}, then Black centralizes his queen: {{m:52}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s12",
+      "chapter": "",
+      "text": "Queens remain, bishops remain, and every pawn move matters. {{s:53}} White keeps the queen active. Tal's bishop settles into the center: {{m:54}}, and White supports the queenside: {{m:55}}. Black answers on the wing: {{m:56}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "Critical Push",
+      "text": "White gives the king air: {{m:57}}. Tal now has a critical queenside choice. Would you push, or hold? {{p}} Tal chooses activity: {{m:58}}. The engine now sees White's edge growing fast.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Seirawan does not grab at once, he improves the queen: {{m:59}}. Tal pushes again: {{m:60}}. Now White puts the bishop on a powerful central square: {{m:61}}. Black's queen falls back to defend: {{m:62}}.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "White starts asking hard questions on the queenside: {{m:63}}. Tal keeps the queen nearby: {{m:64}}. White first makes the king safer: {{m:65}}. Then Tal moves the bishop: {{m:66}}, and the defense is suddenly in real trouble.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "Winning The Pawns",
+      "text": "Seirawan's bishop lands where it bites both sides of the board: {{m:67}}. Tal kicks the queen: {{m:68}}. White's queen slides to a dominant post: {{m:69}}. Black's king steps closer: {{m:70}}, but White has targets now.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s17",
+      "chapter": "",
+      "text": "First target: the loose pawn. White takes it: {{m:71}}. Tal keeps queens on: {{m:72}}. White takes another one: {{m:73}}. Black retreats the bishop: {{m:74}}, but the pawns are falling.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "White's bishop returns to blockade and control: {{m:75}}. Tal looks for counterplay on the kingside: {{m:76}}. White invades: {{m:77}}. Black's king comes forward: {{m:78}}, but the queen-and-bishop ending is slipping away.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s19",
+      "chapter": "Finale",
+      "text": "Seirawan can now choose the cleanest route. What move keeps the queen active and leaves Black tied to defense? {{p}} White finds it: {{m:79}}. Tal tries to hold the center: {{m:80}}. The engine's next choice is a forcing check: {{m:81}}.",
+      "pause_after": 1.1
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "That was the final move of the game. Tal realized his position was lost, and resigned. Seirawan scored the full point with White.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "This game matters because it is not a one-move explosion. Seirawan lets Tal's activity burn out, trades into the right material, and then wins with coordination. The finish shows a practical truth: in a queen-and-bishop ending, one loose pawn push can echo all the way to resignation.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}
