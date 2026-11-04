@@ -1,0 +1,188 @@
+{
+  "hook": {
+    "text": "Na planszy zostały tylko wieże i piony, ale napięcie dopiero się zaczyna. Jeden królewski spacer zmienia spokojną końcówkę w walkę bez odwrotu.",
+    "ply": 104
+  },
+  "yt_hook": "Król wszedł za głęboko?",
+  "yt_detail": "Rubinstein wygrywa techniczną końcówkę",
+  "kicker": "MISTRZOWSKO!",
+  "title": "Wieżowa próba nerwów",
+  "description": "Akiba Rubinstein i Alexander Alekhine spotykają się w turnieju w Karlsbadzie w 1911 roku. Partia zaczyna się spokojnie, ale po wymianie hetmanów zmienia się w długą próbę techniki i nerwów. Najważniejsze jest to, co dzieje się w końcówce: aktywna wieża, daleko wysunięty król i wolny pion. Zwróć uwagę, jak Rubinstein krok po kroku zwiększa presję, aż cała pozycja zaczyna pracować na jego korzyść.",
+  "segments": [
+    {
+      "id": "s01",
+      "chapter": "Wstęp",
+      "text": "Karlsbad, rok tysiąc dziewięćset jedenasty. Akiba Rubinstein ma białe, Alexander Alekhine czarne, a stawką jest pełny punkt w turnieju: {{m:1}}. Czarne wybierają twarde centrum: {{m:2}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s02",
+      "chapter": "",
+      "text": "Białe rozwijają się bez pośpiechu: {{m:3}}. Czarne odpowiadają naturalnie: {{m:4}}. {{s:5}} Rubinstein rozszerza centrum. {{s:6}} Alekhine trzyma zwartą strukturę.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s03",
+      "chapter": "",
+      "text": "Białe wyprowadzają kolejną figurę: {{m:7}}. Hetman czarnych pojawia się aktywnie: {{m:8}}. Rubinstein spokojnie paruje nacisk: {{m:9}}. Czarne przypinają i szykują presję: {{m:10}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s04",
+      "chapter": "Debiut",
+      "text": "Białe odpowiadają aktywnie: {{m:11}}, a czarne dokładnie wzmacniają centrum: {{m:12}}. {{s:13}} Rubinstein buduje bezpieczny punkt dla figur. I nagle Alekhine wysyła skoczka głęboko: {{m:14}}; ocena silnika od razu wyraźnie przechyla się na stronę białych.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s05",
+      "chapter": "",
+      "text": "Rubinstein nie bije od razu, tylko poprawia figurę: {{m:15}}. Czarne wzmacniają centrum: {{m:16}}. {{s:17}} Białe ustawiają baterię na króla. Alekhine szuka kontrgry hetmanem: {{m:18}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s06",
+      "chapter": "",
+      "text": "Białe zabezpieczają króla: {{m:19}}. {{s:20}} Napięcie w centrum zaczyna się rozładowywać. Rubinstein przyjmuje zmianę struktury: {{m:21}}, a czarne wymieniają ważną figurę: {{m:22}}. {{s:24}} Centrum znika kawałek po kawałku.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s07",
+      "chapter": "",
+      "text": "Rubinstein kończy wymianę centralną: {{m:25}}. {{s:28}} Czarne ustawiają ciężką figurę na otwartej linii. {{s:31}} Białe zachowują elastyczność. {{s:34}} Króle są już bezpieczniejsze, a pozycja nadal pachnie napięciem.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s08",
+      "chapter": "Środek gry",
+      "text": "Rubinstein rusza pionami skrzydła królewskiego: {{m:35}}. Czarne uderzają w centrum: {{m:36}}. {{s:38}} Wieża czarnych wchodzi do gry. {{s:40}} Skoczek zajmuje mocny posterunek, ale ocena znów rośnie dla białych.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s09",
+      "chapter": "",
+      "text": "Białe odpowiadają naciskiem na otwartą linię: {{m:41}}. Czarne osłabiają ciemne pola: {{m:42}}. Rubinstein wymusza wymianę hetmanów: {{m:43}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s10",
+      "chapter": "",
+      "text": "Czarne nie unikają uproszczeń: {{m:44}}. {{s:45}} Hetmany schodzą z planszy. {{s:47}} Centrum zostaje przecięte. {{s:48}} Czarny pion trzyma skrzydło, ale białe wieże mają coraz więcej wejść.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s11",
+      "chapter": "",
+      "text": "Rubinstein przenosi wieżę aktywnie: {{m:49}}. Alekhine osłabia własne pola: {{m:50}}. Białe mają tu konkretne wejście, wskazywane przez silnik. Znajdziecie je? {{p}} Oto ono: {{m:51}}.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s12",
+      "chapter": "Wieże przejmują",
+      "text": "Czarne próbują utrzymać obronę: {{m:52}}. Rubinstein likwiduje ważnego obrońcę: {{m:53}}. {{s:54}} Struktura czarnych pęka, ale jeszcze się trzyma. {{s:56}} Alekhine stawia wieżę na jedynej autostradzie.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s13",
+      "chapter": "",
+      "text": "Król Rubinsteina rusza do środka: {{m:57}}. {{s:58}} Czarny król odpowiada tym samym. {{s:60}} Czarne próbują odciąć aktywną wieżę. {{s:62}} Obie strony manewrują, ale białe wciąż naciskają.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s14",
+      "chapter": "",
+      "text": "Teraz zaczyna się długa techniczna walka: {{m:63}}. {{s:64}} Czarna wieża szuka kontrgry z boku. {{s:66}} Obrona wymusza powrót. Rubinstein decyduje się uprościć: {{m:69}}.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s15",
+      "chapter": "",
+      "text": "Czarny król wchodzi do gry: {{m:70}}. {{s:71}} Jeden ruch białych wypuszcza część przewagi; silnik pokazuje równowagę. Alekhine jednak nie korzysta w pełni z szansy: {{m:72}}. {{s:76}} Po kilku manewrach białe znów mają inicjatywę.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s16",
+      "chapter": "",
+      "text": "Rubinstein wraca wieżą do aktywnej pracy: {{m:77}}. {{s:78}} Czarne trzymają siódmą linię. {{s:80}} Król czarnych centralizuje się. {{s:84}} Wieże krążą, a drobne tempo zaczyna mieć znaczenie.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s17",
+      "chapter": "Końcówka wieżowa",
+      "text": "Białe szukają idealnego ustawienia: {{m:85}}. {{s:88}} Obrona czarnych jest ciasna, ale jeszcze działa. Rubinstein znów wciska wieżę aktywnie: {{m:89}}. {{s:90}} Alekhine wybiera pasywną kontrolę.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s18",
+      "chapter": "",
+      "text": "Rubinstein przestawia króla, nie spieszy się: {{m:91}}. {{s:92}} Czarna wieża pilnuje wejść. {{s:94}} Obrona wraca na ostatnie pola. {{s:96}} Pozycja wygląda spokojnie, ale białe powoli odbierają przestrzeń.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "s19",
+      "chapter": "",
+      "text": "Biała wieża wraca z innej strony: {{m:97}}, a czarne trzymają front: {{m:98}}. Rubinstein podprowadza króla bardzo daleko: {{m:99}}. {{s:102}} Skrzydło królewskie zostaje zamknięte. I wtedy Alekhine wybiera ustawienie, po którym przewaga białych robi się niemal decydująca: {{m:104}}.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s20",
+      "chapter": "",
+      "text": "Rubinstein sprawdza, czy król może wejść jeszcze głębiej: {{m:105}}, a czarne otwierają skrzydło: {{m:106}}. {{s:108}} Piony spadają, a króle robią się nagie. Białe biorą najważniejszy punkt: {{m:109}}. {{s:110}} Czarna wieża szuka kontrgry od tyłu.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s21",
+      "chapter": "",
+      "text": "Biały król znów wychodzi naprzód: {{m:111}}. Czarne szukają aktywności wieżą: {{m:112}}. {{s:113}} Rubinstein ustawia własną wieżę do kontruderzenia. Alekhine chwyta piona: {{m:114}}, i to otwiera białym drogę do konkretu.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s22",
+      "chapter": "Królewski marsz",
+      "text": "Czy widzicie, jak Rubinstein karze tę aktywność? To ruch wskazywany przez silnik i zaczyna wyścig. {{p}} Białe grają: {{m:115}}. Czarne odprowadzają króla: {{m:116}}. Rubinstein zabiera jeszcze jednego piona: {{m:117}}.",
+      "pause_after": 1.0
+    },
+    {
+      "id": "s23",
+      "chapter": "",
+      "text": "Czarne próbują bocznego szachu i aktywnej wieży: {{m:118}}, a Rubinstein pcha wolnego piona: {{m:119}}. {{s:120}} Alekhine zbiera materiał, ale nie zatrzymuje marszu. Biały pion idzie dalej: {{m:121}}. {{s:124}} Po wymianie szachów czarny król nie nadąża.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s24",
+      "chapter": "",
+      "text": "Wolny pion dociera bardzo daleko: {{m:125}}. {{s:126}} Czarna wieża ustawia blokadę, ale biały król broni marszu własnym ciałem: {{m:127}}. {{s:130}} Alekhine daje kolejne szachy, lecz przewaga białych utrzymuje się wysoko. {{s:132}} Obrona jest aktywna, ale krucha.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s25",
+      "chapter": "",
+      "text": "Rubinstein nie pozwala zepchnąć króla: {{m:133}}, a czarne szachują z boku: {{m:134}}. Biały król wraca na właściwą ścieżkę: {{m:135}}. {{s:138}} Seria szachów trwa, ale nie zmienia kierunku partii. Rubinstein wchodzi królem na pole promocji: {{m:139}}, a czarna wieża próbuje ostatniego odcięcia: {{m:140}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s26",
+      "chapter": "",
+      "text": "Biały król wymusza dalszy marsz: {{m:141}}, a czarne dają szacha: {{m:142}}. Rubinstein nie chowa się daleko, tylko wchodzi głębiej: {{m:143}}. {{s:144}} Wieża czarnych wraca do blokady, ale białe dokładają szacha wieżą: {{m:145}}. {{s:146}} Czarny król schodzi na bok.",
+      "pause_after": 0.7
+    },
+    {
+      "id": "s27",
+      "chapter": "Finał",
+      "text": "Tu Rubinstein musi jeszcze uważać: {{m:147}}. Czarny król oddycha, a ocena na chwilę maleje, choć białe wciąż stoją wyraźnie lepiej. Alekhine natychmiast szuka kontrgry: {{m:148}}.",
+      "pause_after": 0.8
+    },
+    {
+      "id": "s28",
+      "chapter": "",
+      "text": "Białe wracają do aktywnego ustawienia: {{m:149}}. Czarny król próbuje uciec od presji: {{m:150}}. I teraz ostatnie precyzyjne posunięcie: znajdziecie je? {{p}} Rubinstein gra: {{m:151}}. Alekhine zrozumiał, że jego pozycja jest przegrana, i się poddał.",
+      "pause_after": 1.2
+    },
+    {
+      "id": "s29",
+      "chapter": "",
+      "text": "To nie była błyskawiczna kombinacja, tylko lekcja cierpliwej techniki. Ta partia jest ważna, bo pokazuje, jak aktywny król, wieża i jeden wolny pion mogą powoli zamienić przewagę w zwycięstwo.",
+      "pause_after": 0.6
+    }
+  ],
+  "key_moments": []
+}
