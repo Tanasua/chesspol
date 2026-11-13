@@ -351,6 +351,17 @@
     ],
     "qid": "Q27525651"
   },
+  "Arjun Erigaisi": {
+    "periods": [
+      {
+        "code": "in",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27524847"
+  },
   "Arkadij Naiditsch": {
     "periods": [
       {
@@ -507,6 +518,29 @@
       }
     ],
     "qid": "Q108807"
+  },
+  "Bibisara Assaubayeva": {
+    "periods": [
+      {
+        "code": "kz",
+        "from": null,
+        "prop": "P1532",
+        "to": 2016
+      },
+      {
+        "code": "ru",
+        "from": 2016,
+        "prop": "P1532",
+        "to": 2019
+      },
+      {
+        "code": "kz",
+        "from": 2019,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q28479507"
   },
   "Boris Gelfand": {
     "periods": [
@@ -1016,6 +1050,17 @@
       }
     ],
     "qid": "Q9283967"
+  },
+  "Haik Martirosyan": {
+    "periods": [
+      {
+        "code": "am",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q27527783"
   },
   "Hans Niemann": {
     "periods": [
@@ -1598,6 +1643,17 @@
       }
     ],
     "qid": "Q392661"
+  },
+  "Lê Quang Liêm": {
+    "periods": [
+      {
+        "code": "vn",
+        "from": null,
+        "prop": "P1532",
+        "to": null
+      }
+    ],
+    "qid": "Q734168"
   },
   "Magnus Carlsen": {
     "periods": [
